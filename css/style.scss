@@ -64,6 +64,7 @@ $color-main: #FFB000;
 
                 @media screen and (max-width:992px) {
                     font-size: 9.5rem;
+                    line-height: 1.2;
                 }
 
                 .titleCon {
@@ -82,6 +83,9 @@ $color-main: #FFB000;
         .signature {
             width: 25%;
             min-width: 80px;
+        }
+        .star {
+            width: 40px
         }
         .colorOrange {
             color: $color-main;
