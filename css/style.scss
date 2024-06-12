@@ -1,0 +1,102 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+.wrapper, *:before, *:after {
+    position: relative;
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    .kv {
+        .smokeFrame{
+            position: relative;
+            background-color: #ffa330;
+            background-image: url("../images/overlay.png");
+            width:100%;
+            height:450px;
+            
+            .smoke{
+                border:2px solid rgba(255,255,255,.1);
+                border-radius:400px;
+                position:absolute;
+                margin:auto;
+                @for $i from 1 through 60{
+                    &:nth-of-type(#{$i}){
+                        box-shadow: 3px 0px rgba(255,255,255, - ($i/40)),6px -5px rgba(10, 0, 0,  - ($i/40));
+                        width:($i * 6) + 0px;
+                        height:($i * 1) + 0px;
+                        right:($i * 10) + 0px;
+                        bottom:($i * 10) + 0px;
+                        //-webkit-filter:blur($i/3 + 8px);
+                        -webkit-filter: blur($i/3 + 8px);
+                        -moz-filter: blur($i/3 + 8px);
+                        -o-filter: blur($i/3 + 8px);
+                        -ms-filter: blur($i/3 + 8px);
+                        //filter: url(#blur);
+                        transform-origin: ($i * 4) + 0px ($i * 2) + 0px;
+                        animation: spin 3s ($i/10) + 0s linear infinite;
+                        background:rgba(180 + ($i*3),70 + ($i*1) ,50,1 - ($i/80));
+                    }
+                }
+                @keyframes spin{
+                    0%{transform:rotate(0deg)}
+                    100%{transform:rotate(360deg)}
+                }
+            }
+            .portraitCon {
+                bottom: 0;
+                z-index: 10;
+                .portrait {
+                    width: 100%;
+                    max-width: 230px;
+                }
+            }
+            .titlePos {
+                color: #de5350;
+                font-size: 11rem;
+                font-weight: 900;
+                line-height: 1;
+                .titleCon {
+                    width: 100%;
+                    max-width: 540px;
+                    .z-index-50 {
+                        z-index: 50;
+                    }
+                }
+            }
+
+        }
+        .bottomSpace {
+            height: 78px;
+        }
+        .signature {
+            width: 25%;
+            min-width: 80px;
+        }
+
+
+    }
+}
+
+/* keyframes */
+@keyframes zoomInOut {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+@keyframes wave {
+    0% {transform: translate3d(-90px, 0, 0);}
+    50% {transform: translate3d(85px, 0, 0);}
+    100% {transform: translate3d(-90px, 0, 0);}
+}
+@keyframes rotateRight {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+}
+@keyframes appear {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
