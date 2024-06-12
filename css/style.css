@@ -885,7 +885,7 @@
 }
 @media screen and (max-width: 992px) {
   .wrapper .kv .smokeFrame .titlePos {
-    font-size: 9rem;
+    font-size: 9.5rem;
   }
 }
 .wrapper .kv .smokeFrame .titlePos .titleCon {
@@ -901,6 +901,9 @@
 .wrapper .kv .signature {
   width: 25%;
   min-width: 80px;
+}
+.wrapper .kv .colorOrange {
+  color: #FFB000;
 }
 
 /* keyframes */
