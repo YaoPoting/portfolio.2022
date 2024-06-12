@@ -882,6 +882,12 @@
   font-weight: 900;
   line-height: 1;
 }
+@media screen and (max-width: 992px) {
+  .wrapper .kv .smokeFrame .titlePos {
+    font-size: 9rem;
+    line-height: 1.2;
+  }
+}
 .wrapper .kv .smokeFrame .titlePos .titleCon {
   width: 100%;
   max-width: 540px;

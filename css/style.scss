@@ -58,6 +58,12 @@
                 font-size: 11rem;
                 font-weight: 900;
                 line-height: 1;
+                
+                @media screen and (max-width:992px) {
+                    font-size: 9rem;
+                    line-height: 1.2;
+                }
+                
                 .titleCon {
                     width: 100%;
                     max-width: 540px;
