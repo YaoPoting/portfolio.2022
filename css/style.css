@@ -908,23 +908,24 @@
   width: 100%;
   overflow: hidden;
   display: flex;
+  padding-left: 1rem;
+}
+.wrapper .kv .marqueeCon .marquee1, .wrapper .kv .marqueeCon .marquee2, .wrapper .kv .marqueeCon .marquee3 {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 0.4rem;
 }
 .wrapper .kv .marqueeCon .marquee1 {
-  display: inline-block;
-  white-space: nowrap;
-  animation: marquee1 15s linear infinite;
+  animation: marquee1 20s linear infinite;
 }
 .wrapper .kv .marqueeCon .marquee2 {
-  display: inline-block;
-  white-space: nowrap;
-  animation: marquee2 15s linear infinite;
-  padding-left: 0.5rem;
+  animation: marquee2 20s linear infinite;
 }
 .wrapper .kv .marqueeCon .marquee3 {
-  display: inline-block;
-  white-space: nowrap;
-  animation: marquee2 15s linear infinite;
-  padding-left: 0.5rem;
+  animation: marquee2 20s linear infinite;
+}
+.wrapper .kv .marqueeCon .marquee1 i, .wrapper .kv .marqueeCon .marquee2 i, .wrapper .kv .marqueeCon .marquee3 i {
+  margin: 0 0.2rem;
 }
 @keyframes marquee1 {
   0% {

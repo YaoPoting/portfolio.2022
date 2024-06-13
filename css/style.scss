@@ -89,23 +89,26 @@ $color-main: #FFB000;
             width: 100%;
             overflow: hidden;
             display: flex;
+            padding-left: 1rem;
+
+            .marquee1, .marquee2, .marquee3 {
+                display: inline-block;
+                white-space: nowrap;
+                padding-left: 0.4rem;
+            }
 
             .marquee1 {
-                display: inline-block;
-                white-space: nowrap;
-                animation: marquee1 15s linear infinite;
+                animation: marquee1 20s linear infinite;
             }
             .marquee2 {
-                display: inline-block;
-                white-space: nowrap;
-                animation: marquee2 15s linear infinite;
-                padding-left: 0.5rem;
+                animation: marquee2 20s linear infinite;
             }
             .marquee3 {
-                display: inline-block;
-                white-space: nowrap;
-                animation: marquee2 15s linear infinite;
-                padding-left: 0.5rem;
+                animation: marquee2 20s linear infinite;
+            }
+
+            .marquee1 i, .marquee2 i, .marquee3 i {
+                margin: 0 0.2rem;
             }
               
             @keyframes marquee1 {
