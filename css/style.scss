@@ -81,16 +81,58 @@ $color-main: #FFB000;
             height: 78px;
         }
         .signature {
-            width: 25%;
-            min-width: 80px;
+            width: 12%;
+            min-width: 100px;
         }
-        .star {
-            width: 40px
-        }
-        .colorOrange {
+        .marqueeCon {
             color: $color-main;
-        }
+            width: 100%;
+            overflow: hidden;
+            display: flex;
 
+            .marquee1 {
+                display: inline-block;
+                white-space: nowrap;
+                animation: marquee1 15s linear infinite;
+            }
+            .marquee2 {
+                display: inline-block;
+                white-space: nowrap;
+                animation: marquee2 15s linear infinite;
+                padding-left: 0.5rem;
+            }
+            .marquee3 {
+                display: inline-block;
+                white-space: nowrap;
+                animation: marquee2 15s linear infinite;
+                padding-left: 0.5rem;
+            }
+              
+            @keyframes marquee1 {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
+            @keyframes marquee2 {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
+            @keyframes marquee3 {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
+        }
     }
 }
 
