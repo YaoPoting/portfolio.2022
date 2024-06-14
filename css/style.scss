@@ -47,6 +47,7 @@ $color-main: #FFB000;
                     100%{transform:rotate(360deg)}
                 }
             }
+
             .portraitCon {
                 bottom: 0;
                 z-index: 10;
@@ -55,6 +56,7 @@ $color-main: #FFB000;
                     max-width: 230px;
                 }
             }
+
             .titlePos {
                 color: #de5350;
                 font-size: 11rem;
@@ -77,13 +79,16 @@ $color-main: #FFB000;
             }
 
         }
+
         .bottomSpace {
             height: 78px;
         }
+
         .signature {
             width: 12%;
             min-width: 100px;
         }
+
         .marqueeCon {
             color: $color-main;
             width: 100%;
@@ -135,6 +140,20 @@ $color-main: #FFB000;
                     transform: translateX(-100%);
                 }
             }
+        }
+    }
+    .websites {
+        .arrowRight {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: $color-main;
+            right: 0;
+            bottom: 0;
+            background-color: white;
+            border-radius: 100px;
+            width: 40px;
+            height: 40px;
         }
     }
 }

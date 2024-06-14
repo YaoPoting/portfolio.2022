@@ -951,6 +951,18 @@
     transform: translateX(-100%);
   }
 }
+.wrapper .websites .arrowRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFB000;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  border-radius: 100px;
+  width: 40px;
+  height: 40px;
+}
 
 /* keyframes */
 @keyframes zoomInOut {
