@@ -73,8 +73,7 @@
   top: 5%;
 }
 .wrapper .kv .title.zoomInOutAnim {
-  -webkit-animation: zoomInOut 2s linear infinite;
-          animation: zoomInOut 2s linear infinite;
+  animation: zoomInOut 2s linear infinite;
 }
 @media screen and (max-width: 992px) {
   .wrapper .kv .title {
@@ -208,8 +207,7 @@
   width: 100%;
 }
 .wrapper .prizeWheelBg .container-prize .prizeWheelCont .prizeWheel.rotatingAnim {
-  -webkit-animation: rotating 12s linear infinite;
-          animation: rotating 12s linear infinite;
+  animation: rotating 12s linear infinite;
 }
 .wrapper .prizeWheelBg .container-prize .prizeWheelCont .drawButton {
   position: absolute;
@@ -219,8 +217,7 @@
   cursor: pointer;
 }
 .wrapper .prizeWheelBg .container-prize .prizeWheelCont .drawButton.zoomInOutAnim {
-  -webkit-animation: zoomInOut 1s linear infinite;
-          animation: zoomInOut 1s linear infinite;
+  animation: zoomInOut 1s linear infinite;
 }
 @media screen and (max-width: 992px) {
   .wrapper .prizeWheelBg .container-prize {
@@ -245,8 +242,7 @@
 .wrapper .prizeWheelBg .tombsCont .ghost.gPos2 {
   left: 65%;
   bottom: 30%;
-  -webkit-animation: swing 2s linear infinite;
-          animation: swing 2s linear infinite;
+  animation: swing 2s linear infinite;
 }
 .wrapper .prizeWheelBg .tombsCont .ghost.gPos3 {
   right: 15%;
@@ -268,17 +264,6 @@
 }
 
 /* keyframes */
-@-webkit-keyframes zoomInOut {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.02);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 @keyframes zoomInOut {
   0% {
     transform: scale(1);
@@ -290,17 +275,6 @@
     transform: scale(1);
   }
 }
-@-webkit-keyframes swing {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(5deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
 @keyframes swing {
   0% {
     transform: rotate(0deg);
@@ -310,14 +284,6 @@
   }
   100% {
     transform: rotate(0deg);
-  }
-}
-@-webkit-keyframes rotating {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
 @keyframes rotating {
