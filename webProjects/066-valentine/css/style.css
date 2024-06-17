@@ -1,0 +1,268 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.wrapper, *:before, *:after {
+    position: relative;
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+a{ text-decoration:none} a:hover{ text-decoration:none}
+.colorBgBlue {background-color: #102045;}
+.colorBgWhite {background-color: #ffffff;}
+.colorBgYellow {background-color: #e7dc28;}
+.colorBgRed {background-color: #ff0000;}
+.colorBgDark {background-color: #0d1517;}
+.colorWhite { color: #ffffff;}
+.colorBlack {color: #000000;}
+.H1_size {font-size: 32px; font-weight: bold;}
+.H2_size {font-size: 26px; font-weight: bold;}
+.H3_size {font-size: 22px; font-weight: bold;}
+.H4_size {font-size: 18px;}
+.H5_size {font-size: 12px;}
+.h70 {height: 70px;}
+.w200 {width: 200px;}
+.rounded10 {border-radius: 10px;}
+/* 按鈕 */
+.effectStyle {
+    text-align: center;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    padding: 6px 20px;
+}
+.effect {
+    transition: all 0.2s linear 0s;
+}
+.effect::before {
+    content: "→";
+    font-size: 15px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    height: 100%;
+    width: 20%;
+    transition: all 0.2s linear 0s;
+}
+.effect:hover {
+    color: #000000;
+    text-indent: -20px;
+}
+.effect:hover::before {
+    opacity: 1;
+    text-indent: 0px;
+}
+.effect-white:hover {
+    color: #ffffff;
+    text-indent: -20px;
+}
+.btBox {
+    height: 45px;
+    border-radius: 6px;
+}
+/* KV */
+.mtMinus2vw {
+    margin-top: -2vw;
+}
+.kv_pc {
+    height: 39vw;
+    display: block;
+}
+.kv_sp {
+    height: 100vw;
+    display: none;
+}
+.kv_pc1_bg, .kv_pc2_twinkle, .kv_pc2_twinkle2, .kv_pc3_title, .kv_pc4_boy, .kv_pc4_girl, .kv_sp1_bg, .kv_sp2_twinkle, .kv_sp2_twinkle2, .kv_sp3_title, .kv_sp4_boy, .kv_sp4_girl {
+    position: absolute;
+    width: 100%;
+}
+.kv_pc2_twinkle, .kv_sp2_twinkle {
+    animation: twinkle1 infinite 2s;
+}
+    @keyframes twinkle1 {
+        0% {opacity: 0;}
+        50% {opacity: 1;}
+        100% {opacity: 0;}
+    }
+.kv_pc2_twinkle2, .kv_sp2_twinkle2 {
+    animation: twinkle2 infinite 3s;
+}
+    @keyframes twinkle2 {
+        0% {opacity: 0;}
+        50% {opacity: 1;}
+        100% {opacity: 0;}
+    }
+/* 遊戲區 */
+.mtMinus4vw {
+    margin-top: -4vw;
+}
+#cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+.card {
+    background-color: #ffeaec;
+    border-radius: 10px;
+    margin: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.card img {
+    width: 100%;
+}
+.flip {
+    animation: cardFlip 0.4s;
+    animation-iteration-count: 1;
+}
+    @keyframes cardFlip {
+        0% {transform: rotateY(180deg);}
+        100% {transform: rotateY(0deg);}
+    }
+.back {display: block;}
+.front {display: none;}
+#result, #result_1, #result_2, #result_3, #result_4, #result_5, #result_6, #result_7, #result_8, #result_9, #result_10, #result_11, #result_12 {
+    display: none;
+    margin-top: 20px;
+}
+/* 開獎區 */
+.colorPurpleGradient{
+    background: linear-gradient(to bottom,  #102045 10%,#1e59b3 60%,#bb8ba2 100%);
+}
+.prizeTwinkle {
+    position: relative;
+    width: 100%;
+    height: auto;
+    background-image: url(../images/prizePcTwinkle1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    z-index: 3;
+}
+.prizeTwinkle::before,
+.prizeTwinkle::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.prizeTwinkle::before {
+  background-image: url('../images/prizePcTwinkle2.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 1;
+  animation: zodiacTwinkle1 infinite 2s;
+}
+    @keyframes zodiacTwinkle1 {
+        0% {opacity: 0;}
+        50% {opacity: 1;}
+        100% {opacity: 0;}
+    }
+.prizeTwinkle::after {
+  background-image: url('../images/prizePcTwinkle3.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 2;
+  animation: zodiacTwinkle2 infinite 3s;
+}
+    @keyframes zodiacTwinkle2 {
+        0% {opacity: 0;}
+        50% {opacity: 1;}
+        100% {opacity: 0;}
+    }
+.zodiacImg {
+    width: 100%;
+}
+.prizeText {
+    display: inline-block;
+    text-align: left;
+    font-size: 22px; font-weight: bold;
+}
+#prize {
+    position: relative;
+    top: 1.5rem;
+}
+/* 填單 */
+.formImg {
+    background-image: url(../images/formImg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.selectArrow {
+    appearance:none;
+    background: url("../images/selectArrow.png") no-repeat right center transparent;
+    background-size: 16px;
+    background-color: #ffffff;
+}  
+#myform {
+    position: relative;
+    top: -3rem;
+}
+/* 課程介紹 */
+.bgBoy {
+    background-image: url(../images/bgBoyPc.jpg);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-position: center top;
+}
+.lineHands {width: 30%;}
+.loveBr {display: none;}
+.playButton {
+    cursor: pointer;
+}
+.courseButton {
+    cursor: pointer;
+    color: #000000;
+}
+.courseButton:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+}
+/* Swiper */
+.swiper-slide {
+    background-color: #ffffff;
+    border-radius: 6px;
+}
+.bi-arrow-left-circle-fill {color: #0f1421;}
+.bi-arrow-right-circle-fill {color: #0f1421;}
+@media screen and (max-width: 1400px) {
+    .card {width: 15%;}
+}
+@media screen and (max-width: 1200px) {
+    .card {width: 14%;}
+}
+@media screen and (max-width: 992px) {
+    /* KV */
+    .kv_pc {display: none;}
+    .kv_sp {display: block;}
+    .marginTopUp {margin-top: unset;}
+    .card {width: 29%;}
+    .prizeTwinkle, .prizeTwinkle::before, .prizeTwinkle::after {background-image: unset;}
+    .formImg {height: 50vw;}
+    .lineHands {width: 50%;}
+    .bgBoy {background-image: url(../images/bgBoySp.jpg);}
+}
+@media screen and (max-width: 768px) {
+    .card {margin: 0.3em;}
+}
+@media screen and (max-width: 576px) {
+    .loveBr {display: block;}
+    .lineHands {width: 80%;}
+    .zodiacImg {width: 60%;}
+    .prizeText {font-size: 18px; font-weight: bold;}
+}

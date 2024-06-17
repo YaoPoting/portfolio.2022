@@ -142,7 +142,14 @@ $color-main: #FFB000;
             }
         }
     }
-    .websites {
+    .works {
+        .myNav {
+            background-color: white;
+            transition: 0.2s;
+            .pointer {
+                cursor: pointer;
+            }
+        }
         .arrowRight {
             display: flex;
             justify-content: center;

@@ -951,7 +951,14 @@
     transform: translateX(-100%);
   }
 }
-.wrapper .websites .arrowRight {
+.wrapper .works .myNav {
+  background-color: white;
+  transition: 0.2s;
+}
+.wrapper .works .myNav .pointer {
+  cursor: pointer;
+}
+.wrapper .works .arrowRight {
   display: flex;
   justify-content: center;
   align-items: center;
