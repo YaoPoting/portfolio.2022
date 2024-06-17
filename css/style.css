@@ -958,7 +958,7 @@
 .wrapper .works .myNav .pointer {
   cursor: pointer;
 }
-.wrapper .works .arrowRight {
+.wrapper .works .website .arrowRight {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -969,6 +969,9 @@
   border-radius: 100px;
   width: 40px;
   height: 40px;
+}
+.wrapper .works .graphics {
+  height: 800px;
 }
 
 /* keyframes */
