@@ -5,7 +5,7 @@ AOS.init({
 new WOW().init();
 
 function scrollToWebsites() {
-    const anchor = document.querySelector('.website');
+    const anchor = document.querySelector('.websiteAnchor');
     anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
 
