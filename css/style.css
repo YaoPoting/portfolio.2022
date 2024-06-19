@@ -1035,6 +1035,7 @@ a:hover {
   z-index: 20;
 }
 .wrapper .works .websites .webSitesBg .cardsCon img {
+  border-radius: 6px;
   border: 1px solid white;
 }
 .wrapper .works .graphics {
