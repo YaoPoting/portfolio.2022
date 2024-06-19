@@ -1,0 +1,712 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>【找工作不用怕】外語即時通-隨時幫你搶救面試</title>
+    <meta name="Title" content="【找工作不用怕】外語即時通-隨時幫你搶救面試" />
+    <meta name="Description" content="到巨匠線上真人上課,索取課表再送免費外語課程,英語,日語,韓語,西班牙語,法語,德語,兒童美語,兒童程式,國中文理,想學什麼這裡通通都有!" />
+    <meta name="keywords" content="上課回饋,學英文,學日文,學韓文,學西文,學法文,學德文" />
+    <meta property="og:title" content="【找工作不用怕】外語即時通-隨時幫你搶救面試" />
+    <meta property="og:image" content="./images/share_card.jpg" />
+    <meta property="og:description" content="到巨匠線上真人上課,索取課表再送免費外語課程,英語,日語,韓語,西班牙語,法語,德語,兒童美語,兒童程式,國中文理,想學什麼這裡通通都有!" />
+    <!-- Page Info Insert END -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="/wGuest/js/m_pcschool.js"></script>
+    <!-- Include JS & CSS Start -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/comm-style.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
+    <link href="css/animate.css" rel="stylesheet" />
+    <!-- aos -->
+    <link href="css/aos.css" rel="stylesheet">
+
+
+
+    <!-- Include JS & CSS End -->
+    <script type="text/javascript">
+        //留單相關，看過後請把註解刪掉喔!  -----start
+        var dept = "KZ2";
+        var seq_no = "0";
+        var web_pno = ""; //電腦版pno
+        var NList_Type = "5";
+        var fromto = "";
+        var Gift = "";
+        var is_Mobile = "0";
+
+        /*手機板 pno 判斷相關 >> start */
+        $(function () {
+            if (isMobile()) {
+                web_pno = "";  //手機板pno
+                is_Mobile = "1";   
+            }
+        });
+
+        function isMobile() {
+            try { document.createEvent("TouchEvent"); return true; }
+            catch (e) { return false; }
+        }
+        /*手機板 pno 判斷相關 >> end*/
+        
+
+
+        function but_send() {
+            $('#sBut').hide();
+            //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----start
+            GetPno();
+            if (Gift == "") {
+                alert('請選擇索取最新課表。');
+                $('#sBut').show();
+                return false;
+            }
+            //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----end
+            var JSonData = {
+                "name": $("#name").val(),
+                "mobile": $("#mobile").val(),
+                "email": $("#email").val(),
+                "seq_no": seq_no,
+                "dept_no": dept,
+                "memo": "索取課表送一堂體驗課" + Gift,
+                "web_pno": web_pno,
+                "fromto": QueryString("fromto") != null ? QueryString("fromto") : fromto,
+                "fromurl": document.location.href, 
+                "sourceid": QueryString("fc") != null ? QueryString("fc") : "",
+                "NList_Type": NList_Type,
+                "IsSend": "N",
+                "func": "njycooooqj"
+            }
+
+            if ($("input[name=per_chk]:checked").length == 0) {
+                alert('請勾選同意個資保護聲明。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.name == "" || JSonData.name == "姓 名") {
+                alert('請填寫入姓名。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile == "" || JSonData.mobile == "行動電話") {
+                alert('請填寫行動電話。');
+                $('#sBut').show();
+                return false;
+            }
+            if (isNaN(JSonData.mobile) == true) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile.length != 10) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.email == "" || JSonData.email == "E-Mail") { JSonData.email = "" } else {
+                if (JSonData.email.indexOf("@") <= -1) {
+                    alert('電子郵件格式錯誤。');
+                    $('#sBut').show();
+                    return false;
+                }
+            }
+            goSubmit(JSonData, s, f);
+        }
+
+        function s(data) {
+            if (data[0].result == "1") {
+                $("#name").val("");
+                $("#mobile").val("");
+                $("#sBut").show();alert('送出成功，歡迎分享給家人朋友一起來上外語課');
+                document.location.href = "/wGuest/loadover.htm";
+            } else {
+                alert('送出失敗！');
+                $("#sBut").show();
+            }
+        }
+        function f(data) {
+            alert(data);
+            $("#sBut").show();
+        }
+        //留單相關，看過後請把註解刪掉喔!  -----end
+
+        //下拉選單有不同語系課程時使用，如果沒有要用就刪掉 左sp 右pc  -----start
+        function GetPno() {
+            var select_val = $("#dpGift :selected").val();
+            switch (select_val) {
+                case "english":
+                    web_pno = is_Mobile == "1" ? "112011500007" : "112011500006";
+                    Gift = "我想學英語";
+                    break;
+                case "japanese":
+                    web_pno = is_Mobile == "1" ? "112011500009" : "112011500008";
+                    Gift = "我想學日語";
+                    break;
+                case "korean":
+                    web_pno = is_Mobile == "1" ? "112011500011" : "112011500010";
+                    Gift = "我想學韓語";
+                    break;
+                case "spanish":
+                    web_pno = is_Mobile == "1" ? "112011500013" : "112011500012";
+                    Gift = "我想學西語";
+                    break;
+                case "french":
+                    web_pno = is_Mobile == "1" ? "112011500015" : "112011500014";
+                    Gift = "我想學法語";
+                    break;
+                case "german":
+                    web_pno = is_Mobile == "1" ? "112011500017" : "112011500016";
+                    Gift = "我想學德語";
+                    break;
+            }
+        }
+        //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----end
+
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-WSWZFBP');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSWZFBP"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <form id="form1" runat="server">
+        <div class="top">
+            <iframe src="/activity/header/2020/" width="100%" height="65px" scrolling="No" frameborder="0" allowtransparency="allowTransparency" class="ifar"></iframe>
+        </div>
+        <!-- HTML Start -->
+
+        <!-- wapper開始 -->
+        <div class="wrapper">
+            <!-- BN開始 -->
+            <section>
+            <div class="BN_bg_pc">
+                <img class="BN_girl w-100" data-aos="fade-right" src="images/banner/BN_girl.png">
+                <img class="BN_boy w-100" data-aos="fade-left" src="images/banner/BN_boy.png">
+                <img class="BN_title w-100" data-aos="fade-down" data-aos-delay="100" data-aos-duration="800" src="images/banner/BN_title.png">
+            </div>
+            <div class="BN_bg_sp">
+                <img class="BN_girl w-100" data-aos="fade-right" src="images/banner/BN_girl_sp.png">
+                <img class="BN_boy w-100" data-aos="fade-left" src="images/banner/BN_boy_sp.png">
+                <img class="BN_title w-100" data-aos="fade-down" data-aos-delay="100" data-aos-duration="800" src="images/banner/BN_title_sp.png">
+            </div>
+            </section>
+            <!-- BN結束 -->
+
+            <!-- 影片開始 -->
+            <section class="vedioBg">
+                <div class="container">
+                    <div class="row text-center py-5">
+                        <div class="H1_size color_dkBlue">線上即時互動學習</div>
+                        <div class="H2_size color_ltBlue">專業老師手把手教學</div>
+                    </div>
+                    <div class="row text-center vedioArea py-1 mx-1">
+                        <div class="col-md-4 col-sm-12 py-2">
+                            <iframe class="vedioHeight" width="100%" src="https://www.youtube.com/embed/5ywAmeZqYF8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="H2_size color_dkGray pt-1">英語教室</div>
+                        </div>
+                        <div class="col-md-4 col-sm-12 py-2">
+                            <iframe class="vedioHeight"  width="100%" src="https://www.youtube.com/embed/Tc4Hzdzy8ww" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="H2_size color_dkGray pt-1">日語教室</div>
+                        </div>
+                        <div class="col-md-4 col-sm-12 py-2">
+                            <iframe class="vedioHeight"  width="100%" src="https://www.youtube.com/embed/EbQz9QpQU5w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            <div class="H2_size color_dkGray pt-1">韓語教室</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 影片結束 -->
+
+
+            <!-- 排行榜開始 -->
+            <section class="rankinBg">
+                <div class="container-md pb-5">
+                    <div class="text-center pt-5 pb-2">
+                        <img src="./images/crown.png" alt="找工作不用怕，外語即時通，隨時幫你搶救面試">
+                    </div>
+                    <div class="row text-center pb-3">
+                        <div class="H1_size color_dkBlue">超夯證照排行榜</div>
+                        <div class="H2_size color_ltBlue">就業轉職大加分</div>
+                    </div>
+                    <div class="row rankingWtBg text-center align-items-center mb-3 mx-1">
+                        <div class="col pb-2"><img src="./images/no1.png"></div>
+                        <div class="col H2_size"><span>多益</span>TOEIC</div>
+                        <div class="col">
+                            <div>
+                                <a href="#fillform">
+                                    <div class="bt2form button_style">索取課程</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row rankingWtBg text-center align-items-center mb-3 mx-1">
+                        <div class="col pb-2"><img src="./images/no2.png"></div>
+                        <div class="col H2_size"><span>日語檢定</span>JLPT</div>
+                        <div class="col">
+                            <div>
+                                <a href="#fillform">
+                                    <div class="bt2form button_style">索取課程</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row rankingWtBg text-center align-items-center mb-3 mx-1">
+                        <div class="col pb-2"><img src="./images/no3.png"></div>
+                        <div class="col H2_size"><span>韓語檢定</span>TOPIK</div>
+                        <div class="col">
+                            <div>
+                                <a href="#fillform">
+                                    <div class="bt2form button_style">索取課程</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row rankingWtBg text-center align-items-center mb-3 mx-1">
+                        <div class="col rankinNumber">4</div>
+                        <div class="col H2_size"><span>西語檢定</span>DELE</div>
+                        <div class="col">
+                            <div>
+                                <a href="#fillform">
+                                    <div class="bt2form button_style">索取課程</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row rankingWtBg text-center align-items-center mx-1">
+                        <div class="col rankinNumber">5</div>
+                        <div class="col H2_size"><span>雅思</span>IELTS</div>
+                        <div class="col">
+                            <div>
+                                <a href="#fillform">
+                                    <div class="bt2form button_style">索取課程</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 排行榜結束 -->
+
+
+            <!-- 填表開始 -->
+            <section class="ipadBg pb-5">
+                <img class="w-100" id="fillform" src="./images/blueRS.png">
+                <div class="container">
+                    <div class="row px-4">
+                        <div class="col-md-6 col-xs-12 text-center align_middle">
+                            <img class="w-100" src="./images/ipad.png">
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="row text-center py-2">
+                                <H1>
+                                    <div class="H1_size">登記索取最新課表</div>
+                                    <div class="H1_size color_ltBlue">送外語證照班</div>
+                                </H1>
+                            </div>
+                            <div class="row py-2">
+                                <div class="col-6 fill_form">
+                                    <input name="ea" type="text" class="form-control" id="name" placeholder="姓 名" />
+                                </div>
+                                <div class="col-6 fill_form">
+                                    <input name="mobile" type="text" class="form-control" id="mobile" placeholder="電 話" />
+                                </div>
+                            </div>
+
+                            <div class="row py-2">
+                                <div class="col-6 fill_form">
+                                    <input name="email" type="text" class="form-control" id="email" placeholder="E-Mail" />
+                                </div>
+                                <div class="col-6 fill_form">
+                                    <select id="dpGift" class="form-control selectArrow">
+                                    <option value="select" selected>選擇學習語言</option>
+                                    <option value="english">我想學英語</option>
+                                    <option value="japanese">我想學日語</option>
+                                    <option value="korean">我想學韓語</option>
+                                    <option value="spanish">我想學西語</option>
+                                    <option value="french">我想學法語</option>
+                                    <option value="german">我想學德語</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-12 py-2">
+                                <label>
+                                    <input type="checkbox" class="searchtext2" name="per_chk" checked="checked">
+                                </label>
+                                <span class="statement">我已閱讀並接受<a onclick="window.open('/activity/abconline/contract_02/','person',config='height=640,width=830');return false;" href="#">個資保護聲明</a></span>
+                            </div>
+                            <div class="col-12 py-2">
+                                <div id="sBut" onClick="but_send();" style="cursor:pointer;">
+                                    <div class="go_button text-center py-1">馬上索取</div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 填表結束 -->
+
+            <div class="friendgo">
+                <!-- class list -->                
+                <div class="row intro-table">
+                    <!-- menu -->
+                    <div class="menu">
+                        <div class="title">課程介紹</div>
+                        <ul class="list">
+                            <li class="li-link"><a href="#class_01"> 情境英文課 </a></li>
+                            <li class="li-link"><a href="#class_02"> 英文會話班 </a></li>
+                            <li class="li-link"><a href="#class_03"> 日語會話班 </a></li>
+                            <li class="li-link"><a href="#class_04"> 情境日語課 </a></li>
+                            <li class="li-link"><a href="#class_05"> 西班牙語課程 </a></li>
+                            <li class="li-link"><a href="#class_06"> 韓語課程 </a></li>
+                            <li class="li-link"><a href="#class_07"> 法語課程 </a></li>
+                            <li class="li-link"><a href="#class_08"> 多益認證課程 </a></li>
+                            <li class="li-link"><a href="#class_09"> 語言檢定認證班 </a></li>
+                            <li class="li-link"><a href="#class_10"> 德語課程 </a></li>
+                        </ul>
+                        <a class="top-btn" href="#fillform">TOP</a>
+                    </div>
+                    
+                    <div class="table-list">                        
+                        
+                        <!-- item -->
+                        <div class="item item-01" data-aos="fade-up">
+                            <div class="anchor" id="class_01"></div>
+                            <div class="name"><span>情境英文課</span></div>
+                            <div class="row-list">
+                                <div class="tb-row">
+                                    <div class="title"><span>初級</span><span>英文</span></div>
+                                    <div class="desc"><span>聽說讀寫整合課程，融入文法與會話句型，打好英文基礎。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>旅遊</span><span>英文</span></div>
+                                    <div class="desc"><span>從搭機、住宿到觀光、用餐，能以英語應對各種旅遊情境。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>生活</span><span>英文</span></div>
+                                    <div class="desc"><span>自我介紹、交友約會、聊天話題、流行時事、星座血型。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>職場</span><span>商務</span></div>
+                                    <div class="desc"><span>工作面試、履歷準備、電話接聽、會議談判、客戶接待、簡報技巧。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>世界</span><span>文化</span></div>
+                                    <div class="desc"><span>世界節慶、文化解說、傳統習俗、影集電影、時事新聞。</span></div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center w-100">
+                                <div class="free-btn"><a href="#fillform">免費體驗</a></div>
+                            </div>
+                        </div>
+
+                        <!-- item -->
+                        <div class="item item-02" data-aos="fade-up">
+                            <div class="anchor" id="class_02"></div>
+                            <div class="name"><span>英文會話班</span></div>
+                            <div class="row-list">
+                                <div class="tb-row">
+                                    <div class="title"><span>自然</span><span>發音</span></div>
+                                    <div class="desc"><span>初學者必備課程，練習正確看字發音，看到不會的字也可以念出來。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>基礎</span><span>會話</span></div>
+                                    <div class="desc"><span>基礎文法演練，熟悉使用正確句型與文法，擴充單字量與靈活運用。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>1級</span><span>會話班</span></div>
+                                    <div class="desc"><span>進階文法課程，能多方延伸單字同意字，加入基礎職場、生活購物等主題。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>2級</span><span>會話班</span></div>
+                                    <div class="desc"><span>能以日常生活基礎話題與人交流對話、完整描述事情前因後果。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>3級</span><span>會話班</span></div>
+                                    <div class="desc"><span>基礎商務英文，工作面試、電話接聽、理解日常生活文章與對話。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>4級</span><span>會話班</span></div>
+                                    <div class="desc"><span>進階商務英文，學會會議談判與表達意見，與人討論並提出評論。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>高級</span><span>會話班</span></div>
+                                    <div class="desc"><span>能流暢使用英文，不同領域精準使用英文，具備外商、翻譯、留遊學等能力。</span></div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center w-100">
+                                <div class="free-btn"><a href="#fillform">免費體驗</a></div>
+                            </div>
+                        </div>
+                        
+                        <!-- item -->
+                        <div class="item item-03" data-aos="fade-up">
+                            <div class="anchor" id="class_03"></div>
+                            <div class="name"><span>日語會話班</span></div>
+                            <div class="row-list">
+                                <div class="tb-row">
+                                    <div class="title"><span>0</span><span>基礎</span></div>
+                                    <div class="desc"><span>以50音為基礎，搭配N5會話先修，打造紮實的日文根基。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>N5</span><span>會話</span></div>
+                                    <div class="desc"><span>學習以平假名、片假名、日常生活、自我介紹常用的字和句子。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>N4</span><span>會話</span></div>
+                                    <div class="desc"><span>能以日常生活基礎話題與人交流對話。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>N3</span><span>會話</span></div>
+                                    <div class="desc"><span>理解日常生活文章、對話、並能立即掌握話題涵義。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>高級</span><span>會話班</span></div>
+                                    <div class="desc"><span>現今日本的職場、社會、時事、文化、生活等各項議題。</span></div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center w-100">
+                                <div class="free-btn"><a href="#fillform">免費體驗</a></div>
+                            </div>
+                        </div>
+                        
+                        <!-- item -->
+                        <div class="item item-04" data-aos="fade-up">
+                            <div class="anchor" id="class_04"></div>
+                            <div class="name"><span>情境日語課</span></div>
+                            <div class="row-list">
+                                <div class="tb-row">
+                                    <div class="title"><span>旅遊</span><span>日語</span></div>
+                                    <div class="desc"><span>餐廳點餐、當地風俗、購物買賣、飯店住宿、交通。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>生活</span><span>日本</span></div>
+                                    <div class="desc"><span>居家、運動、修繕、小常識、家事。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>職場</span><span>日語</span></div>
+                                    <div class="desc"><span>餐飲服務、辦公室常用、商務用語、書信往來。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>美食</span><span>與購物</span></div>
+                                    <div class="desc"><span>點餐、逛夜市、品嚐美食、食安問題。</span></div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center w-100">
+                                <div class="free-btn"><a href="#fillform">免費體驗</a></div>
+                            </div>
+                        </div>
+                        
+                        <!-- item -->
+                        <div class="item item-05" data-aos="fade-up">
+                            <div class="anchor" id="class_05"></div>
+                            <div class="name"><span>西班牙語課程</span></div>
+                            <div class="row-list">
+                                <div class="tb-row">
+                                    <div class="title"><span>西語</span><span>會話班</span></div>
+                                    <div class="desc"><span>發音規則，到基本詞彙、簡單造句、日常生活表達，順利用西班牙語與外國人溝通。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>旅遊</span><span>西語</span></div>
+                                    <div class="desc"><span>交通問路、敘述旅行經驗、買賣殺價、飯店住宿、兌幣提款、食物點餐。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>生活</span><span>西語</span></div>
+                                    <div class="desc"><span>自我介紹、社交公關、家庭關係、居住環境、身體與疾病。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>當今</span><span>西語</span></div>
+                                    <div class="desc"><span>新聞時事、文化探討。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>休閒</span><span>娛樂</span></div>
+                                    <div class="desc"><span>電影、舞蹈、流行歌曲、經典童話、足球、愛情友情。</span></div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center w-100">
+                                <div class="free-btn"><a href="#fillform">免費體驗</a></div>
+                            </div>
+                        </div>
+                        
+                        <!-- item -->
+                        <div class="item item-06 " data-aos="fade-up">
+                            <div class="anchor" id="class_06"></div>
+                            <div class="name"><span>韓語課程</span></div>
+                            <div class="row-list">
+                                <div class="tb-row">
+                                    <div class="title"><span>韓語</span><span>會話班</span></div>
+                                    <div class="desc"><span>基礎40音，從簡單造句到表達想法與日常對話，順利用韓語與韓國人士溝通。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>旅遊</span><span>韓語</span></div>
+                                    <div class="desc"><span>文化旅遊、預訂飯店、購物買賣、問路、住宿交通。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>在韓</span><span>生活</span></div>
+                                    <div class="desc"><span>四字成語、遊樂園約會、禮節、宿舍生活、線上購物、韓國婚禮。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>文化</span><span>節慶</span></div>
+                                    <div class="desc"><span>景點文化、中秋節與新年、韓服文化、各類節慶。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>流行</span><span>影視</span></div>
+                                    <div class="desc"><span>KTV唱歌、Kakao Talk、有趣新造詞、電影與韓文、Kpop等各項議題。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>韓國</span><span>飲食</span></div>
+                                    <div class="desc"><span>點飲料、夜市小吃、飲食文化、做部隊鍋、喝咖啡。</span></div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center w-100">
+                                <div class="free-btn"><a href="#fillform">免費體驗</a></div>
+                            </div>
+                        </div>
+                        
+                        <!-- item -->
+                        <div class="item item-07" data-aos="fade-up">
+                            <div class="anchor" id="class_07"></div>
+                            <div class="name"><span>法語課程</span></div>
+                            <div class="row-list">
+                                <div class="tb-row">
+                                    <div class="title"><span>基礎</span><span>發音班</span></div>
+                                    <div class="desc"><span>母音、鼻母音、半母音、子音、聯頌與語調，只要14小時輕鬆學會法語發音！</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>情境</span><span>會話</span></div>
+                                    <div class="desc"><span>A1-A2自我介紹、天氣、交通、休閒娛樂......等情境式課程。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>字彙、</span><span>閱讀、</span><span>文法加強</span></div>
+                                    <div class="desc"><span>針對各等級字彙加強複習與補充，提升日常表達與應對文法邏輯，增進閱讀理解能力。</span></div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center w-100">
+                                <div class="free-btn"><a href="#fillform">免費體驗</a></div>
+                            </div>
+                        </div>
+                        
+                        <!-- item -->
+                        <div class="item item-08" data-aos="fade-up">
+                            <div class="anchor" id="class_08"></div>
+                            <div class="name"><span>多益認證課程</span></div>
+                            <div class="row-list">
+                                <div class="tb-row">
+                                    <div class="title"><span>多益</span><span>先修班</span></div>
+                                    <div class="desc"><span class="mark">目標多益450-500分</span><span>基礎聽力、閱讀與文法技巧，熟悉多益題型與考試技巧</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>多益</span><span>基礎班</span></div>
+                                    <div class="desc"><span class="mark">目標多益500-700分</span><span>多益必考文法、字彙，聽力與閱讀技巧養成，搭配題型練習。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>多益</span><span>衝刺班</span></div>
+                                    <div class="desc"><span class="mark">目標多益750-900分</span><span>名師詳解答題策略，多益題型分析，模考練習與題型解說。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>多益</span><span>文法系列</span></div>
+                                    <div class="desc"><span>多益必考文法總整理，文法技巧訓練與多益文法題型演練。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>多益</span><span>聽力系列</span></div>
+                                    <div class="desc"><span>多益聽力情境訓練，職場對話與獨白，多國口音訓練。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>多益</span><span>閱讀系列</span></div>
+                                    <div class="desc"><span>多益常考詞彙演練，閱讀答題技巧演練，有效提升作答速度。</span></div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center w-100">
+                                <div class="free-btn"><a href="#fillform">免費體驗</a></div>
+                            </div>
+                        </div>
+                        
+                        <!-- item -->
+                        <div class="item item-09" data-aos="fade-up">
+                            <div class="anchor" id="class_09"></div>
+                            <div class="name"><span>語言檢定認證班</span></div>
+                            <div class="row-list">
+                                <div class="tb-row">
+                                    <div class="title"><span>全民英檢</span><span>GEPT</span></div>
+                                    <div class="desc"><span>聽說讀寫重點教學，全面提升作達能力，搭配完整模考與解析。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>雅思檢定</span><span>IELTS</span></div>
+                                    <div class="desc"><span>雅思專業名師授課，聽說讀寫全面擊破考題，快速提升作達能力。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>日語檢定</span><span>JLPT</span></div>
+                                    <div class="desc"><span>N5：可掌握生活短文，可從簡短、緩慢的對話中聽出關鍵字。</span><span>N4：可看懂日常生活基本短文，且能大致聽懂速度稍慢之會話。</span><span>N3：可看懂難度稍高之報章雜誌、市調分析等，且能聽懂日常生活的連貫對話。</span><span>N2：能理解期刊專題、評論等文章，且能聽懂大部分情境的連貫對話。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>韓語檢定</span><span>TOPIK</span></div>
+                                    <div class="desc"><span>TOPIK1：約800個常用單字，能完成日常生活必要的基礎會話。</span><span>TOPIK2：約1,500-2,000單字，理解個人熟知的話題，區分正式與非正式用法。</span><span>TOPIK3：日常溝通沒有困難，可區分口語及書面用法，熟悉社會議題。</span><span>TOPIK4：即將開班！</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>西語檢定</span><span>DELE</span></div>
+                                    <div class="desc"><span>A1、A2、B1、B2、C1、C2，根據DELE分級上課，即將開班！</span></div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center w-100">
+                                <div class="free-btn"><a href="#fillform">免費體驗</a></div>
+                            </div>
+                        </div>
+                        
+                        <!-- item -->
+                        <div class="item item-10" data-aos="fade-up">
+                            <div class="anchor" id="class_10"></div>
+                            <div class="name"><span>德語課程</span></div>
+                            <div class="row-list">
+                                <div class="tb-row">
+                                    <div class="title"><span>基礎</span><span>發音班</span></div>
+                                    <div class="desc"><span>子音、母音、複合子音、複合母音、尾音，６小時就能簡單上手，練出最道地德語口音！</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>A1情境</span><span>會話</span></div>
+                                    <div class="desc"><span>在德國打招呼、餐廳訂位/點餐、跟朋友聊天、表達生理狀況......等情境式課程。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>A2進階</span><span>會話</span></div>
+                                    <div class="desc"><span>介紹職業、德國留遊學、德式邀約、用德語讚美別人、行程安排與表達。</span></div>
+                                </div>
+                                <div class="tb-row">
+                                    <div class="title"><span>旅遊</span><span>德語</span></div>
+                                    <div class="desc"><span>針對各等級字彙加強複習與補充，提升表達能力、學習跟朋友出門遊玩的正確邀約方式與文化。</span></div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center w-100">
+                                <div class="free-btn"><a href="#fillform">免費體驗</a></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        
+        </div>
+        
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script type="text/javascript" src="js/default.js?=20220923"></script>
+
+        <!-- wapper結束 -->
+        <!-- HTML END -->
+        <div class="footer">
+            <iframe class="FOOTER_frame" src="/activity/footer/2020/" width="100%" scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
+        </div>
+    </form>
+</body>
+</html>

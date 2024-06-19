@@ -1,0 +1,33 @@
+.layer {
+    width: 100%;
+    padding: 75px 0;
+}
+
+.layer .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 50px;
+    margin: 0 auto;
+}
+
+
+
+@media screen and (max-width: 1023px) {
+
+    .layer {
+        padding: 25px 0;
+    }
+
+    .wrapper {
+        padding: 0 25px;
+    }
+
+}

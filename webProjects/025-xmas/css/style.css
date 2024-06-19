@@ -1,0 +1,580 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body {
+  font-family: Arial,'Noto Sans TC', sans-serif;
+}
+
+.wrapper {
+  position: relative;
+  overflow: hidden;
+    
+}
+
+.hide {
+  display: none;
+}
+
+.mx-0 {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.colorWhite {
+  color: #ffffff;
+}
+
+
+/* 按鈕 */
+.button_style {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: 0;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background-color: #ff0000;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.5vw;
+  padding: 0.2em 1em;
+  border: 0px;
+  border-radius: 2em;
+  cursor: pointer;
+  word-break:keep-all;
+  text-align: center;
+}
+
+.button_style:hover, .button_style:focus, .button_style:active {
+  top: -5px;
+  box-shadow: 0 4px 3px rgb(0 0 0 / 20%);
+  color: #fff;
+}
+
+.modalBt_style {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: 0;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  width: 170px;
+  text-align: center;
+  padding: 10px;
+  margin-top: 30px;
+  margin-bottom: 70px;
+  background-color: #ffffff;
+  color: #cc232b;
+  font-weight: bold;
+  font-size: 22px;
+  border: 0px;
+  border-radius: 50px;
+  cursor: pointer;
+  line-height: 22px;
+}
+
+.modalBt_style:hover, .modalBt_style:focus, .modalBt_style:active {
+  top: -5px;
+  box-shadow: 0 4px 3px rgb(0 0 0 / 20%);
+  color: #cc232b;
+}
+
+.MdReBt_style {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: 0;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  width: 170px;
+  text-align: center;
+  padding: 10px;
+
+  background-color: #4c776c;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 22px;
+  border: 0px;
+  border-radius: 50px;
+  cursor: pointer;
+  line-height: 22px;
+}
+
+.MdReBt_style:hover, .MdReBt_style:focus, .MdReBt_style:active {
+  top: -5px;
+  box-shadow: 0 4px 3px rgb(0 0 0 / 20%);
+  color: #ffffff;
+}
+
+
+.santa, .chimney, .deer, .xmasTree, .snow, .text, .mybt, .grassUp {
+  position: absolute;
+}
+
+.bgGreen {
+  background-color: #61a953;    
+}
+
+.bgtree {
+  width: 100%;
+}
+
+.santa {
+  z-index: 30;
+  width: 20%;
+  left: 18%;
+  margin-top: 1%;
+  animation: santafloat 3s infinite linear;
+}
+@keyframes santafloat {
+  0% {
+    transform:translateY(0px);
+  }
+  50% {
+    transform:translateY(1.5vw);
+  }
+}
+
+.chimney {
+  z-index: 20;
+  width: 20%;
+  left: 17%;
+  margin-top: 32%;
+}
+
+.deer {
+  z-index: 20;
+  width: 20%;
+  left: 64%;
+  margin-top: 2%;
+  animation-duration: 3s;
+}
+
+.xmasTree {
+  z-index: 20;
+  width: 22%;
+  left: 62%;
+  margin-top: 18%;
+}
+
+.snow {
+  z-index: 20;
+  width: 100%;
+  left: 0%;
+  margin-top: 0%;
+}
+
+.text {
+  z-index: 20;
+  width: 24%;
+  left: 38%;
+  margin-top: 10%;
+  animation-delay: 0.8s;
+}
+
+.mybt {
+  z-index: 30;
+  margin-top: 31%;
+  width: 100%;
+}
+
+
+/* modal */
+.modal-content {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+
+}
+
+.modal_bg_start {
+  background-color: #cc232b;
+  background-image: url(../images/bgModalUp.png);
+}
+
+.modal_bg_sec {
+  background-color: #eae4cf;
+  background-image: url(../images/bgModalSuc.png);
+}
+
+.modal-header {
+  border: 0px;
+}
+
+.modalLeaf {
+  width: 210px;
+}
+
+.modal_tit {
+  font-size: 30px;
+  letter-spacing: 5px;
+  font-weight: bold;
+  padding-top: 15px;
+}
+
+.modal_Text {
+  margin: 20px 35px 0px 35px;
+  font-size: 22px;
+  text-align: justify;
+}
+
+.modal_Text_sec {
+  font-size: 22px;
+}
+
+.modalBtbox {
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom 0px left 0px;
+}
+
+.modalStartBg {
+  background-image: url(../images/bgModalDown.png);
+}
+
+.modalFailBg {
+  background-image: url(../images/bgModalFail.png);
+  height: 280px;
+}
+
+/* 遊戲 */
+.bgBlue {
+  background-color: #bee8dd;
+}
+
+.bgBlueH {
+  height: 820px; 
+}
+
+.cardBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  z-index: 50;
+}
+
+.cardsPadding {
+  padding: 0px;
+}
+
+.cards, .card, .view, .details, p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards{
+  height: 390px;
+  width: 390px;
+  color: #ffffff;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cards .card{
+  cursor: pointer;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  height: calc(100% / 3 - 10px);
+  width: calc(100% / 3 - 10px);
+  margin: 5px;
+}
+
+.card.shake{
+  animation: shake 0.35s ease-in-out;
+}
+@keyframes shake {
+  0%, 100%{
+    transform: translateX(0);
+  }
+  20%{
+    transform: translateX(-13px);
+  }
+  40%{
+    transform: translateX(13px);
+  }
+  60%{
+    transform: translateX(-8px);
+  }
+  80%{
+    transform: translateX(8px);
+  }
+}
+
+.cards .card .view{
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  background: rgba(255, 255, 255, 0);
+  border-radius: 10px;
+  backface-visibility: hidden;
+  transition: transform 0.25s linear;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.card {
+  border-radius: 10px;
+  border: 0px;
+  background-color: unset;
+}
+
+.card .front-view img{
+  width: 100%;
+}
+.card .back-view{
+  transform: rotateY(-180deg);
+}
+.card .back-view img{
+  width: 100%;
+}
+.card.flip .front-view{
+  transform: rotateY(180deg);
+}
+.card.flip .back-view{
+  transform: rotateY(0);
+}
+  
+.details{
+  width: 100%;
+  margin-top: 15px;
+  padding: 0 20px;
+  border-radius: 7px;
+  height: 130px;
+  justify-content: center;
+}
+.details p{
+  font-size: 120px;
+}
+
+.details p b{
+  font-weight: 500;
+}
+
+.grass {
+  animation-duration: 1s;
+  background-image: 
+    url(../images/grassUp.png),
+    url(../images/grassDown.png);
+  background-repeat:
+    no-repeat,
+    no-repeat;
+  background-position: 
+    top 0px right 20%,
+    bottom 0px left 20%;
+  background-size: 
+    700px,
+    700px;
+}
+
+.deerHead {
+  width: 100%;
+  max-width: 200px;
+  margin-top: 15%;
+  animation-delay: 0.5s;
+}
+
+.deerHeadBox {
+  text-align: right;
+  height: 100%;
+
+}
+
+.snowmanHead {
+  width: 100%;
+  max-width: 200px;
+  margin-top: 90%;
+  animation-delay: 0.8s;
+}
+
+
+  /* Modal-表單 */
+  .tit_pink {
+    letter-spacing: 0px;
+    color: #e47274;
+  }
+
+  .tit_green {
+    color: #4c776c;
+    font-weight: bold;
+  }
+
+  .formbox {
+    padding-top: 20px;
+  }
+
+  .form {
+    padding: 0px 20px 0px 20px;
+  }
+
+  .form-control {
+      background-color: #ececec;
+      margin-bottom: 10px;
+      border: 0px;
+  }
+
+  .form_button {
+    background-color: #4c776c;
+    color: #ffffff;
+    font-size: 22px;
+    border-radius: 5px;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 40px;
+  }
+
+
+@media screen and (max-width: 992px) {
+
+    .bgtree {
+        width: 210%;
+        margin-left: -22%;
+        margin-top: 40%;
+    }
+    
+    .santa {
+        z-index: 30;
+        width: 39%;
+        left: 3%;
+        margin-top: 72%;
+    }
+    
+    .chimney {
+        display: none;
+    }
+    
+    .deer {
+        display: none;
+    }
+    
+    .deerHead {
+      display: none;
+    }
+
+    .snowmanHead {
+      display: none;
+    }
+
+    .xmasTree {
+        z-index: 20;
+        width: 50%;
+        left: 57%;
+        margin-top: 73%;
+    }
+    
+    .snow {
+        z-index: 20;
+        width: 190%;
+        left: 0%;
+        margin-top: 50%;
+    }
+    
+    .text {
+        z-index: 20;
+        width: 73%;
+        left: 13%;
+        margin-top: 8%;
+    }
+
+
+  .mybt {
+    margin-top: 71%;
+  }
+
+  .button_style {
+    font-size: 4.5vw;
+
+  }
+
+}
+
+
+
+  
+@media screen and (max-width: 768px) {
+    .cards{
+      height: 350px;
+      width: 350px;
+    }
+    .card .front-view img{
+      width: 100%;
+    }
+    .card .back-view img{
+      max-width: 100%;
+    }
+    .details{
+      margin-top: 20px;
+
+
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    
+    .bgBlueH {
+      height: 584px;
+    }
+    .cardBox {
+      margin-top: 0px;
+
+    }
+    .cards{
+      height: 300px;
+      width: 300px;
+    }
+    .card .back-view img{
+      width: 100%;
+    }
+    .details{
+      margin-top: 0px;
+      margin-bottom: -20px;
+      padding: 0 15px;
+      height: calc(100% / 3 - 10px);
+    }
+    .details p{
+      font-size: 70px;
+    }
+    .details button{
+      font-size: 13px;
+      padding: 5px 10px;
+      border: none;
+      color: #fff;
+      background: #6563ff;
+    }
+
+
+    .grass {
+      animation-duration: 1s;
+      background-image: 
+        none,
+        url(../images/grassDown.png);
+      background-repeat:
+        no-repeat,
+        no-repeat;
+      background-position: 
+        top 0px right 20%,
+        bottom 0px left 20%;
+      background-size: 
+        700px,
+        700px;
+    }
+
+    .modal_Text {
+      margin: 20px 10px 0px 10px;
+    }
+    .modal_Text_sec {
+      font-size: 16px;
+    }
+    .form {
+      padding: 0px 0px 0px 0px;
+    }
+
+  }

@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&display=swap');
+
+.wrapper, *:before, *:after {
+    position: relative;
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    .dk-blue {color: #004782;}
+    .colorWhite {color: white;}
+    .colorYellow {color: #ffff00;}
+    .colorGray {color: #989898;}
+    .a2form {
+        background-color: red;
+        color: white;
+        padding: 0.4rem 1rem;
+        text-decoration: none;
+        &:hover {
+            transform: scale(1.7);
+        }
+    }
+
+    .kv {
+        padding-top: 80px;
+        .kv_PC {
+            height: 34vw;
+            display: block;
+            @media screen and (max-width:992px) {
+                display: none;
+            }
+        }
+        .kv_SP {
+            height: 100vw;
+            display: none;
+            @media screen and (max-width:992px) {
+                display: block;
+            }
+        }
+    }
+    .fourfocus {
+        .titStyle {max-width: 466px;}
+        .fourfocusCont {
+            border-radius: 10px;
+            background-color: #b1d3f9;
+            .text-justify {text-align: justify;}
+        }
+    }
+    .fullProgram {
+        background-image: url(../images/fullProgramBg.png);
+        background-size: 100% auto;
+        .titStyle {max-width: 363px;}
+        .fullProgramCont {
+            border-radius: 10px;
+            background-color: white;
+            ul{
+                font-size: 1.25rem;
+            }
+            .btStyle {
+                font-size: 1.25rem;
+                margin-left: 30px;
+                margin-top: 8px;
+            }
+            @media screen and (max-width:992px) {
+                ul {
+                    margin-bottom: 0.2rem;
+                    line-height: 23px;
+                    font-size: 1rem;
+                }
+                .btStyle {
+                    font-size: 1rem;
+                    margin-left: unset;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .form {
+        #myform {
+            position: relative;
+            top: -5rem;
+        }
+        background-color: #0e4b8a;
+        .formTitBr {
+            display: none;
+            @media screen and (max-width:992px) {
+                display: block;
+            }
+        }
+        .bgWhite {background-color: white;}
+        .w-49 {width: 49%;}
+        .btnWidth {
+            width: 49%;
+            @media screen and (max-width:992px) {
+                width: 100%;
+            }
+        }
+        .btnColor {
+            background-color: red;
+            color: white;
+        }
+        a {color: aqua;}
+    }
+    .train {
+        .titStyle {max-width: 259px;}
+        .fullProgramCont {
+            border-radius: 10px;
+            background-color: white;
+            ul{
+                font-size: 1.25rem;
+            }
+            .btStyle {
+                font-size: 1.25rem;
+                margin-left: 30px;
+                margin-top: 8px;
+            }
+            @media screen and (max-width:992px) {
+                ul {
+                    margin-bottom: 0.2rem;
+                    line-height: 23px;
+                    font-size: 1rem;
+                }
+                .btStyle {
+                    font-size: 1rem;
+                    margin-left: unset;
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .vedio {
+        background-color: #cee5ff;
+        .vedioCont {
+            background-color: white;
+            border-radius: 10px;
+            img {
+                cursor: pointer;
+            }
+        }
+        .modal-content {
+            border: unset;
+            border-radius: 10px;
+            .btn-close {
+                position: absolute;
+                z-index: 10;
+                right: -15px;
+                top: -15px;
+                background-color: white;
+                opacity: 1;
+                border: 3px solid black;
+                border-radius: 30px;
+                height: 30px;
+                width: 30px;
+                @media screen and (max-width:992px) {
+                    right: -5px;
+                    top: -10px;
+                }
+            }
+            .modal-body {
+                padding: 2rem;
+                @media screen and (max-width:992px) {
+                    padding: 1.2rem;
+                }
+                .videobox {
+                    aspect-ratio: 16/9;
+                    iframe {
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .teacher {
+        background-color: #cee5ff;
+        .titStyle {max-width: 207px;}
+        .teacherCont {
+            background-color: white;
+            border-radius: 10px;
+            .teacherImg {
+                margin-top: -30px;
+            }
+            .text-justify {
+                text-align: justify;
+            }
+        }
+    }
+    .freeResource {
+        background-image: url(../images/runnyBoy.png);
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: 100% auto;
+        @media screen and (max-width:1700px) {
+            background-size: 130% auto;
+        }
+    
+        .titStyle {max-width: 365px;}
+        .freeResourceCont {
+            border-radius: 10px;
+            overflow: hidden;
+            Img {
+                &:hover{
+                    transform: scale(1.2,1.2);
+                    transition: all 1s ease-out;
+                }
+                @media screen and (max-width:992px) {
+                    transform: scale(1.7);
+                }
+                
+            }
+        }
+    }
+    .get5A {
+        background-color: #0f719f;
+        .titStyle {max-width: 441px;}
+        .parent {
+            width: 100%;
+            padding-bottom: 100%;
+            background-color: #ffffff;
+            box-shadow: 0 0 30px 2px hsl(199, 100%, 8%);
+            a {
+                text-decoration-line: none;
+                color: #0a2c50;
+            }
+            .child {
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                font-family: 'Noto Serif TC', serif;
+                line-height: 25px;
+            }
+        }
+    }
+}
+/* keyframes */
+@keyframes right2left {
+    0% { transform: translate(0, 0); }
+    50% { transform: translate(10px, 0); }
+    100% { transform: translate(0, 0); }
+}

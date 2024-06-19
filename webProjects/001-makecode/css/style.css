@@ -1,0 +1,522 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+.wrapper, *:before, *:after {
+  position: relative;
+  margin: 0;
+  font-family: "Noto Sans TC", sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+  box-sizing: border-box;
+}
+
+.wrapper .kv {
+  background-color: #e2f3ff;
+  padding-top: 80px;
+}
+.wrapper .kv .kv_PC {
+  height: 38vw;
+  display: block;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv .kv_PC {
+    display: none;
+  }
+}
+.wrapper .kv .kv_SP {
+  height: 157.4vw;
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv .kv_SP {
+    display: block;
+  }
+}
+.wrapper a {
+  text-decoration: none;
+}
+.wrapper .courses {
+  background-color: #e2f3ff;
+  background-image: url(../images/bgDeco01.png);
+  background-size: 20%;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+}
+@media screen and (max-width: 1700px) {
+  .wrapper .courses {
+    background-image: unset;
+  }
+}
+.wrapper .courses .heading {
+  margin: 0 1rem 0 1rem;
+  padding-bottom: 1rem;
+}
+.wrapper .courses .heading.bgYellow {
+  background-color: #ffcb1d;
+}
+.wrapper .courses .heading.bgGreen {
+  background-color: #029746;
+}
+.wrapper .courses .heading.textWhite {
+  color: white;
+}
+.wrapper .courses .heading .robot {
+  margin-top: -12px;
+  width: 20%;
+}
+@media screen and (max-width: 1200px) {
+  .wrapper .courses .heading .robot {
+    width: 30%;
+  }
+}
+.wrapper .courses .content {
+  background-color: white;
+  margin: 0 1rem 0 1rem;
+}
+.wrapper .courses .bt2form {
+  cursor: pointer;
+  color: #f77228;
+}
+.wrapper .courses .bt2form .rotate90 {
+  transform: rotate(90deg);
+}
+.wrapper .form #myform {
+  position: relative;
+  top: -4.5rem;
+}
+.wrapper .form .formBg {
+  background-color: #f5f5f5;
+}
+.wrapper .form .formBg .formImg {
+  margin-top: -10%;
+}
+.wrapper .form .formBg .formImg .w-rwd {
+  width: 75%;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .form .formBg .formImg .w-rwd {
+    width: 60%;
+  }
+}
+.wrapper .form .formTable {
+  width: 90%;
+  margin: 0 auto;
+}
+.wrapper .form .formTable .formTit {
+  color: #005db4;
+  font-weight: 900;
+}
+.wrapper .form .formTable .formBr {
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .form .formTable .formBr {
+    display: block;
+  }
+}
+.wrapper .form .formTable .h-42 {
+  height: 42px;
+}
+.wrapper .form .btnColor {
+  background-color: #005db4;
+  color: white;
+}
+.wrapper .form a {
+  color: rgb(0, 119, 255);
+}
+.wrapper .introduce {
+  background-color: #e2f3ff;
+  background-image: url(../images/bgBlue.png), url(../images/bgDeco02.png);
+  background-repeat: no-repeat;
+  background-size: 40%, 15%;
+  background-position: left bottom, right bottom;
+}
+@media screen and (max-width: 1700px) {
+  .wrapper .introduce {
+    background-size: 40%, 0%;
+  }
+}
+.wrapper .introduce .tabCon {
+  background-color: white;
+}
+.wrapper .introduce .tabCon .tab {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  line-height: 1.5;
+  font-weight: 300;
+  color: #fff;
+}
+.wrapper .introduce .tabCon .tabs {
+  overflow: hidden;
+  width: 100%;
+  padding-left: unset;
+  border-bottom: 3px solid #029746;
+}
+.wrapper .introduce .tabCon .tabs li {
+  float: left;
+  line-height: 46px;
+  overflow: hidden;
+  position: relative;
+  width: unset;
+}
+@media screen and (max-width: 768px) {
+  .wrapper .introduce .tabCon .tabs li {
+    width: 100%;
+  }
+}
+.wrapper .introduce .tabCon .tabs a {
+  background-color: #fff;
+  color: #029746;
+  display: block;
+  outline: none;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+  padding: 0 2rem 0 2rem;
+  text-align: center;
+}
+.wrapper .introduce .tabCon .tabs_item {
+  color: black;
+  display: none;
+  padding: 1rem 0;
+}
+.wrapper .introduce .tabCon .tabs_item:first-child {
+  display: block;
+}
+.wrapper .introduce .tabCon .current a {
+  color: #fff;
+  background: #029746;
+}
+.wrapper .introduce .tabCon .bt2form {
+  background-color: #f77228;
+  color: white;
+  padding: 0.25rem 1rem 0.25rem 1rem;
+  cursor: pointer;
+}
+.wrapper .versus .textStyle {
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: bold;
+  padding: 0 1rem 0 1rem;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .versus .textStyle {
+    height: 120px;
+  }
+}
+.wrapper .versus .fs-45 {
+  font-size: 1.25rem;
+}
+@media screen and (max-width: 576px) {
+  .wrapper .versus .fs-45 {
+    font-size: 1rem;
+  }
+}
+.wrapper .versus .colorBlue {
+  color: #005db4;
+}
+.wrapper .versus .before_deep {
+  background-color: #d1d1d1;
+}
+.wrapper .versus .before_light {
+  background-color: #e4e4e4;
+}
+.wrapper .versus .after_deep {
+  background-color: #e4e7f3;
+}
+.wrapper .versus .after_light {
+  background-color: #edf3ff;
+}
+.wrapper .versus .v-line {
+  border-left: 1px solid #005db4;
+  height: 100%;
+  left: 50%;
+}
+.wrapper .versus .circle {
+  top: 45%;
+  text-align: center;
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  background-color: #005db4;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media screen and (max-width: 576px) {
+  .wrapper .versus .circle {
+    height: 44px;
+    width: 44px;
+    border-radius: 22px;
+  }
+}
+.wrapper .versus .pointStyle {
+  font-size: 1.75rem;
+  font-weight: bold;
+  color: white;
+  height: 110px;
+  width: 110px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.wrapper .versus .pointStyle.bgBlue {
+  background-color: #2d7dd2;
+}
+.wrapper .versus .pointStyle.bgGreen {
+  background-color: #97cc04;
+}
+.wrapper .versus .pointStyle.bgYellow {
+  background-color: #eeb902;
+}
+.wrapper .versus .pointStyle.bgOrange {
+  background-color: #f45d01;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .versus .pointStyle {
+    height: 70px;
+    width: 70px;
+    font-size: 1.25rem;
+  }
+}
+.wrapper .versus .bt2form {
+  background-color: #f77228;
+  color: white;
+  padding: 0.25rem 1rem 0.25rem 1rem;
+  cursor: pointer;
+}
+.wrapper .fullCourse {
+  background-color: #e2f3ff;
+  background-image: url(../images/bgDeco03.png), url(../images/bgDeco04.png), url(../images/bgBlue2.png);
+  background-repeat: no-repeat;
+  background-size: 8%, 6%, 30%;
+  background-position: left bottom, right top, left top;
+}
+@media screen and (max-width: 1600px) {
+  .wrapper .fullCourse {
+    background-size: 0%, 0%, 30%;
+  }
+}
+.wrapper .fullCourse .fullCourseBg {
+  background-color: white;
+  padding: 2rem;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .fullCourse .fullCourseBg {
+    padding: 1rem;
+  }
+}
+.wrapper .fullCourse .fullCourseBg .fullCourse_levelBg {
+  width: 90%;
+  height: 100%;
+  background-image: url(../images/fullCourse_levelBg.png);
+  background-size: 10% 100%;
+  color: #347898;
+  font-size: 1.25rem;
+}
+.wrapper .fullCourse .fullCourseBg .fullCourse_levelBg .level1 {
+  height: 33%;
+}
+.wrapper .fullCourse .fullCourseBg .fullCourse_levelBg .level2 {
+  height: 37%;
+}
+.wrapper .fullCourse .fullCourseBg .fullCourse_levelBg .level3 {
+  height: 30%;
+}
+.wrapper .fullCourse .fullCourseBg .tableStyle.redGradient {
+  background: linear-gradient(to bottom, #ffeeee, #ffcece);
+}
+.wrapper .fullCourse .fullCourseBg .tableStyle.blueGradient {
+  background: linear-gradient(to bottom, #ebf7ff, #ceecff);
+}
+.wrapper .fullCourse .fullCourseBg .tableStyle.yellowGradient {
+  background: linear-gradient(to bottom, #fffeed, #f3ee9d);
+}
+.wrapper .fullCourse .fullCourseBg .tableStyle .title {
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-items: center;
+}
+.wrapper .fullCourse .fullCourseBg .tableStyle .title.red {
+  color: #dd2c2c;
+}
+.wrapper .fullCourse .fullCourseBg .tableStyle .title.blue {
+  color: #1d8cd3;
+}
+.wrapper .fullCourse .fullCourseBg .tableStyle .title.yellow {
+  color: #d6af38;
+}
+.wrapper .fullCourse .fullCourseBg .tableStyle .pill {
+  font-size: 1.25rem;
+  border-radius: 50px;
+  padding: 2px 10px;
+  margin-left: 10px;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 30px;
+}
+.wrapper .fullCourse .fullCourseBg .tableStyle .pill.red {
+  border: #dd2c2c solid 3px;
+}
+.wrapper .fullCourse .fullCourseBg .tableStyle .pill.blue {
+  border: #1d8cd3 solid 3px;
+}
+.wrapper .fullCourse .fullCourseBg .tableStyle .pill.yellow {
+  border: #d6af38 solid 3px;
+}
+.wrapper .fullCourse .fullCourseBg .tableStyle .pillBg {
+  font-size: 1.25rem;
+  padding: 0.5rem 0.5rem;
+  font-weight: bold;
+  color: white;
+}
+.wrapper .fullCourse .fullCourseBg .tableStyle .pillBg.red {
+  background-color: #dd2c2c;
+}
+.wrapper .fullCourse .fullCourseBg .tableStyle .pillBg.blue {
+  background-color: #1d8cd3;
+}
+.wrapper .fullCourse .fullCourseBg .tableStyle .pillBg.yellow {
+  background-color: #d6af38;
+}
+.wrapper .fullCourse .fullCourseBg .fullCoursePC {
+  display: block;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .fullCourse .fullCourseBg .fullCoursePC {
+    display: none;
+  }
+}
+.wrapper .fullCourse .fullCourseBg .fullCourseSP {
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .fullCourse .fullCourseBg .fullCourseSP {
+    display: block;
+  }
+}
+.wrapper .fullCourse .bt2form {
+  background-color: #f77228;
+  color: white;
+  padding: 0.25rem 1rem 0.25rem 1rem;
+  cursor: pointer;
+}
+.wrapper .works {
+  background-image: url(../images/bgDeco05.png);
+  background-repeat: no-repeat;
+  background-size: 20%;
+  background-position: right bottom;
+}
+@media screen and (max-width: 1600px) {
+  .wrapper .works {
+    background-size: 0%;
+  }
+}
+.wrapper .works .colorBlue {
+  color: #005db4;
+}
+.wrapper .works .bt2form {
+  background-color: #f77228;
+  color: white;
+  padding: 0.25rem 1rem 0.25rem 1rem;
+  cursor: pointer;
+}
+.wrapper .review {
+  background-color: #e2f3ff;
+  background-image: url(../images/bgBlue2.png);
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position: left top;
+}
+@media screen and (max-width: 1600px) {
+  .wrapper .review {
+    background-size: 30%;
+  }
+}
+.wrapper .review .col-rwd {
+  width: 20%;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .review .col-rwd {
+    width: 50%;
+  }
+}
+.wrapper .review .mt-rwd {
+  margin-top: 5rem;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .review .mt-rwd {
+    margin-top: unset;
+  }
+}
+.wrapper .review .w-86 {
+  width: 86%;
+}
+.wrapper .review .portraitCon {
+  background-color: white;
+  margin-top: -5rem;
+}
+.wrapper .review .portraitCon .blankSpace {
+  height: 5rem;
+}
+.wrapper .review .portraitCon .colorBlue {
+  color: #005db4;
+}
+.wrapper .review .portraitCon .text-justify {
+  text-align: justify;
+}
+.wrapper .review .footerImg {
+  width: 100%;
+  height: 28px;
+}
+
+/* keyframes */
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes wave {
+  0% {
+    transform: translate3d(-90px, 0, 0);
+  }
+  50% {
+    transform: translate3d(85px, 0, 0);
+  }
+  100% {
+    transform: translate3d(-90px, 0, 0);
+  }
+}
+@keyframes rotateRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}/*# sourceMappingURL=style.css.map */

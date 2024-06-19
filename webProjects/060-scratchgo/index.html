@@ -1,0 +1,420 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>旅遊大富翁 | 學好外語輕鬆出國去-領取免費外語課程</title>
+    <meta name="Title" content="旅遊大富翁 | 學好外語輕鬆出國去-領取免費外語課程" />
+    <meta name="Description" content="填表即享參加獎,免費體驗線上英語,日語,韓語,西班牙語,法語,德語任一語言課程!最大獎雙人來回機票,報名指定課程就有機會抽到大獎,趕快來挑戰吧!" />
+    <meta name="keywords" content="旅遊英文,旅遊日文,旅遊韓文,旅遊西班牙文,旅遊法文,旅遊德文" />
+    <meta property="og:title" content="旅遊大富翁 | 學好外語輕鬆出國去-領取免費外語課程" />
+    <meta property="og:url" content="https://www.abconline.com.tw/activity/other/060-scratchgo/index.html" />
+    <meta property="og:image" content="images/shareCard.jpg" />
+    <meta property="og:description" content="填表即享參加獎,免費體驗線上英語,日語,韓語,西班牙語,法語,德語任一語言課程!最大獎雙人來回機票,報名指定課程就有機會抽到大獎,趕快來挑戰吧!" />
+    <link rel="canonical" href="https://www.abconline.com.tw/activity/other/060-scratchgo/index.html" />
+    <!-- Page Info Insert END -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="/wGuest/js/m_pcschool.js"></script>
+    <!-- Include JS & CSS Start -->
+    <link href="css/comm-style.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/aos.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/aos.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- 刮刮樂外掛 -->
+    <script type="text/javascript" src="js/scratchcard.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <!--非填單按鈕使用class name="activity-page-click-count"-->
+    <!-- Include JS & CSS End -->
+    <script type="text/javascript">
+        //留單相關，看過後請把註解刪掉喔!  -----start
+        var dept = "KZ2";
+        var seq_no = "0";
+        var web_pno = ""; //電腦版pno
+        var NList_Type = "5";
+        var fromto = "";
+        var Gift = "";
+        var is_Mobile = "0";
+
+        /*手機板 pno 判斷相關 >> start */
+        $(function () {
+            if (isMobile()) {
+                web_pno = "110035500002";  //手機板pno
+                is_Mobile = "1";   
+            }
+        });
+
+        function isMobile() {
+            try { document.createEvent("TouchEvent"); return true; }
+            catch (e) { return false; }
+        }
+        /*手機板 pno 判斷相關 >> end*/
+        
+
+
+        function but_send() {
+            $('#sBut').hide();
+
+            var JSonData = {
+                "name": $("#name").val(),
+                "studentNum": $("#studentNum").val(),
+                "staffNum": $("#staffNum").val(),
+
+                "mobile": $("#mobile").val(),
+                "email": $("#email").val(),
+                "seq_no": seq_no,
+                "dept_no": dept,
+                "memo": "登記索取2020最新課表，加贈1200堂英日語數位課程！" + Gift,
+                "web_pno": web_pno,
+                "fromto": QueryString("fromto") != null ? QueryString("fromto") : fromto,
+                "fromurl": document.location.href, 
+                "sourceid": QueryString("fc") != null ? QueryString("fc") : "",
+                "NList_Type": NList_Type,
+                "IsSend": "N",
+                "func": "njycooooqj",
+            }
+
+            if (JSonData.name == "" || JSonData.name == "姓名") {
+                // alert('請填寫姓名');
+                document.getElementById("openModal_wrong").click();
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.studentNum == "" || JSonData.studentNum == "請輸入學員編號") {
+                // alert('請輸入學員編號');
+                document.getElementById("openModal_wrong").click();
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.staffNum == "" || JSonData.staffNum == "請輸入顧問員編") {
+                // alert('請輸入顧問員編');
+                document.getElementById("openModal_wrong").click();
+                $('#sBut').show();
+                return false;
+            }
+            goSubmit(JSonData, s, f);
+
+        }
+
+        function s(data) {
+            if (data[0].result == "1") {
+                $("#name").val("");
+                $("#studentNum").val("");
+                $("#staffNum").val("");
+                $("#sBut").show();
+                document.location.href = "/wGuest/loadover.htm";
+            } else {
+                alert('送出失敗！');
+                $("#sBut").show();
+            }
+        }
+        function f(data) {
+            alert(data);
+            $("#sBut").show();
+        }
+        //留單相關，看過後請把註解刪掉喔!  -----end
+
+
+
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-WSWZFBP');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSWZFBP"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <form id="form1" runat="server">
+        <div class="top">
+            <iframe src="/activity/header/2020/" width="100%" height="65px" scrolling="No" frameborder="0" allowtransparency="allowTransparency" class="ifar"></iframe>
+        </div>
+        <!-- HTML Start -->      
+        <!-- wapper開始 -->        
+        <div class="wrapper blueBg">
+            <section>
+                <div class="Banner">
+                    <img class="paris_SP" src="images/paris_SP.png">
+                    <img class="paris" src="images/paris.png">
+                    <img class="japan" src="images/japan.png">
+                    <img class="beach" data-aos="fade-up" data-aos-duration="450" data-aos-delay="100" src="images/beach.png">
+                    <img class="england" src="images/england.png">
+                    <img class="snowboard" data-aos="fade-up" data-aos-duration="450" data-aos-delay="300" src="images/snowboard.png">
+                    <a href="#game">
+                        <img class="title" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="10" src="images/title.png">
+                    </a>
+                    <img class="leafs" src="images/leafs.png">
+                </div>
+            </section>
+
+            <section>
+                <div id="game" class="text-center">
+                    <img class="titScratch" src="images/titScratch.png" alt="機會命運由你決定刮出大獎吧">
+                </div>
+                <div class="choiceBox" id="tab-btn">
+                    <div class="choice-btn active" data-img="images/chanceCard.png">
+                        <div class="box box1">
+                            <h3>選擇</h3>
+                            <img src="images/chanceTexture.png" alt="機會" />
+                        </div>
+                        <div class="downAnchor_box active">
+                            <svg width="20" height="20" fill="currentColor" class="bi bi-triangle-fill DownAnchor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M7.022 1.566a1.13 1.13 0 0 1 1.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H1.144c-.889 0-1.437-.99-.98-1.767L7.022 1.566z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="choice-btn"  data-img="images/fateCard.png">
+                        <div class="box box2">
+                            <h3>選擇</h3>
+                            <img src="images/fadeTexture.png" alt="命運" />
+                        </div>
+                        <div class="downAnchor_box">
+                            <svg width="20" height="20" fill="currentColor" class="bi bi-triangle-fill DownAnchor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M7.022 1.566a1.13 1.13 0 0 1 1.96 0l6.857 11.667c.457.778-.092 1.767-.98 1.767H1.144c-.889 0-1.437-.99-.98-1.767L7.022 1.566z"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <!-- 刮刮樂 -->
+                <div class="blueLight">
+                    <div class="container-sm py-5 sc__wrapper">
+                        <div id="js--sc--container" class="sc__container">
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Modal-填單 -->
+            <div id="openModal_sheets">填單</div>
+            <div id="myModal_sc1" class="modal_bg">
+                <div class="container-modal">
+                    <div class="modal-content_sc">
+                        <div class="px-3 py-3" id="fillform">
+                            <div class="col-12 my-3">
+                                <input name="ea" type="text" class="form-control" id="name" placeholder="姓名" />
+                            </div>
+                            <div class="col-12 my-3">
+                                <input name="studentNum" type="text" class="form-control" id="studentNum" placeholder="請輸入學員編號" />
+                            </div>
+                            <div class="col-12 my-3">
+                                <input name="staffNum" type="text" class="form-control" id="staffNum" placeholder="請輸入顧問員編" />
+                            </div>
+                            <div class="col-12">
+                                <div id="sBut" onClick="but_send();" style="cursor:pointer;">
+                                    <div id="close_sc1" class="modalBt_style">開始刮</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal-填寫有誤 -->
+            <div id="openModal_wrong">填寫有誤</div>
+            <div id="myModal_sc2" class="modal_bg">
+                <div class="container-modal">
+                    <div class="modal-content_sc">
+                        <div class="px-3 py-3">
+                            <img src="images/wrongsign.png">
+                            <p class="fz-22">資料填寫有誤，<br>請檢查後再重新輸入。</p>
+                            <div class="col-12">
+                                <div id="close_sc2" class="modalBt_style">關閉視窗</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal-獎品 -->
+            <div id="openModal_gift">恭喜獲得</div>
+            <div id="myModal_sc3" class="modal_bg">
+                <div class="container-modal">
+                    <div class="modal-content_sc">
+                        <div class="gift_bg px-3 py-3">
+                            <span class="fz-22">恭喜獲得</span>
+                            <div class="giftStyle pb-3">
+                                LINE點數300點
+                            </div>
+                            <div class="col-12">
+                                <div id="close_sc3" class="modalBt_style">關閉視窗</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 活動說明 -->
+            <section class="bgLake">
+                <div class="text-center py-4">
+                    <img class="titEventdetil" src="images/titEventdetil.png" alt="活動辦法">
+                </div>
+                <div class="container-sm">
+                    <ol class="text-white pb-5">
+                        <li>登記參加本活動方式為本網頁登記、或透過課程顧問協助登記。學員註冊活動專案課程後即可參加抽獎，並於首堂課程開課7天後可兌換獎項。</li>
+                        <li>本活動時間為2023年4月1日起，至2023年6月30日止。舉凡活動期間完成註冊課程之學員皆可參加抽獎。</li>
+                        <li>中獎者(含學員)兌換獎項，需搭配指定新專案課程使用，不得搭配已購買課程使用。</li>
+                        <li>每人最多登記一次，中獎者不得要求兌換現金、或更改獎項、或任何調整事項。</li>
+                        <li>本活動為專案限定活動，獎項不得與其他優惠活動合併使用。</li>
+                        <li>本活動獎項限量兌換，活動期間內未完成獎項兌換者，即視為放棄得獎資格。</li>
+                        <li>得獎人需依規定填寫相關收據及資料，若中獎者不願意提供相關資料，視同放棄中獎資格，不另行通知。</li>
+                        <li>中獎者若未滿20歲，須獲得法定監護人同意及代為領取。依中華民國所得稅法規定，獎項價值將列入個人年度綜合所得稅申報(稅額以獎品市價計算)中獎價值超過稅法規定金額，須繳納10%稅金(稅額以獎品市價計算)巨匠依法代收中獎稅金，若中獎人未能如期依法繳納應繳稅額，即視為放棄得獎資格。</li>
+                        <li>如有未盡事宜，巨匠線上真人保留解釋、變更及終止活動內容之權利，且不另行通知。</li>
+                   </ol>
+                </div>
+            </section>
+
+
+
+            <!-- wapper結束 -->
+        <!-- HTML END -->
+        <div class="footer">
+            <iframe class="FOOTER_frame" src="/activity/footer/2020/" width="100%" scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
+        </div>
+
+        
+        <!--aos-->
+        <script src="js/aos.js"></script>
+
+        <script>
+            AOS.init({
+                easing: 'ease-in-out-sine',
+            });
+            
+            //錨點效果
+            $(function () {
+                $('a[href*=#]:not([href=#])').click(function() {
+                    var target = $(this.hash);
+                $('html,body').animate({
+                    scrollTop: target.offset().top
+                }, 500);
+            return false;
+            });
+
+            });
+
+
+
+            //刮刮樂
+            function sc2(name) {
+                const scContainer = document.getElementById('js--sc--container')
+                const scInfos = document.querySelector('.sc__infos');
+                const sc = new ScratchCard('#js--sc--container', {
+                scratchType: SCRATCH_TYPE.BRUSH,
+                containerWidth: scContainer.offsetWidth,
+                containerHeight: scContainer.offsetWidth*0.68,
+                brushSrc: 'images/brush.png',
+                imageForwardSrc: name,
+                imageBackgroundSrc: '/images/result.png',
+                htmlBackground: '',
+                clearZoneRadius: 0,
+                nPoints: 30,
+                pointSize: 4,
+                callback: function () {
+                    // alert('Now the window will reload !')
+                    // window.location.reload()
+                    document.getElementById("openModal_gift").click();
+                }
+            })
+            // Init
+            sc.init().then(() => {
+            sc.canvas.addEventListener('scratch.move', () => {
+                let percent = sc.getPercent().toFixed(0);
+                scInfos.innerHTML = percent + '%';
+                console.log(percent)
+            })
+            }).catch((error) => {
+            // image not loaded
+            alert(error.message);
+            });
+            }
+
+            sc2("images/chanceCard.png");
+
+
+
+
+            
+
+            // Modal_1 填單
+            document.getElementById("openModal_sheets").onclick = function() {
+                document.getElementById("myModal_sc1").style.display = "block";
+                document.body.classList.add("modal-fix_sc");
+            }
+            // 當用戶點擊Modal之外的區域時，隱藏Modal
+            var modal_sc1 = document.getElementById("myModal_sc1");
+            window.addEventListener("click", function(event) {
+                if (event.target == modal_sc1) {
+                    modal_sc1.style.display = "none";
+                    document.body.classList.remove("modal-fix_sc");
+                }
+            })
+
+            // Modal_2 填寫錯誤
+            document.getElementById("openModal_wrong").onclick = function() {
+                document.getElementById("myModal_sc2").style.display = "block";
+                document.body.classList.add("modal-fix_sc");
+            }
+            // 當用戶點擊Modal之外的區域以及關閉按鈕時，隱藏Modal
+            var modal_sc2 = document.getElementById("myModal_sc2");
+            window.addEventListener("click", function(event) {
+            if (event.target == modal_sc2) {
+                modal_sc2.style.display = "none";
+                document.body.classList.remove("modal-fix_sc");
+            }
+            })
+            document.getElementById("close_sc2").onclick = function() {
+                modal_sc2.style.display = "none";
+                document.body.classList.remove("modal-fix_sc");
+            }
+            
+            // Modal_3 公布禮物
+            document.getElementById("openModal_gift").onclick = function() {
+                document.getElementById("myModal_sc3").style.display = "block";
+                document.body.classList.add("modal-fix_sc");
+            }
+            // 當用戶點擊Modal之外的區域以及關閉按鈕時，隱藏Modal
+            var modal_sc3 = document.getElementById("myModal_sc3");
+            window.addEventListener("click", function(event) {
+            if (event.target == modal_sc3) {
+                modal_sc3.style.display = "none";
+                document.body.classList.remove("modal-fix_sc");
+            }
+            })
+            document.getElementById("close_sc3").onclick = function() {
+                modal_sc3.style.display = "none";
+                document.body.classList.remove("modal-fix_sc");
+            }
+
+            // 滑鼠點擊刮刮卡時跳出填單
+            document.getElementById('js--sc--container').addEventListener("mousedown", function(event) {
+                document.getElementById("openModal_sheets").click();
+            })
+            // 手指點擊刮刮卡時跳出填單
+            document.getElementById('js--sc--container').addEventListener("touchstart", function(event) {
+                document.getElementById("openModal_sheets").click();
+            })
+
+        </script>
+
+        <script type="text/javascript" src="js/tab.js"></script>
+    </form>
+</body>
+</html>

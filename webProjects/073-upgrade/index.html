@@ -1,0 +1,656 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>【索取60堂檢定課】讓自己外語力升級超有感！</title>
+    <meta name="Title" content="【索取60堂檢定課】讓自己外語力升級超有感！" />
+    <meta name="Description" content="各式語言檢定課程自由搭配,英語有多益TOEIC和雅思IELTS,日語有JLPT日本語能力試驗,韓語有TOPIK,西班牙語有DELE,既然學了外語就要考張證照來證明自己的實力,求職履歷更加分!" />
+    <meta name="keywords" content="檢定,語言證照,英語檢定,日語檢定,韓語檢定,西班牙語檢定" />
+    <meta property="og:title" content="【索取60堂檢定課】讓自己外語力升級超有感！" />
+    <meta property="og:url" content="https://www.abconline.com.tw/activity/other/073-upgrade/index.html" />
+    <meta property="og:image" content="images/shareCard.png" />
+    <meta property="og:description" content="各式語言檢定課程自由搭配,英語有多益TOEIC和雅思IELTS,日語有JLPT日本語能力試驗,韓語有TOPIK,西班牙語有DELE,既然學了外語就要考張證照來證明自己的實力,求職履歷更加分!" />
+    <link rel="canonical" href="https://www.abconline.com.tw/activity/other/073-upgrade/index.html" />
+    <!-- Page Info Insert END -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="/wGuest/js/m_pcschool.js"></script>
+    <!-- Include JS & CSS Start -->
+    <link href="css/comm-style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/gotop.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!--非填單按鈕使用class name="activity-page-click-count"-->
+    <!-- Include JS & CSS End -->
+    <script type="text/javascript">
+        //留單相關，看過後請把註解刪掉喔!  -----start
+        var dept = "KZ2";
+        var seq_no = "0";
+        var web_pno = ""; //電腦版pno
+        var NList_Type = "5";
+        var fromto = "";
+        var Gift = "";
+        var is_Mobile = "0";
+
+        /*手機板 pno 判斷相關 >> start */
+        $(function () {
+            if (isMobile()) {
+                web_pno = "110035500002";  //手機板pno
+                is_Mobile = "1";   
+            }
+        });
+
+        function isMobile() {
+            try { document.createEvent("TouchEvent"); return true; }
+            catch (e) { return false; }
+        }
+        /*手機板 pno 判斷相關 >> end*/
+        
+
+
+        function but_send() {
+            $('#sBut').hide();
+            //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----start
+            GetPno();
+            if (Gift == "") {
+                alert('請選擇想學習的語言。');
+                $('#sBut').show();
+                return false;
+            }
+            //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----end
+            var JSonData = {
+                "name": $("#name").val(),
+                "mobile": $("#mobile").val(),
+                "email": $("#email").val(),
+                "seq_no": seq_no,
+                "dept_no": dept,
+                "memo": "檢定60堂+1200堂英日數位課" + Gift,
+                "web_pno": web_pno,
+                "fromto": QueryString("fromto") != null ? QueryString("fromto") : fromto,
+                "fromurl": document.location.href, 
+                "sourceid": QueryString("fc") != null ? QueryString("fc") : "",
+                "NList_Type": NList_Type,
+                "IsSend": "N",
+                "func": "njycooooqj"
+            }
+
+            if ($("input[name=per_chk]:checked").length == 0) {
+                alert('請勾選同意個資保護聲明。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.name == "" || JSonData.name == "姓 名") {
+                alert('請填寫入姓名。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile == "" || JSonData.mobile == "行動電話") {
+                alert('請填寫行動電話。');
+                $('#sBut').show();
+                return false;
+            }
+            if (isNaN(JSonData.mobile) == true) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile.length != 10) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.email == "" || JSonData.email == "E-Mail") { JSonData.email = "" } else {
+                if (JSonData.email.indexOf("@") <= -1) {
+                    alert('電子郵件格式錯誤。');
+                    $('#sBut').show();
+                    return false;
+                }
+            }
+            goSubmit(JSonData, s, f);
+        }
+
+        function s(data) {
+            if (data[0].result == "1") {
+                $("#name").val("");
+                $("#mobile").val("");
+                $("#sBut").show();
+                document.location.href = "/wGuest/loadover.htm";
+            } else {
+                alert('送出失敗！');
+                $("#sBut").show();
+            }
+        }
+        function f(data) {
+            alert(data);
+            $("#sBut").show();
+        }
+        //留單相關，看過後請把註解刪掉喔!  -----end
+
+        //下拉選單有不同語系課程時使用，如果沒有要用就刪掉(左SP右邊PC)  -----start
+        function GetPno() {
+            var select_val = $("#dpGift :selected").val();
+            switch (select_val) {
+                case "english":
+                    web_pno = is_Mobile == "1" ? "113011500043" : "113011500042";
+                    Gift = "我想領英語";
+                    break;
+                case "japanese":
+                    web_pno = is_Mobile == "1" ? "113011500045" : "113011500044";
+                    Gift = "我想領日語";
+                    break;
+                case "korean":
+                    web_pno = is_Mobile == "1" ? "113011500047" : "113011500046";
+                    Gift = "我想領韓語";
+                    break;
+                case "spanish":
+                    web_pno = is_Mobile == "1" ? "113011500049" : "113011500048";
+                    Gift = "我想領西語";
+                    break;
+                case "french":
+                    web_pno = is_Mobile == "1" ? "113011500051" : "113011500050";
+                    Gift = "我想領法語";
+                    break;
+                case "german":
+                    web_pno = is_Mobile == "1" ? "113011500053" : "113011500052";
+                    Gift = "我想領德語";
+                    break;
+                case "childrenForeign":
+                    web_pno = is_Mobile == "1" ? "113011500055" : "113011500054";
+                    Gift = "我想領兒童美語";
+                    break;
+                case "childrenJapanese":
+                    web_pno = is_Mobile == "1" ? "113011500057" : "113011500056";
+                    Gift = "我想領兒童日語";
+                    break;
+            }
+        }
+        //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----end
+
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-WSWZFBP');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSWZFBP"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <form id="form1" runat="server">
+        <div class="top">
+            <iframe src="https://www.abconline.com.tw/activity/header/2020/" width="100%" height="65px" scrolling="No" frameborder="0" allowtransparency="allowTransparency" class="ifar"></iframe>
+        </div>
+        <!-- HTML Start -->
+
+        <!-- wapper開始 -->
+        <div class="wrapper">
+            <section class="kv">
+                <div class="kvPC position-relative overflow-hidden">
+                    <img class="position-absolute w-100" src="images/kv_pc_background.png">
+                    <img class="position-absolute w-100 kv_pc_cloud1" src="images/kv_pc_cloud1.png">
+                    <img class="position-absolute w-100 kv_pc_cloud2" src="images/kv_pc_cloud2.png">
+                    <img class="position-absolute w-100 kv_pc_cloud3" src="images/kv_pc_cloud3.png">
+                    <img class="position-absolute kv_pc_cpt" src="images/kv_pc_cpt.png">
+                    <div class="position-absolute rocket">
+                        <div class="position-relative">
+                            <img class="position-absolute w-100 rocketIn" src="images/rocket.png">
+                            <img class="position-absolute w-100 rocketlight" src="images/rocketlight.png">
+                        </div>
+                    </div>
+                    <img class="position-absolute pinkball" src="images/pinkball.png">
+                    <a href="#myform">
+                        <div class="position-absolute kv_title">
+                            <img class="position-absolute w-100" src="images/kv_pc_title.png">
+                            <img class="position-absolute w-100 pc_title_mask" src="images/kv_pc_title_light.png">
+                        </div>
+                    </a>
+                </div>
+                <div class="kvSP position-relative overflow-hidden">
+                    <img class="position-absolute w-100" src="images/kv_sp_background.png">
+                    <img class="position-absolute w-100 kv_pc_cloud1" src="images/kv_sp_cloud1.png">
+                    <img class="position-absolute w-100 kv_pc_cloud2" src="images/kv_sp_cloud2.png">
+                    <img class="position-absolute w-100 kv_pc_cloud3" src="images/kv_sp_cloud3.png">
+                    <img class="position-absolute kv_sp_cpt1" src="images/kv_sp_cpt1.png">
+                    <img class="position-absolute kv_sp_cpt2" src="images/kv_sp_cpt2.png">
+                    <div class="position-absolute rocket">
+                        <div class="position-relative">
+                            <img class="position-absolute w-100 rocketIn" src="images/rocket_sp.png">
+                            <img class="position-absolute w-100 rocketlight" src="images/rocketlight.png">
+                        </div>
+                    </div>
+                    <img class="position-absolute pinkball" src="images/pinkball.png">
+                    <a href="#myform">
+                        <div class="position-absolute kv_title">
+                            <img class="position-absolute w-100" src="images/kv_sp_title.png">
+                            <img class="position-absolute w-100 pc_title_mask" src="images/kv_sp_title_light.png">
+                        </div>
+                    </a>
+                </div>
+            </section>
+            <div class="gotop">
+                <a class="row_fill" href="#myform">
+                    <img class="row_fill_img" src="images/goup.png">
+                </a>
+            </div>
+            <!-- 表單開始 -->
+            <section class="form">
+                <div id="myform"></div>
+                <div class="container">
+                    <div class="text-center formTitle">
+                        <h1><div class="fs-1 fw-bold heading">線上領60堂檢定課</div></h1>
+                        <div class="fs-5 fw-bold subHeading">搭配獨家線上會話課程最划算！</div>
+                    </div>
+                    <div class="d-flex flex-wrap">
+                        <div class="col-lg-5 col-12 text-center pt-2 my-auto">
+                            <img class="formImg" src="images/formImg.png">
+                        </div>
+                        <div class="col-lg-7 col-12 align-self-center pt-2">
+                            <div class="d-flex justify-content-between mb-2">
+                                <input name="ea" type="text" class="w-49 py-2 px-2 h50 rounded-3 border border-Secondary bg-light" id="name" placeholder="姓 名" />
+                                <input name="mobile" type="text" class="w-49 py-2 px-2 h50 rounded-3 border border-Secondary bg-light" id="mobile" placeholder="電 話" />
+                            </div>
+                            <input name="email" type="text" class="w-100 py-2 px-2 h50 rounded-3 border border-Secondary bg-light mb-2" id="email" placeholder="E-Mail" />
+                            <select id="dpGift" class="w-100 py-2 px-2 h50 rounded-3 border border-Secondary bg-light mb-2">
+                                <option value="select" selected>選擇想學習的語言</option>
+                                <option value="english">我想領英語課</option>
+                                <option value="japanese">我想領日語課</option>
+                                <option value="korean">我想領韓語課</option>
+                                <option value="spanish">我想領西語課</option>
+                                <option value="french">我想領法語課</option>
+                                <option value="german">我想領德語課</option>
+                                <option value="childrenForeign">我想領兒童美語課</option>
+                                <option value="childrenJapanese">我想領兒童日語課</option>
+                            </select>
+                            <span class="align-self-center">
+                                <label class="align-self-center"><input class="form-check-input rounded-pill" type="checkbox" name="per_chk" checked="checked"></label>
+                                <span style="font-size: 15px; margin: auto 0;">我已詳細閱讀並接受<a onclick="window.open('/activity/abconline/contract_02/','person',config='height=640,width=830');return false;" href="#">個資保護聲明</a></span>
+                            </span>
+                            <span class="w-100 fs-5 fw-bold hvr-bounce-to-right" id="sBut" onClick="but_send();">
+                                免費登記
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 表單結束 -->
+
+            <section class="cpts mt-5 py-5">
+                <div class="container">
+                    <div class="text-center fs-1 fw-bold heading" data-aos="fade-up" data-aos-duration="500">
+                        最新證照課程，檢定輕鬆ALL PASS！
+                    </div>
+                    <div class="d-flex flex-wrap cptCont mt-5" data-aos="fade-up" data-aos-duration="500">
+                        <div class="col-lg-5 col-12">
+                            <div class="cpt1-hdBgColor cpt-heading h-100 px-4 py-4">
+                                <div class="title fs-2 fw-bold text-center">
+                                    獨家！TOIEC多益檢定課程
+                                </div>
+                                <hr>
+                                <div class="fs-5 text-center">
+                                    <div>●FREE 60堂任選，加贈多益模考10回</div>
+                                    <div>●搭配情境會話課，考照+口說雙提升</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-12 my-auto">
+                            <div class=" cpt-content d-flex flex-wrap px-4 py-4">
+                                <div class="col-lg-7 col-12">
+                                    <span class="cpt1-ctBgColor title fs-4 px-5 py-2 rounded-pill">兌換內容</span>
+                                    <div class="lh-lg pt-3">
+                                        多益入門文法加強 / 多益入門字彙加強<br>
+                                        多益入門聽力加強 / 多益入門聽力解題<br>
+                                        多益入門閱讀解題 / 多益文法大團班<br>
+                                        中高程度字彙閱讀 / 中高程度聽力解題<br>
+                                        中高程度閱讀解題
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-12">
+                                    <div class="BtAlign">
+                                        <img class="w-100" src="images/toeic.png">
+                                        <a href="#myform">
+                                            <span class="cpt1-ctBgColor title fs-4 fw-bold px-4 py-2 rounded-pill hvr-shadow">線上兌換</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap cptCont mt-5" data-aos="fade-up" data-aos-duration="500">
+                        <div class="col-lg-5 col-12">
+                            <div class="cpt2-hdBgColor cpt-heading h-100 px-4 py-4">
+                                <div class="title fs-2 fw-bold text-center">
+                                    獨家！JLPT日文檢定課程
+                                </div>
+                                <hr>
+                                <div class="fs-5 text-center">
+                                    <div>●FREE 60堂任選，加贈日檢模考5回</div>
+                                    <div>●搭配當今日本會話，考照+口說雙提升</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-12 my-auto">
+                            <div class=" cpt-content d-flex flex-wrap px-4 py-4">
+                                <div class="col-lg-7 col-12">
+                                    <span class="cpt2-ctBgColor title fs-4 px-5 py-2 rounded-pill">兌換內容</span>
+                                    <div class="lh-lg pt-3">
+                                        基礎文法大團班 / N5日檢必學文法<br>
+                                        日語萬事屋 / N4日檢必學文法<br>
+                                        N3日檢實力養成 / N2日語實力養成
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-12">
+                                    <div class="BtAlign">
+                                        <img class="w-100" src="images/jlpt.png">
+                                        <a href="#myform">
+                                            <span class="cpt2-ctBgColor title fs-4 fw-bold px-4 py-2 rounded-pill hvr-shadow">線上兌換</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap cptCont mt-5" data-aos="fade-up" data-aos-duration="500">
+                        <div class="col-lg-5 col-12">
+                            <div class="cpt3-hdBgColor cpt-heading h-100 px-4 py-4">
+                                <div class="title fs-2 fw-bold text-center">
+                                    獨家！TOPIK韓語檢定課
+                                </div>
+                                <hr>
+                                <div class="fs-5 text-center">
+                                    <div>●FREE 60堂任選，加贈旅遊攻略書</div>
+                                    <div>●搭配文化節慶課程，考照+口說雙提升</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-12 my-auto">
+                            <div class=" cpt-content d-flex flex-wrap px-4 py-4">
+                                <div class="col-lg-7 col-12">
+                                    <span class="cpt3-ctBgColor title fs-4 px-5 py-2 rounded-pill">兌換內容</span>
+                                    <div class="lh-lg pt-3">
+                                        韓檢基礎必備文法 / 韓語基礎必備助詞<br>
+                                        漢字數字與純韓文數字<br>
+                                        常見副詞及行程相關動詞<br>
+                                        12堂課搞定TOPIK I 字彙<br>
+                                        12堂課搞定TOPIK I 句型
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-12">
+                                    <div class="BtAlign">
+                                        <img class="w-100" src="images/topik.png">
+                                        <a href="#myform">
+                                            <span class="cpt3-ctBgColor title fs-4 fw-bold px-4 py-2 rounded-pill hvr-shadow">線上兌換</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap cptCont mt-5" data-aos="fade-up" data-aos-duration="500">
+                        <div class="col-lg-5 col-12">
+                            <div class="cpt4-hdBgColor cpt-heading h-100 px-4 py-4">
+                                <div class="title fs-2 fw-bold text-center">
+                                    獨家！IELTS雅思檢定課程
+                                </div>
+                                <hr>
+                                <div class="fs-5 text-center">
+                                    <div>●FREE 60堂任選，加贈旅遊攻略書</div>
+                                    <div>●搭配生活旅遊課程，考照+口說雙提升</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-12 my-auto">
+                            <div class=" cpt-content d-flex flex-wrap px-4 py-4">
+                                <div class="col-lg-7 col-12">
+                                    <span class="cpt4-ctBgColor title fs-4 fw-bold px-5 py-2 rounded-pill">兌換內容</span>
+                                    <div class="lh-lg pt-3">
+                                        聽力 / 口說<br>
+                                        閱讀 / 寫作
+
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-12">
+                                    <div class="BtAlign">
+                                        <img class="w-100" src="images/ielts.png">
+                                        <a href="#myform">
+                                            <span class="cpt4-ctBgColor title fs-4 fw-bold px-4 py-2 rounded-pill hvr-shadow">線上兌換</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap cptCont mt-5 mb-4" data-aos="fade-up" data-aos-duration="500">
+                        <div class="col-lg-5 col-12">
+                            <div class="cpt5-hdBgColor cpt-heading h-100 px-4 py-4">
+                                <div class="title fs-2 fw-bold text-center">
+                                    獨家！DELE西班牙語檢定
+                                </div>
+                                <hr>
+                                <div class="fs-5 text-center">
+                                    <div>●FREE 60堂任選，加贈旅遊攻略書</div>
+                                    <div>●配西語會話課，考照+口說雙提升</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-7 col-12 my-auto">
+                            <div class=" cpt-content d-flex flex-wrap px-4 py-4">
+                                <div class="col-lg-7 col-12">
+                                    <span class="cpt5-ctBgColor title fs-4 px-5 py-2 rounded-pill">兌換內容</span>
+                                    <div class="lh-lg pt-3">
+                                        中級閱讀文法加強 / B1 檢定衝刺<br>
+                                        DELE閱讀技巧班<br>
+                                        DELE聽力技巧班<br>
+                                        DELE寫作技巧班
+                                    </div>
+                                </div>
+                                <div class="col-lg-5 col-12">
+                                    <div class="BtAlign">
+                                        <img class="w-100" src="images/dele.png">
+                                        <a href="#myform">
+                                            <span class="cpt5-ctBgColor title fs-4 fw-bold px-4 py-2 rounded-pill hvr-shadow">線上兌換</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="students pt-5">
+                <div class="container">
+                    <div class="text-center fs-1 fw-bold heading" data-aos="fade-up" data-aos-duration="500">
+                        不止證照ALL PASS，口說能力也突飛猛進！
+                    </div>
+                    <div class="swiper pt-3" data-aos="fade-up" data-aos-duration="500">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <a href="https://www.abconline.com.tw/member-story/learn-english-hsu-wei-lun" target="_blank">
+                                    <div class="studentFrameBody">
+                                        <img class="w-100" src="images/member-story-0092.jpg">
+                                        <div class="d-flex justify-content-between px-4 py-3">
+                                            <span class="fs-3 fw-bold">徐尉倫</span>
+                                            <span class="languageTag tagColor-1 fw-bold my-auto">英語</span>
+                                        </div>
+                                        <hr>
+                                        <div class="px-4">
+                                            <div class="title text-center fw-bold pt-3">多益金色證書980高分</div>
+                                            <p class="pt-3">英語能力提升後，不論看NBA、閱讀原文書或和外國人聊天都變得輕鬆又簡單！線上學習省去交通時間，也不必風吹雨淋趕課，能安排更多充實自己的規劃</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.abconline.com.tw/member-story/learn-japanese-liu-yu-ling" target="_blank">
+                                    <div class="studentFrameBody">
+                                        <img class="w-100" src="images/member-story-0094.jpg">
+                                        <div class="d-flex justify-content-between px-4 py-3">
+                                            <span class="fs-3 fw-bold">劉兪伶</span>
+                                            <span class="languageTag tagColor-2 fw-bold my-auto">日語</span>
+                                        </div>
+                                        <hr>
+                                        <div class="px-4">
+                                            <div class="title text-center fw-bold pt-3">日語 JLPT檢定等級N1</div>
+                                            <p class="pt-3">巨匠線上日文每堂課老師都會讓我有機會發言練習，提升會話能力。最喜歡巨匠線上日語除了分級檢定課程外，還提供「當今日本」和「商務課程」，加強閱讀視野與口說流暢度，對考試都很有幫助！</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.abconline.com.tw/member-story/learn-korean-topik-han-han" target="_blank">
+                                    <div class="studentFrameBody">
+                                        <img class="w-100" src="images/member-story-0224.jpg">
+                                        <div class="d-flex justify-content-between px-4 py-3">
+                                            <span class="fs-3 fw-bold">韓涵</span>
+                                            <span class="languageTag tagColor-3 fw-bold my-auto">韓語</span>
+                                        </div>
+                                        <hr>
+                                        <div class="px-4">
+                                            <div class="title text-center fw-bold pt-3">考取韓語檢定 TOPIK 6級</div>
+                                            <p class="pt-3">老師會針對同一個文法，使用不同的方式不斷練習，讓我能夠在上課時就記住用法</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.abconline.com.tw/member-story/learn-spanish-dele-tsai-ching-han" target="_blank">
+                                    <div class="studentFrameBody">
+                                        <img class="w-100" src="images/member-story-0159.jpg">
+                                        <div class="d-flex justify-content-between px-4 py-3">
+                                            <span class="fs-3 fw-bold">蔡淨涵</span>
+                                            <span class="languageTag tagColor-4 fw-bold my-auto">西語</span>
+                                        </div>
+                                        <hr>
+                                        <div class="px-4">
+                                            <div class="title text-center fw-bold pt-3">考取西檢DELE-B1證照</div>
+                                            <p class="pt-3">一直想增進語言能力的我，十五歲就開始在各教學平台試聽線上課程。經過評估，我選擇巨匠線上，也是我第一個線上補習的地方。</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.abconline.com.tw/member-story/learn-korean-yang-tsung-han" target="_blank">
+                                    <div class="studentFrameBody">
+                                        <img class="w-100" src="images/member-story-0192.jpg">
+                                        <div class="d-flex justify-content-between px-4 py-3">
+                                            <span class="fs-3 fw-bold">楊宗翰</span>
+                                            <span class="languageTag tagColor-3 fw-bold my-auto">韓語</span>
+                                        </div>
+                                        <hr>
+                                        <div class="px-4">
+                                            <div class="title text-center fw-bold pt-3">考取 韓語檢定(TOPIK) 2級</div>
+                                            <p class="pt-3">巨匠線上韓語課程規劃完整，且彈性很高，很適合上班族。</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.abconline.com.tw/member-story/learn-spanish-hsu-yen-yi" target="_blank">
+                                    <div class="studentFrameBody">
+                                        <img class="w-100" src="images/member-story-0086.jpg">
+                                        <div class="d-flex justify-content-between px-4 py-3">
+                                            <span class="fs-3 fw-bold">徐晏誼</span>
+                                            <span class="languageTag tagColor-4 fw-bold my-auto">西語</span>
+                                        </div>
+                                        <hr>
+                                        <div class="px-4">
+                                            <div class="title text-center fw-bold pt-3">國研院科政中心 負責國外人才培訓</div>
+                                            <p class="pt-3">具備國際外交、環境議題專長，搭配西語學習，輕鬆與世界接軌，培養國民外交能力！巨匠西語單堂主題會話課可針對特定情境（如：旅遊、時事文化、休閒娛樂…等）進修，實用又方便。</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.abconline.com.tw/member-story/learn-japanese-chang-yu-chieh" target="_blank">
+                                    <div class="studentFrameBody">
+                                        <img class="w-100" src="images/member-story-0107.jpg">
+                                        <div class="d-flex justify-content-between px-4 py-3">
+                                            <span class="fs-3 fw-bold">張宇傑</span>
+                                            <span class="languageTag tagColor-2 fw-bold my-auto">日語</span>
+                                        </div>
+                                        <hr>
+                                        <div class="px-4">
+                                            <div class="title text-center fw-bold pt-3">國防大學新聞系　日檢等級N1</div>
+                                            <p class="pt-3">巨匠線上日語補足檢定中測不到的口說會話練習，維持日語語感。課程主題多元，時間彈性自由排課，內容寓教於樂！</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="swiper-slide">
+                                <a href="https://www.abconline.com.tw/member-story/learn-english-yang-pei-wen" target="_blank">
+                                    <div class="studentFrameBody">
+                                        <img class="w-100" src="images/member-story-0087.jpg">
+                                        <div class="d-flex justify-content-between px-4 py-3">
+                                            <span class="fs-3 fw-bold">楊沛紋</span>
+                                            <span class="languageTag tagColor-1 fw-bold my-auto">英語</span>
+                                        </div>
+                                        <hr>
+                                        <div class="px-4">
+                                            <div class="title text-center fw-bold pt-3">臺大法律系學生</div>
+                                            <p class="pt-3">從小熱愛英文，大學參加的社團國際研討會需要大量使用英文，開啟了英文學習之路。巨匠線上英文師資非常專業，課程大量補充知識，透過引導和討論，課堂中絕對不無聊收穫滿滿，對於一定程度的學生很有挑戰性！</p>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottomBt text-center py-5">
+                        <a href="#myform">
+                            <span class="bottomBt fs-4 fw-bold px-4 py-2 rounded-pill hvr-shadow">線上兌換</span>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+        <!-- wapper結束 -->
+        <!-- HTML END -->
+        <div class="footer">
+            <iframe class="FOOTER_frame" src="https://www.abconline.com.tw/activity/footer/2020/" width="100%" scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
+        </div>
+        <script type="text/javascript" src="js/aos.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/gotop.js"></script>
+        <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
+        <script>
+            AOS.init();
+
+            // Swiper
+            var mySwiper = new Swiper ('.swiper', {
+                autoplay: {
+                    delay: 1000,
+                    disableOnInteraction: false,
+                },
+                loop: true,
+                speed: 2000,
+                slidesPerView: 1,
+
+                breakpoints: { 
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    992: {
+                        slidesPerView: 3,
+                    },
+                    1200: {
+                        slidesPerView: 4,
+                    },
+                },
+            });
+        </script>
+    </form>
+</body>
+</html>

@@ -1,0 +1,271 @@
+$color-gray-background: #f4f4f4;
+$color-blue-green: #23b3c4;
+$nav-height: 60px;
+
+%freeBt {
+    display: inline-block;
+    cursor: pointer;
+    background-color: $color-blue-green;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    margin-top: 1rem;
+    &:hover{
+        background-color: rgb(39, 78, 110);
+    }
+}
+
+.wrapper, *:before, *:after {
+    position: relative;
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+.wrapper {
+    .nav-height{ height: $nav-height;}
+    .kv {
+        position: relative;
+        height: 56vw;
+        max-height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .kvVedioCont {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            .kvVedio {
+                position: relative;
+                width: 103%;
+                @media screen and (max-width:992px){
+                    width: 240%;
+                    left: 20%;
+                }
+                @media screen and (max-width:374px){
+                    height: 100%;
+                    width: auto;
+                    left: 70%;
+                }
+            }
+        }
+        .kvTitleCont {
+            position: absolute;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            %kvTitleStyle {
+                width: 100%;
+                max-width: 800px;
+                @media screen and (max-width: 992px) {
+                    margin: auto;
+                }
+            }
+            a {
+                margin: auto;
+                @media screen and (max-width:576px){
+                    margin: auto auto 10% auto;
+                }
+            }
+            .kvTitlePC {
+                @extend %kvTitleStyle;
+                display: block;
+                @media screen and (max-width:992px){
+                    display: none;
+                }
+            }
+            .kvTitleSP {
+                @extend %kvTitleStyle;
+                display: none;
+                @media screen and (max-width:992px){
+                    display: block;
+                }
+            }
+        }
+        @media screen and (max-width:992px){
+            height: 500px;
+        }
+    }
+    .courseBg {
+        background-color: $color-gray-background;
+        background-image: url(../images/blueBlockCourse.png);
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: 0% bottom;
+        .courseTextCont {
+            z-index: 20;
+            background-color: white;
+            .colorBlueGreen {color: $color-blue-green;}
+        }
+        .freeBt {@extend %freeBt;}
+        .coursePC {
+            display: block;
+            @media screen and (max-width:992px){
+                display: none;
+            }
+        }
+        .courseSP {
+            display: none;
+            @media screen and (max-width:992px){
+                display: block;
+            }
+        }
+        .swiper{
+            --swiper-pagination-color: #23b3c4;
+        }
+        .courseTextHeight {
+            height: 50px;
+        }
+    }
+    .vedioBg {
+        background-image: url(../images/blueBlockVedio.png);
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: 0% bottom;
+        .vedioCont {
+            width: 100%;
+            max-width: 720px;
+            margin: 0 auto;
+            .videobox {
+                position: relative;
+                width: 100%;
+                height: 0;
+                padding-bottom: 56.25%;
+                iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .freeBt {@extend %freeBt;}
+    }
+    .formBg {
+        background-color: $color-gray-background;
+        .formImg {
+            width: 100%;
+            @media screen and (max-width:992px){
+                width: 75%;
+            }
+        }
+        .formH1 {
+            color: $color-blue-green;
+        }
+        .go_button {
+            background-color: $color-blue-green;
+            color: white;
+            border-radius: .25rem;
+            padding: .375rem .75rem;
+        }
+    }
+    .QABg {
+        background-image: url(../images/blueBlockQA.png);
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: 0% top;
+        #myform {
+            position: relative;
+            top: -0rem;
+        }
+        .colorBlueGreen {color: $color-blue-green;}
+        .accordion-item {
+            background-color: unset;
+            .accordion-button {
+                padding: 1.5rem 1.25rem;
+                background-color: rgba(255,255,255,0);
+            }
+            .accordion-button:not(.collapsed) {
+                background-color: unset;
+                color: $color-blue-green;
+                box-shadow: unset;
+            }
+            .accordion-button:focus {
+                border-color: unset;
+                box-shadow: unset;
+            }
+            .accordion-body {
+                padding: 0rem 1.25rem 1.5rem 1.25rem;
+            }
+            .bigQ {
+                padding-right: 0.5rem;
+            }
+        }
+        .QASideBox {
+            background-color: white;
+            border: 1px solid rgba(0,0,0,.125);
+            padding: 1.5rem;
+            .freeBt {@extend %freeBt}
+        }
+    }
+    .teacherBg {
+        background-color: $color-gray-background;
+        background-image: url(../images/blueBlockTeacher.png);
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        background-position: 0% bottom;
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        br {
+            display: none;
+            @media screen and (max-width:576px){
+                display: block;
+            }
+        }
+        .teacher-col {
+            flex: 1 0 0%;
+            @media screen and (max-width:992px){
+                flex: 0 0 33.3333%;
+            }
+        }
+        .meritCont {
+            max-height: 220px;
+            display: flex;
+            @media screen and (max-width:992px){
+                flex-direction: column;
+                max-height: none;
+            }
+            .meritImgCont {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 50%;
+                @media screen and (max-width:992px){
+                    max-height: 200px;
+                    width: 100%;
+                }
+            }
+            .meritTextCont {
+                background-color: white;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 1.5rem;
+                width: 50%;
+                .colorBlueGreen {color: $color-blue-green;}
+                .freeBt {@extend %freeBt;}
+                @media screen and (max-width:992px){
+                    width: 100%;
+                }
+                @media screen and (max-width:576px){
+                    padding: 0.7rem;
+                    justify-content:start;
+                }
+                .meritTextHeight {
+                    text-align: justify;
+                    height: unset;
+                    @media screen and (max-width:576px){
+                        height: 125px;
+                    }
+                }
+            }
+        }
+    }
+}

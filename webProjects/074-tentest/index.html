@@ -1,0 +1,1015 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>【測你的語言程度】完成任一測驗，贈口說檢測與分析報告！</title>
+    <meta name="Title" content="【測你的語言程度】完成任一測驗，贈口說檢測與分析報告！" />
+    <meta name="Description" content="10道題目測出你的程度在哪裡!完成任一測驗,加贈口說檢測與分析報告,英語,日語,西語,韓語,法語,德語通通有!讓你挑戰語言檢定更有把握,順利拿下TOEIC/IELTS/JLPT/TOPIK/DELE" />
+    <meta name="keywords" content="線上測驗,學英文,學日文,學韓文,學西班牙文,學法文,學德文" />
+    <meta property="og:title" content="【測你的語言程度】完成任一測驗，贈口說檢測與分析報告！" />
+    <meta property="og:url" content="https://www.abconline.com.tw/activity/other/074-tentest/index.html" />
+    <meta property="og:image" content="images/shareCard.jpg" />
+    <meta property="og:description" content="10道題目測出你的程度在哪裡!完成任一測驗,加贈口說檢測與分析報告,英語,日語,西語,韓語,法語,德語通通有!讓你挑戰語言檢定更有把握,順利拿下TOEIC/IELTS/JLPT/TOPIK/DELE" />
+    <link rel="canonical" href="https://www.abconline.com.tw/activity/other/074-tentest/index.html" />
+    <!-- Page Info Insert END -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="/wGuest/js/m_pcschool.js"></script>
+    <!-- Include JS & CSS Start -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link href="css/comm-style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!--非填單按鈕使用class name="activity-page-click-count"-->
+    <!-- Include JS & CSS End -->
+    <script type="text/javascript">
+        //留單相關，看過後請把註解刪掉喔!  -----start
+        var dept = "KZ2";
+        var seq_no = "0";
+        var web_pno = ""; //電腦版pno
+        var NList_Type = "5";
+        var fromto = "";
+        var Gift = "";
+        var is_Mobile = "0";
+
+        /*手機板 pno 判斷相關 >> start */
+        $(function () {
+            if (isMobile()) {
+                web_pno = "110035500002";  //手機板pno
+                is_Mobile = "1";   
+            }
+        });
+
+        function isMobile() {
+            try { document.createEvent("TouchEvent"); return true; }
+            catch (e) { return false; }
+        }
+        /*手機板 pno 判斷相關 >> end*/
+
+        function but_send() {
+            $('#sBut').hide();
+
+            openQuesAndScroll();
+
+            GetPno();
+            if (Gift == "") {
+                alert('請選擇想學習的語言');
+                $('#sBut').show();
+                return false;
+            }
+            //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----end
+            var JSonData = {
+                "name": $("#name").val(),
+                "mobile": $("#mobile").val(),
+                "email": $("#email").val(),
+                "seq_no": seq_no,
+                "dept_no": dept,
+                "memo": "體驗1堂" + Gift,
+                "web_pno": web_pno,
+                "fromto": QueryString("fromto") != null ? QueryString("fromto") : fromto,
+                "fromurl": document.location.href, 
+                "sourceid": QueryString("fc") != null ? QueryString("fc") : "",
+                "NList_Type": NList_Type,
+                "IsSend": "N",
+                "func": "njycooooqj"
+            }
+
+            if ($("input[name=per_chk]:checked").length == 0) {
+                alert('請勾選同意個資保護聲明。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.name == "" || JSonData.name == "姓 名") {
+                alert('請填寫入姓名。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile == "" || JSonData.mobile == "行動電話") {
+                alert('請填寫行動電話。');
+                $('#sBut').show();
+                return false;
+            }
+            if (isNaN(JSonData.mobile) == true) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile.length != 10) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.email == "" || JSonData.email == "E-Mail") { JSonData.email = "" } else {
+                if (JSonData.email.indexOf("@") <= -1) {
+                    alert('電子郵件格式錯誤。');
+                    $('#sBut').show();
+                    return false;
+                }
+            }
+            goSubmit(JSonData, s, f);
+        }
+
+        function s(data) {
+            if (data[0].result == "1") {
+                $("#name").val("");
+                $("#mobile").val("");
+                $("#sBut").show();
+
+                // openQuesAndScroll();
+
+            } else {
+                alert('送出失敗！');
+                $("#sBut").show();
+            }
+        }
+        function f(data) {
+            alert(data);
+            $("#sBut").show();
+        }
+        //留單相關，看過後請把註解刪掉喔!  -----end
+
+        //下拉選單有不同語系課程時使用，如果沒有要用就刪掉(左SP右邊PC)  -----start
+        function GetPno() {
+            var select_val = $("#dpGift :selected").val();
+            switch (select_val) {
+                case "english":
+                    web_pno = is_Mobile == "1" ? "113021500003" : "113021500003";
+                    Gift = "我想領英語";
+                    break;
+                case "japanese":
+                    web_pno = is_Mobile == "1" ? "113021500004" : "113021500004";
+                    Gift = "我想領日語";
+                    break;
+                case "korean":
+                    web_pno = is_Mobile == "1" ? "113021500005" : "113021500005";
+                    Gift = "我想領韓語";
+                    break;
+                case "spanish":
+                    web_pno = is_Mobile == "1" ? "113021500006" : "113021500006";
+                    Gift = "我想領西語";
+                    break;
+                case "french":
+                    web_pno = is_Mobile == "1" ? "113021500007" : "113021500007";
+                    Gift = "我想領法語";
+                    break;
+                case "german":
+                    web_pno = is_Mobile == "1" ? "113021500008" : "113021500008";
+                    Gift = "我想領德語";
+                    break;
+            }
+        }
+        //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----end
+
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-WSWZFBP');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSWZFBP"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <form id="form1" runat="server">
+        <div class="top">
+            <iframe src="https://www.abconline.com.tw/activity/header/2020/" width="100%" height="65px" scrolling="No" frameborder="0" allowtransparency="allowTransparency" class="ifar"></iframe>
+        </div>
+        <!-- HTML Start -->
+
+        <!-- wapper開始 -->
+        <div class="wrapper overflow-hidden">
+            <section class="kv position-relative">
+                <div class="pc">
+                    <img class="position-absolute w-100" src="images/kvPc_bg.png">
+                    <img class="position-absolute w-100" src="images/kvPc_people.png" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                    <img class="position-absolute w-100" src="images/kvPc_bottom.png">
+                    <img class="position-absolute title" src="images/kv_title.png" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="700">                   
+                </div>
+                <div class="sp">
+                    <img class="position-absolute w-100" src="images/kvSp_bg.png">
+                    <img class="position-absolute w-100" src="images/kvSp_people.png" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                    <img class="position-absolute w-100" src="images/kvSp_bottom.png">
+                    <img class="position-absolute title" src="images/kv_title.png" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="700">                   
+                </div>
+            </section>
+            <section class="test position-relative">
+                <div class="wave position-absolute">
+                    <div class="bluebg position-absolute"></div>
+                    <img class="w-100" src="images/wave.png">
+                </div>
+
+                <div class="modalCon">
+                    <div class="d-none text-center pt-5">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#form_modal">
+                            填單
+                        </button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#login_modal">
+                            學員登入
+                        </button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#forgotAc_modal">
+                            忘記帳號
+                        </button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#forgotPw_modal">
+                            忘記密碼
+                        </button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#score_modal">
+                            得分
+                        </button>
+                    </div>
+    
+                    <!-- Modal填單 -->
+                    <div class="modal fade" id="form_modal" tabindex="-1" data-bs-backdrop="static">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="w-100" src="images/students.png">
+                                    <div class="position-relative pb-4">
+                                        <div class="position-absolute w-100 d-flex flex-column">
+                                            <div class="title">填表開始免費測驗</div>
+                                            <div class="text-center fs-4 fw-bold">贈語言程度分析報告</div>
+                                        </div>
+                                        <img class="w-100" src="images/ribbonUnder.png">
+                                    </div>
+
+                                    <!-- 表單開始 -->
+                                    <input name="ea" id="name" type="text" class="w-100 p-2 my-1 h50 rounded-3 border border-Secondary formBgcolor" placeholder="姓 名" />
+                                    <input name="mobile" id="mobile" type="text" class="w-100 p-2 my-1 h50 rounded-3 border border-Secondary formBgcolor" placeholder="行動電話" />
+                                    <input name="email" id="email" type="text" class="w-100 p-2 my-1 h50 rounded-3 border border-Secondary formBgcolor" placeholder="E-Mail" />
+                                    <select id="dpGift" class="w-100 p-2 my-1 h50 rounded-3 border border-Secondary formBgcolor">
+                                        <option value="select" selected>請選擇想學習的語言</option>
+                                        <option value="english">我想要英語</option>
+                                        <option value="japanese">我想要日語</option>
+                                        <option value="korean">我想要韓語</option>
+                                        <option value="spanish">我想要西語</option>
+                                        <option value="french">我想要法語</option>
+                                        <option value="german">我想要德語</option>
+                                    </select>
+                                    <div class="linkStyle" id="openLogin_form">學員登入</div>
+                                    <span class="align-self-center">
+                                        <label class="align-self-center"><input class="form-check-input rounded-pill" type="checkbox" name="per_chk" checked="checked"></label>
+                                        <span style="font-size: 15px; margin: auto 0;">我已詳細閱讀並接受<a onclick="window.open('/activity/abconline/contract_02/','person',config='height=640,width=830');return false;" href="#">個資保護聲明</a></span>
+                                    </span>
+                                    <div class="w-100 fw-bold my-1 h50 formBt" id="sBut" onClick="but_send();">
+                                        <div class="text-center">點我送出</div>
+                                    </div>
+                                    <!-- 表單結束 -->
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal 登入 -->
+                    <div class="modal fade" id="login_modal" tabindex="-1" data-bs-backdrop="static">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header fw-bold">
+                                    <div class="d-flex backCon">
+                                        <i class="bi bi-chevron-left"></i>
+                                        <div class="backText" id="backForm">返回前頁</div>
+                                    </div>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="w-100" src="images/students.png">
+                                    <div class="position-relative pb-2">
+                                        <div class="position-absolute w-100 d-flex flex-column">
+                                            <div class="title">學員登入</div>
+                                        </div>
+                                        <img class="w-100" src="images/ribbonUnder.png">
+                                    </div>
+                                    <input name="" id="" type="text" class="w-100 p-2 my-1 h50 rounded-3 border border-Secondary formBgcolor" placeholder="請輸入帳號" />
+                                    <input name="" id="" type="text" class="w-100 p-2 my-1 h50 rounded-3 border border-Secondary formBgcolor" placeholder="請輸入密碼" />
+                                    <div class="w-100 fw-bold my-1 h50 formBt">
+                                        <div class="text-center">登入</div>
+                                    </div>
+                                    <div class="linkStyle" id="forgotAc">忘記帳號</div>
+                                    <div class="linkStyle" id="forgotPw">忘記密碼</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal 忘記帳號 -->
+                    <div class="modal fade" id="forgotAc_modal" tabindex="-1" data-bs-backdrop="static">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header fw-bold">
+                                    <div class="d-flex backCon" id="openLogin_ac">
+                                        <i class="bi bi-chevron-left"></i>
+                                        <div class="backText">返回登入</div>
+                                    </div>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="position-relative pb-2">
+                                        <div class="position-absolute w-100 d-flex flex-column">
+                                            <div class="title">忘記帳號</div>
+                                        </div>
+                                        <img class="w-100" src="images/ribbonUnder.png">
+                                    </div>
+                                    <div class="w-100 px-2 py-4 my-1 fw-bold rounded-3 border border-Secondary formBgcolor">
+                                        如果您忘記帳號，請你輸入註冊時所使用的「行動電話」及「 中文姓名」，系統稍後會寄發密碼至您所選的聯絡方式中。
+                                    </div>
+                                    <input name="" id="" type="text" class="w-100 p-2 my-1 h50 rounded-3 border border-Secondary formBgcolor" placeholder="請輸入行動電話號碼" />
+                                    <input name="" id="" type="text" class="w-100 p-2 my-1 h50 rounded-3 border border-Secondary formBgcolor" placeholder="請輸入註冊時使用的姓名" />
+                                    <div class="d-flex justify-content-center fw-bold my-2">
+                                        <div class="px-2">
+                                            <input class="form-check-input rounded-pill mx-1" type="checkbox" name="">傳送至email
+                                        </div>
+                                        <div class="px-2">
+                                            <input class="form-check-input rounded-pill mx-1" type="checkbox" name="">傳送至手機簡訊
+                                        </div>
+                                    </div>
+                                    <div class="w-100 fw-bold my-1 h50 formBt">
+                                        <div class="text-center">送出</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal 忘記密碼 -->
+                    <div class="modal fade" id="forgotPw_modal" tabindex="-1" data-bs-backdrop="static">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header fw-bold">
+                                    <div class="d-flex backCon" id="openLogin_pw">
+                                        <i class="bi bi-chevron-left"></i>
+                                        <div class="backText">返回登入</div>
+                                    </div>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="position-relative pb-2">
+                                        <div class="position-absolute w-100 d-flex flex-column">
+                                            <div class="title">忘記密碼</div>
+                                        </div>
+                                        <img class="w-100" src="images/ribbonUnder.png">
+                                    </div>
+                                    <div class="w-100 px-2 py-4 my-1 fw-bold rounded-3 border border-Secondary formBgcolor">
+                                        如果您忘記密碼，請你輸入註冊時所使用的『帳號』及『 中文姓名』，系統稍後會寄發密碼至您所選的聯絡方式中。
+                                    </div>
+                                    <input name="" id="" type="text" class="w-100 p-2 my-1 h50 rounded-3 border border-Secondary formBgcolor" placeholder="請輸入帳號" />
+                                    <input name="" id="" type="text" class="w-100 p-2 my-1 h50 rounded-3 border border-Secondary formBgcolor" placeholder="請輸入註冊時使用的姓名" />
+                                    <div class="d-flex justify-content-center fw-bold my-2">
+                                        <div class="px-2">
+                                            <input class="form-check-input rounded-pill mx-1" type="checkbox" name="">傳送至email
+                                        </div>
+                                        <div class="px-2">
+                                            <input class="form-check-input rounded-pill mx-1" type="checkbox" name="">傳送至手機簡訊
+                                        </div>
+                                    </div>
+                                    <div class="w-100 fw-bold my-1 h50 formBt">
+                                        <div class="text-center">送出</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal 100分 -->
+                    <div class="modal fade" id="score_modal" tabindex="-1" data-bs-backdrop="static">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header fw-bold">
+                                </div>
+                                <div class="modal-body fw-bold d-flex flex-column">
+                                    <div class="text-center fs-2 lh-1">
+                                        本次測驗結果
+                                    </div>
+                                    <div class="text-center lh-1">
+                                        <span class="fs-score">100</span>
+                                        <span class="fs-2">分</span>
+                                    </div>
+                                    <div class="fs-5">
+                                        你的實力太厲害了！可以進階挑戰口說測驗！
+                                    </div>
+                                    <img class="w-100 pt-2" src="images/scoreImg100.png">
+                                </div>
+                                <div class="modal-footer fs-5">
+                                    <div class="w-100 fw-bold my-1 h50 formBt">
+                                        <a href="https://www.abconline.com.tw/free-test">
+                                            <div class="text-center">挑戰檢定考題</div>
+                                        </a>
+                                    </div>
+                                    <div class="w-100 fw-bold my-1 h50 formBt">
+                                        <a href="https://www.abconline.com.tw/activity/other/012-safelife/default.aspx">
+                                            <div class="text-center">挑戰口說測驗</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal 80分 -->
+                    <div class="modal fade" id="" tabindex="-1" data-bs-backdrop="static">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header fw-bold">
+                                </div>
+                                <div class="modal-body fw-bold d-flex flex-column">
+                                    <div class="text-center fs-2 lh-1">
+                                        本次測驗結果
+                                    </div>
+                                    <div class="text-center lh-1">
+                                        <span class="fs-score">80</span>
+                                        <span class="fs-2">分</span>
+                                    </div>
+                                    <div class="fs-5">
+                                        你有一定程度的語言實力，推薦你60堂外語檢定課，助你順利考取證照！
+                                    </div>
+                                    <img class="w-100 pt-2" src="images/scoreImg80.png">
+                                </div>
+                                <div class="modal-footer fs-5">
+                                    <div class="w-100 fw-bold my-1 h50 formBt">
+                                        <a href="https://www.abconline.com.tw/activity/other/020-allpasstest/default.aspx">
+                                            <div class="text-center">索取檢定課</div>
+                                        </a>
+                                    </div>
+                                    <div class="w-100 fw-bold my-1 h50 formBt">
+                                        <a href="https://www.abconline.com.tw/activity/other/012-safelife/default.aspx">
+                                            <div class="text-center">挑戰口說測驗</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal 50分 -->
+                    <div class="modal fade" id="" tabindex="-1" data-bs-backdrop="static">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header fw-bold">
+                                </div>
+                                <div class="modal-body fw-bold d-flex flex-column">
+                                    <div class="text-center fs-2 lh-1">
+                                        本次測驗結果
+                                    </div>
+                                    <div class="text-center lh-1">
+                                        <span class="fs-score">50</span>
+                                        <span class="fs-2">分</span>
+                                    </div>
+                                    <div class="fs-5">
+                                        離及格還有一段距離，推薦你萬元補助課程，讓語言能力更上一層樓！
+                                    </div>
+                                    <img class="w-100 pt-2" src="images/scoreImg50.png">
+                                </div>
+                                <div class="modal-footer fs-5">
+                                    <div class="w-100 fw-bold my-1 h50 formBt">
+                                        <a href="https://www.abconline.com.tw/activity/other/001-newclass/default.aspx">
+                                            <div class="text-center">申請補助</div>
+                                        </a>
+                                    </div>
+                                    <div class="w-100 fw-bold my-1 h50 formBt">
+                                        <a href="https://www.abconline.com.tw/activity/other/012-safelife/default.aspx">
+                                            <div class="text-center">挑戰口說測驗</div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="pt-5"></div>
+                    <div class="position-relative blueTrapezoid text-center">
+                        <div class="position-absolute title">選擇你想測驗的語言</div>
+                        <div class="position-absolute title-stroke">選擇你想測驗的語言</div>
+                    </div>
+                    <div class="language">
+                        <div class="d-flex flex-wrap p-4 justify-content-between">
+                            <div class="col-lg-2 col-6 p-2">
+                                <div class="btCon hovUS" onclick="languageSelection('US')">
+                                    <img class="pb-2" src="images/flag_US.png">
+                                    <div>英語<br>English</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-6 p-2">
+                                <div class="btCon hovJP" onclick="languageSelection('JP')">
+                                    <img class="pb-2" src="images/flag_JP.png">
+                                    <div>日語<br>日本語</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-6 p-2">
+                                <div class="btCon hovES" onclick="languageSelection('ES')">
+                                    <img class="pb-2" src="images/flag_ES.png">
+                                    <div>西班牙語<br>Español</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-6 p-2">
+                                <div class="btCon hovKR" onclick="languageSelection('KR')">
+                                    <img class="pb-2" src="images/flag_KR.png">
+                                    <div>韓語<br>한국어</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-6 p-2">
+                                <div class="btCon hovFR" onclick="languageSelection('FR')">
+                                    <img class="pb-2" src="images/flag_FR.png">
+                                    <div>法語<br>Le français</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-6 p-2">
+                                <div class="btCon hovDE" onclick="languageSelection('DE')">
+                                    <img class="pb-2" src="images/flag_DE.png">
+                                    <div>德語<br>Deutsch</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="doodle pb-5">
+                            <img class="w-100" src="images/doodle_language.png">
+                        </div>
+                    </div>
+                    <div class="questionCon">
+                        <div class="US">
+                            <div class="title pb-3">
+                                選擇英語測驗程度
+                            </div>
+                            <nav>
+                                <div class="nav nav-tabs" role="tablist">
+                                    <button class="nav-link active"  data-bs-toggle="tab" data-bs-target=".nav-US-L1" type="button" role="tab">L1入門級</button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target=".nav-US-L2" type="button" role="tab">L2初級</button>
+                                    <div class="spLine"></div>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target=".nav-US-L3" type="button" role="tab">L3中級</button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target=".nav-US-L4" type="button" role="tab">L4中高級</button>
+                                    <div class="spLine"></div>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target=".nav-US-L5" type="button" role="tab">L5高級</button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target=".nav-US-L6" type="button" role="tab">L6精通級</button>
+                                </div>
+                            </nav>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active nav-US-L1" role="tabpanel" >
+                                    <div class="swiper swiperUS_L1">
+                                        <div class="swiper-wrapper">
+                                            <div class="swiper-slide swiper-no-swiping">
+                                                <div class="px-4">
+                                                    <p class="numberStyle">
+                                                        第1題
+                                                    </p>
+                                                    <p>
+                                                        A: Where are you from? 
+                                                    </p>
+                                                    <p>
+                                                        B: I am from _____.
+                                                    </p>
+                                                </div>
+                                                <div class="d-flex flex-wrap">
+                                                    <div class="answer d-flex" onclick="selectOption(this)">
+                                                        <div class="col-lg-1 col-3 align-self-center px-2">
+                                                            <div class="option d-flex mx-auto">
+                                                                <div class="align-self-center mx-auto">
+                                                                    A
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-10 col-7 align-self-center text-break">
+                                                            Taiwan, Taipei
+                                                        </div>
+                                                        <div class="col-lg-1 col-2 align-self-center text-center px-2">
+                                                            <input class="form-check-input" type="radio" name="Q01">
+                                                        </div>
+                                                    </div>
+                                                    <div class="answer d-flex" onclick="selectOption(this)">
+                                                        <div class="col-lg-1 col-3 align-self-center px-2">
+                                                            <div class="option d-flex mx-auto">
+                                                                <div class="align-self-center mx-auto">
+                                                                    B
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-10 col-7 align-self-center text-break">
+                                                            the Taipei
+                                                        </div>
+                                                        <div class="col-lg-1 col-2 align-self-center text-center px-2">
+                                                            <input class="form-check-input" type="radio" name="Q01">
+                                                        </div>
+                                                    </div>
+                                                    <div class="answer d-flex" onclick="selectOption(this)">
+                                                        <div class="col-lg-1 col-3 align-self-center px-2">
+                                                            <div class="option d-flex mx-auto">
+                                                                <div class="align-self-center mx-auto">
+                                                                    C
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-10 col-7 align-self-center text-break">
+                                                            a Taiwan
+                                                        </div>
+                                                        <div class="col-lg-1 col-2 align-self-center text-center px-2">
+                                                            <input class="form-check-input" type="radio" name="Q01">
+                                                        </div>
+                                                    </div>
+                                                    <div class="answer d-flex" onclick="selectOption(this)">
+                                                        <div class="col-lg-1 col-3 align-self-center px-2">
+                                                            <div class="option d-flex mx-auto">
+                                                                <div class="align-self-center mx-auto">
+                                                                    D
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-10 col-7 align-self-center text-break">
+                                                            Taipei, Taiwan
+                                                        </div>
+                                                        <div class="col-lg-1 col-2 align-self-center text-center px-2">
+                                                            <input class="form-check-input" type="radio" name="Q01">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide swiper-no-swiping">
+                                                <div class="px-4">
+                                                    <p class="numberStyle">
+                                                        第2題
+                                                    </p>
+                                                    <p>
+                                                        What does your best friend look like?
+                                                    </p>
+                                                </div>
+                                                <div class="d-flex flex-wrap">
+                                                    <div class="answer d-flex" onclick="selectOption(this)">
+                                                        <div class="col-lg-1 col-3 align-self-center px-2">
+                                                            <div class="option d-flex mx-auto">
+                                                                <div class="align-self-center mx-auto">
+                                                                    A
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-10 col-7 align-self-center text-break">
+                                                            She is from South Africa.
+                                                        </div>
+                                                        <div class="col-lg-1 col-2 align-self-center text-center px-2">
+                                                            <input class="form-check-input" type="radio" name="Q02">
+                                                        </div>
+                                                    </div>
+                                                    <div class="answer d-flex" onclick="selectOption(this)">
+                                                        <div class="col-lg-1 col-3 align-self-center px-2">
+                                                            <div class="option d-flex mx-auto">
+                                                                <div class="align-self-center mx-auto">
+                                                                    B
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-10 col-7 align-self-center text-break">
+                                                            Her name is Lily.
+                                                        </div>
+                                                        <div class="col-lg-1 col-2 align-self-center text-center px-2">
+                                                            <input class="form-check-input" type="radio" name="Q02">
+                                                        </div>
+                                                    </div>
+                                                    <div class="answer d-flex" onclick="selectOption(this)">
+                                                        <div class="col-lg-1 col-3 align-self-center px-2">
+                                                            <div class="option d-flex mx-auto">
+                                                                <div class="align-self-center mx-auto">
+                                                                    C
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-10 col-7 align-self-center text-break">
+                                                            Her hair is brown. Her eyes are brown, too. 
+                                                        </div>
+                                                        <div class="col-lg-1 col-2 align-self-center text-center px-2">
+                                                            <input class="form-check-input" type="radio" name="Q02">
+                                                        </div>
+                                                    </div>
+                                                    <div class="answer d-flex" onclick="selectOption(this)">
+                                                        <div class="col-lg-1 col-3 align-self-center px-2">
+                                                            <div class="option d-flex mx-auto">
+                                                                <div class="align-self-center mx-auto">
+                                                                    D
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-10 col-7 align-self-center text-break">
+                                                            She likes brown.
+                                                        </div>
+                                                        <div class="col-lg-1 col-2 align-self-center text-center px-2">
+                                                            <input class="form-check-input" type="radio" name="Q02">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="swiper-slide swiper-no-swiping">
+                                                <div class="col-lg-3 col-8 mx-auto px-2 pt-5">
+                                                    <img class="w-100" src="images/completed.png">
+                                                </div>
+                                                <div class="text-center fs-3 fw-bold pt-3 pb-5">恭喜您完成本次測驗</div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-button-next mt-3">下一題</div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade nav-US-L2" role="tabpanel" >L2初級</div>
+                                <div class="tab-pane fade nav-US-L3" role="tabpanel" >L3中級</div>
+                                <div class="tab-pane fade nav-US-L4" role="tabpanel">L4中高級</div>
+                                <div class="tab-pane fade nav-US-L5" role="tabpanel">L5高級</div>
+                                <div class="tab-pane fade nav-US-L6" role="tabpanel">L6精通級</div>
+                            </div>
+                            <div class="questionBtm pb-5"></div>
+                        </div>
+
+                        <div class="JP">
+                            <div class="title pb-3">
+                                選擇日語測驗程度
+                            </div>
+
+
+                            <nav>
+                                <div class="nav nav-tabs" role="tablist">
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target=".nav-JP-N5" type="button" role="tab">N5入門級</button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target=".nav-JP-N4" type="button" role="tab">N4初級</button>
+                                    <div class="spLine"></div>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target=".nav-JP-N3" type="button" role="tab">N3中級</button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target=".nav-JP-N2" type="button" role="tab">N2高級</button>
+                                    <div class="spLine"></div>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target=".nav-JP-N1" type="button" role="tab">N1精通級</button>
+                                </div>
+                            </nav>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active nav-JP-N5" role="tabpanel">N5入門級</div>
+                                <div class="tab-pane fade nav-JP-N4" role="tabpanel">N4初級</div>
+                                <div class="tab-pane fade nav-JP-N3" role="tabpanel">N3中級</div>
+                                <div class="tab-pane fade nav-JP-N2" role="tabpanel">N2高級</div>
+                                <div class="tab-pane fade nav-JP-N1" role="tabpanel">N1精通級</div>
+                            </div>
+                            <div class="questionBtm pb-5"></div>
+                        </div>
+                        
+                        <div class="ES">
+                            <div class="title pb-3">
+                                選擇西語測驗程度
+                            </div>
+                            <nav>
+                                <div class="nav nav-tabs" role="tablist">
+                                    <button class="nav-link active"  data-bs-toggle="tab" data-bs-target=".nav-ES-A1" type="button" role="tab">A1入門級</button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target=".nav-ES-A2" type="button" role="tab">A2基礎級</button>
+                                    <div class="spLine"></div>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target=".nav-ES-B1" type="button" role="tab">B1進階級</button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target=".nav-ES-B2" type="button" role="tab">B2高階級</button>
+                                    <div class="spLine"></div>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target=".nav-ES-C1" type="button" role="tab">C1流利級</button>
+                                </div>
+                            </nav>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active nav-ES-A1" role="tabpanel" >A1</div>
+                                <div class="tab-pane fade nav-ES-A2" role="tabpanel" >A2</div>
+                                <div class="tab-pane fade nav-ES-B1" role="tabpanel" >B1</div>
+                                <div class="tab-pane fade nav-ES-B2" role="tabpanel">B2</div>
+                                <div class="tab-pane fade nav-ES-C1" role="tabpanel">C1</div>
+                            </div>
+                            <div class="questionBtm pb-5"></div>
+                        </div>                       
+
+                        <div class="KR">
+                            <div class="title pb-3">
+                                選擇韓語測驗程度
+                            </div>
+                            <nav>
+                                <div class="nav nav-tabs" role="tablist">
+                                    <button class="nav-link active"  data-bs-toggle="tab" data-bs-target=".nav-KR-1" type="button" role="tab">1級初級基礎</button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target=".nav-KR-2" type="button" role="tab">2級初級進階</button>
+                                    <div class="spLine"></div>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target=".nav-KR-3" type="button" role="tab">3級中級基礎</button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target=".nav-KR-4" type="button" role="tab">4級中級進階</button>
+                                </div>
+                            </nav>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active nav-KR-1" role="tabpanel" >1級初級基礎</div>
+                                <div class="tab-pane fade nav-KR-2" role="tabpanel" >2級初級進階</div>
+                                <div class="tab-pane fade nav-KR-3" role="tabpanel" >3級中級基礎</div>
+                                <div class="tab-pane fade nav-KR-4" role="tabpanel">4級中級進階</div>
+                            </div>
+                            <div class="questionBtm pb-5"></div>
+                        </div>   
+
+                        <div class="FR">
+                            <div class="title pb-3">
+                                選擇法語測驗程度
+                            </div>
+                            <nav>
+                                <div class="nav nav-tabs" role="tablist">
+                                    <button class="nav-link active"  data-bs-toggle="tab" data-bs-target=".nav-FR-A1" type="button" role="tab">A1入門級</button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target=".nav-FR-A2" type="button" role="tab">A2基礎級</button>
+                                </div>
+                            </nav>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active nav-FR-A1" role="tabpanel" >A1入門級</div>
+                                <div class="tab-pane fade nav-FR-A2" role="tabpanel" >A2基礎級</div>
+                            </div>
+                            <div class="questionBtm pb-5"></div>
+                        </div>
+
+                        <div class="DE">
+                            <div class="title pb-3">
+                                選擇德語測驗程度
+                            </div>
+                            <nav>
+                                <div class="nav nav-tabs" role="tablist">
+                                    <button class="nav-link active"  data-bs-toggle="tab" data-bs-target=".nav-DE-A1" type="button" role="tab">A1入門級</button>
+                                    <button class="nav-link" data-bs-toggle="tab" data-bs-target=".nav-DE-A2" type="button" role="tab">A2基礎級</button>
+                                </div>
+                            </nav>
+                            <div class="tab-content">
+                                <div class="tab-pane fade show active nav-DE-A1" role="tabpanel" >A1入門級</div>
+                                <div class="tab-pane fade nav-DE-A2" role="tabpanel" >A2基礎級</div>
+                            </div>
+                            <div class="questionBtm pb-5"></div>
+                        </div>  
+                    </div>
+                </div>
+            </section>
+            <section class="teacher pb-5">
+                <div class="container">
+                    <div class="text-center pt-4">
+                        <span class="text-center fs-2 fw-bold title">
+                            最專業師資陣容
+                        </span>
+                        <div class="fs-4 fw-bold">
+                            手把手教學最道地發音
+                        </div>
+                    </div>
+                    <div class="mt-4 whitebg">
+                        <div class="d-flex flex-wrap" data-aos="fade-up">
+                            <div class="col-lg-2 col-6 text-center p-2">
+                                <a href="https://www.abconline.com.tw/teachers/english/cameron" target="_blank">
+                                    <img class="w-100" src="images/f-Cameron.png">
+                                    <div class="fs-5 fw-bold pt-2 name">
+                                        Cameron<br>英語老師
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-2 col-6 text-center p-2">
+                                <a href="https://www.abconline.com.tw/teachers/japanese/yuki" target="_blank">
+                                    <img class="w-100" src="images/f-Yuki.png">
+                                    <div class="fs-5 fw-bold pt-2 name">
+                                        Yuki<br>日語老師
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-2 col-6 text-center p-2">
+                                <a href="https://www.abconline.com.tw/teachers/spanish/jorge-cubas" target="_blank">
+                                    <img class="w-100" src="images/f-Jorge-Cubas.png">
+                                    <div class="fs-5 fw-bold pt-2 name">
+                                        Jorge Cubas<br>西語老師
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-2 col-6 text-center p-2">
+                                <a href="https://www.abconline.com.tw/teachers/korean/min-yong" target="_blank">
+                                    <img class="w-100" src="images/f-Min-Yong.png">
+                                    <div class="fs-5 fw-bold pt-2 name">
+                                        Min Yong<br>韓語老師
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-2 col-6 text-center p-2">
+                                <a href="https://www.abconline.com.tw/teachers/french/flore" target="_blank">
+                                    <img class="w-100" src="images/f-Flore.png">
+                                    <div class="fs-5 fw-bold pt-2 name">
+                                        Flore<br>法語老師
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-2 col-6 text-center p-2">
+                                <a href="https://www.abconline.com.tw/teachers/german/owen-lin" target="_blank">
+                                    <img class="w-100" src="images/f-Owen-Lin.png">
+                                    <div class="fs-5 fw-bold pt-2 name">
+                                        Owen Lin<br>德語老師
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-wrap">
+                            <div class="col-lg-6 col-12 p-2" data-aos="fade-up">
+                                <div class="feature p-4 d-flex">
+                                    <div class="col-3">
+                                        <img class="w-100" src="images/featureIcon1.png">
+                                    </div>
+                                    <div class="col-9 align-self-center">
+                                        <div class="fs-5 fw-bold featureTit">
+                                            線上真人會話課程
+                                        </div>
+                                        <div class="content">
+                                            小班制練習機會多，真正能開口說、加強會話能力
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 p-2" data-aos="fade-up">
+                                <div class="feature p-4 d-flex">
+                                    <div class="col-3">
+                                        <img class="w-100" src="images/featureIcon2.png">
+                                    </div>
+                                    <div class="col-9 align-self-center">
+                                        <div class="fs-5 fw-bold featureTit">
+                                            跨裝置學習
+                                        </div>
+                                        <div class="content">
+                                            線上直接劃課，時間彈性好選擇，手機、平板筆電都OK
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 p-2" data-aos="fade-up">
+                                <div class="feature p-4 d-flex">
+                                    <div class="col-3">
+                                        <img class="w-100" src="images/featureIcon3.png">
+                                    </div>
+                                    <div class="col-9 align-self-center">
+                                        <div class="fs-5 fw-bold featureTit">
+                                            WIPPEA教學法
+                                        </div>
+                                        <div class="content">
+                                            專業老師帶你暖身練習不緊張，靈活運用好有趣
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 p-2" data-aos="fade-up">
+                                <div class="feature p-4 d-flex">
+                                    <div class="col-3">
+                                        <img class="w-100" src="images/featureIcon4.png">
+                                    </div>
+                                    <div class="col-9 align-self-center">
+                                        <div class="fs-5 fw-bold featureTit">
+                                            不限次數觀看錄影檔
+                                        </div>
+                                        <div class="content">
+                                            上課不需做筆記，課後持續複習，學習有效不遺忘
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 p-2" data-aos="fade-up">
+                                <div class="feature p-4 d-flex">
+                                    <div class="col-3">
+                                        <img class="w-100" src="images/featureIcon5.png">
+                                    </div>
+                                    <div class="col-9 align-self-center">
+                                        <div class="fs-5 fw-bold featureTit">
+                                            認證專業師資
+                                        </div>
+                                        <div class="content">
+                                            中、外師資完備，母語、雙語師資，學習最純正發音
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-12 p-2" data-aos="fade-up">
+                                <div class="feature p-4 d-flex">
+                                    <div class="col-3">
+                                        <img class="w-100" src="images/featureIcon6.png">
+                                    </div>
+                                    <div class="col-9 align-self-center">
+                                        <div class="fs-5 fw-bold featureTit">
+                                            課後專屬學習報告
+                                        </div>
+                                        <div class="content">
+                                            老師提供完整的課後學習評估報告，學習更有方向
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center py-3">
+                            <a href="https://www.abconline.com.tw/teachers" target="_blank">
+                                <span class="button fs-5 fw-bold">
+                                    更多師資介紹
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+            <!-- wapper結束 -->
+        <!-- HTML END -->
+        <div class="footer">
+            <iframe class="FOOTER_frame" src="https://www.abconline.com.tw/activity/footer/2020/" width="100%" scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
+        </div>
+        <script type="text/javascript" src="js/aos.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/gotop.js"></script>
+        <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
+        <script type="text/javascript" src="js/default.js"></script>
+    </form>
+</body>
+</html>

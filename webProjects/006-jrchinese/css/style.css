@@ -1,0 +1,568 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body {
+    font-family: Arial,'Noto Sans TC', sans-serif;
+}
+
+.wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.H1_size {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.H2_size {
+    font-size: 20px;
+}
+
+.mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.h80 {
+    height: 80px;
+}
+
+/* 按鈕 */
+.button_style {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: 0;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    width: 70%;
+    text-align: center;
+    padding: 10px;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 28px;
+    border-radius: 50px;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.button_style:hover, .button_style:focus, .button_style:active {
+    top: -5px;
+    box-shadow: 0 4px 3px rgb(0 0 0 / 20%);
+    color: #fff;
+}
+
+.button_triangle {
+    transform:rotate(90deg);
+}
+
+
+/* 關於BN */
+.BN_cloud_large, .BN_cloud_small, .BN_stars_large, .BN_stars_small, .BN_toys_large, .BN_toys_small, .BN_text, .BN_boy {
+    position: absolute;
+}
+
+.BN_space {
+    height: 50.5vw;
+}
+
+.BN_bg, .bg_offwhite {
+    background-color: #fbffd0;
+}
+
+.BN_cloud_large {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.BN_cloud_small {
+    display: none;
+}
+
+.BN_stars_large {
+    display: block;
+    width: 100%;
+    z-index: 10;
+    left: 0%;
+    animation: starscale 3s infinite linear;
+}
+@keyframes starscale {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.98);
+    }
+}
+
+.BN_stars_small {
+    display: none;
+}
+
+.BN_toys_large {
+    display: block;
+    width: 100%;
+    z-index: 20;
+    left: 0%;
+    animation: toyrotation 3s infinite linear;
+}
+@keyframes toyrotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(2deg);
+    }
+}
+
+.BN_toys_small {
+    display: none;
+}
+
+.BN_text {
+    z-index: 30;
+    left: 0%;
+    width: 40%;
+    left: 14%;
+    margin-top: 16%;
+}
+
+.BN_boy {
+    z-index: 30;
+    width: 27%;
+    left: 59%;
+    margin-top: 12%;
+}
+
+
+/* 三個小孩 */
+.H1_qt3_color{
+    color: #4b7bd7;
+}
+
+.H2_qt3_color {
+    color: #2c2c2c;
+}
+
+.qt3bg {
+    background-color: #e2f6fe;
+    border-radius: 20px;
+    height: 225px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.qt3kidbox {
+    margin-top: -51px;
+}
+
+.qt3font {
+    font-size: 20px;
+    color: #4b7bd7;
+    font-weight: bold;
+    margin-left: -5%;
+
+}
+
+/* 填表 */
+.table_bg {
+    background-color: #ededed;
+    border-radius: 20px;
+}
+
+.H1_table_color1 {
+    color: #2c2c2c;
+}
+
+.H1_table_color2 {
+    color: #4b7bd7;
+}
+
+.form_button {
+    background-color: #38b4b0;
+    color: #ffffff;
+    font-size: 24px;
+    border-radius: 20px;
+    line-height: 40px;
+}
+
+.form_space {
+    height: 1px;
+}
+
+.form_space_30 {
+    height: 30px;
+}
+
+
+/* 路線圖 */
+.bg_babyblue {
+    background-color: #cce6ff;
+}
+
+.H1_road_color {
+    color: #0023ac;
+}
+
+.road {
+    background-image: url(../images/road.png);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.road_stars {
+    background-image: url(../images/road_stars.png);
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.road_card_1 {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding-left: 25px;
+    line-height: 34px;
+}
+
+.road_card_tit {
+    color: #ffffff;
+    background-color: #0023ac;
+    border-radius: 20px;
+    width: 100px;
+}
+
+.road_li {
+    list-style-position: outside;
+}
+
+.button_road_color {
+    background: #0023ac;
+}
+
+
+/* 特色區 */
+.feature_bg {
+    background-image: url(../images/feature_bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+.feature_box{
+    background-color: rgba(252,254,226,0.6);
+    border-radius: 20px;
+    
+}
+
+.feature_box_tit {
+    color: #34a8a4;
+}
+
+.feature_box_text {
+    color: #2c2c2c;
+}
+
+.feature_pic{
+    border-radius: 20px;
+}
+
+.button_feature_color {
+    background: #4f94f7;
+}
+
+
+/* 老師 */
+.teacher_tit {
+    color: #3f7cd3;
+    font-size: 18px;
+}
+
+.teacher_text {
+    color: #2c2c2c;
+    font-size: 15px;
+}
+
+.teacher_tit_y {
+    font-size: 15px;
+}
+
+/* 課表區 */
+.timetable_bg {
+    background-color: #cce6ff;
+    background-image: url(../images/timetable_bg.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.timetable_tit_color {
+    color: #dd1e10;
+    
+}
+
+.timetable_subtit{
+    font-size: 16px;
+}
+
+.timetable_box {
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+
+.button_timetable {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: 0;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    
+    color: #ffffff;
+    background-color: #dd1e10;
+    border-radius: 20px;
+    border: 0px;
+    width: 110px;
+}
+
+.button_timetable:hover, .button_timetable:focus, .button_timetable:active {
+    top: -5px;
+    box-shadow: 0 4px 3px rgb(0 0 0 / 20%);
+    color: #fff;
+}
+
+.button_timetable_color {
+    background-color: #dd1e10;
+}
+
+/* 課表區 互動視窗 */
+.modal-header {
+    border-width: 0px;
+}
+
+.modal-content {
+    border-radius: 20px;
+    border-width: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.modal-body {
+    padding-top: 0px;
+}
+
+.modal_tit {
+    border-radius: 50px;
+    background-color: #4994ff;
+    color: #ffffff;
+    padding: 10px;
+    width: 150px;
+    margin-bottom: 30px;
+}
+
+.table_border {
+    border-bottom: #676767 1px solid;
+}
+
+.table_border_light {
+    border-bottom: #a7a7a7 1px dashed;
+}
+
+.table_tit {
+    color: #2c2c2c;
+}
+
+.table_con {
+    color: #6d6d6d;
+}
+
+
+/* 影片區 */
+.video_bg {
+    background-color: #cce6ff;
+    background-image: url(../images/video_bg.jpg);
+    background-size: cover;
+}
+
+.video_box {
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+
+.video_tit_color {
+    color: #0023ac;
+}
+
+.button_video_color {
+    background-color: #0023ac;
+}
+
+.video-container {
+    height: 315px;
+}
+
+
+
+@media screen and (max-width: 1200px) {
+
+    /* 三個小孩 */
+    .qt3font {
+        margin-left: 0%;
+    }
+}
+
+
+@media screen and (max-width: 991px) {
+
+    /* 按鈕 */
+    .button_style {
+        width: 90%;
+    }
+
+    /* 三個小孩 */
+    .qt3kid{
+        width: 100%;
+    }
+    
+    .qt3kidbox {
+        margin-top: 0px;
+    }
+
+    /* 路線圖 */
+    .road {
+        background-image: url(../images/road_small.png);
+    }
+    .road_stars {
+        background-image: url(../images/road_stars_small.png);
+    }
+
+    /* 影片區 */
+    .video-container {
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /* 關於BN */
+    .BN_space {
+        height: 156.2vw;
+    }
+
+    .BN_cloud_large {
+        display: none;
+    }
+    
+    .BN_cloud_small {
+        display: block;
+        width: 100%;
+        height: auto;
+        left: 0%;
+    }
+    
+    .BN_stars_large {
+        display: none;
+    }
+    
+    .BN_stars_small {
+        display: block;
+        width: 100%;
+        z-index: 10;
+        left: 0%;
+        animation: starscale 3s infinite linear;
+    }
+    @keyframes starscale {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(0.98);
+        }
+    }
+    
+    .BN_toys_large {
+        display: none;
+    }
+    
+    .BN_toys_small {
+        display: block;
+        width: 100%;
+        z-index: 20;
+        left: 0%;
+        animation: toyrotation 3s infinite linear;
+    }
+    @keyframes toyrotation {
+        0% {
+            transform: rotate(0deg);
+        }
+        50% {
+            transform: rotate(2deg);
+        }
+    }
+    
+    .BN_text {
+        z-index: 30;
+        left: 0%;
+        width: 90%;
+        left: 5%;
+        margin-top: 22%;
+    }
+    
+    .BN_boy {
+        z-index: 30;
+        width: 68%;
+        left: 16%;
+        margin-top: 55%;
+    }
+
+
+    /* 三個小孩 */
+    .qt3bg {
+        margin-bottom: 60px;
+    }
+
+    .qt3kidbox {
+        width: 200px;
+        margin-top: -44px;
+        margin-left: 15%;
+    }
+
+    .qt3font {
+        margin-left: -5%;
+    }
+    
+    /* 路線圖 */
+    .road {
+        background-image: url();
+    }
+    .road_stars {
+        background-image: url();
+    }
+
+    /* 影片區 */
+    .video-container {
+        height: 315px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    /* 課表區 互動視窗 */
+    .modal-content {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    .qt3kidbox {
+        width: 180px;
+        margin-top: -17px;
+        margin-left: 5%;
+    }
+}

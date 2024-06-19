@@ -1,0 +1,111 @@
+.course_list {
+    position: relative;
+}
+
+.course_list:before {
+    content: '';
+    position: absolute;
+    top: 250px;
+    left: -100px;
+    width: 75px;
+    height: 75px;
+    background: url('../images/course_pattern_02.svg') center no-repeat;
+    background-size: contain;
+}
+
+.course_list:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: -125px;
+    width: 150px;
+    height: 300px;
+    background: url('../images/course_pattern_01.svg') center no-repeat;
+    background-size: contain;
+}
+
+.itcourse_list:before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    right: -100px;
+    width: 150px;
+    height: 300px;
+    background: url('../images/itcourse_pattern_01.svg') center no-repeat;
+    background-size: contain;
+}
+
+.itcourse_list:after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    left: -50px;
+    width: 75px;
+    height: 75px;
+    background: url('../images/itcourse_pattern_02.svg') center no-repeat;
+    background-size: contain;
+}
+
+
+
+
+.table_list {
+    position: relative;
+}
+
+.table_list:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: -125px;
+    width: 100px;
+    height: 150px;
+    background: url('../images/table_pattern_01.svg') center no-repeat;
+    background-size: contain;
+}
+
+    .table_list:after {
+        content: '';
+        position: absolute;
+        bottom: -75px;
+        right: -65px;
+        width: 75px;
+        height: 75px;
+        background: url(../images/table_pattern_02.svg) center no-repeat;
+        background-size: contain;
+    }
+
+
+
+
+.feature_list {
+    position: relative;
+}
+
+.feature_list:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    right: -175px;
+    width: 150px;
+    height: 300px;
+    background: url('../images/feature_pattern_01.svg') center no-repeat;
+    background-size: contain;
+}
+
+.feature_list:after {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: -65px;
+    width: 75px;
+    height: 75px;
+    background: url('../images/feature_pattern_02.svg') center no-repeat;
+    background-size: contain;
+}
+
+
+@media screen and (max-width: 1023px) {
+
+
+}

@@ -1,0 +1,108 @@
+.witness {
+    background: var(--backgroundgreen);
+}
+
+.witness_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 25px;
+    margin: 0 auto;
+}
+
+.witness_title {
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+.witness .section_title {
+    margin-bottom: 45px;
+    color: white;
+    text-align: center;
+}
+
+.witness .section_title:after {
+    display: none;
+}
+
+.witness .section_title .focus {
+    color: var(--lightYellow);
+}
+
+.witness_list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+.witness_list li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+    padding: 40px 25px 70px;
+    margin: 7.5px 12.5px;
+    font-weight: 700;
+    color: var(--backgroundBlue);
+    background: url('../images/witness_card.svg') center no-repeat;
+    background-size: contain;
+    font-size: 18px;
+}
+
+.witness_list li .name {
+    width: 75px;
+    height: 35px;
+    margin-bottom: 10px;
+    line-height: 35px;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    background: var(--backgroundBlue);
+    transition:.3s;
+}
+
+    .witness_list a li:hover .name {
+        background: var(--backgroundOrange);
+    }
+
+
+
+    .witness_list li .info {
+        text-align: center;
+        transition: .3s;
+    }
+
+
+    .witness_list a li:hover .info {
+        color: var(--backgroundOrange);
+    }
+
+@media screen and (max-width: 1023px) {
+
+    .witness .section_title {
+        margin-bottom: 15px;
+    }
+
+    .witness_list li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 135px;
+        padding: 40px 25px 70px;
+        margin: 7.5px 12.5px;
+        font-weight: 700;
+        color: var(--backgroundBlue);
+        background: url('../images/witness_card.svg') center no-repeat;
+        background-size: contain;
+        font-size: 16px;
+    }
+    
+    
+}

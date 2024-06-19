@@ -1,0 +1,570 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>【網友激推】最好懂的韓語課 | 專業老師陪你練到會！</title>
+    <meta name="Title" content="【網友激推】最好懂的韓語課 | 專業老師陪你練到會！" />
+    <meta name="Description" content="網友首推最好懂的韓語課,專業老師創新教學,帶你發音秒上手,對話超流暢!上課免露臉,課堂輕鬆用韓語聊天互動,即時矯正發音/文法問題,初學者也能輕鬆上手!名額有限,趕快領取限量免費韓語課!" />
+    <meta name="keywords" content="學韓文,韓文40音,韓語老師" />
+    <meta property="og:title" content="【網友激推】最好懂的韓語課 | 專業老師陪你練到會！" />
+    <meta property="og:url" content="https://www.abconline.com.tw/activity/korean/024-netizenhot/index.html" />
+    <meta property="og:image" content="images/shareCard.jpg" />
+    <meta property="og:description" content="網友首推最好懂的韓語課,專業老師創新教學,帶你發音秒上手,對話超流暢!上課免露臉,課堂輕鬆用韓語聊天互動,即時矯正發音/文法問題,初學者也能輕鬆上手!名額有限,趕快領取限量免費韓語課!" />
+    <link rel="canonical" href="https://www.abconline.com.tw/activity/korean/024-netizenhot/index.html" />
+    <!-- Page Info Insert END -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="/wGuest/js/m_pcschool.js"></script>
+    <!-- Include JS & CSS Start -->
+    <link href="css/comm-style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <script type="text/javascript" src="js/aos.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/awardRotate.js"></script>
+
+    <!--非填單按鈕使用class name="activity-page-click-count"-->
+    <!-- Include JS & CSS End -->
+    <script type="text/javascript">
+        //留單相關，看過後請把註解刪掉喔!  -----start
+        var dept = "KZ2";
+        var seq_no = "0";
+        var web_pno = "112071500004"; //電腦版pno
+        var NList_Type = "5";
+        var fromto = "";
+        var Gift = "";
+        var is_Mobile = "0";
+
+        /*手機板 pno 判斷相關 >> start */
+        $(function () {
+            if (isMobile()) {
+                web_pno = "112071500005";  //手機板pno
+                is_Mobile = "1";   
+            }
+        });
+
+        function isMobile() {
+            try { document.createEvent("TouchEvent"); return true; }
+            catch (e) { return false; }
+        }
+        /*手機板 pno 判斷相關 >> end*/
+        
+
+
+        function but_send() {
+            $('#sBut').hide();
+
+            var JSonData = {
+                "name": $("#name").val(),
+                "mobile": $("#mobile").val(),
+                "email": $("#email").val(),
+                "seq_no": seq_no,
+                "dept_no": dept,
+                "memo": "體驗完送韓語電子書" + Gift,
+                "web_pno": web_pno,
+                "fromto": QueryString("fromto") != null ? QueryString("fromto") : fromto,
+                "fromurl": document.location.href, 
+                "sourceid": QueryString("fc") != null ? QueryString("fc") : "",
+                "NList_Type": NList_Type,
+                "IsSend": "N",
+                "func": "njycooooqj"
+            }
+
+            if ($("input[name=per_chk]:checked").length == 0) {
+                alert('請勾選同意個資保護聲明。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.name == "" || JSonData.name == "姓 名") {
+                alert('請填寫入姓名。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile == "" || JSonData.mobile == "行動電話") {
+                alert('請填寫行動電話。');
+                $('#sBut').show();
+                return false;
+            }
+            if (isNaN(JSonData.mobile) == true) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile.length != 10) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.email == "" || JSonData.email == "E-Mail") { JSonData.email = "" } else {
+                if (JSonData.email.indexOf("@") <= -1) {
+                    alert('電子郵件格式錯誤。');
+                    $('#sBut').show();
+                    return false;
+                }
+            }
+            goSubmit(JSonData, s, f);
+        }
+
+        function s(data) {
+            if (data[0].result == "1") {
+                $("#name").val("");
+                $("#mobile").val("");
+                $("#sBut").show();
+                document.location.href = "/wGuest/loadover.htm";
+            } else {
+                alert('送出失敗！');
+                $("#sBut").show();
+            }
+        }
+        function f(data) {
+            alert(data);
+            $("#sBut").show();
+        }
+        //留單相關，看過後請把註解刪掉喔!  -----end
+
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-WSWZFBP');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSWZFBP"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <form id="form1" runat="server">
+        <div class="top">
+            <iframe src="https://www.abconline.com.tw/activity/header/2020/" width="100%" height="65px" scrolling="No" frameborder="0" allowtransparency="allowTransparency" class="ifar"></iframe>
+        </div>
+        <!-- HTML Start -->
+
+        <!-- wapper開始 -->
+        <div class="wrapper">
+            <div class="nav-height"></div>
+            <section class="kv">
+                <div class="kvVedioCont">
+                    <video class="kvVedio" autoplay="true" preload="true" muted="true" loop="true" playsinline="true" src="images/kvVedio.mp4"></video>
+                </div>
+                <div class="kvTitleCont">
+                    <a href="#myform">
+                        <img class="kvTitlePC" src="images/kvTitlePC.png">
+                        <img class="kvTitleSP" src="images/kvTitleSP.png">
+                    </a>
+                </div>
+            </section>
+            <section class="courseBg">
+                <div class="coursePC">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-4 col-6 pt-5">
+                                <div class="fs-2">暢銷韓語主題課</div>
+                                <div class="fs-5">發音秒上手，對話超流暢</div>
+                            </div>
+                            <div class="col-lg-4 col-6 pt-5" data-aos="flip-left">
+                                <div class="shadow">
+                                    <img class="w-100" src="images/course1.jpg">
+                                    <div class="courseTextCont py-3 px-3">
+                                        <div class="fs-5 fw-bold colorBlueGreen">零基礎40音</div>
+                                        <div class="fs-6">邊玩邊學6堂課就上手！</div>
+                                        <a href="#myform"><div class="freeBt">免費體驗</div></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-6 pt-5" data-aos="flip-left">
+                                <div class="shadow">
+                                    <img class="w-100" src="images/course2.jpg">
+                                    <div class="courseTextCont py-3 px-3">
+                                        <div class="fs-5 fw-bold colorBlueGreen">旅遊與韓國生活</div>
+                                        <div class="fs-6">시장에서 먹거리 음식을 먹자!</div>
+                                        <a href="#myform"><div class="freeBt">免費體驗</div></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-6 pt-5" data-aos="flip-left">
+                                <div class="shadow">
+                                    <img class="w-100" src="images/course3.jpg">
+                                    <div class="courseTextCont py-3 px-3">
+                                        <div class="fs-5 fw-bold colorBlueGreen">韓國影視流行</div>
+                                        <div class="fs-6">콘서트를 보러 갈까요?</div>
+                                        <a href="#myform"><div class="freeBt">免費體驗</div></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-6 pt-5" data-aos="flip-left">
+                                <div class="shadow">
+                                    <img class="w-100" src="images/course4.jpg">
+                                    <div class="courseTextCont py-3 px-3">
+                                        <div class="fs-5 fw-bold colorBlueGreen">文化與節慶韓語</div>
+                                        <div class="fs-6">꼭 지켜야 하는 한국 예절</div>
+                                        <a href="#myform"><div class="freeBt">免費體驗</div></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-6 py-5" data-aos="flip-left">
+                                <div class="shadow">
+                                    <img class="w-100" src="images/course5.jpg">
+                                    <div class="courseTextCont py-3 px-3">
+                                        <div class="fs-5 fw-bold colorBlueGreen">韓語檢定課程</div>
+                                        <div class="fs-6">獎學金最高領5,000元！</div>
+                                        <a href="#myform"><div class="freeBt">免費體驗</div></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Swiper 開始-->
+                <div class="courseSP">
+                    <div class="text-center py-3">
+                        <div class="fs-2">暢銷韓語主題課</div>
+                        <div class="fs-5">發音秒上手，對話超流暢</div>
+                    </div>
+                    <div class="swiper pb-5">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide overflow-hidden">
+                                <div class="shadow">
+                                    <img class="w-100" src="images/course1.jpg">
+                                    <div class="courseTextCont py-3 px-3">
+                                        <div class="fs-5 fw-bold colorBlueGreen">零基礎40音</div>
+                                        <div class="fs-6 courseTextHeight">邊玩邊學6堂課就上手！</div>
+                                        <a href="#myform"><div class="freeBt">免費體驗</div></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide overflow-hidden">
+                                <div class="shadow">
+                                    <img class="w-100" src="images/course2.jpg">
+                                    <div class="courseTextCont py-3 px-3">
+                                        <div class="fs-5 fw-bold colorBlueGreen">旅遊與韓國生活</div>
+                                        <div class="fs-6 courseTextHeight">시장에서 먹거리 음식을 먹자!</div>
+                                        <a href="#myform"><div class="freeBt">免費體驗</div></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide overflow-hidden">
+                                <div class="shadow">
+                                    <img class="w-100" src="images/course3.jpg">
+                                    <div class="courseTextCont py-3 px-3">
+                                        <div class="fs-5 fw-bold colorBlueGreen">韓國影視流行</div>
+                                        <div class="fs-6 courseTextHeight">콘서트를 보러 갈까요?</div>
+                                        <a href="#myform"><div class="freeBt">免費體驗</div></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide overflow-hidden">
+                                <div class="shadow">
+                                    <img class="w-100" src="images/course4.jpg">
+                                    <div class="courseTextCont py-3 px-3">
+                                        <div class="fs-5 fw-bold colorBlueGreen">文化與節慶韓語</div>
+                                        <div class="fs-6 courseTextHeight">꼭 지켜야 하는 한국 예절</div>
+                                        <a href="#myform"><div class="freeBt">免費體驗</div></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide overflow-hidden">
+                                <div class="shadow">
+                                    <img class="w-100" src="images/course5.jpg">
+                                    <div class="courseTextCont py-3 px-3">
+                                        <div class="fs-5 fw-bold colorBlueGreen">韓語檢定課程</div>
+                                        <div class="fs-6 courseTextHeight">獎學金最高領5,000元！</div>
+                                        <a href="#myform"><div class="freeBt">免費體驗</div></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <!--Swiper 結束-->
+            </section>
+            <section class="vedioBg">
+                <div class="text-center pt-4 pb-5">
+                    <div class="fs-2">超高人氣Min Yong老師</div>
+                    <div class="fs-2">打穩你的韓語零基礎</div>
+                    <div class="vedioCont px-3">
+                        <div class="videobox">
+                            <iframe class="shadow" frameborder="0" src="https://www.youtube.com/embed/d5HE7YlzmVk?autoplay=1&loop=1&mute=1" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <a href="#myform"><div class="freeBt">加入試學</div></a>
+                </div>
+            </section>
+            <!-- 表單開始 -->
+            <section class="formBg">
+                <div id="myform"></div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 d-flex justify-content-center">
+                            <img class="formImg" src="images/formImg.png" alt="立即索取0元韓語課">
+                        </div>
+                        <div class="col-lg-6 col-md-12 text-center d-flex flex-column justify-content-center py-5">
+                            <h1><div class="fs-2 fw-bold formH1">立即索取0元韓語課</div></h1>
+                            <div class="fs-5">再贈限量韓語學習電子書</div>
+                            <div class="pt-3">
+                                <input name="ea" type="text" class="form-control" id="name" placeholder="姓 名" />
+                            </div>
+                            <div class="pt-3">
+                                <input name="mobile" type="text" class="form-control" id="mobile" placeholder="電 話" />
+                            </div>
+                            <div class="pt-3">
+                                <input name="email" type="text" class="form-control" id="email" placeholder="E-Mail" />
+                            </div>
+                            <div class="text-start fs-6 pt-3">
+                                <label>
+                                    <input type="checkbox" class="searchtext2" name="per_chk" checked="checked">
+                                </label>
+                                <span class="statement">我已閱讀並接受<a onclick="window.open('/activity/abconline/contract_02/','person',config='height=640,width=830');return false;" href="#">個資保護聲明</a></span>
+                            </div>
+                            <div class="py-3">
+                                <div id="sBut" onClick="but_send();" style="cursor:pointer;">
+                                    <div class="go_button">馬上索取</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- 表單結束 -->
+            <section class="QABg">
+                <div class="container py-5">
+                    <div class="fs-2 text-center pb-5">韓語課程常見QA問題</div>
+                    <div class="row">
+                        <div class="col-lg-8 col-md-6" data-aos="fade-up">
+                            <div class="accordion accordion-flush" id="accordionQA">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="QAID01">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#QA-Collapse01" aria-expanded="false" aria-controls="QA-Collapse01">
+                                            <div class="colorBlueGreen fs-3 bigQ">Q</div>
+                                            <div class="fs-5">我沒有任何韓語基礎，也可以來上課嗎？</div>
+                                        </button>
+                                    </h2>
+                                    <div id="QA-Collapse01" class="accordion-collapse collapse" aria-labelledby="QAID01" data-bs-parent="#accordionQA">
+                                        <div class="accordion-body">
+                                            A：可以，我們的初學者發音班，會從熟悉韓語40音開始，一步步帶您瞭解發音規則，打下良好韓語基礎。
+                                            <a href="#myform">請點我前往免費體驗</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="QAID02">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#QA-Collapse02" aria-expanded="false" aria-controls="QA-Collapse02">
+                                            <div class="colorBlueGreen fs-3 bigQ">Q</div>
+                                            <div class="fs-5">我有學過一點韓語，但不知道自己程度在哪？</div>
+                                        </button>
+                                    </h2>
+                                    <div id="QA-Collapse02" class="accordion-collapse collapse" aria-labelledby="QAID02" data-bs-parent="#accordionQA">
+                                        <div class="accordion-body">
+                                            A：正式上課前，會有專業韓語老師為您做免費程度檢測，讓您的學習過程循序漸進，上課不怕等級落差大。
+                                            <a href="#myform">請點我前往免費體驗</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="QAID03">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#QA-Collapse03" aria-expanded="false" aria-controls="QA-Collapse03">
+                                            <div class="colorBlueGreen fs-3 bigQ">Q</div>
+                                            <div class="fs-5">請問平常的上課方式？</div>
+                                        </button>
+                                    </h2>
+                                    <div id="QA-Collapse03" class="accordion-collapse collapse" aria-labelledby="QAID03" data-bs-parent="#accordionQA">
+                                        <div class="accordion-body">
+                                            A：線上直接與老師互動，可自由選擇上課時段。每堂50分鐘，2-6人小班制。課後錄影檔無限次觀看，方便複習，
+                                            <a href="#myform">請點我前往免費體驗</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="QAID04">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#QA-Collapse04" aria-expanded="false" aria-controls="QA-Collapse04">
+                                            <div class="colorBlueGreen fs-3 bigQ">Q</div>
+                                            <div class="fs-5">請問學費怎麼計算？</div>
+                                        </button>
+                                    </h2>
+                                    <div id="QA-Collapse04" class="accordion-collapse collapse" aria-labelledby="QAID04" data-bs-parent="#accordionQA">
+                                        <div class="accordion-body">
+                                            A：學費會根據每個人選擇的堂數、類型、當期優惠而有所不同，請直接填表諮詢，將會有專人為您服務。
+                                            <a href="#myform">請點我前往免費體驗</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="QAID05">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#QA-Collapse05" aria-expanded="false" aria-controls="QA-Collapse05">
+                                            <div class="colorBlueGreen fs-3 bigQ">Q</div>
+                                            <div class="fs-5">我想考韓語檢定，有相關的課程嗎？</div>
+                                        </button>
+                                    </h2>
+                                    <div id="QA-Collapse05" class="accordion-collapse collapse" aria-labelledby="QAID05" data-bs-parent="#accordionQA">
+                                        <div class="accordion-body">
+                                            A：有專門針對韓檢TOPIK的檢定班，傳授考試破題技巧，讓你最短時間衝刺取得好成績。
+                                            <a href="#myform">請點我前往免費體驗</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6" data-aos="flip-left">
+                            <div class="QASideBox shadow-sm">
+                                <div class="fs-5 fw-bold colorBlueGreen">6堂發音超效班</div>
+                                <div class="pt-2">學習韓語40音字母及其書寫方式，熟悉與練習發音技巧。</div>
+                                <a href="https://www.abconline.com.tw/korean-course" target="_blank"><div class="freeBt">查看課表</div></a>
+                            </div>
+                            <div class="QASideBox shadow-sm mt-4" data-aos="flip-left">
+                                <div class="fs-5 fw-bold colorBlueGreen">韓語能力加強&培養</div>
+                                <div class="pt-2">針對韓語能力弱項進行個別加強，聽力、口說、閱讀、文法、字彙。</div>
+                                <a href="https://www.abconline.com.tw/korean-course" target="_blank"><div class="freeBt">查看課表</div></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="teacherBg">
+                <div class="container py-5">
+                    <div class="fs-2 text-center pb-3">最專業師資陪你練到會!</div>
+                    <div class="row">
+                        <div class="teacher-col text-center" data-aos="fade-up">
+                            <a href="https://www.abconline.com.tw/teachers/korean/min-yong" target="_blank">
+                                <img class="shadow w-100" src="images/teacherMinYong.jpg">
+                                <div class="py-3">
+                                    <img src="images/KoreaFlag.jpg"><br>
+                                    <span>Min Yong</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="teacher-col text-center" data-aos="fade-up">
+                            <a href="https://www.abconline.com.tw/teachers/korean/wan-yong" target="_blank">
+                                <img class="shadow w-100" src="images/teacherWanYong.jpg">
+                                <div class="py-3">
+                                    <img src="images/KoreaFlag.jpg"><br>
+                                    <span>Wan Yong</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="teacher-col text-center" data-aos="fade-up">
+                            <a href="https://www.abconline.com.tw/teachers/korean/pum-hun" target="_blank">
+                                <img class="shadow w-100" src="images/teacherPumHun.jpg">
+                                <div class="py-3">
+                                    <img src="images/KoreaFlag.jpg"><br>
+                                    <span>Pum Hun</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="teacher-col text-center" data-aos="fade-up">
+                            <a href="https://www.abconline.com.tw/teachers/korean/ji-yong" target="_blank">
+                                <img class="shadow w-100" src="images/teacherJiYong.jpg">
+                                <div class="py-3">
+                                    <img src="images/KoreaFlag.jpg"><br>
+                                    <span>Ji Yong</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="teacher-col text-center" data-aos="fade-up">
+                            <a href="https://www.abconline.com.tw/teachers/korean/si-mun" target="_blank">
+                                <img class="shadow w-100" src="images/teacherSiMun.jpg">
+                                <div class="py-3">
+                                    <img src="images/KoreaFlag.jpg"><br>
+                                    <span>Si Mun</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="fs-2 text-center pt-5 pb-3">線上韓語課程優勢</div>
+                    <div class="row">
+                        <div class="col-6 pt-3" data-aos="flip-left">
+                            <div class="meritCont shadow">
+                                <div class="meritImgCont overflow-hidden">
+                                    <img class="w-100" src="images/merit1.jpg">
+                                </div>
+                                <div class="meritTextCont">
+                                    <div class="fs-5 fw-bold colorBlueGreen">情境式課程</div>
+                                    <div class="fs-6 py-2 meritTextHeight">你的生活就是教材，從日常找單字與造句，從生活學韓語記得快。</div>
+                                    <a href="#myform"><div class="freeBt">立即體驗</div></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 pt-3" data-aos="flip-left">
+                            <div class="meritCont shadow">
+                                <div class="meritImgCont overflow-hidden">
+                                    <img class="w-100" src="images/merit2.jpg">
+                                </div>
+                                <div class="meritTextCont">
+                                    <div class="fs-5 fw-bold colorBlueGreen">WIPPEA教學法</div>
+                                    <div class="fs-6 py-2 meritTextHeight">暖身練習不緊張，靈活運用好有趣，反覆練習記憶深，量身打造學習評量。</div>
+                                    <a href="#myform"><div class="freeBt">立即體驗</div></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 pt-3" data-aos="flip-left">
+                            <div class="meritCont shadow">
+                                <div class="meritImgCont overflow-hidden">
+                                    <img class="w-100" src="images/merit3.jpg">
+                                </div>
+                                <div class="meritTextCont">
+                                    <div class="fs-5 fw-bold colorBlueGreen">跨裝置學習</div>
+                                    <div class="fs-6 py-2 meritTextHeight">手機線上劃課，時間彈性好選擇；手機、平板筆電都OK。</div>
+                                    <a href="#myform"><div class="freeBt">立即體驗</div></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 pt-3" data-aos="flip-left">
+                            <div class="meritCont shadow">
+                                <div class="meritImgCont overflow-hidden">
+                                    <img class="w-100" src="images/merit4.jpg">
+                                </div>
+                                <div class="meritTextCont">
+                                    <div class="fs-5 fw-bold colorBlueGreen">專屬功能</div>
+                                    <div class="fs-6 py-2 meritTextHeight">不限次數觀看上課錄影檔，教材通通線上下載，課後專屬學習報告。</div>
+                                    <a href="#myform"><div class="freeBt">立即體驗</div></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+            <!-- wapper結束 -->
+        <!-- HTML END -->
+        <div class="footer">
+            <iframe class="FOOTER_frame" src="https://www.abconline.com.tw/activity/footer/2020/" width="100%" scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
+        </div>
+        <script src="js/swiper-bundle.min.js"></script>
+        <script type="text/javascript">
+            AOS.init({
+                easing: 'ease-in-out-sine',
+            });
+
+            // Swiper
+            var mySwiper = new Swiper ('.swiper', {
+                slidesPerView: "auto",
+                centeredSlides: true,
+                breakpoints: { 
+                    320: {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                    },
+                    992: {
+                        slidesPerView: 4,
+                        spaceBetween: 20,
+                    },
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                },
+            })
+        </script>
+    </form>
+</body>
+</html>

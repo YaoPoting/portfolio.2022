@@ -1,0 +1,398 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body {
+    font-family: Arial,'Noto Sans TC', sans-serif;
+}
+.wrapper {
+    position: relative;
+    overflow: hidden;
+}
+.H1_size {
+    font-size: 32px;
+    font-weight: bold;
+}
+.H2_size {
+    font-size: 20px;
+    font-weight: bold;
+}
+.H2_size_sp {
+    font-size: 20px;
+    font-weight: bold;
+}
+.ft_H1_size {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+.color_dkBrown {
+    color: #260901;
+}
+.color_orange {
+    color: #ff6700;
+}
+.h80 {
+    height: 80px;
+}
+
+/* 關於BN */
+.BN_PC {
+    height: 49.11vw;
+    display: block;
+}
+.BN_SP {
+    height: 134.25vw;
+    display: none;
+}
+.BN_wave, .BN_dots, .BN_girl, .BN_boy, .BN_title, .BN_wave_SP, .BN_dots_SP, .BN_girl_SP, .BN_boy_SP, .BN_title_SP {
+    position: absolute;
+    width: 100vw;
+}
+.BN_boy {
+    animation: BN_boy 3s infinite linear;
+}
+@keyframes BN_boy {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(6px);
+    }
+}
+.BN_title {
+    animation: BN_title 3s infinite linear;
+}
+@keyframes BN_title {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.98);
+    }
+}
+/* 課程特色 */
+.feature {
+    background-image: linear-gradient(to top, #ffb500 0%, #ffb500 45%, #ffebbd 50%, #ffebbd 100%);
+}
+.titStyle {
+    width: 80vw;
+    max-width: 300px;
+}
+/* Swiper */
+.swiper_display_pc {
+    display: block;
+}
+.swiper_display_sp {
+    display: none;
+}
+
+.swiper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #ffebbd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100vw;
+    height: 46.87vw !important;
+    /* 文字發光 */
+    text-shadow: 0 0 20px white, 0 0 30px white, 0 0 80px white, 0 0 100px white;
+}
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 5px 1vw auto auto;
+}
+.swiper-vertical > .swiper-pagination-bullets, .swiper-pagination-vertical.swiper-pagination-bullets {
+    margin: auto 6vw auto auto;
+    width: 10px;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.swiper-wrapper {
+    width: 100vw;
+    height: 46.87vw !important;
+}
+/* .swiper-content {
+    margin-top: -10vw;
+} */
+.swiperImg01 {
+    background-image: url("../images/feature_01.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.swiperImg02 {
+    background-image: url("../images/feature_02.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.swiperImg03 {
+    background-image: url("../images/feature_03.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.swiperImg04 {
+    background-image: url("../images/feature_04.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.swiperImg05 {
+    background-image: url("../images/feature_05.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.swiperImg06 {
+    background-image: url("../images/feature_06.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.swiperImg07 {
+    background-image: url("../images/feature_07.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+.swiperDec {
+    position: relative;
+    margin-top: -10.52%;
+    z-index: 10;
+}
+/* 填單 */
+.sheet {
+    position: relative;
+    background-color: #ffb500;
+    background-image: url("../images/sheetBgDots.png");
+    background-size: 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+.classOptionStyle {
+    border-radius: 5px;
+    background-color: #ffffff;
+    border-color: #ced4da;
+    border-width: 1px;
+    border-style: solid;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.selectArrow {
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    background: url("../images/selectArrow.png") no-repeat right center transparent;
+    background-size: 16px;
+    background-color: #ffffff;
+  }  
+  .selectArrow::-ms-expand { 
+    display: none; 
+  }
+#myform {
+    position: absolute;
+    top: -7em;
+}
+/* 12大類課程 */
+.Class12 {
+    background-color: #ffebbd;
+    background-image: url(../images/classBg.png);
+    background-size: 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+.parent {
+    position: relative;
+    width: 100%; /* 可以改成您想要的寬度 */
+    background-color: #ffffff;
+    padding-bottom: 100%;
+    border-radius: 50%;
+
+}
+.child {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: inherit;
+    box-sizing: border-box;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.child > p {
+    margin-bottom: 0.1em;
+}
+
+.button_style {
+    background-color: #ff6700;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 59px;
+    transition: all .4s ease-in-out;
+    display: inline-block;
+    padding: 0.25em 1em 0.1em 1em;
+}
+
+.button_style:hover {
+    transform: scale(1.05);
+    box-shadow: none;
+    box-shadow: none;
+    transition: all .4s ease-in-out;
+}
+
+/* 學生評價區 */
+.students {
+    background-color: #e7e7e7;
+    background-image: url(../images/studentBg.png);
+    background-size: 100%;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+.studentBg75 {
+    width: 80%;
+}
+.studentRight {
+    margin:0px 0px 0px auto;
+}
+.studentBg {
+    display: flex;
+}
+.studentImgBox {
+    width: 100%;
+    min-width: 150px;
+    max-width: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.studentImg {
+    width: 77.2%;
+}
+.dialog {
+    position: relative;
+    background-color: #ffffff;
+    color: #373737;
+    border-radius: 20px;
+    margin: 15px 0px 15px 0px;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .dialog::before {
+    content: '';
+    position: absolute;
+    border: 12px solid;
+    border-color: transparent white transparent transparent;
+    left: -24px;
+    top: 40%;
+  }
+  .dialog > p {
+    margin: 15px;
+  }
+.studentBtArea {
+    align-items: center;
+}
+
+@media screen and (max-width: 992px) {
+
+    /* 學生評價區 */
+    .studentBg75 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /* BN區 */
+    .BN_PC {
+        height: 49.11vw;
+        display: none;
+    }
+    .BN_SP {
+        height: 134.25vw;
+        display: block;
+    }
+
+    /* swiper */
+    .swiper_display_pc {
+        display: none;
+    }
+    .swiper_display_sp {
+        display: block;
+        margin-top: 10.52%;;
+    }
+    .swiperImg01 {
+        background-image: unset;
+    }
+    .swiperImg02 {
+        background-image: unset;
+    }
+    .swiperImg03 {
+        background-image: unset;
+    }
+    .swiperImg04 {
+        background-image: unset;
+    }
+    .swiperImg05 {
+        background-image: unset;
+    }
+    .swiperImg06 {
+        background-image: unset;
+    }
+    .swiperImg07 {
+        background-image: unset;
+    }
+    
+    /* 填單 */
+    .H2_size_sp {
+        font-size: 17px;
+        font-weight: bold;
+    }
+
+    /* 學生評價區 */
+    .studentBgWidth {
+        width: 100%;
+    }
+    #myform {
+        position: absolute;
+        top: -3em;
+    }
+
+    .BN_boy_SP {
+        animation: BN_boy_SP 3s infinite linear;
+    }
+    @keyframes BN_boy_SP {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(6px);
+        }
+    }
+    .BN_title_SP {
+        animation: BN_title_SP 3s infinite linear;
+    }
+    @keyframes BN_title_SP {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(0.95);
+        }
+    }
+}

@@ -1,0 +1,101 @@
+body {
+    font-family: 'Noto Sans TC', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    color: var(--line);
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+}
+
+:root {
+    --mainyellow: #F9DF65;
+    --backgroundBlue: #28A2A2;
+    --lightYellow: #FDF4A9;
+    --buttonRed: #F76F6F;
+    --skyBlue: #81BCCC;
+    --darkGreen: #343A39;
+    --backgroundGray: #f2f2f2;
+    --backgroundOrange: #E57523;
+    --lightgreen: #23993E;
+    --lightOrange: #FBA00E;
+    --darkblue: #4095C6;
+    --backgroundgreen: #7dc8ca;
+}
+
+.lazyLoad{
+	position: relative;
+	top: 50px;
+	opacity: 0;
+	transition: .3s;
+}
+
+.lazyLoad.show{
+	top: 0px;
+	opacity: 1;
+}
+
+h1 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.section_title {
+    position: relative;
+    margin-bottom: 60px;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.section_title:after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: calc( 50% - 50px );
+    width: 100px;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.button {
+    position: relative;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.button:hover {
+    top: -3px;
+}
+
+@media screen and (max-width: 1023px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .section_title {
+        margin-bottom: 40px;
+        font-size: 24px;
+    }
+
+    .section_title:after {
+        height: 5px;
+    }
+    
+
+}

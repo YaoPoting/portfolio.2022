@@ -1,0 +1,324 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.wrapper, *:before, *:after {
+    position: relative;
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+a{ text-decoration:none} a:hover{ text-decoration:none}
+.colorOrange {color: #ff6c00;}
+.colorYellow {color: #f5ad38;}
+.colorWhite {color: #ffffff;}
+.courseBgWhite { background-color: #ffffff; height: unset; }
+.courseBgBlack { background-color: black; }
+.H1_size {font-size: 32px;}
+.H2_size {font-size: 26px;}
+.H3_size {font-size: 22px;}
+.H4_size {font-size: 18px;}
+.H5_size {font-size: 12px;}
+/* KV */
+.h70 { height: 70px;}
+.h100 { height: 100px;}
+.kv_pc {display: block;}
+.kv_sp {display: none;}
+.kv_bg {
+    height: 45vw;
+    max-height: 700px;
+    background-image: url(../images/kv_pc.jpg);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+.kv_titleBox {
+    width: 100%;
+    margin-top: unset;
+}
+.kv_title_L2 {
+    background-image: url(../images/kv_title_L2.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.kv_title_R2 {
+    background-image: url(../images/kv_title_R2.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+/* 精選先修班 */
+.titleBr {
+    display: none;
+}
+.pencil {
+    background-image: url(../images/pencil.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+}
+.pencil {
+    background-size: 30%;
+}
+.fakePencil {
+    height: 140px;
+}
+.baseline {
+    text-decoration: underline;
+    text-underline-offset: 15px;
+}
+.courseLabel_orange {
+    background-color: #ff6c00;
+    color: #ffffff;
+    padding: 0px 6px;
+}
+.courseLabel_red {
+    background-color: #ff0000;
+    color: #ffffff;
+    padding: 0px 6px;
+}
+.courseBt:hover {
+    cursor: pointer;
+    background-color: #ff0000;
+}
+.courseBgWhite > ul {
+    margin: 0px;
+}
+.yellowBg {
+    background-color: rgba(255, 237, 216, 0.8);
+}
+.woodenTable {
+    background-image: url(../images/woodenTable.png);
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-size:  auto 200px;
+}
+/* 表單 */
+.woodenBg {
+    background-image: url(../images/woodenBg.png);
+}
+.classOptionStyle {
+    border-radius: 5px;
+    background-color: #ffffff;
+    border-color: #ced4da;
+    border-width: 1px;
+    border-style: solid;
+    min-height: 148px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.selectArrow {
+    appearance:none;
+    background: url("../images/selectArrow.png") no-repeat right center transparent;
+    background-size: 16px;
+    background-color: #ffffff;
+  }  
+  .selectArrow::-ms-expand { 
+    display: none; 
+  }
+.formAlignLeft {
+    text-align: unset;
+}
+.formAlignRight {
+    text-align: right;
+}
+#myform {
+    position: relative;
+    top: -3rem;
+}
+/* 按鈕樣式 */
+.button_style {
+    background-color: #ff6c00;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 59px;
+    transition: all .4s ease-in-out;
+    display: inline-block;
+    padding: 0.1em 1em 0.1em 1em;
+}
+.button_style:hover {
+    transform: scale(1.05);
+    box-shadow: none;
+    box-shadow: none;
+    transition: all .4s ease-in-out;
+}
+/* 12大品質保證 */
+.featuresTitle_text {
+    width: 30%;
+    margin: 0 auto;
+    background-image: url(../images/featuresTitle_text.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+}
+.featuresTitle_pen {
+    animation: ftPen infinite 3s;
+}
+    @keyframes ftPen {
+        0% {transform: translateX(0px);}
+        50% {transform: translateX(-50px);}
+    }
+.featureBgWhite { background-color: #ffffff; }
+.featureTriangle {
+    width: 0px;
+    height: 0px;
+    border-width: 0px 0px 30px 30px;
+    border-style: solid;
+}
+.featureTagOrange {border-color: transparent #ff6c00;}
+.featureTagYellow {border-color: transparent #f5ad38;}
+.featureTag {margin-left: -20px;}
+.featureContent {height: 130px;}
+.featureHr {border: 1px solid black;}
+/* Swiper */
+.swiper {width: 90%;}
+.swiperPd { padding: 0px 30px;}
+.swiper_father{
+    position: relative;
+    --swiper-navigation-size: 0;
+}
+.swiper-slide {
+    background-size: cover;
+    background-color: #ffffff;
+    border-radius: 20px;
+}
+.bi-arrow-left-circle-fill {color: #0f1421;}
+.bi-arrow-right-circle-fill {color: #0f1421;}
+
+/* 影片區 */
+.libraryBg {
+    background-image: url(../images/library.png);
+    background-size: cover;
+}
+.videoWhiteBg {
+    background-color: rgba( 255, 255, 255, 0.8)
+}
+.vedioFrame {
+    width: 90%;
+    height: 315px;
+}
+/* 24小時發問 */
+.alldayAskingBg {
+    background-image: linear-gradient(0deg, #d9ccc9 0%, #ffffff 60%);
+}
+.alldayAskingHeight {
+    height: 1000px;
+}
+.tab-title{
+    list-style:none;
+    padding: 0px 0px 0px 0px;
+}
+.tab-liWidth33 {
+    width: 33%;
+}
+.tab-liWidth34 {
+    width: 34.3%;
+}
+#tab-alldayAsking { 
+    width:100%;
+}
+#tab-alldayAsking > ul { 
+    display:block; 
+    margin:0;
+    list-style:none;
+}
+#tab-alldayAsking > ul > li {
+    display:inline-block; 
+    vertical-align:top; 
+    margin:0px -6px -1px 0px ; 
+    border:1px solid #BCBCBC; 
+    background:#ffffff;
+    list-style:none; 
+    box-sizing:border-box;
+}
+#tab-alldayAsking >  ul > li a { 
+    color:#000; 
+    text-decoration:none;
+}
+#tab-alldayAsking > ul > li.active { 
+    border-bottom:1px solid #efefef; 
+    background:#efefef;
+}
+#tab-alldayAsking > .tab-inner { 
+    color:#000; 
+    border:1px #BCBCBC solid;
+    margin-top: -1px;
+}
+.tab-inner {
+    background-color: #efefef;
+}
+.alldayAskingImg {
+    width: 50%;
+    max-width: 297px;
+    margin-right: 40px;
+}
+.desktop {
+    width: 120%;
+    margin-left: -10%;
+    margin-top: 0%;
+}
+@media screen and (max-width: 1700px) {
+    .kv_bg {
+        background-image: url(../images/kv_pc1700.jpg);
+}}
+@media screen and (max-width: 1400px) {
+    .courseBgWhite {
+        height: 200px;
+    }
+    .vedioFrame {
+        height: 270px;
+    }
+    .adah {
+        height: 85vw;
+    }
+    .fakePencil {
+        height: 100px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .featuresTitle_text {
+        width: 50%;
+    }
+    .vedioFrame {
+        height: 220px;
+    }
+}
+@media screen and (max-width: 992px) {
+    .kv_bg {
+        height: 139vw;
+        max-height: unset;
+        background-image: url(../images/kv_sp.png);
+        align-items:flex-start;
+    }
+    .kv_titleBox {margin-top: 50px;}
+    .classOptionStyle {min-height: unset;}
+    .formAlignLeft {text-align: center;}
+    .formAlignRight {text-align: center;}
+    .featureContent {height: 130px;}
+    .pencil {background-size: 40%;}
+    .fakePencil {height: 80px;}
+    .swiper {width: 85%;}
+    .vedioFrame {height: 160px;}
+    .tab-liWidth34 {width: 34.5%;}
+}
+@media screen and (max-width: 768px) {
+    .courseBgWhite {
+        height: unset;
+    }
+    .featuresTitle_text {
+        width: 90%;
+    }
+    .swiper {width: 80%;}
+    .swiperPd { padding: 0px 8px;}
+    .fakePencil {
+        height: 70px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .titleBr {display: block;}
+    .tab-liWidth34 {width: 34.7%;}
+    .pencil {background-size: 60%;}
+}

@@ -1,0 +1,302 @@
+.wrapper .teacherBg .meritCont .meritTextCont .freeBt, .wrapper .QABg .QASideBox .freeBt, .wrapper .vedioBg .freeBt, .wrapper .courseBg .freeBt {
+  display: inline-block;
+  cursor: pointer;
+  background-color: #23b3c4;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  margin-top: 1rem;
+}
+.wrapper .teacherBg .meritCont .meritTextCont .freeBt:hover, .wrapper .QABg .QASideBox .freeBt:hover, .wrapper .vedioBg .freeBt:hover, .wrapper .courseBg .freeBt:hover {
+  background-color: rgb(39, 78, 110);
+}
+
+.wrapper, *:before, *:after {
+  position: relative;
+  margin: 0;
+  font-family: "Noto Sans TC", sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+  box-sizing: border-box;
+}
+
+.wrapper .nav-height {
+  height: 60px;
+}
+.wrapper .kv {
+  position: relative;
+  height: 56vw;
+  max-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.wrapper .kv .kvVedioCont {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+.wrapper .kv .kvVedioCont .kvVedio {
+  position: relative;
+  width: 103%;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv .kvVedioCont .kvVedio {
+    width: 240%;
+    left: 20%;
+  }
+}
+@media screen and (max-width: 374px) {
+  .wrapper .kv .kvVedioCont .kvVedio {
+    height: 100%;
+    width: auto;
+    left: 70%;
+  }
+}
+.wrapper .kv .kvTitleCont {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.wrapper .kv .kvTitleCont .kvTitleSP, .wrapper .kv .kvTitleCont .kvTitlePC {
+  width: 100%;
+  max-width: 800px;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv .kvTitleCont .kvTitleSP, .wrapper .kv .kvTitleCont .kvTitlePC {
+    margin: auto;
+  }
+}
+.wrapper .kv .kvTitleCont a {
+  margin: auto;
+}
+@media screen and (max-width: 576px) {
+  .wrapper .kv .kvTitleCont a {
+    margin: auto auto 10% auto;
+  }
+}
+.wrapper .kv .kvTitleCont .kvTitlePC {
+  display: block;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv .kvTitleCont .kvTitlePC {
+    display: none;
+  }
+}
+.wrapper .kv .kvTitleCont .kvTitleSP {
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv .kvTitleCont .kvTitleSP {
+    display: block;
+  }
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv {
+    height: 500px;
+  }
+}
+.wrapper .courseBg {
+  background-color: #f4f4f4;
+  background-image: url(../images/blueBlockCourse.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: 0% bottom;
+}
+.wrapper .courseBg .courseTextCont {
+  z-index: 20;
+  background-color: white;
+}
+.wrapper .courseBg .courseTextCont .colorBlueGreen {
+  color: #23b3c4;
+}
+.wrapper .courseBg .coursePC {
+  display: block;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .courseBg .coursePC {
+    display: none;
+  }
+}
+.wrapper .courseBg .courseSP {
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .courseBg .courseSP {
+    display: block;
+  }
+}
+.wrapper .courseBg .swiper {
+  --swiper-pagination-color: #23b3c4;
+}
+.wrapper .courseBg .courseTextHeight {
+  height: 50px;
+}
+.wrapper .vedioBg {
+  background-image: url(../images/blueBlockVedio.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: 0% bottom;
+}
+.wrapper .vedioBg .vedioCont {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.wrapper .vedioBg .vedioCont .videobox {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+.wrapper .vedioBg .vedioCont .videobox iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.wrapper .formBg {
+  background-color: #f4f4f4;
+}
+.wrapper .formBg .formImg {
+  width: 100%;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .formBg .formImg {
+    width: 75%;
+  }
+}
+.wrapper .formBg .formH1 {
+  color: #23b3c4;
+}
+.wrapper .formBg .go_button {
+  background-color: #23b3c4;
+  color: white;
+  border-radius: 0.25rem;
+  padding: 0.375rem 0.75rem;
+}
+.wrapper .QABg {
+  background-image: url(../images/blueBlockQA.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: 0% top;
+}
+.wrapper .QABg #myform {
+  position: relative;
+  top: 0rem;
+}
+.wrapper .QABg .colorBlueGreen {
+  color: #23b3c4;
+}
+.wrapper .QABg .accordion-item {
+  background-color: unset;
+}
+.wrapper .QABg .accordion-item .accordion-button {
+  padding: 1.5rem 1.25rem;
+  background-color: rgba(255, 255, 255, 0);
+}
+.wrapper .QABg .accordion-item .accordion-button:not(.collapsed) {
+  background-color: unset;
+  color: #23b3c4;
+  box-shadow: unset;
+}
+.wrapper .QABg .accordion-item .accordion-button:focus {
+  border-color: unset;
+  box-shadow: unset;
+}
+.wrapper .QABg .accordion-item .accordion-body {
+  padding: 0rem 1.25rem 1.5rem 1.25rem;
+}
+.wrapper .QABg .accordion-item .bigQ {
+  padding-right: 0.5rem;
+}
+.wrapper .QABg .QASideBox {
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  padding: 1.5rem;
+}
+.wrapper .teacherBg {
+  background-color: #f4f4f4;
+  background-image: url(../images/blueBlockTeacher.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-position: 0% bottom;
+}
+.wrapper .teacherBg a {
+  text-decoration: none;
+  color: black;
+}
+.wrapper .teacherBg br {
+  display: none;
+}
+@media screen and (max-width: 576px) {
+  .wrapper .teacherBg br {
+    display: block;
+  }
+}
+.wrapper .teacherBg .teacher-col {
+  flex: 1 0 0%;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .teacherBg .teacher-col {
+    flex: 0 0 33.3333%;
+  }
+}
+.wrapper .teacherBg .meritCont {
+  max-height: 220px;
+  display: flex;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .teacherBg .meritCont {
+    flex-direction: column;
+    max-height: none;
+  }
+}
+.wrapper .teacherBg .meritCont .meritImgCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .teacherBg .meritCont .meritImgCont {
+    max-height: 200px;
+    width: 100%;
+  }
+}
+.wrapper .teacherBg .meritCont .meritTextCont {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.5rem;
+  width: 50%;
+}
+.wrapper .teacherBg .meritCont .meritTextCont .colorBlueGreen {
+  color: #23b3c4;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .teacherBg .meritCont .meritTextCont {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 576px) {
+  .wrapper .teacherBg .meritCont .meritTextCont {
+    padding: 0.7rem;
+    justify-content: start;
+  }
+}
+.wrapper .teacherBg .meritCont .meritTextCont .meritTextHeight {
+  text-align: justify;
+  height: unset;
+}
+@media screen and (max-width: 576px) {
+  .wrapper .teacherBg .meritCont .meritTextCont .meritTextHeight {
+    height: 125px;
+  }
+}/*# sourceMappingURL=style.css.map */

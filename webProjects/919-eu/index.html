@@ -1,0 +1,1047 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>出國必學旅遊會話 | 萬元補助西班牙語、法語、德語</title>
+    <meta name="Title" content="出國必學旅遊會話 | 萬元補助西班牙語、法語、德語" />
+    <meta name="Description" content="想出國去解封景點打卡就要先學會實用旅遊會話,即日起萬元補助活動開跑,來線上西班牙語,法語,德語任一語言課程可享1萬元學習補助金,再送毆語學習工具書!" />
+    <meta name="keywords" content="旅遊西班牙文,旅遊法文,旅遊德文,課程補助" />
+    <meta property="og:title" content="出國必學旅遊會話 | 萬元補助西班牙語、法語、德語" />
+    <meta property="og:image" content="https://www.abconline.com.tw/activity/other/049-eutrain/images/share_card.jpg" />
+    <meta property="og:description" content="想出國去解封景點打卡就要先學會實用旅遊會話,即日起萬元補助活動開跑,來線上西班牙語,法語,德語任一語言課程可享1萬元學習補助金,再送毆語學習工具書!" />
+    <!-- Page Info Insert END -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="/wGuest/js/m_pcschool.js"></script>
+
+    <!-- Include JS & CSS Start -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/animate.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/break.css" rel="stylesheet" />
+    <link href="css/comm-style.css" rel="stylesheet" />
+    <link href="css/swiper-bundle.min.css" rel="stylesheet" >
+    <!-- gotop -->
+    <link rel="stylesheet" href="css/gotop.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/wow.min.js"></script>
+
+
+    <!-- Include JS & CSS End -->
+    <script type="text/javascript">
+        //留單相關，看過後請把註解刪掉喔!  -----start
+        var dept = "KZ2";
+        var seq_no = "0";
+        var web_pno = ""; //電腦版pno
+        var NList_Type = "5";
+        var fromto = "";
+        var Gift = "";
+        var is_Mobile = "0";
+
+        /*手機板 pno 判斷相關 >> start */
+        $(function () {
+            if (isMobile()) {
+                web_pno = "110035500002";  //手機板pno
+                is_Mobile = "1";   
+            }
+        });
+
+        function isMobile() {
+            try { document.createEvent("TouchEvent"); return true; }
+            catch (e) { return false; }
+        }
+        /*手機板 pno 判斷相關 >> end*/
+        
+
+
+        function but_send() {
+            $('#sBut').hide();
+            //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----start
+            GetPno();
+            if (Gift == "") {
+                alert('請選擇索取最新課表。');
+                $('#sBut').show();
+                return false;
+            }
+            //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----end
+            var JSonData = {
+                "name": $("#name").val(),
+                "mobile": $("#mobile").val(),
+                "email": $("#email").val(),
+                "seq_no": seq_no,
+                "dept_no": dept,
+                "memo": "登記索取2020最新課表，加贈1200堂英日語數位課程！" + Gift,
+                "web_pno": web_pno,
+                "fromto": QueryString("fromto") != null ? QueryString("fromto") : fromto,
+                "fromurl": document.location.href, 
+                "sourceid": QueryString("fc") != null ? QueryString("fc") : "",
+                "NList_Type": NList_Type,
+                "IsSend": "N",
+                "func": "njycooooqj"
+            }
+
+            if ($("input[name=per_chk]:checked").length == 0) {
+                alert('請勾選同意個資保護聲明。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.name == "" || JSonData.name == "姓 名") {
+                alert('請填寫入姓名。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile == "" || JSonData.mobile == "行動電話") {
+                alert('請填寫行動電話。');
+                $('#sBut').show();
+                return false;
+            }
+            if (isNaN(JSonData.mobile) == true) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile.length != 10) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.email == "" || JSonData.email == "E-Mail") { JSonData.email = "" } else {
+                if (JSonData.email.indexOf("@") <= -1) {
+                    alert('電子郵件格式錯誤。');
+                    $('#sBut').show();
+                    return false;
+                }
+            }
+            goSubmit(JSonData, s, f);
+        }
+
+        function s(data) {
+            if (data[0].result == "1") {
+                $("#name").val("");
+                $("#mobile").val("");
+                $("#sBut").show();
+                document.location.href = "/wGuest/loadover.htm";
+            } else {
+                alert('送出失敗！');
+                $("#sBut").show();
+            }
+        }
+        function f(data) {
+            alert(data);
+            $("#sBut").show();
+        }
+        //留單相關，看過後請把註解刪掉喔!  -----end
+
+        //下拉選單有不同語系課程時使用，如果沒有要用就刪掉 左M右邊PC  -----start
+        function GetPno() {
+            var select_val = $("#dpGift :selected").val();
+            switch (select_val) {
+                case "spanish":
+                    web_pno = is_Mobile == "1" ? "111071500024" : "111071500023";
+                    Gift = "我要索取西語課表";
+                    break;
+                case "french":
+                    web_pno = is_Mobile == "1" ? "111071500026" : "111071500025";
+                    Gift = "我要索取法語課表";
+                    break;
+                case "german":
+                    web_pno = is_Mobile == "1" ? "111071500028" : "111071500027";
+                    Gift = "我要索取德語課表";
+                    break;        
+            }
+        }
+        //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----end
+
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-WSWZFBP');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSWZFBP"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <form id="form1" runat="server">
+        <div class="top">
+            <iframe src="/activity/header/2020/" width="100%" height="65px" scrolling="No" frameborder="0" allowtransparency="allowTransparency" class="ifar"></iframe>
+        </div>
+        <!-- HTML Start -->
+
+        <!-- wapper開始 -->
+        <div class="wrapper euhotclass">
+
+            <!-- BANNER開始 -->
+            <div class="container-fluid">
+                    <div class="row">
+                        <img src="images/banner_front_big.png" class="banner_big">
+                        <img src="images/banner_front_min.png" class="banner_min">
+                        <a href="#form"><img class="banner001 zoomIn" src="images/a-title.png" alt="歐語學習特快車"></a>
+                        <img src="images/banner_city.jpg" alt="歐洲景點" class="city" >
+                    </div>
+            </div>
+            <!--側邊欄 開始-->
+            <div class='gotop'>
+                <a href="#form">
+                    <img class="row_fill_img" src="images/gotop.png">
+               </a>
+            </div>
+            <script src="js/gotop.js"></script>
+            <script>
+                $(document).ready(function () {
+                    $(".row_fill_img").click(function () {
+                        $("html,body").animate({ scrollTop: $("#fillform").offset().top }, 500);
+                    });
+                }); 
+            </script>            
+            <!--側邊欄 結束-->
+            <!--學外語有好康 開始-->
+            <div class="b_space"></div>
+
+            <div class="b_area">
+                <div class="container-xl b_container">
+                    <div class="row">
+                        <div class="b_tittle">
+                            <H1>學外語有好康！</H1>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="b_textarea aos-animate" data-aos="fade-right" data-aos-duration="450" data-aos-delay="100">
+                                <div class="b_tittle2_area text-center">
+                                    <H3 class="b_tittle_2">優惠方式</H3>
+                                </div>
+                                <div class="b_content b_p_content_size text-justify">
+                                    <p>憑國民身分證領取，免費線上體驗課、萬元課程補助金、歐語學習書(西/法/德擇一)。</p>
+                                </div>
+                                <a href="#form">
+                                    <div class="b_bt text-center">
+                                        領取課程
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi" viewBox="0 0 16 16">
+                                            <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="b_textarea aos-animate" data-aos="fade-right" data-aos-duration="450" data-aos-delay="100">
+                                <div class="b_tittle2_area text-center">
+                                    <H3 class="b_tittle_2">多元主題</H3>
+                                </div>
+                                <div class="b_content b_p_content_size text-justify">
+                                    <p>情境式教學帶你體驗異國風情：旅遊景點、交通工具、血拼購物、餐飲美食、聊天交友、生理表達…都能自由選擇排課。</p>
+                                </div>
+                                <a href="#form">
+                                    <div class="b_bt text-center">
+                                        領取課程
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi" viewBox="0 0 16 16">
+                                            <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="b_textarea aos-animate" data-aos="fade-right" data-aos-duration="450" data-aos-delay="100">
+                                <div class="b_tittle2_area text-center">
+                                    <H3 class="b_tittle_2">課程特色</H3>
+                                </div>
+                                <div class="b_content b_p_content_size text-justify">
+                                    <p>情境課程上百堂超值！每堂完整50分鐘課程高效率學習，課後提供完整錄影檔，讓你隨時複習不遺忘。還有專門設計的歐語教材，從零基礎到高階課程一條龍！</p>
+                                </div>
+                                <a href="#form">
+                                    <div class="b_bt text-center">
+                                        領取課程
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi" viewBox="0 0 16 16">
+                                            <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                                        </svg>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>   
+                        <div class="row p_content_size b_time">
+                            <p>課程時段：周一~周日 AM：10:00-23:50</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--學外語有好康 結束-->
+                        
+
+            <!--西語 開始-->
+            <div class="span_area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 flag_area">
+                            <img src="images/span_flag.jpg" class="national_flag">
+                            <H2><div class="span_tittlestroke">熱情西班牙語</div></H2>
+                            <div class="p_content_size"><div class="span_tittlestroke">道地又實用，輕鬆結交西國朋友</div></div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 train_area">
+                            <div class="aos-animate" data-aos="fade-left" data-aos-duration="450" data-aos-delay="100">
+                                <img src="images/train.png" class="train">
+                            </div>
+                        </div>
+                    </div>
+                    <!--Swiper 開始-->
+                    <div class="swiper_father aos-animate" data-aos="fade-up" data-aos-duration="450" data-aos-delay="100">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide span01">
+                                    <div class="swiper_imgspace"></div>
+                                    <div class="swiper_content_area">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="swiper_span_label bi bi-bookmarks-fill" viewBox="0 0 16 16">
+                                                    <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+                                                    <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11 swiper_span_tittle">
+                                                <h3>問路</h3>
+                                            </div>
+                                        </div>
+                                        <p class="p_content_size swiper_span_content">Pedir la dirección</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide span02">
+                                    <div class="swiper_imgspace"></div>
+                                    <div class="swiper_content_area">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="swiper_span_label bi bi-bookmarks-fill" viewBox="0 0 16 16">
+                                                    <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+                                                    <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11 swiper_span_tittle">
+                                                <h3>在酒館及餐廳</h3>
+                                            </div>
+                                        </div>
+                                        <p class="p_content_size swiper_span_content">En bar y restaurante.</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide span03">
+                                    <div class="swiper_imgspace"></div>
+                                    <div class="swiper_content_area">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="swiper_span_label bi bi-bookmarks-fill" viewBox="0 0 16 16">
+                                                    <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+                                                    <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11 swiper_span_tittle">
+                                                <h3>跟朋友約</h3>
+                                            </div>
+                                        </div>
+                                        <p class="p_content_size swiper_span_content">Quedar con amigos</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide span04">
+                                    <div class="swiper_imgspace"></div>
+                                    <div class="swiper_content_area">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="swiper_span_label bi bi-bookmarks-fill" viewBox="0 0 16 16">
+                                                    <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+                                                    <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11 swiper_span_tittle">
+                                                <h3>買票</h3>
+                                            </div>
+                                        </div>
+                                        <p class="p_content_size swiper_span_content">Comprar las entradas</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide span05">
+                                    <div class="swiper_imgspace"></div>
+                                    <div class="swiper_content_area">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="swiper_span_label bi bi-bookmarks-fill" viewBox="0 0 16 16">
+                                                    <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+                                                    <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11 swiper_span_tittle">
+                                                <h3>買流行衣服</h3>
+                                            </div>
+                                        </div>
+                                        <p class="p_content_size swiper_span_content">Comprar ropa de moda</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide span06">
+                                    <div class="swiper_imgspace"></div>
+                                    <div class="swiper_content_area">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="swiper_span_label bi bi-bookmarks-fill" viewBox="0 0 16 16">
+                                                    <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+                                                    <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11 swiper_span_tittle">
+                                                <h3>我頭痛</h3>
+                                            </div>
+                                        </div>
+                                        <p class="p_content_size swiper_span_content">Me duele la cabeza.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 上下按鈕 -->
+                        <div class="swiper-button-prev">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                              </svg>
+                        </div>
+                        <div class="swiper-button-next">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                              </svg>
+                        </div>
+                    </div>
+                    <!--Swiper 結束-->
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 aos-animate" data-aos="fade-up" data-aos-duration="450" data-aos-delay="100">
+                            <div class="row teacher_jc_head ">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <img class="teacher_talk" src="images/teacher_jc_talk.png">
+                                </div>
+                            </div>
+                            <div class="row text-center">
+                                <p class="p_content_size teacher_name">Jorge Cubas<br>西語老師</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 aos-animate" data-aos="fade-up" data-aos-duration="450" data-aos-delay="100">
+                            <div class="p_content_size text-justify">
+                                <p>西班牙彈舌音有訣竅，中、外師資證照全具備！還有西班牙、中南美洲籍老師，帶你學習最道地西班牙語！</p>
+                            </div>
+                            <div class="teacher_hr"></div>
+                            <div class="teacher_pf_text p_content_size">
+                                <div class="row"><div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 teacher_pftit_area">初學入門</div><p>&nbsp;西班牙語發音班</p></div>
+                                <div class="row"><div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 teacher_pftit_area">基礎課程</div><p>&nbsp;A1基礎入門、A2生活會話</p></div>
+                                <div class="row"><div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 teacher_pftit_area">進階課程</div><p>&nbsp;B1中級會話、B2中高級會話</p></div>
+                                <div class="row"><div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 teacher_pftit_area">高階課程</div><p>&nbsp;C1高階專題研討</p></div>
+                                <div class="row"><div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 teacher_pftit_area">西語檢定</div><p>&nbsp;字彙、閱讀文法加強</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row text-center aos-animate" data-aos="zoom-in" data-aos-duration="450" data-aos-delay="100">
+                        <a href="https://www.abconline.com.tw/teachers/spanish"><button type="button" class="btn text-nowrap span_bt"><p>找西班牙語老師 ></p></button></a>
+                    </div>
+                </div>
+            </div>
+            <!--西語結束-->
+            <!--法語 開始-->
+            <div class="french_area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 flag_area">
+                            <img src="images/french_flag.jpg" class="national_flag">
+                            <H2><div class="french_tittlestroke">浪漫法語</div></H2>
+                            <div class="p_content_size"><div class="french_tittlestroke">情境式互動教學，自然就學會！</div></div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 train_area">
+                            <div class="aos-animate" data-aos="fade-left" data-aos-duration="450" data-aos-delay="100">
+                                <img src="images/train.png" class="train">
+                            </div>
+                        </div>
+                    </div>
+                    <!--Swiper 開始-->
+                    <div class="swiper_father aos-animate" data-aos="fade-up" data-aos-duration="450" data-aos-delay="100">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide french01">
+                                    <div class="swiper_imgspace"></div>
+                                    <div class="swiper_content_area">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="swiper_french_label bi bi-bookmarks-fill" viewBox="0 0 16 16">
+                                                    <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+                                                    <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11 swiper_french_tittle">
+                                                <h3>優雅法式問候</h3>
+                                            </div>
+                                        </div>
+                                        <p class="p_content_size swiper_span_content">salutation</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide french02">
+                                    <div class="swiper_imgspace"></div>
+                                    <div class="swiper_content_area">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="swiper_french_label bi bi-bookmarks-fill" viewBox="0 0 16 16">
+                                                    <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+                                                    <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11 swiper_french_tittle">
+                                                <h3>參觀博物館</h3>
+                                            </div>
+                                        </div>
+                                        <p class="p_content_size swiper_span_content">Une visite au musée!</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide french03">
+                                    <div class="swiper_imgspace"></div>
+                                    <div class="swiper_content_area">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="swiper_french_label bi bi-bookmarks-fill" viewBox="0 0 16 16">
+                                                    <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+                                                    <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11 swiper_french_tittle">
+                                                <h3>這個多少錢?</h3>
+                                            </div>
+                                        </div>
+                                        <p class="p_content_size swiper_span_content">Combien ça coûte?</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide french04">
+                                    <div class="swiper_imgspace"></div>
+                                    <div class="swiper_content_area">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="swiper_french_label bi bi-bookmarks-fill" viewBox="0 0 16 16">
+                                                    <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+                                                    <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11 swiper_french_tittle">
+                                                <h3>我非常喜歡戲劇</h3>
+                                            </div>
+                                        </div>
+                                        <p class="p_content_size swiper_span_content">J’adore le théâtre.</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide french05">
+                                    <div class="swiper_imgspace"></div>
+                                    <div class="swiper_content_area">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="swiper_french_label bi bi-bookmarks-fill" viewBox="0 0 16 16">
+                                                    <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+                                                    <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11 swiper_french_tittle">
+                                                <h3>在法國餐廳用餐</h3>
+                                            </div>
+                                        </div>
+                                        <p class="p_content_size swiper_span_content">Dans un restaurant</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide french06">
+                                    <div class="swiper_imgspace"></div>
+                                    <div class="swiper_content_area">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="swiper_french_label bi bi-bookmarks-fill" viewBox="0 0 16 16">
+                                                    <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+                                                    <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11 swiper_french_tittle">
+                                                <h3>搭法國地鐵</h3>
+                                            </div>
+                                        </div>
+                                        <p class="p_content_size swiper_span_content">A la station de métro</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 上下按鈕 -->
+                        <div class="swiper-button-prev">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                              </svg>
+                        </div>
+                        <div class="swiper-button-next">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                              </svg>
+                        </div>
+                    </div>
+                    <!--Swiper 結束-->
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 aos-animate" data-aos="fade-up" data-aos-duration="450" data-aos-delay="100">
+                            <div class="row teacher_flore_head ">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <img class="teacher_talk" src="images/teacher_flore_talk.png">
+                                </div>
+                            </div>
+                            <div class="row text-center">
+                                <p class="p_content_size teacher_name">Flore<br>法語老師</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 aos-animate" data-aos="fade-up" data-aos-duration="450" data-aos-delay="100">
+                            <div class="p_content_size text-justify">
+                                <p>最適合台灣人學習、與時俱進的法語會話教材。多種主題課程不重複，打穩法語會話、聽力與文法基礎！</p>
+                            </div>
+                            <div class="teacher_hr"></div>
+                            <div class="teacher_pf_text p_content_size">
+                                <div class="row"><div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 teacher_pftit_area">初學入門</div><p>&nbsp;法語發音班</p></div>
+                                <div class="row"><div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 teacher_pftit_area">基礎課程</div><p>&nbsp;A1基礎班</p></div>
+                                <div class="row"><div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 teacher_pftit_area">進階課程</div><p>&nbsp;A2會話班</p></div>
+                                <div class="row"><div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 teacher_pftit_area">重點強化</div><p>&nbsp;字彙、文法、句型加強</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row text-center aos-animate" data-aos="zoom-in" data-aos-duration="450" data-aos-delay="100">
+                        <a href="https://www.abconline.com.tw/teachers/french"><button type="button" class="btn text-nowrap french_bt"><p>找法語老師 ></p></button></a>
+                    </div>
+                </div>
+            </div>
+            <!--法語 結束-->
+            <!--德語 開始-->
+            <div class="german_area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 flag_area">
+                            <img src="images/german_flag.jpg" class="national_flag">
+                            <H2><div class="german_tittlestroke">酷炫德語</div></H2>
+                            <div class="p_content_size"><div class="german_tittlestroke">貼近生活的德語教材，一學就上手</div></div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 train_area">
+                            <div class="aos-animate" data-aos="fade-left" data-aos-duration="450" data-aos-delay="100">
+                                <img src="images/train.png" class="train">
+                            </div>
+                        </div>
+                    </div>
+                    <!--Swiper 開始-->
+                    <div class="swiper_father aos-animate" data-aos="fade-up" data-aos-duration="450" data-aos-delay="100">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide german01">
+                                    <div class="swiper_imgspace"></div>
+                                    <div class="swiper_content_area">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="swiper_german_label bi bi-bookmarks-fill" viewBox="0 0 16 16">
+                                                    <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+                                                    <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11 swiper_german_tittle">
+                                                <h3>你好！德國！</h3>
+                                            </div>
+                                        </div>
+                                        <p class="p_content_size swiper_span_content">Guten Tag! Deutschland!</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide german02">
+                                    <div class="swiper_imgspace"></div>
+                                    <div class="swiper_content_area">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="swiper_german_label bi bi-bookmarks-fill" viewBox="0 0 16 16">
+                                                    <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+                                                    <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11 swiper_german_tittle">
+                                                <h3>餐廳點餐</h3>
+                                            </div>
+                                        </div>
+                                        <p class="p_content_size swiper_span_content">Bestellen im Restaurant</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide german03">
+                                    <div class="swiper_imgspace"></div>
+                                    <div class="swiper_content_area">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="swiper_german_label bi bi-bookmarks-fill" viewBox="0 0 16 16">
+                                                    <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+                                                    <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11 swiper_german_tittle">
+                                                <h3>現在幾點鐘?</h3>
+                                            </div>
+                                        </div>
+                                        <p class="p_content_size swiper_span_content">Wie spät ist es?</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide german04">
+                                    <div class="swiper_imgspace"></div>
+                                    <div class="swiper_content_area">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="swiper_german_label bi bi-bookmarks-fill" viewBox="0 0 16 16">
+                                                    <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+                                                    <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11 swiper_german_tittle">
+                                                <h3>這個多少錢?</h3>
+                                            </div>
+                                        </div>
+                                        <p class="p_content_size swiper_span_content">Wie viel kostet das?</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide german05">
+                                    <div class="swiper_imgspace"></div>
+                                    <div class="swiper_content_area">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="swiper_german_label bi bi-bookmarks-fill" viewBox="0 0 16 16">
+                                                    <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+                                                    <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11 swiper_german_tittle">
+                                                <h3>我要去海邊</h3>
+                                            </div>
+                                        </div>
+                                        <p class="p_content_size swiper_span_content">Ich fahre ans Meer.</p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide german06">
+                                    <div class="swiper_imgspace"></div>
+                                    <div class="swiper_content_area">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-2 col-sm-1 col-xs-1">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="swiper_german_label bi bi-bookmarks-fill" viewBox="0 0 16 16">
+                                                    <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+                                                    <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+                                                </svg>
+                                            </div>
+                                            <div class="col-lg-10 col-md-10 col-sm-11 col-xs-11 swiper_german_tittle">
+                                                <h3>你哪裡不舒服？</h3>
+                                            </div>
+                                        </div>
+                                        <p class="p_content_size swiper_span_content">Was fehlt dir denn?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 上下按鈕 -->
+                        <div class="swiper-button-prev">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-left-circle-fill" viewBox="0 0 16 16">
+                                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.5 7.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+                              </svg>
+                        </div>
+                        <div class="swiper-button-next">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-arrow-right-circle-fill" viewBox="0 0 16 16">
+                                <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                              </svg>
+                        </div>
+                    </div>
+                    <!--Swiper 結束-->
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 aos-animate" data-aos="fade-up" data-aos-duration="450" data-aos-delay="100">
+                            <div class="row teacher_owen_head ">
+                                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                                    <img class="teacher_talk" src="images/teacher_owen_talk.png">
+                                </div>
+                            </div>
+                            <div class="row text-center">
+                                <p class="p_content_size teacher_name">Owen Lin<br>德語老師</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 aos-animate" data-aos="fade-up" data-aos-duration="450" data-aos-delay="100">
+                            <div class="p_content_size text-justify">
+                                <p>德語全新教材，簡單又好懂！專業老師手把手教學，矯正德語發音、文法等學習問題。課後提供學習評估報告，掌握學習狀況！</p>
+                            </div>
+                            <div class="teacher_hr"></div>
+                            <div class="teacher_pf_text_german p_content_size">
+                                <div class="row"><div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 teacher_pftit_german_area">初學入門</div><p>&nbsp;德語發音班</p></div>
+                                <div class="row"><div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 teacher_pftit_german_area">基礎課程</div><p>&nbsp;A1入門班</p></div>
+                                <div class="row"><div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 teacher_pftit_german_area">進階課程</div><p>&nbsp;A2生活會話班</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row text-center aos-animate" data-aos="zoom-in" data-aos-duration="450" data-aos-delay="100">
+                        <a href="https://www.abconline.com.tw/teachers/german"><button type="button" class="btn text-nowrap german_bt"><p>找德語老師 ></p></button></a>
+                    </div>
+                </div>
+            </div>
+            <!--德語 結束-->
+            <!--火車 開始-->
+                <div class="container-fluid">
+                    <div class="trainwindow_tittle_area text-center">
+                        <div class="trainwindow_tittle_space">
+                            <H2 class="p_trainwindow_tittle_size">跨語言學習也沒問題</H2>
+                            <div class="p_trainwindow_content_size">在家實戰演練，解封後到哪都能玩！</div>
+                        </div>
+                    </div>
+                    <img src="images/trainwindow.jpg" alt="火車窗" class="trainwindow" >
+                </div>   
+            <!--火車 結束-->
+            <!-- 表單 開始 -->
+            <div class="container" name="form" id="form">
+                <div class="row text-center form_tittle_area">
+                    <h1>登記領取好康</h1>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 form_tittle2_area text-center aos-animate" data-aos="fade-right" data-aos-duration="450" data-aos-delay="100">
+                        <p class="form_tittle2">3大好康搶先領</p>
+                        <p class="form_tittle3">
+                            <span>●免費體驗課</span>
+                            <span>●萬元補助金</span>
+                            <span>●歐語學習書</span>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 aos-animate" data-aos="fade-left" data-aos-duration="450" data-aos-delay="100">
+                        <div class="fill_form">
+                            <input name="ea" type="text" class="form-control" id="name" placeholder="姓 名" />
+                        </div>
+                        <div class="fill_form">
+                            <input name="mobile" type="text" class="form-control" id="mobile" placeholder="電 話" />
+                        </div>
+                        <div class="fill_form">
+                            <input name="email" type="text" class="form-control" id="email" placeholder="E-Mail" />
+                        </div>
+                        <div class="fill_form">
+                            <select id="dpGift" class="form-control">
+                              <option value="select" selected>請選擇想領取的語言</option>
+                              <option value="spanish">我要領取西班牙語</option>
+                              <option value="french">我想領取法語</option>
+                              <option value="german">我要領取德語</option>
+                            </select>
+                        </div>
+
+                        <div class="option fill_form">
+                            <label>
+                                <input type="checkbox" class="searchtext2" name="per_chk" checked="checked">
+                            </label>
+                            <span class="statement">我已閱讀並接受<a onclick="window.open('/activity/abconline/contract_02/','person',config='height=640,width=830');return false;" href="#">個資保護聲明</a></span>
+                        </div>
+                        <div class=" fill_form">
+                            <div id="sBut" onClick="but_send();" style="cursor:pointer;">
+                                <div class="go_button text-center">免費索取GO</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--表單 結束-->
+            <!--5大特色 開始-->
+            <div class="features_area">
+                <div class="container form_align">
+                    <div class="row text-center form_tittle_area">
+                        <h2>線上歐語5大課程特色</h2>
+                    </div>
+                    <div class="row features_center">
+                        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 aos-animate" data-aos="fade-up" data-aos-duration="450" data-aos-delay="100">
+                            <div class="features_box">
+                                <div class="text-center">
+                                    <div class="features_star"><h4><i class="fas fa-star"></i> 1 <i class="fas fa-star"></i></h4></div>                                    
+                                    <p class="features_tittle">線上真人會話課程</p>
+                                    <img class="features_pic" src="images/d-01.png" alt="線上真人會話課程">
+                                </div>
+                                <div class="features_text_area text-justify">
+                                    <p>2~6人小班制，開口練習機會多，只要上過一次課，就能學會最道地歐語發音。</p>
+                                </div>
+                                <a href="https://www.abconline.com.tw/courses">
+                                    <div class="free_button text-center">查看課表</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 aos-animate" data-aos="fade-up" data-aos-duration="450" data-aos-delay="100">
+                            <div class="features_box">
+                                <div class="text-center">
+                                    <div class="features_star"><h4><i class="fas fa-star"></i> 2 <i class="fas fa-star"></i></h4></div>  
+                                    <p class="features_tittle">優質歐語教材</p>
+                                    <img class="features_pic" src="images/d-02.png" alt="線上真人會話課程">
+                                </div>
+                                <div class="features_text_area text-justify">
+                                    <p>針對台灣人設計的線上教材，搭配歐洲國際權威用書，讓歐語更好理解，學習成效更顯著。</p>
+                                </div>
+                                <a href="https://www.abconline.com.tw/courses">
+                                    <div class="free_button text-center">查看課表</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 aos-animate" data-aos="fade-up" data-aos-duration="450" data-aos-delay="100">
+                            <div class="features_box">
+                                <div class="text-center">
+                                    <div class="features_star"><h4><i class="fas fa-star"></i> 3 <i class="fas fa-star"></i></h4></div>  
+                                    <p class="features_tittle">認證專業師資</p>
+                                    <img class="features_pic" src="images/d-03.png" alt="線上真人會話課程">
+                                </div>
+                                <div class="features_text_area text-justify">
+                                    <p>師資團隊都具備專業證照，能即時矯正歐語發音、文法等學習問題。課後提供學習評估報告，掌握學習狀況。</p>
+                                </div>
+                                <a href="https://www.abconline.com.tw/courses">
+                                    <div class="free_button text-center">查看課表</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 aos-animate" data-aos="fade-up" data-aos-duration="450" data-aos-delay="100">
+                            <div class="features_box">
+                                <div class="text-center">
+                                    <div class="features_star"><h4><i class="fas fa-star"></i> 4 <i class="fas fa-star"></i></h4></div>  
+                                    <p class="features_tittle">不限次數觀看錄影檔</p>
+                                    <img class="features_pic" src="images/d-04.png" alt="線上真人會話課程">
+                                </div>
+                                <div class="features_text_area text-justify">
+                                    <p>專心上課不用做筆記，教學課程錄影檔可無限次觀看，隨時幫你複習，保證能學會。</p>
+                                </div>
+                                <a href="https://www.abconline.com.tw/courses">
+                                    <div class="free_button text-center">查看課表</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 aos-animate" data-aos="fade-up" data-aos-duration="450" data-aos-delay="100">
+                            <div class="features_box">
+                                <div class="text-center">
+                                    <div class="features_star"><h4><i class="fas fa-star"></i> 5 <i class="fas fa-star"></i></h4></div>  
+                                    <p class="features_tittle">線上真人會話課程</p>
+                                    <img class="features_pic" src="images/d-05.png" alt="線上真人會話課程">
+                                </div>
+                                <div class="features_text_area text-justify">
+                                <p>依歐洲語言學習分級制度（CEFR）進行程度檢測並分班。由專人規劃最適合您的課程，確保上課品質。</p>
+                                </div>
+                                <a href="https://www.abconline.com.tw/courses">
+                                    <div class="free_button text-center">查看課表</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--5大特色 結束-->
+
+
+
+
+
+
+
+
+
+
+        </div>
+
+        <!-- wapper結束 -->
+        <!-- HTML END -->
+        <div class="footer">
+            <iframe class="FOOTER_frame" src="/activity/footer/2020/" width="100%" scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
+        </div>
+    </form>
+
+
+    <script>
+        $(document).ready(function () {
+            $(".ct3-learn-btn,.ct4-learn-btn").click(function () {
+                $("html,body").animate({ scrollTop: $("#fillform").offset().top }, 800);
+            });
+        });
+
+         function afterReveal(el) {
+             el.addEventListener("animationend", function (event) {
+                 console.log("This runs once finished!");
+                 if ($(this).is(".banner010"))
+                     $(this).removeClass("fadeInDown").css("animation-name", "").addClass("myAni infinite pulse");
+             });
+         }
+
+         new WOW({ callback: afterReveal }).init()
+    </script>
+
+
+    <!--Swiper-->
+    <script src="js/swiper-bundle.min.js"></script>
+    
+    <!--aos-->
+    <script src="js/aos.js"></script>
+    <script>
+        AOS.init({
+            easing: 'ease-in-out-sine'
+        });
+
+        //錨點效果
+        $(function () {
+
+        $('a[href*=#]:not([href=#])').click(function() {
+
+        var target = $(this.hash);
+
+        $('html,body').animate({
+
+        scrollTop: target.offset().top
+
+        }, 1000);
+
+        return false;
+
+        });
+
+        });
+
+
+
+
+        var mySwiper = new Swiper ('.swiper', {
+
+            autoplay:true,
+            loop: true,
+            speed: 1000,
+
+            // 分頁器
+            pagination: {
+            el: '.swiper-pagination',
+            },
+            
+            // 前進後退按鈕
+            navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+            },
+            
+            //斷點
+            breakpoints: { 
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+            },
+
+            576: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+            },
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+
+            992: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            }
+                
+        }
+        
+    })     
+    </script>
+
+</body>
+</html>

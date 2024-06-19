@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@900&display=swap");
+.wrapper, *:before, *:after {
+  position: relative;
+  margin: 0;
+  font-family: "Noto Sans TC", sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+  box-sizing: border-box;
+}
+
+.wrapper .dk-blue {
+  color: #004782;
+}
+.wrapper .colorWhite {
+  color: white;
+}
+.wrapper .colorYellow {
+  color: #ffff00;
+}
+.wrapper .colorGray {
+  color: #989898;
+}
+.wrapper .a2form {
+  background-color: red;
+  color: white;
+  padding: 0.4rem 1rem;
+  text-decoration: none;
+}
+.wrapper .a2form:hover {
+  transform: scale(1.7);
+}
+.wrapper .kv {
+  padding-top: 80px;
+}
+.wrapper .kv .kv_PC {
+  height: 34vw;
+  display: block;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv .kv_PC {
+    display: none;
+  }
+}
+.wrapper .kv .kv_SP {
+  height: 100vw;
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv .kv_SP {
+    display: block;
+  }
+}
+.wrapper .fourfocus .titStyle {
+  max-width: 466px;
+}
+.wrapper .fourfocus .fourfocusCont {
+  border-radius: 10px;
+  background-color: #b1d3f9;
+}
+.wrapper .fourfocus .fourfocusCont .text-justify {
+  text-align: justify;
+}
+.wrapper .fullProgram {
+  background-image: url(../images/fullProgramBg.png);
+  background-size: 100% auto;
+}
+.wrapper .fullProgram .titStyle {
+  max-width: 363px;
+}
+.wrapper .fullProgram .fullProgramCont {
+  border-radius: 10px;
+  background-color: white;
+}
+.wrapper .fullProgram .fullProgramCont ul {
+  font-size: 1.25rem;
+}
+.wrapper .fullProgram .fullProgramCont .btStyle {
+  font-size: 1.25rem;
+  margin-left: 30px;
+  margin-top: 8px;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .fullProgram .fullProgramCont ul {
+    margin-bottom: 0.2rem;
+    line-height: 23px;
+    font-size: 1rem;
+  }
+  .wrapper .fullProgram .fullProgramCont .btStyle {
+    font-size: 1rem;
+    margin-left: unset;
+    text-align: center;
+  }
+}
+.wrapper .form {
+  background-color: #0e4b8a;
+}
+.wrapper .form #myform {
+  position: relative;
+  top: -5rem;
+}
+.wrapper .form .formTitBr {
+  display: none;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .form .formTitBr {
+    display: block;
+  }
+}
+.wrapper .form .bgWhite {
+  background-color: white;
+}
+.wrapper .form .w-49 {
+  width: 49%;
+}
+.wrapper .form .btnWidth {
+  width: 49%;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .form .btnWidth {
+    width: 100%;
+  }
+}
+.wrapper .form .btnColor {
+  background-color: red;
+  color: white;
+}
+.wrapper .form a {
+  color: aqua;
+}
+.wrapper .train .titStyle {
+  max-width: 259px;
+}
+.wrapper .train .fullProgramCont {
+  border-radius: 10px;
+  background-color: white;
+}
+.wrapper .train .fullProgramCont ul {
+  font-size: 1.25rem;
+}
+.wrapper .train .fullProgramCont .btStyle {
+  font-size: 1.25rem;
+  margin-left: 30px;
+  margin-top: 8px;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .train .fullProgramCont ul {
+    margin-bottom: 0.2rem;
+    line-height: 23px;
+    font-size: 1rem;
+  }
+  .wrapper .train .fullProgramCont .btStyle {
+    font-size: 1rem;
+    margin-left: unset;
+    text-align: center;
+  }
+}
+.wrapper .vedio {
+  background-color: #cee5ff;
+}
+.wrapper .vedio .vedioCont {
+  background-color: white;
+  border-radius: 10px;
+}
+.wrapper .vedio .vedioCont img {
+  cursor: pointer;
+}
+.wrapper .vedio .modal-content {
+  border: unset;
+  border-radius: 10px;
+}
+.wrapper .vedio .modal-content .btn-close {
+  position: absolute;
+  z-index: 10;
+  right: -15px;
+  top: -15px;
+  background-color: white;
+  opacity: 1;
+  border: 3px solid black;
+  border-radius: 30px;
+  height: 30px;
+  width: 30px;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .vedio .modal-content .btn-close {
+    right: -5px;
+    top: -10px;
+  }
+}
+.wrapper .vedio .modal-content .modal-body {
+  padding: 2rem;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .vedio .modal-content .modal-body {
+    padding: 1.2rem;
+  }
+}
+.wrapper .vedio .modal-content .modal-body .videobox {
+  aspect-ratio: 16/9;
+}
+.wrapper .vedio .modal-content .modal-body .videobox iframe {
+  width: 100%;
+  height: 100%;
+}
+.wrapper .teacher {
+  background-color: #cee5ff;
+}
+.wrapper .teacher .titStyle {
+  max-width: 207px;
+}
+.wrapper .teacher .teacherCont {
+  background-color: white;
+  border-radius: 10px;
+}
+.wrapper .teacher .teacherCont .teacherImg {
+  margin-top: -30px;
+}
+.wrapper .teacher .teacherCont .text-justify {
+  text-align: justify;
+}
+.wrapper .freeResource {
+  background-image: url(../images/runnyBoy.png);
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 100% auto;
+}
+@media screen and (max-width: 1700px) {
+  .wrapper .freeResource {
+    background-size: 130% auto;
+  }
+}
+.wrapper .freeResource .titStyle {
+  max-width: 365px;
+}
+.wrapper .freeResource .freeResourceCont {
+  border-radius: 10px;
+  overflow: hidden;
+}
+.wrapper .freeResource .freeResourceCont Img:hover {
+  transform: scale(1.2, 1.2);
+  transition: all 1s ease-out;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .freeResource .freeResourceCont Img {
+    transform: scale(1.7);
+  }
+}
+.wrapper .get5A {
+  background-color: #0f719f;
+}
+.wrapper .get5A .titStyle {
+  max-width: 441px;
+}
+.wrapper .get5A .parent {
+  width: 100%;
+  padding-bottom: 100%;
+  background-color: #ffffff;
+  box-shadow: 0 0 30px 2px hsl(199deg, 100%, 8%);
+}
+.wrapper .get5A .parent a {
+  -webkit-text-decoration-line: none;
+          text-decoration-line: none;
+  color: #0a2c50;
+}
+.wrapper .get5A .parent .child {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  font-family: "Noto Serif TC", serif;
+  line-height: 25px;
+}
+
+/* keyframes */
+@-webkit-keyframes right2left {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes right2left {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}/*# sourceMappingURL=style.css.map */

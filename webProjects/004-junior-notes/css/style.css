@@ -1,0 +1,390 @@
+@charset "UTF-8";
+.wrapper, *:before, *:after {
+  position: relative;
+  margin: 0;
+  font-family: "Noto Sans TC", sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+  box-sizing: border-box;
+}
+
+.dkBlue {
+  color: #004e63;
+}
+
+.wrapper .kv {
+  padding-top: 80px;
+}
+.wrapper .kv .kv_PC {
+  height: 39vw;
+  display: block;
+}
+.wrapper .kv .kv_PC .kv_notepaper, .wrapper .kv .kv_PC .kv_whitepaper, .wrapper .kv .kv_PC .kv_handRight, .wrapper .kv .kv_PC .kv_handLeft, .wrapper .kv .kv_PC .kv_title {
+  position: absolute;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv .kv_PC {
+    display: none;
+  }
+}
+.wrapper .kv .kv_SP {
+  height: 100vw;
+  display: none;
+}
+.wrapper .kv .kv_SP .kv_notepaper_SP, .wrapper .kv .kv_SP .kv_whitepaper_SP, .wrapper .kv .kv_SP .kv_handRight_SP, .wrapper .kv .kv_SP .kv_handLeft_SP, .wrapper .kv .kv_SP .kv_title_SP {
+  position: absolute;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv .kv_SP {
+    display: block;
+  }
+}
+.wrapper .note .swiper-pagination {
+  bottom: unset;
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding-bottom: 2rem;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .note .swiper-pagination {
+    padding-bottom: 1.5rem;
+  }
+}
+.wrapper .note .swiper-pagination span {
+  background-color: transparent;
+  width: auto;
+  height: auto;
+  opacity: 1;
+  border-radius: 30px;
+  border: 3px solid #192d35;
+  font-size: 26px;
+  padding: 0 1rem;
+  margin: 0 1rem;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .note .swiper-pagination span {
+    font-size: 17px;
+    padding: 0 6px;
+    margin: 0 2px;
+  }
+}
+.wrapper .note .swiper-pagination span.swiper-pagination-bullet-active {
+  background-color: #192d35;
+  color: white;
+}
+.wrapper .note .swiper-pagination span:after {
+  content: "";
+  display: block;
+  text-align: center;
+  white-space: pre;
+  font-weight: bold;
+}
+.wrapper .note .swiper-pagination span:nth-of-type(1):after {
+  content: "國中英文";
+}
+.wrapper .note .swiper-pagination span:nth-of-type(2):after {
+  content: "國中數學";
+}
+.wrapper .note .swiper-pagination span:nth-of-type(3):after {
+  content: "國中自然";
+}
+.wrapper .note .swiper-pagination span:nth-of-type(4):after {
+  content: "JR小百科";
+}
+.wrapper .note .noteCont {
+  padding: 0.25rem;
+}
+.wrapper .note .noteCont .row {
+  --bs-gutter-x: unset;
+  --bs-gutter-y: unset;
+  margin-top: unset;
+  margin-right: unset;
+  margin-left: unset;
+  max-width: 992px;
+  margin: 0 auto;
+}
+.wrapper .note .noteCont .row .noteColStyle {
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.wrapper .note .noteCont .row .noteColStyle:hover {
+  transform: scale(1.02);
+}
+.wrapper .note .noteCont.englishBg {
+  background-color: #ffdcda;
+}
+.wrapper .note .noteCont.mathBg {
+  background-color: #f5edbf;
+}
+.wrapper .note .noteCont.natureBg {
+  background-color: #d0f0ff;
+}
+.wrapper .note .noteCont.encycBg {
+  background-color: #ffd9aa;
+}
+.wrapper .note .modal-content {
+  border: unset;
+  border-radius: 10px;
+}
+.wrapper .note .modal-content .btn-close {
+  position: absolute;
+  z-index: 10;
+  right: -15px;
+  top: -15px;
+  background-color: white;
+  opacity: 1;
+  border: 3px solid black;
+  border-radius: 30px;
+  height: 30px;
+  width: 30px;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .note .modal-content .btn-close {
+    right: -5px;
+    top: -10px;
+  }
+}
+.wrapper .note .modal-content .modal-body {
+  padding: 2rem;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .note .modal-content .modal-body {
+    padding: 1.2rem;
+  }
+}
+.wrapper .note .noteBt {
+  font-size: 26px;
+  font-weight: bold;
+  background-color: black;
+  color: white;
+  padding: 0.2rem 1.5rem;
+  border-radius: 30px;
+}
+.wrapper .note .movingFinger {
+  position: absolute;
+  width: 100px;
+  margin-left: -20PX;
+  -webkit-animation: right2left 1s cubic-bezier(0.1, -0.6, 0.2, 0) infinite;
+          animation: right2left 1s cubic-bezier(0.1, -0.6, 0.2, 0) infinite;
+}
+.wrapper .note a {
+  text-decoration: none;
+}
+.wrapper .form #myform {
+  position: relative;
+  top: -5rem;
+}
+.wrapper .form .formTitPos {
+  margin-bottom: -34px;
+}
+.wrapper .form .formTitPos .frameShape {
+  height: 66px;
+}
+.wrapper .form .formTitPos .oppsite {
+  transform: scaleX(-1);
+}
+.wrapper .form .formTitPos .titleFrame {
+  height: 66px;
+  background-image: url(../images/frame.svg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  line-height: 26px;
+  text-align: center;
+}
+.wrapper .form .formTitPos .titleFrame .formTitBr {
+  display: none;
+}
+@media screen and (max-width: 576px) {
+  .wrapper .form .formTitPos .titleFrame .formTitBr {
+    display: block;
+  }
+}
+.wrapper .form .formFrame {
+  border: 3px solid #004d63;
+  padding: 1rem;
+}
+.wrapper .form .formFrame .teriDemands {
+  margin: unset;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .form .formFrame .teriDemands {
+    margin: auto;
+  }
+}
+.wrapper .vedio {
+  padding-top: 20px;
+  padding-bottom: 4rem;
+  background-image: url(../images/blueWaffle.png);
+}
+.wrapper .vedio .vedioDecoL {
+  width: 15%;
+  left: 2%;
+  bottom: 1%;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .vedio .vedioDecoL {
+    display: none;
+  }
+}
+.wrapper .vedio .vedioDecoR {
+  width: 15%;
+  right: 5%;
+  top: 12%;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .vedio .vedioDecoR {
+    display: none;
+  }
+}
+.wrapper .vedio .yellowpenCont {
+  height: 180px;
+}
+.wrapper .vedio .yellowpenCont .yellowpen {
+  position: absolute;
+  width: 300px;
+  margin-top: -60px;
+  left: 35%;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .vedio .yellowpenCont .yellowpen {
+    margin-top: -11%;
+  }
+}
+.wrapper .vedio .vedioPos {
+  padding-top: 3rem;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .vedio .vedioPos {
+    padding-top: unset;
+  }
+}
+.wrapper .vedio .vedioWhiteBg {
+  background-color: white;
+  border-radius: 15px;
+}
+.wrapper .vedio .vedioWhiteBg .vedioImg {
+  cursor: pointer;
+}
+.wrapper .vedio .vedioWhiteBg .vedioBt {
+  background-color: #ffdb00;
+  color: black;
+  padding: 0.5rem 1rem;
+  border: 3px solid #004e63;
+  border-radius: 30px;
+  box-shadow: 0px 5px 0px rgb(143, 152, 187);
+}
+.wrapper .vedio .vedioWhiteBg a {
+  text-decoration: none;
+}
+.wrapper .vedio .modal-content {
+  border: unset;
+  border-radius: 10px;
+}
+.wrapper .vedio .modal-content .btn-close {
+  position: absolute;
+  z-index: 10;
+  right: -15px;
+  top: -15px;
+  background-color: white;
+  opacity: 1;
+  border: 3px solid black;
+  border-radius: 30px;
+  height: 30px;
+  width: 30px;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .vedio .modal-content .btn-close {
+    right: -5px;
+    top: -10px;
+  }
+}
+.wrapper .vedio .modal-content .modal-body {
+  padding: 2rem;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .vedio .modal-content .modal-body {
+    padding: 1.2rem;
+  }
+}
+.wrapper .vedio .modal-content .modal-body .videobox {
+  aspect-ratio: 16/9;
+}
+.wrapper .vedio .modal-content .modal-body .videobox iframe {
+  width: 100%;
+  height: 100%;
+}
+.wrapper .fourPoints {
+  background-color: #fff8d7;
+}
+.wrapper .fourPoints .frameShape {
+  height: 66px;
+}
+.wrapper .fourPoints .oppsite {
+  transform: scaleX(-1);
+}
+.wrapper .fourPoints .titleFrame {
+  height: 66px;
+  background-image: url(../images/frame.svg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: nowrap;
+  line-height: 26px;
+  text-align: center;
+}
+.wrapper .fourPoints .fourPointsCont {
+  background-image: url(../images/yellowWaffle.png);
+  border-top: 3px solid #ffdb00;
+  border-bottom: 3px solid #ffdb00;
+}
+.wrapper .fourPoints .fourPointsCont .fpContent {
+  min-height: unset;
+  padding-top: 0.5rem;
+}
+@media screen and (max-width: 1200px) {
+  .wrapper .fourPoints .fourPointsCont .fpContent {
+    min-height: 100px;
+  }
+}
+@media screen and (max-width: 992px) {
+  .wrapper .fourPoints .fourPointsCont .fpContent {
+    min-height: unset;
+  }
+}
+.wrapper .fourPoints .fourPointsCont .fourPointsBt {
+  background-color: #205078;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+}
+.wrapper .fourPoints .fourPointsCont a {
+  text-decoration: none;
+}
+
+/* keyframes */
+@-webkit-keyframes right2left {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+@keyframes right2left {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(10px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}/*# sourceMappingURL=style.css.map */

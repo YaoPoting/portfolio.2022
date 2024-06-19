@@ -1,0 +1,444 @@
+﻿@charset "utf-8";
+
+/* CSS Document */
+.wrapper, *:before, *:after {
+    position: relative;
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+    box-sizing: border-box;
+    /* transition: 0.2s linear; */
+}
+.H1_size {
+    font-size: 26px;
+    font-weight: bold;
+}
+.H2_size {
+    font-size: 24px;
+    font-weight: bold;
+}
+.H3_size {
+    font-size: 20px;
+    font-weight: bold;
+}
+.h20 { height: 20px;}
+.color_purple {color: #3a3aaa;}
+.color_white {color: #ffffff;}
+.color_yellow {color: #ffff00;}
+.color_red {color: #ff0000;}
+.color_black {color: #222222;}
+/* 按鈕樣式 */
+.button_style {
+    background-color: #ff0000;
+    color: #ffffff;
+    border: 3px solid #3a3aaa;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 59px;
+    transition: all .4s ease-in-out;
+    display: inline-block;
+    padding: 0.1em 1em 0.1em 1em;
+}
+.button_style:hover {
+    transform: scale(1.05);
+    box-shadow: none;
+    box-shadow: none;
+    transition: all .4s ease-in-out;
+}
+.button_noactive_style {
+    background-color: #777777;
+    color: #ffffff;
+    border: 3px solid #3a3aaa;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 59px;
+    transition: all .4s ease-in-out;
+    display: inline-block;
+    padding: 0.1em 1em 0.1em 1em;
+    width: 125px;
+    text-align: center;
+}
+/* 標題樣式 */
+.titCenter {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.titBorder {
+    width: 150px;
+    color: #3a3aaa;
+    border-style: solid;
+    border-color: #3a3aaa;
+    border-width: 3px;
+    border-radius: 100px;
+    margin: 0px;
+    padding: 0px;
+}
+.featureImg {
+    width: 95%;
+}
+/* KV */
+.navHeight {
+    height: 80px;
+}
+.kv_pc {
+    background-color: #b5e8f7;
+    display: block;
+    height: 37.8vw;
+    overflow: hidden;
+}
+.kv_sp {
+    background-color: #b5e8f7;
+    display: none;
+    height: 116.7vw;
+    overflow: hidden;
+}
+.kv_pieces, .kv_pieces_sp, .kv_girl, .kv_girl_sp, .kv_title, .kv_title_sp, .kv_title_sub {
+    position: absolute;
+}
+.kv_title {animation: dash 3s linear 1s infinite;}
+.kv_title_sp {animation: dash 3s linear 1s infinite;}
+@keyframes dash {
+    0% {
+        transform:scale(1);
+    }
+    50% {
+        transform:scale(1.03);
+    }
+}
+
+/* 營隊特色 */
+.campFeatures {
+    background-color: #b5e8f7;
+}
+
+/* 填單區 */
+.blueRoundBg {
+    background-color: #b5e8f7;
+    aspect-ratio: 1920 / 3.8;
+}
+.blueRound {
+    bottom: 0px;
+    width: 100%;
+    margin-bottom: -3%;
+}
+
+.sheet {
+    background-color: #0e4b8a;
+}
+.classOptionStyle {
+    border-radius: 5px;
+    background-color: #ffffff;
+    border-color: #ced4da;
+    border-width: 1px;
+    border-style: solid;
+    min-height: 148px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.selectArrow {
+    appearance:none;
+    background: url("../images/selectArrow.png") no-repeat right center transparent;
+    background-size: 16px;
+    background-color: #ffffff;
+  }  
+  .selectArrow::-ms-expand { 
+    display: none; 
+  }
+#myform {
+    position: relative;
+    top: -3rem;
+}
+/* 營隊課表 表格 */
+.campRounddown {
+    background-color: #f5e4ea;
+    background-image: url(../images/pinkIncline.png);
+    background-size: 100% auto;
+}
+/* 四角圓角 */
+tr:first-child td:first-child {border-top-left-radius: 15px;}
+tr:last-child td:first-child {border-bottom-left-radius: 15px;}
+tr:first-child td:last-child {border-top-right-radius: 15px;}
+tr:last-child td:last-child {border-bottom-right-radius: 15px;}
+
+.tg {
+    width: 100%;
+    height: 100%;
+    border-collapse:separate;
+    border-spacing: 0px;
+    border:3px solid #3a3aaa;
+    border-radius: 19px;
+}
+.tg td {
+    border-spacing: 0px;
+    padding:0.1em 0.2em;
+    word-break:normal;
+}
+.tg th {
+    border-spacing: 0px;
+    padding:0.1em 0.2em;
+    word-break:normal;
+}
+.tg .tg-sscn {
+    padding: 0px;
+    border-spacing: 0px;
+    background-color:#3a3aaa;
+    color:#ffffff;
+    text-align:center;
+    vertical-align:middle;
+}
+.tg .tg-0cjc {
+    color: #3a3aaa;
+    background-color:#d3e8ee;
+    text-align:center;
+    vertical-align:middle;
+}
+.tg .tg-llyw {
+    background-color:#e8e8e8;
+    text-align:center;
+    vertical-align:middle;
+}
+.tg .tg-t02l {
+    background-color:#3a3aaa;
+    text-align:center;
+    vertical-align:middle;
+}
+.tg .tg-x6qq {
+    color: #3a3aaa;
+    background-color:#e5f9ff;
+    text-align:center;
+    vertical-align:middle;
+}
+.purpleBorder {
+    border-bottom: 3px solid #3a3aaa;
+    border-top: 3px solid #3a3aaa;
+}
+.table-responsive-hint {
+    display: none;
+}
+
+
+
+/* 營隊梯次 */
+.batch_sp {
+    display: none;
+}
+.batch_pc {
+    display: block;
+}
+.pieces_eye::after {
+    content: "";
+    position: absolute;
+    background-image: url(../images/pieces_eye.png);
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 120px;
+    top: -80px;
+    left: 200px;
+}
+.purpleCircle {
+    background-color: #3a3aaa;
+    color: #ffffff;
+    height: 65px;
+    width: 65px;
+    border-radius: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* 營隊資訊 */
+.campinfo_sp {
+    display: none;
+}
+.campinfo_pc {
+    display: block;
+}
+.pieces_cell::after {
+    content: "";
+    position: absolute;
+    background-image: url(../images/pieces_cell.png);
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 120px;
+    top: -80px;
+    left: 200px;
+}
+.campinfoGirl {
+    width: 100%;
+    margin-left: -15%;
+}
+.test {
+
+    justify-content: center;
+    align-self: center;
+}
+/* 營隊價格 */
+.limited20 {
+    height: 130px;
+    margin-top: -50px;
+    margin-left: -50px;
+    animation: limited20scale 3s linear 1s infinite;
+}
+@keyframes limited20scale {
+    0% {
+        transform:scale(1);
+    }
+    50% {
+        transform:scale(0.94);
+    }
+}
+.limited20box {
+    background-color: #b5e8f7;
+    background-image: url(../images/blueCircle.png);
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    border: 3px solid #3a3aaa;
+    min-height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.bgPosition_1 {background-position: -40% 220%;}
+.bgPosition_2 {background-position: 180% -170%;}
+.bgPosition_3 {background-position: -40% -170%;}
+.bgPosition_4 {background-position: 50% -180%;}
+.limitedPieces {
+    height: 140px;
+}
+/* 孩子可獲得 */
+.lightblueRoundBg {
+    background-color: #f5e4ea;
+    aspect-ratio: 1920 / 3.8;
+    display: block;
+}
+.lightblueRound {
+    bottom: 0px;
+    width: 100%;
+}
+.lightblueBg {
+    background-color: #b5e8f7;
+    background-image: url(../images/blueIncline.png);
+    background-size: 100% auto;
+}
+
+/* QA */
+.yellowBg {
+    background-color: #fcffe3;
+}
+.QAtitBorder {
+    width: 220px;
+    color: #222222;
+    border-style: solid;
+    border-color: #222222;
+    border-width: 3px;
+    border-radius: 100px;
+    margin: 0px;
+    padding: 0px;
+}
+.accordion-button {
+    background-color: #fff0ac;
+}
+.accordion-item {
+    background-color: #fff0ac;
+    border: 0px;
+}
+.accordion-button:not(.collapsed) {
+    color: #222222;
+    background-color: #ffea8a;
+    box-shadow: none;
+}
+
+
+
+@media screen and (max-width: 996px) {
+    .navHeight {
+        height: 70px;
+    }
+    .kv_pc {
+        display: none;
+    }
+    .kv_sp {
+        display: block;
+    }
+    .kv_title-sub1 {
+        width: 28vw;
+        left: 7vw;
+        top: 36vw;
+    }
+    .kv_title-sub2 {
+        width: 28vw;
+        left: 36vw;
+        top: 36vw;
+    }
+    .kv_title-sub3 {
+        width: 28vw;
+        left: 65vw;
+        top: 36vw;
+    }
+    #myform {
+        position: relative;
+        top: -3rem;
+    }
+    .classOptionStyle {
+        min-height: unset;
+    }
+    /* 營隊梯次 */
+    .batch_sp {
+        display: block;
+    }
+    .batch_pc {
+        display: none;
+    }
+    .pieces_eye::after {
+        width: 0px;
+        height: 0px;
+    }
+    /* 營隊資訊 */
+    .campinfo_sp {
+        display: block;
+    }
+    .campinfo_pc {
+        display: none;
+    }
+    .pieces_cell::after {
+        width: 0px;
+        height: 0px;
+    }
+    /* 營隊價格 */
+    .limited20 {
+        height: 90px;
+        margin-top: -40px;
+        margin-left: -10px;
+    }
+    /* 孩子可獲得 */
+    .lightblueRoundBg {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .tg {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .table-responsive-hint {
+        display: block;
+        justify-content: end;
+        display: flex;
+        flex-direction: row;
+        padding-bottom: 5px;
+        animation: twinkle 0.5s infinite alternate;
+    }
+    @keyframes twinkle {
+        0%{
+            opacity:.0.8;
+        }
+        100%{
+            opacity:0;
+        }
+    }
+}

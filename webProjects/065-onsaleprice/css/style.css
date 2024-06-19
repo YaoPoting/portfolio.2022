@@ -1,0 +1,408 @@
+﻿@charset "utf-8";
+/* CSS Document */
+.wrapper, *:before, *:after {
+    position: relative;
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+
+a{ text-decoration:none} a:hover{ text-decoration:none}
+.colorWhite {color: #ffffff;}
+.colorBgOrange {background-color: #f2723c;}
+.colorOrange {color: #f2723c;}
+.colorBgGreen {background-color: #008329;}
+.colorGreen {color: #008329;}
+.colorBgBlue {background-color: #0069b2;}
+.colorBlue {color: #0069b2;}
+.H1_size {font-size: 32px; font-weight: bold;}
+.H2_size {font-size: 26px; font-weight: bold;}
+.H3_size {font-size: 20px; font-weight: bold;}
+
+/* KV */
+.wrapper {background-color: #ffe440;}
+.h65 { height: 65px;}
+.kv_pc {display: block;}
+.kv_sp {display: none;}
+.kv_pc {
+    height: 41.1vw;
+    background-image: url(../images/kv_yellowlight.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+.kv_title, .kv_button, .kv_couponboy, .kv_couponboy_sp, .kv_adornment_left, .kv_adornment_right, .kv_adornment_sp {
+    position: absolute;
+    padding-top: 65px;
+}
+.kv_title {
+    width: 45vw;
+    left: 27vw;
+    top: 10vw;
+}
+.kv_button {
+    width: 13vw;
+    left: 42.5vw;
+    top: 28.5vw;
+    animation: ani_button 1.5s linear 1s infinite;
+}
+@keyframes ani_button {
+    0% {transform:scale(1);}
+    50% {transform:scale(1.02);}
+}
+.kv_couponboy {
+    width: 30vw;
+    right: 1.5vw;
+    top: 25vw;
+    animation: ani_admt_r 1.5s linear 1s infinite;
+}
+@keyframes ani_admt_r {
+    0% {transform: rotate(0deg);}
+    50% {transform: rotate(-3deg);}
+}
+.kv_adornment_right {
+    width: 20vw;
+    right: 2vw;
+    top: 2vw;
+}
+.kv_adornment_left {
+    width: 35vw;
+    left: -9vw;
+    top: 1vw;
+    animation: ani_admt_l 1.5s linear 1s infinite;
+}
+@keyframes ani_admt_l {
+    0% {transform:scale(1);}
+    50% {transform:scale(1.03);}
+}
+/* campaign */
+.container-campaign {
+    padding-top: 65px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.campaignBg {
+    background-image: url(../images/campaignGirl.png);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation: cpGirl 4s linear infinite;
+}
+@keyframes cpGirl {
+    0% { background-position: center center; }
+    50% { background-position: center 3em; }
+    100% { background-position: center center; }
+}
+
+.cpGap {
+    margin-top: -80px;
+    padding-top: unset;
+}
+.campaignPoint {
+    display: inline-block;
+    background-color: #2599ef;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 0.2em 1em;
+    border-radius: 2em;
+    animation: cpPoint 1.5s linear 1s infinite;
+}
+@keyframes cpPoint {
+    0% {transform: translate(0px, 0px);}            
+    40% {transform: translate(0px, 5px);transform: scale(1.05);}            
+    100% {transform: translate(0px, 0px);}
+}
+.blueTriangle {
+    margin: 0 auto;
+    margin-top: -1px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: #2599ef transparent transparent transparent;
+}
+.campaignTitle {
+    color: #082e5b;
+}
+.campaignContent {
+    width: 50%;
+    max-width: 400px;
+    min-width: 206px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: left;
+}
+.cpAdornment::before {
+    position: absolute;
+    content: '';
+    width: 170px;
+    height: 186px;
+    background-image: url('../images/cpAdornment_left.png');
+    background-position: center center;
+    background-size: cover;
+    bottom: 550px;
+    left: -40px;
+}
+.cpAdornment::after {
+    position: absolute;
+    content: '';
+    width: 120px;
+    height: 127px;
+    background-image: url('../images/cpAdornment_right.png');
+    background-position: center center;
+    background-size: cover;
+    bottom: 700px;
+    right: 180px;
+}
+.cpAdornmentGift::after {
+    position: absolute;
+    content: '';
+    width: 190px;
+    height: 109px;
+    background-image: url('../images/cpAdornment_gift.png');
+    background-position: center center;
+    background-size: cover;
+    bottom: 250px;
+    right: 200px;
+    animation: ani_cpGift 1.5s linear 1s infinite;
+}
+@keyframes ani_cpGift {
+    0% { bottom: 250px; }
+    50% { bottom: 260px; }
+    100% { bottom: 250px; }
+}
+.activities {
+    display: inline-block;
+    text-align: justify;
+}
+/* form */
+#myform {
+    position: relative;
+    top: -1rem;
+}
+.blueArc {
+    width: 100%;
+}
+.formBg {
+    background-color: #0e4b8a;
+    margin-top: -5px;
+}
+.formImg {
+    width: 80%;
+    margin: 0 auto;
+    background-image: url('../images/formImg_free.png');
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.formImg_girl {
+    animation: ani_formGirl 2s linear infinite;
+}
+@keyframes ani_formGirl {
+    0% {transform: translate(0px, 0px);}            
+    50% {transform: translate(0px, -10px);}            
+    s100% {transform: translate(0px, 0px);}
+}
+.formImg_gift {
+    animation: ani_formGift 2s linear infinite;
+}
+@keyframes ani_formGift {
+    0% { top: 0px; }
+    55% { top: 10px; }
+    100% { top: 0px; }
+}
+
+
+
+
+
+.formGapTop {
+    padding-top: 30px;
+}
+.selectArrow {
+    appearance:none;
+    background: url("../images/selectArrow.png") no-repeat right center transparent;
+    background-size: 18px;
+    background-color: #ffffff;
+    color: #212529;
+  }
+#sBut {
+    transition-property: color;
+    transition: 0.5s;
+    text-align: center;
+    padding: 10px;
+    background-color: #ea5504;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 22px;
+    border: 0px;
+    border-radius: 50px;
+    cursor: pointer;
+    line-height: 22px;
+}
+#sBut:hover {
+    transform: scale(1.02);
+    box-shadow: none;
+    box-shadow: none;
+    transition: all .4s ease-in-out;
+}
+
+/* course */
+.grayBg {
+    background-color: #f0f0f0;
+}
+.courseBg {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 7px 7px 0px #d4d4d4;
+}
+.courseImg {
+    height: auto;
+}
+.courseTitle {
+    font-size: 26px;
+    font-weight: bold;
+}
+.courseContent {
+    display: inline-block;
+    text-align: justify;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 1em;
+}
+.courseBt {
+    position: relative;
+    top: 0;
+    max-width: 140px;
+    border-radius: 30px;
+    margin: 0 auto;
+    color: #ffffff;
+    cursor: pointer;
+    letter-spacing: 0.05em;
+    font-weight: bold;
+    transition: all .4s ease-in-out;
+}
+.courseBt:hover {
+    top: -5px;
+    box-shadow: 0 4px 3px rgb(0 0 0 / 15%);
+}
+
+
+@media screen and (max-width: 1200px) {
+    .cpAdornment::after {
+        display: none;
+    }
+    .form-control{
+        padding: 0.1rem .4rem;
+    }
+}
+@media screen and (max-width: 992px) {
+    @keyframes cpGirl {
+        0% { background-position: center center; }
+        50% { background-position: center 8em; }
+        100% { background-position: center center; }
+    }
+    .formImg {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 768px) {
+    /* KV */
+    .kv_pc {display: none;}
+    .kv_sp {display: block;}
+    .kv_sp {
+        height: 125vw;
+        background-image: url(../images/kv_yellowlight_sp.png);
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+    .kv_title {
+        width: 88vw;
+        left: 6vw;
+        top: 22vw;
+    }
+    .kv_button {
+        width: 40vw;
+        left: 30vw;
+        top: 58vw;
+        animation: ani_button 1.5s linear 1s infinite;
+    }
+    @keyframes ani_button {
+        0% {transform:scale(1);}
+        50% {transform:scale(1.02);}
+    }
+    .kv_couponboy_sp {
+        width: 61.5%;
+        right: 4vw;
+        top: 73vw;
+        animation: ani_admt_r 1.5s linear 1s infinite;
+    }
+    @keyframes ani_admt_r {
+        0% {transform: rotate(0deg);}
+        50% {transform: rotate(-2deg);}
+    }
+    .kv_adornment_sp {
+        width: 98%;
+        left: 2vw;
+        top: 5.5vw;
+        animation: ani_admtsp 1.5s linear 1s infinite;
+    }
+    @keyframes ani_admtsp {
+        0% {transform:scale(1);}
+        50% {transform:scale(0.98);}
+    }
+    /* campaign */
+    .campaignBg {
+        background-image: unset;
+    }
+    .campaignContent {
+        width: 80%;
+    }
+    .cpGap {
+        margin-top: unset;
+        padding-top: 50px;
+    }
+    .cpAdornment::before {
+        width: 120px;
+        height: 131px;
+        bottom: 490px;
+        left: -25px;
+    }
+    .cpAdornment::after {
+        display: none;
+    }
+    .cpAdornmentGift::after {
+        width: 140px;
+        height: 80px;
+        bottom: 300px;
+        right: -30px;
+        animation: ani_cpGift 1.5s linear 1s infinite;
+    }
+    @keyframes ani_cpGift {
+        0% { bottom: 300px; }
+        50% { bottom: 310px; }
+        100% { bottom: 300px; }
+    }
+
+
+    /* form */
+    #myform {
+        top: 3rem;
+    }
+    .form-control{
+        padding: .375rem .75rem;
+    }
+    .formGapTop {
+        padding-top: 20px;
+    }
+}
+@media screen and (max-width: 576px) {
+    .courseTitle {
+        font-size: 20px;
+    }
+    .courseContent {
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,339 @@
+$color-main:#ff3300;
+
+.wrapper, *:before, *:after {
+    position: relative;
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    a {text-decoration: none;}
+
+    .kv {
+        background-color: white;
+
+        .kv_PC {
+            height: 42vw;
+            display: block;
+
+            .logoPc{
+                width: 10%;
+                top: 2%;
+                right: 1%;
+            }
+            .girl {
+                animation: appear 0.1s linear backwards;
+                animation-delay: 0.2s;
+            }
+            .kvPcTit {
+                width: 60%;
+                top: 20%;
+                left: 28%;
+            }
+
+            @media screen and (max-width:992px) {
+                display: none;
+            }
+        }
+        .kv_SP {
+            height: 111vw;
+            display: none;
+
+            @media screen and (max-width:992px) {
+                display: block;
+
+                .logoSp{
+                    width: 25%;
+                    top: 2%;
+                    left: 1%;
+                }
+                .kvSpTit {
+                    width: 90%;
+                    left: 5%;
+                    top: 33%;
+                }
+                .kvbt {
+                    width: 20%;
+                    top: 70%;
+                    right: 8%;
+                }
+            }
+        }
+    }
+    .luckyGame {
+        position: relative;
+        z-index: 1;
+        background-image: url(../images/wall.png);
+        background-size: auto 100%;
+
+        #myform {
+            position: relative;
+            top: -1.2rem;
+        }
+        .titRed {
+            color: #ff0000;
+        }
+        .titYellow {
+            position: relative;
+            width: 50%;
+            color: #ffd500;
+            background-image: url(../images/brush.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 100% 100%;
+            padding: 1rem 2rem;
+            text-wrap: nowrap;
+
+            &::after, &::before {
+                content: "";
+                position: absolute;
+                margin: 0 auto;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            &::after {
+                top: 250%;
+                left: -180%;
+                width: 350px;
+                height: 350px;
+                background-image: url('../images/orangeDB.png');
+            }
+            &::before {
+                top: 330%;
+                left: 180%;
+                width: 300px;
+                height: 300px;
+                background-image: url('../images/redDB.png');
+            }
+        }
+        .gameCont {
+            position: relative;
+            width: 80%;
+            margin: 0 auto;
+            @media screen and (max-width:992px) {
+                width: 130%;
+                left: -15%;
+            }
+
+            .disable {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+
+            #box{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-self: center;
+                width: 75%;
+                margin:0 auto;
+                padding: 0.25rem;
+                background-color: #faf0ca;
+                border-radius: 10px;
+                border: #ffe874 solid 10px;
+
+                .pic{
+                    width:33%;
+                    height:33%;
+                    border-radius: 20px;
+                    background-color: #ffd500;
+                    border: #faf0ca solid 10px;
+                    @media screen and (max-width:992px) {
+                        border-radius: 10px;
+                        border: #faf0ca solid 3px;
+                    }
+                }
+
+                .anniu{
+                    width:33%;
+                    height:33%;
+    
+                    #drawBtn{
+                        width:100%;
+                        height:100%;
+                        cursor: pointer;
+                    }
+                }
+
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 95%;
+                left: 0%;
+                width: 100%;
+                height: 40%;
+                margin: 0 auto;
+                background-image: url('../images/platform.png');
+                background-size: contain;
+                background-repeat: no-repeat;
+                z-index: -1;
+            }
+        }
+    }
+    .description {
+        z-index: 2;
+        background-image: url(../images/wall_darker.png);
+        background-size: auto 100%;
+
+        .des-pt {
+            padding-top: 9rem;
+            @media screen and (max-width:992px) {
+                padding-top: 7rem;
+            }
+            @media screen and (max-width:768px) {
+                padding-top: 5rem;
+            }
+        }
+        .desCont {
+            position: relative;
+            background-color: white;
+            border-radius: 10px;
+            width: 100%;
+
+            .desTit {
+                background-color: #4c4c4c;
+                color: white;
+                border-radius: 10px 10px 0 0;
+            }
+            .desText {
+                text-align: justify;
+                margin: 0 1.5rem 0 0.5rem;
+            }
+
+            &::after, &::before {
+                content: "";
+                position: absolute;
+                margin: 0 auto;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            &::after {
+                top: 0%;
+                right: 125%;
+                width: 300px;
+                height: 300px;
+                background-image: url('../images/redDB.png');
+            }
+            &::before {
+                top: -28%;
+                left: 125%;
+                width: 350px;
+                height: 350px;
+                background-image: url('../images/orangeDB.png');
+                transform: rotate(-120deg);
+            }
+        }
+
+    }
+    .footer {
+        background: #000;
+        .copyright {
+            color: white;
+        }
+    }
+    .myModal {
+        .forMemberModal, .forSalesModal, .prizeModal {
+            &.maxWidth {max-width: 800px;}
+        
+            .modal-content {
+                border-radius: 10px;
+                border: unset;
+
+                .modal-body {
+                    padding: unset;
+
+                    .btn-close {
+                        position: absolute;
+                        right: 1%;
+                        top: 1%;
+                    }
+                    .colorRed {
+                        color: #e41b0b;
+                    }
+                    .imgInbody {
+                        width: 100%;
+                        @media screen and (max-width:992px) {
+                            width: 60%;
+                        }
+                    }
+                    .imgPrize {
+                        margin-top: -12%;
+                    }
+                    .inputStyle{
+                        width: 100%;
+                        height: 30px;
+                        margin: 0.25rem 0 0.25rem 0;
+                        border: 0px;
+                        border-radius: 4px;
+                    }
+                    .go_button {
+                        text-align: center;
+                        background-color: #005db4;
+                        color: white;
+                        border-radius: 4px;
+                    }
+                }
+                &.modalBg {
+                    background-image: url(../images/modal_bg.png);
+                    background-size: auto 100%;
+                }
+                &.yellowBg {
+                    background-color: #ffd500;
+                }
+            }
+        }
+    }
+    .form{
+        background: linear-gradient(to bottom, #fbe074 0%, #ffdf48 50%, #3e97d1 50%, #509fd5 100%);
+        #myform {
+            position: relative;
+            top: -4.5rem;
+        }
+        .formBg {
+            background-color: white;
+            border-radius: 10px;
+            .formImg {
+                margin-top: -10%;
+            }
+        }
+        .formTable {
+            width: 90%;
+            margin: 0 auto;
+            .formTit {
+                color: #005db4;
+                font-weight: 900;
+            }
+            .formBr {
+                display: none;
+                @media screen and (max-width:992px) {
+                    display: block;
+                }
+            }
+        }
+        .w-49 {width: 49%;}
+        .btnColor {
+            background-color: #005db4;
+            color: white;
+        }
+        a {color: rgb(0, 119, 255);}
+    }
+
+
+}
+
+/* keyframes */
+@keyframes zoomInOut {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+@keyframes appear {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

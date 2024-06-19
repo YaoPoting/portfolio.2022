@@ -1,0 +1,241 @@
+@charset "utf-8";
+/* =============================================================================
+   CCT95 DESIGN BASE
+   to quote Adobe Dreamweaver CS6 as boilerplate.css
+   ========================================================================== */
+
+/* =============================================================================
+   HTML5 顯示定義
+   ========================================================================== */
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section { display: block; }
+audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+audio:not([controls]) { display: none; }
+[hidden] { display: none; }
+
+
+/* =============================================================================
+   印刷樣式
+   ========================================================================== */
+abbr[title] { border-bottom: 1px dotted; }
+b, strong { font-weight: bold; }
+blockquote { margin: 1em 40px; }
+dfn { font-style: italic; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+ins { background: #ff9; color: #000; text-decoration: none; }
+mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+
+/* 重新宣告固定寬度字體系列  */
+pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; font-size: 1em; }
+
+/* 改善所有瀏覽器中預先格式化之文字的可讀性 */
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+q { quotes: none; }
+q:before, q:after { content: ""; content: none; }
+small { font-size: 85%; }
+
+/* 放置下標字和上標字內容，而不影響行高 */
+sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+
+/* =============================================================================
+   內嵌內容
+   ========================================================================== */
+/*
+ * 1. 改善在 IE7 中縮放時的影像品質
+ * 2. 移除影像容器上影像與邊框之間的間隙
+ */
+img { border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; }
+
+/* 修正 IE9 中未隱藏的溢位 */
+svg:not(:root) { overflow: hidden; }
+
+
+/* =============================================================================
+   圖表
+   ========================================================================== */
+figure { margin: 0; }
+
+/* =============================================================================
+   表單
+   ========================================================================== */
+form { margin: 0; }
+fieldset { border: 0; margin: 0; padding: 0; }
+
+/* 表示「label」會將焦點移至相關聯的表單元素 */
+label { cursor: pointer; }
+
+/* 
+ * 1. 修正 IE6/7/8/9 中非繼承的顏色 
+ * 2. 修正 IE6/7 中顯示異常的對齊 
+ */
+legend { border: 0; *margin-left: -7px; padding: 0; }
+
+/*
+ * 1. 修正所有瀏覽器中非繼承的字體大小
+ * 2. 移除 FF3/4 S5 Chrome 中的邊界
+ * 3. 在所有瀏覽器中定義一致的垂直對齊顯示
+ */
+button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+
+/*
+ * 1. 將行高定義為一般，以符合 FF3/4 (使用 UA 樣式表中的 !important 來設定)
+ * 2. 修正 IE6/7 中顯示異常的內部間距
+ */
+button, input { line-height: normal; *overflow: visible; }
+
+/* 在「table」中重新加入內部間距，以避免 IE6/7 中的重疊和空白問題 */
+table button, table input { *overflow: auto; }
+
+/*
+ * 1. 顯示手掌游標，表示可點選的表單元素
+ * 2. 允許 iOS 中可點選之表單元素的樣式
+ */
+
+button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+
+/* 一致的方塊大小和外觀 */
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+
+/*  移除 FF3/4 中的內部內距和邊框 */
+
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+
+/* 
+ * 1. 移除 IE6/7/8/9 中的預設垂直捲軸 
+ * 2. 僅允許垂直調整大小
+ */
+
+textarea { overflow: auto; vertical-align: top; resize: vertical; }
+
+/* 表單有效性的色彩 */
+input:valid, textarea:valid {  }
+input:invalid, textarea:invalid { background-color: #f0dddd; }
+
+
+/* =============================================================================
+   表格
+   ========================================================================== */
+
+table { border-collapse: collapse; border-spacing: 0; }
+td { vertical-align: top; }
+
+
+/* ==|== 非語意的 helper 類別 ========================================
+   在進入此區段之前，請先定義您的樣式。
+   ========================================================================== */
+/* 用於影像取代 */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.ir br { display: none; }
+
+/* 同時在螢幕讀取器和瀏覽器中隱藏: h5bp.com/u */
+.hidden { display: none !important; visibility: hidden; }
+
+/* 僅垂直隱藏，但在螢幕讀取器中提供使用: h5bp.com/v */
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+
+/* 擴充 .visuallyhidden 類別，以允許元素可在透過鍵盤瀏覽時取得焦點: h5bp.com/p */
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+
+/* 垂直隱藏且在螢幕讀取器中隱藏，但保留版面 */
+.invisible { visibility: hidden; }
+
+/* 包含浮動: h5bp.com/q */ 
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+
+/* ==|== 列印樣式 =======================================================
+   列印樣式。
+   已內嵌，以避免必要的 HTTP 連線: h5bp.com/r
+   ========================================================================== */
+ 
+ @media print {
+  /* 黑色的列印速度更快 */
+  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } 
+  a, a:visited { text-decoration: underline; }
+  a[href]:after { content: " (" attr(href) ")"; }
+  abbr[title]:after { content: " (" attr(title) ")"; }
+  
+  /* 不要顯示影像的連結或 javascript/內部連結 */
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  
+  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+  thead { display: table-header-group; }
+  tr, img { page-break-inside: avoid; }
+  img { max-width: 100% !important; }
+  @page { margin: 0.5cm; }
+  p, h2, h3 { orphans: 3; widows: 3; }
+  h2, h3 { page-break-after: avoid; }
+}
+
+/* =============================================================================
+   ALL USE
+   ========================================================================== */
+html { height: 100%; }
+.clear { clear: both; }
+/* 消虛線IE7 */
+a { noFocusline:expression(this.onFocus=this.blur()); }
+/* JQ TOOL USE */
+a.disabled { visibility: hidden !important; }
+
+
+/* =============================================================================
+   base style
+   ========================================================================== */
+body, td, th, input {font-size: 15px; -webkit-text-size-adjust: none; }
+a:link, a:visited { text-decoration: none; }
+a:hover, a:active { text-decoration: none; }
+a:focus { outline: thin dotted; }
+
+/* FONT STYLE */
+.font_red { color:#900; }
+.font_green { color:#063; }
+.font_yellow { color:#FC0; }
+.font_blue { color:#06C; }
+.font_gray { color:#CCC; }
+
+/* edit_item */
+.edit_item li { display: list-item }
+.edit_item head { display: none }
+.edit_item table { display: table }
+.edit_item tr { display: table-row }
+.edit_item thead { display: table-header-group }
+.edit_item tbody { display: table-row-group }
+.edit_item tfoot { display: table-footer-group }
+.edit_item col { display: table-column }
+.edit_item colgroup { display: table-column-group }
+.edit_item td, th { display: table-cell }
+.edit_item caption { display: table-caption }
+.edit_item th { font-weight: bolder; text-align: center }
+.edit_item caption { text-align: center }
+.edit_item h1 { font-size: 2em; margin: .67em 0 }
+.edit_item h2 { font-size: 1.5em; margin: .75em 0 }
+.edit_item h3 { font-size: 1.17em; margin: .83em 0 }
+.edit_item h4, .edit_item p, .edit_item blockquote, .edit_item ul, .edit_item fieldset, .edit_item form, .edit_item ol, .edit_item dl, .edit_item dir, .edit_item menu { margin: 1.12em 0 }
+.edit_item h5 { font-size: .83em; margin: 1.5em 0 }
+.edit_item h6 { font-size: .75em; margin: 1.67em 0 }
+.edit_item h1, .edit_item h2, .edit_item h3, .edit_item h4, .edit_item h5, .edit_item h6, .edit_item b, .edit_item strong { font-weight: bolder }
+.edit_item blockquote { margin-left: 40px; margin-right: 40px }
+.edit_item i, .edit_item cite, .edit_item em, .edit_item var, .edit_item address { font-style: italic }
+.edit_item pre, .edit_item tt, .edit_item code, .edit_item kbd, .edit_item samp { font-family: monospace }
+.edit_item pre { white-space: pre }
+.edit_item button, .edit_item textarea, .edit_item input, .edit_item select { display: inline-block }
+.edit_item big { font-size: 1.17em }
+.edit_item small, .edit_item sub, .edit_item sup { font-size: .83em }
+.edit_item sub { vertical-align: sub }
+.edit_item sup { vertical-align: super }
+.edit_item table { border-spacing: 2px; }
+.edit_item thead, .edit_item tbody, .edit_item tfoot { vertical-align: middle }
+.edit_item td, .edit_item th { vertical-align: inherit }
+.edit_item s, .edit_item strike, .edit_item del { text-decoration: line-through }
+.edit_item hr { border: 1px inset }
+.edit_item ol, .edit_item ul, .edit_item dir, .edit_item menu, .edit_item dd { margin-left: 40px }
+.edit_item ol { list-style-type: decimal }
+.edit_item ol ul, .edit_item ul ol, .edit_item ul ul, .edit_item ol ol { margin-top: 0; margin-bottom: 0 }
+.edit_item u, .edit_item ins { text-decoration: underline }
+.edit_item br:before { content: "\A" }
+.edit_item center { text-align: center }

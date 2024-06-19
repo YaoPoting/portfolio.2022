@@ -1,0 +1,581 @@
+$color-main:#ff3300;
+
+.wrapper, *:before, *:after {
+    position: relative;
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    .kv {
+        background-color:#689dbb;
+        padding-top: 80px;
+        .forest {
+            width: 100vw;
+            animation: appear 1s linear backwards;
+        }
+        .fog {mix-blend-mode: screen;}
+        .kv_PC {
+            height: 55vw;
+            display: block;
+            .dinosaur {
+                width: 26%;
+                left: 58%;
+                top: 15%;
+            }
+            .fog {
+                width: 100%;
+                top: 55%;
+            }
+            .title {
+                width: 50%;
+                left: 18%;
+                top: 14%;
+                animation: zoomInOut 2s linear infinite;
+            }
+            .grass1 {
+                width: 14%;
+                top: 10%;
+            }
+            .grass2 {
+                width: 30%;
+                top: 62%;
+                left: 18%;
+                animation: rotateRight 2s linear infinite;
+            }
+            .grass3 {
+                width: 15%;
+                top: 14%;
+                right: 0%;
+                
+            }
+            @media screen and (max-width:992px) {
+                display: none;
+            }
+        }
+        .kv_SP {
+            height: 102vw;
+            display: none;
+            @media screen and (max-width:992px) {
+                display: block;
+                .dinosaur {
+                    width: 50%;
+                    right: -5%;
+                    top: 30%;
+                }
+                .fog {
+                    width: 220%;
+                    top: 50%;
+                }
+                .title {
+                    width: 70%;
+                    left: 10%;
+                    top: 33%;
+                    animation: zoomInOut 2s linear infinite;
+                }
+                .grass4 {
+                    width: 50%;
+                    top: 23%;
+                    left: 0%;
+                }
+            }
+        }
+    }
+    a {text-decoration: none;}
+    .expBt {
+        background: linear-gradient(to bottom, #fe8c70, #ff5328);
+        padding: 0.3rem 1.5rem;
+        border-radius: 30px;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: bold;
+        box-shadow: 0px 1px 6px 4px rgba(0, 0, 0, 0.1);
+    }
+    .course {
+        background: linear-gradient(to bottom, #feffed, #fbe074);
+        #myCourse {
+            position: relative;
+            top: -1rem;
+        }
+        .titleSize {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            text-align: center;
+            width: 30%;
+            @media screen and (max-width:992px) {
+                width: 90%;
+            }
+            .title{
+                background-image: url(../images/brick_course2.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                color: white;
+            }
+        }
+        .courseName {
+            color: $color-main;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        .courseBg {
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: row;
+            .imgWidth {
+                width: 50%;
+            }
+            .contentStyle {
+                width: 50%; 
+                text-align: unset;
+                font-size: 1.1rem;
+            }
+            @media screen and (max-width:992px) {
+                flex-direction: column;
+                .imgWidth {width: 65%;}
+                .contentStyle {
+                    width: 80%; 
+
+                    font-size: 1.2rem;
+                }
+            }
+        }
+        .coursePlatform {margin-top: -50px;}
+        hr {
+            opacity: 1;
+            color: $color-main;
+        }
+        .gifFrame {
+            border: #ff7756 solid 3px;
+        }
+        .dinosaur {
+            position: relative;
+            margin-top: -15%;
+            right: -44%;
+            width: 60%;
+        }
+
+    }
+    .form{
+        background: linear-gradient(to bottom, #fbe074 0%, #ffdf48 50%, #3e97d1 50%, #509fd5 100%);
+        #myform {
+            position: relative;
+            top: -4.5rem;
+        }
+        .formBg {
+            background-color: white;
+            border-radius: 10px;
+            .formImg {
+                margin-top: -10%;
+            }
+        }
+        .formTable {
+            width: 90%;
+            margin: 0 auto;
+            .formTit {
+                color: #005db4;
+                font-weight: 900;
+            }
+            .formBr {
+                display: none;
+                @media screen and (max-width:992px) {
+                    display: block;
+                }
+            }
+        }
+        .w-49 {width: 49%;}
+        .btnColor {
+            background-color: #005db4;
+            color: white;
+        }
+        a {color: rgb(0, 119, 255);}
+    }
+    .abilityAdvantage {
+        background: linear-gradient(to bottom, #509fd5, #e9f6fe);
+        .titleSize {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            text-align: center;
+            width: 45%;
+            @media screen and (max-width:992px) {
+                width: 90%;
+            }
+            .title{
+                background-image: url(../images/brick_ability2.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                color: white;
+            }
+        }
+        .abilityCon {
+            aspect-ratio: 332 / 286;
+            &.Bg1 {background-image: url(../images/abilityIcon1.png);}
+            &.Bg2 {background-image: url(../images/abilityIcon2.png);}
+            &.Bg3 {background-image: url(../images/abilityIcon3.png);}
+            &.Bg4 {background-image: url(../images/abilityIcon4.png);}
+            background-size: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            .abilityText {
+                text-align: center;
+                color: #07396b;
+                font-size: 1.5rem;
+                font-weight: 900;
+                padding-bottom: 9%;
+                @media screen and (max-width:1200px) {padding-bottom: 7%;}
+                @media screen and (max-width:992px) {padding-bottom: 10%;}
+                @media screen and (max-width:768px) {padding-bottom: 8%;}
+                @media screen and (max-width:576px) {padding-bottom: 9%; font-size: 1.1rem;}
+                @media screen and (max-width:420px) {padding-bottom: 8%;}
+            }
+        }
+        .dinosaur {
+            left: -20%;
+            width: 40%;
+            margin-top: -20%;
+            @media screen and (max-width:992px) {
+                width: 80%;
+                margin-top: -39%;
+            }
+        }
+        .titleAdvantage {
+            width: 70%;
+            max-width: 344px;
+        }
+        .advantageBg {
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 1rem;
+            padding-bottom: 1rem;
+            .subTitle {color: #ff3300;}
+        }
+    }
+    .fullCourse {
+        background: linear-gradient(to bottom, #ffedec, #ffc5c5);
+        .titleSize {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+            text-align: center;
+            width: 45%;
+            @media screen and (max-width:992px) {
+                width: 90%;
+            }
+            .title{
+                background-image: url(../images/brick_fullcourse2.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                color: white;
+            }
+        }
+        .fullCourseBg {
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 1rem;
+            padding: 2rem;
+            @media screen and (max-width:992px) {
+                padding: 1rem;
+            }
+
+            .fullCourse_levelBg {
+                width: 90%;
+                height: 100%;
+                background-image: url(../images/fullCourse_levelBg.png);
+                background-size: 10% 100%;
+                color: #347898;
+                font-size: 1.25rem;
+                .level1 {height: 33%;}
+                .level2 {height: 37%;}
+                .level3 {height: 30%;}
+            }
+            .tableStyle {
+                &.redGradient {background: linear-gradient(to bottom, #ffeeee, #ffcece);}
+                &.blueGradient {background: linear-gradient(to bottom, #ebf7ff, #ceecff);}
+                &.yellowGradient {background: linear-gradient(to bottom, #fffeed, #f3ee9d);}
+                .title {
+                    &.red{color: #dd2c2c;}
+                    &.blue {color: #1d8cd3;}
+                    &.yellow {color: #d6af38;}
+                    font-size: 2rem;
+                    font-weight: bold;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    justify-items: center;
+                }
+                .pill {
+                    &.red{border: #dd2c2c solid 3px;}
+                    &.blue {border: #1d8cd3 solid 3px;}
+                    &.yellow {border: #d6af38 solid 3px;}
+                    font-size: 1.25rem;
+                    border-radius: 50px;
+                    padding: 2px 10px;
+                    margin-left: 10px;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    height: 30px;
+
+                }
+                .pillBg {
+                    &.red{background-color: #dd2c2c;}
+                    &.blue {background-color: #1d8cd3;}
+                    &.yellow {background-color: #d6af38;}
+                    font-size: 1.25rem;
+                    padding: 0.5rem 0.5rem;
+                    font-weight: bold;
+                    color: white;
+                }
+            }
+
+
+
+
+            .fullCoursePC {
+                display: block;
+                @media screen and (max-width:992px) {
+                    display: none;
+                }
+            }
+            .fullCourseSP {
+                display: none;
+                @media screen and (max-width:992px) {
+                    display: block;
+                }
+            }
+            .dinosaur {
+                width: 30%;
+                right: -20%;
+                bottom: -10%;
+                @media screen and (max-width:992px) {
+                    width: 45%;
+                }
+            }
+        }
+        .tvTit {
+            color: $color-main;
+            margin-bottom: -15px;
+        }
+        .titleWork {
+            width: 70%;
+            max-width: 212px;
+        }
+        .workBg {
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 1rem;
+            
+            .swiper-pagination {
+                position: relative;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content:space-around;
+                align-items: flex-start;
+                bottom: unset;
+                padding-top: 1rem;
+                span {
+                    background-color: transparent;
+                    height: 100%;
+                    width: 100%;
+                    max-width: 129px;
+                    opacity: 1;
+                    border-radius: 50%;
+                    &.swiper-pagination-bullet-active {
+                        background: linear-gradient(to top, #96d6f1, #ffffff 85%);
+                    }
+                    &:before {
+                        content: '';
+                        display: block;
+                        padding-top: 100%;
+                        width: 100%;
+                        max-width: 129px;
+                        margin: 0 auto;
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+                    }
+
+                    &:nth-of-type(1) {
+                        &:before {
+                            background-image: url(../images/portrait1.png);
+                        }
+                    }
+                    &:nth-of-type(2) {
+                        &:before {
+                            background-image: url(../images/portrait2.png);
+                        }
+                    }
+                    &:nth-of-type(3) {
+                        &:before {
+                            background-image: url(../images/portrait3.png);
+                        }
+                    }
+                    &:nth-of-type(4) {
+                        &:before {
+                            background-image: url(../images/portrait4.png);
+                        }
+                    }
+                    &:nth-of-type(5) {
+                        &:before {
+                            background-image: url(../images/portrait5.png);
+                        }
+                    }
+                    &:nth-of-type(6) {
+                        &:before {
+                            background-image: url(../images/portrait6.png);
+                        }
+                    }
+                }
+            }
+            .portraitName {
+                position: relative;
+                display: flex;
+                flex-flow: row nowrap;
+                justify-content:space-around;
+                align-items: flex-start;
+                padding-top: 1rem;
+                font-size: 1.25rem;
+                font-weight: bold;
+                @media screen and (max-width:992px) {
+                    padding-top: 0.25rem;
+                    font-size: 0.9rem;
+                }
+            }
+            .swiper-button-prev, .swiper-button-next {
+                display: block;
+                color: black;
+                @media screen and (max-width:992px) {
+                    display: none;
+                }
+            }
+            .vedioCont {
+                width: 100%;
+                max-width: 720px;
+                margin: 0 auto;
+                .videobox {
+                    position: relative;
+                    width: 100%;
+                    height: 0;
+                    padding-bottom: 75%;
+                    margin-bottom: 2rem;
+                    img {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+            }
+        }
+    }
+    .teacher {
+        background: linear-gradient(to bottom, #ffc5c5, #3ab3b0);
+        .maxWidth {
+            max-width: 996px;
+            .titleSize {
+                display: flex;
+                flex-direction: column;
+                margin: 0 auto;
+                text-align: center;
+                width: 35%;
+                @media screen and (max-width:992px) {
+                    width: 90%;
+                }
+                .title{
+                    background-image: url(../images/brick_ability2.png);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: 100% 100%;
+                    color: white;
+                }
+            }
+            .teacherBg {
+                background-color: white;
+                border-radius: 10px;
+                .portrait {margin-top: -30%;}
+                .colorBlue {color: #005db4;}
+                .text-justify {text-align: justify;}
+                .blueArrow { width: 26px;}
+                margin-bottom: 2rem;
+                @media screen and (max-width:992px) {margin-bottom: 8rem;}
+                @media screen and (max-width:768px) {margin-bottom: 6rem;}
+                @media screen and (max-width:576px) {margin-bottom: 4rem;}
+            }
+        }
+        .dinosaur {
+            width: 35%;
+            bottom: -15%;
+            left: -10%;
+            @media screen and (max-width:1400px) {bottom: -80%;}
+            @media screen and (max-width:992px) {bottom: -15%;}
+        }
+        .laptopman {
+            width: 16%;
+            right: 0;
+            bottom: -40%;
+            @media screen and (max-width:1400px) {bottom: -100%;}
+            @media screen and (max-width:992px) {bottom: -40%;}
+        }
+    }
+
+    .waveHeight {height: 16vw;}
+    .wave {
+        bottom: 0%;
+        transition: all 0.9s;
+        .waves {
+            position: relative;
+            .parallax > use {
+                animation: wave 1000s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+            }
+            .parallax > use:nth-child(1) {
+                animation-delay: -2s;
+                animation-duration: 7s;
+            }
+            .parallax > use:nth-child(2) {
+                animation-delay: -3s;
+                animation-duration: 10s;
+            }
+            .parallax > use:nth-child(3) {
+                animation-delay: -4s;
+                animation-duration: 13s;
+            }
+            .parallax > use:nth-child(4) {
+                animation-delay: -5s;
+                animation-duration: 16s;
+            }
+        }
+    }
+}
+
+/* keyframes */
+@keyframes zoomInOut {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+@keyframes wave {
+    0% {transform: translate3d(-90px, 0, 0);}
+    50% {transform: translate3d(85px, 0, 0);}
+    100% {transform: translate3d(-90px, 0, 0);}
+}
+@keyframes rotateRight {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+}
+@keyframes appear {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}

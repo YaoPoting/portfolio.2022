@@ -1,0 +1,54 @@
+.banner {
+    position: relative;
+    overflow: hidden;
+}
+
+.banner_BG {
+    width: 100%;
+}
+
+.banner_title {
+    position: absolute;
+    top: -25%;
+    left: 22%;
+    width: 55%;
+    opacity: 0;
+    transition: .5s;
+    transition-delay: .5s;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.show .banner_title {
+    top: 25%;
+    opacity: 1;
+}
+
+
+
+
+
+@media screen and (max-width: 1023px) {
+
+    .banner_BG {
+        width: 100%;
+    }
+
+
+
+    .banner_title {
+        position: absolute;
+        top: -10%;
+        left: 7%;
+        width: 85%;
+        opacity: 0;
+        transition: .5s;
+        transition-delay: .5s;
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .show .banner_title {
+        top: 25%;
+        opacity: 1;
+    }
+
+}

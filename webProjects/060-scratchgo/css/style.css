@@ -1,0 +1,428 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body {
+    font-family: Arial,'Noto Sans TC', sans-serif;
+}
+.wrapper {
+    position: relative;
+    overflow: hidden;
+}
+.blueBg {
+    background-color: #82b7d7;
+}
+.container-md {
+    max-width: 768px;
+}
+.container-sm {
+    max-width: 576px;
+}
+.fz-22 {
+    font-size: 22px;
+}
+/* 按鈕 */
+.modalBt_style {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: 0;
+    transition-property: color;
+    transition: 0.5s;
+    width: 170px;
+    text-align: center;
+    padding: 10px;
+    background-color: #0e4b8a;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 22px;
+    border: 0px;
+    border-radius: 50px;
+    cursor: pointer;
+    line-height: 22px;
+  }
+
+.modalBt_style:hover, .modalBt_style:focus, .modalBt_style:active {
+    top: -5px;
+    box-shadow: 0 4px 3px rgb(0 0 0 / 20%);
+    color: #ffffff;
+}
+
+/* 關於BN */
+.title, .paris, .snowboard, .england, .beach, .japan, .leafs {
+    position: absolute;
+}
+.Banner {
+    height: 67.55vw
+}
+.paris_SP {
+    display: none;
+}
+.paris {
+    width: 100vw;
+}
+.title {
+    width: 70vw;
+    left: 15vw;
+    top: -8vw;
+}
+.beach {
+    width: 20vw;
+    left: 78vw;
+    top: 5vw;
+}
+.japan {
+    left:76vw;
+    width: 20vw;
+    top:36vw;
+    animation: japan 3s infinite linear;
+}
+@keyframes japan {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(4deg);
+    }
+}
+.england {
+    top: 27vw;
+    width: 25vw;
+    left: 2vw;
+    animation: england 4s infinite linear;
+}
+@keyframes england {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+.snowboard {
+    top: 5vw;
+    width: 20vw;
+    left: 2vw;
+}
+.leafs {
+    top: 3vw;
+    width:  15vw;
+    left: 26vw;
+    animation: leafs 3s infinite linear;
+}
+@keyframes leafs {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(3deg);
+    }
+}
+
+/* 刮刮卡 */
+.titScratch {
+    width: 80vw;
+    max-width: 350px;
+}
+.titEventdetil {
+    width: 13vw;
+    max-width: 160px;
+    min-width: 135px;
+}
+
+
+.choiceBox {
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+
+}
+.choice-btn {
+    margin: 0px 10px 0px 10px;
+    height: auto;
+    border-radius: 10px;
+    text-align: center;
+    cursor:pointer;
+    transition: all .4s ease-in-out;
+}
+    .box:hover {
+        background-color: #fffae0;
+        transition: all .4s;
+    }
+    .box:hover {
+        color: #fffae0;
+        transition: all .4s;
+    }
+    .box:active, .box:focus {
+        transform: translateY(30px);
+        box-shadow: none;
+        transition: all .4s ease-in-out;
+    }
+
+
+    .choice-btn h3 {
+        color: #2d3f63;
+        font-size: 21px;
+        font-weight: 600;
+        line-height: 1.1em;
+        text-align: center;
+    }
+
+
+    .choice-btn p {
+        display: block;
+        color: #535353;
+        font-size: 20px;
+        font-weight: 300;
+        line-height: 1.1em;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+.box1 {
+    background-color: #fffae0;
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+}
+
+.box2 {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+}
+.downAnchor_box {
+    margin-top: -6px;
+}
+.DownAnchor {
+    transform: rotate(180deg);
+    color: #fffae0;
+}
+.blueLight {
+    position: relative;
+    z-index: 1;
+  }
+    .blueLight::before {
+        content: '';
+        background-image: url('../images/goldDicePoker.png'), url('../images/blueLight.png');
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: center center;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        animation: blueLights 3s infinite linear;
+    }
+    @keyframes blueLights {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.02);
+        }
+    }
+
+    
+
+/* 刮刮樂2 */
+#sc_bg {
+    width: 100%;
+    height: 100%;
+}
+.sc__inner {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+ }
+ .sc__wrapper {
+    display: block;
+    width: 100%;
+    height: auto;
+ }
+ 
+ .sc__container {
+    border-radius: 28px;
+    box-shadow: 0px 20px 50px 0px #5f5f5f;
+    position: relative;
+    overflow: hidden;
+    height: auto;
+    width: 100%;
+    background-image: url(../images/gift01.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+ }
+ 
+ .sc__container > img {
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+ }
+ 
+ .sc__container canvas {
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto; */
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+ }
+ 
+ .sc__infos {
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 5px;
+    font-weight: bold;
+    font-size: 18px;
+ }
+
+
+
+/* 彈出視窗 */
+#openModal_sheets {
+    display: none;
+}
+#openModal_wrong {
+    display: none;
+}
+#openModal_gift {
+    display: none;
+}
+.modal_bg {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+.container-modal {
+    position: relative;
+    top: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.modal-content_sc {
+    background-color: #c3d0da;
+    border-radius: 20px;
+    text-align: center;
+    width: 80%;
+    max-width: 576px;
+    margin: auto;
+}
+.close_sc {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close_sc:hover,
+.close_sc:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.modal-fix_sc {
+    overflow: hidden;
+}
+.gift_bg {
+    background-image: url(../images/giftdec1.png), url(../images/giftdec2.png);
+    background-repeat: no-repeat, no-repeat;
+    background-position: left top, right bottom;
+    background-size: 100%, 100%;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.giftStyle {
+    color: #184472;
+    font-size: 32px;
+}
+
+/* 活動辦法 */
+.bgLake {
+    background-image: url(../images/bgLake.png);
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+
+    /* 關於BN */
+    .Banner {
+        height: 153.06vw
+    }
+    .paris_SP {
+        display: block;
+        width: 100vw;
+    }
+    .paris {
+        display: none;
+        width: 100vw;
+    }
+    .title {
+        top: 9vw;
+        width: 135vw;
+        left: -17vw;
+    }
+    .beach {
+        width: 35vw;
+        left: 60vw;
+        top: 5vw;
+    }
+    .japan {
+        left:58vw;
+        width: 40vw;
+        top:95vw
+    }
+    .england {
+        top: 91vw;
+        width: 45vw;
+        left: 5vw;
+    }
+    .snowboard {
+        top: 14vw;
+        width: 30vw;
+        left: 5vw;
+    }
+    .leafs {
+        top: 27vw;
+        width: 25vw;
+        left: 50vw;
+    }
+
+    
+
+
+
+
+
+
+}

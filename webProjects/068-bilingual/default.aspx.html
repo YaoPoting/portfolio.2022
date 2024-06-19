@@ -1,0 +1,702 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>【2030雙語教學】全民走向國際化，申請萬元課程補助！</title>
+    <meta name="Title" content="【2030雙語教學】全民走向國際化，申請萬元課程補助！" />
+    <meta name="Description" content="提升外語力,掌握說話權!聽說讀寫全面提升,課程最高享1萬元補助,程度不限,英語,日語,韓語,西班牙語,法語,德語,自由選擇!限時加碼送1200堂英日數位課,趕快為自己創造更多競爭優勢吧!" />
+    <meta name="keywords" content="雙語國家,雙語教學,補習班,線上學" />
+    <meta property="og:title" content="【2030雙語教學】全民走向國際化，申請萬元課程補助！" />
+    <meta property="og:url" content="https://www.abconline.com.tw/activity/other/068-bilingual/default.aspx" />
+    <meta property="og:image" content="images/shareCard.jpg" />
+    <meta property="og:description" content="提升外語力,掌握說話權!聽說讀寫全面提升,課程最高享1萬元補助,程度不限,英語,日語,韓語,西班牙語,法語,德語,自由選擇!限時加碼送1200堂英日數位課,趕快為自己創造更多競爭優勢吧!" />
+    <link rel="canonical" href="https://www.abconline.com.tw/activity/other/068-bilingual/default.aspx" />
+    <!-- Page Info Insert END -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="/wGuest/js/m_pcschool.js"></script>
+    <!-- Include JS & CSS Start -->
+    <link rel="stylesheet" href="css/comm-style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!--非填單按鈕使用class name="activity-page-click-count"-->
+    <!-- Include JS & CSS End -->
+    <script type="text/javascript">
+        //留單相關，看過後請把註解刪掉喔!  -----start
+        var dept = "KZ2";
+        var seq_no = "0";
+        var web_pno = ""; //電腦版pno
+        var NList_Type = "5";
+        var fromto = "";
+        var Gift = "";
+        var is_Mobile = "0";
+
+        /*手機板 pno 判斷相關 >> start */
+        $(function () {
+            if (isMobile()) {
+                web_pno = "110035500002";  //手機板pno
+                is_Mobile = "1";   
+            }
+        });
+
+        function isMobile() {
+            try { document.createEvent("TouchEvent"); return true; }
+            catch (e) { return false; }
+        }
+        /*手機板 pno 判斷相關 >> end*/
+        
+
+
+        function but_send() {
+            $('#sBut').hide();
+            //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----start
+            GetPno();
+            if (Gift == "") {
+                alert('請選擇索取最新課表。');
+                $('#sBut').show();
+                return false;
+            }
+            //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----end
+            var JSonData = {
+                "name": $("#name").val(),
+                "mobile": $("#mobile").val(),
+                "email": $("#email").val(),
+                "seq_no": seq_no,
+                "dept_no": dept,
+                "memo": "課程補助+1,200堂英日數位課" + Gift,
+                "web_pno": web_pno,
+                "fromto": QueryString("fromto") != null ? QueryString("fromto") : fromto,
+                "fromurl": document.location.href, 
+                "sourceid": QueryString("fc") != null ? QueryString("fc") : "",
+                "NList_Type": NList_Type,
+                "IsSend": "N",
+                "func": "njycooooqj"
+            }
+
+            if ($("input[name=per_chk]:checked").length == 0) {
+                alert('請勾選同意個資保護聲明。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.name == "" || JSonData.name == "姓 名") {
+                alert('請填寫入姓名。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile == "" || JSonData.mobile == "行動電話") {
+                alert('請填寫行動電話。');
+                $('#sBut').show();
+                return false;
+            }
+            if (isNaN(JSonData.mobile) == true) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile.length != 10) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.email == "" || JSonData.email == "E-Mail") { JSonData.email = "" } else {
+                if (JSonData.email.indexOf("@") <= -1) {
+                    alert('電子郵件格式錯誤。');
+                    $('#sBut').show();
+                    return false;
+                }
+            }
+            goSubmit(JSonData, s, f);
+        }
+
+        function s(data) {
+            if (data[0].result == "1") {
+                $("#name").val("");
+                $("#mobile").val("");
+                $("#sBut").show();
+                document.location.href = "/wGuest/loadover.htm";
+            } else {
+                alert('送出失敗！');
+                $("#sBut").show();
+            }
+        }
+        function f(data) {
+            alert(data);
+            $("#sBut").show();
+        }
+        //留單相關，看過後請把註解刪掉喔!  -----end
+
+        //下拉選單有不同語系課程時使用，如果沒有要用就刪掉(左SP右邊PC)  -----start
+        function GetPno() {
+            var select_val = $("#dpGift :selected").val();
+            switch (select_val) {
+                case "english":
+                    web_pno = is_Mobile == "1" ? "112091500002" : "112091500001";
+                    Gift = "我想領英語";
+                    break;
+                case "japanese":
+                    web_pno = is_Mobile == "1" ? "112091500004" : "112091500003";
+                    Gift = "我想領日語";
+                    break;
+                case "korean":
+                    web_pno = is_Mobile == "1" ? "112091500006" : "112091500005";
+                    Gift = "我想領韓語";
+                    break;
+                case "spanish":
+                    web_pno = is_Mobile == "1" ? "112091500008" : "112091500007";
+                    Gift = "我想領西語";
+                    break;
+                case "french":
+                    web_pno = is_Mobile == "1" ? "112091500010" : "112091500009";
+                    Gift = "我想領法語";
+                    break;
+                case "german":
+                    web_pno = is_Mobile == "1" ? "112091500012" : "112091500011";
+                    Gift = "我想領德語";
+                    break;
+                case "childrenForeign":
+                    web_pno = is_Mobile == "1" ? "112091500014" : "112091500013";
+                    Gift = "我想領兒童外語";
+                    break;
+                case "childrenProgram":
+                    web_pno = is_Mobile == "1" ? "112091500016" : "112091500015";
+                    Gift = "我想領兒童程式";
+                    break;
+                case "juniorClass":
+                    web_pno = is_Mobile == "1" ? "112091500018" : "112091500017";
+                    Gift = "我想領國中文理";
+                    break;
+            }
+        }
+        //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----end
+
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-WSWZFBP');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSWZFBP"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <form id="form1" runat="server">
+        <div class="top">
+            <iframe src="https://www.abconline.com.tw/activity/header/2020/" width="100%" height="65px" scrolling="No" frameborder="0" allowtransparency="allowTransparency" class="ifar"></iframe>
+        </div>
+        <!-- HTML Start -->
+
+        <!-- wapper開始 -->
+        <div class="wrapper">
+            <div class="nav-height"></div>
+            <section>
+                <div class="kv position-relative overflow-hidden">
+                    <img class="position-absolute w-100 kvSky_PC" src="images/kvSky_PC.png">
+                    <img class="position-absolute kvSky_SP" src="images/kvSky_SP.png">
+                    <img class="position-absolute metro" src="images/kvMetro.png">
+                    <img class="position-absolute kvBuilding" src="images/kvBuilding.png">
+                    <img class="position-absolute ferriswheel" src="images/ferriswheel.png">
+                    <img class="position-absolute citizen_shopping" src="images/citizen_shopping.png">
+                    <img class="position-absolute citizen_biker" src="images/citizen_biker.png">
+                    <img class="position-absolute citizen_police" src="images/citizen_police.png">
+                    <img class="position-absolute citizen_office" src="images/citizen_office.png">
+                    <img class="position-absolute citizen_traveler" src="images/citizen_traveler.png">
+                    <img class="position-absolute citizen_runner" src="images/citizen_runner.png">
+                    <img class="position-absolute title" src="images/title.png">
+                    <img class="position-absolute ballon" src="images/balloon.png">
+                    <img class="position-absolute lanternY" src="images/lanternY.png">
+                    <img class="position-absolute lanternR" src="images/lanternR.png">
+                </div>
+            </section>
+            <section class="ticketSection">
+                <div class="container">
+                    <div class="d-lg-flex justify-content-center py-4 text-center">
+                        <a href="#myform">
+                            <img class="ticket" src="images/ticket.png">
+                        </a>
+                        <div class="d-flex flex-column justify-content-center">
+                            <div class="fw-bold fs-2 blueColor py-2">國民進修補助$10,000</div>
+                            <a href="#myform"><div class="fw-bold fs-5 applyBt">馬上申請</div></a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="bilingualSection">
+                <div class="container py-4">
+                    <div class="bilingualTitle fs-2 fw-bold blueColor">
+                        什麼是雙語政策?
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-8 col-md-12 bilingualText fs-5">透過推動語言學習，全方位培養國人聽、說、讀、寫的外語能力。目標是讓台灣在2030年成為雙語特色 的國家，從而為下一代創造更多競爭優勢與發展機會。這項計畫不以考試為目的，而是希望打造全民學習外語的風氣，提高整體國家競爭力。</div>
+                        <div class="col-lg-4 col-md-12 text-center"><img class="bilingualCity" src="images/bilingualCity.png"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12 pt-4">
+                            <a href="#myform">
+                                <div data-aos="flip-left">
+                                    <div class="bilingualBox text-center">
+                                        <div class="fs-4 fw-bold blueColor pt-3">課程免費體驗</div>
+                                        <div class="bilingualFlex">
+                                            <img class="bilingualImg" src="images/bilingualImg1.png">
+                                            <span class="bilingualPoint fs-5">英語/日語/韓語<br>西語/法語/德語</span>
+                                        </div>
+                                        <div class="bilingualBoxBt fs-5">任選1堂</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-4">
+                            <a href="#myform">
+                                <div data-aos="flip-left">
+                                    <div class="bilingualBox text-center">
+                                        <div class="fs-4 fw-bold blueColor pt-3">領萬元課程金</div>
+                                        <div class="bilingualFlex">
+                                            <img class="bilingualImg" src="images/bilingualImg2.png">
+                                            <span class="bilingualPoint fs-5">可折抵線上外語<br>教育課程學費</span>
+                                        </div>
+                                        <div class="bilingualBoxBt fs-5">限領1次</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-lg-4 col-md-12 pt-4">
+                            <a href="#myform">
+                                <div data-aos="flip-left">
+                                    <div class="bilingualBox text-center">
+                                        <div class="fs-4 fw-bold blueColor pt-3">加贈1,200堂</div>
+                                        <div class="bilingualFlex">
+                                            <img class="bilingualImg" src="images/bilingualImg3.png">
+                                            <span class="bilingualPoint fs-5">英日語1,200堂<br>數位影音課程</span>
+                                        </div>
+                                        <div class="bilingualBoxBt fs-5">不限次數</div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="AISection">
+                <div class="container py-4">
+                    <div class="fs-2 fw-bold blueColor text-center">AI時代下要有的競爭力</div>
+                    <div class="fs-4 fw-bold text-center">提升外語能力，創造自我價值</div>
+                    <div class="swiper-father pt-4">
+                        <div class="swiper swiper1">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide d-lg-flex">
+                                    <div class="aiImg">
+                                        <img class="w-100" src="images/AIImg1.png">
+                                    </div>
+                                    <div class="aiText px-3">
+                                        <div class="fs-4 fw-bold blueColor text-center pt-2 pb-1">01-數據判別能力</div>
+                                        <div class="fs-5 fw-bold pb-3">多語言能力能針對不同地區的市場需求，提供更全面的洞察和分析，提高企業在全球市場的競爭力。</div>
+                                        <a href="#myform"><div class="AIBt fs-5">領取課程</div></a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide d-lg-flex">
+                                    <div class="aiImg">
+                                        <img class="w-100" src="images/AIImg2.png">
+                                    </div>
+                                    <div class="aiText px-3">
+                                        <div class="fs-4 fw-bold blueColor text-center pt-2 pb-1">02-跨文化交流能力</div>
+                                        <div class="fs-5 fw-bold pb-3">具備多國文化知識，能在重要場合中避免誤解和衝突、應對不同文化間的價值觀和行為，建立友好外交合作。</div>
+                                        <a href="#myform"><div class="AIBt fs-5">領取課程</div></a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide d-lg-flex">
+                                    <div class="aiImg">
+                                        <img class="w-100" src="images/AIImg3.png">
+                                    </div>
+                                    <div class="aiText px-3">
+                                        <div class="fs-4 fw-bold blueColor text-center pt-2 pb-1">03-跨國團隊合作能力</div>
+                                        <div class="fs-5 fw-bold pb-3">多語言能力有助於團隊間的溝通與合作，面對不同時區和地域差異，也能更具靈活性和適應能力。</div>
+                                        <a href="#myform"><div class="AIBt fs-5">領取課程</div></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-pagination swiper-pagination1"></div>
+                        </div>
+                        <div class="swiper-button-prev swiper-button-prev1"></div>
+                        <div class="swiper-button-next swiper-button-next1"></div>
+                    </div>
+                </div>
+            </section>
+            <section class="cardSection">
+                <div class="container py-4">
+                    <div class="fs-2 fw-bold blueColor text-center">我也可以學會嗎?</div>
+                    <div class="fs-4 fw-bold text-center">#點擊卡片看學習方法</div>
+                    <div class="cardsFlex pt-4">
+                        <div class="cardsCont" onclick="flipCard(1)">
+                            <div class="cardStyle"><img class="w-100" src="images/cardFront1.png"></div>
+                            <div class="cardStyle card-back"><img class="w-100" src="images/cardBack1.png"></div>
+                        </div>
+                        <div class="cardsCont" onclick="flipCard(2)">
+                            <div class="cardStyle"><img class="w-100" src="images/cardFront2.png"></div>
+                            <div class="cardStyle card-back"><img class="w-100" src="images/cardBack2.png"></div>
+                        </div>
+                        <div class="cardsCont" onclick="flipCard(3)">
+                            <div class="cardStyle"><img class="w-100" src="images/cardFront3.png"></div>
+                            <div class="cardStyle card-back"><img class="w-100" src="images/cardBack3.png"></div>
+                        </div>
+                        <div class="cardsCont" onclick="flipCard(4)">
+                            <div class="cardStyle"><img class="w-100" src="images/cardFront4.png"></div>
+                            <div class="cardStyle card-back"><img class="w-100" src="images/cardBack4.png"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="vedioSection">
+                <div class="container pt-4">
+                    <div class="sofaCont py-3">
+                        <div data-aos="zoom-in-up" data-aos-delay="300">
+                            <img class="w-100" src="images/sofa.png">
+                        </div>
+                    </div>
+                    <div class="py-4">
+                        <div class="fs-2 fw-bold blueColor text-center">直擊外語教學現場</div>
+                        <div class="fs-4 fw-bold text-center">上課免露臉，打造學習友善環境</div>
+                    </div>
+                    <div class="vedioWhiteBg">
+                        <div class="swiper-pagination2"></div>
+                        <div class="swiper swiper2">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="vedioCont px-3 py-4">
+                                        <div class="videobox">
+                                            <iframe frameborder="0" src="https://www.youtube.com/embed/6fKe-UtYW-c" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="vedioCont px-3 py-4">
+                                        <div class="videobox">
+                                            <iframe frameborder="0" src="https://www.youtube.com/embed/C6yJckjO9b0" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="vedioCont px-3 py-4">
+                                        <div class="videobox">
+                                            <iframe frameborder="0" src="https://www.youtube.com/embed/vsl9sxLy0xw" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="vedioCont px-3 py-4">
+                                        <div class="videobox">
+                                            <iframe frameborder="0" src="https://www.youtube.com/embed/zMUSpiL5mYo" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="vedioCont px-3 py-4">
+                                        <div class="videobox">
+                                            <iframe frameborder="0" src="https://www.youtube.com/embed/nru8rhaRq2I" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="vedioCont px-3 py-4">
+                                        <div class="videobox">
+                                            <iframe frameborder="0" src="https://www.youtube.com/embed/8MCmvEdBGRM" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <div><img class="vedeoCitizen" src="images/citizen_runner.png"></div>
+                            <div><img class="vedeoCitizen" src="images/citizen_shopping.png"></div>
+                        </div>
+                        <div class="roadGray"></div>
+                        <div class="roadDkGray"></div>
+                        <div class="roadGreen"></div>
+                    </div>
+                    <!-- 表單開始 -->
+                    <div class="formFlex pt-4">
+                        <div class="cityCont">
+                            <div class="houseCont">
+                                <img class="w-100" src="images/house.png">
+                            </div>
+                            <div class="hillCont">
+                                <img class="hill_PC" src="images/hill.png">
+                                <img class="hill_SP" src="images/hill_SP.png">
+                            </div>
+                            <div class="bikerCont">
+                                <img class="w-100" src="images/citizen_biker.png">
+                            </div>
+                        </div>
+                        <div class="formCont">
+                            <div id="myform"></div>
+                            <H1><div class="fs-2 fw-bold blueColor text-center">填表洽詢補助</div></H1>
+                            <input name="ea" type="text" class="form-control" id="name" placeholder="姓 名" />
+                            <input name="mobile" type="text" class="form-control" id="mobile" placeholder="電 話" />
+                            <input name="email" type="text" class="form-control" id="email" placeholder="E-Mail" />
+                            <select id="dpGift" class="form-control selectArrow">
+                                <option value="select" selected>選擇想領取的課程</option>
+                                <option value="english">我想領英語</option>
+                                <option value="japanese">我想領日語</option>
+                                <option value="korean">我想領韓語</option>
+                                <option value="spanish">我想領西語</option>
+                                <option value="french">我想領法語</option>
+                                <option value="german">我想領德語</option>
+                                <option value="childrenForeign">我想領兒童外語</option>
+                                <option value="childrenProgram">我想領兒童程式</option>
+                                <option value="juniorClass">我想領國中文理</option>
+                            </select>
+                            <div class="option py-1">
+                                <label>
+                                    <input type="checkbox" class="searchtext2" name="per_chk" checked="checked">
+                                </label>
+                                <span class="statement">我已閱讀並接受<a onclick="window.open('/activity/abconline/contract_02/','person',config='height=640,width=830');return false;" href="#">個資保護聲明</a></span>
+                            </div>
+                            <div id="sBut" class="formBt fs-5 fw-bold" onClick="but_send();" style="cursor:pointer;">
+                                登記領取
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 表單結束 -->
+                </div>
+            </section>
+            <section class="courseSection">
+                <div class="py-4">
+                    <div class="fs-2 fw-bold blueColor text-center">多元情境課程現學現用</div>
+                    <div class="fs-4 fw-bold text-center">培養外語能力，取得絕佳競爭優勢</div>
+                </div>
+                <div class="swiper swiper3 pb-5">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="https://www.abconline.com.tw/english-course">
+                                <div class="swiperMargin">
+                                    <div class="courseBox">
+                                        <div class="language">
+                                            <img class="languageFlag" src="images/flagUS.png">
+                                            <div class="fw-bold text-center pt-2">
+                                                實用英語<br>課程
+                                            </div>
+                                        </div>
+                                        <div class="languageText">
+                                            出國旅遊英語<br>
+                                            職場英語會話<br>
+                                            生活應用英語
+                                        </div>
+                                    </div>
+                                    <div class="courseBt fs-5 fw-bold">
+                                        查看課表
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="https://www.abconline.com.tw/japanese-course">
+                                <div class="swiperMargin">
+                                    <div class="courseBox">
+                                        <div class="language">
+                                            <img class="languageFlag" src="images/flagJP.png">
+                                            <div class="fw-bold text-center pt-2">
+                                                經典日語<br>課程
+                                            </div>
+                                        </div>
+                                        <div class="languageText">
+                                            當今時事日語<br>
+                                            職場商用日語<br>
+                                            日本交通旅遊
+                                        </div>
+                                    </div>
+                                    <div class="courseBt fs-5 fw-bold">
+                                        查看課表
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="https://www.abconline.com.tw/korean-course">
+                                <div class="swiperMargin">
+                                    <div class="courseBox">
+                                        <div class="language">
+                                            <img class="languageFlag" src="images/flagKR.png">
+                                            <div class="fw-bold text-center pt-2">
+                                                流行韓語<br>課程
+                                            </div>
+                                        </div>
+                                        <div class="languageText">
+                                            生活購物韓語<br>
+                                            韓國影視流行<br>
+                                            韓國節慶文化
+                                        </div>
+                                    </div>
+                                    <div class="courseBt fs-5 fw-bold">
+                                        查看課表
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="https://www.abconline.com.tw/spanish-course">
+                                <div class="swiperMargin">
+                                    <div class="courseBox">
+                                        <div class="language">
+                                            <img class="languageFlag" src="images/flagES.png">
+                                            <div class="fw-bold text-center pt-2">
+                                                熱情西語<br>課程
+                                            </div>
+                                        </div>
+                                        <div class="languageText">
+                                            旅遊會話西語<br>
+                                            時事西班牙語<br>
+                                            西國社會文化
+                                        </div>
+                                    </div>
+                                    <div class="courseBt fs-5 fw-bold">
+                                        查看課表
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="https://www.abconline.com.tw/french-course">
+                                <div class="swiperMargin">
+                                    <div class="courseBox">
+                                        <div class="language">
+                                            <img class="languageFlag" src="images/flagFR.png">
+                                            <div class="fw-bold text-center pt-2">
+                                                浪漫法語<br>課程
+                                            </div>
+                                        </div>
+                                        <div class="languageText">
+                                            法語浪漫邀約<br>
+                                            法式電話禮儀<br>
+                                            法國銀行簽證
+                                        </div>
+                                    </div>
+                                    <div class="courseBt fs-5 fw-bold">
+                                        查看課表
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="https://www.abconline.com.tw/german-course">
+                                <div class="swiperMargin">
+                                    <div class="courseBox">
+                                        <div class="language">
+                                            <img class="languageFlag" src="images/flagDE.png">
+                                            <div class="fw-bold text-center pt-2">
+                                                酷炫德語<br>課程
+                                            </div>
+                                        </div>
+                                        <div class="languageText">
+                                            基礎德語發音<br>
+                                            德語訂位點餐<br>
+                                            德國日常問候
+                                        </div>
+                                    </div>
+                                    <div class="courseBt fs-5 fw-bold">
+                                        查看課表
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- wapper結束 -->
+        <!-- HTML END -->
+        <div class="footer">
+            <iframe class="FOOTER_frame" src="https://www.abconline.com.tw/activity/footer/2020/" width="100%" scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
+        </div>
+        <script type="text/javascript" src="js/aos.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
+        <script type="text/javascript">
+            AOS.init({
+                easing: 'ease-in-out-sine',
+            });
+
+            var mySwiper1 = new Swiper ('.swiper1', {
+                loop: true,
+                grabCursor: true,
+                pagination: {
+                    el: '.swiper-pagination1',
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next1',
+                    prevEl: '.swiper-button-prev1',
+                },
+            });
+
+            var mySwiper2 = new Swiper ('.swiper2', {
+                loop: true,
+                grabCursor: true,
+                slidesPerView: 1,
+                pagination: {
+                    el: '.swiper-pagination2',
+                    clickable :true,
+                },
+
+                navigation: {
+                    nextEl: '.swiper-button-next2',
+                    prevEl: '.swiper-button-prev2',
+                },
+            });
+
+            var mySwiper3 = new Swiper ('.swiper3', {
+                autoplay: {
+                    delay: 1000,
+                    disableOnInteraction: false,
+                },
+                loop: true,
+                speed: 2000,
+                slidesPerView: 1,
+                centeredSlides: true,
+
+                breakpoints: { 
+                    768: {
+                        slidesPerView: 2,
+                    },
+                    992: {
+                        slidesPerView: 3,
+                    },
+                    1200: {
+                        slidesPerView: 4,
+                    },
+                    1400: {
+                        slidesPerView: 5,
+                    },
+
+                },
+            });
+
+            let currentlyFlipped = null;
+
+            function flipCard(cardNumber) {
+                const card = document.querySelector(`.cardsCont:nth-child(${cardNumber})`);
+                if (currentlyFlipped) {
+                    currentlyFlipped.style.transform = 'rotateY(0deg)';
+                }
+
+                if (currentlyFlipped !== card) {
+                    card.style.transform = 'rotateY(180deg)';
+                    currentlyFlipped = card;
+                } else {
+                    currentlyFlipped = null;
+                }
+            }
+        </script>
+    </form>
+</body>
+</html>

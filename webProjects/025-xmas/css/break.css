@@ -1,0 +1,56 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+@media (min-width: 1921px) {
+    .break1921 {
+        display: block;
+    }
+}
+
+@media (min-width: 1680px) and (max-width:1920px) {
+    .break1920 {
+        display: block;
+    }
+}
+
+@media (min-width: 1440px) and (max-width:1680px) {
+    .break1680 {
+        display: block;
+    }
+}
+
+@media (min-width: 1200px) and (max-width:1440px) {
+    .break1440 {
+        display: block;
+    }
+}
+
+@media (min-width: 991px) and (max-width:1200px) {
+    .break1200 {
+        display: block;
+    }
+}
+
+@media (min-width: 767px) and (max-width:991px) {
+    .break991 {
+        display: block;
+    }
+}
+
+@media (min-width: 410px) and (max-width:767px) {
+    .break767 {
+        display: block;
+    }
+}
+
+@media (min-width: 320px) and (max-width:410px) {
+    .break410 {
+        display: block;
+    }
+}
+
+@media (max-width: 320px) {
+    .break320 {
+        display: block;
+    }
+}

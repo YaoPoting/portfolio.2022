@@ -1,0 +1,774 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>【滿萬折千】6大外語好康同慶，優質課程線上學！</title>
+    <meta name="Title" content="【滿萬折千】6大外語好康同慶，優質課程線上學！" />
+    <meta name="Description" content="6大外語課滿萬折千!超高優質課程線上學,上課超划算!立即索取課表再送免費外語課程,英語,日語,韓語,西班牙語,法語,德語, 想學什麼這裡通通都有!" />
+    <meta name="keywords" content="學英文,學日文,學韓文,學西班牙文,學法文,學德文" />
+    <meta property="og:title" content="【滿萬折千】6大外語好康同慶，優質課程線上學！" />
+    <meta property="og:url" content="https://www.abconline.com.tw/activity/other/065-onsaleprice/index.html" />
+    <meta property="og:image" content="images/shareCard.jpg" />
+    <meta property="og:description" content="6大外語課滿萬折千!超高優質課程線上學,上課超划算!立即索取課表再送免費外語課程,英語,日語,韓語,西班牙語,法語,德語, 想學什麼這裡通通都有!" />
+    <link rel="canonical" href="https://www.abconline.com.tw/activity/other/065-onsaleprice/index.html" />
+    <!-- Page Info Insert END -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="/wGuest/js/m_pcschool.js"></script>
+    <!-- Include JS & CSS Start -->
+    <link href="css/comm-style.css" rel="stylesheet" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/aos.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/aos.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <!--非填單按鈕使用class name="activity-page-click-count"-->
+    <!-- Include JS & CSS End -->
+    <script type="text/javascript">
+        //留單相關，看過後請把註解刪掉喔!  -----start
+        var dept = "KZ2";
+        var seq_no = "0";
+        var web_pno = ""; //電腦版pno
+        var NList_Type = "5";
+        var fromto = "";
+        var Gift = "";
+        var is_Mobile = "0";
+
+        /*手機板 pno 判斷相關 >> start */
+        $(function () {
+            if (isMobile()) {
+                web_pno = "110035500002";  //手機板pno
+                is_Mobile = "1";   
+            }
+        });
+
+        function isMobile() {
+            try { document.createEvent("TouchEvent"); return true; }
+            catch (e) { return false; }
+        }
+        /*手機板 pno 判斷相關 >> end*/
+        
+
+
+        function but_send() {
+            $('#sBut').hide();
+            //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----start
+            GetPno();
+            if (Gift == "") {
+                alert('請選擇索取最新課表。');
+                $('#sBut').show();
+                return false;
+            }
+            //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----end
+            var JSonData = {
+                "name": $("#name").val(),
+                "mobile": $("#mobile").val(),
+                "email": $("#email").val(),
+                "seq_no": seq_no,
+                "dept_no": dept,
+                "memo": "滿萬送千活動" + Gift,
+                "web_pno": web_pno,
+                "fromto": QueryString("fromto") != null ? QueryString("fromto") : fromto,
+                "fromurl": document.location.href, 
+                "sourceid": QueryString("fc") != null ? QueryString("fc") : "",
+                "NList_Type": NList_Type,
+                "IsSend": "N",
+                "func": "njycooooqj"
+            }
+
+            if ($("input[name=per_chk]:checked").length == 0) {
+                alert('請勾選同意個資保護聲明。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.name == "" || JSonData.name == "姓 名") {
+                alert('請填寫入姓名。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile == "" || JSonData.mobile == "行動電話") {
+                alert('請填寫行動電話。');
+                $('#sBut').show();
+                return false;
+            }
+            if (isNaN(JSonData.mobile) == true) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile.length != 10) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.email == "" || JSonData.email == "E-Mail") { JSonData.email = "" } else {
+                if (JSonData.email.indexOf("@") <= -1) {
+                    alert('電子郵件格式錯誤。');
+                    $('#sBut').show();
+                    return false;
+                }
+            }
+            goSubmit(JSonData, s, f);
+        }
+
+        function s(data) {
+            if (data[0].result == "1") {
+                $("#name").val("");
+                $("#mobile").val("");
+                $("#sBut").show();
+                document.location.href = "/wGuest/loadover.htm";
+            } else {
+                alert('送出失敗！');
+                $("#sBut").show();
+            }
+        }
+        function f(data) {
+            alert(data);
+            $("#sBut").show();
+        }
+        //留單相關，看過後請把註解刪掉喔!  -----end
+
+        //下拉選單有不同語系課程時使用，如果沒有要用就刪掉(左SP右邊PC)  -----start
+        function GetPno() {
+            var select_val = $("#dpGift :selected").val();
+            switch (select_val) {
+                case "english":
+                    web_pno = is_Mobile == "1" ? "112061500002" : "112061500001";
+                    Gift = "我要索取美語課表";
+                    break;
+                case "japanese":
+                    web_pno = is_Mobile == "1" ? "112061500004" : "112061500003";
+                    Gift = "我要索取日語課表";
+                    break;
+                case "spanish":
+                    web_pno = is_Mobile == "1" ? "112061500008" : "112061500007";
+                    Gift = "我要索取西語課表";
+                    break;
+                case "korean":
+                    web_pno = is_Mobile == "1" ? "112061500006" : "112061500005";
+                    Gift = "我要索取韓語課表";
+                    break;
+                case "french":
+                    web_pno = is_Mobile == "1" ? "112061500010" : "112061500009";
+                    Gift = "我要索取法語課表";
+                    break;
+                case "german":
+                    web_pno = is_Mobile == "1" ? "112061500012" : "112061500011";
+                    Gift = "我要索取德語課表";
+                    break;
+                case "childrenEnglish":
+                    web_pno = is_Mobile == "1" ? "112061500014" : "112061500013";
+                    Gift = "我要索取兒童美語課表";
+                    break;
+                case "childrenProgram":
+                    web_pno = is_Mobile == "1" ? "112061500016" : "112061500015";
+                    Gift = "我要索取兒童程式課表";
+                    break;
+                case "juniorClass":
+                    web_pno = is_Mobile == "1" ? "112061500018" : "112061500017";
+                    Gift = "我要索取國中文理課表";
+                    break;
+            }
+        }
+        //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----end
+
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-WSWZFBP');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSWZFBP"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <form id="form1" runat="server">
+        <div class="top">
+            <iframe src="/activity/header/2020/" width="100%" height="65px" scrolling="No" frameborder="0" allowtransparency="allowTransparency" class="ifar"></iframe>
+        </div>
+        <!-- HTML Start -->
+
+        <!-- wapper開始 -->
+        <div class="wrapper">
+            <!-- kv -->
+            <section>
+                <div class="kv_pc">
+                    <img class="kv_couponboy" src="images/kv_couponboy.png" data-aos="fade-up" data-aos-delay="600">
+                    <img class="kv_adornment_left" src="images/kv_adornment_left.png" data-aos="zoom-in-down">
+                    <img class="kv_adornment_right" src="images/kv_adornment_right.png" data-aos="fade-down" data-aos-delay="200">
+                </div>
+                <div class="kv_sp">
+                    <img class="kv_couponboy_sp" src="images/kv_couponboy_sp.png" data-aos="fade-up" data-aos-delay="600">
+                    <img class="kv_adornment_sp" src="images/kv_adornment_sp.png" data-aos="zoom-in-down">
+                </div>
+                <img class="kv_title" src="images/kv_title.png" data-aos="zoom-in-up" data-aos-delay="300">
+                <a href="#myform">
+                    <img class="kv_button" src="images/kv_button.png">
+                </a>
+            </section>
+            <!-- campaign -->
+            <section class="overflow-hidden" data-aos="fade-up" data-aos-delay="600">
+                <div class="container-campaign">
+                    <div class="campaignBg">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12 text-center">
+                                <div class="campaignPoint H3_size">
+                                    好康1
+                                </div>
+                                <div class="blueTriangle"></div>
+                                <div class="campaignTitle H1_size py-1">滿萬折千</div>
+                                <div class="campaignContent">
+                                    <div class="H3_size">學費滿萬折千：英語/日語/韓語/西語/法語/德語，詳情請洽詢課程顧問。</div>
+                                    <br><div>※優惠使用限專案產品，且折價不含附加產品</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12"></div>
+                        </div>
+                        <div class="row cpGap cpAdornment">
+                            <div class="col-md-6 col-sm-12">
+                            </div>
+                            <div class="col-md-6 col-sm-12 text-center">
+                                <div class="campaignPoint H3_size">
+                                    好康2
+                                </div>
+                                <div class="blueTriangle"></div>
+                                <div class="campaignTitle H1_size py-1">暑期檢定60堂</div>
+                                <div class="campaignContent">
+                                    <div class="H3_size">多益TOEIC、雅思IELTS、日檢JLPT、西檢DELE、韓檢TOPIK，獨家課程任選！</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row cpGap cpAdornmentGift">
+                            <div class="col-md-6 col-sm-12 text-center">
+                                <div class="campaignPoint H3_size">
+                                    好康3
+                                </div>
+                                <div class="blueTriangle"></div>
+                                <div class="campaignTitle H1_size py-1">介紹王加碼</div>
+                                <div class="campaignContent">
+                                    <div class="H3_size">介紹人可得1000元現金。推薦獎金累計，推薦越多賺越多！</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container py-5">
+                    <div class="H1_size text-center">
+                        活動辦法
+                    </div>
+                    <div class="H3_size text-center">
+                        <ul class="activities">
+                            <li>本次活動限巨匠集團學員參加，集團員工不得參加。</li>
+                            <li>優惠活動限指定方案使用，且不可與其它優惠合併使用。</li>
+                            <li>有未盡事宜，巨匠線上真人保留解釋、變更及終止活動內容之權利，且不另行通知。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <!-- form -->
+            <section>
+                <div id="myform"></div>
+                <img class="blueArc" src="images/blueArc.png">
+                <div class="formBg">
+                    <div class="container">
+                        <div class="text-center colorWhite pt-5">  
+                            <div class="H1_size">登記索取最新課表</div>
+                            <div class="H2_size">課程抵用券搶先領!</div>
+                        </div>
+                        <div class="row formGapTop">
+                            <div class="col-md-6 col-sm-12">
+                                <div class="formImg d-flex">
+                                    <img class="formImg_girl w-50" src="images/formImg_girl.png">
+                                    <img class="formImg_gift w-50" src="images/formImg_gift.png">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-sm-12" data-aos="fade-up">
+                                <div class="row">
+                                    <div class="col-6 fill_form">
+                                        <input name="ea" type="text" class="form-control" id="name" placeholder="姓名" />
+                                    </div>
+                                    <div class="col-6 fill_form">
+                                        <input name="mobile" type="text" class="form-control" id="mobile" placeholder="行動電話" />
+                                    </div>
+                                </div>
+                                <div class="fill_form pt-3">
+                                    <input name="email" type="text" class="form-control" id="email" placeholder="E-Mail" />
+                                </div>
+                                <div class="fill_form pt-3">
+                                    <select id="dpGift" class="form-control selectArrow">
+                                        <option value="select" selected>選擇想領取的課程</option>
+                                        <option value="english">我要索取美語課表</option>
+                                        <option value="japanese">我要索取日語課表</option>
+                                        <option value="spanish">我要索取西語課表</option>
+                                        <option value="korean">我要索取韓語課表</option>
+                                        <option value="french">我要索取法語課表</option>
+                                        <option value="german">我要索取德語課表</option>
+                                        <option value="childrenEnglish">我要索取兒童美語課表</option>
+                                        <option value="childrenProgram">我要索取兒童程式課表</option>
+                                        <option value="juniorClass">我要索取國中文理課表</option>
+                                    </select>
+                                </div>
+                                <div class="option pt-3">
+                                    <label>
+                                        <input type="checkbox" class="searchtext2" name="per_chk" checked="checked">
+                                    </label>
+                                    <span class="colorWhite">我已閱讀並接受<a onclick="window.open('/activity/abconline/contract_02/','person',config='height=640,width=830');return false;" href="#"><span style="text-decoration:underline;color:#00baff;">個資保護聲明</span></a></span>
+                                </div>
+                                <div class="pt-3 pb-5">
+                                    <div id="sBut" onClick="but_send();">
+                                        <div class="go_button">登記馬上索取</div>
+                                    </div>
+                                </div>
+                            </div>                                    
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- course -->
+            <section class="grayBg">
+                <div class="container">
+                    <div class="text-center py-5">
+                        <div class="H1_size colorOrange">多元主題課程</div>
+                        <div class="H2_size">英語、日語、韓語、西語、法語、德語</div>
+                    </div>
+                    <!-- english -->
+                    <div class="row">
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-en-01.png" alt="遊學留學英語">
+                                <div class="courseTitle colorOrange">遊學留學英語</div>
+                                <div class="courseContent">
+                                    ●歐美租屋住宿<br>
+                                    ●英語交友約會<br>
+                                    ●流行時事英語
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgOrange">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-en-02.png" alt="職場工作英語">
+                                <div class="courseTitle colorOrange">職場工作英語</div>
+                                <div class="courseContent">
+                                    ●工作面試英語<br>
+                                    ●英語履歷準備<br>
+                                    ●英語電話禮儀
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgOrange">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-en-03.png" alt="旅遊度假英語">
+                                <div class="courseTitle colorOrange">旅遊度假英語</div>
+                                <div class="courseContent">
+                                    ●歐美機場交通<br>
+                                    ●美食購物英語<br>
+                                    ●歐美景點文化
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgOrange">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-en-04.png" alt="英語檢定課程">
+                                <div class="courseTitle colorOrange">英語檢定課程</div>
+                                <div class="courseContent">
+                                    ●TOEIC多益檢定班<br>
+                                    ●GEPT全民英檢班<br>
+                                    ●IELTS雅思檢定班
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgOrange">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- japanese -->
+                    <div class="row">
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-jp-01.png" alt="日本文化">
+                                <div class="courseTitle colorGreen">日本文化</div>
+                                <div class="courseContent">
+                                    ●貓寺廟與神社<br>
+                                    ●刺青與泡溫泉<br>
+                                    ●日本的歌舞伎
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgGreen">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-jp-02.png" alt="商用日語">
+                                <div class="courseTitle colorGreen">商用日語</div>
+                                <div class="courseContent">
+                                    ●日本職場禮儀<br>
+                                    ●日商面試技巧<br>
+                                    ●日商書信撰寫
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgGreen">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-jp-03.png" alt="商用日語">
+                                <div class="courseTitle colorGreen">商用日語</div>
+                                <div class="courseContent">
+                                    ●歐美機場交通<br>
+                                    ●美食購物英語<br>
+                                    ●歐美景點文化
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgGreen">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-jp-04.png" alt="日語檢定課程">
+                                <div class="courseTitle colorGreen">日語檢定課程</div>
+                                <div class="courseContent">
+                                    ●JLPT日語檢定專班<br>
+                                    ●日語聽力、應答練習<br>
+                                    ●必考文法與長篇閱讀
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgGreen">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- korean -->
+                    <div class="row">
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-kr-01.png" alt="韓國影視流行">
+                                <div class="courseTitle colorBlue">韓國影視流行</div>
+                                <div class="courseContent">
+                                    ●電影與韓文<br>
+                                    ●韓國KPOP<br>
+                                    ●韓語新造詞
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgBlue">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-kr-02.png" alt="日常生活韓語">
+                                <div class="courseTitle colorBlue">日常生活韓語</div>
+                                <div class="courseContent">
+                                    ●韓國飲食生活<br>
+                                    ●韓語日常問候<br>
+                                    ●結交韓國朋友
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgBlue">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-kr-03.png" alt="韓國旅遊度假">
+                                <div class="courseTitle colorBlue">韓國旅遊度假</div>
+                                <div class="courseContent">
+                                    ●訂韓國飯店<br>
+                                    ●用韓語點餐<br>
+                                    ●在韓國問路
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgBlue">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-kr-04.png" alt="韓語檢定課程">
+                                <div class="courseTitle colorBlue">韓語檢定課程</div>
+                                <div class="courseContent">
+                                    ●TOPIK韓語檢定專班<br>
+                                    ●韓語聽力與考古解題<br>
+                                    ●韓語文章與寫作練習
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgBlue">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- spanish -->
+                    <div class="row">
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-sp-01.png" alt="旅遊西班牙語">
+                                <div class="courseTitle colorOrange">旅遊西班牙語</div>
+                                <div class="courseContent">
+                                    ●預訂飯店西語<br>
+                                    ●西語兌幣提款<br>
+                                    ●點餐西班牙語
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgOrange">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-sp-02.png" alt="生活西班牙語">
+                                <div class="courseTitle colorOrange">生活西班牙語</div>
+                                <div class="courseContent">
+                                    ●購物殺價西班牙語<br>
+                                    ●社交約會西班牙語<br>
+                                    ●西語身體疾病表達
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgOrange">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-sp-03.png" alt="西班牙社會文化">
+                                <div class="courseTitle colorOrange">西班牙社會文化</div>
+                                <div class="courseContent">
+                                    ●拉丁美洲節慶文化<br>
+                                    ●足球時事西班牙語<br>
+                                    ●西班牙語流行歌曲
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgOrange">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-sp-04.png" alt="西語檢定課程">
+                                <div class="courseTitle colorOrange">西語檢定課程</div>
+                                <div class="courseContent">
+                                    ●DELE西文檢定專班<br>
+                                    ●西班牙語聽說讀寫<br>
+                                    ●官方考題模擬練習
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgOrange">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- french -->
+                    <div class="row">
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-fr-01.png" alt="法語生活會話">
+                                <div class="courseTitle colorGreen">法語生活會話</div>
+                                <div class="courseContent">
+                                    ●法語優雅問候<br>
+                                    ●法式電話禮儀<br>
+                                    ●法國同事相處
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgGreen">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-fr-02.png" alt="法國留學遊學">
+                                <div class="courseTitle colorGreen">法國留學遊學</div>
+                                <div class="courseContent">
+                                    ●浪漫法語邀約<br>
+                                    ●法國銀行簽證<br>
+                                    ●租屋買房法語
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgGreen">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-fr-03.png" alt="法國藝術文化">
+                                <div class="courseTitle colorGreen">法國藝術文化</div>
+                                <div class="courseContent">
+                                    ●法國小說文學<br>
+                                    ●去法國博物館<br>
+                                    ●法國節慶文化
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgGreen">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-fr-04.png" alt="旅遊度假法語">
+                                <div class="courseTitle colorGreen">旅遊度假法語</div>
+                                <div class="courseContent">
+                                    ●法國自助旅行<br>
+                                    ●餐廳用餐法語<br>
+                                    ●法國地鐵交通
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgGreen">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- german -->
+                    <div class="row">
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-gm-01.png" alt="德語基礎入門">
+                                <div class="courseTitle colorBlue">德語基礎入門</div>
+                                <div class="courseContent">
+                                    ●認識字母發音<br>
+                                    ●熟悉德語單字<br>
+                                    ●基礎德語會話
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgBlue">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-gm-02.png" alt="德語生活會話">
+                                <div class="courseTitle colorBlue">德語生活會話</div>
+                                <div class="courseContent">
+                                    ●德語日常問候<br>
+                                    ●德國購物用語<br>
+                                    ●德國租房買屋
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgBlue">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-gm-03.png" alt="德國打工度假">
+                                <div class="courseTitle colorBlue">德國打工度假</div>
+                                <div class="courseContent">
+                                    ●推薦德國景點<br>
+                                    ●德國同事相處<br>
+                                    ●德國交通工具
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgBlue">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-gm-04.png" alt="結交德國朋友">
+                                <div class="courseTitle colorBlue">結交德國朋友</div>
+                                <div class="courseContent">
+                                    ●德語自我介紹<br>
+                                    ●德式邀約技巧<br>
+                                    ●德式邀約技巧
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgBlue">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- child -->
+                    <div class="row">
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-child-01.png" alt="兒童美語發音班">
+                                <div class="courseTitle colorOrange">兒童美語發音班</div>
+                                <div class="courseContent">
+                                    ●認識字母及發音<br>
+                                    ●練習發出捲舌音<br>
+                                    ●辨認及數出音節
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgOrange">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-child-02.png" alt="兒美生活情境班">
+                                <div class="courseTitle colorOrange">兒美生活情境班</div>
+                                <div class="courseContent">
+                                    ●培養英語自主學習<br>
+                                    ●培養英語自主學習<br>
+                                    ●生活藝術相關英語
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgOrange">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-child-03.png" alt="兒童美語進階班">
+                                <div class="courseTitle colorOrange">兒童美語進階班</div>
+                                <div class="courseContent">
+                                    ●英語描述複雜流程<br>
+                                    ●英語描述複雜流程<br>
+                                    ●英語長篇閱讀理解
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgOrange">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-6 pb-5" data-aos="fade-up">
+                            <div class="courseBg text-center lh-lg py-4">
+                                <img class="w-50" src="images/c-child-04.png" alt="兒美英語檢定班">
+                                <div class="courseTitle colorOrange">兒美英語檢定班</div>
+                                <div class="courseContent">
+                                    ●GEPT全民英檢專班<br>
+                                    ●英語聽力、應答練習<br>
+                                    ●英語寫作與閱讀解析
+                                </div>
+                                <a href="#myform">
+                                    <div class="H3_size courseBt colorBgOrange">免費體驗</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- wapper結束 -->
+        <!-- HTML END -->
+        <div class="footer">
+            <iframe class="FOOTER_frame" src="/activity/footer/2020/" width="100%" scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
+        </div>
+    </form>
+    <script>
+        AOS.init({
+            easing: 'ease-in-out-sine',
+        });
+    </script>
+</body>
+</html>

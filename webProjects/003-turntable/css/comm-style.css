@@ -1,0 +1,48 @@
+body {
+    margin: 0;
+}
+
+.top, .footer {
+    line-height: 0px;
+}
+
+.top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 359px;
+    margin-bottom: -324px;
+    z-index: 999999;
+}
+
+.footer iframe {
+    height: 309px;
+}
+
+.wrapper {
+    width: 100%;
+    margin-top: 80px;
+    overflow: hidden;
+}
+
+.wrapperArea {
+    width: 100%;
+    margin-top: 80px;
+    overflow: hidden;
+}
+
+@media screen and (max-width: 979px) {
+    .footer iframe {
+        height: 473px;
+    }
+
+    .top {
+        height: 80px;
+    }
+
+    .top iframe {
+        height: 80px;
+    }
+
+}

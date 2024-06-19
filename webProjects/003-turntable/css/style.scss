@@ -1,0 +1,283 @@
+$color-lt-yellow:#fff9dd;
+$color-wp-yellow:#fff0b5;
+$color-dk-yellow:#fee281;
+$color-dk-blue: #24446e;
+$color-crimson:#b72643;
+$nav-height: 80px;
+
+.wrapper, *:before, *:after {
+    position: relative;
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+.wrapper {
+    background-color: $color-wp-yellow;
+    background-image: url(../images/wafflePattern.png);
+    .nav-height{ height: $nav-height;}
+    .kv {
+        background-image: url(../images/kv_roundbg.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        .flagAnim {
+            animation: swing 2s infinite;
+        }
+        .kvPcCont {
+            position: relative;
+            display: block;
+            height: 40vw;
+            max-width: 1280px;
+            max-height: 518px;
+            margin: 0 auto;
+            .kvPC1 {width: 100%; position: absolute;}
+            .kvPC2 {width: 100%; position: absolute;}
+            .kvPC3 {width: 100%; position: absolute; animation: zoomInOut 2s infinite;}
+            .kvPC4 {width: 100%; position: absolute;}
+            @media screen and (max-width:768px){
+                display: none;
+            }
+        }
+        .kvSpCont {
+            position: relative;
+            display: none;
+            height: 50vw;
+            margin: 0 auto;
+            .kvSP1 {width: 100%; position: absolute;}
+            .kvSP2 {width: 100%; position: absolute;}
+            .kvSP3 {width: 100%; position: absolute; animation: zoomInOut 2s infinite;}
+            .kvSP4 {width: 100%; position: absolute;}
+            @media screen and (max-width:768px){
+                display: block;
+            }
+        }
+        .kvH1 { display: none;}
+    }
+    .hide { display: none;}
+    .modal {
+        .modal-dialog {
+            max-width: 700px;
+            .modal-content {
+                background-image: url(../images/kv_roundbg.png);
+                background-size: 100% 60%;
+                background-position: center top;
+                background-repeat: no-repeat;
+                background-color: #fff0b5;
+                border-radius: 20px;
+                color: $color-dk-blue;
+                overflow: hidden;
+                .modal-header {border-bottom: 0px;}
+                .modal-body {
+                    .colorCrimson {
+                        color: $color-crimson;
+                    }
+                    .elephant {
+                        width: 100%;
+                        max-width: 180px;
+                        @media screen and (max-width:576px){
+                            width: 80%;
+                        }
+                    }
+                    .fox {
+                        width: 100%;
+                        max-width: 350px;
+                        @media screen and (max-width:576px){
+                            width: 80%;
+                        }
+                    }
+                    .fill{
+                        .row{--bs-gutter-x: 0.5rem;}
+                        .go_button {
+                            display: inline-block;
+                            text-align: center;
+                            background-color: $color-dk-blue;
+                            color: white;
+                            font-weight: bold;
+                            padding: 0.2em 1em;
+                            border: 0px;
+                            border-radius: 2em;
+                        }
+                    }
+                }
+                .bgCrimson {
+                    background-color: $color-crimson;
+                    color: white;
+                    .form-control {
+                        width: 50%;
+                        margin: 0 auto;
+                        @media screen and (max-width:576px){
+                            width: 80%;
+                        }
+                    }
+                    .selectArrow {
+                        appearance:none;
+                        background: url("../images/selectArrow.png") no-repeat right center transparent;
+                        background-size: 16px;
+                        background-color: #ffffff;
+                    }
+                    .prizeComment {
+                        padding-top: 6px;
+                        font-size: 14px;
+                        @media screen and (max-width:576px){
+                            font-size: 12px;
+                        }
+                    }
+                    .go_button {
+                        display: inline-block;
+                        text-align: center;
+                        background-color: #facd1b;
+                        color: black;
+                        font-weight: bold;
+                        padding: 0.2em 1em;
+                        border: 0px;
+                        border-radius: 2em;
+                    }
+                }
+            }
+        }
+    }
+    .prizeWheelBg {
+        background-image: url(../images/bg_clouds.png);
+        background-size: 100% auto;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        .container-prize {
+            max-width: 745px; 
+            margin: 0 auto;
+            .prizeWheel_pin {
+                position: relative;
+                max-width: 127px; 
+                width: 15%; 
+                z-index: 30;
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                &::before {
+                    width: 300%;
+                    height: 300%;
+                    top: 30px;
+                    left: -600px;
+                    transform: scaleX(-1);
+                    background-image: url('../images/stringFlag.png');
+                }
+                &::after {
+                    width: 250%;
+                    height: 250%;
+                    top: 50px;
+                    left: 440px;
+                    background-image: url('../images/flyingBook.png');
+                    animation: swing 2s infinite;
+                }
+            }
+            .prizeWheelCont {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                max-width: 745px;
+                width: 100%; 
+                margin-top: -6.5%; 
+                z-index: 20;
+                &:after {
+                    position :absolute;
+                    top: 0;
+                    left: 0;
+                    display: none;
+                    content: "";
+                    width: 100%;
+                    height: 100%;
+                }
+                &.disable {
+                    &:after {
+                        display: block;
+                    }
+                }
+                .prizeWheel {
+                    width: 100%;
+                    &.rotatingAnim {
+                        animation: rotating 12s linear infinite;
+                    }
+                }
+                .drawButton {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    width: 20%;
+                    cursor: pointer;
+                    &:hover{
+                        transition: 0.2s;
+                        margin-top: -3px;
+                    }
+                }
+            }
+            .prizeWheel_base {
+                position: relative;
+                max-width: 427px; 
+                width: 60%; 
+                margin-top: -45%; 
+                z-index: 10;
+                &::before,
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 90%;
+                    height: 90%;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                }
+                &::before {
+                    top: 50px;
+                    left: -105%;
+                    background-image: url('../images/tiger.png');
+                }
+                &::after {
+                    top: 50px;
+                    left: 145%;
+                    background-image: url('../images/deer.png');
+                }
+            }
+        }
+    }
+    .termsBg {
+        background-color: $color-dk-yellow;
+        .termsBox {
+            background-color: $color-lt-yellow;
+            border-radius: 30px;
+            .termsTit {
+                text-decoration: underline;
+                text-underline-offset: 10px;
+                text-decoration-thickness: 2px;
+            }
+        }
+        .openingBookCont {
+            width: 90%;
+            margin: -5% auto 0 auto;
+            .openingBookPC {display: block; width: 100%;}
+            .openingBookSP {display: none; width: 100%;}
+            @media screen and (max-width:768px){
+                .openingBookPC {display: none;}
+                .openingBookSP {display: block;}
+            }
+        }
+    }
+}
+/* keyframes */
+@keyframes zoomInOut {
+    0% { scale: 1; }
+    50% { scale: 1.03; }
+    100% { scale: 1; }
+}
+@keyframes swing {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(5deg); }
+    100% { transform: rotate(0deg); }
+}
+@keyframes rotating {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

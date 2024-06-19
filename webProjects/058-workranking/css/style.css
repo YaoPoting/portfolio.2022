@@ -1,0 +1,1285 @@
+/* CSS Document */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap");
+body {
+  margin: 0;
+}
+
+.H1_size {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.H2_size {
+  font-size: 26px;
+  font-weight: bold;
+}
+
+.color_dkBlue {
+  color: #164381;
+}
+
+.color_ltBlue {
+  color: #4b7bd7;
+}
+
+.color_dkGray {
+  color: #2c2c2c;
+}
+
+
+
+/* 按鈕 */
+.button_style {
+  background-color: #164381;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 21px;
+  font-weight: bold;
+  border-radius: 59px;
+  box-shadow: 0 4px 0 #142946;
+  -webkit-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  display: inline-block;
+  padding: 0.25em 1em 0.1em 1em;
+}
+
+.button_style:hover {
+  -webkit-transform: translateY(3px);
+  -ms-transform: translateY(3px);
+  transform: translateY(3px);
+  box-shadow: none;
+  box-shadow: none;
+  -webkit-transition: all .4s ease-in-out;
+  -o-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.go_button {
+  background-color: #164381;
+  color: #ffffff;
+  font-size: 1.5em;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+
+
+
+
+
+.BN_girl, .BN_boy, .BN_title {
+  position: absolute;
+}
+
+.BN_bg_pc {
+  display: block;
+  height: 48.3vw;
+}
+
+.BN_bg_sp {
+  display: none;
+  height: 111vw;
+}
+
+.BN_bg_pc, .BN_bg_sp, .vedioBg, .rankinBg {
+  background-color: #ddffff;
+}
+
+.vedioBg {
+  position: relative;
+  z-index: 1;
+}
+
+.vedioArea {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px #00000011;
+}
+
+.vedioArea ::before {
+  position: absolute;
+  width: 204px;
+  height: 164px;
+  left: -100px;
+  top: -80px;
+  content: '';
+  background-image: url(../images/leaf.png);
+  background-position: center center;
+  background-size: contain, 100%;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+.vedioHeight {
+  min-height: 190px;
+}
+
+.container-md {
+ max-width: 768px;
+}
+
+.rankinBg {
+  background-image: url(../images/bgDec.png);
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-size: 100%;
+}
+
+.rankingWtBg {
+  background-color: #ffffff;
+  border-radius: 100px;
+  box-shadow: 0 3px 6px #00000011;
+}
+
+.rankinNumber{
+  color: #f13c45;
+  font-weight: bold;
+  font-size: 80px;
+  font-style: italic;
+}
+
+.ipadBg {
+  background-color: #c9ebff;
+}
+
+.align_middle {
+  display: flex;
+  align-items: center;
+}
+
+.selectArrow {
+  appearance:none;
+  -moz-appearance:none;
+  -webkit-appearance:none;
+  background: url("../images/selectArrow.png") no-repeat right center transparent;
+  background-size: 16px;
+}
+
+.selectArrow::-ms-expand { 
+  display: none; 
+}
+
+
+#friendgo {
+  position: absolute;
+  top: -65px;
+}
+
+.friendgo {
+  background-color: #c9ebff;
+  background-image: url(../images/bgBottom2.png), url(../images/bgBottom.png);
+  background-size: 100%, 100%;
+  background-repeat:no-repeat, no-repeat;
+  background-position: center top, center bottom;
+  background-attachment: local, fixed;
+  width: 100%;
+  font-family: arial, "Noto Sans TC", sans-serif;
+  /* banner */
+  /* form */
+  /* intro-table */
+}
+
+.friendgo *, .friendgo *:before, .friendgo *:after {
+  position: relative;
+  box-sizing: border-box;
+  transition: 0.2s linear;
+}
+.friendgo .banner {
+  background-image: url(../images/banner/bg.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 33.8vw;
+  overflow: hidden;
+}
+.friendgo .banner .title {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 64%;
+  -webkit-animation: title-fade-in 0.8s ease-out;
+          animation: title-fade-in 0.8s ease-out;
+}
+.friendgo .banner .title img {
+  display: block;
+  width: 100%;
+}
+.friendgo .banner .title img.t-go {
+  position: absolute;
+  top: -23%;
+  right: 13%;
+  -webkit-animation: t-go-roll 2s infinite 1.2s;
+          animation: t-go-roll 2s infinite 1.2s;
+  width: 40%;
+}
+.friendgo .banner .title .subtitle {
+  position: absolute;
+  bottom: 16%;
+  left: 48%;
+  display: block;
+  width: 50%;
+  transform: translateX(-50%);
+}
+.friendgo .banner .title .subtitle-02 {
+  position: absolute;
+  bottom: -20%;
+  left: 50%;
+  width: 46%;
+  max-width: 520px;
+  opacity: 0;
+  transform: translateX(-50%);
+  -webkit-animation: subtitle-02-fade-in 0.8s forwards 0.2s;
+          animation: subtitle-02-fade-in 0.8s forwards 0.2s;
+}
+.friendgo .banner .human {
+  position: absolute;
+  display: block;
+  width: 42%;
+  opacity: 0;
+}
+.friendgo .banner .human.l-01 {
+  top: -12%;
+  left: -16%;
+  -webkit-animation: human-l-01-fade-in 0.8s ease-out 0.4s forwards;
+          animation: human-l-01-fade-in 0.8s ease-out 0.4s forwards;
+}
+.friendgo .banner .human.l-02 {
+  left: -7%;
+  bottom: -62%;
+  -webkit-animation: human-l-02-fade-in 0.8s ease-out 0.8s forwards;
+          animation: human-l-02-fade-in 0.8s ease-out 0.8s forwards;
+}
+.friendgo .banner .human.r-01 {
+  top: -38%;
+  right: -10%;
+  z-index: 20;
+  -webkit-animation: human-r-01-fade-in 0.8s ease-out 0.8s forwards;
+          animation: human-r-01-fade-in 0.8s ease-out 0.8s forwards;
+}
+.friendgo .banner .human.r-02 {
+  right: -8%;
+  bottom: -49%;
+  -webkit-animation: human-r-02-fade-in 0.8s ease-out 0.4s forwards;
+          animation: human-r-02-fade-in 0.8s ease-out 0.4s forwards;
+}
+.friendgo .row {
+  width: 90%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2vw 0;
+}
+.friendgo .row h1 {
+  color: #D6165C;
+  font-size: 46px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  margin: 0;
+  padding: 40px 0 80px;
+}
+.friendgo .row h1 span {
+  display: block;
+  text-align: center;
+}
+.friendgo .row .col-lg-12 {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.friendgo .row .col-md-12 {
+  width: 100%;
+}
+.friendgo .row .fill_lable {
+  width: 45%;
+}
+.friendgo .row .fill_lable img {
+  display: block;
+  width: 92%;
+  border-radius: 12px;
+}
+.friendgo .row .form_area {
+  display: flex;
+  flex-flow: row wrap;
+  width: 55%;
+  font-size: 18px;
+}
+.friendgo .row .form_area .fill_form {
+  width: 50%;
+  padding: 2% 0 2% 4%;
+}
+.friendgo .row .form_area .fill_form .form-control {
+  display: block;
+  width: 100%;
+  padding: 0.9em;
+  color: #2C316D;
+  font-size: 1em;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  border: unset;
+  border-radius: 8px;
+  box-shadow: 0 3px 6px #00000011;
+}
+.friendgo .row .form_area .fill_form .form-control::-moz-placeholder {
+  color: #2C316D;
+  font-weight: 500;
+}
+.friendgo .row .form_area .fill_form .form-control:-ms-input-placeholder {
+  color: #2C316D;
+  font-weight: 500;
+}
+.friendgo .row .form_area .fill_form .form-control::placeholder {
+  color: #2C316D;
+  font-weight: 500;
+}
+.friendgo .row .form_area .fill_form .form-control:focus {
+  outline-color: #20C0D1;
+}
+.friendgo .row .form_area .option {
+  justify-content: flex-start;
+  width: 100%;
+  padding: 1% 0 1% 4%;
+  color: #555555;
+  font-size: 1em;
+  letter-spacing: 0.2em;
+}
+.friendgo .row .form_area .option input.searchtext2 {
+  width: 1.2rem;
+  height: 1.2rem;
+  border: unset;
+  border-radius: 4px;
+}
+.friendgo .row .form_area .option input.searchtext2:checked {
+  background-color: #20C0D1;
+}
+.friendgo .row .form_area .option a {
+  color: #2C316D;
+}
+.friendgo .row .form_area .row_btn {
+  padding: 1% 0 1% 4%;
+}
+.friendgo .row .form_area .row_btn .go_button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #20C0D1;
+  padding: 8px;
+  color: #FFFFFF;
+  font-size: 1.5em;
+  letter-spacing: 0.1em;
+  text-align: center;
+  border-radius: 8px;
+}
+.friendgo .row .form_area .row_btn .go_button:after {
+  position: relative;
+  content: "";
+  display: inline-block;
+  width: 0.48em;
+  height: 0.48em;
+  margin: 0 0.2em;
+  border: solid #FFFFFF;
+  border-width: 0.16em 0.16em 0 0;
+  border-radius: 2px;
+  transform: rotate(45deg);
+}
+.friendgo .row .form_area .row_btn .go_button:hover {
+  background-color: #6edde9;
+}
+.friendgo .row .form_area .row_btn .go_button:hover:after {
+  -webkit-animation: go-button-arrow-roll 0.8s linear infinite;
+          animation: go-button-arrow-roll 0.8s linear infinite;
+}
+.friendgo .intro-table {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.friendgo .intro-table .menu {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 65px;
+  background-color: #20C0D1;
+  width: 18%;
+  padding: 24px;
+  color: #FFFFFF;
+  font-size: 18px;
+  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px #00000011;
+}
+.friendgo .intro-table .menu .title {
+  margin: 0 0 20px;
+  font-size: 1.5em;
+  font-weight: 500;
+}
+.friendgo .intro-table .menu .list {
+  margin: 8px 0;
+  padding: 8px 0;
+  border: solid #FFFFFF;
+  border-width: 1px 0;
+}
+.friendgo .intro-table .menu .list li.li-link {
+  margin: 4px;
+  list-style: none;
+}
+.friendgo .intro-table .menu .list li.li-link a {
+  display: block;
+  width: 100%;
+  padding: 4px;
+  color: #FFFFFF;
+  font-size: 1em;
+  font-weight: 400;
+  text-decoration: unset;
+  border-radius: 20px;
+}
+.friendgo .intro-table .menu .list li.li-link a:hover, .friendgo .intro-table .menu .list li.li-link a.active {
+  background-color: #FFF2C4;
+  color: #D6165C;
+}
+.friendgo .intro-table .menu .top-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 0 0;
+  color: #FFFFFF;
+  font-size: 1.2em;
+  text-decoration: unset;
+}
+.friendgo .intro-table .menu .top-btn:before {
+  display: block;
+  content: "";
+  width: 0;
+  height: 0;
+  margin: 0 0.4em 0 0;
+  border: solid;
+  border-width: 0 8px 12px 8px;
+  border-color: transparent transparent #FFFFFF transparent;
+}
+.friendgo .intro-table .menu .top-btn:hover {
+  color: #FFF2C4;
+  -webkit-animation: top-btn-roll 0.8s linear infinite;
+          animation: top-btn-roll 0.8s linear infinite;
+}
+.friendgo .intro-table .menu .top-btn:hover::before {
+  border-color: transparent transparent #FFF2C4 transparent;
+}
+.friendgo .intro-table .table-list {
+  width: 82%;
+}
+.friendgo .intro-table .table-list .item {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  background-color: #FFFFFF;
+  margin: 0 0 6% 4%;
+  padding: 2.5em;
+  font-size: 20px;
+  border-radius: 12px;
+  box-shadow: 0 3px 6px #00000011;
+  /* class theme color */
+}
+.friendgo .intro-table .table-list .item .name {
+  padding: 0 0 1.2em;
+  font-size: 1.8em;
+  font-weight: 500;
+  text-align: center;
+  border-width: 0 0 2px;
+  border-style: solid;
+}
+
+.name, .row-list {
+  width: 100%;
+}
+
+
+.free-btn {
+  width: 100%;
+  max-width: 400px;
+}
+
+.friendgo .intro-table .table-list .item .row-list {
+  margin: 20px 0;
+}
+.friendgo .intro-table .table-list .item .row-list .tb-row {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  border: solid #cccccc;
+  border-width: 0 0 1px;
+  cursor: default;
+}
+.friendgo .intro-table .table-list .item .row-list .title {
+  width: 8em;
+  margin: 8px;
+  padding: 0.6em 0;
+  font-size: 1.125em;
+  font-weight: 400;
+  text-align: center;
+}
+.friendgo .intro-table .table-list .item .row-list .title span {
+  display: inline-block;
+}
+.friendgo .intro-table .table-list .item .row-list .desc {
+  width: calc(100% - 8em);
+  padding: 0.6em 0;
+  color: #555555;
+  font-size: 1em;
+  font-weight: 400;
+  text-align: justify;
+}
+
+
+.friendgo .intro-table .table-list .item .row-list .desc .mark {
+  font-weight: 500;
+}
+.friendgo .intro-table .table-list .item .row-list .desc span {
+  display: block;
+  margin: 8px;
+}
+.friendgo .intro-table .table-list .item .free-btn {
+  margin: 16px 0 0;
+  text-align: center;
+}
+.friendgo .intro-table .table-list .item .free-btn a {
+  display: block;
+
+  margin: 0 auto;
+  padding: 8px;
+  color: #FFFFFF;
+  font-size: 1.25em;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  border-radius: 2em;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+1) .name {
+  color: #20C0D1;
+  border-color: #20C0D1;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+1) .row-list .tb-row:hover {
+  background-color: #20C0D110;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+1) .row-list .title {
+  color: #20C0D1;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+1) .row-list .desc .mark {
+  color: #20C0D1;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+1) .free-btn a {
+  background-color: #20C0D1;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+1) .free-btn a:hover {
+  background-color: #6edde9;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+2) .name {
+  color: #FF9100;
+  border-color: #FF9100;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+2) .row-list .tb-row:hover {
+  background-color: #FF910010;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+2) .row-list .title {
+  color: #FF9100;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+2) .row-list .desc .mark {
+  color: #FF9100;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+2) .free-btn a {
+  background-color: #FF9100;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+2) .free-btn a:hover {
+  background-color: #ffbd66;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+3) .name {
+  color: #2C316D;
+  border-color: #2C316D;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+3) .row-list .tb-row:hover {
+  background-color: #2C316D10;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+3) .row-list .title {
+  color: #2C316D;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+3) .row-list .desc .mark {
+  color: #2C316D;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+3) .free-btn a {
+  background-color: #2C316D;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+3) .free-btn a:hover {
+  background-color: #4952b6;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+4) .name {
+  color: #D6165C;
+  border-color: #D6165C;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+4) .row-list .tb-row:hover {
+  background-color: #D6165C10;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+4) .row-list .title {
+  color: #D6165C;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+4) .row-list .desc .mark {
+  color: #D6165C;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+4) .free-btn a {
+  background-color: #D6165C;
+}
+.friendgo .intro-table .table-list .item:nth-child(4n+4) .free-btn a:hover {
+  background-color: #ef6396;
+}
+.friendgo .hide {
+  display: none;
+}
+.friendgo .anchor {
+  position: absolute;
+  top: calc( -8vh - 65px);
+}
+
+/* keyframes */
+/* banner */
+@-webkit-keyframes t-go-roll {
+  0% {
+    top: -23%;
+  }
+  40% {
+    top: -28%;
+  }
+  90% {
+    top: -23%;
+  }
+  100% {
+    top: -23%;
+  }
+}
+@keyframes t-go-roll {
+  0% {
+    top: -23%;
+  }
+  40% {
+    top: -28%;
+  }
+  90% {
+    top: -23%;
+  }
+  100% {
+    top: -23%;
+  }
+}
+@-webkit-keyframes title-fade-in {
+  0% {
+    top: 12%;
+    opacity: 0;
+  }
+  40% {
+    top: 12%;
+    opacity: 0;
+  }
+  100% {
+    top: 18%;
+    opacity: 1;
+  }
+}
+@keyframes title-fade-in {
+  0% {
+    top: 12%;
+    opacity: 0;
+  }
+  40% {
+    top: 12%;
+    opacity: 0;
+  }
+  100% {
+    top: 18%;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes title-fade-in-m {
+  0% {
+    top: 26%;
+    opacity: 0;
+  }
+  40% {
+    top: 26%;
+    opacity: 0;
+  }
+  100% {
+    top: 32%;
+    opacity: 1;
+  }
+}
+@keyframes title-fade-in-m {
+  0% {
+    top: 26%;
+    opacity: 0;
+  }
+  40% {
+    top: 26%;
+    opacity: 0;
+  }
+  100% {
+    top: 32%;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes subtitle-02-fade-in {
+  0% {
+    bottom: -32%;
+    opacity: 0;
+  }
+  40% {
+    bottom: -32%;
+    opacity: 0;
+  }
+  100% {
+    bottom: -20%;
+    opacity: 1;
+  }
+}
+@keyframes subtitle-02-fade-in {
+  0% {
+    bottom: -32%;
+    opacity: 0;
+  }
+  40% {
+    bottom: -32%;
+    opacity: 0;
+  }
+  100% {
+    bottom: -20%;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes subtitle-02-fade-in-m {
+  0% {
+    bottom: -36%;
+    opacity: 0;
+  }
+  40% {
+    bottom: -36%;
+    opacity: 0;
+  }
+  100% {
+    bottom: -24%;
+    opacity: 1;
+  }
+}
+@keyframes subtitle-02-fade-in-m {
+  0% {
+    bottom: -36%;
+    opacity: 0;
+  }
+  40% {
+    bottom: -36%;
+    opacity: 0;
+  }
+  100% {
+    bottom: -24%;
+    opacity: 1;
+  }
+}
+/* human */
+@-webkit-keyframes human-l-01-fade-in {
+  0% {
+    top: -16%;
+    left: -20%;
+    opacity: 0;
+  }
+  40% {
+    top: -16%;
+    left: -20%;
+    opacity: 0;
+  }
+  100% {
+    top: -12%;
+    left: -16%;
+    opacity: 1;
+  }
+}
+@keyframes human-l-01-fade-in {
+  0% {
+    top: -16%;
+    left: -20%;
+    opacity: 0;
+  }
+  40% {
+    top: -16%;
+    left: -20%;
+    opacity: 0;
+  }
+  100% {
+    top: -12%;
+    left: -16%;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes human-l-02-fade-in {
+  0% {
+    left: -11%;
+    bottom: -66%;
+    opacity: 0;
+  }
+  40% {
+    left: -11%;
+    bottom: -66%;
+    opacity: 0;
+  }
+  100% {
+    left: -7%;
+    bottom: -62%;
+    opacity: 1;
+  }
+}
+@keyframes human-l-02-fade-in {
+  0% {
+    left: -11%;
+    bottom: -66%;
+    opacity: 0;
+  }
+  40% {
+    left: -11%;
+    bottom: -66%;
+    opacity: 0;
+  }
+  100% {
+    left: -7%;
+    bottom: -62%;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes human-r-01-fade-in {
+  0% {
+    top: -42%;
+    right: -14%;
+    opacity: 0;
+  }
+  40% {
+    top: -42%;
+    right: -14%;
+    opacity: 0;
+  }
+  100% {
+    top: -38%;
+    right: -10%;
+    opacity: 1;
+  }
+}
+@keyframes human-r-01-fade-in {
+  0% {
+    top: -42%;
+    right: -14%;
+    opacity: 0;
+  }
+  40% {
+    top: -42%;
+    right: -14%;
+    opacity: 0;
+  }
+  100% {
+    top: -38%;
+    right: -10%;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes human-r-02-fade-in {
+  0% {
+    right: -12%;
+    bottom: -52%;
+    opacity: 0;
+  }
+  60% {
+    right: -12%;
+    bottom: -52%;
+    opacity: 0;
+  }
+  100% {
+    right: -8%;
+    bottom: -49%;
+    opacity: 1;
+  }
+}
+@keyframes human-r-02-fade-in {
+  0% {
+    right: -12%;
+    bottom: -52%;
+    opacity: 0;
+  }
+  60% {
+    right: -12%;
+    bottom: -52%;
+    opacity: 0;
+  }
+  100% {
+    right: -8%;
+    bottom: -49%;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes human-l-01-fade-in-m {
+  0% {
+    top: -16%;
+    left: -36%;
+    opacity: 0;
+  }
+  40% {
+    top: -16%;
+    left: -36%;
+    opacity: 0;
+  }
+  100% {
+    top: -12%;
+    left: -32%;
+    opacity: 1;
+  }
+}
+@keyframes human-l-01-fade-in-m {
+  0% {
+    top: -16%;
+    left: -36%;
+    opacity: 0;
+  }
+  40% {
+    top: -16%;
+    left: -36%;
+    opacity: 0;
+  }
+  100% {
+    top: -12%;
+    left: -32%;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes human-l-02-fade-in-m {
+  0% {
+    left: -36%;
+    bottom: -60%;
+    opacity: 0;
+  }
+  40% {
+    left: -36%;
+    bottom: -60%;
+    opacity: 0;
+  }
+  100% {
+    left: -32%;
+    bottom: -56%;
+    opacity: 1;
+  }
+}
+@keyframes human-l-02-fade-in-m {
+  0% {
+    left: -36%;
+    bottom: -60%;
+    opacity: 0;
+  }
+  40% {
+    left: -36%;
+    bottom: -60%;
+    opacity: 0;
+  }
+  100% {
+    left: -32%;
+    bottom: -56%;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes human-r-01-fade-in-m {
+  0% {
+    top: -32%;
+    right: -34%;
+    opacity: 0;
+  }
+  40% {
+    top: -32%;
+    right: -34%;
+    opacity: 0;
+  }
+  100% {
+    top: -28%;
+    right: -30%;
+    opacity: 1;
+  }
+}
+@keyframes human-r-01-fade-in-m {
+  0% {
+    top: -32%;
+    right: -34%;
+    opacity: 0;
+  }
+  40% {
+    top: -32%;
+    right: -34%;
+    opacity: 0;
+  }
+  100% {
+    top: -28%;
+    right: -30%;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes human-r-02-fade-in-m {
+  0% {
+    right: -39%;
+    bottom: -56%;
+    opacity: 0;
+  }
+  60% {
+    right: -39%;
+    bottom: -56%;
+    opacity: 0;
+  }
+  100% {
+    right: -35%;
+    bottom: -52%;
+    opacity: 1;
+  }
+}
+@keyframes human-r-02-fade-in-m {
+  0% {
+    right: -39%;
+    bottom: -56%;
+    opacity: 0;
+  }
+  60% {
+    right: -39%;
+    bottom: -56%;
+    opacity: 0;
+  }
+  100% {
+    right: -35%;
+    bottom: -52%;
+    opacity: 1;
+  }
+}
+/* other */
+@-webkit-keyframes go-button-arrow-roll {
+  0% {
+    margin: 0 0.2em;
+  }
+  40% {
+    margin: 0 0 0 0.4em;
+  }
+  90% {
+    margin: 0 0.2em;
+  }
+  100% {
+    margin: 0 0.2em;
+  }
+}
+@keyframes go-button-arrow-roll {
+  0% {
+    margin: 0 0.2em;
+  }
+  40% {
+    margin: 0 0 0 0.4em;
+  }
+  90% {
+    margin: 0 0.2em;
+  }
+  100% {
+    margin: 0 0.2em;
+  }
+}
+@-webkit-keyframes top-btn-roll {
+  0% {
+    padding: 12px 0 0;
+  }
+  40% {
+    padding: 6px 0 6px;
+  }
+  90% {
+    padding: 12px 0 0;
+  }
+  100% {
+    padding: 12px 0 0;
+  }
+}
+@keyframes top-btn-roll {
+  0% {
+    padding: 12px 0 0;
+  }
+  40% {
+    padding: 6px 0 6px;
+  }
+  90% {
+    padding: 12px 0 0;
+  }
+  100% {
+    padding: 12px 0 0;
+  }
+}
+/* rwd */
+@media screen and (max-width: 1280px) {
+  .friendgo .row {
+    position: unset;
+    width: 92vw;
+  }
+  .friendgo .row h1 {
+    font-size: 40px;
+    padding: 4vw 0 8vw;
+  }
+  .friendgo .row .form_area {
+    font-size: 16px;
+  }
+
+  .friendgo .intro-table .menu {
+    display: none;
+  }
+  .friendgo .intro-table .table-list {
+    
+    margin: 0 auto;
+  }
+  .friendgo .intro-table .table-list .item {
+    margin: 0 0 6%;
+  }
+  .friendgo .intro-table .table-list {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .rankinBg {
+    background-image: none;
+  }
+
+}
+
+
+@media screen and (max-width: 800px) {
+  .friendgo .row h1 {
+    font-size: 5.6vw;
+  }
+  .friendgo .row .fill_lable {
+    width: 100%;
+    margin: 0 0 20px;
+  }
+  .friendgo .row .fill_lable img {
+    width: 100%;
+  }
+  .friendgo .row .form_area {
+    width: 100%;
+  }
+  .friendgo .row .form_area .fill_form, .friendgo .row .form_area .option, .friendgo .row .form_area .row_btn {
+    width: 100%;
+    padding: 2% 0;
+  }
+  .friendgo .intro-table .table-list .item {
+    font-size: 18px;
+  }
+
+  .BN_bg_pc {
+    display: none;
+    height: 48.3vw;
+  }
+  
+  .BN_bg_sp {
+    display: block;
+    height: 111vw;
+  }
+  
+}
+
+
+@media screen and (max-width: 640px) {
+  .friendgo .banner {
+    background-image: url(../images/banner/bg_mb.jpg);
+    background-size: cover;
+    height: 80vw;
+    max-height: 520px;
+  }
+  .friendgo .banner .title {
+    top: 32%;
+    width: 92vw;
+    -webkit-animation: title-fade-in-m 0.8s ease-out;
+            animation: title-fade-in-m 0.8s ease-out;
+    z-index: 10;
+  }
+  .friendgo .banner .title .subtitle {
+    width: 76%;
+    bottom: 15%;
+  }
+  .friendgo .banner .title .subtitle-02 {
+    bottom: -24%;
+    width: 50%;
+    -webkit-animation: subtitle-02-fade-in-m 0.8s forwards 0.2s;
+            animation: subtitle-02-fade-in-m 0.8s forwards 0.2s;
+  }
+  .friendgo .banner .human {
+    width: 80vw;
+  }
+  .friendgo .banner .human.l-01 {
+    top: -12%;
+    left: -32%;
+    -webkit-animation: human-l-01-fade-in-m 0.8s ease-out 0.4s forwards;
+            animation: human-l-01-fade-in-m 0.8s ease-out 0.4s forwards;
+    z-index: 5;
+  }
+  .friendgo .banner .human.l-02 {
+    left: -32%;
+    bottom: -56%;
+    -webkit-animation: human-l-02-fade-in-m 0.8s ease-out 0.8s forwards;
+            animation: human-l-02-fade-in-m 0.8s ease-out 0.8s forwards;
+    z-index: 20;
+  }
+  .friendgo .banner .human.r-01 {
+    top: -28%;
+    right: -30%;
+    -webkit-animation: human-r-01-fade-in-m 0.8s ease-out 0.8s forwards;
+            animation: human-r-01-fade-in-m 0.8s ease-out 0.8s forwards;
+    z-index: 5;
+  }
+  .friendgo .banner .human.r-02 {
+    right: -35%;
+    bottom: -52%;
+    -webkit-animation: human-r-02-fade-in-m 0.8s ease-out 0.4s forwards;
+            animation: human-r-02-fade-in-m 0.8s ease-out 0.4s forwards;
+    z-index: 20;
+  }
+  .friendgo .intro-table .table-list .item {
+    padding: 1.6em;
+    font-size: 17px;
+  }
+  .friendgo .intro-table .table-list .item .name {
+    padding: 0 0 0.6em;
+    border-width: 0 0 1px;
+  }
+  .friendgo .intro-table .table-list .item .row-list {
+    margin: 0.4em 0;
+  }
+  .friendgo .intro-table .table-list .item .row-list .tb-row .title {
+    width: 4.5em;
+    margin: 0 1em 0 0.5em;
+  }
+  .friendgo .intro-table .table-list .item .row-list .tb-row .title span {
+    display: inline-block;
+  }
+  .friendgo .intro-table .table-list .item .row-list .tb-row .desc {
+    width: calc(100% - 6em);
+  }
+  .friendgo .intro-table .table-list .item .row-list .tb-row .desc span {
+    margin: 4px 0;
+  }
+  .friendgo .intro-table .table-list .item .name span {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 432px) {
+  .H2_size {
+    font-size: 22px;
+    font-weight: bold;
+  }
+}
+
+@media screen and (max-width: 380px) {
+
+  .friendgo .row .form_area {
+    font-size: 15px;
+  }
+  .friendgo .intro-table .table-list .item {
+    font-size: 15px;
+  }
+
+}/*# sourceMappingURL=style.css.map */
