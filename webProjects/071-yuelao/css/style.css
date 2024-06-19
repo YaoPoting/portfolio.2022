@@ -18,59 +18,47 @@
 .wrapper .kv .kvPC .kvPC_doorR {
   right: 0px;
   transform: scaleX(-1);
-  -webkit-animation: doorOpenR 4s forwards;
-          animation: doorOpenR 4s forwards;
+  animation: doorOpenR 4s forwards;
 }
 .wrapper .kv .kvPC .kvPC_doorL {
-  -webkit-animation: doorOpenL 4s forwards;
-          animation: doorOpenL 4s forwards;
+  animation: doorOpenL 4s forwards;
 }
 .wrapper .kv .kvPC .kvPC_fan {
-  -webkit-animation: fanDown 2s forwards;
-          animation: fanDown 2s forwards;
+  animation: fanDown 2s forwards;
 }
 .wrapper .kv .kvPC .kvPC_lanternR {
   width: 20%;
   right: -4%;
   top: -10%;
-  -webkit-animation: swingL 3s backwards;
-          animation: swingL 3s backwards;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation: swingL 3s backwards;
+  animation-delay: 0.5s;
 }
 .wrapper .kv .kvPC .kvPC_lanternL {
   width: 20%;
   left: -3.5%;
   top: -19%;
-  -webkit-animation: swingR 3s backwards;
-          animation: swingR 3s backwards;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation: swingR 3s backwards;
+  animation-delay: 0.5s;
 }
 .wrapper .kv .kvPC .kvPC_title {
   top: 17%;
   left: 14%;
   width: 54%;
-  -webkit-animation: titleIn 1.5s backwards;
-          animation: titleIn 1.5s backwards;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation: titleIn 1.5s backwards;
+  animation-delay: 0.5s;
 }
 .wrapper .kv .kvPC .kvPC_yuelao {
   top: 11%;
   left: 62%;
   width: 24%;
-  -webkit-animation: yuelaoIn 1.5s backwards;
-          animation: yuelaoIn 1.5s backwards;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation: yuelaoIn 1.5s backwards;
+  animation-delay: 0.5s;
 }
 .wrapper .kv .kvPC .kvPC_button {
   top: 40%;
   left: 25%;
   width: 44%;
-  -webkit-animation: zoomInOut 1s infinite;
-          animation: zoomInOut 1s infinite;
+  animation: zoomInOut 1s infinite;
 }
 @media screen and (max-width: 992px) {
   .wrapper .kv .kvPC {
@@ -88,50 +76,40 @@
   .wrapper .kv .kvSP .kvSP_doorR {
     right: 0px;
     transform: scaleX(-1);
-    -webkit-animation: doorOpenR 5s forwards;
-            animation: doorOpenR 5s forwards;
+    animation: doorOpenR 5s forwards;
   }
   .wrapper .kv .kvSP .kvSP_doorL {
-    -webkit-animation: doorOpenL 5s forwards;
-            animation: doorOpenL 5s forwards;
+    animation: doorOpenL 5s forwards;
   }
   .wrapper .kv .kvSP .kvSP_fan {
-    -webkit-animation: fanDown 2.5s forwards;
-            animation: fanDown 2.5s forwards;
+    animation: fanDown 2.5s forwards;
   }
   .wrapper .kv .kvSP .kvSP_lanternR {
     width: 40%;
     right: -16%;
     top: -6%;
-    -webkit-animation: swingL 3s backwards;
-            animation: swingL 3s backwards;
-    -webkit-animation-delay: 0.5s;
-            animation-delay: 0.5s;
+    animation: swingL 3s backwards;
+    animation-delay: 0.5s;
   }
   .wrapper .kv .kvSP .kvSP_lanternL {
     width: 40%;
     left: -16%;
     top: -16%;
-    -webkit-animation: swingR 3s backwards;
-            animation: swingR 3s backwards;
-    -webkit-animation-delay: 0.5s;
-            animation-delay: 0.5s;
+    animation: swingR 3s backwards;
+    animation-delay: 0.5s;
   }
   .wrapper .kv .kvSP .kvSP_title {
     top: 25%;
     left: 10%;
     width: 80%;
-    -webkit-animation: titleInSP 1.5s backwards;
-            animation: titleInSP 1.5s backwards;
-    -webkit-animation-delay: 0.5s;
-            animation-delay: 0.5s;
+    animation: titleInSP 1.5s backwards;
+    animation-delay: 0.5s;
   }
   .wrapper .kv .kvSP .kvSP_button {
     top: 46%;
     left: 2%;
     width: 90%;
-    -webkit-animation: zoomInOut 1s infinite;
-            animation: zoomInOut 1s infinite;
+    animation: zoomInOut 1s infinite;
   }
 }
 .wrapper .cards {
@@ -231,8 +209,7 @@
   }
 }
 .wrapper .form .redEnvelope {
-  -webkit-animation: zoomInOut 1s infinite;
-          animation: zoomInOut 1s infinite;
+  animation: zoomInOut 1s infinite;
 }
 .wrapper .form .formTitle {
   max-width: 409px;
@@ -282,17 +259,6 @@
 }
 
 /* keyframes */
-@-webkit-keyframes zoomInOut {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.02);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 @keyframes zoomInOut {
   0% {
     transform: scale(1);
@@ -304,25 +270,9 @@
     transform: scale(1);
   }
 }
-@-webkit-keyframes swingR {
-  0% {
-    transform: rotate(15deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
 @keyframes swingR {
   0% {
     transform: rotate(15deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
-@-webkit-keyframes swingL {
-  0% {
-    transform: rotate(-15deg);
   }
   100% {
     transform: rotate(0deg);
@@ -336,28 +286,12 @@
     transform: rotate(0deg);
   }
 }
-@-webkit-keyframes doorOpenL {
-  0% {
-    left: 0%;
-  }
-  100% {
-    left: -100%;
-  }
-}
 @keyframes doorOpenL {
   0% {
     left: 0%;
   }
   100% {
     left: -100%;
-  }
-}
-@-webkit-keyframes doorOpenR {
-  0% {
-    right: 0%;
-  }
-  100% {
-    right: -100%;
   }
 }
 @keyframes doorOpenR {
@@ -368,28 +302,12 @@
     right: -100%;
   }
 }
-@-webkit-keyframes fanDown {
-  0% {
-    top: -10%;
-  }
-  100% {
-    top: 0%;
-  }
-}
 @keyframes fanDown {
   0% {
     top: -10%;
   }
   100% {
     top: 0%;
-  }
-}
-@-webkit-keyframes titleIn {
-  0% {
-    left: -55%;
-  }
-  100% {
-    left: 14%;
   }
 }
 @keyframes titleIn {
@@ -400,28 +318,12 @@
     left: 14%;
   }
 }
-@-webkit-keyframes titleInSP {
-  0% {
-    top: -30%;
-  }
-  100% {
-    top: 25%;
-  }
-}
 @keyframes titleInSP {
   0% {
     top: -30%;
   }
   100% {
     top: 25%;
-  }
-}
-@-webkit-keyframes yuelaoIn {
-  0% {
-    left: 100%;
-  }
-  100% {
-    left: 62%;
   }
 }
 @keyframes yuelaoIn {

@@ -19,41 +19,33 @@
   mix-blend-mode: screen;
 }
 .wrapper .kv .kv_pc_cloud1 {
-  -webkit-animation: cloud1 5s linear infinite;
-          animation: cloud1 5s linear infinite;
+  animation: cloud1 5s linear infinite;
 }
 .wrapper .kv .kv_pc_cloud2 {
-  -webkit-animation: cloud2 12s linear infinite;
-          animation: cloud2 12s linear infinite;
+  animation: cloud2 12s linear infinite;
 }
 .wrapper .kv .kv_pc_cloud3 {
-  -webkit-animation: cloud3 12s linear infinite;
-          animation: cloud3 12s linear infinite;
+  animation: cloud3 12s linear infinite;
 }
 .wrapper .kv .rocket .rocketIn {
-  -webkit-animation: rocketIn 1.5s backwards;
-          animation: rocketIn 1.5s backwards;
+  animation: rocketIn 1.5s backwards;
 }
 .wrapper .kv .rocket .rocketlight {
-  -webkit-animation: zoomInOut 1s linear infinite;
-          animation: zoomInOut 1s linear infinite;
+  animation: zoomInOut 1s linear infinite;
 }
 .wrapper .kv .kv_title {
   width: 80%;
   left: 10%;
   top: 21%;
-  -webkit-animation: titleIn 1.5s backwards;
-          animation: titleIn 1.5s backwards;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation: titleIn 1.5s backwards;
+  animation-delay: 0.5s;
 }
 .wrapper .kv .kv_title .pc_title_mask {
   -webkit-mask: url(../images/kv_pc_title_mask.png) no-repeat center center;
   mask: url(../images/kv_pc_title_mask.png) no-repeat center center;
   -webkit-mask-size: contain;
   mask-size: contain;
-  -webkit-animation: maskmove 2s infinite;
-          animation: maskmove 2s infinite;
+  animation: maskmove 2s infinite;
 }
 .wrapper .kv .kvPC {
   display: block;
@@ -63,10 +55,8 @@
   width: 80%;
   left: 2.5%;
   top: 10%;
-  -webkit-animation: titleIn 1.5s backwards;
-          animation: titleIn 1.5s backwards;
-  -webkit-animation-delay: 0.8s;
-          animation-delay: 0.8s;
+  animation: titleIn 1.5s backwards;
+  animation-delay: 0.8s;
 }
 .wrapper .kv .kvPC .rocket {
   width: 45%;
@@ -77,27 +67,22 @@
   width: 10%;
   top: 20%;
   left: 80.5%;
-  -webkit-animation: titleIn 1.5s backwards;
-          animation: titleIn 1.5s backwards;
-  -webkit-animation-delay: 0.7s;
-          animation-delay: 0.7s;
+  animation: titleIn 1.5s backwards;
+  animation-delay: 0.7s;
 }
 .wrapper .kv .kvPC .kv_pc_title {
   width: 80%;
   left: 10%;
   top: 21%;
-  -webkit-animation: titleIn 1.5s backwards;
-          animation: titleIn 1.5s backwards;
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+  animation: titleIn 1.5s backwards;
+  animation-delay: 0.5s;
 }
 .wrapper .kv .kvPC .kv_pc_title .pc_title_mask {
   -webkit-mask: url(../images/kv_pc_title_mask.png) no-repeat center center;
   mask: url(../images/kv_pc_title_mask.png) no-repeat center center;
   -webkit-mask-size: contain;
   mask-size: contain;
-  -webkit-animation: maskmove 2s infinite;
-          animation: maskmove 2s infinite;
+  animation: maskmove 2s infinite;
 }
 .wrapper .kv .kvPC .formTitle {
   bottom: 5%;
@@ -122,8 +107,7 @@
     display: block;
   }
   .wrapper .kv .kvSP .kv_pc_cloud1 {
-    -webkit-animation: cloud1sp 5s linear infinite;
-            animation: cloud1sp 5s linear infinite;
+    animation: cloud1sp 5s linear infinite;
   }
   .wrapper .kv .kvSP .rocket {
     width: 120%;
@@ -134,28 +118,22 @@
     width: 40%;
     left: 0%;
     top: 6%;
-    -webkit-animation: titleIn 1.5s backwards;
-            animation: titleIn 1.5s backwards;
-    -webkit-animation-delay: 0.8s;
-            animation-delay: 0.8s;
+    animation: titleIn 1.5s backwards;
+    animation-delay: 0.8s;
   }
   .wrapper .kv .kvSP .kv_sp_cpt2 {
     width: 97%;
     left: 0%;
     top: 72%;
-    -webkit-animation: titleIn 1.5s backwards;
-            animation: titleIn 1.5s backwards;
-    -webkit-animation-delay: 0.8s;
-            animation-delay: 0.8s;
+    animation: titleIn 1.5s backwards;
+    animation-delay: 0.8s;
   }
   .wrapper .kv .kvSP .pinkball {
     width: 22%;
     top: 25%;
     left: 71%;
-    -webkit-animation: titleIn 1.5s backwards;
-            animation: titleIn 1.5s backwards;
-    -webkit-animation-delay: 0.7s;
-            animation-delay: 0.7s;
+    animation: titleIn 1.5s backwards;
+    animation-delay: 0.7s;
   }
 }
 .wrapper .form {
@@ -376,17 +354,6 @@
 }
 
 /* keyframes */
-@-webkit-keyframes cloud1 {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.06);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 @keyframes cloud1 {
   0% {
     transform: scale(1);
@@ -396,17 +363,6 @@
   }
   100% {
     transform: scale(1);
-  }
-}
-@-webkit-keyframes cloud2 {
-  0% {
-    left: 0%;
-  }
-  50% {
-    left: -10%;
-  }
-  100% {
-    left: 0%;
   }
 }
 @keyframes cloud2 {
@@ -420,17 +376,6 @@
     left: 0%;
   }
 }
-@-webkit-keyframes cloud3 {
-  0% {
-    right: 0%;
-  }
-  50% {
-    right: -10%;
-  }
-  100% {
-    right: 0%;
-  }
-}
 @keyframes cloud3 {
   0% {
     right: 0%;
@@ -440,17 +385,6 @@
   }
   100% {
     right: 0%;
-  }
-}
-@-webkit-keyframes cloud1sp {
-  0% {
-    top: 0%;
-  }
-  50% {
-    top: 2%;
-  }
-  100% {
-    top: 0%;
   }
 }
 @keyframes cloud1sp {
@@ -464,16 +398,6 @@
     top: 0%;
   }
 }
-@-webkit-keyframes maskmove {
-  0% {
-    -webkit-mask-position: -10% 0%;
-            mask-position: -10% 0%;
-  }
-  100% {
-    -webkit-mask-position: 120% 0%;
-            mask-position: 120% 0%;
-  }
-}
 @keyframes maskmove {
   0% {
     -webkit-mask-position: -10% 0%;
@@ -484,28 +408,12 @@
             mask-position: 120% 0%;
   }
 }
-@-webkit-keyframes rocketIn {
-  0% {
-    transform: scale(0.6);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 @keyframes rocketIn {
   0% {
     transform: scale(0.6);
   }
   100% {
     transform: scale(1);
-  }
-}
-@-webkit-keyframes titleIn {
-  0% {
-    opacity: 0%;
-  }
-  100% {
-    opacity: 100%;
   }
 }
 @keyframes titleIn {

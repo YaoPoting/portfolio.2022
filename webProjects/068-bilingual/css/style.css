@@ -59,15 +59,13 @@
   bottom: 27.5%;
   width: 40%;
   left: 0%;
-  -webkit-animation: metro 25s linear infinite;
-          animation: metro 25s linear infinite;
+  animation: metro 25s linear infinite;
 }
 @media screen and (max-width: 992px) {
   .wrapper .kv .metro {
     width: 100%;
     bottom: 22.5%;
-    -webkit-animation: metro_SP 20s linear infinite;
-            animation: metro_SP 20s linear infinite;
+    animation: metro_SP 20s linear infinite;
   }
 }
 .wrapper .kv .citizen_shopping {
@@ -166,8 +164,7 @@
   top: 7%;
   width: 7%;
   left: 58%;
-  -webkit-animation: upDown 3s linear infinite;
-          animation: upDown 3s linear infinite;
+  animation: upDown 3s linear infinite;
 }
 @media screen and (max-width: 992px) {
   .wrapper .kv .ballon {
@@ -180,8 +177,7 @@
   top: 30%;
   width: 3%;
   left: 51%;
-  -webkit-animation: upDown 1.5s linear infinite;
-          animation: upDown 1.5s linear infinite;
+  animation: upDown 1.5s linear infinite;
 }
 @media screen and (max-width: 992px) {
   .wrapper .kv .lanternY {
@@ -194,8 +190,7 @@
   top: 42%;
   width: 2%;
   left: 55%;
-  -webkit-animation: upDown 2s linear infinite;
-          animation: upDown 2s linear infinite;
+  animation: upDown 2s linear infinite;
 }
 @media screen and (max-width: 992px) {
   .wrapper .kv .lanternR {
@@ -388,8 +383,7 @@
 .wrapper .cardSection .cardsFlex .cardsCont .cardStyle {
   width: 100%;
   position: absolute;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   border-radius: 15px;
   overflow: hidden;
 }
@@ -715,17 +709,6 @@
 }
 
 /* keyframes */
-@-webkit-keyframes zoomInOut {
-  0% {
-    scale: 1;
-  }
-  50% {
-    scale: 1.02;
-  }
-  100% {
-    scale: 1;
-  }
-}
 @keyframes zoomInOut {
   0% {
     scale: 1;
@@ -735,17 +718,6 @@
   }
   100% {
     scale: 1;
-  }
-}
-@-webkit-keyframes swing {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(5deg);
-  }
-  100% {
-    transform: rotate(0deg);
   }
 }
 @keyframes swing {
@@ -759,31 +731,12 @@
     transform: rotate(0deg);
   }
 }
-@-webkit-keyframes rotating {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 @keyframes rotating {
   0% {
     transform: rotate(0deg);
   }
   100% {
     transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes metro {
-  0% {
-    transform: translateX(0%);
-  }
-  50% {
-    transform: translateX(150%);
-  }
-  100% {
-    transform: translateX(0%);
   }
 }
 @keyframes metro {
@@ -797,17 +750,6 @@
     transform: translateX(0%);
   }
 }
-@-webkit-keyframes metro_SP {
-  0% {
-    transform: translateX(-90%);
-  }
-  50% {
-    transform: translateX(90%);
-  }
-  100% {
-    transform: translateX(-90%);
-  }
-}
 @keyframes metro_SP {
   0% {
     transform: translateX(-90%);
@@ -817,17 +759,6 @@
   }
   100% {
     transform: translateX(-90%);
-  }
-}
-@-webkit-keyframes upDown {
-  0% {
-    transform: translateY(0%);
-  }
-  50% {
-    transform: translateY(9%);
-  }
-  100% {
-    transform: translateY(0%);
   }
 }
 @keyframes upDown {

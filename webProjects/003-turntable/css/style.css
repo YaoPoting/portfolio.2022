@@ -19,8 +19,7 @@
   background-repeat: no-repeat;
 }
 .wrapper .kv .flagAnim {
-  -webkit-animation: swing 2s infinite;
-          animation: swing 2s infinite;
+  animation: swing 2s infinite;
 }
 .wrapper .kv .kvPcCont {
   position: relative;
@@ -41,8 +40,7 @@
 .wrapper .kv .kvPcCont .kvPC3 {
   width: 100%;
   position: absolute;
-  -webkit-animation: zoomInOut 2s infinite;
-          animation: zoomInOut 2s infinite;
+  animation: zoomInOut 2s infinite;
 }
 .wrapper .kv .kvPcCont .kvPC4 {
   width: 100%;
@@ -70,8 +68,7 @@
 .wrapper .kv .kvSpCont .kvSP3 {
   width: 100%;
   position: absolute;
-  -webkit-animation: zoomInOut 2s infinite;
-          animation: zoomInOut 2s infinite;
+  animation: zoomInOut 2s infinite;
 }
 .wrapper .kv .kvSpCont .kvSP4 {
   width: 100%;
@@ -214,8 +211,7 @@
   top: 50px;
   left: 440px;
   background-image: url("../images/flyingBook.png");
-  -webkit-animation: swing 2s infinite;
-          animation: swing 2s infinite;
+  animation: swing 2s infinite;
 }
 .wrapper .prizeWheelBg .container-prize .prizeWheelCont {
   position: relative;
@@ -243,8 +239,7 @@
   width: 100%;
 }
 .wrapper .prizeWheelBg .container-prize .prizeWheelCont .prizeWheel.rotatingAnim {
-  -webkit-animation: rotating 12s linear infinite;
-          animation: rotating 12s linear infinite;
+  animation: rotating 12s linear infinite;
 }
 .wrapper .prizeWheelBg .container-prize .prizeWheelCont .drawButton {
   position: absolute;
@@ -317,17 +312,6 @@
 }
 
 /* keyframes */
-@-webkit-keyframes zoomInOut {
-  0% {
-    scale: 1;
-  }
-  50% {
-    scale: 1.03;
-  }
-  100% {
-    scale: 1;
-  }
-}
 @keyframes zoomInOut {
   0% {
     scale: 1;
@@ -339,17 +323,6 @@
     scale: 1;
   }
 }
-@-webkit-keyframes swing {
-  0% {
-    transform: rotate(0deg);
-  }
-  50% {
-    transform: rotate(5deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-}
 @keyframes swing {
   0% {
     transform: rotate(0deg);
@@ -359,14 +332,6 @@
   }
   100% {
     transform: rotate(0deg);
-  }
-}
-@-webkit-keyframes rotating {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
   }
 }
 @keyframes rotating {

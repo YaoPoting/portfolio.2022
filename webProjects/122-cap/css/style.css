@@ -253,11 +253,10 @@
   width: 100%;
   padding-bottom: 100%;
   background-color: #ffffff;
-  box-shadow: 0 0 30px 2px hsl(199deg, 100%, 8%);
+  box-shadow: 0 0 30px 2px hsl(199, 100%, 8%);
 }
 .wrapper .get5A .parent a {
-  -webkit-text-decoration-line: none;
-          text-decoration-line: none;
+  text-decoration-line: none;
   color: #0a2c50;
 }
 .wrapper .get5A .parent .child {
@@ -270,17 +269,6 @@
 }
 
 /* keyframes */
-@-webkit-keyframes right2left {
-  0% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(10px, 0);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
 @keyframes right2left {
   0% {
     transform: translate(0, 0);

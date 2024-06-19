@@ -22,8 +22,7 @@
   }
 }
 .wrapper .kv .kv_PC .kvTitle {
-  -webkit-animation: zoomInOut 2s infinite;
-          animation: zoomInOut 2s infinite;
+  animation: zoomInOut 2s infinite;
 }
 .wrapper .kv .kv_SP {
   background: linear-gradient(to bottom, #d5eff8, #96b5cf);
@@ -76,7 +75,6 @@
   justify-content: space-between;
 }
 .wrapper .wallGradient .whitePaper .intro-table .menuCont {
-  position: -webkit-sticky;
   position: sticky;
   width: 28%;
   top: 65px;
@@ -136,8 +134,7 @@
 }
 .wrapper .wallGradient .whitePaper .intro-table .menuCont .menu .top-btn:hover {
   color: #0070d6;
-  -webkit-animation: top-btn-roll 0.8s linear infinite;
-          animation: top-btn-roll 0.8s linear infinite;
+  animation: top-btn-roll 0.8s linear infinite;
 }
 .wrapper .wallGradient .whitePaper .intro-table .table-list {
   width: 82%;
@@ -413,17 +410,6 @@
 }
 
 /* keyframes */
-@-webkit-keyframes zoomInOut {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.02);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
 @keyframes zoomInOut {
   0% {
     transform: scale(1);

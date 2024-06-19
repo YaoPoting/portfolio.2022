@@ -166,8 +166,7 @@
   position: absolute;
   width: 100px;
   margin-left: -20PX;
-  -webkit-animation: right2left 1s cubic-bezier(0.1, -0.6, 0.2, 0) infinite;
-          animation: right2left 1s cubic-bezier(0.1, -0.6, 0.2, 0) infinite;
+  animation: right2left 1s cubic-bezier(0.1, -0.6, 0.2, 0) infinite;
 }
 .wrapper .note a {
   text-decoration: none;
@@ -366,17 +365,6 @@
 }
 
 /* keyframes */
-@-webkit-keyframes right2left {
-  0% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(10px, 0);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
 @keyframes right2left {
   0% {
     transform: translate(0, 0);
