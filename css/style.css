@@ -962,6 +962,7 @@ a:hover {
 .wrapper .works .myNav {
   background-color: white;
   transition: 0.3s;
+  border-bottom: 1px solid white;
 }
 .wrapper .works .myNav .pointer {
   cursor: pointer;
@@ -978,19 +979,63 @@ a:hover {
   position: relative;
   top: -3.5rem;
 }
-.wrapper .works .websites .cardCon {
+.wrapper .works .websites .webSitesBg {
+  overflow-x: clip;
   position: relative;
-  padding-bottom: 52.25%;
-  background-color: #ffb000;
+  background-color: #FFB000;
+  padding-top: 16.07vw;
+  padding-bottom: 5.57vw;
 }
-.wrapper .works .websites .cardFoot {
+.wrapper .works .websites .webSitesBg::before {
+  content: "";
+  position: absolute;
+  top: 0vw;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 5vw 50vw 0 50vw;
+  border-color: white rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+}
+.wrapper .works .websites .webSitesBg .watermark {
+  position: absolute;
+  z-index: 10;
+  color: #faa307;
+  left: 0px;
+  display: flex;
+  animation: slideLeft 50s linear infinite;
+}
+.wrapper .works .websites .webSitesBg .watermark.posTop {
+  top: 5vw;
+}
+.wrapper .works .websites .webSitesBg .watermark.posBtm {
+  bottom: 0vw;
+}
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.wrapper .works .websites .webSitesBg .watermark .marquee-text {
+  white-space: nowrap;
+  padding-right: 3.57vw;
+  font-size: 24vw;
+  font-optical-sizing: auto;
+  font-variation-settings: "slnt" 0;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.97vw;
+  line-height: 1;
+}
+.wrapper .works .websites .webSitesBg .cardsCon {
   position: relative;
-  background-color: #ffb000;
+  z-index: 20;
 }
-.wrapper .works .websites .cardFoot .arrowRight {
-  color: white;
-  right: 0.5rem;
-  bottom: 0;
+.wrapper .works .websites .webSitesBg .cardsCon img {
+  border: 1px solid white;
 }
 .wrapper .works .graphics {
   height: 600px;

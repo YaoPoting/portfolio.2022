@@ -4,6 +4,15 @@ AOS.init({
 
 new WOW().init();
 
+setInterval(() => {
+    document.querySelectorAll('.titleCon .col-4').forEach((element) => {
+        element.classList.remove('wow', 'bounceIn');
+        void element.offsetWidth;
+        element.classList.add('wow', 'bounceIn');
+    });
+    new WOW().init();
+}, 3200);
+
 function scrollToWebsites() {
     const anchor = document.querySelector('.websiteAnchor');
     anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
