@@ -1054,6 +1054,15 @@ a:hover {
   position: relative;
   z-index: 20;
 }
+.wrapper .works .websites .webSitesBg .cardsCon .numberTag {
+  font-size: 4rem;
+  font-weight: 900;
+  color: white;
+  position: absolute;
+  margin-top: -3.5rem;
+  margin-left: 0.5rem;
+  font-style: italic;
+}
 .wrapper .works .websites .webSitesBg .cardsCon img {
   border-radius: 6px;
   border: 1px solid white;

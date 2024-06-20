@@ -244,6 +244,15 @@ a {
                     position: relative;
                     z-index: 20;
 
+                    .numberTag {
+                        font-size: 4rem;
+                        font-weight: 900;
+                        color: white;
+                        position: absolute;
+                        margin-top: -3.5rem;
+                        margin-left: 0.5rem;
+                        font-style: italic;
+                    }
                     img {
                         border-radius: 6px;
                         border: 1px solid white;
