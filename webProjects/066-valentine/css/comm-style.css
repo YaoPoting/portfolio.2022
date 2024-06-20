@@ -33,4 +33,7 @@ body {
         height: 65px;
     }
 
+    .footer {
+        height: 65px !important;
+    }
 }

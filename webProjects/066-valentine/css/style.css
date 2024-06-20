@@ -240,8 +240,7 @@ a{ text-decoration:none} a:hover{ text-decoration:none}
 }
 .bi-arrow-left-circle-fill {color: #0f1421;}
 .bi-arrow-right-circle-fill {color: #0f1421;}
-footer {height: 65px;}
-iframe {height: 65px;}
+.footer {height: 65px !important; }
 @media screen and (max-width: 1400px) {
     .card {width: 15%;}
 }
