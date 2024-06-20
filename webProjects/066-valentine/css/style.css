@@ -66,9 +66,8 @@ a{ text-decoration:none} a:hover{ text-decoration:none}
     border-radius: 6px;
 }
 /* KV */
-.mtMinus2vw {
-    margin-top: -2vw;
-}
+
+.top{height: 65px;}
 .kv_pc {
     height: 39vw;
     display: block;
