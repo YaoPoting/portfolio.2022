@@ -29,3 +29,5 @@ window.addEventListener('scroll', function() {
         navbar.classList.remove('sticky');
     }
 });
+
+window.addEventListener("load", function () {    document.querySelector('body').classList.add('loaded');  });
