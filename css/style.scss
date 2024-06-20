@@ -244,6 +244,9 @@ a {
                     position: relative;
                     z-index: 20;
 
+                    .cardPadding {
+                        padding: 0 0.5rem 3.5rem 0.5rem;
+                    }
                     .numberTag {
                         font-size: 4rem;
                         font-weight: 900;
@@ -253,9 +256,22 @@ a {
                         margin-left: 0.5rem;
                         font-style: italic;
                     }
+
                     img {
                         border-radius: 6px;
                         border: 1px solid white;
+                    }
+
+                    .cardDes {
+                        display: inline-block;
+                        margin-top: 0.5rem;
+                        padding: 0.25rem 0.5rem 0.25rem 0.5rem;
+                        font-size: 1.25rem;
+                        font-weight: bold;
+                        color: white;
+                        background-color: black;
+
+                        line-height: 1;
                     }
                 }
             }
