@@ -1,10 +1,9 @@
 AOS.init({
     easing: 'ease-in-out-sine',
 });
-//<![CDATA[
-fromto='99132002';//]]>
 
-/* 抽獎 */
+
+
 function ClickdrawBt() {
     $("#modalFormBt").click(); //模擬點擊填單按紐
 }
