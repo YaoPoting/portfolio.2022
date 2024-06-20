@@ -1078,6 +1078,17 @@ a:hover {
   border-radius: 50%;
   color: white;
 }
+.wrapper .works .websites .webSitesBg .cardsCon .circle .rotate360 {
+  animation: rotate360 5s linear infinite;
+}
+@keyframes rotate360 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 .wrapper .works .graphics {
   height: 600px;
 }

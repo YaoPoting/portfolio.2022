@@ -282,6 +282,15 @@ a {
                         background-color: blue;
                         border-radius: 50%;
                         color: white;
+
+                        .rotate360 {
+                            animation: rotate360 5s linear infinite;
+                            @keyframes rotate360 {
+                                0% { transform: rotate(0deg); }
+                                100% { transform: rotate(360deg); }
+                            }
+                        }
+
                     }
                 }
             }
