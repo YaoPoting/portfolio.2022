@@ -20,7 +20,7 @@ a{ text-decoration:none} a:hover{ text-decoration:none}
 .H3_size {font-size: 22px; font-weight: bold;}
 .H4_size {font-size: 18px;}
 .H5_size {font-size: 12px;}
-.h70 {height: 70px;}
+
 .w200 {width: 200px;}
 .rounded10 {border-radius: 10px;}
 /* 按鈕 */
@@ -240,6 +240,8 @@ a{ text-decoration:none} a:hover{ text-decoration:none}
 }
 .bi-arrow-left-circle-fill {color: #0f1421;}
 .bi-arrow-right-circle-fill {color: #0f1421;}
+footer {height: 65px;}
+iframe {height: 65px;}
 @media screen and (max-width: 1400px) {
     .card {width: 15%;}
 }
