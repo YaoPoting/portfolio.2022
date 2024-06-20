@@ -254,6 +254,10 @@ a {
         }
         .graphics {
             height: 600px;
+            .graphicsAnchor {
+                position: relative;
+                top: -3.5rem;
+            }
         }
     }
 

@@ -1061,6 +1061,10 @@ a:hover {
 .wrapper .works .graphics {
   height: 600px;
 }
+.wrapper .works .graphics .graphicsAnchor {
+  position: relative;
+  top: -3.5rem;
+}
 
 /* keyframes */
 @keyframes zoomInOut {
