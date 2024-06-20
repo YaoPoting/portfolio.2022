@@ -195,17 +195,18 @@ a {
                 padding-top: 16.07vw;
                 padding-bottom: 5.57vw;
 
-                &::before {
-                    content: "";
-                    position: absolute;
-                    top: 0vw;
-                    left: 0;
-                    width: 0;
-                    height: 0;
-                    border-style: solid;
-                    border-width: 5vw 50vw 0 50vw;
-                    border-color: white rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
-                }
+                // 三角形場景過度
+                // &::before {
+                //     content: "";
+                //     position: absolute;
+                //     top: 0vw;
+                //     left: 0;
+                //     width: 0;
+                //     height: 0;
+                //     border-style: solid;
+                //     border-width: 5vw 50vw 0 50vw;
+                //     border-color: white rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+                // }
 
                 .watermark {
                     position: absolute;
@@ -257,7 +258,8 @@ a {
                         font-style: italic;
                     }
 
-                    img {
+                    .websiteCover {
+                        width: 100%;
                         border-radius: 6px;
                         border: 1px solid white;
                     }
@@ -270,8 +272,16 @@ a {
                         font-weight: bold;
                         color: white;
                         background-color: black;
-
                         line-height: 1;
+                    }
+
+                    .circle {
+                        margin: 0.5rem;
+                        width: 60px;
+                        height: 60px;
+                        background-color: blue;
+                        border-radius: 50%;
+                        color: white;
                     }
                 }
             }
