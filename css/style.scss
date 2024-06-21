@@ -163,6 +163,26 @@ a {
             }
         }
     }
+    .about {
+        font-size: calc(100% + 10vw);
+        font-weight: 900;
+        line-height: 1;
+        .blackCon {
+            display: inline-block;
+            background-color: black;
+            color: white;
+            padding: 0 20px;
+            margin-left: 20px;
+
+        }
+        .whiteCon {
+            display: inline-block;
+            border: 1px solid black;
+            color: black;
+            padding: 0 20px;
+            margin-top: -1px;
+        }
+    }
     .works {
         .myNav {
             background-color: white;
@@ -192,8 +212,8 @@ a {
                 overflow-x: clip;
                 position: relative;
                 background-color: $color-main;
-                padding-top: 16.07vw;
-                padding-bottom: 5.57vw;
+                padding-top: 100px;
+                padding-bottom: 100px;
 
                 // 三角形場景過度
                 // &::before {
@@ -217,10 +237,10 @@ a {
                     animation: slideLeft 50s linear infinite;
                     
                     &.posTop {
-                        top: 5vw;
+                        top: 10px;
                     }
                     &.posBtm {
-                        bottom: 0vw;
+                        bottom: 10px;
                     }
 
                     @keyframes slideLeft {
