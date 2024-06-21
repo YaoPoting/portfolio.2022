@@ -984,14 +984,16 @@ a:hover {
   font-weight: 900;
   line-height: 1;
 }
-.wrapper .about .blackCon {
+.wrapper .about .smile {
+  font-size: 10vw;
+}
+.wrapper .about .capitalCon .blackCon {
   display: inline-block;
   background-color: black;
   color: white;
   padding: 0 20px;
-  margin-left: 20px;
 }
-.wrapper .about .whiteCon {
+.wrapper .about .capitalCon .whiteCon {
   display: inline-block;
   border: 1px solid black;
   color: black;

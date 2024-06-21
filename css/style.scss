@@ -167,20 +167,24 @@ a {
         font-size: calc(100% + 10vw);
         font-weight: 900;
         line-height: 1;
-        .blackCon {
-            display: inline-block;
-            background-color: black;
-            color: white;
-            padding: 0 20px;
-            margin-left: 20px;
-
+        .smile {
+            font-size: 10vw;
         }
-        .whiteCon {
-            display: inline-block;
-            border: 1px solid black;
-            color: black;
-            padding: 0 20px;
-            margin-top: -1px;
+        .capitalCon {
+
+            .blackCon {
+                display: inline-block;
+                background-color: black;
+                color: white;
+                padding: 0 20px;
+            }
+            .whiteCon {
+                display: inline-block;
+                border: 1px solid black;
+                color: black;
+                padding: 0 20px;
+                margin-top: -1px;
+            }
         }
     }
     .works {
