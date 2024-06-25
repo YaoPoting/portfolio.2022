@@ -980,25 +980,34 @@ a:hover {
   }
 }
 .wrapper .about {
-  font-size: calc(100% + 10vw);
   font-weight: 900;
   line-height: 1;
+  color: #FFB000;
 }
-.wrapper .about .smile {
-  font-size: 10vw;
+.wrapper .about .aboutFs {
+  font-size: 11.5vw;
 }
-.wrapper .about .capitalCon .blackCon {
-  display: inline-block;
-  background-color: black;
+.wrapper .about .zackFs {
+  font-size: 13.5vw;
+}
+.wrapper .about .smileFs {
+  font-size: 6vw;
+}
+.wrapper .about .capitalCon {
+  height: 28vw;
+}
+.wrapper .about .portfolioTape {
+  background-color: #de5350;
   color: white;
-  padding: 0 20px;
+  font-size: 5vw;
+  transform: rotate(-10deg);
+  top: 10vw;
+  left: 5vw;
+  padding: 0 2vw;
 }
-.wrapper .about .capitalCon .whiteCon {
-  display: inline-block;
-  border: 1px solid black;
-  color: black;
-  padding: 0 20px;
-  margin-top: -1px;
+.wrapper .about .aboutText {
+  font-size: 3.5vw;
+  line-height: 1.5;
 }
 .wrapper .works .myNav {
   background-color: white;
@@ -1059,6 +1068,11 @@ a:hover {
   font-style: italic;
   letter-spacing: -0.97vw;
   line-height: 1;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .works .websites .webSitesBg .watermark .marquee-text {
+    font-size: 50vw;
+  }
 }
 .wrapper .works .websites .webSitesBg .cardsCon {
   position: relative;
