@@ -192,6 +192,7 @@ a {
         .aboutText {
             font-size: 3.5vw;
             line-height: 1.5;
+            color: $color-main-deep;
         }
     }
     .works {
@@ -258,7 +259,7 @@ a {
                         line-height: 1;
 
                         @media screen and (max-width:992px) {
-                            font-size: 50vw;
+                            font-size: 70vw;
                         }
                     }
                 }
@@ -296,24 +297,33 @@ a {
                         background-color: black;
                         line-height: 1;
                     }
-
-                    .circle {
-                        margin: 0.5rem;
-                        width: 60px;
-                        height: 60px;
-                        background-color: blue;
-                        border-radius: 50%;
+                    .ellipse {
+                        border: 2px solid white;
                         color: white;
-
-                        .rotate360 {
-                            animation: rotate360 5s linear infinite;
-                            @keyframes rotate360 {
-                                0% { transform: rotate(0deg); }
-                                100% { transform: rotate(360deg); }
-                            }
-                        }
-
+                        display: inline;
+                        border-radius: 50%;
+                        margin: 1rem auto;
+                        padding: 0.5rem 1rem;
+                        font-weight: 900;
+                        transform: rotate(-10deg);
                     }
+                    // .circle {
+                    //     margin: 0.5rem;
+                    //     width: 60px;
+                    //     height: 60px;
+                    //     background-color: blue;
+                    //     border-radius: 50%;
+                    //     color: white;
+
+                    //     .rotate360 {
+                    //         animation: rotate360 5s linear infinite;
+                    //         @keyframes rotate360 {
+                    //             0% { transform: rotate(0deg); }
+                    //             100% { transform: rotate(360deg); }
+                    //         }
+                    //     }
+
+                    // }
                 }
             }
 

@@ -1008,6 +1008,7 @@ a:hover {
 .wrapper .about .aboutText {
   font-size: 3.5vw;
   line-height: 1.5;
+  color: #faa307;
 }
 .wrapper .works .myNav {
   background-color: white;
@@ -1071,7 +1072,7 @@ a:hover {
 }
 @media screen and (max-width: 992px) {
   .wrapper .works .websites .webSitesBg .watermark .marquee-text {
-    font-size: 50vw;
+    font-size: 70vw;
   }
 }
 .wrapper .works .websites .webSitesBg .cardsCon {
@@ -1105,24 +1106,15 @@ a:hover {
   background-color: black;
   line-height: 1;
 }
-.wrapper .works .websites .webSitesBg .cardsCon .circle {
-  margin: 0.5rem;
-  width: 60px;
-  height: 60px;
-  background-color: blue;
-  border-radius: 50%;
+.wrapper .works .websites .webSitesBg .cardsCon .ellipse {
+  border: 2px solid white;
   color: white;
-}
-.wrapper .works .websites .webSitesBg .cardsCon .circle .rotate360 {
-  animation: rotate360 5s linear infinite;
-}
-@keyframes rotate360 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+  display: inline;
+  border-radius: 50%;
+  margin: 1rem auto;
+  padding: 0.5rem 1rem;
+  font-weight: 900;
+  transform: rotate(-10deg);
 }
 .wrapper .works .graphics {
   height: 600px;
