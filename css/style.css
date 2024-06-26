@@ -1023,9 +1023,22 @@ a:hover {
   }
 }
 .wrapper .about .aboutText {
-  font-size: 1.25rem;
+  font-size: 2rem;
   line-height: 1.3;
   color: #faa307;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .about .aboutText {
+    font-size: 1.25rem;
+  }
+}
+.wrapper .about .boldHrLine {
+  width: 100%;
+  height: 4px;
+  background-color: #FFB000;
+}
+.wrapper .about .XPlus {
+  width: 8vw;
 }
 .wrapper .works .myNav {
   background-color: white;

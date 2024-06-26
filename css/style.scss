@@ -219,11 +219,21 @@ a {
         }
 
         .aboutText {
-            font-size: 1.25rem;
+            font-size: 2rem;
             line-height: 1.3;
             color: $color-main-deep;
+            @media screen and (max-width:992px) {
+                font-size: 1.25rem;
+            }
         }
-
+        .boldHrLine {
+            width: 100%;
+            height: 4px;
+            background-color: $color-main;
+        }
+        .XPlus {
+            width: 8vw;
+        }
 
 
 
