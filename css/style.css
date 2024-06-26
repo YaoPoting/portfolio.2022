@@ -984,31 +984,53 @@ a:hover {
   line-height: 1;
   color: #FFB000;
 }
-.wrapper .about .aboutFs {
-  font-size: 11.5vw;
-}
-.wrapper .about .zackFs {
-  font-size: 13.5vw;
-}
-.wrapper .about .smileFs {
-  font-size: 6vw;
-}
 .wrapper .about .capitalCon {
   height: 28vw;
 }
-.wrapper .about .portfolioTape {
+@media screen and (max-width: 992px) {
+  .wrapper .about .capitalCon {
+    height: 54vw;
+  }
+}
+.wrapper .about .capitalCon .aboutFs {
+  font-size: 11.5vw;
+}
+.wrapper .about .capitalCon .zackFs {
+  font-size: 13.5vw;
+}
+.wrapper .about .capitalCon .smileFs {
+  font-size: 6vw;
+}
+.wrapper .about .capitalCon .portfolioTape {
   background-color: #de5350;
   color: white;
-  font-size: 5vw;
   transform: rotate(-10deg);
+  font-size: 5vw;
   top: 10vw;
   left: 5vw;
   padding: 0 2vw;
 }
-.wrapper .about .aboutText {
-  font-size: 3.5vw;
+.wrapper .about .capitalCon .aboutText {
+  font-size: 1.25rem;
   line-height: 1.5;
   color: #faa307;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .about .capitalCon .aboutFs {
+    font-size: 24vw;
+  }
+  .wrapper .about .capitalCon .zackFs {
+    font-size: 27.5vw;
+  }
+  .wrapper .about .capitalCon .smileFs {
+    font-size: 12vw;
+  }
+  .wrapper .about .capitalCon .portfolioTape {
+    font-size: 11vw;
+    top: 18.5vw;
+    left: 7vw;
+    padding: 1vw 4vw;
+  }
 }
 .wrapper .works .myNav {
   background-color: white;
@@ -1111,10 +1133,9 @@ a:hover {
   color: white;
   display: inline;
   border-radius: 50%;
-  margin: 1rem auto;
-  padding: 0.5rem 1rem;
+  margin: auto auto auto -15px;
+  padding: 0.5rem 1.5rem;
   font-weight: 900;
-  transform: rotate(-10deg);
 }
 .wrapper .works .graphics {
   height: 600px;

@@ -138,9 +138,11 @@ a {
             .marquee1 {
                 animation: marquee1 20s linear infinite;
             }
+            
             .marquee2 {
                 animation: marquee2 20s linear infinite;
             }
+
             .marquee3 {
                 animation: marquee2 20s linear infinite;
             }
@@ -153,10 +155,12 @@ a {
                 0% {transform: translateX(0);}
                 100% {transform: translateX(-100%);}
             }
+
             @keyframes marquee2 {
                 0% {transform: translateX(0);}
                 100% {transform: translateX(-100%);}
             }
+
             @keyframes marquee3 {
                 0% {transform: translateX(0);}
                 100% {transform: translateX(-100%);}
@@ -167,33 +171,69 @@ a {
         font-weight: 900;
         line-height: 1;
         color: $color-main;
-        .aboutFs {
-            font-size: 11.5vw;
-        }
-        .zackFs {
-            font-size: 13.5vw;
-        }
-        .smileFs {
-            font-size: 6vw;
 
-        }
         .capitalCon {
             height: 28vw;
+
+            @media screen and (max-width:992px) {
+                height: 54vw;
+            }
+
+            .aboutFs {
+                font-size: 11.5vw;
+            }
+
+            .zackFs {
+                font-size: 13.5vw;
+            }
+
+            .smileFs {
+                font-size: 6vw;
+            }
+
+            .portfolioTape {
+                background-color: $color-sub;
+                color: white;
+                transform: rotate(-10deg);
+                font-size: 5vw;
+                top: 10vw;
+                left: 5vw;
+                padding: 0 2vw;
+            }
+
+            .aboutText {
+                font-size: 1.25rem;
+                line-height: 1.5;
+                color: $color-main-deep;
+            }
+
+            @media screen and (max-width:992px) {
+                .aboutFs {
+                    font-size: 24vw;
+                }
+
+                .zackFs {
+                    font-size: 27.5vw;
+                }
+
+                .smileFs {
+                    font-size: 12vw;
+                }
+
+                .portfolioTape {
+                    font-size: 11vw;
+                    top: 18.5vw;
+                    left: 7vw;
+                    padding: 1vw 4vw;
+                }
+            }
         }
-        .portfolioTape {
-            background-color: $color-sub;
-            color: white;
-            font-size: 5vw;
-            transform: rotate(-10deg);
-            top: 10vw;
-            left: 5vw;
-            padding: 0 2vw;
-        }
-        .aboutText {
-            font-size: 3.5vw;
-            line-height: 1.5;
-            color: $color-main-deep;
-        }
+
+
+
+
+
+
     }
     .works {
         .myNav {
@@ -271,6 +311,7 @@ a {
                     .cardPadding {
                         padding: 0 0.5rem 3.5rem 0.5rem;
                     }
+                    
                     .numberTag {
                         font-size: 4rem;
                         font-weight: 900;
@@ -297,33 +338,18 @@ a {
                         background-color: black;
                         line-height: 1;
                     }
+
                     .ellipse {
                         border: 2px solid white;
                         color: white;
                         display: inline;
                         border-radius: 50%;
-                        margin: 1rem auto;
-                        padding: 0.5rem 1rem;
+                        margin: auto auto auto -15px;
+                        padding: 0.5rem 1.5rem;
                         font-weight: 900;
-                        transform: rotate(-10deg);
+
                     }
-                    // .circle {
-                    //     margin: 0.5rem;
-                    //     width: 60px;
-                    //     height: 60px;
-                    //     background-color: blue;
-                    //     border-radius: 50%;
-                    //     color: white;
 
-                    //     .rotate360 {
-                    //         animation: rotate360 5s linear infinite;
-                    //         @keyframes rotate360 {
-                    //             0% { transform: rotate(0deg); }
-                    //             100% { transform: rotate(360deg); }
-                    //         }
-                    //     }
-
-                    // }
                 }
             }
 
