@@ -20,130 +20,13 @@
         <div class="top">
             <iframe src="../../headerFooter/header.html" width="100%" height="65px"  scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
         </div>
-        <!-- HTML Start -->
 
-        <!-- wapper開始 -->
         <div class="wrapper overflow-hidden" >
             <div class="nav-height"></div>
-            <section class="kv position-relative">
-                <img class="position-absolute w-100" src="images/purpleSky.png">
-                <img class="position-absolute doorL" src="images/doorL.png" data-aos="fade-right" data-aos-duration="800" data-aos-delay="600">
-                <img class="position-absolute doorR" src="images/doorR.png" data-aos="fade-left" data-aos-duration="800" data-aos-delay="600">
-                <img class="position-absolute w-100" src="images/purpleGround.png" data-aos="fade-up" data-aos-duration="800">
-                <img class="position-absolute pumpkinL" src="images/pumpkinL.png" data-aos="fade-right" data-aos-duration="800" data-aos-delay="1200">
-                <img class="position-absolute pumpkinR" src="images/pumpkinR.png" data-aos="fade-left" data-aos-duration="800" data-aos-delay="1200" alt="萬聖節">
-                <img class="position-absolute title zoomInOutAnim" src="images/title.png" data-aos="fade-down" data-aos-duration="800" data-aos-delay="1600">
-                <H1 class="hide">登記參加活動</H1>
-            </section>
-            <!-- modal trigger -->
-            <button id="modalFormBt" class="hide" type="button" data-bs-toggle="modal" data-bs-target="#modalForm">填單</button>
-            <button id="modalPrizeBt" class="hide" type="button" data-bs-toggle="modal" data-bs-target="#modalPrize">獎品</button>
-            <!-- modalForm -->
-            <div class="modal fade" id="modalForm" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                    <div class="modal-content fireBg">
-                        <div class="modal-header">
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" onclick="addRotatingAnim();"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="text-center">
-                                <div class="fs-2 fw-bold">登記參加活動</div>
-                                <div class="fs-4 fw-bold">請確實填寫以利贈品寄送</div>
-                            </div>
-                            <!-- 表單開始 -->
-                            <div id="fillform">
-                                <div class="formFlex py-3">
-                                    <input name="ea" type="text" id="name" placeholder="姓 名" />
-                                    <input name="mobile" type="text" id="mobile" placeholder="電 話" />
-                                    <input name="email" type="text" id="email" placeholder="E-Mail" />
-                                </div>
-                                <div class="text-center pb-4">
-                                    <div class="option">
-                                        <label>
-                                            <input type="checkbox" class="searchtext2" name="per_chk" checked="checked">
-                                        </label>
-                                        <span class="statement">我已閱讀並接受<a onclick="window.open('/activity/wincenter/contract_02/index.html','person',config='height=640,width=830');return false;" href="#">個資保護聲明</a></span>
-                                    </div>
-                                    <div id="sBut" onClick="but_send();" style="cursor:pointer;">
-                                        <div class="go_button fs-5">我要抽獎</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 表單結束 -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- modalPrize -->
-            <div class="modal fade" id="modalPrize" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered ">
-                    <div class="modal-content witchBg">
-                        <div class="modal-body">
-                            <div class="text-center">
-                                <div class="fs-2 fw-bold">
-                                    恭喜獲得
-                                </div>
-                                <div class="fs-2 fw-bold greenGradientText">
-                                    <div class="detail"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div type="button" class="go_button fs-5">
-                            <a href="">確認</a>
-                        </div>
-                        <div class="text-center">
-                            <img class="witch" src="images/witch.png">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 轉盤 -->
-            <section class="prizeWheelBg">
-                <div class="container-prize px-3">
-                    <div class="d-flex flex-column align-items-center">
-                        <div class="vampiressHand">
-                            <img class="w-100" src="images/vampiressHand.png">
-                        </div>
-                        <div class="prizeWheelCont">
-                            <img class="prizeWheel rotatingAnim" src="images/prizeWheel.png" alt="轉盤">
-                            <!-- <img class="drawButton zoomInOutAnim" src="images/drawButton.png" onclick="ClickdrawBt();"> -->
-                            <img class="drawButton zoomInOutAnim" src="images/drawButton.png" onclick="jackpot();">
-                        </div>
-                        <div class="vampiress">
-                            <img class="w-100" src="images/vampiress.png" alt="抽獎">    
-                        </div>
-                    </div>
-                </div>
-                <div class="tombsCont">
-                    <img class="position-absolute tombs" src="images/tombs.png">
-                    <img class="position-absolute ghost gPos1" src="images/ghost1.png" data-aos="fade-up" data-aos-duration="2400">
-                    <img class="position-absolute ghost gPos2" src="images/ghost2.png" data-aos="fade-up" data-aos-duration="2900">
-                    <img class="position-absolute ghost gPos3" src="images/ghost3.png" data-aos="fade-up" data-aos-duration="2700">
-                </div>
-            </section>
-            <section class="termsBg">
-                <div class="container text-center">
-                    <div class="termsBox py-5 px-5">
-                        <div class="termsTit fs-2 pb-3">
-                            <img src="images/greenWing.png">
-                            活動辦法
-                            <img class="greenWing" src="images/greenWing.png">
-                        </div>
-                        <ul class="fs-5 text-start pb-2">
-                            <li>每人最多兌換一個獎項。</li>
-                            <li>本活動獎項數量有限，獎項兌換完畢後活動立即結束。</li>
-                            <li>中獎者不得要求兌換現金、更改獎項、或任何調整事項。</li>
-                            <li>中獎者若未滿20歲須獲得法定監護人同意及代為領取。</li>
-                            <li>中獎者需依規定填寫相關收據及資料，若中獎者不願意提供相關資料，視同放棄中獎資格，不另行通知。</li>
-                            <li>有未盡事宜，iWord JR保留解釋、變更及終止活動內容之權利，且不另行通知。</li>
-                            <li>中獎者(含學員)兌換學習金及其他獎項，需搭配指定新專案課程方能使用，不得搭配已購買課程使用。</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+            <img class="w-100 d-lg-block d-none" src="images/Tstar-S22-PC.jpg">
+            <img class="w-100 d-lg-none d-block" src="images/Tstar-S22-SP.jpg">
         </div>
-            <!-- wapper結束 -->
-        <!-- HTML END -->
+
         <div class="footer">
 	        <iframe src="../../headerFooter/footer.html" width="100%" scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
         </div>
