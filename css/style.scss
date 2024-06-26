@@ -196,15 +196,9 @@ a {
                 padding: 0.2vw 2vw;
             }
 
-            .aboutText {
-                font-size: 1.25rem;
-                line-height: 1.5;
-                color: $color-main-deep;
-            }
-
             @media screen and (max-width:992px) {
                 .aboutFs {
-                    font-size: 30.5vw;
+                    font-size: 30vw;
                 }
 
                 .zackFs {
@@ -212,7 +206,7 @@ a {
                 }
 
                 .smileFs {
-                    font-size: 18vw;
+                    font-size: 17vw;
                 }
 
                 .portfolioTape {
@@ -222,6 +216,12 @@ a {
                     padding: 1vw 4vw;
                 }
             }
+        }
+
+        .aboutText {
+            font-size: 1.25rem;
+            line-height: 1.3;
+            color: $color-main-deep;
         }
 
 
@@ -308,7 +308,7 @@ a {
                     }
                     
                     .numberTag {
-                        font-size: 4rem;
+                        font-size: 4.5rem;
                         font-weight: 900;
                         color: white;
                         position: absolute;
@@ -341,7 +341,7 @@ a {
                         border-radius: 50%;
                         margin: auto auto auto -15px;
                         padding: 0.5rem 1.5rem;
-                        font-weight: 900;
+                        font-weight: bold;
 
                     }
 
