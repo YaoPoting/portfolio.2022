@@ -1039,6 +1039,7 @@ a:hover {
 }
 .wrapper .about .XPlus {
   width: 8vw;
+  margin-left: 1vw;
 }
 .wrapper .works .myNav {
   background-color: white;
