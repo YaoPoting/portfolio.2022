@@ -1,8 +1,9 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
 .wrapper, *:before, *:after {
   position: relative;
   margin: 0;
-  font-family: "Noto Sans TC", sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Source Sans 3", "Noto Sans TC", sans-serif, Verdana, Geneva, Tahoma, sans-serif;
   font-weight: normal;
   box-sizing: border-box;
 }
@@ -911,12 +912,6 @@ a:hover {
   line-height: 1;
   height: 528px;
 }
-@media screen and (max-width: 992px) {
-  .wrapper .kv .smokeFrame .titlePos {
-    font-size: 9.5rem;
-    line-height: 1.2;
-  }
-}
 .wrapper .kv .smokeFrame .titlePos .titleCon {
   width: 100%;
   max-width: 540px;
@@ -981,7 +976,7 @@ a:hover {
 }
 .wrapper .about {
   font-weight: 900;
-  line-height: 1;
+  line-height: 0.8;
   color: #FFB000;
 }
 .wrapper .about .capitalCon {
@@ -993,22 +988,22 @@ a:hover {
   }
 }
 .wrapper .about .capitalCon .aboutFs {
-  font-size: 11.5vw;
+  font-size: 15.5vw;
 }
 .wrapper .about .capitalCon .zackFs {
-  font-size: 13.5vw;
+  font-size: 18.3vw;
 }
 .wrapper .about .capitalCon .smileFs {
-  font-size: 6vw;
+  font-size: 8vw;
 }
 .wrapper .about .capitalCon .portfolioTape {
   background-color: #de5350;
   color: white;
   transform: rotate(-10deg);
-  font-size: 5vw;
+  font-size: 6.7vw;
   top: 10vw;
   left: 5vw;
-  padding: 0 2vw;
+  padding: 0.2vw 2vw;
 }
 .wrapper .about .capitalCon .aboutText {
   font-size: 1.25rem;
@@ -1017,16 +1012,16 @@ a:hover {
 }
 @media screen and (max-width: 992px) {
   .wrapper .about .capitalCon .aboutFs {
-    font-size: 24vw;
+    font-size: 30.5vw;
   }
   .wrapper .about .capitalCon .zackFs {
-    font-size: 27.5vw;
+    font-size: 35.5vw;
   }
   .wrapper .about .capitalCon .smileFs {
-    font-size: 12vw;
+    font-size: 18vw;
   }
   .wrapper .about .capitalCon .portfolioTape {
-    font-size: 11vw;
+    font-size: 13.5vw;
     top: 18.5vw;
     left: 7vw;
     padding: 1vw 4vw;
