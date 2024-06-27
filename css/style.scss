@@ -225,9 +225,11 @@ a {
             color: $color-main-deep;
             text-align: justify;
             text-justify: inter-character;
+            padding-left: 1vw;
 
             @media screen and (max-width:992px) {
                 font-size: 1.25rem;
+                padding-left: unset;
             }
             
             .black {
