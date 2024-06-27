@@ -1043,6 +1043,7 @@ a:hover {
   width: 90%;
   margin-right: 1%;
   height: 0.5vw;
+  min-height: 3px;
   background-color: #FFB000;
 }
 .wrapper .about .XPlus {
