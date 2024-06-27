@@ -1022,7 +1022,7 @@ a:hover {
     padding: 1vw 4vw;
   }
 }
-.wrapper .about .aboutText {
+.wrapper .about .aboutContent {
   font-size: 1.75vw;
   line-height: 1.5;
   color: #faa307;
@@ -1031,12 +1031,12 @@ a:hover {
   padding-left: 1vw;
 }
 @media screen and (max-width: 992px) {
-  .wrapper .about .aboutText {
+  .wrapper .about .aboutContent {
     font-size: 1.25rem;
     padding-left: unset;
   }
 }
-.wrapper .about .aboutText .black {
+.wrapper .about .aboutContent .black {
   background-color: black;
   color: white;
   padding: 0 0.5rem;
