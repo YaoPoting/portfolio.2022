@@ -1179,6 +1179,14 @@ a:hover {
   right: -38px;
   bottom: -23px;
 }
+@media screen and (max-width: 992px) {
+  .wrapper .works .websites .webSitesBg .cardsCon .ellipse {
+    padding: 0.5rem 0.7rem;
+  }
+  .wrapper .works .websites .webSitesBg .cardsCon .ellipse::after {
+    background-size: 64%;
+  }
+}
 .wrapper .works .graphics {
   height: 600px;
 }
