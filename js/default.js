@@ -17,6 +17,10 @@ function scrollToWebsites() {
     const anchor = document.querySelector('.websiteAnchor');
     anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
 };
+function scrollToGraphics() {
+    const anchor = document.querySelector('.graphicsAnchor');
+    anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+};
 
 window.addEventListener('scroll', function() {
     var navbar = document.querySelector('.myNav');

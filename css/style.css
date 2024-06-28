@@ -1188,9 +1188,21 @@ a:hover {
   }
 }
 .wrapper .works .graphics {
-  height: 600px;
+  /* These are the classes that are going to be applied: */
 }
 .wrapper .works .graphics .graphicsAnchor {
   position: relative;
   top: -3.5rem;
+}
+.wrapper .works .graphics #grid[data-columns]::before {
+  content: "3 .column.size-1of3";
+}
+.wrapper .works .graphics .column {
+  float: left;
+}
+.wrapper .works .graphics .size-1of3 {
+  width: 33.333%;
+}
+.wrapper .works .graphics .size-1of4 {
+  width: 25%;
 }/*# sourceMappingURL=style.css.map */
