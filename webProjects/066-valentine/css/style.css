@@ -7,6 +7,9 @@
     font-weight: normal;
     box-sizing: border-box;
 }
+.wrapper {
+    background-color: #102045;
+}
 a{ text-decoration:none} a:hover{ text-decoration:none}
 .colorBgBlue {background-color: #102045;}
 .colorBgWhite {background-color: #ffffff;}
@@ -134,7 +137,6 @@ a{ text-decoration:none} a:hover{ text-decoration:none}
 }
 /* 開獎區 */
 .colorPurpleGradient{
-    background-color: #102045;
     background: linear-gradient(to bottom,  #102045 10%,#1e59b3 60%,#bb8ba2 100%);
 }
 .prizeTwinkle {
