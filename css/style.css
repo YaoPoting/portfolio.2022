@@ -1188,21 +1188,57 @@ a:hover {
   }
 }
 .wrapper .works .graphics {
-  /* These are the classes that are going to be applied: */
+  /* reveal grid after images loaded */
+  /* hide by default */
+  /* loader ellips in separate pen CSS */
 }
 .wrapper .works .graphics .graphicsAnchor {
   position: relative;
   top: -3.5rem;
 }
-.wrapper .works .graphics #grid[data-columns]::before {
-  content: "3 .column.size-1of3";
+.wrapper .works .graphics .grid {
+  max-width: 1200px;
 }
-.wrapper .works .graphics .column {
+.wrapper .works .graphics .grid.are-images-unloaded {
+  opacity: 0;
+}
+.wrapper .works .graphics .grid__item,
+.wrapper .works .graphics .grid__col-sizer {
+  width: 32%;
+}
+.wrapper .works .graphics .grid__gutter-sizer {
+  width: 2%;
+}
+.wrapper .works .graphics .grid.are-images-unloaded .image-grid__item {
+  opacity: 0;
+}
+.wrapper .works .graphics .grid__item {
+  margin-bottom: 20px;
   float: left;
 }
-.wrapper .works .graphics .size-1of3 {
-  width: 33.333%;
+.wrapper .works .graphics .grid__item--height1 {
+  height: 140px;
+  background: #EA0;
 }
-.wrapper .works .graphics .size-1of4 {
-  width: 25%;
+.wrapper .works .graphics .grid__item--height2 {
+  height: 220px;
+  background: #C25;
+}
+.wrapper .works .graphics .grid__item--height3 {
+  height: 300px;
+  background: #19F;
+}
+.wrapper .works .graphics .grid__item--width2 {
+  width: 66%;
+}
+.wrapper .works .graphics .grid__item img {
+  display: block;
+  max-width: 100%;
+}
+.wrapper .works .graphics .page-load-status {
+  display: none; /* hidden by default */
+  padding-top: 20px;
+  border-top: 1px solid #DDD;
+  text-align: center;
+  color: #777;
 }/*# sourceMappingURL=style.css.map */
