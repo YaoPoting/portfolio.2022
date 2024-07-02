@@ -1004,6 +1004,7 @@ a:hover {
 }
 .wrapper .about .capitalCon .smileFs {
   font-size: 8vw;
+  margin-left: unset;
 }
 .wrapper .about .capitalCon .portfolioTape {
   background-color: #de5350;
@@ -1023,6 +1024,7 @@ a:hover {
   }
   .wrapper .about .capitalCon .smileFs {
     font-size: 17vw;
+    margin-left: -1vw;
   }
   .wrapper .about .capitalCon .portfolioTape {
     font-size: 13.5vw;
