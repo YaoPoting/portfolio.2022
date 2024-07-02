@@ -8,13 +8,10 @@
     <meta name="Description" content="最新線上課程,兒童程式,兒童美語,兒童日語,國中會考,國中數學,國中理化,國中英文,索取課表" />
     <meta name="keywords" content="兒童程式, 兒童美語, 兒童日語,國中會考,108課綱,線上課程" />
     <meta property="og:title" content="2024最新兒童程式課程,外語課程,國中文理課程" />
-    <meta property="og:url" content="https://www.wincenter.com.tw/activity/other/005-newclass/default.html" />
+    <meta property="og:url" content="" />
     <meta property="og:image" content="images/shareCard.png" />
     <meta property="og:description" content="最新線上課程,兒童程式,兒童美語,兒童日語,國中會考,國中數學,國中理化,國中英文,索取課表" />
-    <link rel="canonical" href="https://www.wincenter.com.tw/activity/other/005-newclass/default.html" />
-    <!-- Page Info Insert END -->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="/wGuest/js/m_pcschool2.js"></script>
+    <link rel="canonical" href="" />
     <!-- Include JS & CSS Start -->
     <link rel="stylesheet" href="css/comm-style.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -131,35 +128,12 @@
             $("#sBut").show();
         }
         //留單相關，看過後請把註解刪掉喔!  -----end
-
-
     </script>
-    
-        <!-- Google Tag Manager -->
-    <script>
-        (function(w,d,s,l,i) {
-            w[l]=w[l]||[]; w[l].push({
-                'gtm.start':
-                new Date().getTime(),event: 'gtm.js'
-            }); var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),dl=l!='dataLayer'? '&l='+l:''; j.async=true; j.src=
-                    'https://www.googletagmanager.com/gtm.js?id='+i+dl; f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-KSGT82B');
-    </script>
-    <!-- End Google Tag Manager -->
-
 </head>
 <body>
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSGT82B"
-                height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <form id="form1" runat="server">
         <div class="top">
-            <iframe src="https://www.wincenter.com.tw/activity/wincenter/header/2019/top2019.html" width="100%" height="404px"  scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
+            <iframe src="../../headerFooter/header.html" width="100%" height="65"  scrolling="no" frameborder="0" allowtransparency="true"></iframe>
         </div>
         <!-- HTML Start -->
 
@@ -729,75 +703,14 @@
         </div>
             <!-- wapper結束 -->
         <!-- HTML END -->
-        <div class="footer">
-	        <iframe class="FOOTER_frame" src="https://www.wincenter.com.tw/activity/wincenter/footer/2019/footer2019.html" width="100%" scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
+        <div class="footer overflow-hidden">
+	        <iframe src="../../headerFooter/footer.html" width="100%" height="65" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
         </div>
-
-    <script type="text/javascript">
-    //<![CDATA[
-    fromto='99132002';//]]>
-    </script>
-    <script type="text/javascript" src="js/aos.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
-    <script>
-        AOS.init({
-            easing: 'ease-in-out-sine',
-        });
-
-        /* scrollSpy 判斷頁面位置，並顯示作用在選單上  */
-        function scrollSpy() {
-            var itemNum = $('.table-list .item').length;
-            var itemArr = [];
-            for (z = 1; z < itemNum + 1; z++ ){
-                var x = String(z);
-                x = x.padStart(2, '0');
-                itemArr.push('class_' + x);        
-            }
-            var current;
-            for (var i = 0; i < itemArr.length; i++) {
-                if ( $('#'+itemArr[i]).offset().top <= $(window).scrollTop() + 80 ) {
-                    current = itemArr[i];
-                }
-            }
-            $(".menu a[href='#"+current+"']").addClass('active');
-            $(".menu a").not("a[href='#"+current+"']").removeClass('active');
-        }
-
-        $(document).ready( function() {
-            scrollSpy();
-        });
-
-        $(window).scroll( function() {
-            scrollSpy();
-        });
-
-        // Swiper
-        var mySwiper = new Swiper ('.swiper', {
-            autoplay: {
-                delay: 1000,
-                disableOnInteraction: false,
-            },
-            loop: true,
-            speed: 2000,
-            slidesPerView: 1,
-
-            breakpoints: { 
-                768: {
-                    slidesPerView: 2,
-                },
-                992: {
-                    slidesPerView: 3,
-                },
-                1200: {
-                    slidesPerView: 4,
-                },
-                1400: {
-                    slidesPerView: 5,
-                },
-            },
-        });
-    </script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/aos.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
+        <script type="text/javascript" src="js/default.js"></script>
     </form>
 </body>
 </html>

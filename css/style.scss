@@ -41,6 +41,16 @@ a {
     }
 }
 
+.footer {
+    line-height: 0px;
+    width: 100%;
+    height: 65px;
+    
+    iframe {
+        height: 65px;
+    }
+}
+
 .wrapper {
     .kv {
         .smokeFrame{

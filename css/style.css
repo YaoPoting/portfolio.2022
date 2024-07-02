@@ -36,6 +36,15 @@ a:hover {
   cursor: pointer;
 }
 
+.footer {
+  line-height: 0px;
+  width: 100%;
+  height: 65px;
+}
+.footer iframe {
+  height: 65px;
+}
+
 .wrapper .kv .smokeFrame {
   position: relative;
   background-color: #ffa330;
