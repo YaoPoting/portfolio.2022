@@ -1202,37 +1202,37 @@ a:hover {
   position: relative;
   top: -3.5rem;
 }
-.wrapper .works .graphics .grid {
+.wrapper .works .graphics .image-grid {
   max-width: 100%;
   margin: 1.25rem;
 }
-.wrapper .works .graphics .grid.are-images-unloaded {
+.wrapper .works .graphics .image-grid.are-images-unloaded {
   opacity: 0;
 }
-.wrapper .works .graphics .grid__item,
-.wrapper .works .graphics .grid__col-sizer {
+.wrapper .works .graphics .image-grid__item,
+.wrapper .works .graphics .image-grid__col-sizer {
   width: 23.5%;
 }
 @media screen and (max-width: 992px) {
-  .wrapper .works .graphics .grid__item,
-  .wrapper .works .graphics .grid__col-sizer {
+  .wrapper .works .graphics .image-grid__item,
+  .wrapper .works .graphics .image-grid__col-sizer {
     width: 49%;
   }
 }
-.wrapper .works .graphics .grid__gutter-sizer {
+.wrapper .works .graphics .image-grid__gutter-sizer {
   width: 2%;
 }
-.wrapper .works .graphics .grid.are-images-unloaded .image-grid__item {
+.wrapper .works .graphics .image-grid.are-images-unloaded .image-image-grid__item {
   opacity: 0;
 }
-.wrapper .works .graphics .grid__item {
+.wrapper .works .graphics .image-grid__item {
   margin-bottom: 2vw;
   float: left;
 }
-.wrapper .works .graphics .grid__item--width2 {
+.wrapper .works .graphics .image-grid__item--width2 {
   width: 49%;
 }
-.wrapper .works .graphics .grid__item img {
+.wrapper .works .graphics .image-grid__item img {
   display: block;
   max-width: 100%;
 }
