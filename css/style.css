@@ -1252,8 +1252,8 @@ a:hover {
 }
 .wrapper .works .graphics .loader-ellips__dot {
   display: block;
-  width: 1em;
-  height: 1em;
+  width: 0.5em;
+  height: 0.5em;
   border-radius: 0.5em;
   background: #FFB000; /* change color here */
   position: absolute;
@@ -1294,4 +1294,14 @@ a:hover {
 .wrapper .works .graphics .loader-ellips__dot:nth-child(4) {
   animation-name: reveal;
   animation-direction: reverse;
+}
+.wrapper .works .graphics .scroller-status {
+  color: #faa307;
+  font-size: 1.25rem;
+  font-weight: 900;
+  margin: 0 1.25rem;
+}
+.wrapper .works .graphics .scroller-status hr {
+  height: 1px;
+  opacity: 1;
 }/*# sourceMappingURL=style.css.map */
