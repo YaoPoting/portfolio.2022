@@ -1302,6 +1302,7 @@ a:hover {
   margin: 0 1.25rem;
 }
 .wrapper .works .graphics .scroller-status hr {
+  color: #DDD;
   height: 1px;
   opacity: 1;
 }/*# sourceMappingURL=style.css.map */

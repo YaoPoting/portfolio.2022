@@ -8,13 +8,12 @@
     <meta name="Description" content="轉盤抽獎好禮等你拿,免費體驗兒少課程,國中物理攻略,國中數學公式,兒童程式,兒童外語" />
     <meta name="keywords" content="抽獎,優惠,活動,國中課程,會考題庫" />
     <meta property="og:title" content="學習樂趣轉不停" />
-    <meta property="og:url" content="https://www.wincenter.com.tw/activity/other/003-turntable/default.html" />
+    <meta property="og:url" content="" />
     <meta property="og:image" content="images/shareCard.jpg" />
     <meta property="og:description" content="轉盤抽獎好禮等你拿,免費體驗兒少課程,國中物理攻略,國中數學公式,兒童程式,兒童外語" />
-    <link rel="canonical" href="https://www.wincenter.com.tw/activity/other/003-turntable/default.html" />
+    <link rel="canonical" href="" />
     <!-- Page Info Insert END -->
     <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="/wGuest/js/m_pcschool2.js"></script>
     <!-- Include JS & CSS Start -->
     <link rel="stylesheet" href="css/comm-style.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -134,40 +133,19 @@
             $("#sBut").show();
         }
         //留單相關，看過後請把註解刪掉喔!  -----end
-
-
     </script>
-    
-        <!-- Google Tag Manager -->
-    <script>
-        (function(w,d,s,l,i) {
-            w[l]=w[l]||[]; w[l].push({
-                'gtm.start':
-                new Date().getTime(),event: 'gtm.js'
-            }); var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),dl=l!='dataLayer'? '&l='+l:''; j.async=true; j.src=
-                    'https://www.googletagmanager.com/gtm.js?id='+i+dl; f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-KSGT82B');
-    </script>
-    <!-- End Google Tag Manager -->
+
 
 </head>
 <body>
-
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KSGT82B"
-                height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
     <form id="form1" runat="server">
         <div class="top">
-            <iframe src="https://www.wincenter.com.tw/activity/wincenter/header/2019/top2019.html" width="100%" height="404px"  scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
+            <iframe src="../../headerFooter/header.html" width="100%" height="65px"  scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
         </div>
         <!-- HTML Start -->
 
         <!-- wapper開始 -->
-        <div class="wrapper" >
+        <div class="wrapper overflow-hidden" >
             <div class="nav-height"></div>
             <section class="kv pb-4">
                 <div class="container d-flex justify-content-end" data-aos="fade-down">
@@ -311,72 +289,12 @@
             <!-- wapper結束 -->
         <!-- HTML END -->
         <div class="footer">
-	        <iframe class="FOOTER_frame" src="https://www.wincenter.com.tw/activity/wincenter/footer/2019/footer2019.html" width="100%" scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
+	        <iframe src="../../headerFooter/footer.html" width="100%" scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
         </div>
         <script type="text/javascript" src="js/aos.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script type="text/javascript" src="js/awardRotate.js"></script>
-        <script type="text/javascript">
-            AOS.init({
-                easing: 'ease-in-out-sine',
-            });
-            //<![CDATA[
-            fromto='99132002';//]]>
-
-            /* 抽獎 */
-            function addRotatingAnim() {
-                $('.prizeWheel').addClass('rotatingAnim'); //加入自轉
-            }
-            function jackpot() {
-                $('.prizeWheelCont').addClass('disable'); // 點擊抽獎時開啟遮蔽，禁止二次點擊
-            
-                data = Math.floor(Math.random()*8);
-                switch(data){
-                    case 0: 
-                        rotateFunc(22.5,'<span>國中物理</span><span>攻略</span>');
-                        break;
-                    case 1: 
-                        rotateFunc(67.5,'<span>數學公式</span><span>寶典</span>');
-                        break;
-                    case 2: 
-                        rotateFunc(112.5,'<span>兒童程式課</span><span>一堂</span>');
-                        break;
-                    case 3: 
-                        rotateFunc(157.5,'<span>國中文理課</span><span>一堂</span>');
-                        break;
-                    case 4: 
-                        rotateFunc(202.5,'<span>兒童日語課</span><span>一堂</span>');
-                        break;
-                    case 5: 
-                        rotateFunc(247.5,'<span>兒童美語課</span><span>一堂</span>');
-                        break;
-                    case 6: 
-                        rotateFunc(292.5,'<span>LINE POINTS </span><span>100點</span>');
-                        break;
-                    case 7: 
-                        rotateFunc(337.5,'<span>LINE POINTS </span><span>50點</span>');
-                }
-            }
-
-            var rotateFunc = function(angleNum,text){
-                setTimeout( function(){
-                    $('.prizeWheel').removeClass('rotatingAnim'); //移除自轉
-                    $('.prizeWheel').stopRotate();
-                    $('.prizeWheel').rotate({
-                        angle: 0,
-                        duration: 12000,
-                        animateTo: angleNum + 2160,
-                        callback: function(){
-                            setTimeout( function(){
-                                $("#modalPrizeBt").click(); //模擬點擊獎品按紐
-                                $('#modalPrize .detail').html(text); //獎品名稱顯示至detail
-                                $('.prizeWheelCont').removeClass('disable'); // 移除遮蔽
-                        }, 0 );
-                        }
-                    });
-                }, 200 );
-            };
-        </script>
+        <script type="text/javascript" src="js/default.js"></script>
     </form>
 </body>
 </html>

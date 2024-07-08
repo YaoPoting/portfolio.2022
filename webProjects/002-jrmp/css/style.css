@@ -1,0 +1,355 @@
+﻿@charset "utf-8";
+/* CSS Document */
+body {
+    font-family: Arial,'Noto Sans TC', sans-serif;
+}
+
+.wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.H1_size {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.H2_size {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.H1_dkblue {
+    color: #164381;
+}
+
+.H2_purple {
+    color: #4b7bd7;
+}
+
+.H2_lightblue {
+    color: #0088cf;
+}
+
+.mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.h80 {
+    height: 65px;
+}
+
+/* 按鈕 */
+.button_style {
+    background-color: #164381;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 59px;
+    box-shadow: 0 4px 0 #142946;
+    -webkit-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    display: inline-block;
+    padding: 0.25em 1em 0.1em 1em;
+}
+
+.button_style:hover {
+    -webkit-transform: translateY(3px);
+    -ms-transform: translateY(3px);
+    transform: translateY(3px);
+    box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+}
+
+
+/* 關於BN */
+.BN_bgup, .BN_bgdown, .BN_main, .BN_bgup_sm, .BN_bgdown_sm, .BN_main_sm {
+    position: absolute;
+}
+
+
+.BN_bg {
+    background: linear-gradient(to bottom, #c99ee2 0%, #c99ee2 97%, #ffd4ed 97%, #ffd4ed 100%);
+    height: 39vw
+}
+
+.BN_bgup, .BN_bgdown, .BN_main {
+    display: block;
+    width: 100%;
+}
+
+.BN_bgup_sm, .BN_bgdown_sm, .BN_main_sm {
+    display: none;
+}
+
+.BN_main {
+    animation: titscale 3s infinite linear;
+}
+@keyframes titscale {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.98);
+    }
+}
+
+.container-md {
+    max-width: 768px;
+}
+
+.ticket {
+    background-image: url(../images/mpticket.png);
+    background-repeat:no-repeat;
+    background-size: 100%;
+}
+
+.ticket_tag {
+    width: 100%;
+    height: auto;
+    animation: ticketscale 1s infinite linear;
+}
+@keyframes ticketscale {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.98);
+    }
+}
+
+/* 領取步驟 */
+.steps_bg {
+    background-color: #ffd4ed;
+    background-image: url(../images/steps_bg.png);
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+.stepBg {
+    background: linear-gradient(to bottom, transparent 0%, transparent 50%, #e2f6fe 50%, #e2f6fe 100%);
+    border-radius: 10px;
+}
+
+.step_height {
+    min-height: 92px;
+}
+
+
+/* 課程介紹 */
+.courses_bg {
+    background-color: #fbffd0;
+    background-image: url(../images/couses_bg.png), url(../images/roundside_yellow.png);
+    background-repeat:no-repeat, no-repeat;
+    background-position: center center, center top;
+    background-size: contain, 100%;
+}
+
+.cousebg {
+    background: #fee58a;
+    border-radius: 10px;
+}
+
+.coursetext {
+    text-align: justify;
+}
+
+
+/* 填單區 */
+.table_bg {
+    background-color: #e2f6fe;
+    background-image: url(../images/roundside_blue.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100%;
+}
+
+.form-control {
+    margin-bottom: 12px;
+}
+
+.tabletit {
+    color: #2c2c2c;
+    text-align: justify;
+}
+
+.go_button {
+    color: #ffffff;
+    background-color: #38b4b0;
+    text-align: center;
+    border-radius: 50px;
+    padding: 3px 0px;
+}
+
+
+/* 學霸區 */
+.students_bg {
+    background-color: #c5e6f3;
+    background-image: url(../images/students_bg.png);
+    background-repeat:no-repeat;
+    background-position: center center;
+    background-size: 120%;
+}
+
+.portraitArea {
+    border-radius: 10px;
+    /* margin-left: 6px;
+    margin-right: 6px; */
+}
+
+.experienceArea {
+    background-color: #ffffff;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    text-align: justify;
+    /* margin-left: 6px;
+    margin-right: 6px; */
+    padding: 15px;
+    min-height: 130px;
+}
+
+.studentName {
+    background-color: #164381;
+    color: #ffffff;
+    border-radius: 59px;
+    display: inline-block;
+    padding: 0.1em 1em;
+}
+
+.experience_text {
+    margin-bottom: 0px;
+    color: #164381;
+}
+
+
+/* Swiper */
+.swiper_father{
+    position: relative;
+    --swiper-navigation-size: 0;
+}
+
+.swiper {
+    width: 90%;
+    margin: 0px 60px 0px 60px;
+}
+
+/* .swiper-slide {
+    display: inline-block;
+    : 0em 0.4em 0em 0.4em;
+} */
+
+.bi-arrow-left-circle-fill {
+    color: #0088cf;
+}
+
+.bi-arrow-right-circle-fill {
+    color: #0088cf;
+}
+
+
+
+
+@media screen and (max-width: 1400px) {
+    .experienceArea {
+        min-height: 150px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .experienceArea {
+        min-height: 170px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .swiper {
+        width: 85%;
+    }
+    .experienceArea {
+        min-height: 150px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /* 關於BN */
+    .BN_bg {
+        background: linear-gradient(to bottom, #c99ee2 0%, #c99ee2 90%, #ffd4ed 90%, #ffd4ed 100%);
+        height: 137.96vw;
+    }
+
+    .BN_bgup, .BN_bgdown, .BN_main {
+        display: none;
+    }
+
+    .BN_bgup_sm, .BN_bgdown_sm, .BN_main_sm {
+        display: block;
+        width: 100%;
+    }
+
+    .BN_main_sm {
+        animation: titscale 3s infinite linear;
+    }
+    @keyframes titscale {
+        0% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(0.98);
+        }
+    }
+    
+    /* .ticketbox {
+        display: flex;
+        justify-content: center;
+    }
+    .ticket {
+        max-width: 70%;
+    } */
+
+    .steps_bg {
+        background-color: #ffd4ed;
+        background-image: url(../images/steps_bg.png);
+        background-repeat:no-repeat;
+        background-position: center 12%;
+        background-size: 110%;
+    }
+
+    .courses_bg {
+        background-color: #fbffd0;
+        background-image: url(../images/roundside_yellow.png);
+        background-repeat:no-repeat;
+        background-position: center top;
+        background-size: 100%;
+    }
+
+    .students_bg {
+        background-image:none;
+    }
+
+    .swiper {
+        width: 80%;
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+    /* .steps_bg {
+        background-color: #ffd4ed;
+        background-image: url(../images/steps_bg.png), url(../images/roundside_pink.png);
+        background-repeat:no-repeat, no-repeat;
+        background-position: 10% 16%, center top;
+        background-size: 190%, 100%;
+    } */
+
+    .swiper {
+        width: 78%;
+    }
+}
