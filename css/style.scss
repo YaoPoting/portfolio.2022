@@ -110,8 +110,8 @@ a {
                 height: 528px;
 
                 @media screen and (max-width:992px) {
-                    font-size: 11rem;
-                    line-height: 1;
+                    font-size: 14rem;
+                    line-height: 0.8;
                 }
 
                 .titleCon {
@@ -122,6 +122,9 @@ a {
                         max-width: 540px;
                     }
                     
+                    .col-20{
+                        width: 20%;
+                    }
                     .z-index-50 {
                         z-index: 50;
                     }
