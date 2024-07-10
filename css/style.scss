@@ -103,13 +103,15 @@ a {
 
             .titlePos {
                 color: #de5350;
-                font-size: 18rem;
+                font-size: 16rem;
+                letter-spacing: 10rem;
                 font-weight: 900;
-                line-height: 1;
+                line-height: 1.15;
                 height: 528px;
 
                 @media screen and (max-width:992px) {
                     font-size: 11rem;
+                    line-height: 1;
                 }
 
                 .titleCon {
