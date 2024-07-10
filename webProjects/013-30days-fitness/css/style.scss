@@ -1,0 +1,190 @@
+$color-main:#ffda00;
+
+.wrapper, *:before, *:after {
+    position: relative;
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    padding-top: 65px;
+    
+    a {text-decoration: none;}
+    .colorMain { color: $color-main;}
+    .colorWhite { color: white;}
+
+    .kv {
+        background-color: #ff5b00;
+        
+        .w-100vw {width: 100vw;}
+
+        .kv_PC {
+            height: 43.43vw;
+
+            .kvPortrait {
+                width: 34vw;
+                left: 13vw;
+                top: 6vw;
+            }
+            .kvLogo {
+                width: 9vw;
+                left: 16.5vw;
+                top: 1vw;
+            }
+            .kvTitle {
+                width: 39vw;
+                left: 40.5vw;
+                top: 8vw;
+            }
+            .kvButton {
+                width: 37.7vw;
+                left: 41.8vw;
+                top: 28vw;
+                cursor: pointer;
+            }
+        }
+
+        .kv_SP {
+            height: 177.78vw;
+
+            .kvLogo {
+                width: 20vw;
+                left: 3.5vw;
+                top: 2vw;
+            }
+            .kvPortrait {
+                width: 90vw;
+                left: 5vw;
+                top: 83vw;
+            }
+            .kvTitle {
+                width: 90vw;
+                left: 3.5vw;
+                top: 20vw;
+            }
+            .kvButton {
+                width: 37.7vw;
+                left: 41.8vw;
+                top: 28vw;
+            }
+            .kvButton {
+                width: 86vw;
+                left: 7vw;
+                top: 66vw;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .form {
+        background-color: black;
+        background-image: url('../images/formGym1.jpg'), url('../images/formGym2.jpg');
+        background-position: left bottom, right top;
+        background-repeat: no-repeat, no-repeat;
+        background-size: 50% auto, 50% auto;
+
+        @media screen and (max-width:992px) {
+            background-image: url('../images/formGym2.jpg'), url('../images/formGym1.jpg');
+            background-position: right top, left bottom;
+            background-size: auto 50%, auto 50%;
+        }
+
+        .formAnchor {
+            position: relative;
+            top: -1.25rem;
+        }
+
+        .inputStyle {
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid white;
+            line-height: 1;
+            height: 40px;
+            font-size: 1.25rem;
+            margin-top: 1.25rem;
+        }
+        
+        a {color: #00d3ff;}
+
+        #checkbox {
+            display: none;
+
+            & + label {
+                display: inline-block;
+                width: 24px;
+                height: 24px;
+                border: 2px solid white;
+                border-radius: 50%;
+                margin-right: 8px;
+                cursor: pointer;
+            }
+
+            &:checked + label {
+                background-color: white;
+                border-color: white;
+            }
+             
+            &:checked + label:after {
+                content: '\2714';
+                color: black;
+                position: absolute;
+                font-size: 18px;
+                margin-left: -6px;
+                margin-top: -3px;
+            }
+        }
+
+        select {color: white;}
+        select option {color: black;}
+        input::placeholder {color: white;}
+
+        .formButton {
+            background-color: $color-main;
+            color: black;
+            padding: 0.5rem 3rem 0.5rem 3rem;
+            border-radius: 50px;
+        }
+    }
+
+    .location {
+        background-color: #9d0208;
+        background-image: url(../images/locationBrush.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center bottom;
+
+        @media screen and (max-width:992px) {
+            background-size: 250%;
+            background-repeat: repeat-y;
+        }
+
+        .mapFrame {
+            background-color: black;
+            background-image: url(../images/mapBrush.png);
+            background-repeat: no-repeat;
+            background-position: right top;
+
+            .bookingStyle {
+                color: $color-main;
+                font-weight: 900;
+                text-decoration: underline;
+                text-underline-offset: 8px;
+                display: inline-block;
+                transform: rotate(-3deg);
+            }
+
+            iframe {
+                width: 100%;
+                height: 400px;
+            }
+        }
+    }
+
+    .footer {
+        background: #000;
+        .copyright {color: white;}
+    }
+}

@@ -1,0 +1,190 @@
+@charset "UTF-8";
+.wrapper, *:before, *:after {
+  position: relative;
+  margin: 0;
+  font-family: "Noto Sans TC", sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  padding-top: 65px;
+}
+.wrapper a {
+  text-decoration: none;
+}
+.wrapper .colorMain {
+  color: #ffda00;
+}
+.wrapper .colorWhite {
+  color: white;
+}
+.wrapper .kv {
+  background-color: #ff5b00;
+}
+.wrapper .kv .w-100vw {
+  width: 100vw;
+}
+.wrapper .kv .kv_PC {
+  height: 43.43vw;
+}
+.wrapper .kv .kv_PC .kvPortrait {
+  width: 34vw;
+  left: 13vw;
+  top: 6vw;
+}
+.wrapper .kv .kv_PC .kvLogo {
+  width: 9vw;
+  left: 16.5vw;
+  top: 1vw;
+}
+.wrapper .kv .kv_PC .kvTitle {
+  width: 39vw;
+  left: 40.5vw;
+  top: 8vw;
+}
+.wrapper .kv .kv_PC .kvButton {
+  width: 37.7vw;
+  left: 41.8vw;
+  top: 28vw;
+  cursor: pointer;
+}
+.wrapper .kv .kv_SP {
+  height: 177.78vw;
+}
+.wrapper .kv .kv_SP .kvLogo {
+  width: 20vw;
+  left: 3.5vw;
+  top: 2vw;
+}
+.wrapper .kv .kv_SP .kvPortrait {
+  width: 90vw;
+  left: 5vw;
+  top: 83vw;
+}
+.wrapper .kv .kv_SP .kvTitle {
+  width: 90vw;
+  left: 3.5vw;
+  top: 20vw;
+}
+.wrapper .kv .kv_SP .kvButton {
+  width: 37.7vw;
+  left: 41.8vw;
+  top: 28vw;
+}
+.wrapper .kv .kv_SP .kvButton {
+  width: 86vw;
+  left: 7vw;
+  top: 66vw;
+  cursor: pointer;
+}
+.wrapper .form {
+  background-color: black;
+  background-image: url("../images/formGym1.jpg"), url("../images/formGym2.jpg");
+  background-position: left bottom, right top;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 50% auto, 50% auto;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .form {
+    background-image: url("../images/formGym2.jpg"), url("../images/formGym1.jpg");
+    background-position: right top, left bottom;
+    background-size: auto 50%, auto 50%;
+  }
+}
+.wrapper .form .formAnchor {
+  position: relative;
+  top: -1.25rem;
+}
+.wrapper .form .inputStyle {
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  line-height: 1;
+  height: 40px;
+  font-size: 1.25rem;
+  margin-top: 1.25rem;
+}
+.wrapper .form a {
+  color: #00d3ff;
+}
+.wrapper .form #checkbox {
+  display: none;
+}
+.wrapper .form #checkbox + label {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 2px solid white;
+  border-radius: 50%;
+  margin-right: 8px;
+  cursor: pointer;
+}
+.wrapper .form #checkbox:checked + label {
+  background-color: white;
+  border-color: white;
+}
+.wrapper .form #checkbox:checked + label:after {
+  content: "✔";
+  color: black;
+  position: absolute;
+  font-size: 18px;
+  margin-left: -6px;
+  margin-top: -3px;
+}
+.wrapper .form select {
+  color: white;
+}
+.wrapper .form select option {
+  color: black;
+}
+.wrapper .form input::-moz-placeholder {
+  color: white;
+}
+.wrapper .form input::placeholder {
+  color: white;
+}
+.wrapper .form .formButton {
+  background-color: #ffda00;
+  color: black;
+  padding: 0.5rem 3rem 0.5rem 3rem;
+  border-radius: 50px;
+}
+.wrapper .location {
+  background-color: #9d0208;
+  background-image: url(../images/locationBrush.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center bottom;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .location {
+    background-size: 250%;
+    background-repeat: repeat-y;
+  }
+}
+.wrapper .location .mapFrame {
+  background-color: black;
+  background-image: url(../images/mapBrush.png);
+  background-repeat: no-repeat;
+  background-position: right top;
+}
+.wrapper .location .mapFrame .bookingStyle {
+  color: #ffda00;
+  font-weight: 900;
+  text-decoration: underline;
+  text-underline-offset: 8px;
+  display: inline-block;
+  transform: rotate(-3deg);
+}
+.wrapper .location .mapFrame iframe {
+  width: 100%;
+  height: 400px;
+}
+.wrapper .footer {
+  background: #000;
+}
+.wrapper .footer .copyright {
+  color: white;
+}/*# sourceMappingURL=style.css.map */
