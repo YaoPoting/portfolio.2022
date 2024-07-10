@@ -947,53 +947,21 @@ a:hover {
   width: 12%;
   min-width: 100px;
 }
-.wrapper .kv .marqueeCon {
-  color: #FFB000;
+.wrapper .myNav {
+  background-color: white;
+  transition: 0.3s;
+  border-bottom: 1px solid white;
+}
+.wrapper .myNav .pointer {
+  cursor: pointer;
+}
+.wrapper .myNav.sticky {
+  position: fixed;
+  top: 0;
+  background-color: #FFB000;
+  color: white;
   width: 100%;
-  overflow: hidden;
-  display: flex;
-  padding-left: 1rem;
-}
-.wrapper .kv .marqueeCon .marquee1, .wrapper .kv .marqueeCon .marquee2, .wrapper .kv .marqueeCon .marquee3 {
-  display: inline-block;
-  white-space: nowrap;
-  padding-left: 0.4rem;
-}
-.wrapper .kv .marqueeCon .marquee1 {
-  animation: marquee1 20s linear infinite;
-}
-.wrapper .kv .marqueeCon .marquee2 {
-  animation: marquee2 20s linear infinite;
-}
-.wrapper .kv .marqueeCon .marquee3 {
-  animation: marquee2 20s linear infinite;
-}
-.wrapper .kv .marqueeCon .marquee1 i, .wrapper .kv .marqueeCon .marquee2 i, .wrapper .kv .marqueeCon .marquee3 i {
-  margin: 0 0.2rem;
-}
-@keyframes marquee1 {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-@keyframes marquee2 {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-@keyframes marquee3 {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+  z-index: 100;
 }
 .wrapper .about {
   font-weight: 900;
@@ -1083,34 +1051,66 @@ a:hover {
     transform: rotate(360deg);
   }
 }
-.wrapper .works .myNav {
-  background-color: white;
-  transition: 0.3s;
-  border-bottom: 1px solid white;
-}
-.wrapper .works .myNav .pointer {
-  cursor: pointer;
-}
-.wrapper .works .myNav.sticky {
-  position: fixed;
-  top: 0;
-  background-color: #FFB000;
-  color: white;
+.wrapper .marqueeCon {
+  color: #FFB000;
   width: 100%;
-  z-index: 100;
+  overflow: hidden;
+  display: flex;
+  padding-left: 1rem;
 }
-.wrapper .works .websites .websiteAnchor {
+.wrapper .marqueeCon .marquee1, .wrapper .marqueeCon .marquee2, .wrapper .marqueeCon .marquee3 {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 0.4rem;
+}
+.wrapper .marqueeCon .marquee1 {
+  animation: marquee1 20s linear infinite;
+}
+.wrapper .marqueeCon .marquee2 {
+  animation: marquee2 20s linear infinite;
+}
+.wrapper .marqueeCon .marquee3 {
+  animation: marquee2 20s linear infinite;
+}
+.wrapper .marqueeCon .marquee1 i, .wrapper .marqueeCon .marquee2 i, .wrapper .marqueeCon .marquee3 i {
+  margin: 0 0.2rem;
+}
+@keyframes marquee1 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes marquee2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes marquee3 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.wrapper .websites .websiteAnchor {
   position: relative;
   top: -2.5rem;
 }
-.wrapper .works .websites .webSitesBg {
+.wrapper .websites .webSitesBg {
   overflow-x: clip;
   position: relative;
   background-color: #FFB000;
   padding-top: 100px;
   padding-bottom: 100px;
 }
-.wrapper .works .websites .webSitesBg .watermark {
+.wrapper .websites .webSitesBg .watermark {
   position: absolute;
   z-index: 10;
   color: #faa307;
@@ -1118,10 +1118,10 @@ a:hover {
   display: flex;
   animation: slideLeft 50s linear infinite;
 }
-.wrapper .works .websites .webSitesBg .watermark.posTop {
+.wrapper .websites .webSitesBg .watermark.posTop {
   top: 10px;
 }
-.wrapper .works .websites .webSitesBg .watermark.posBtm {
+.wrapper .websites .webSitesBg .watermark.posBtm {
   bottom: 10px;
 }
 @keyframes slideLeft {
@@ -1132,7 +1132,7 @@ a:hover {
     transform: translateX(-50%);
   }
 }
-.wrapper .works .websites .webSitesBg .watermark .marquee-text {
+.wrapper .websites .webSitesBg .watermark .marquee-text {
   white-space: nowrap;
   padding-right: 3.57vw;
   font-size: 24vw;
@@ -1144,18 +1144,18 @@ a:hover {
   line-height: 1;
 }
 @media screen and (max-width: 992px) {
-  .wrapper .works .websites .webSitesBg .watermark .marquee-text {
+  .wrapper .websites .webSitesBg .watermark .marquee-text {
     font-size: 70vw;
   }
 }
-.wrapper .works .websites .webSitesBg .cardsCon {
+.wrapper .websites .webSitesBg .cardsCon {
   position: relative;
   z-index: 20;
 }
-.wrapper .works .websites .webSitesBg .cardsCon .cardPadding {
+.wrapper .websites .webSitesBg .cardsCon .cardPadding {
   padding: 0 0.5rem 3.5rem 0.5rem;
 }
-.wrapper .works .websites .webSitesBg .cardsCon .numberTag {
+.wrapper .websites .webSitesBg .cardsCon .numberTag {
   font-size: 4.5rem;
   font-weight: 900;
   color: white;
@@ -1164,12 +1164,12 @@ a:hover {
   margin-left: 0.5rem;
   font-style: italic;
 }
-.wrapper .works .websites .webSitesBg .cardsCon .websiteCover {
+.wrapper .websites .webSitesBg .cardsCon .websiteCover {
   width: 100%;
   border-radius: 6px;
   border: 1px solid white;
 }
-.wrapper .works .websites .webSitesBg .cardsCon .cardDes {
+.wrapper .websites .webSitesBg .cardsCon .cardDes {
   display: inline-block;
   margin-top: 0.5rem;
   padding: 0.25rem 0.5rem;
@@ -1179,7 +1179,7 @@ a:hover {
   background-color: black;
   line-height: 1;
 }
-.wrapper .works .websites .webSitesBg .cardsCon .ellipse {
+.wrapper .websites .webSitesBg .cardsCon .ellipse {
   position: relative;
   border: 3px solid white;
   color: white;
@@ -1191,7 +1191,7 @@ a:hover {
   font-weight: bold;
   text-wrap: nowrap;
 }
-.wrapper .works .websites .webSitesBg .cardsCon .ellipse::after {
+.wrapper .websites .webSitesBg .cardsCon .ellipse::after {
   content: "";
   position: absolute;
   width: 71px;
@@ -1203,66 +1203,66 @@ a:hover {
   bottom: -23px;
 }
 @media screen and (max-width: 992px) {
-  .wrapper .works .websites .webSitesBg .cardsCon .ellipse {
+  .wrapper .websites .webSitesBg .cardsCon .ellipse {
     padding: 0.5rem 0.7rem;
   }
-  .wrapper .works .websites .webSitesBg .cardsCon .ellipse::after {
+  .wrapper .websites .webSitesBg .cardsCon .ellipse::after {
     background-size: 64%;
   }
 }
-.wrapper .works .graphics .graphicsAnchor {
+.wrapper .graphics .graphicsAnchor {
   position: relative;
   top: -3.5rem;
 }
-.wrapper .works .graphics .image-grid {
+.wrapper .graphics .image-grid {
   max-width: 100%;
   margin: 1.25rem;
 }
-.wrapper .works .graphics .image-grid.are-images-unloaded {
+.wrapper .graphics .image-grid.are-images-unloaded {
   opacity: 0;
 }
-.wrapper .works .graphics .image-grid__item,
-.wrapper .works .graphics .image-grid__col-sizer {
+.wrapper .graphics .image-grid__item,
+.wrapper .graphics .image-grid__col-sizer {
   width: 23.5%;
 }
 @media screen and (max-width: 992px) {
-  .wrapper .works .graphics .image-grid__item,
-  .wrapper .works .graphics .image-grid__col-sizer {
+  .wrapper .graphics .image-grid__item,
+  .wrapper .graphics .image-grid__col-sizer {
     width: 49%;
   }
 }
-.wrapper .works .graphics .image-grid__gutter-sizer {
+.wrapper .graphics .image-grid__gutter-sizer {
   width: 2%;
 }
-.wrapper .works .graphics .image-grid.are-images-unloaded .image-image-grid__item {
+.wrapper .graphics .image-grid.are-images-unloaded .image-image-grid__item {
   opacity: 0;
 }
-.wrapper .works .graphics .image-grid__item {
+.wrapper .graphics .image-grid__item {
   margin-bottom: 2vw;
   float: left;
 }
-.wrapper .works .graphics .image-grid__item--width2 {
+.wrapper .graphics .image-grid__item--width2 {
   width: 49%;
 }
-.wrapper .works .graphics .image-grid__item img {
+.wrapper .graphics .image-grid__item img {
   display: block;
   max-width: 100%;
 }
-.wrapper .works .graphics .page-load-status {
+.wrapper .graphics .page-load-status {
   display: none; /* hidden by default */
   padding-top: 20px;
   border-top: 1px solid #DDD;
   text-align: center;
   color: #777;
 }
-.wrapper .works .graphics .loader-ellips {
+.wrapper .graphics .loader-ellips {
   font-size: 20px; /* change size here */
   position: relative;
   width: 4em;
   height: 1em;
   margin: 10px auto;
 }
-.wrapper .works .graphics .loader-ellips__dot {
+.wrapper .graphics .loader-ellips__dot {
   display: block;
   width: 0.5em;
   height: 0.5em;
@@ -1273,14 +1273,14 @@ a:hover {
   animation-timing-function: ease;
   animation-iteration-count: infinite;
 }
-.wrapper .works .graphics .loader-ellips__dot:nth-child(1),
-.wrapper .works .graphics .loader-ellips__dot:nth-child(2) {
+.wrapper .graphics .loader-ellips__dot:nth-child(1),
+.wrapper .graphics .loader-ellips__dot:nth-child(2) {
   left: 0;
 }
-.wrapper .works .graphics .loader-ellips__dot:nth-child(3) {
+.wrapper .graphics .loader-ellips__dot:nth-child(3) {
   left: 1.5em;
 }
-.wrapper .works .graphics .loader-ellips__dot:nth-child(4) {
+.wrapper .graphics .loader-ellips__dot:nth-child(4) {
   left: 3em;
 }
 @keyframes reveal {
@@ -1296,24 +1296,24 @@ a:hover {
     transform: translateX(1.5em);
   }
 }
-.wrapper .works .graphics .loader-ellips__dot:nth-child(1) {
+.wrapper .graphics .loader-ellips__dot:nth-child(1) {
   animation-name: reveal;
 }
-.wrapper .works .graphics .loader-ellips__dot:nth-child(2),
-.wrapper .works .graphics .loader-ellips__dot:nth-child(3) {
+.wrapper .graphics .loader-ellips__dot:nth-child(2),
+.wrapper .graphics .loader-ellips__dot:nth-child(3) {
   animation-name: slide;
 }
-.wrapper .works .graphics .loader-ellips__dot:nth-child(4) {
+.wrapper .graphics .loader-ellips__dot:nth-child(4) {
   animation-name: reveal;
   animation-direction: reverse;
 }
-.wrapper .works .graphics .scroller-status {
+.wrapper .graphics .scroller-status {
   color: #faa307;
   font-size: 1.25rem;
   font-weight: 900;
   margin: 0 1.25rem;
 }
-.wrapper .works .graphics .scroller-status hr {
+.wrapper .graphics .scroller-status hr {
   color: #DDD;
   height: 1px;
   opacity: 1;
