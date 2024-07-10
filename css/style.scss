@@ -103,15 +103,23 @@ a {
 
             .titlePos {
                 color: #de5350;
-                font-size: 11rem;
+                font-size: 18rem;
                 font-weight: 900;
                 line-height: 1;
                 height: 528px;
 
+                @media screen and (max-width:992px) {
+                    font-size: 11rem;
+                }
+
                 .titleCon {
                     width: 100%;
-                    max-width: 540px;
+                    max-width: unset;
 
+                    @media screen and (max-width:992px) {
+                        max-width: 540px;
+                    }
+                    
                     .z-index-50 {
                         z-index: 50;
                     }

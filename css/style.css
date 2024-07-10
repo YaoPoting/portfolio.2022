@@ -916,14 +916,24 @@ a:hover {
 }
 .wrapper .kv .smokeFrame .titlePos {
   color: #de5350;
-  font-size: 11rem;
+  font-size: 18rem;
   font-weight: 900;
   line-height: 1;
   height: 528px;
 }
+@media screen and (max-width: 992px) {
+  .wrapper .kv .smokeFrame .titlePos {
+    font-size: 11rem;
+  }
+}
 .wrapper .kv .smokeFrame .titlePos .titleCon {
   width: 100%;
-  max-width: 540px;
+  max-width: unset;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv .smokeFrame .titlePos .titleCon {
+    max-width: 540px;
+  }
 }
 .wrapper .kv .smokeFrame .titlePos .titleCon .z-index-50 {
   z-index: 50;
