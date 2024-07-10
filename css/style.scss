@@ -135,11 +135,17 @@ a {
 
         .signature {
             width: 12%;
-            min-width: 100px;
+            min-width: 150px;
         }
 
     }
 
+    .hrWidth { 
+        width: 25%;
+        @media screen and (max-width:992px) {
+            width: 50%;
+        }
+    }
     .myNav {
         background-color: white;
         transition: 0.3s;
@@ -421,7 +427,7 @@ a {
             }
         }
     }
-    
+
     .graphics {
 
         .graphicsAnchor {

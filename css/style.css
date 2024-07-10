@@ -945,7 +945,15 @@ a:hover {
 }
 .wrapper .kv .signature {
   width: 12%;
-  min-width: 100px;
+  min-width: 150px;
+}
+.wrapper .hrWidth {
+  width: 25%;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .hrWidth {
+    width: 50%;
+  }
 }
 .wrapper .myNav {
   background-color: white;
