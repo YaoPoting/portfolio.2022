@@ -7,9 +7,6 @@
   box-sizing: border-box;
 }
 
-.wrapper {
-  padding-top: 65px;
-}
 .wrapper a {
   text-decoration: none;
 }
@@ -97,6 +94,7 @@
   top: -1.25rem;
 }
 .wrapper .form .inputStyle {
+  color: white;
   width: 100%;
   background-color: transparent;
   border: none;

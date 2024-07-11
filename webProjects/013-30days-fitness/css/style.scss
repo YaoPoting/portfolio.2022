@@ -9,8 +9,6 @@ $color-main:#ffda00;
 }
 
 .wrapper {
-    padding-top: 65px;
-    
     a {text-decoration: none;}
     .colorMain { color: $color-main;}
     .colorWhite { color: white;}
@@ -97,6 +95,7 @@ $color-main:#ffda00;
         }
 
         .inputStyle {
+            color: white;
             width: 100%;
             background-color: transparent;
             border: none;
