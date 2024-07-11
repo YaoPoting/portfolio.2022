@@ -9,6 +9,8 @@ $color-main:#ffda00;
 }
 
 .wrapper {
+    padding-top: 65px;
+
     a {text-decoration: none;}
     .colorMain { color: $color-main;}
     .colorWhite { color: white;}
@@ -182,7 +184,7 @@ $color-main:#ffda00;
         }
     }
 
-    .footer {
+    .GS-footer {
         background: #000;
         .copyright {color: white;}
     }
