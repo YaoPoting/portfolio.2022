@@ -52,7 +52,6 @@ let msnry = new Masonry( grid, {
   hiddenStyle: { transform: 'translateY(100px)', opacity: 0 },
 });
 
-
 // initial items reveal
 imagesLoaded( grid, function() {
   grid.classList.remove('are-images-unloaded');
