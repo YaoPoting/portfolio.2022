@@ -5,6 +5,9 @@ $nav-height: 65px;
     background-clip: text;
     color: transparent;
 }
+
+body {background-color: #FFB000;}
+
 .wrapper, *:before, *:after {
     position: relative;
     margin: 0;
@@ -12,6 +15,7 @@ $nav-height: 65px;
     font-weight: normal;
     box-sizing: border-box;
 }
+
 .wrapper {
     background-color: #321856;
     .nav-height{ height: $nav-height;}

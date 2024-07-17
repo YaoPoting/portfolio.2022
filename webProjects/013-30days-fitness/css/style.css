@@ -1,4 +1,8 @@
 @charset "UTF-8";
+body {
+  background-color: #FFB000;
+}
+
 .wrapper, *:before, *:after {
   position: relative;
   margin: 0;
@@ -8,6 +12,7 @@
 }
 
 .wrapper {
+  background-color: white;
   padding-top: 65px;
 }
 .wrapper a {

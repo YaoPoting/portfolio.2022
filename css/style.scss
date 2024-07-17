@@ -6,6 +6,8 @@ $color-main-light: #ffc300;
 $color-main-deep: #faa307;
 $color-sub: #de5350;
 
+body {background-color: $color-main;}
+
 .wrapper, *:before, *:after {
     position: relative;
     margin: 0;
@@ -63,7 +65,11 @@ a {
 }
 
 .wrapper {
+    background-color: white;
+
     .kv {
+        background-color: white;
+
         .smokeFrame{
             position: relative;
             background-color: #ffa330;
@@ -150,7 +156,6 @@ a {
             width: 12%;
             min-width: 150px;
         }
-
     }
 
     .hrWidth { 

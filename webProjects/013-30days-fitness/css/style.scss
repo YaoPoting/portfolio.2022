@@ -1,5 +1,7 @@
 $color-main:#ffda00;
 
+body {background-color: #FFB000;}
+
 .wrapper, *:before, *:after {
     position: relative;
     margin: 0;
@@ -9,6 +11,7 @@ $color-main:#ffda00;
 }
 
 .wrapper {
+    background-color: white;
     padding-top: 65px;
 
     a {text-decoration: none;}

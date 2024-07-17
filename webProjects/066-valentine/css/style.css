@@ -1,5 +1,7 @@
 ﻿@charset "utf-8";
 /* CSS Document */
+body {background-color: #FFB000;}
+
 .wrapper, *:before, *:after {
     position: relative;
     margin: 0;
