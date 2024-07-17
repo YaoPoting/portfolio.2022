@@ -8,27 +8,14 @@
     <meta name="Description" content="聖誕節在家玩遊戲拿大獎!挑戰時限內完成卡片配對，即可兌換專屬外語聖誕禮物,每人僅限領一次,英語,日語,韓語,西班牙語,法語,德語都能自由選擇,趕快揪你朋友來挑戰吧!" />
     <meta name="keywords" content="聖誕禮物,線上學,補習班,課程優惠" />
     <meta property="og:title" content="聖誕節記憶大考驗！玩遊戲拿高CP聖誕禮物" />
-    <meta property="og:url" content="https://www.abconline.com.tw/activity/other/056-xmascard/default.aspx" />
-    <meta property="og:image" content="https://www.abconline.com.tw/activity/other/056-xmascard/images/shareCard_800x418.jpg" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="images/shareCard_800x418.jpg" />
     <meta property="og:description" content="聖誕節在家玩遊戲拿大獎!挑戰時限內完成卡片配對，即可兌換專屬外語聖誕禮物,每人僅限領一次,英語,日語,韓語,西班牙語,法語,德語都能自由選擇,趕快揪你朋友來挑戰吧!" />
-    <link rel="canonical" href="https://www.abconline.com.tw/activity/other/056-xmascard/default.aspx" />
-    <!-- Page Info Insert END -->
-    <script type="text/javascript" src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="/wGuest/js/m_pcschool.js"></script>
-    <!-- Include JS & CSS Start -->
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/animate.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
-    <link href="css/break.css" rel="stylesheet" />
-    <link href="css/comm-style.css" rel="stylesheet" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playball&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <!-- aos -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="js/bootstrap.min.js"></script>
+    <link rel="canonical" href="" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/comm-style.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
     <!--非填單按鈕使用class name="activity-page-click-count"-->
     <!-- Include JS & CSS End -->
@@ -179,113 +166,95 @@
             }
         }
         //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----end
-
     </script>
-    <!-- Google Tag Manager -->
-    <script>
-            (function (w, d, s, l, i) {
-                w[l] = w[l] || []; w[l].push({
-                    'gtm.start':
-                        new Date().getTime(), event: 'gtm.js'
-                }); var f = d.getElementsByTagName(s)[0],
-                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
-                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', 'GTM-WSWZFBP');
-    </script>
-    <!-- End Google Tag Manager -->
 </head>
 <body>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript>
-        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSWZFBP"
-                height="0" width="0" style="display:none;visibility:hidden"></iframe>
-    </noscript>
-    <!-- End Google Tag Manager (noscript) -->
-    <form id="form1" runat="server">
-        <div class="top">
-            <iframe src="/activity/header/2020/" width="100%" height="65px" scrolling="No" frameborder="0" allowtransparency="allowTransparency" class="ifar"></iframe>
+
+    
+    <div class="top">
+        <iframe src="../../headerFooter/header.html" width="100%" height="65"  scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+    </div>
+    <!-- HTML Start -->
+
+    <!-- wapper開始 -->
+    <div class="wrapper">
+
+        <!-- Succes Modal -->
+        <div class="modal fade" id="success" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content modal_bg_sec">
+                    <div class="modal-header">
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <h1 class="modal_tit tit_pink">恭喜您獲得聖誕好禮</h1>
+                            <span class="modal_Text_sec tit_green"><span>請填寫正確資訊，</span><span>以便通知禮物領取</span></span>
+                        </div>
+                        <!-- 表單開始 -->
+                        <div class="formbox">
+                            <div class="form">
+                                <input name="ea" type="text" class="form-control" id="name" placeholder="姓 名" />
+                            </div>
+                            <div class="form">
+                                <input name="mobile" type="text" class="form-control" id="mobile" placeholder="電 話" />
+                            </div>
+                            <div class="form">
+                                <input name="email" type="text" class="form-control" id="email" placeholder="E-Mail" />
+                            </div>
+                            <div class="form">
+                                <select id="dpGift" class="form-control">
+                                    <option value="select" selected>請選擇想兌換的獎項</option>
+                                    <option value="english">英語體驗課+多益必考單字書</option>
+                                    <option value="japanese">日語體驗課+1200堂影音課</option>
+                                    <option value="korean">韓語體驗課+旅遊韓語會話書</option>
+                                    <option value="spanish">西語體驗課+發音學習工具書</option>
+                                    <option value="french">法語體驗課+實用法語旅遊書</option>
+                                    <option value="german">德語體驗課+基礎入門學習書</option>
+                                    <option value="jrenglish">兒童美語課+英語體驗課1堂</option>
+                                    <option value="jrprogram">兒童程式課+程式體驗課1堂</option>
+                                    <option value="jrhsclclass">國中文理課+30天體驗試用</option>
+                                </select>
+                            </div>
+                            <div class="option form">
+                                <label>
+                                    <input type="checkbox" name="per_chk" checked="checked">
+                                </label>
+                                <span class="statement">我已閱讀並接受<a onclick="window.open('/activity/abconline/contract_02/','person',config='height=640,width=830');return false;" href="#">個資保護聲明</a></span>
+                            </div>
+                            <div class="form">
+                                <div id="sBut" onClick="but_send();" style="cursor:pointer;">
+                                    <div class="form_button text-center">立即索取</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 表單結束 -->
+                    </div>
+                </div>
+            </div>
         </div>
-        <!-- HTML Start -->
+        <!-- Succes Modal Finish -->
 
-        <!-- wapper開始 -->
-        <div class="wrapper">
-
-            <!-- Succes Modal -->
-            <div class="modal fade" id="success" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                    <div class="modal-content modal_bg_sec">
-                        <div class="modal-header">
-                        </div>
-                        <div class="modal-body">
-                            <div class="text-center">
-                                <h1 class="modal_tit tit_pink">恭喜您獲得聖誕好禮</h1>
-                                <span class="modal_Text_sec tit_green"><span>請填寫正確資訊，</span><span>以便通知禮物領取</span></span>
-                            </div>
-                            <!-- 表單開始 -->
-                            <div class="formbox">
-                                <div class="form">
-                                    <input name="ea" type="text" class="form-control" id="name" placeholder="姓 名" />
-                                </div>
-                                <div class="form">
-                                    <input name="mobile" type="text" class="form-control" id="mobile" placeholder="電 話" />
-                                </div>
-                                <div class="form">
-                                    <input name="email" type="text" class="form-control" id="email" placeholder="E-Mail" />
-                                </div>
-                                <div class="form">
-                                    <select id="dpGift" class="form-control">
-                                        <option value="select" selected>請選擇想兌換的獎項</option>
-                                        <option value="english">英語體驗課+多益必考單字書</option>
-                                        <option value="japanese">日語體驗課+1200堂影音課</option>
-                                        <option value="korean">韓語體驗課+旅遊韓語會話書</option>
-                                        <option value="spanish">西語體驗課+發音學習工具書</option>
-                                        <option value="french">法語體驗課+實用法語旅遊書</option>
-                                        <option value="german">德語體驗課+基礎入門學習書</option>
-                                        <option value="jrenglish">兒童美語課+英語體驗課1堂</option>
-                                        <option value="jrprogram">兒童程式課+程式體驗課1堂</option>
-                                        <option value="jrhsclclass">國中文理課+30天體驗試用</option>
-                                    </select>
-                                </div>
-                                <div class="option form">
-                                    <label>
-                                        <input type="checkbox" name="per_chk" checked="checked">
-                                    </label>
-                                    <span class="statement">我已閱讀並接受<a onclick="window.open('/activity/abconline/contract_02/','person',config='height=640,width=830');return false;" href="#">個資保護聲明</a></span>
-                                </div>
-                                <div class="form">
-                                    <div id="sBut" onClick="but_send();" style="cursor:pointer;">
-                                        <div class="form_button text-center">立即索取</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- 表單結束 -->
-                        </div>
+        <!-- Fail Modal -->
+        <div class="modal fade" id="fail" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content modal_bg_sec">
+                    <div class="modal-header">
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center modal_tit tit_pink">真可惜!</div>
+                        <div class="modal_Text tit_green">未能於時限內完成配對，無法兌換聖誕禮物。請繼續遊戲，再接再厲！</div>
+                    </div>
+                    <div class="modalBtbox modalFailBg text-center">
+                        <a href="game.html">
+                            <button class="MdReBt_style" type="button">重新挑戰</button>
+                        </a>
                     </div>
                 </div>
             </div>
-            <!-- Succes Modal Finish -->
+        </div>
+        <!-- Fail Modal Finish -->
 
-            <!-- Fail Modal -->
-            <div class="modal fade" id="fail" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-                    <div class="modal-content modal_bg_sec">
-                        <div class="modal-header">
-                        </div>
-                        <div class="modal-body">
-                            <div class="text-center modal_tit tit_pink">真可惜!</div>
-                            <div class="modal_Text tit_green">未能於時限內完成配對，無法兌換聖誕禮物。請繼續遊戲，再接再厲！</div>
-                        </div>
-                        <div class="modalBtbox modalFailBg text-center">
-                            <a href="game.html">
-                                <button class="MdReBt_style" type="button">重新挑戰</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Fail Modal Finish -->
-
-            <div class="bgBlue">
+        <div class="bgBlue">
             <section class="bgBlueH grass animated bounceIn">
                 <div class="container">
                     <div class="row">
@@ -410,20 +379,18 @@
 
                 </div>
             </section>
-            </div>
-
-
-            <!-- wapper結束 -->
-        <!-- HTML END -->
-        <div class="footer">
-            <iframe class="FOOTER_frame" src="/activity/footer/2020/" width="100%" scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
         </div>
-    </form>
 
-    <!--卡片-->
-    <script src="js/mCard.js"></script>
+    </div>
+    <!-- wapper結束 -->
+    <!-- HTML END -->
+    <div class="footer overflow-hidden">
+        <iframe src="../../headerFooter/footer.html" width="100%" height="65" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+    </div>
 
-    <!--aos-->
-    <script src="js/aos.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/aos.js"></script>
+    <script type="text/javascript" src="js/mCard.js"></script>
 </body>
 </html>

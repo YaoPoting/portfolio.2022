@@ -2,12 +2,13 @@
 /* CSS Document */
 body {
   font-family: Arial,'Noto Sans TC', sans-serif;
+  background-color: #ffa330;
 }
 
 .wrapper {
   position: relative;
   overflow: hidden;
-    
+  padding-top: 65px;
 }
 
 .hide {
