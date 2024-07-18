@@ -85,3 +85,8 @@ let infScroll = new InfiniteScroll( grid, {
   outlayer: msnry,
   status: '.page-load-status',
 });
+
+
+
+//----
+document.body.style.backgroundColor = "#FFB000";
