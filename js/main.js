@@ -87,5 +87,5 @@ let infScroll = new InfiniteScroll( grid, {
 //-------------------------------------//
 
 window.addEventListener('load', function() {
-  document.body.style.backgroundColor = "FFB000";
+  document.body.style.backgroundColor = "#FFB000";
 });
