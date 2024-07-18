@@ -1,0 +1,12 @@
+body {background-color: #FFB000;}
+
+.wrapper, *:before, *:after {
+    position: relative;
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+.wrapper {
+    .nav-height{ height: 65px; }
+}
