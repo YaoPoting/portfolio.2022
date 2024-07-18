@@ -60,7 +60,6 @@ imagesLoaded( grid, function() {
   msnry.appended( items );
 });
 
-//-------------------------------------//
 // hack CodePen to load pens as pages
 
 var nextPenSlugs = [
@@ -76,7 +75,6 @@ function getPenPath() {
   }
 }
 
-//-------------------------------------//
 // init Infinte Scroll
 
 let infScroll = new InfiniteScroll( grid, {
@@ -86,7 +84,8 @@ let infScroll = new InfiniteScroll( grid, {
   status: '.page-load-status',
 });
 
+//-------------------------------------//
 
-
-//----
-document.body.style.backgroundColor = "#FFB000";
+window.addEventListener('load', function() {
+  document.body.style.backgroundColor = "FFB000";
+});
