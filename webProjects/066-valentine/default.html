@@ -168,634 +168,633 @@
 
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div class="top">
-            <iframe src="../../headerFooter/header.html" width="100%" height="65"  scrolling="no" frameborder="0" allowtransparency="true"></iframe>
-        </div>
-        <!-- HTML Start -->
+    <div class="top">
+        <iframe src="../../headerFooter/header.html" width="100%" height="65"  scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+    </div>
+    <!-- HTML Start -->
 
-        <!-- wapper開始 -->
-        <div class="wrapper">
-            <section class="kv colorBgBlue mtMinus2vw">
-                <div class="kv_pc">
-                    <img class="kv_pc1_bg" src="images/kv_pc1_bg.png">
-                    <img class="kv_pc2_twinkle" src="images/kv_pc2_twinkle.png">
-                    <img class="kv_pc2_twinkle2" src="images/kv_pc2_twinkle2.png">
-                    <img class="kv_pc4_boy" src="images/kv_pc4_boy.png" data-aos="fade-left" data-aos-duration="800" data-aos-delay="800">
-                    <img class="kv_pc4_girl" src="images/kv_pc4_girl.png" data-aos="fade-right" data-aos-duration="800" data-aos-delay="800">
-                    <img class="kv_pc3_title" src="images/kv_pc3_title.png" data-aos="fade-up" data-aos-delay="300">
+    <!-- wapper開始 -->
+    <div class="wrapper">
+        <section class="kv colorBgBlue mtMinus2vw">
+            <div class="kv_pc">
+                <img class="kv_pc1_bg" src="images/kv_pc1_bg.png">
+                <img class="kv_pc2_twinkle" src="images/kv_pc2_twinkle.png">
+                <img class="kv_pc2_twinkle2" src="images/kv_pc2_twinkle2.png">
+                <img class="kv_pc4_boy" src="images/kv_pc4_boy.png" data-aos="fade-left" data-aos-duration="800" data-aos-delay="800">
+                <img class="kv_pc4_girl" src="images/kv_pc4_girl.png" data-aos="fade-right" data-aos-duration="800" data-aos-delay="800">
+                <img class="kv_pc3_title" src="images/kv_pc3_title.png" data-aos="fade-up" data-aos-delay="300">
+            </div>
+            <div class="kv_sp">
+                <img class="kv_sp1_bg" src="images/kv_sp1_bg.png">
+                <img class="kv_sp2_twinkle" src="images/kv_sp2_twinkle.png">
+                <img class="kv_sp2_twinkle2" src="images/kv_sp2_twinkle2.png">
+                <img class="kv_sp4_boy" src="images/kv_sp4_boy.png" data-aos="fade-left" data-aos-duration="800" data-aos-delay="500">
+                <img class="kv_sp4_girl" src="images/kv_sp4_girl.png" data-aos="fade-right" data-aos-duration="800" data-aos-delay="500">
+                <img class="kv_sp3_title" src="images/kv_sp3_title.png" data-aos="fade-up" data-aos-delay="300">
+            </div>
+        </section>
+        <!--側邊欄 開始-->
+        <div class="gotop">
+            <img class="sideButton" src="images/sideButton.png">
+        </div>        
+        <!--遊戲區-->
+        <section class="colorBgBlue mtMinus4vw">
+            <div class="container">
+                <div class="text-center">
+                    <div class="H1_size colorWhite">抽出你未來的另一伴</div>
+                    <div class="H3_size colorWhite">請點擊下方卡片，即可開始測驗</div>    
                 </div>
-                <div class="kv_sp">
-                    <img class="kv_sp1_bg" src="images/kv_sp1_bg.png">
-                    <img class="kv_sp2_twinkle" src="images/kv_sp2_twinkle.png">
-                    <img class="kv_sp2_twinkle2" src="images/kv_sp2_twinkle2.png">
-                    <img class="kv_sp4_boy" src="images/kv_sp4_boy.png" data-aos="fade-left" data-aos-duration="800" data-aos-delay="500">
-                    <img class="kv_sp4_girl" src="images/kv_sp4_girl.png" data-aos="fade-right" data-aos-duration="800" data-aos-delay="500">
-                    <img class="kv_sp3_title" src="images/kv_sp3_title.png" data-aos="fade-up" data-aos-delay="300">
+                <div id="cards">
+                    <!-- 卡片會在載入時自動隨機排列 -->
                 </div>
-            </section>
-            <!--側邊欄 開始-->
-            <div class="gotop">
-                <img class="sideButton" src="images/sideButton.png">
-            </div>        
-            <!--遊戲區-->
-            <section class="colorBgBlue mtMinus4vw">
-                <div class="container">
-                    <div class="text-center">
-                        <div class="H1_size colorWhite">抽出你未來的另一伴</div>
-                        <div class="H3_size colorWhite">請點擊下方卡片，即可開始測驗</div>    
-                    </div>
-                    <div id="cards">
-                        <!-- 卡片會在載入時自動隨機排列 -->
-                    </div>
-                </div>
-            </section>
-            <section class="colorPurpleGradient py-5">
-                <div id="prize"></div>
-                <div id="result_1" class="pb-5">
-                    <div class="prizeTwinkle text-center pt-5">
-                        <div class="H1_size colorWhite">你未來的另一半是</div>
-                        <div class="d-flex flex-sm-row flex-column justify-content-center">
-                            <div class="mx-3">
-                                <img class="zodiacImg" src="images/zodiac_1.png" alt="牡羊座">
-                            </div>
-                            <div class="d-flex flex-column justify-content-center mx-3">
-                                <div>
-                                    <img class="zodiacImg" src="images/happyMarriage.png">
-                                </div>
-                                <div class="py-3">
-                                    <img class="zodiacImg" src="images/onlineGerman.png">
-                                </div>
-                            </div>
+            </div>
+        </section>
+        <section class="colorPurpleGradient py-5">
+            <div id="prize"></div>
+            <div id="result_1" class="pb-5">
+                <div class="prizeTwinkle text-center pt-5">
+                    <div class="H1_size colorWhite">你未來的另一半是</div>
+                    <div class="d-flex flex-sm-row flex-column justify-content-center">
+                        <div class="mx-3">
+                            <img class="zodiacImg" src="images/zodiac_1.png" alt="牡羊座">
                         </div>
-                        <div class="container">
-                            <div class="colorWhite prizeText py-3">
-                                適配原因：患難見真情<br>
-                                心動瞬間：聽到他說「Ich liebe dich.」<br>
-                                邂逅方式：你在德國柏林跟另一半搶廁所，搶贏發現沒帶零錢，請對方借給你
-                            </div>
+                        <div class="d-flex flex-column justify-content-center mx-3">
                             <div>
-                                <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
-                                    免費領取外語課
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="result_2" class="pb-5">
-                    <div class="prizeTwinkle text-center pt-5">
-                        <div class="H1_size colorWhite">你未來的另一半是</div>
-                        <div class="d-flex flex-sm-row flex-column justify-content-center">
-                            <div class="mx-3">
-                                <img class="zodiacImg" src="images/zodiac_2.png" alt="金牛座">
-                            </div>
-                            <div class="d-flex flex-column justify-content-center mx-3">
-                                <div>
-                                    <img class="zodiacImg" src="images/happyMarriage.png">
-                                </div>
-                                <div class="py-3">
-                                    <img class="zodiacImg" src="images/onlineEnglish.png">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="colorWhite prizeText py-3">
-                                適配原因：比翼雙飛<br>
-                                心動瞬間：聽到他說「I love you.」<br>
-                                邂逅方式：你在美國紐約的時代廣場跨年，被另一半抓去擁吻完成轉播放送
-
-                            </div>
-                            <div>
-                                <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
-                                    免費領取外語課
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>            
-                <div id="result_3" class="pb-5">
-                    <div class="prizeTwinkle text-center pt-5">
-                        <div class="H1_size colorWhite">你未來的另一半是</div>
-                        <div class="d-flex flex-sm-row flex-column justify-content-center">
-                            <div class="mx-3">
-                                <img class="zodiacImg" src="images/zodiac_3.png" alt="雙子座">
-                            </div>
-                            <div class="d-flex flex-column justify-content-center mx-3">
-                                <div>
-                                    <img class="zodiacImg" src="images/happyMarriage.png">
-                                </div>
-                                <div class="py-3">
-                                    <img class="zodiacImg" src="images/onlineGerman.png">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="colorWhite prizeText py-3">
-                                適配原因：情投意合<br>
-                                心動瞬間：聽到他說「Ich liebe dich.」<br>
-                                邂逅方式：你參加德國的慕尼黑啤酒節，喝到不省人事後被另一半撿回家
-                            </div>
-                            <div>
-                                <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
-                                    免費領取外語課
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="result_4" class="pb-5">
-                    <div class="prizeTwinkle text-center pt-5">
-                        <div class="H1_size colorWhite">你未來的另一半是</div>
-                        <div class="d-flex flex-sm-row flex-column justify-content-center">
-                            <div class="mx-3">
-                                <img class="zodiacImg" src="images/zodiac_4.png" alt="巨蟹座">
-                            </div>
-                            <div class="d-flex flex-column justify-content-center mx-3">
-                                <div>
-                                    <img class="zodiacImg" src="images/happyMarriage.png">
-                                </div>
-                                <div class="py-3">
-                                    <img class="zodiacImg" src="images/onlineFrench.png">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="colorWhite prizeText py-3">
-                                適配原因：情比金堅<br>
-                                心動瞬間：聽到他說「je t'aime.」<br>
-                                邂逅方式：你經過法國的巴黎鐵塔時，遇到罷工遊行，跟另一半躲在公廁避難
-                            </div>
-                            <div>
-                                <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
-                                    免費領取外語課
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="result_5" class="pb-5">
-                    <div class="prizeTwinkle text-center pt-5">
-                        <div class="H1_size colorWhite">你未來的另一半是</div>
-                        <div class="d-flex flex-sm-row flex-column justify-content-center">
-                            <div class="mx-3">
-                                <img class="zodiacImg" src="images/zodiac_5.png"  alt="獅子座">
-                            </div>
-                            <div class="d-flex flex-column justify-content-center mx-3">
-                                <div>
-                                    <img class="zodiacImg" src="images/happyMarriage.png">
-                                </div>
-                                <div class="py-3">
-                                    <img class="zodiacImg" src="images/onlineSpanish.png">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="colorWhite prizeText py-3">
-                                適配原因：一見鍾情<br>
-                                心動瞬間：聽到他說「te amo.」<br>
-                                邂逅方式：你在西班牙奔牛節被牛追時，千鈞一髮之際被另一半保護帶離
-                            </div>
-                            <div>
-                                <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
-                                    免費領取外語課
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>            
-                <div id="result_6" class="pb-5">
-                    <div class="prizeTwinkle text-center pt-5">
-                        <div class="H1_size colorWhite">你未來的另一半是</div>
-                        <div class="d-flex flex-sm-row flex-column justify-content-center">
-                            <div class="mx-3">
-                                <img class="zodiacImg" src="images/zodiac_6.png" alt="處女座">
-                            </div>
-                            <div class="d-flex flex-column justify-content-center mx-3">
-                                <div>
-                                    <img class="zodiacImg" src="images/happyMarriage.png">
-                                </div>
-                                <div class="py-3">
-                                    <img class="zodiacImg" src="images/onlineJapanese.png">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="colorWhite prizeText py-3">
-                                適配原因：松蘿共倚<br>
-                                心動瞬間：聽到他說「愛しています」<br>
-                                邂逅方式：你在日本的東京鐵塔下自拍時，被另一半帶來散步的柴犬脫韁纏上
-                            </div>
-                            <div>
-                                <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
-                                    免費領取外語課
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="result_7" class="pb-5">
-                    <div class="prizeTwinkle text-center pt-5">
-                        <div class="H1_size colorWhite">你未來的另一半是</div>
-                        <div class="d-flex flex-sm-row flex-column justify-content-center">
-                            <div class="mx-3">
-                                <img class="zodiacImg" src="images/zodiac_7.png" alt="天秤座">
-                            </div>
-                            <div class="d-flex flex-column justify-content-center mx-3">
-                                <div>
-                                    <img class="zodiacImg" src="images/happyMarriage.png">
-                                </div>
-                                <div class="py-3">
-                                    <img class="zodiacImg" src="images/onlineSpanish.png">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="colorWhite prizeText py-3">
-                                適配原因：志同道合<br>
-                                心動瞬間：聽到他說「te amo.」<br>
-                                邂逅方式：你到巴西看足球賽，贏球太嗨，把飲料捏爆噴到鄰座的另一半身上
-                            </div>
-                            <div>
-                                <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
-                                    免費領取外語課
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="result_8" class="pb-5">
-                    <div class="prizeTwinkle text-center pt-5">
-                        <div class="H1_size colorWhite">你未來的另一半是</div>
-                        <div class="d-flex flex-sm-row flex-column justify-content-center">
-                            <div class="mx-3">
-                                <img class="zodiacImg" src="images/zodiac_8.png" alt="天蠍座">
-                            </div>
-                            <div class="d-flex flex-column justify-content-center mx-3">
-                                <div>
-                                    <img class="zodiacImg" src="images/happyMarriage.png">
-                                </div>
-                                <div class="py-3">
-                                    <img class="zodiacImg" src="images/onlineKorean.png">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="colorWhite prizeText py-3">
-                                適配原因：相知相惜<br>
-                                心動瞬間：聽到他說「사랑해요」<br>
-                                邂逅方式：你跑去韓國首爾追星，在演唱會太嗨，甩飛螢光棒打到另一半
-                            </div>
-                            <div>
-                                <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
-                                    免費領取外語課
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>            
-                <div id="result_9" class="pb-5">
-                    <div class="prizeTwinkle text-center pt-5">
-                        <div class="H1_size colorWhite">你未來的另一半是</div>
-                        <div class="d-flex flex-sm-row flex-column justify-content-center">
-                            <div class="mx-3">
-                                <img class="zodiacImg" src="images/zodiac_9.png" alt="射手座">
-                            </div>
-                            <div class="d-flex flex-column justify-content-center mx-3">
-                                <div>
-                                    <img class="zodiacImg" src="images/happyMarriage.png">
-                                </div>
-                                <div class="py-3">
-                                    <img class="zodiacImg" src="images/onlineEnglish.png">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="colorWhite prizeText py-3">
-                                適配原因：金玉良緣<br>
-                                心動瞬間：聽到他說「I love you.」<br>
-                                邂逅方式：你在美國夏威夷海灘划船時，不小心把另一半的船撞翻了
-                            </div>
-                            <div>
-                                <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
-                                    免費領取外語課
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="result_10" class="pb-5">
-                    <div class="prizeTwinkle text-center pt-5">
-                        <div class="H1_size colorWhite">你未來的另一半是</div>
-                        <div class="d-flex flex-sm-row flex-column justify-content-center">
-                            <div class="mx-3">
-                                <img class="zodiacImg" src="images/zodiac_10.png" alt="摩羯座">
-                            </div>
-                            <div class="d-flex flex-column justify-content-center mx-3">
-                                <div>
-                                    <img class="zodiacImg" src="images/happyMarriage.png">
-                                </div>
-                                <div class="py-3">
-                                    <img class="zodiacImg" src="images/onlineJapanese.png">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="colorWhite prizeText py-3">
-                                適配原因：相伴到老<br>
-                                心動瞬間：聽到他說「愛しています」<br>
-                                邂逅方式：你在日本奈良被鹿撞飛的時候，剛好撞上你的另一半
-                            </div>
-                            <div>
-                                <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
-                                    免費領取外語課
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="result_11" class="pb-5">
-                    <div class="prizeTwinkle text-center pt-5">
-                        <div class="H1_size colorWhite">你未來的另一半是</div>
-                        <div class="d-flex flex-sm-row flex-column justify-content-center">
-                            <div class="mx-3">
-                                <img class="zodiacImg" src="images/zodiac_11.png" alt="水瓶座">
-                            </div>
-                            <div class="d-flex flex-column justify-content-center mx-3">
-                                <div>
-                                    <img class="zodiacImg" src="images/happyMarriage.png">
-                                </div>
-                                <div class="py-3">
-                                    <img class="zodiacImg" src="images/onlineKorean.png">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="colorWhite prizeText py-3">
-                                適配原因：相濡以沫<br>
-                                心動瞬間：聽到他說「사랑해요」<br>
-                                邂逅方式：你到韓國釜山的海鮮市場，新鮮的螃蟹夾住你跟另一半的衣服
-                            </div>
-                            <div>
-                                <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
-                                    免費領取外語課
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>            
-                <div id="result_12" class="pb-5">
-                    <div class="prizeTwinkle text-center pt-5">
-                        <div class="H1_size colorWhite">你未來的另一半是</div>
-                        <div class="d-flex flex-sm-row flex-column justify-content-center">
-                            <div class="mx-3">
-                                <img class="zodiacImg" src="images/zodiac_12.png" alt="雙魚座">
-                            </div>
-                            <div class="d-flex flex-column justify-content-center mx-3">
-                                <div>
-                                    <img class="zodiacImg" src="images/happyMarriage.png">
-                                </div>
-                                <div class="py-3">
-                                    <img class="zodiacImg" src="images/onlineFrench.png">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="colorWhite prizeText py-3">
-                                適配原因：天賜良緣<br>
-                                心動瞬間：聽到他說「je t'aime.」<br>
-                                邂逅方式：你在法國羅浮宮排隊時，你跟另一半同時遭到鴿子大便空襲
-                            </div>
-                            <div>
-                                <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
-                                    免費領取外語課
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            
-                <!-- 表單開始 -->
-                <div class="container pb-5">
-                    <div id="myform" class="pt-5"></div>
-                    <div class="d-flex flex-lg-row flex-column justify-content-center rounded10 overflow-hidden" id="fillform">
-                        <div class="w-lg-50 w-100 formImg">
-                        </div>
-                        <div class="w-lg-50 w-100 colorBgWhite px-3">
-                            <H1>
-                                <div class="text-center H2_size py-3">登記領取限定好禮</div>
-                            </H1>
-                            <div class="py-2">
-                                <input name="ea" type="text" class="form-control" id="name" placeholder="姓 名" />
-                            </div>
-                            <div class="py-2">
-                                <input name="mobile" type="text" class="form-control" id="mobile" placeholder="電 話" />
-                            </div>
-                            <div class="py-2">
-                                <input name="email" type="text" class="form-control" id="email" placeholder="E-Mail" />
-                            </div>
-                            <div class="py-2">
-                                <select id="dpGift" class="form-control selectArrow">
-                                    <option value="select" selected>選擇想領取的課程</option>
-                                    <option value="english">英語體驗課+多益必考單字書</option>
-                                    <option value="japanese">日語體驗課+1200堂影音課</option>
-                                    <option value="korean">韓語體驗課+旅遊韓語會話書</option>
-                                    <option value="spanish">西語體驗課+發音學習工具書</option>
-                                    <option value="french">法語體驗課+實用法語旅遊書</option>
-                                    <option value="german">德語體驗課+基礎入門學習書</option>
-                                    <option value="childrenEnglish">兒童美語課+英語體驗課1堂</option>
-                                    <option value="childrenProgram">兒童程式課+程式體驗課1堂</option>
-                                    <option value="juniorClass">國中文理課+30天體驗試用</option>
-                                </select>
-                            </div>
-                            <div class="option">
-                                <label>
-                                    <input type="checkbox" class="searchtext2" name="per_chk" checked="checked">
-                                </label>
-                                <span class="statement">我已閱讀並接受<a onclick="window.open('/activity/abconline/contract_02/','person',config='height=640,width=830');return false;" href="#">個資保護聲明</a></span>
+                                <img class="zodiacImg" src="images/happyMarriage.png">
                             </div>
                             <div class="py-3">
-                                <div class="tte" id="sBut" onClick="but_send();" style="cursor:pointer;">
-                                    <div class="w-100 text-center colorBgRed btBox">
-                                    <div class="H3_size colorWhite colorBgRed effectStyle effect effect-white w200 ">
-                                        登記領取
-                                    </div>
-                                    </div>
+                                <img class="zodiacImg" src="images/onlineGerman.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="colorWhite prizeText py-3">
+                            適配原因：患難見真情<br>
+                            心動瞬間：聽到他說「Ich liebe dich.」<br>
+                            邂逅方式：你在德國柏林跟另一半搶廁所，搶贏發現沒帶零錢，請對方借給你
+                        </div>
+                        <div>
+                            <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
+                                免費領取外語課
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="result_2" class="pb-5">
+                <div class="prizeTwinkle text-center pt-5">
+                    <div class="H1_size colorWhite">你未來的另一半是</div>
+                    <div class="d-flex flex-sm-row flex-column justify-content-center">
+                        <div class="mx-3">
+                            <img class="zodiacImg" src="images/zodiac_2.png" alt="金牛座">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center mx-3">
+                            <div>
+                                <img class="zodiacImg" src="images/happyMarriage.png">
+                            </div>
+                            <div class="py-3">
+                                <img class="zodiacImg" src="images/onlineEnglish.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="colorWhite prizeText py-3">
+                            適配原因：比翼雙飛<br>
+                            心動瞬間：聽到他說「I love you.」<br>
+                            邂逅方式：你在美國紐約的時代廣場跨年，被另一半抓去擁吻完成轉播放送
+
+                        </div>
+                        <div>
+                            <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
+                                免費領取外語課
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+            <div id="result_3" class="pb-5">
+                <div class="prizeTwinkle text-center pt-5">
+                    <div class="H1_size colorWhite">你未來的另一半是</div>
+                    <div class="d-flex flex-sm-row flex-column justify-content-center">
+                        <div class="mx-3">
+                            <img class="zodiacImg" src="images/zodiac_3.png" alt="雙子座">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center mx-3">
+                            <div>
+                                <img class="zodiacImg" src="images/happyMarriage.png">
+                            </div>
+                            <div class="py-3">
+                                <img class="zodiacImg" src="images/onlineGerman.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="colorWhite prizeText py-3">
+                            適配原因：情投意合<br>
+                            心動瞬間：聽到他說「Ich liebe dich.」<br>
+                            邂逅方式：你參加德國的慕尼黑啤酒節，喝到不省人事後被另一半撿回家
+                        </div>
+                        <div>
+                            <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
+                                免費領取外語課
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="result_4" class="pb-5">
+                <div class="prizeTwinkle text-center pt-5">
+                    <div class="H1_size colorWhite">你未來的另一半是</div>
+                    <div class="d-flex flex-sm-row flex-column justify-content-center">
+                        <div class="mx-3">
+                            <img class="zodiacImg" src="images/zodiac_4.png" alt="巨蟹座">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center mx-3">
+                            <div>
+                                <img class="zodiacImg" src="images/happyMarriage.png">
+                            </div>
+                            <div class="py-3">
+                                <img class="zodiacImg" src="images/onlineFrench.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="colorWhite prizeText py-3">
+                            適配原因：情比金堅<br>
+                            心動瞬間：聽到他說「je t'aime.」<br>
+                            邂逅方式：你經過法國的巴黎鐵塔時，遇到罷工遊行，跟另一半躲在公廁避難
+                        </div>
+                        <div>
+                            <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
+                                免費領取外語課
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="result_5" class="pb-5">
+                <div class="prizeTwinkle text-center pt-5">
+                    <div class="H1_size colorWhite">你未來的另一半是</div>
+                    <div class="d-flex flex-sm-row flex-column justify-content-center">
+                        <div class="mx-3">
+                            <img class="zodiacImg" src="images/zodiac_5.png"  alt="獅子座">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center mx-3">
+                            <div>
+                                <img class="zodiacImg" src="images/happyMarriage.png">
+                            </div>
+                            <div class="py-3">
+                                <img class="zodiacImg" src="images/onlineSpanish.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="colorWhite prizeText py-3">
+                            適配原因：一見鍾情<br>
+                            心動瞬間：聽到他說「te amo.」<br>
+                            邂逅方式：你在西班牙奔牛節被牛追時，千鈞一髮之際被另一半保護帶離
+                        </div>
+                        <div>
+                            <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
+                                免費領取外語課
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+            <div id="result_6" class="pb-5">
+                <div class="prizeTwinkle text-center pt-5">
+                    <div class="H1_size colorWhite">你未來的另一半是</div>
+                    <div class="d-flex flex-sm-row flex-column justify-content-center">
+                        <div class="mx-3">
+                            <img class="zodiacImg" src="images/zodiac_6.png" alt="處女座">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center mx-3">
+                            <div>
+                                <img class="zodiacImg" src="images/happyMarriage.png">
+                            </div>
+                            <div class="py-3">
+                                <img class="zodiacImg" src="images/onlineJapanese.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="colorWhite prizeText py-3">
+                            適配原因：松蘿共倚<br>
+                            心動瞬間：聽到他說「愛しています」<br>
+                            邂逅方式：你在日本的東京鐵塔下自拍時，被另一半帶來散步的柴犬脫韁纏上
+                        </div>
+                        <div>
+                            <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
+                                免費領取外語課
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="result_7" class="pb-5">
+                <div class="prizeTwinkle text-center pt-5">
+                    <div class="H1_size colorWhite">你未來的另一半是</div>
+                    <div class="d-flex flex-sm-row flex-column justify-content-center">
+                        <div class="mx-3">
+                            <img class="zodiacImg" src="images/zodiac_7.png" alt="天秤座">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center mx-3">
+                            <div>
+                                <img class="zodiacImg" src="images/happyMarriage.png">
+                            </div>
+                            <div class="py-3">
+                                <img class="zodiacImg" src="images/onlineSpanish.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="colorWhite prizeText py-3">
+                            適配原因：志同道合<br>
+                            心動瞬間：聽到他說「te amo.」<br>
+                            邂逅方式：你到巴西看足球賽，贏球太嗨，把飲料捏爆噴到鄰座的另一半身上
+                        </div>
+                        <div>
+                            <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
+                                免費領取外語課
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="result_8" class="pb-5">
+                <div class="prizeTwinkle text-center pt-5">
+                    <div class="H1_size colorWhite">你未來的另一半是</div>
+                    <div class="d-flex flex-sm-row flex-column justify-content-center">
+                        <div class="mx-3">
+                            <img class="zodiacImg" src="images/zodiac_8.png" alt="天蠍座">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center mx-3">
+                            <div>
+                                <img class="zodiacImg" src="images/happyMarriage.png">
+                            </div>
+                            <div class="py-3">
+                                <img class="zodiacImg" src="images/onlineKorean.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="colorWhite prizeText py-3">
+                            適配原因：相知相惜<br>
+                            心動瞬間：聽到他說「사랑해요」<br>
+                            邂逅方式：你跑去韓國首爾追星，在演唱會太嗨，甩飛螢光棒打到另一半
+                        </div>
+                        <div>
+                            <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
+                                免費領取外語課
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+            <div id="result_9" class="pb-5">
+                <div class="prizeTwinkle text-center pt-5">
+                    <div class="H1_size colorWhite">你未來的另一半是</div>
+                    <div class="d-flex flex-sm-row flex-column justify-content-center">
+                        <div class="mx-3">
+                            <img class="zodiacImg" src="images/zodiac_9.png" alt="射手座">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center mx-3">
+                            <div>
+                                <img class="zodiacImg" src="images/happyMarriage.png">
+                            </div>
+                            <div class="py-3">
+                                <img class="zodiacImg" src="images/onlineEnglish.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="colorWhite prizeText py-3">
+                            適配原因：金玉良緣<br>
+                            心動瞬間：聽到他說「I love you.」<br>
+                            邂逅方式：你在美國夏威夷海灘划船時，不小心把另一半的船撞翻了
+                        </div>
+                        <div>
+                            <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
+                                免費領取外語課
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="result_10" class="pb-5">
+                <div class="prizeTwinkle text-center pt-5">
+                    <div class="H1_size colorWhite">你未來的另一半是</div>
+                    <div class="d-flex flex-sm-row flex-column justify-content-center">
+                        <div class="mx-3">
+                            <img class="zodiacImg" src="images/zodiac_10.png" alt="摩羯座">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center mx-3">
+                            <div>
+                                <img class="zodiacImg" src="images/happyMarriage.png">
+                            </div>
+                            <div class="py-3">
+                                <img class="zodiacImg" src="images/onlineJapanese.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="colorWhite prizeText py-3">
+                            適配原因：相伴到老<br>
+                            心動瞬間：聽到他說「愛しています」<br>
+                            邂逅方式：你在日本奈良被鹿撞飛的時候，剛好撞上你的另一半
+                        </div>
+                        <div>
+                            <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
+                                免費領取外語課
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="result_11" class="pb-5">
+                <div class="prizeTwinkle text-center pt-5">
+                    <div class="H1_size colorWhite">你未來的另一半是</div>
+                    <div class="d-flex flex-sm-row flex-column justify-content-center">
+                        <div class="mx-3">
+                            <img class="zodiacImg" src="images/zodiac_11.png" alt="水瓶座">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center mx-3">
+                            <div>
+                                <img class="zodiacImg" src="images/happyMarriage.png">
+                            </div>
+                            <div class="py-3">
+                                <img class="zodiacImg" src="images/onlineKorean.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="colorWhite prizeText py-3">
+                            適配原因：相濡以沫<br>
+                            心動瞬間：聽到他說「사랑해요」<br>
+                            邂逅方式：你到韓國釜山的海鮮市場，新鮮的螃蟹夾住你跟另一半的衣服
+                        </div>
+                        <div>
+                            <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
+                                免費領取外語課
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+            <div id="result_12" class="pb-5">
+                <div class="prizeTwinkle text-center pt-5">
+                    <div class="H1_size colorWhite">你未來的另一半是</div>
+                    <div class="d-flex flex-sm-row flex-column justify-content-center">
+                        <div class="mx-3">
+                            <img class="zodiacImg" src="images/zodiac_12.png" alt="雙魚座">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center mx-3">
+                            <div>
+                                <img class="zodiacImg" src="images/happyMarriage.png">
+                            </div>
+                            <div class="py-3">
+                                <img class="zodiacImg" src="images/onlineFrench.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="colorWhite prizeText py-3">
+                            適配原因：天賜良緣<br>
+                            心動瞬間：聽到他說「je t'aime.」<br>
+                            邂逅方式：你在法國羅浮宮排隊時，你跟另一半同時遭到鴿子大便空襲
+                        </div>
+                        <div>
+                            <a href="#myform" class="H3_size colorBlack colorBgYellow effectStyle effect w200">
+                                免費領取外語課
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        
+            <!-- 表單開始 -->
+            <div class="container pb-5">
+                <div id="myform" class="pt-5"></div>
+                <div class="d-flex flex-lg-row flex-column justify-content-center rounded10 overflow-hidden" id="fillform">
+                    <div class="w-lg-50 w-100 formImg">
+                    </div>
+                    <div class="w-lg-50 w-100 colorBgWhite px-3">
+                        <H1>
+                            <div class="text-center H2_size py-3">登記領取限定好禮</div>
+                        </H1>
+                        <div class="py-2">
+                            <input name="ea" type="text" class="form-control" id="name" placeholder="姓 名" />
+                        </div>
+                        <div class="py-2">
+                            <input name="mobile" type="text" class="form-control" id="mobile" placeholder="電 話" />
+                        </div>
+                        <div class="py-2">
+                            <input name="email" type="text" class="form-control" id="email" placeholder="E-Mail" />
+                        </div>
+                        <div class="py-2">
+                            <select id="dpGift" class="form-control selectArrow">
+                                <option value="select" selected>選擇想領取的課程</option>
+                                <option value="english">英語體驗課+多益必考單字書</option>
+                                <option value="japanese">日語體驗課+1200堂影音課</option>
+                                <option value="korean">韓語體驗課+旅遊韓語會話書</option>
+                                <option value="spanish">西語體驗課+發音學習工具書</option>
+                                <option value="french">法語體驗課+實用法語旅遊書</option>
+                                <option value="german">德語體驗課+基礎入門學習書</option>
+                                <option value="childrenEnglish">兒童美語課+英語體驗課1堂</option>
+                                <option value="childrenProgram">兒童程式課+程式體驗課1堂</option>
+                                <option value="juniorClass">國中文理課+30天體驗試用</option>
+                            </select>
+                        </div>
+                        <div class="option">
+                            <label>
+                                <input type="checkbox" class="searchtext2" name="per_chk" checked="checked">
+                            </label>
+                            <span class="statement">我已閱讀並接受<a onclick="window.open('/activity/abconline/contract_02/','person',config='height=640,width=830');return false;" href="#">個資保護聲明</a></span>
+                        </div>
+                        <div class="py-3">
+                            <div class="tte" id="sBut" onClick="but_send();" style="cursor:pointer;">
+                                <div class="w-100 text-center colorBgRed btBox">
+                                <div class="H3_size colorWhite colorBgRed effectStyle effect effect-white w200 ">
+                                    登記領取
+                                </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section>
-            <!-- 課程介紹 -->
-            <section class="bgBoy colorBgDark">
-                <div class="container">
-                    <div class="text-center py-5">
-                        <img class="lineHands" src="images/linehands.png">
-                        <div class="H1_size colorWhite">世界各國我愛你</div>
-                        <div class="H3_size colorWhite">多一分異國風情，多一分浪漫</div>
-                        <div class="row pt-3">
-                            <div class="col-lg-2 col-4 py-3">
-                                <div class="colorBgWhite colorBlack rounded10">
-                                    <img class="w-100" src="images/flagUS.png">
-                                    <div class="H4_size">
-                                        i love <br class="loveBr">you
-                                    </div>
-                                    <img id="loveEngPlay" class="playButton py-3" src="images/playButton.png"></audio>
+            </div>
+        </section>
+        <!-- 課程介紹 -->
+        <section class="bgBoy colorBgDark">
+            <div class="container">
+                <div class="text-center py-5">
+                    <img class="lineHands" src="images/linehands.png">
+                    <div class="H1_size colorWhite">世界各國我愛你</div>
+                    <div class="H3_size colorWhite">多一分異國風情，多一分浪漫</div>
+                    <div class="row pt-3">
+                        <div class="col-lg-2 col-4 py-3">
+                            <div class="colorBgWhite colorBlack rounded10">
+                                <img class="w-100" src="images/flagUS.png">
+                                <div class="H4_size">
+                                    i love <br class="loveBr">you
                                 </div>
+                                <img id="loveEngPlay" class="playButton py-3" src="images/playButton.png"></audio>
                             </div>
-                            <div class="col-lg-2 col-4 py-3">
-                                <div class="colorBgWhite colorBlack rounded10">
-                                    <img class="w-100" src="images/flagJP.png">
-                                    <div class="H4_size">
-                                        愛してい<br class="loveBr">ます
-                                    </div>
-                                    <img id="loveJapPlay" class="playButton py-3" src="images/playButton.png">
+                        </div>
+                        <div class="col-lg-2 col-4 py-3">
+                            <div class="colorBgWhite colorBlack rounded10">
+                                <img class="w-100" src="images/flagJP.png">
+                                <div class="H4_size">
+                                    愛してい<br class="loveBr">ます
                                 </div>
+                                <img id="loveJapPlay" class="playButton py-3" src="images/playButton.png">
                             </div>
-                            <div class="col-lg-2 col-4 py-3">
-                                <div class="colorBgWhite colorBlack rounded10">
-                                    <img class="w-100" src="images/flagES.png">
-                                    <div class="H4_size">
-                                        te <br class="loveBr">amo
-                                    </div>
-                                    <img id="loveSpaPlay" class="playButton py-3" src="images/playButton.png">
+                        </div>
+                        <div class="col-lg-2 col-4 py-3">
+                            <div class="colorBgWhite colorBlack rounded10">
+                                <img class="w-100" src="images/flagES.png">
+                                <div class="H4_size">
+                                    te <br class="loveBr">amo
                                 </div>
+                                <img id="loveSpaPlay" class="playButton py-3" src="images/playButton.png">
                             </div>
-                            <div class="col-lg-2 col-4 py-3">
-                                <div class="colorBgWhite colorBlack rounded10">
-                                    <img class="w-100" src="images/flagKR.png">
-                                    <div class="H4_size">
-                                        사랑<br class="loveBr">해요
-                                    </div>
-                                    <img id="loveKorPlay" class="playButton py-3 py-3" src="images/playButton.png">
+                        </div>
+                        <div class="col-lg-2 col-4 py-3">
+                            <div class="colorBgWhite colorBlack rounded10">
+                                <img class="w-100" src="images/flagKR.png">
+                                <div class="H4_size">
+                                    사랑<br class="loveBr">해요
                                 </div>
+                                <img id="loveKorPlay" class="playButton py-3 py-3" src="images/playButton.png">
                             </div>
-                            <div class="col-lg-2 col-4 py-3">
-                                <div class="colorBgWhite colorBlack rounded10">
-                                    <img class="w-100" src="images/flagFR.png">
-                                    <div class="H4_size">
-                                        je <br class="loveBr">t'aime
-                                    </div>
-                                    <img id="loveFrePlay" class="playButton py-3" src="images/playButton.png">
+                        </div>
+                        <div class="col-lg-2 col-4 py-3">
+                            <div class="colorBgWhite colorBlack rounded10">
+                                <img class="w-100" src="images/flagFR.png">
+                                <div class="H4_size">
+                                    je <br class="loveBr">t'aime
                                 </div>
+                                <img id="loveFrePlay" class="playButton py-3" src="images/playButton.png">
                             </div>
-                            <div class="col-lg-2 col-4 py-3">
-                                <div class="colorBgWhite colorBlack rounded10">
-                                    <img class="w-100" src="images/flagDE.png">
-                                    <div class="H4_size">
-                                        Ich <br class="loveBr">liebe dich
-                                    </div>
-                                    <img id="loveGerPlay" class="playButton py-3" src="images/playButton.png">
+                        </div>
+                        <div class="col-lg-2 col-4 py-3">
+                            <div class="colorBgWhite colorBlack rounded10">
+                                <img class="w-100" src="images/flagDE.png">
+                                <div class="H4_size">
+                                    Ich <br class="loveBr">liebe dich
                                 </div>
+                                <img id="loveGerPlay" class="playButton py-3" src="images/playButton.png">
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="py-5">
-                    <div class="text-center">
-                        <div class="H1_size colorWhite">多元情境課程現學現用</div>
-                        <div class="H3_size colorWhite">真心實意，讓愛在你心口常開</div>
-                    </div>
-                    <!--Swiper 開始-->
-                    <div class="swiper py-5">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide overflow-hidden">
-                                <img class="w-100" src="images/courseEnglish.jpg">
-                                <div class="text-center H3_size">
-                                    出國旅遊英語<br>
-                                    職場英語會話<br>
-                                    英語檢定課程
-                                </div>
-                                <a href="https://www.abconline.com.tw/english-course" target="_blank">
-                                    <div class="border border-dark rounded-pill text-center H4_size fw-bold mx-3 my-4 courseButton">
-                                        查看課表GO
-                                    </div>
-                                </a>
+            </div>
+            <div class="py-5">
+                <div class="text-center">
+                    <div class="H1_size colorWhite">多元情境課程現學現用</div>
+                    <div class="H3_size colorWhite">真心實意，讓愛在你心口常開</div>
+                </div>
+                <!--Swiper 開始-->
+                <div class="swiper py-5">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide overflow-hidden">
+                            <img class="w-100" src="images/courseEnglish.jpg">
+                            <div class="text-center H3_size">
+                                出國旅遊英語<br>
+                                職場英語會話<br>
+                                英語檢定課程
                             </div>
-                            <div class="swiper-slide overflow-hidden">
-                                <img class="w-100" src="images/courseJapanese.jpg">
-                                <div class="text-center H3_size">
-                                    日本聊天問候<br>
-                                    日商必學日語<br>
-                                    日語檢定課程
+                            <a href="https://www.abconline.com.tw/english-course" target="_blank">
+                                <div class="border border-dark rounded-pill text-center H4_size fw-bold mx-3 my-4 courseButton">
+                                    查看課表GO
                                 </div>
-                                <a href="https://www.abconline.com.tw/japanese-course" target="_blank">
-                                    <div class="border border-dark rounded-pill text-center H4_size fw-bold mx-3 my-4 courseButton">
-                                        查看課表GO
-                                    </div>
-                                </a>
+                            </a>
+                        </div>
+                        <div class="swiper-slide overflow-hidden">
+                            <img class="w-100" src="images/courseJapanese.jpg">
+                            <div class="text-center H3_size">
+                                日本聊天問候<br>
+                                日商必學日語<br>
+                                日語檢定課程
                             </div>
-                            <div class="swiper-slide overflow-hidden">
-                                <img class="w-100" src="images/courseKorean.jpg">
-                                <div class="text-center H3_size">
-                                    生活購物韓語<br>
-                                    韓國流行音樂<br>
-                                    韓語檢定課程
+                            <a href="https://www.abconline.com.tw/japanese-course" target="_blank">
+                                <div class="border border-dark rounded-pill text-center H4_size fw-bold mx-3 my-4 courseButton">
+                                    查看課表GO
                                 </div>
-                                <a href="https://www.abconline.com.tw/korean-course" target="_blank">
-                                    <div class="border border-dark rounded-pill text-center H4_size fw-bold mx-3 my-4 courseButton">
-                                        查看課表GO
-                                    </div>
-                                </a>
+                            </a>
+                        </div>
+                        <div class="swiper-slide overflow-hidden">
+                            <img class="w-100" src="images/courseKorean.jpg">
+                            <div class="text-center H3_size">
+                                生活購物韓語<br>
+                                韓國流行音樂<br>
+                                韓語檢定課程
                             </div>
-                            <div class="swiper-slide overflow-hidden">
-                                <img class="w-100" src="images/courseSpanish.jpg">
-                                <div class="text-center H3_size">
-                                    旅遊會話西語<br>
-                                    時事西班牙語<br>
-                                    西語檢定課程
+                            <a href="https://www.abconline.com.tw/korean-course" target="_blank">
+                                <div class="border border-dark rounded-pill text-center H4_size fw-bold mx-3 my-4 courseButton">
+                                    查看課表GO
                                 </div>
-                                <a href="https://www.abconline.com.tw/spanish-course" target="_blank">
-                                    <div class="border border-dark rounded-pill text-center H4_size fw-bold mx-3 my-4 courseButton">
-                                        查看課表GO
-                                    </div>
-                                </a>
+                            </a>
+                        </div>
+                        <div class="swiper-slide overflow-hidden">
+                            <img class="w-100" src="images/courseSpanish.jpg">
+                            <div class="text-center H3_size">
+                                旅遊會話西語<br>
+                                時事西班牙語<br>
+                                西語檢定課程
                             </div>
-                            <div class="swiper-slide overflow-hidden">
-                                <img class="w-100" src="images/courseFrench.jpg">
-                                <div class="text-center H3_size">
-                                    法語浪漫邀約<br>
-                                    法式電話禮儀<br>
-                                    法國銀行簽證
+                            <a href="https://www.abconline.com.tw/spanish-course" target="_blank">
+                                <div class="border border-dark rounded-pill text-center H4_size fw-bold mx-3 my-4 courseButton">
+                                    查看課表GO
                                 </div>
-                                <a href="https://www.abconline.com.tw/french-course" target="_blank">
-                                    <div class="border border-dark rounded-pill text-center H4_size fw-bold mx-3 my-4 courseButton">
-                                        查看課表GO
-                                    </div>
-                                </a>
+                            </a>
+                        </div>
+                        <div class="swiper-slide overflow-hidden">
+                            <img class="w-100" src="images/courseFrench.jpg">
+                            <div class="text-center H3_size">
+                                法語浪漫邀約<br>
+                                法式電話禮儀<br>
+                                法國銀行簽證
                             </div>
-                            <div class="swiper-slide overflow-hidden">
-                                <img class="w-100" src="images/courseGerman.jpg">
-                                <div class="text-center H3_size">
-                                    基礎德語發音<br>
-                                    德語訂位點餐<br>
-                                    德國日常問候
+                            <a href="https://www.abconline.com.tw/french-course" target="_blank">
+                                <div class="border border-dark rounded-pill text-center H4_size fw-bold mx-3 my-4 courseButton">
+                                    查看課表GO
                                 </div>
-                                <a href="https://www.abconline.com.tw/german-course" target="_blank">
-                                    <div class="border border-dark rounded-pill text-center H4_size fw-bold mx-3 my-4 courseButton">
-                                        查看課表GO
-                                    </div>
-                                </a>
+                            </a>
+                        </div>
+                        <div class="swiper-slide overflow-hidden">
+                            <img class="w-100" src="images/courseGerman.jpg">
+                            <div class="text-center H3_size">
+                                基礎德語發音<br>
+                                德語訂位點餐<br>
+                                德國日常問候
                             </div>
+                            <a href="https://www.abconline.com.tw/german-course" target="_blank">
+                                <div class="border border-dark rounded-pill text-center H4_size fw-bold mx-3 my-4 courseButton">
+                                    查看課表GO
+                                </div>
+                            </a>
                         </div>
                     </div>
-                    <!--Swiper 結束-->
                 </div>
-            </section>
-        </div>
-            <!-- wapper結束 -->
-        <!-- HTML END -->
-        <div class="footer overflow-hidden">
-	        <iframe src="../../headerFooter/footer.html" width="100%" height="65" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
-        </div>
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/aos.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
-        <script type="text/javascript" src="js/gotop.js"></script>
-        <script type="text/javascript" src="js/card.js"></script>
-        <script type="text/javascript" src="js/default.js"></script>
-    </form>
+                <!--Swiper 結束-->
+            </div>
+        </section>
+    </div>
+        <!-- wapper結束 -->
+    <!-- HTML END -->
+    <div class="footer overflow-hidden">
+        <iframe src="../../headerFooter/footer.html" width="100%" height="65" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/aos.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="js/gotop.js"></script>
+    <script type="text/javascript" src="js/card.js"></script>
+    <script type="text/javascript" src="js/default.js"></script>
+
 </body>
 </html>
