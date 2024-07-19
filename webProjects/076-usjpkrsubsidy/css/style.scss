@@ -1,0 +1,386 @@
+$color-main-blue:#1e61c6;
+$color-main-yellow: #ffda00;
+
+.wrapper, *:before, *:after {
+    position: relative;
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: normal;
+    box-sizing: border-box;
+}
+
+.buttonStyle {
+    background-color: $color-main-yellow;
+    border-radius: 10vw;
+    padding: 0 1.25rem;
+    animation: zoomInOut 1.5s linear infinite;
+    cursor: pointer;
+}
+
+.wrapper {
+    padding-top: 65px;
+
+    a {text-decoration: none;}
+    .colorYellow {color: $color-main-yellow;}
+    .colorBlue {color: $color-main-blue;}
+    .colorWhite {color: white;}
+
+    .kv {
+        height: 44vw;
+        background-image: url(../images/bgSlash.png);
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+
+        .kvTitle {
+            width: 38vw;
+            top: 4vw;
+            left: 8vw;
+        }
+
+        .kvBlueSlash {
+            width: 7vw;
+        }
+
+        .kvPurpleSlash {
+            bottom: 0;
+            width: 6vw;
+        }
+
+        .kvYellowSlash {
+            width: 10vw;
+            top: 27vw;
+            right: 2vw;
+        }
+
+        .kvImg-main {
+            height: 44vw;
+            right: 0;
+            
+            .mainImg-Pos {
+                height: 100%;
+                left: 51vw;
+            }
+        }
+
+        .kvImg-circle {
+            width: 15vw;
+            left: 52vw;
+            top: 4vw;
+        }
+
+        .kvImg-language {
+            width: 25vw;
+            right: 24vw;
+            top: 25vw;
+        }
+
+        .form {
+            width: 38vw;
+            top: 21vw;
+            left: 8vw;
+
+            .formTitle {
+                margin-left: 1.2vw;
+                font-size: 2vw;
+                font-weight: 900;
+
+                .icon {width: 2.5vw;}
+                .ml-1vw {margin-left: 1vw;}
+                .blinkCon {
+                    height: 3vw;
+
+                    .blink-text {
+                        width: 17.5vw;
+                    }
+                    .blink {
+                        width: 17.5vw;
+                        height: 1vw;
+                        bottom: 0.5vw;
+                        background-color: #ffda00;
+                        animation-duration: 1s;
+                        animation-name: blink;
+                        animation-iteration-count: infinite;
+                        animation-direction: alternate;
+                        animation-timing-function: ease-in-out;
+                    }
+                    @keyframes blink {
+                        from {
+                            opacity: 1;
+                        }
+                        to {
+                            opacity: 0;
+                        }
+                    }
+                }
+
+            }
+            
+            .w-49 {width: 18.5vw;}
+
+            .inputStyle {
+                height: 3vw;
+                color: black;
+                background-color: #e6e6e6;
+                border: 0;
+                border-radius: 10vw;
+                font-size: 1.5vw;
+                margin: 0.5vw 0;
+                padding: 0 1vw;
+    
+                &::placeholder {
+                    color: black;
+                }
+            }
+            
+            .checkedText {
+                font-size: 1.25vw;
+            }
+
+            .pt-1vw {
+                padding-top: 1vw;
+            }
+            
+            #sBut {
+                color: black;
+                background-color: $color-main-yellow;
+                font-size: 1.5vw;
+                border-radius: 10vw;
+                padding: 0 2vw;
+                margin-left: 1vw;
+                font-weight: 900;
+                animation: zoomInOut 1.5s linear infinite;
+            }
+        }
+
+        @media screen and (max-width:992px) {
+            height: 150vw;
+            background-size: auto 100%;
+
+            .kvTitle {
+                width: 90vw;
+                top: 8vw;
+                left: 5vw;
+            }
+
+            .kvYellowSlash {
+                width: 25vw;
+                top: 117vw;
+                right: 2vw;
+            }
+
+            .kvImg-main {
+                height: 65vw;
+                right: 35vw;
+                top: 92vw;
+            }
+            .kvImg-circle {
+                width: 32vw;
+                left: 3vw;
+                top: 110vw;
+            }
+    
+            .kvImg-language {
+                width: 50vw;
+                right: 6vw;
+                top: 120vw;
+            }
+
+            .form {
+                width: 90vw;
+                top: 47vw;
+                left: 5vw;
+
+                .formTitle {
+                    margin-left: 2.2vw;
+                    font-size: 4.5vw;
+    
+                    .icon {width: 8vw;}
+                    .ml-1vw {margin-left: 3vw;}
+                    .blinkCon {
+                        .blink-text {
+                            width: 40vw;
+                            height: 5vw;
+                            bottom: 0;
+                        }
+                        .blink {
+                            width: 40vw;
+                            height: 2vw;
+                            bottom: -1vw;
+                        }
+                    }
+
+                }
+                
+                .w-49 {width: 44vw;}
+    
+                .inputStyle {
+                    height: 8vw;
+                    font-size: 4vw;
+                    margin: 1vw 0;
+                    padding: 0 3vw;
+                }
+                
+                .checkedText {
+                    font-size: 3vw;
+                }
+    
+                .pt-1vw {
+                    padding-top: 3vw;
+                }
+
+                #sBut {
+                    font-size: 4.5vw;
+                    padding: 0 4vw;
+                    margin-left: 3vw;
+                }
+            }
+        }
+    }
+
+    .subsidyProgram {
+        background-image: url(../images/kvPurpleSlash_r.png), url(../images/kvPurpleSlash.png), url(../images/bgSlashBlue.png);
+        background-size: auto 50%, auto 50%, 100% 100%;
+        background-position: right top, left bottom, center center;
+        background-repeat: no-repeat;
+
+        .purpleSlash {
+
+            z-index: 10;
+        }
+        .width-lg {
+
+            max-width: 992px;
+            z-index: 20;
+
+            .whiteBg {
+                background-color: white;
+                img {padding-right: 1rem;}
+            }
+        }
+    }
+
+    .learning {
+
+        .fontTitle {
+            font-size: 2vw;
+            font-weight: bold;
+        }
+
+        .fontContent {
+            font-size: 1.5vw;
+            font-weight: bold;
+            &.py-content {padding: 0.5vw 0 1vw 0;}
+        }
+
+        .learning {
+
+            &.japanese {background-image: url(../images/learningJapanese.png);}
+            &.english {background-image: url(../images/learningEnglish.png);}
+            &.korean {background-image: url(../images/learningKorean.png);}
+
+            background-size: cover;
+            padding: 5vw 0;
+
+            .fontButton {
+                font-size: 1.5vw;
+                font-weight: bold;
+            }
+
+            .buttonStyle {
+                background-color: $color-main-yellow;
+                border-radius: 10vw;
+                padding: 0.2vw 2vw;
+                animation: zoomInOut 1.5s linear infinite;
+                cursor: pointer;
+            }
+        }
+
+        @media screen and (max-width:992px) {
+            .fontTitle {font-size: 7vw;}
+            .fontContent {font-size: 5vw;}
+            .learning {
+                padding: 15vw 0;
+                .fontButton {font-size: 5vw;}
+                .buttonStyle {padding: 0.2vw 4vw;}
+            }
+
+        }
+    }
+
+    .resource {
+        background-image: url(../images/bgSlash.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        .text-justify {text-align: justify;}
+    }
+
+    .fourPoints {
+        background-image: url(../images/fourPoints-bg.png);
+        background-size: 100% auto;
+        background-position: center center;
+
+        @media screen and (max-width:992px) {
+            background-size: auto 100%;
+        }
+    }
+
+    .teacher {
+        .swiper {
+            .swiper-slide{
+                background-color: $color-main-blue;
+            }
+        }
+    }
+
+    .lessons {
+        background-color: #f1f1f1;
+
+        .container {
+            max-width: 992px;
+
+            .lessonArrow {
+                width: 100%;
+                max-width: 142px;
+            }
+
+            .w-title {
+                width: 13%;
+                min-width: 153px;
+
+                @media screen and (max-width:992px) {
+                    width: unset;
+                }
+            }
+
+            .bgWhite{background-color: white;}
+            .english {
+                .lessonArrow {fill:$color-main-blue}
+                .colorTitle {color: $color-main-blue;}
+                .bgDeep{background-color: #d7efff;}
+            }
+            .japanese {
+                .lessonArrow {fill:rgb(165, 81, 144);}
+                .colorTitle {color: rgb(165, 81, 144);}
+                .bgDeep{background-color: #ffe6ee;}
+            }
+            .korean {
+                .lessonArrow {fill:rgb(199, 148, 38);}
+                .colorTitle {color: rgb(199, 148, 38);}
+                .bgDeep{background-color: #fff8e6;}
+            }
+            .cpt {
+                .lessonArrow {fill:rgb(72, 107, 43);}
+                .colorTitle {color: rgb(72, 107, 43);}
+                .bgDeep{background-color: #ebffe6;}
+            }
+        }
+
+    }
+
+}
+
+@keyframes zoomInOut {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}

@@ -1,0 +1,386 @@
+.wrapper, *:before, *:after {
+  position: relative;
+  margin: 0;
+  font-family: "Noto Sans TC", sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+  box-sizing: border-box;
+}
+
+.buttonStyle {
+  background-color: #ffda00;
+  border-radius: 10vw;
+  padding: 0 1.25rem;
+  animation: zoomInOut 1.5s linear infinite;
+  cursor: pointer;
+}
+
+.wrapper {
+  padding-top: 65px;
+}
+.wrapper a {
+  text-decoration: none;
+}
+.wrapper .colorYellow {
+  color: #ffda00;
+}
+.wrapper .colorBlue {
+  color: #1e61c6;
+}
+.wrapper .colorWhite {
+  color: white;
+}
+.wrapper .kv {
+  height: 44vw;
+  background-image: url(../images/bgSlash.png);
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+.wrapper .kv .kvTitle {
+  width: 38vw;
+  top: 4vw;
+  left: 8vw;
+}
+.wrapper .kv .kvBlueSlash {
+  width: 7vw;
+}
+.wrapper .kv .kvPurpleSlash {
+  bottom: 0;
+  width: 6vw;
+}
+.wrapper .kv .kvYellowSlash {
+  width: 10vw;
+  top: 27vw;
+  right: 2vw;
+}
+.wrapper .kv .kvImg-main {
+  height: 44vw;
+  right: 0;
+}
+.wrapper .kv .kvImg-main .mainImg-Pos {
+  height: 100%;
+  left: 51vw;
+}
+.wrapper .kv .kvImg-circle {
+  width: 15vw;
+  left: 52vw;
+  top: 4vw;
+}
+.wrapper .kv .kvImg-language {
+  width: 25vw;
+  right: 24vw;
+  top: 25vw;
+}
+.wrapper .kv .form {
+  width: 38vw;
+  top: 21vw;
+  left: 8vw;
+}
+.wrapper .kv .form .formTitle {
+  margin-left: 1.2vw;
+  font-size: 2vw;
+  font-weight: 900;
+}
+.wrapper .kv .form .formTitle .icon {
+  width: 2.5vw;
+}
+.wrapper .kv .form .formTitle .ml-1vw {
+  margin-left: 1vw;
+}
+.wrapper .kv .form .formTitle .blinkCon {
+  height: 3vw;
+}
+.wrapper .kv .form .formTitle .blinkCon .blink-text {
+  width: 17.5vw;
+}
+.wrapper .kv .form .formTitle .blinkCon .blink {
+  width: 17.5vw;
+  height: 1vw;
+  bottom: 0.5vw;
+  background-color: #ffda00;
+  animation-duration: 1s;
+  animation-name: blink;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.wrapper .kv .form .w-49 {
+  width: 18.5vw;
+}
+.wrapper .kv .form .inputStyle {
+  height: 3vw;
+  color: black;
+  background-color: #e6e6e6;
+  border: 0;
+  border-radius: 10vw;
+  font-size: 1.5vw;
+  margin: 0.5vw 0;
+  padding: 0 1vw;
+}
+.wrapper .kv .form .inputStyle::-moz-placeholder {
+  color: black;
+}
+.wrapper .kv .form .inputStyle::placeholder {
+  color: black;
+}
+.wrapper .kv .form .checkedText {
+  font-size: 1.25vw;
+}
+.wrapper .kv .form .pt-1vw {
+  padding-top: 1vw;
+}
+.wrapper .kv .form #sBut {
+  color: black;
+  background-color: #ffda00;
+  font-size: 1.5vw;
+  border-radius: 10vw;
+  padding: 0 2vw;
+  margin-left: 1vw;
+  font-weight: 900;
+  animation: zoomInOut 1.5s linear infinite;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv {
+    height: 150vw;
+    background-size: auto 100%;
+  }
+  .wrapper .kv .kvTitle {
+    width: 90vw;
+    top: 8vw;
+    left: 5vw;
+  }
+  .wrapper .kv .kvYellowSlash {
+    width: 25vw;
+    top: 117vw;
+    right: 2vw;
+  }
+  .wrapper .kv .kvImg-main {
+    height: 65vw;
+    right: 35vw;
+    top: 92vw;
+  }
+  .wrapper .kv .kvImg-circle {
+    width: 32vw;
+    left: 3vw;
+    top: 110vw;
+  }
+  .wrapper .kv .kvImg-language {
+    width: 50vw;
+    right: 6vw;
+    top: 120vw;
+  }
+  .wrapper .kv .form {
+    width: 90vw;
+    top: 47vw;
+    left: 5vw;
+  }
+  .wrapper .kv .form .formTitle {
+    margin-left: 2.2vw;
+    font-size: 4.5vw;
+  }
+  .wrapper .kv .form .formTitle .icon {
+    width: 8vw;
+  }
+  .wrapper .kv .form .formTitle .ml-1vw {
+    margin-left: 3vw;
+  }
+  .wrapper .kv .form .formTitle .blinkCon .blink-text {
+    width: 40vw;
+    height: 5vw;
+    bottom: 0;
+  }
+  .wrapper .kv .form .formTitle .blinkCon .blink {
+    width: 40vw;
+    height: 2vw;
+    bottom: -1vw;
+  }
+  .wrapper .kv .form .w-49 {
+    width: 44vw;
+  }
+  .wrapper .kv .form .inputStyle {
+    height: 8vw;
+    font-size: 4vw;
+    margin: 1vw 0;
+    padding: 0 3vw;
+  }
+  .wrapper .kv .form .checkedText {
+    font-size: 3vw;
+  }
+  .wrapper .kv .form .pt-1vw {
+    padding-top: 3vw;
+  }
+  .wrapper .kv .form #sBut {
+    font-size: 4.5vw;
+    padding: 0 4vw;
+    margin-left: 3vw;
+  }
+}
+.wrapper .subsidyProgram {
+  background-image: url(../images/kvPurpleSlash_r.png), url(../images/kvPurpleSlash.png), url(../images/bgSlashBlue.png);
+  background-size: auto 50%, auto 50%, 100% 100%;
+  background-position: right top, left bottom, center center;
+  background-repeat: no-repeat;
+}
+.wrapper .subsidyProgram .purpleSlash {
+  z-index: 10;
+}
+.wrapper .subsidyProgram .width-lg {
+  max-width: 992px;
+  z-index: 20;
+}
+.wrapper .subsidyProgram .width-lg .whiteBg {
+  background-color: white;
+}
+.wrapper .subsidyProgram .width-lg .whiteBg img {
+  padding-right: 1rem;
+}
+.wrapper .learning .fontTitle {
+  font-size: 2vw;
+  font-weight: bold;
+}
+.wrapper .learning .fontContent {
+  font-size: 1.5vw;
+  font-weight: bold;
+}
+.wrapper .learning .fontContent.py-content {
+  padding: 0.5vw 0 1vw 0;
+}
+.wrapper .learning .learning {
+  background-size: cover;
+  padding: 5vw 0;
+}
+.wrapper .learning .learning.japanese {
+  background-image: url(../images/learningJapanese.png);
+}
+.wrapper .learning .learning.english {
+  background-image: url(../images/learningEnglish.png);
+}
+.wrapper .learning .learning.korean {
+  background-image: url(../images/learningKorean.png);
+}
+.wrapper .learning .learning .fontButton {
+  font-size: 1.5vw;
+  font-weight: bold;
+}
+.wrapper .learning .learning .buttonStyle {
+  background-color: #ffda00;
+  border-radius: 10vw;
+  padding: 0.2vw 2vw;
+  animation: zoomInOut 1.5s linear infinite;
+  cursor: pointer;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .learning .fontTitle {
+    font-size: 7vw;
+  }
+  .wrapper .learning .fontContent {
+    font-size: 5vw;
+  }
+  .wrapper .learning .learning {
+    padding: 15vw 0;
+  }
+  .wrapper .learning .learning .fontButton {
+    font-size: 5vw;
+  }
+  .wrapper .learning .learning .buttonStyle {
+    padding: 0.2vw 4vw;
+  }
+}
+.wrapper .resource {
+  background-image: url(../images/bgSlash.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.wrapper .resource .text-justify {
+  text-align: justify;
+}
+.wrapper .fourPoints {
+  background-image: url(../images/fourPoints-bg.png);
+  background-size: 100% auto;
+  background-position: center center;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .fourPoints {
+    background-size: auto 100%;
+  }
+}
+.wrapper .teacher .swiper .swiper-slide {
+  background-color: #1e61c6;
+}
+.wrapper .lessons {
+  background-color: #f1f1f1;
+}
+.wrapper .lessons .container {
+  max-width: 992px;
+}
+.wrapper .lessons .container .lessonArrow {
+  width: 100%;
+  max-width: 142px;
+}
+.wrapper .lessons .container .w-title {
+  width: 13%;
+  min-width: 153px;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .lessons .container .w-title {
+    width: unset;
+  }
+}
+.wrapper .lessons .container .bgWhite {
+  background-color: white;
+}
+.wrapper .lessons .container .english .lessonArrow {
+  fill: #1e61c6;
+}
+.wrapper .lessons .container .english .colorTitle {
+  color: #1e61c6;
+}
+.wrapper .lessons .container .english .bgDeep {
+  background-color: #d7efff;
+}
+.wrapper .lessons .container .japanese .lessonArrow {
+  fill: rgb(165, 81, 144);
+}
+.wrapper .lessons .container .japanese .colorTitle {
+  color: rgb(165, 81, 144);
+}
+.wrapper .lessons .container .japanese .bgDeep {
+  background-color: #ffe6ee;
+}
+.wrapper .lessons .container .korean .lessonArrow {
+  fill: rgb(199, 148, 38);
+}
+.wrapper .lessons .container .korean .colorTitle {
+  color: rgb(199, 148, 38);
+}
+.wrapper .lessons .container .korean .bgDeep {
+  background-color: #fff8e6;
+}
+.wrapper .lessons .container .cpt .lessonArrow {
+  fill: rgb(72, 107, 43);
+}
+.wrapper .lessons .container .cpt .colorTitle {
+  color: rgb(72, 107, 43);
+}
+.wrapper .lessons .container .cpt .bgDeep {
+  background-color: #ebffe6;
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}/*# sourceMappingURL=style.css.map */

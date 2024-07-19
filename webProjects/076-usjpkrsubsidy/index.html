@@ -1,0 +1,600 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>【補助申請】最新國民補助語言任選！美語學習、日語學習、韓語學習</title>
+    <meta name="Title" content="【補助申請】最新國民補助語言任選！美語學習、日語學習、韓語學習" />
+    <meta name="Description" content="響應全球化國際外語教育趨勢,協助國民學英語,日語,韓語,特辦本計劃,無論想報名英文考多益,想進日本語言學校進行日檢報名,想進韓國語學堂進行韓文報名,皆可申請!" />
+    <meta name="keywords" content="成人英語,日文補助,線上學韓文,補習英文,日文課,韓文課" />
+    <meta property="og:title" content="【補助申請】最新國民補助語言任選！美語學習、日語學習、韓語學習" />
+    <meta property="og:url" content="https://www.abconline.com.tw/activity/other/076-usjpkrsubsidy/index.html" />
+    <meta property="og:image" content="images/shareCard.jpg" />
+    <meta property="og:description" content="響應全球化國際外語教育趨勢,協助國民學英語,日語,韓語,特辦本計劃,無論想報名英文考多益,想進日本語言學校進行日檢報名,想進韓國語學堂進行韓文報名,皆可申請!" />
+    <link rel="canonical" href="https://www.abconline.com.tw/activity/other/076-usjpkrsubsidy/index.html" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/comm-style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!--非填單按鈕使用class name="activity-page-click-count"-->
+    <!-- Include JS & CSS End -->
+    <script type="text/javascript">
+        //留單相關，看過後請把註解刪掉喔!  -----start
+        var dept = "KZ2";
+        var seq_no = "0";
+        var web_pno = ""; //電腦版pno
+        var NList_Type = "5";
+        var fromto = "";
+        var Gift = "";
+        var is_Mobile = "0";
+
+        /*手機板 pno 判斷相關 >> start */
+        $(function () {
+            if (isMobile()) {
+                web_pno = "110035500002";  //手機板pno
+                is_Mobile = "1";   
+            }
+        });
+
+        function isMobile() {
+            try { document.createEvent("TouchEvent"); return true; }
+            catch (e) { return false; }
+        }
+        /*手機板 pno 判斷相關 >> end*/
+        
+
+
+        function but_send() {
+            $('#sBut').hide();
+            //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----start
+            GetPno();
+            if (Gift == "") {
+                alert('請選擇想索取的課程補助');
+                $('#sBut').show();
+                return false;
+            }
+            //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----end
+            var JSonData = {
+                "name": $("#name").val(),
+                "mobile": $("#mobile").val(),
+                "email": $("#email").val(),
+                "seq_no": seq_no,
+                "dept_no": dept,
+                "memo": "1萬元補助+1200堂數位課+60堂檢定" + Gift,
+                "web_pno": web_pno,
+                "fromto": QueryString("fromto") != null ? QueryString("fromto") : fromto,
+                "fromurl": document.location.href, 
+                "sourceid": QueryString("fc") != null ? QueryString("fc") : "",
+                "NList_Type": NList_Type,
+                "IsSend": "N",
+                "func": "njycooooqj"
+            }
+
+            if ($("input[name=per_chk]:checked").length == 0) {
+                alert('請勾選同意個資保護聲明。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.name == "" || JSonData.name == "姓 名") {
+                alert('請填寫入姓名。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile == "" || JSonData.mobile == "行動電話") {
+                alert('請填寫行動電話。');
+                $('#sBut').show();
+                return false;
+            }
+            if (isNaN(JSonData.mobile) == true) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile.length != 10) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.email == "" || JSonData.email == "E-Mail") { JSonData.email = "" } else {
+                if (JSonData.email.indexOf("@") <= -1) {
+                    alert('電子郵件格式錯誤。');
+                    $('#sBut').show();
+                    return false;
+                }
+            }
+            goSubmit(JSonData, s, f);
+        }
+
+        function s(data) {
+            if (data[0].result == "1") {
+                $("#name").val("");
+                $("#mobile").val("");
+                $("#sBut").show();
+                document.location.href = "/wGuest/loadover.htm";
+            } else {
+                alert('送出失敗！');
+                $("#sBut").show();
+            }
+        }
+        function f(data) {
+            alert(data);
+            $("#sBut").show();
+        }
+        //留單相關，看過後請把註解刪掉喔!  -----end
+
+        //下拉選單有不同語系課程時使用，如果沒有要用就刪掉(左SP右邊PC)  -----start
+        function GetPno() {
+            var select_val = $("#dpGift :selected").val();
+            switch (select_val) {
+                case "english":
+                    web_pno = is_Mobile == "1" ? "113061500013" : "113061500012";
+                    Gift = "我要索取美語補助";
+                    break;
+                case "japanese":
+                    web_pno = is_Mobile == "1" ? "113061500015" : "113061500014";
+                    Gift = "我要索取日語補助";
+                    break;
+                case "korean":
+                    web_pno = is_Mobile == "1" ? "113061500017" : "113061500016";
+                    Gift = "我要索取韓語補助";
+                    break;
+            }
+        }
+        //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----end
+
+    </script>
+    <!-- Google Tag Manager -->
+    <script>
+            (function (w, d, s, l, i) {
+                w[l] = w[l] || []; w[l].push({
+                    'gtm.start':
+                        new Date().getTime(), event: 'gtm.js'
+                }); var f = d.getElementsByTagName(s)[0],
+                    j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+            })(window, document, 'script', 'dataLayer', 'GTM-WSWZFBP');
+    </script>
+    <!-- End Google Tag Manager -->
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSWZFBP"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <form id="form1" runat="server">
+        <div class="top">
+            <iframe src="https://www.abconline.com.tw/activity/header/2020/" width="100%" height="65px" scrolling="No" frameborder="0" allowtransparency="allowTransparency" class="ifar"></iframe>
+        </div>
+        <!-- HTML Start -->
+
+        <!-- wapper開始 -->
+        <div class="wrapper overflow-hidden">
+            <div class="kv position-relative">
+                <img class="position-absolute kvTitle" src="images/kvTitle.png" data-aos="fade-up">
+                <img class="position-absolute kvBlueSlash" src="images/kvBlueSlash.png">
+                <img class="position-absolute kvPurpleSlash" src="images/kvPurpleSlash.png">
+                <img class="position-absolute kvYellowSlash" src="images/kvYellowSlash.png" data-aos="fade-left" data-aos-delay="1200">
+
+                <div class="position-absolute">
+                    <div class="position-relative kvImg-main">
+                        <img class="position-absolute mainImg-Pos wow fadeInRight" src="images/kvImg-main-01.png" data-wow-duration="2s" data-wow-delay="0s">
+                        <img class="position-absolute mainImg-Pos wow fadeInRight" src="images/kvImg-main-02.png" data-wow-duration="2s" data-wow-delay="2s">
+                        <img class="position-absolute mainImg-Pos wow fadeInRight" src="images/kvImg-main-03.png" data-wow-duration="2s" data-wow-delay="4s">
+                    </div>
+                </div>
+        
+                <img class="position-absolute kvImg-circle" src="images/kvImg-circle.png" data-aos="flip-left" data-aos-delay="600">
+                <img class="position-absolute kvImg-language" src="images/kvImg-language.png" data-aos="fade-left" data-aos-delay="900">
+                <div class="position-absolute form" data-aos="fade-up" data-aos-delay="300">
+                    <div class="d-flex formTitle">
+                        <div class="d-flex align-items-center">
+                            <img class="icon" src="images/kvIconForm.png"><span >填表查詢申請</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <img class="icon ml-1vw" src="images/kvIconMoney.png">
+                            <div class="position-relative blinkCon">
+                                <span class="position-absolute blink"></span>
+                                <span class="position-absolute blink-text">補助學費10,000元</span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- 表單開始 -->
+                    <div class="d-flex flex-wrap">
+                        <div class="d-flex w-100 justify-content-between">
+                            <input class="w-49 inputStyle" name="ea" type="text" id="name" placeholder="姓名" />
+                            <input class="w-49 inputStyle" name="mobile" type="text" id="mobile" placeholder="電話" />
+                        </div>
+
+                        <input class="col-12 inputStyle" name="email" type="text" id="email" placeholder="E-Mail" />
+                        <select class="col-12 inputStyle" id="dpGift">
+                            <option value="select" selected>請選擇想索取的課程補助</option>
+                            <option value="english">我要索取美語補助</option>
+                            <option value="japanese">我要索取日語補助</option>
+                            <option value="korean">我要索取韓語補助</option>
+                        </select>
+                        <div class="d-flex align-items-center mx-auto pt-1vw">
+                            <label>
+                                <input type="checkbox" name="per_chk" checked="checked">
+                            </label>
+                            <span class="checkedText">
+                                我已閱讀並接受<a onclick="window.open('/activity/abconline/contract_02/','person',config='height=640,width=830');return false;" href="#">個資保護聲明</a>
+                            </span>
+                            <span id="sBut" onClick="but_send();" style="cursor:pointer;">
+                                <div class="go_button">登記領取</div>
+                            </span>
+                            
+                        </div>
+                    </div>
+                    <!-- 表單結束 -->
+                </div>
+            </div>
+
+            <section class="position-relative subsidyProgram">
+                <div class="fs-1 fw-bold text-center pt-5 colorYellow">補助計劃說明</div>
+                <div class="width-lg px-5 mx-auto pt-3 pb-5" data-aos="fade-up">
+                    <div class="whiteBg p-lg-5 p-3">
+                        <div class="d-flex align-items-center py-3">
+                            <div class="col-lg-2 col-4 text-center">
+                                <img class="w-75" src="images/iconSpeaker.png" alt="計畫目的">
+                            </div>
+                            <div>
+                                <div class="fs-3 fw-bold colorBlue">計畫目的</div>
+                                <div class="fs-5 fw-bold">因應全球化國際外語教育趨勢，協助國民提升商貿、觀光、留學、文化交流等外語能力，特辦本計畫。</div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center py-3">
+                            <div class="col-lg-2 col-4 text-center">
+                                <img class="w-75" src="images/iconPeople.png" alt="補助對象">
+                            </div>
+                            <div>
+                                <div class="fs-3 fw-bold colorBlue">補助對象</div>
+                                <div class="fs-5 fw-bold">年滿18歲以上，欲培養第二外語(英語/日語/韓語)之臺灣國民。</div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center py-3">
+                            <div class="col-lg-2 col-4 text-center">
+                                <img class="w-75" src="images/iconCoins.png" alt="補助方式">
+                            </div>
+                            <div>
+                                <div class="fs-3 fw-bold colorBlue">補助方式</div>
+                                <div class="fs-5 fw-bold">每人最高可享10,000元英語、日語或韓語補助，本月限額100名。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="learning">
+                <div class="d-flex flex-wrap">
+                    <div class="col-lg-4 col-12 d-flex align-items-center flex-column justify-content-center learning japanese">
+                        <div class="fontTitle colorYellow">進修日文</div>
+                        <div class="fontContent colorWhite py-content d-flex flex-column align-items-center" data-aos="fade-up">
+                            <span>學日語會話、商用日語、</span>
+                            <span>日語檢定JLPT、現代日本語。</span>
+                        </div>
+                        <span class="fontButton buttonStyle" onclick="scrollToForm()">免費試學</span>
+                    </div>
+                    <div class="col-lg-4 col-12 d-flex align-items-center flex-column justify-content-center learning english">
+                        <div class="fontTitle colorYellow">進修英文</div>
+                        <div class="fontContent colorWhite py-content d-flex flex-column align-items-center" data-aos="fade-up">
+                            <span>學習英語會話、商用英語、</span>
+                            <span>英語檢定(多益/雅思/全民英檢)。</span>
+                        </div>
+                        <span class="fontButton buttonStyle" onclick="scrollToForm()">免費試學</span>
+                    </div>
+                    <div class="col-lg-4 col-12 d-flex align-items-center flex-column justify-content-center learning korean">
+                        <div class="fontTitle colorYellow">進修韓文</div>
+                        <div class="fontContent colorWhite py-content d-flex flex-column align-items-center" data-aos="fade-up">
+                            <span>學習韓語會話、商用韓語、</span>
+                            <span>韓語檢定TOPIK、韓國文化。</span>
+                        </div>
+                        <span class="fontButton buttonStyle" onclick="scrollToForm()">免費試學</span>
+                    </div>
+                </div>
+            </section>
+            <section class="resource">
+                <div class="fs-1 fw-bold text-center py-5 d-flex flex-wrap justify-content-center">
+                    <span>善用課程資源，</span><span>幫您提升學習效率</span>
+                </div>
+                <div class="container">
+                    <div class="d-flex flex-wrap">
+                        <div class="col-lg-4 col-6 px-3 pb-5" data-aos="fade-up">
+                            <div class="col-lg-3 col-6 mx-auto">
+                                <img class="w-100" src="images/resouceIconOnline.png">
+                            </div>
+                            <div class="fs-3 fw-bold pt-3 colorBlue text-center">線上諮詢服務</div>
+                            <div class="fs-5 fw-bold text-justify">線上確認是否符合申請資格、還能依學習目的建議學習方式！</div>
+                        </div>
+                        <div class="col-lg-4 col-6 px-3 pb-5" data-aos="fade-up">
+                            <div class="col-lg-3 col-6 mx-auto">
+                                <img class="w-100" src="images/resouceIconTime.png">
+                            </div>
+                            <div class="fs-3 fw-bold pt-3 colorBlue text-center">時間彈性選課自由</div>
+                            <div class="fs-5 fw-bold text-justify">多元主題課程可針對需求選排課，每堂50分鐘，上課時段自己選！</div>
+                        </div>
+                        <div class="col-lg-4 col-6 px-3 pb-5" data-aos="fade-up">
+                            <div class="col-lg-3 col-6 mx-auto">
+                                <img class="w-100" src="images/resouceIconProfessional.png">
+                            </div>
+                            <div class="fs-3 fw-bold pt-3 colorBlue text-center">認證專業師資</div>
+                            <div class="fs-5 fw-bold text-justify">嚴選教學經驗豐富、具專業認證之本籍與外籍教師，高效率培養語感！</div>
+                        </div>
+                        <div class="col-lg-4 col-6 px-3 pb-5" data-aos="fade-up">
+                            <div class="col-lg-3 col-6 mx-auto">
+                                <img class="w-100" src="images/resouceIconLevel.png">
+                            </div>
+                            <div class="fs-3 fw-bold pt-3 colorBlue text-center">程度分級把關</div>
+                            <div class="fs-5 fw-bold text-justify">有專業老師口測，以及升級考試程度分班，選課不怕等級落差大！</div>
+                        </div>
+                        <div class="col-lg-4 col-6 px-3 pb-5" data-aos="fade-up">
+                            <div class="col-lg-3 col-6 mx-auto">
+                                <img class="w-100" src="images/resouceIconDevice.png">
+                            </div>
+                            <div class="fs-3 fw-bold pt-3 colorBlue text-center">跨裝置學習超方便</div>
+                            <div class="fs-5 fw-bold text-justify">電腦、筆電、平板、手機皆可上課，任何地點都可以是你的語言教室！</div>
+                        </div>
+                        <div class="col-lg-4 col-6 px-3 pb-5" data-aos="fade-up">
+                            <div class="col-lg-3 col-6 mx-auto">
+                                <img class="w-100" src="images/resouceIconRecord.png">
+                            </div>
+                            <div class="fs-3 fw-bold pt-3 colorBlue text-center">課後錄影檔</div>
+                            <div class="fs-5 fw-bold text-justify">上課不需做筆記，每堂課都有教學過程錄影，不限次數觀看錄影檔！</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="fourPoints">
+                <h1>
+                    <div class="fs-1 fw-bold d-flex flex-wrap justify-content-center colorWhite pt-5 pb-3">
+                        <span>課程四大補助，</span><span>一次學好英日韓語</span>
+                    </div>
+                </h1>
+                <div class="container">
+                    <div class="d-flex flex-wrap">
+                        <div class="col-lg-3 col-6 d-flex flex-column justify-content-center align-items-center pb-5" data-aos="fade-up">
+                            <img class="w-75 pb-3" src="images/fourPoints-10classes.png">
+                            <span class="fs-5 fw-bold buttonStyle" onclick="scrollToForm()">索取課程</span>
+                        </div>
+                        <div class="col-lg-3 col-6 d-flex flex-column justify-content-center align-items-center pb-5" data-aos="fade-up">
+                            <img class="w-75 pb-3" src="images/fourPoints-60classes.png">
+                            <span class="fs-5 fw-bold buttonStyle" onclick="scrollToForm()">索取課程</span>
+                        </div>
+                        <div class="col-lg-3 col-6 d-flex flex-column justify-content-center align-items-center pb-5" data-aos="fade-up">
+                            <img class="w-75 pb-3" src="images/fourPoints-1200classes.png">
+                            <span class="fs-5 fw-bold buttonStyle" onclick="scrollToForm()">索取課程</span>
+                        </div>
+                        <div class="col-lg-3 col-6 d-flex flex-column justify-content-center align-items-center pb-5" data-aos="fade-up">
+                            <img class="w-75 pb-3" src="images/fourPoints-10000dollars.png">
+                            <span class="fs-5 fw-bold buttonStyle" onclick="scrollToForm()">索取課程</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="teacher">
+                <div class="fs-1 fw-bold text-center d-flex flex-wrap justify-content-center pt-5">
+                    <span>專業名師全方位教學，</span><span>突破您的學習盲點！</span>
+                </div>
+                <div class="d-flex flex-wrap">
+                    <div class="col-xl-3 col-lg-6 col-12 fs-5 fw-bold px-4 d-flex flex-column justify-content-center align-items-center" data-aos="fade-up">
+                        有別於坊間英文補習班、日文補習班、韓文補習班上課模式，線上就能直接跟老師互動學習，課程依個人學習狀態彈性調整授課內容。不必再擔心補英文沒效果，或是遇到不適合的日文家教、韓文家教。非常適合推薦給正在尋求高效學習方法的學習者！
+                        <span class="fs-5 fw-bold buttonStyle my-3" onclick="scrollToForm()">索取課程</span>
+                    </div>
+                    <div class="col-xl-9 col-lg-6 col-12 d-flex align-items-center pt-3 pb-5" data-aos="fade-up">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide text-center p-2">
+                                    <a href="https://www.abconline.com.tw/teachers/english/cameron">
+                                        <img class="w-100" src="images/teacherCameron.png">
+                                        <div class="fs-5 fw-bold pt-2 colorYellow">英文老師</div>
+                                        <div class="fs-5 fw-bold colorWhite">Cameron老師</div> 
+                                    </a>
+                                </div>
+                                <div class="swiper-slide text-center p-2">
+                                    <a href="https://www.abconline.com.tw/teachers/japanese/yu-wen">
+                                        <img class="w-100" src="images/teacherYuWen.png">
+                                        <div class="fs-5 fw-bold pt-2 colorYellow">日文老師</div>
+                                        <div class="fs-5 fw-bold colorWhite">Yu Wen老師</div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide text-center p-2">
+                                    <a href="https://www.abconline.com.tw/teachers/korean/min-yong">
+                                        <img class="w-100" src="images/teacherMinYong.png">
+                                        <div class="fs-5 fw-bold pt-2 colorYellow">韓文老師</div>
+                                        <div class="fs-5 fw-bold colorWhite">Min Yong老師</div>
+                                    </a>
+                                </div>
+                                <div class="swiper-slide text-center p-2">
+                                    <a href="https://www.abconline.com.tw/teachers/english/sarah-wu">
+                                        <img class="w-100" src="images/teacherSarah.png">
+                                        <div class="fs-5 fw-bold pt-2 colorYellow">英文老師</div>
+                                        <div class="fs-5 fw-bold colorWhite">Sarah Wu老師</div> 
+                                    </a>
+                                </div>
+                                <div class="swiper-slide text-center p-2">
+                                    <a href="https://www.abconline.com.tw/teachers/japanese/ame">
+                                        <img class="w-100" src="images/teacherAme.png">
+                                        <div class="fs-5 fw-bold pt-2 colorYellow">日文老師</div>
+                                        <div class="fs-5 fw-bold colorWhite">Ame老師</div> 
+                                    </a>
+                                </div>
+                                <div class="swiper-slide text-center p-2">
+                                    <a href="https://www.abconline.com.tw/teachers/korean/jb">
+                                        <img class="w-100" src="images/teacherJB.png">
+                                        <div class="fs-5 fw-bold pt-2 colorYellow">韓文老師</div>
+                                        <div class="fs-5 fw-bold colorWhite">JB老師</div> 
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="lessons">
+                <div class="fs-1 fw-bold d-flex flex-wrap justify-content-center pt-5 pb-3">
+                    <span>千堂多元情境課程，</span><span>針對需求自由選擇！</span>
+                </div>
+                <div class="container">
+                    <div class="english">
+                        <div class="fs-3 fw-bold colorTitle text-center d-flex flex-column">
+                            英語課程
+                            <svg class="lessonArrow mx-auto" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 141.2 13.3">
+                                <polygon class="cls-1" points="141.2 0 80.8 0 80.8 0 80.8 0 70.6 10.3 60.3 0 60.3 0 60.3 0 0 0 0 2.1 59.5 2.1 70.6 13.3 70.6 13.2 70.6 13.3 81.7 2.1 141.2 2.1 141.2 0"/>
+                            </svg>
+                        </div>
+                        <div class="pt-3 pb-5" data-aos="fade-up">
+                            <div class="d-flex flex-lg-row flex-column fs-5 fw-bold bgDeep">
+                                <div class="colorTitle p-2 w-title">基礎英文班</div>
+                                <div class="p-2">從練習自然發音，到聽說讀寫整合，融入文法與會話句型，打好英文基礎。</div>
+                            </div>
+                            <div class="d-flex flex-lg-row flex-column fs-5 fw-bold bgWhite">
+                                <div class="colorTitle p-2 w-title">旅遊英文</div>
+                                <div class="p-2">機場英文、住宿英文、觀光英文、用餐英文、美食購物…各式英文教學。</div>
+                            </div>
+                            <div class="d-flex flex-lg-row flex-column fs-5 fw-bold bgDeep">
+                                <div class="colorTitle p-2 w-title">職場商務英文</div>
+                                <div class="p-2">職場英文進修：工作面試英文、履歷英文、電話接聽英文、簡報技巧英文。</div>
+                            </div>
+                            <div class="d-flex flex-lg-row flex-column fs-5 fw-bold bgWhite">
+                                <div class="colorTitle p-2 w-title">生活英文</div>
+                                <div class="p-2">學習自我介紹英文、如何用英文聊天、交友約會英文、流行時事英文。</div>
+                            </div>
+                            <div class="d-flex flex-lg-row flex-column fs-5 fw-bold bgDeep">
+                                <div class="colorTitle p-2 w-title">世界文化英文</div>
+                                <div class="p-2">世界節慶英文、歐美文化解說、傳統習俗英文、看電影學英文、時事新聞英文。</div>
+                            </div>
+                            <div class="d-flex justify-content-center pt-3">
+                                <span class="fs-5 fw-bold buttonStyle" onclick="scrollToForm()">免費體驗</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="japanese">
+                        <div class="fs-3 fw-bold colorTitle text-center d-flex flex-column">
+                            日語課程
+                            <svg class="lessonArrow mx-auto" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 141.2 13.3">
+                                <polygon class="cls-1" points="141.2 0 80.8 0 80.8 0 80.8 0 70.6 10.3 60.3 0 60.3 0 60.3 0 0 0 0 2.1 59.5 2.1 70.6 13.3 70.6 13.2 70.6 13.3 81.7 2.1 141.2 2.1 141.2 0"/>
+                            </svg>
+                        </div>
+                        <div class="pt-3 pb-5" data-aos="fade-up">
+                            <div class="d-flex flex-lg-row flex-column fs-5 fw-bold bgDeep">
+                                <div class="colorTitle p-2 w-title">基礎日文班</div>
+                                <div class="p-2">以日語50音為基礎，搭配N5會話先修日文課程，打造紮實的日文根基。</div>
+                            </div>
+                            <div class="d-flex flex-lg-row flex-column fs-5 fw-bold bgWhite">
+                                <div class="colorTitle p-2 w-title">N5日文會話</div>
+                                <div class="p-2">學習日文以平假名、片假名、日常生活、自我介紹常用的字和句子。</div>
+                            </div>
+                            <div class="d-flex flex-lg-row flex-column fs-5 fw-bold bgDeep">
+                                <div class="colorTitle p-2 w-title">N4日文會話</div>
+                                <div class="p-2">情境式學日文，以日常生活基礎話題與人交流對話，日文學習事半功倍。</div>
+                            </div>
+                            <div class="d-flex flex-lg-row flex-column fs-5 fw-bold bgWhite">
+                                <div class="colorTitle p-2 w-title">N3日文會話</div>
+                                <div class="p-2">日文教學理解日常生活相關文章、對話、並能立即掌握話題涵義。</div>
+                            </div>
+                            <div class="d-flex flex-lg-row flex-column fs-5 fw-bold bgDeep">
+                                <div class="colorTitle p-2 w-title">情境日文會話</div>
+                                <div class="p-2">旅遊日文：日本文化、機場交通日文、問路日文、美食購物日文、飯店住宿日文。職場日文：辦公室日文、商務日文、書信郵件日文、職場接待日文、電話聯絡日文。生活日文：打招呼日文、居家日文、運動日文、點餐日文、節慶日文、日本留學。</div>
+                            </div>
+                            <div class="d-flex justify-content-center pt-3">
+                                <span class="fs-5 fw-bold buttonStyle" onclick="scrollToForm()">免費體驗</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="korean">
+                        <div class="fs-3 fw-bold colorTitle text-center d-flex flex-column">
+                            韓語課程
+                            <svg class="lessonArrow mx-auto" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 141.2 13.3">
+                                <polygon class="cls-1" points="141.2 0 80.8 0 80.8 0 80.8 0 70.6 10.3 60.3 0 60.3 0 60.3 0 0 0 0 2.1 59.5 2.1 70.6 13.3 70.6 13.2 70.6 13.3 81.7 2.1 141.2 2.1 141.2 0"/>
+                            </svg>
+                        </div>
+                        <div class="pt-3 pb-5" data-aos="fade-up">
+                            <div class="d-flex flex-lg-row flex-column fs-5 fw-bold bgDeep">
+                                <div class="colorTitle p-2 w-title">韓語會話班</div>
+                                <div class="p-2">學基礎韓文40音，從簡單造句到表達想法與日常對話，順利用韓語與韓國人士溝通。</div>
+                            </div>
+                            <div class="d-flex flex-lg-row flex-column fs-5 fw-bold bgWhite">
+                                <div class="colorTitle p-2 w-title">旅遊韓文</div>
+                                <div class="p-2">韓國景點、預訂飯店韓文、購物買賣韓文、問路韓文、住宿交通韓文。</div>
+                            </div>
+                            <div class="d-flex flex-lg-row flex-column fs-5 fw-bold bgDeep">
+                                <div class="colorTitle p-2 w-title">流行影視韓文</div>
+                                <div class="p-2">KTV唱歌、Kakao Talk、有趣新造詞、電影與韓文、Kpop等各項議題。</div>
+                            </div>
+                            <div class="d-flex flex-lg-row flex-column fs-5 fw-bold bgWhite">
+                                <div class="colorTitle p-2 w-title">韓國文化節慶</div>
+                                <div class="p-2">韓服文化、各類韓國節慶、韓國禮節、韓國婚禮、韓國傳統民俗遊戲。</div>
+                            </div>
+                            <div class="d-flex flex-lg-row flex-column fs-5 fw-bold bgDeep">
+                                <div class="colorTitle p-2 w-title">情境韓文會話</div>
+                                <div class="p-2">用韓文點飲料、夜市小吃韓文、韓國飲食文化、線上購物韓文、遊樂園約會韓文、韓國宿舍生活、韓國居酒屋。</div>
+                            </div>
+                            <div class="d-flex justify-content-center pt-3">
+                                <span class="fs-5 fw-bold buttonStyle" onclick="scrollToForm()">免費體驗</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cpt">
+                        <div class="fs-3 fw-bold colorTitle text-center d-flex flex-column">
+                            語言檢定認證課程
+                            <svg class="lessonArrow mx-auto" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 141.2 13.3">
+                                <polygon class="cls-1" points="141.2 0 80.8 0 80.8 0 80.8 0 70.6 10.3 60.3 0 60.3 0 60.3 0 0 0 0 2.1 59.5 2.1 70.6 13.3 70.6 13.2 70.6 13.3 81.7 2.1 141.2 2.1 141.2 0"/>
+                            </svg>
+                        </div>
+                        <div class="pt-3 pb-5" data-aos="fade-up">
+                            <div class="d-flex flex-lg-row flex-column fs-5 fw-bold bgDeep">
+                                <div class="colorTitle p-2 w-title">多益檢定TOEIC</div>
+                                <div class="p-2">名師詳解答題策略，多益必考文法總整理、多益聽力情境訓練，有效提升作答速度。</div>
+                            </div>
+                            <div class="d-flex flex-lg-row flex-column fs-5 fw-bold bgWhite">
+                                <div class="colorTitle p-2 w-title">雅思檢定IELTS</div>
+                                <div class="p-2">雅思專業名師授課，聽說讀寫全面擊破考題，快速提升作答能力。</div>
+                            </div>
+                            <div class="d-flex flex-lg-row flex-column fs-5 fw-bold bgDeep">
+                                <div class="colorTitle p-2 w-title">全民英檢GEPT</div>
+                                <div class="p-2">聽說讀寫重點教學，全面提升作達能力，英文能力測驗搭配完整模考與解析。</div>
+                            </div>
+                            <div class="d-flex flex-lg-row flex-column fs-5 fw-bold bgWhite">
+                                <div class="colorTitle p-2 w-title">日文檢定JLPT</div>
+                                <div class="p-2">N5：可掌握生活短文，可從簡短、緩慢的對話中聽出關鍵字。<br>
+                                    N4：可看懂日常生活基本短文，且能大致聽懂速度稍慢之會話。<br>
+                                    N3：可看懂難度稍高之報章雜誌、市調分析等，且能聽懂日常生活的連貫對話。<br>
+                                    N2：能理解期刊專題、評論等文章，且能聽懂大部分情境的連貫對話。</div>
+                            </div>
+                            <div class="d-flex flex-lg-row flex-column fs-5 fw-bold bgDeep">
+                                <div class="colorTitle p-2 w-title">韓文檢定TOPIK</div>
+                                <div class="p-2">TOPIK1：約800個常用韓文單字，能完成日常生活必要的韓文基礎會話。<br>
+                                    TOPIK2：約1,500-2,000單字，理解個人熟知的話題，區分正式與非正式用法。<br>
+                                    TOPIK3：日常溝通沒有困難，可區分口語及書面用法，熟悉社會議題。<br>
+                                    TOPIK4：全韓語授課，能用韓語流暢表達個人意見、進行一般職場業務。</div>
+                            </div>
+                            <div class="d-flex justify-content-center pt-3">
+                                <span class="fs-5 fw-bold buttonStyle" onclick="scrollToForm()">免費體驗</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+            <!-- wapper結束 -->
+        <!-- HTML END -->
+        <div class="footer">
+            <iframe class="FOOTER_frame" src="https://www.abconline.com.tw/activity/footer/2020/" width="100%" scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
+        </div>
+    </form>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/aos.js"></script>
+    <script type="text/javascript" src="js/wow.min.js"></script>
+    <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="/wGuest/js/m_pcschool.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
