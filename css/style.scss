@@ -110,9 +110,11 @@ a {
             .portraitCon {
                 bottom: 0;
                 z-index: 10;
+                
                 .portrait {
                     width: 100%;
                     max-width: 230px;
+                    bottom: 0;
                 }
             }
 

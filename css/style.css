@@ -930,6 +930,7 @@ a:hover {
 .wrapper .kv .smokeFrame .portraitCon .portrait {
   width: 100%;
   max-width: 230px;
+  bottom: 0;
 }
 .wrapper .kv .smokeFrame .titlePos {
   color: #de5350;
