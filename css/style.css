@@ -1020,6 +1020,7 @@ a:hover {
   left: 2vw;
 }
 .wrapper .about .capitalCon .portfolioTape .text {
+  padding: 0.5vw 0;
   width: 45vw;
   text-align: center;
   color: white;
@@ -1046,11 +1047,11 @@ a:hover {
     margin-left: -1vw;
   }
   .wrapper .about .capitalCon .portfolioTape {
-    top: 18.5vw;
-    left: 3vw;
+    top: 20vw;
+    left: 1.5vw;
   }
   .wrapper .about .capitalCon .portfolioTape .text {
-    width: 85vw;
+    width: 87vw;
     font-size: 15vw;
   }
 }
