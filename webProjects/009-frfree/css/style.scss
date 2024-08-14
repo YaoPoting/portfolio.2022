@@ -29,7 +29,7 @@
     }
 
     .kv{
-        height: 76vw;
+        height: 82vw;
         background-color: #fff0d9;
 
         @media screen and (max-width:992px) {height: 440vw;}
@@ -45,7 +45,7 @@
 
             @media screen and (max-width:992px) {
                 width: 45vw;
-                top: 108vw;
+                top: 100vw;
             }
         }
 
@@ -133,14 +133,14 @@
         }
 
         .title_pc {
-            width: 52vw;
-            top: 10vw;
-            left: 24vw;
+            width: 44vw;
+            top: 12vw;
+            left: 28vw;
         }
 
         .title_sp {
             width: 90vw;
-            top: 48vw;
+            top: 52vw;
             left: 5vw;
         }
 
@@ -152,47 +152,42 @@
                         
             @media screen and (max-width:992px) {
                 width: 34vw;
-                top: 85vw;
+                top: 98vw;
                 left: 33vw;
             }
         }
 
-        .freeTitle_Con {
-            top: 41vw;
-            left: 41vw;
-            width: 18vw;
-            height: 3.5vw;
-            
-            .text {
-                width: 100%;
-                text-align: center;
-                color: #00498d;
-                line-height: 1;
-                font-size: 3vw;
-                font-weight: 900;
-            }
+        .freeTitle {
+            top: 46vw;
+            text-align: center;
+            width: 100vw;
 
+            .text {
+                color: #00498d;
+                font-weight: 900;
+                z-index: 20;
+            }
+    
             .highlight {
                 background-color: #ffda00;
                 width: 100%;
                 height: 50%;
-                top: 50%;
+                bottom: 0;
+                z-index: 10;
             }
 
             @media screen and (max-width:992px) {
-                top: 160vw;
-                left: 25.5vw;
-                width: 49vw;
-                height: 9vw;
-                .text {font-size: 8vw;}
+                top: 155vw;
             }
         }
-
+        
         .free_couses {
-            top: 47vw;
+            top: 52vw;
             width: 27vw;
             left: 8vw;
             height: 27vw;
+            cursor: pointer;
+
             .textPos {top: 76%;}
 
             @media screen and (max-width:992px) {
@@ -204,10 +199,12 @@
         }
 
         .free_testing {
-            top: 47vw;
+            top: 52vw;
             width: 26vw;
             left: 37vw;
             height: 27vw;
+            cursor: pointer;
+
             .textPos {top: 70%;}
 
             @media screen and (max-width:992px) {
@@ -219,10 +216,11 @@
         }
 
         .free_materials {
-            top: 47vw;
+            top: 52vw;
             width: 26vw;
             left: 65vw;
             height: 27vw;
+            cursor: pointer;
 
             .textPos {
                 top: 67%;
@@ -248,7 +246,6 @@
             text-decoration-line: underline;
             text-decoration-thickness: 0.1vw;
             text-underline-offset: 0.5vw;
-            cursor: pointer;
 
             @media screen and (max-width:992px) {
                 font-size: 5vw;
@@ -336,6 +333,7 @@
                     margin: 1.25rem auto auto auto;
                     background-color: transparent;
                     border: none;
+                    border-radius: 0px;
                     border-bottom: 1px solid black;
                     line-height: 1;
                     height: 30px;
@@ -378,30 +376,6 @@
         background-color: #f1f1f1;
         border-bottom: #6b73a7 5px solid;
 
-        .balloon_blue {
-            width: 120px;
-            left: -180px;
-            bottom: 100px;
-        }
-
-        .ribbon_left {
-            width: 430px;
-            left: -330px;
-            bottom: -150px;
-        }
-
-        .croissant {
-            width: 200px;
-            right: -230px;
-            bottom: 0;
-        }
-
-        .balloon_right {
-            width: 160px;
-            right: -210px;
-            bottom: 150px;
-        }
-
         .text {
             color: #00498d;
             font-weight: 900;
@@ -416,9 +390,39 @@
             z-index: 10;
         }
 
-        .frame {
-            border-radius: 15px;
-            border: 9px white solid;
+        .containerContext {
+            width: 100%;
+            max-width: 992px;
+            margin: 0 auto;
+
+            .balloon_blue {
+                width: 120px;
+                left: -280px;
+                bottom: 100px;
+            }
+    
+            .ribbon_left {
+                width: 430px;
+                left: -460px;
+                bottom: -150px;
+            }
+    
+            .croissant {
+                width: 200px;
+                right: -330px;
+                bottom: 0;
+            }
+    
+            .balloon_right {
+                width: 160px;
+                right: -310px;
+                bottom: 150px;
+            }
+    
+            .frame {
+                border-radius: 15px;
+                border: 9px white solid;
+            }
         }
 
         .featureColPos{
