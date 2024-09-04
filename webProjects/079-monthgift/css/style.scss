@@ -1,3 +1,5 @@
+body {background-color: #FFB000;}
+
 .wrapper, *:before, *:after {
     position: relative;
     margin: 0;
@@ -6,10 +8,12 @@
     font-style: normal;
     box-sizing: border-box;
 }
+
 .wrapper {
     padding-top: 65px;
     background-color: #d78df7;
     a {text-decoration: none;}
+
     .white { color: #ffffff;}
     .kv{
         height: 40vw;
@@ -72,6 +76,7 @@
             left: 75vw;
             top: 5vw;
         }
+
         @media screen and (max-width:992px) {
             height: 110vw;
             .title {
@@ -121,6 +126,7 @@
             }
         }
     }
+
     .detail {
         background-image: url(../images/kv_pc_doorBtm.png);
         background-size: 100vw 100%;
@@ -153,6 +159,7 @@
             .accordion-button::after {background-image: url(../images/arrow.png);}
         }
     }
+
     .main {
         background: linear-gradient(#d78df7, #77e7ff, #92a2ff, #c564d9);
         .container-form {
@@ -254,6 +261,7 @@
             }
         }
     }
+    
     .drawing {
         padding-bottom: 2rem;
         background-color: #c564d9;
