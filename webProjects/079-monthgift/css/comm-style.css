@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+}
+
+.top {
+    position: absolute;
+}
+
+.top, .footer {
+    width: 100%;
+    height: 65px;
+    line-height: 0px;
+    z-index: 999999;
+}
+
+.top iframe, .footer iframe {
+    height: 65px;
+}

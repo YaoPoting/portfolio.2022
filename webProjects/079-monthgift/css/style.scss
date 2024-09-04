@@ -1,0 +1,444 @@
+.wrapper, *:before, *:after {
+    position: relative;
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    box-sizing: border-box;
+}
+.wrapper {
+    padding-top: 65px;
+    background-color: #d78df7;
+    a {text-decoration: none;}
+    .white { color: #ffffff;}
+    .kv{
+        height: 40vw;
+
+        .door_pc, .door_sp{
+            width: 100vw;
+        }
+        .giftboxLeft {
+            width: 30vw;
+            left: 11vw;
+            top: 25vw;
+        }
+        .giftboxPcoin {
+            width: 27vw;
+            left: 64.5vw;
+            top: 25vw;
+        }
+        .giftboxRight {
+            width: 12vw;
+            left: 83vw;
+            top: 29vw;
+        }
+        .lightBox {
+            width: 15vw;
+            left: 78vw;
+            top: 18vw;
+        }
+        .title {
+            width: 46vw;
+            left: 27vw;
+            top: 13vw;
+        }
+        .subtitle {
+            width: 40vw;
+            left: 30vw;
+            top: 26vw;
+        }
+        .pCoin {
+            width: 10.5vw;
+            left: 68vw;
+            top: 23vw;
+        }
+        .coinLeftBottom {
+            width: 18vw;
+            left: 2vw;
+            top: 17vw;
+        }
+        .coinLeftTop {
+            width: 9vw;
+            left: 16vw;
+            top: 7vw;
+        }
+        .coinRightBottom {
+            width: 6vw;
+            left: 92.5vw;
+            top: 18vw;
+        }
+        .coinRightTop {
+            width: 6vw;
+            left: 75vw;
+            top: 5vw;
+        }
+        @media screen and (max-width:992px) {
+            height: 110vw;
+            .title {
+                width: 92vw;
+                left: 4vw;
+                top: 18vw;
+            }
+            .subtitle {
+                width: 100vw;
+                left: 0;
+                top: 45vw;
+            }
+            .giftboxLeft {
+                width: 41vw;
+                left: 0;
+                top: 78vw;
+            }
+            .giftboxLeft_postpage {
+                width: 52vw;
+                left: 0;
+                top: 70vw;
+            }
+            .lightBox {
+                width: 32vw;
+                left: 23vw;
+                top: 68vw;
+            }
+            .giftboxPcoin {
+                width: 53vw;
+                left: 47vw;
+                top: 71vw;
+            }
+            .pCoin {
+                width: 22vw;
+                left: 54vw;
+                top: 67vw;
+            }
+            .coinLeftTop {
+                width: 11vw;
+                left: 10vw;
+                top: 12vw;
+            }
+            .coinRightTop {
+                width: 10vw;
+                left: 85vw;
+                top: 9vw;
+            }
+        }
+    }
+    .detail {
+        background-image: url(../images/kv_pc_doorBtm.png);
+        background-size: 100vw 100%;
+        @media screen and (max-width:992px) {
+            background-image: unset;
+            background-color: #d78df7;
+        }
+        .container-detail {
+            width: 100%;
+            max-width: 992px;
+            margin: 0 auto;
+            text-align: justify;
+
+            .textShadow {
+                text-shadow: rgb(122, 0, 236) 0 0 0.3em
+            }
+            hr {
+                color: white;
+                opacity: 1;
+                height: 1px;
+            }
+            .accordion-button, .accordion-body {
+                padding: unset;
+                border-radius: 0;
+            }
+            .accordion-button {box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 1);}
+            .accordion-button:focus {box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 1);}
+            .accordion-button:not(.collapsed) {box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 1);}
+            .accordion-item, .accordion-button {background-color: unset;}
+            .accordion-button::after {background-image: url(../images/arrow.png);}
+        }
+    }
+    .main {
+        background: linear-gradient(#d78df7, #77e7ff, #92a2ff, #c564d9);
+        .container-form {
+            width: 100%;
+            max-width: 992px;
+            margin: 0 auto;
+            .form {
+                width: 100%;
+                background-color: #ffffff;
+                border-radius: 15px;
+                margin: 10% auto 0 auto;
+                padding-bottom: 20%;
+                padding-left: 5%;
+                padding-right: 5%;
+                z-index: 100;
+                .giftTop {
+                    margin-top: -11%;
+                    display: block;
+                    width: 50%;
+                    @media screen and (max-width:992px) {
+                        width: 70%;
+                    }
+                }
+                .optionStyle {
+                    width: 100%;
+                    margin-top: 16px;
+                    border-radius: 22px;
+                    padding: 7px 14px;
+                    cursor: pointer;
+                }
+                .selectArrow {
+                    appearance:none;
+                    background: url("../images/arrowBlack.png") no-repeat right center transparent;
+                    background-size: 30px;
+                    background-color: #ffffff;
+                }
+                .answer {
+                    background-color: #ecf9fe;
+                    display: flex;
+                    align-items: center;
+                    .form-check-input {
+                        margin-top: unset;
+                        min-width: 20px;
+                    }
+                    .form-check-input:focus {
+                        box-shadow: unset;
+                    }
+                    .form-check-input:checked[type=radio] {
+                        background-image: url(../images/radioChecked.png);
+                    }
+                    .form-check-input:checked {
+                        background-color: #ffffff;
+                        border-color: #ffffff;
+                    }
+                }
+                .selected {
+                    background-color: #f9e329;
+                }
+                .inputStyle {
+                    border: 1px solid #878787;
+                    line-height: 1;
+                    font-weight: bold;
+                }
+                .buttonStyle {
+                    background: linear-gradient(#eb3e32, #cb0f02);
+                    color: white;
+                    padding: 8px 40px;
+                    border-radius: 50px;
+                }
+            }
+            .blurBlueDot {
+                left: -200px;
+                top: -80px;
+            }
+            .blurPinkDot {
+                right: -100px;
+                top: -70px;
+            }
+            .pinkCircle {
+                right: -330px;
+                top: 500px;
+            }
+            .purpleBigTraigle {
+                left: -500px;
+                top: 600px;
+            }
+            .purpleSmallTraigle {
+                right: -380px;
+                top: 1100px;
+            }
+            .blurPinkDotDotDot {
+                left: -350px;
+                top: 1250px;
+            }
+            .giftBottom {
+                width: 120%;
+                margin: -18% -10% 2% -10%;
+                z-index: 200;
+            }
+        }
+    }
+    .drawing {
+        padding-bottom: 2rem;
+        background-color: #c564d9;
+        .bgTop {
+            background-image: url(../images/kv_pc_doorBtm.png);
+            background-size: 100vw 100%;
+            top: 0;
+            width: 100vw;
+            height: 30%;
+            @media screen and (max-width:992px) {
+                background-image: unset;
+                background-color: #d78df7;
+            }
+        }
+        .bgBottom {
+            background: linear-gradient(#d78df7, #77e7ff, #92a2ff, #c564d9);
+            top: 30%;
+            width: 100vw;
+            height: 70%;
+        }
+        .container-drawing {
+            width: 100%;
+            max-width: 992px;
+            margin: 0 auto;
+            padding-top: 1rem;
+            .form {
+                width: 100%;
+                border-radius: 15px;
+                overflow: hidden;
+                z-index: 100;
+
+                .month {
+                    background: linear-gradient(#a2d1fd, #19b1ff);
+                    padding: 0.5rem;
+                }
+                .title {
+                    background-color: #ffffff;
+                    padding: 0.5rem;
+                }
+                .result {
+                    background-color: #e9f8ff;
+                    padding: 0.5rem;
+                }
+            }
+            .gift {
+                width: 50%;
+                z-index: 200;
+
+                @media screen and (max-width:992px) {
+                    width: 100%;
+                }
+            }
+        }
+        .blurBlueDot {
+            top: 10px;
+            left: -200px;
+        }
+        .blurPinkDot {
+            bottom: 120px;
+            right: -100px;
+        }
+    }    
+}
+
+// animation
+@keyframes zoomInOut {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+@keyframes upDown {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(0); }
+}
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+$particles: 50;
+$width: 500;
+$height: 500;
+
+// Create the explosion...
+$box-shadow: ();
+$box-shadow2: ();
+@for $i from 0 through $particles {
+  $box-shadow: $box-shadow,
+               random($width)-$width / 2 + px
+               random($height)-$height / 1.2 + px
+               hsl(random(360), 100, 50);
+  $box-shadow2: $box-shadow2, 0 0 #fff
+}
+@mixin keyframes ($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+
+    @-ms-keyframes #{$animationName} {
+        @content;
+    }
+
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin animation-delay ($settings) {
+    -moz-animation-delay: $settings;
+    -webkit-animation-delay: $settings;
+    -o-animation-delay: $settings;
+    -ms-animation-delay: $settings;
+    animation-delay: $settings;
+}
+@mixin animation-duration ($settings) {
+    -moz-animation-duration: $settings;
+    -webkit-animation-duration: $settings;
+    -o-animation-duration: $settings;
+    -ms-animation-duration: $settings;
+    animation-duration: $settings;
+}
+@mixin animation ($settings) {
+    -moz-animation: $settings;
+    -webkit-animation: $settings;
+    -o-animation: $settings;
+    -ms-animation: $settings;
+    animation: $settings;
+}
+@mixin transform ($settings) {
+    transform: $settings;
+    -moz-transform: $settings;
+    -webkit-transform: $settings;
+    -o-transform: $settings;
+    -ms-transform: $settings;
+}
+.pyro > .before, .pyro > .after {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  box-shadow: $box-shadow2;
+  @include animation((1s bang ease-out infinite backwards, 1s gravity ease-in infinite backwards, 5s position linear infinite backwards));
+}
+.pyro > .after {
+  @include animation-delay((1.25s, 1.25s, 1.25s));
+  @include animation-duration((1.25s, 1.25s, 6.25s));
+}   
+@include keyframes(bang) {
+  to {
+    box-shadow:$box-shadow;
+  }
+}
+@include keyframes(gravity)  {
+  to {
+    @include transform(translateY(200px));
+    opacity: 0;
+  }
+}
+@include keyframes(position) {
+  0%, 19.9% {
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+  20%, 39.9% {
+    margin-top: 40%;
+    margin-left: 30%;
+  }
+  40%, 59.9% {  
+    margin-top: 20%;
+    margin-left: 70%
+  }
+  60%, 79.9% {  
+    margin-top: 30%;
+    margin-left: 20%;
+  }
+  80%, 99.9% {  
+    margin-top: 30%;
+    margin-left: 80%;
+  }
+}

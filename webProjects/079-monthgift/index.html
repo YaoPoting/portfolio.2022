@@ -1,0 +1,417 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>月月抽好禮-每月抽高單價豪華大獎！</title>
+    <meta name="Title" content="月月抽好禮-每月抽高單價豪華大獎！" />
+    <meta name="Description" content="完成問卷並成功送出者即享當期抽獎資格,每個月不同豪華大獎等你抽!參加者再享免費外語課1堂,英語,日語,西班牙語,韓語,法語,德語,兒童課程任你選!" />
+    <meta name="keywords" content="抽獎,學英文,學日文,學韓文,學西班牙文,學法文,學德文" />
+    <meta property="og:title" content="月月抽好禮-每月抽高單價豪華大獎！" />
+    <meta property="og:url" content="https://zackyao.idv.tw/webProjects/079-monthgift/index.html" />
+    <meta property="og:image" content="images/shareCard.jpg" />
+    <meta property="og:description" content="完成問卷並成功送出者即享當期抽獎資格,每個月不同豪華大獎等你抽!參加者再享免費外語課1堂,英語,日語,西班牙語,韓語,法語,德語,兒童課程任你選!" />
+    <link rel="canonical" href="https://zackyao.idv.tw/webProjects/079-monthgift/index.html" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/comm-style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!--非填單按鈕使用class name="activity-page-click-count"-->
+    <!-- Include JS & CSS End -->
+    <script type="text/javascript">
+        //留單相關，看過後請把註解刪掉喔!  -----start
+        var dept = "KZ2";
+        var seq_no = "0";
+        var web_pno = ""; //電腦版pno
+        var NList_Type = "5";
+        var fromto = "";
+        var Gift = "";
+        var is_Mobile = "0";
+
+        /*手機板 pno 判斷相關 >> start */
+        $(function () {
+            if (isMobile()) {
+                web_pno = "";  //手機板pno
+                is_Mobile = "1";   
+            }
+        });
+
+        function isMobile() {
+            try { document.createEvent("TouchEvent"); return true; }
+            catch (e) { return false; }
+        }
+        /*手機板 pno 判斷相關 >> end*/
+        
+
+
+        function but_send() {
+            $('#sBut').hide();
+
+            //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----start
+            GetPno();
+            if (Gift == "") {
+                alert('請選擇索取最新課表。');
+                $('#sBut').show();
+                return false;
+            }
+            //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----end
+
+            var JSonData = {
+                "name": $("#name").val(),
+                "mobile": $("#mobile").val(),
+                "email": $("#email").val(),
+                "seq_no": seq_no,
+                "dept_no": dept,
+                "memo": "體驗完送電子書" + Gift,
+                "web_pno": web_pno,
+                "fromto": QueryString("fromto") != null ? QueryString("fromto") : fromto,
+                "fromurl": document.location.href, 
+                "sourceid": QueryString("fc") != null ? QueryString("fc") : "",
+                "NList_Type": NList_Type,
+                "IsSend": "N",
+                "func": "njycooooqj"
+            }
+
+            if ($("input[name=per_chk]:checked").length == 0) {
+                alert('請勾選同意個資保護聲明。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.name == "" || JSonData.name == "姓 名") {
+                alert('請填寫入姓名。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile == "" || JSonData.mobile == "行動電話") {
+                alert('請填寫行動電話。');
+                $('#sBut').show();
+                return false;
+            }
+            if (isNaN(JSonData.mobile) == true) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile.length != 10) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.email == "" || JSonData.email == "E-Mail") { JSonData.email = "" } else {
+                if (JSonData.email.indexOf("@") <= -1) {
+                    alert('電子郵件格式錯誤。');
+                    $('#sBut').show();
+                    return false;
+                }
+            }
+            goSubmit(JSonData, s, f);
+        }
+
+        function s(data) {
+            if (data[0].result == "1") {
+                $("#name").val("");
+                $("#mobile").val("");
+                $("#sBut").show();
+                document.location.href = "/wGuest/loadover.htm";
+            } else {
+                alert('送出失敗！');
+                $("#sBut").show();
+            }
+        }
+        function f(data) {
+            alert(data);
+            $("#sBut").show();
+        }
+        //留單相關，看過後請把註解刪掉喔!  -----end
+
+        //下拉選單有不同語系課程時使用，如果沒有要用就刪掉(左SP右PC) -----start
+        function GetPno() {
+            var select_val = $("#dpGift :selected").val();
+            switch (select_val) {
+                case "english":
+                    web_pno = is_Mobile == "1" ? "113091500002" : "113091500001";
+                    Gift = "我想領英語課";
+                    break;
+                case "japanese":
+                    web_pno = is_Mobile == "1" ? "113091500004" : "113091500003";
+                    Gift = "我想領日語課";
+                    break;
+                case "korean":
+                    web_pno = is_Mobile == "1" ? "113091500006" : "113091500005";
+                    Gift = "我想領韓語課";
+                    break;
+                case "spanish":
+                    web_pno = is_Mobile == "1" ? "113091500008" : "113091500007";
+                    Gift = "我想領西語課";
+                    break;
+                case "french":
+                    web_pno = is_Mobile == "1" ? "113091500010" : "113091500009";
+                    Gift = "我想領法語課";
+                    break;
+                case "german":
+                    web_pno = is_Mobile == "1" ? "113091500012" : "113091500011";
+                    Gift = "我想領德語課";
+                    break;
+                case "kidsLanguage":
+                    web_pno = is_Mobile == "1" ? "113091500014" : "113091500013";
+                    Gift = "我想領兒童外語課";
+                    break;
+                case "kidsCoding":
+                    web_pno = is_Mobile == "1" ? "113091500016" : "113091500015";
+                    Gift = "我想領兒童程式課";
+                    break;
+                case "middleClass":
+                    web_pno = is_Mobile == "1" ? "113091500018" : "113091500017";
+                    Gift = "我想領國中文理課";
+                    break;
+            }
+        }
+        //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----end
+    </script>
+</head>
+<body>
+    <div class="top">
+        <iframe src="../../headerFooter/header.html" width="100%" height="65"  scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+    </div>
+    <!-- HTML Start -->
+
+    <!-- wapper開始 -->
+    <div class="wrapper overflow-hidden">
+        <section class="kv pyro position-relative">
+            <img class="position-absolute d-lg-block d-none door_pc" src="images/kv_pc_door.png">
+            <img class="position-absolute d-lg-none d-block door_sp" src="images/kv_sp_door.png">
+            <img class="position-absolute d-lg-block d-none giftboxPcoin" src="images/kv_pc_giftboxPcoin.png" data-aos="zoom-in">
+            <img class="position-absolute d-lg-none d-block giftboxPcoin" src="images/kv_sp_giftboxPcoin.png" data-aos="zoom-in">
+            <img class="position-absolute lightBox" src="images/kv_lightBox.png" data-aos="flip-left" data-aos-delay="1000">
+            <img class="position-absolute d-lg-block d-none giftboxLeft" src="images/kv_pc_giftboxLeft.png" data-aos="zoom-in">
+            <img class="position-absolute d-lg-none d-block giftboxLeft" src="images/kv_sp_giftboxLeft.png" data-aos="zoom-in">
+            <img class="position-absolute d-lg-block d-none giftboxRight" src="images/kv_giftboxRight.png" data-aos="zoom-in">
+            <img class="position-absolute pCoin" src="images/kv_pCoin.png" data-aos="flip-left" data-aos-delay="900">
+            <img class="position-absolute d-lg-block d-none coinLeftBottom" src="images/kv_coinLeftBottom.png" data-aos="fade-up-left" data-aos-delay="20">
+            <img class="position-absolute coinLeftTop" src="images/kv_coinLeftTop.png" data-aos="fade-up-left" data-aos="fade-up-left" data-aos-delay="200">
+            <img class="position-absolute d-lg-block d-none coinRightBottom" src="images/kv_coinRightBottom.png" data-aos="fade-up-right" data-aos="fade-up-left" data-aos-delay="200">
+            <img class="position-absolute coinRightTop" src="images/kv_coinRightTop.png" data-aos="fade-up-right" data-aos="fade-up-left" data-aos-delay="200">
+            <div class="before"></div>
+            <div class="after"></div>
+            <img class="position-absolute title" src="images/kv_title.png" data-aos="zoom-in" data-aos-delay="500">
+            <img class="position-absolute subtitle" src="images/kv_subTitle.png" data-aos="zoom-in" data-aos-delay="700">
+        </section>
+
+        <section class="detail">
+            <div class="container-detail fw-bold white px-5 pb-4">
+                <div class="d-lg-block d-none">
+                    <div class="fs-2 text-center lh-1 pt-3 textShadow">活動辦法</div>
+                    <hr>
+                    <div>●參加本抽獎活動，需完成問卷並成功送出者即享當期抽獎資格。</div>
+                    <div>●活動額外贈品限指定方案使用，亦不可與其它優惠合併使用。</div>
+                    <div>●每月開獎時間將以官方FB公告為主，<a href="https://www.facebook.com/abconline.com.tw">點我進入官方粉絲團</a>。</div>
+                    <div>●主辦單位將依中獎人回填之領獎資訊內容寄送獎品，若因資料填寫不完整、不正確，或其它非不可抗因素，導致獎品無法運送或無法聯絡中獎者，主辦單位保留取消得獎資格的權利。</div>
+                    <div>●中獎者獲獎之贈品金額，本公司將依所得稅法，開立扣繳憑單供所得人申報使用，並於隔年4月前寄發扣繳憑單予所得人。</div>
+                    <div>●中獎者若未滿20歲，須獲得法定監護人同意及代為領取。依中華民國所得稅法規定，獎項價值將列入個人年度綜合所得稅申報(稅額以獎品市價計算)中獎價值超過稅法規定金額，須繳納10%稅金(稅額以獎品市價計算)巨匠依法代收中獎稅金，若中獎人未能如期依法繳納應繳稅額，即視為放棄得獎資格。</div>
+                    <div>●若有未盡事宜，巨匠線上真人保留最終解釋、變更及終止活動內容之權利，且不另行通知。</div>
+                </div>
+                <div class="accordion accordion-flush d-lg-none d-block" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="flush-headingOne">
+                            <button class="accordion-button collapsed fs-2 text-center lh-1 py-3 fw-bold white" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                活動辦法
+                            </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                            <div class="accordion-body pt-3">
+                                <div>●參加本抽獎活動，需完成問卷並成功送出者即享當期抽獎資格。</div>
+                                <div>●活動額外贈品限指定方案使用，亦不可與其它優惠合併使用。</div>
+                                <div>●每月開獎時間將以官方FB公告為主，<a href="https://www.facebook.com/abconline.com.tw">點我進入官方粉絲團</a>。</div>
+                                <div>●主辦單位將依中獎人回填之領獎資訊內容寄送獎品，若因資料填寫不完整、不正確，或其它非不可抗因素，導致獎品無法運送或無法聯絡中獎者，主辦單位保留取消得獎資格的權利。</div>
+                                <div>●中獎者獲獎之贈品金額，本公司將依所得稅法，開立扣繳憑單供所得人申報使用，並於隔年4月前寄發扣繳憑單予所得人。</div>
+                                <div>●中獎者若未滿20歲，須獲得法定監護人同意及代為領取。依中華民國所得稅法規定，獎項價值將列入個人年度綜合所得稅申報(稅額以獎品市價計算)中獎價值超過稅法規定金額，須繳納10%稅金(稅額以獎品市價計算)巨匠依法代收中獎稅金，若中獎人未能如期依法繳納應繳稅額，即視為放棄得獎資格。</div>
+                                <div>●若有未盡事宜，巨匠線上真人保留最終解釋、變更及終止活動內容之權利，且不另行通知。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="main">
+            <div class="container-form px-5 position-relative">
+                <div class="form position-relative d-flex flex-wrap shadow">
+                    <div class="giftTop mx-auto">
+                        <img class="w-100" src="images/formGiftTop.png" alt="月月抽好禮">
+                    </div>
+                    <div class="fs-5 fw-bold">
+                        <div>【巨匠外語】限時優惠，名額有限立即註冊，免費送1200堂英日線上課</div>
+                        <div class="answerCon">
+                            <div class="answer optionStyle" onclick="selected(this)">
+                                <input class="form-check-input" type="radio" name="q01">
+                                <div class="px-2">
+                                    我對英語學習沒有興趣
+                                </div>
+                            </div>
+                            <div class="answer optionStyle" onclick="selected(this)">
+                                <input class="form-check-input" type="radio" name="q01">
+                                <div class="px-2">
+                                    我有興趣
+                                </div>
+                            </div>
+                            <div class="answer optionStyle" onclick="selected(this)">
+                                <input class="form-check-input" type="radio" name="q01">
+                                <div class="px-2">
+                                    了解更多
+                                </div>
+                            </div>
+                        </div>
+                        <div class="py-4"><hr></div>
+                        <div>請問是否願意付費，快速學好外語？</div>
+                        <div class="answerCon">
+                            <div class="answer optionStyle" onclick="selected(this)">
+                                <input class="form-check-input" type="radio" name="q02">
+                                <div class="px-2">
+                                    我不想學
+                                </div>
+                            </div>
+                            <div class="answer optionStyle" onclick="selected(this)">
+                                <input class="form-check-input" type="radio" name="q02">
+                                <div class="px-2">
+                                    我願意，請來電提供免費線上體驗課程
+                                </div>
+                            </div>
+                        </div>
+                        <div class="py-4"><hr></div>
+                        <div>【巨匠外語】請問您最想要學哪一種外語？巨匠外語能快速教會您！</div>
+                        <div class="answerCon">
+                            <div class="answer optionStyle" onclick="selected(this)">
+                                <input class="form-check-input" type="radio" name="q03">
+                                <div class="px-2">
+                                    我不需要學習外語
+                                </div>
+                            </div>
+                            <div class="answer optionStyle" onclick="selected(this)">
+                                <input class="form-check-input" type="radio" name="q03">
+                                <div class="px-2">
+                                    英文
+                                </div>
+                            </div>
+                            <div class="answer optionStyle" onclick="selected(this)">
+                                <input class="form-check-input" type="radio" name="q03">
+                                <div class="px-2">
+                                    日文
+                                </div>
+                            </div>
+                            <div class="answer optionStyle" onclick="selected(this)">
+                                <input class="form-check-input" type="radio" name="q03">
+                                <div class="px-2">
+                                    西班牙文
+                                </div>
+                            </div>
+                            <div class="answer optionStyle" onclick="selected(this)">
+                                <input class="form-check-input" type="radio" name="q03">
+                                <div class="px-2">
+                                    韓文
+                                </div>
+                            </div>
+                            <div class="answer optionStyle" onclick="selected(this)">
+                                <input class="form-check-input" type="radio" name="q03">
+                                <div class="px-2">
+                                    法文
+                                </div>
+                            </div>
+                            <div class="answer optionStyle" onclick="selected(this)">
+                                <input class="form-check-input" type="radio" name="q03">
+                                <div class="px-2">
+                                    德文
+                                </div>
+                            </div>
+                            <div class="answer optionStyle" onclick="selected(this)">
+                                <input class="form-check-input" type="radio" name="q03">
+                                <div class="px-2">
+                                    兒童美語
+                                </div>
+                            </div>
+                            <div class="answer optionStyle" onclick="selected(this)">
+                                <input class="form-check-input" type="radio" name="q03">
+                                <div class="px-2">
+                                    兒童日語
+                                </div>
+                            </div>
+                        </div>
+                        <div class="py-4"><hr></div>
+                        <div>請問您對此活動感興趣是為了？</div>
+                        <div class="answerCon">
+                            <div class="answer optionStyle" onclick="selected(this)">
+                                <input class="form-check-input" type="radio" name="q04">
+                                <div class="px-2">
+                                    我只對抽獎感興趣
+                                </div>
+                            </div>
+                            <div class="answer optionStyle" onclick="selected(this)">
+                                <input class="form-check-input" type="radio" name="q04">
+                                <div class="px-2">
+                                    我想參加體驗課，同時也想抽獎
+                                </div>
+                            </div>
+                            <div class="answer optionStyle" onclick="selected(this)">
+                                <input class="form-check-input" type="radio" name="q04">
+                                <div class="px-2">
+                                    我都沒興趣
+                                </div>
+                            </div>
+                        </div>
+                        <div class="py-4"><hr></div>
+                        <h1><div class="fs-2 fw-bold w-100 text-center">登記抽獎資訊</div></h1>
+                        <!-- 表單開始 -->
+                        <input class="inputStyle optionStyle" name="ea" type="text" id="name" placeholder="請輸入姓名" />
+                        <input class="inputStyle optionStyle" name="email" type="text" id="email" placeholder="請輸入電子信箱" />
+                        <input class="inputStyle optionStyle" name="mobile" type="text" id="mobile" placeholder="請輸入手機號碼" />
+                        <select class="inputStyle optionStyle selectArrow" id="dpGift">
+                            <option value="select" selected>索取免費課程</option>
+                            <option value="english">我想領英語課</option>
+                            <option value="japanese">我想領日語課</option>
+                            <option value="korean">我想領韓語課</option>
+                            <option value="spanish">我想領西語課</option>
+                            <option value="french">我想領法語課</option>
+                            <option value="german">我想領德語課</option>
+                            <option value="kidsLanguage">我想領兒童外語課</option>
+                            <option value="kidsCoding">我想領兒童程式課</option>
+                            <option value="middleClass">我想領國中文理課</option>
+                        </select>
+                    </div>
+                    <div class="mx-auto">
+                        <div class="d-flex align-items-center pt-4">
+                            <label class="d-flex align-items-center">
+                                <input type="checkbox" name="per_chk" checked="checked">
+                            </label>
+                            <span class="px-1">
+                                我已閱讀並接受<a onclick="window.open('/activity/abconline/contract_02/','person',config='height=640,width=830');return false;" href="#">個資保護聲明</a>
+                            </span>
+                        </div>
+                        <div class="pt-4 text-center">
+                            <span class="buttonStyle fs-4 fw-bold" id="sBut" onClick="but_send();" style="cursor:pointer;">
+                                送出
+                            </span>
+                        </div>
+                    </div>
+                    <!-- 表單結束 -->
+                </div>
+                <img class="position-relative giftBottom" src="images/formGiftBottom.png">
+                <img class="position-absolute blurBlueDot" src="images/bg_blurBlueDot.png">
+                <img class="position-absolute blurPinkDot" src="images/bg_blurPinkDot.png">
+                <img class="position-absolute pinkCircle" src="images/bg_pinkCircle.png">
+                <img class="position-absolute purpleBigTraigle" src="images/bg_purpleBigTraigle.png">
+                <img class="position-absolute purpleSmallTraigle" src="images/bg_purpleSmallTraigle.png">
+                <img class="position-absolute blurPinkDotDotDot" src="images/bg_blurPinkDotDotDot.png">
+            </div>
+        </section>
+    </div>
+    <!-- wapper結束 -->
+    <!-- HTML END -->
+    <div class="footer overflow-hidden">
+        <iframe src="../../headerFooter/footer.html" width="100%" height="65" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/aos.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>月月抽好禮-每月抽高單價豪華大獎！</title>
+    <meta name="Title" content="月月抽好禮-每月抽高單價豪華大獎！" />
+    <meta name="Description" content="完成問卷並成功送出者即享當期抽獎資格,每個月不同豪華大獎等你抽!參加者再享免費外語課1堂,英語,日語,西班牙語,韓語,法語,德語,兒童課程任你選!" />
+    <meta name="keywords" content="抽獎,學英文,學日文,學韓文,學西班牙文,學法文,學德文" />
+    <meta property="og:title" content="月月抽好禮-每月抽高單價豪華大獎！" />
+    <meta property="og:url" content="https://zackyao.idv.tw/webProjects/079-monthgift/post.html" />
+    <meta property="og:image" content="images/shareCard.jpg" />
+    <meta property="og:description" content="完成問卷並成功送出者即享當期抽獎資格,每個月不同豪華大獎等你抽!參加者再享免費外語課1堂,英語,日語,西班牙語,韓語,法語,德語,兒童課程任你選!" />
+    <link rel="canonical" href="https://zackyao.idv.tw/webProjects/079-monthgift/post.html" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/comm-style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!--非填單按鈕使用class name="activity-page-click-count"-->
+    <!-- Include JS & CSS End -->
+    <script type="text/javascript">
+        //留單相關，看過後請把註解刪掉喔!  -----start
+        var dept = "KZ2";
+        var seq_no = "0";
+        var web_pno = ""; //電腦版pno
+        var NList_Type = "5";
+        var fromto = "";
+        var Gift = "";
+        var is_Mobile = "0";
+
+        /*手機板 pno 判斷相關 >> start */
+        $(function () {
+            if (isMobile()) {
+                web_pno = "";  //手機板pno
+                is_Mobile = "1";   
+            }
+        });
+
+        function isMobile() {
+            try { document.createEvent("TouchEvent"); return true; }
+            catch (e) { return false; }
+        }
+        /*手機板 pno 判斷相關 >> end*/
+        
+
+
+        function but_send() {
+            $('#sBut').hide();
+
+            //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----start
+            GetPno();
+            if (Gift == "") {
+                alert('請選擇索取最新課表。');
+                $('#sBut').show();
+                return false;
+            }
+            //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----end
+
+            var JSonData = {
+                "name": $("#name").val(),
+                "mobile": $("#mobile").val(),
+                "email": $("#email").val(),
+                "seq_no": seq_no,
+                "dept_no": dept,
+                "memo": "體驗完送電子書" + Gift,
+                "web_pno": web_pno,
+                "fromto": QueryString("fromto") != null ? QueryString("fromto") : fromto,
+                "fromurl": document.location.href, 
+                "sourceid": QueryString("fc") != null ? QueryString("fc") : "",
+                "NList_Type": NList_Type,
+                "IsSend": "N",
+                "func": "njycooooqj"
+            }
+
+            if ($("input[name=per_chk]:checked").length == 0) {
+                alert('請勾選同意個資保護聲明。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.name == "" || JSonData.name == "姓 名") {
+                alert('請填寫入姓名。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile == "" || JSonData.mobile == "行動電話") {
+                alert('請填寫行動電話。');
+                $('#sBut').show();
+                return false;
+            }
+            if (isNaN(JSonData.mobile) == true) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile.length != 10) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.email == "" || JSonData.email == "E-Mail") { JSonData.email = "" } else {
+                if (JSonData.email.indexOf("@") <= -1) {
+                    alert('電子郵件格式錯誤。');
+                    $('#sBut').show();
+                    return false;
+                }
+            }
+            goSubmit(JSonData, s, f);
+        }
+
+        function s(data) {
+            if (data[0].result == "1") {
+                $("#name").val("");
+                $("#mobile").val("");
+                $("#sBut").show();
+                document.location.href = "/wGuest/loadover.htm";
+            } else {
+                alert('送出失敗！');
+                $("#sBut").show();
+            }
+        }
+        function f(data) {
+            alert(data);
+            $("#sBut").show();
+        }
+        //留單相關，看過後請把註解刪掉喔!  -----end
+
+        //下拉選單有不同語系課程時使用，如果沒有要用就刪掉(左SP右PC) -----start
+        function GetPno() {
+            var select_val = $("#dpGift :selected").val();
+            switch (select_val) {
+                case "english":
+                    web_pno = is_Mobile == "1" ? "113091500002" : "113091500001";
+                    Gift = "我想領英語課";
+                    break;
+                case "japanese":
+                    web_pno = is_Mobile == "1" ? "113091500004" : "113091500003";
+                    Gift = "我想領日語課";
+                    break;
+                case "korean":
+                    web_pno = is_Mobile == "1" ? "113091500006" : "113091500005";
+                    Gift = "我想領韓語課";
+                    break;
+                case "spanish":
+                    web_pno = is_Mobile == "1" ? "113091500008" : "113091500007";
+                    Gift = "我想領西語課";
+                    break;
+                case "french":
+                    web_pno = is_Mobile == "1" ? "113091500010" : "113091500009";
+                    Gift = "我想領法語課";
+                    break;
+                case "german":
+                    web_pno = is_Mobile == "1" ? "113091500012" : "113091500011";
+                    Gift = "我想領德語課";
+                    break;
+                case "kidsLanguage":
+                    web_pno = is_Mobile == "1" ? "113091500014" : "113091500013";
+                    Gift = "我想領兒童外語課";
+                    break;
+                case "kidsCoding":
+                    web_pno = is_Mobile == "1" ? "113091500016" : "113091500015";
+                    Gift = "我想領兒童程式課";
+                    break;
+                case "middleClass":
+                    web_pno = is_Mobile == "1" ? "113091500018" : "113091500017";
+                    Gift = "我想領國中文理課";
+                    break;
+            }
+        }
+        //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----end
+    </script>
+</head>
+<body>
+    <div class="top">
+        <iframe src="../../headerFooter/header.html" width="100%" height="65"  scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+    </div>
+    <!-- HTML Start -->
+
+    <!-- wapper開始 -->
+    <div class="wrapper overflow-hidden">
+        <section class="kv pyro position-relative">
+            <img class="position-absolute d-lg-block d-none door_pc" src="images/kv_pc_door.png">
+            <img class="position-absolute d-lg-none d-block door_sp" src="images/kv_sp_door.png">
+            <img class="position-absolute d-lg-block d-none giftboxPcoin" src="images/kv_pc_giftboxPcoin.png" data-aos="zoom-in">
+            <img class="position-absolute d-lg-none d-block giftboxPcoin" src="images/kv_sp_giftboxPcoin.png" data-aos="zoom-in">
+            
+            <img class="position-absolute d-lg-block d-none giftboxLeft" src="images/kv_pc_giftboxLeft.png" data-aos="zoom-in">
+            <img class="position-absolute d-lg-none d-block giftboxLeft_postpage" src="images/kv_sp_giftboxLeft.png" data-aos="zoom-in">
+            <img class="position-absolute d-lg-block d-none giftboxRight" src="images/kv_giftboxRight.png" data-aos="zoom-in">
+            
+            <img class="position-absolute d-lg-block d-none coinLeftBottom" src="images/kv_coinLeftBottom.png" data-aos="fade-up-left" data-aos-delay="20">
+            <img class="position-absolute coinLeftTop" src="images/kv_coinLeftTop.png" data-aos="fade-up-left" data-aos="fade-up-left" data-aos-delay="200">
+            <img class="position-absolute d-lg-block d-none coinRightBottom" src="images/kv_coinRightBottom.png" data-aos="fade-up-right" data-aos="fade-up-left" data-aos-delay="200">
+            <img class="position-absolute coinRightTop" src="images/kv_coinRightTop.png" data-aos="fade-up-right" data-aos="fade-up-left" data-aos-delay="200">
+            <div class="before"></div>
+            <div class="after"></div>
+            <img class="position-absolute title" src="images/kv_title.png" data-aos="zoom-in" data-aos-delay="500">
+            <img class="position-absolute subtitle" src="images/kv_subTitle.png" data-aos="zoom-in" data-aos-delay="700">
+        </section>
+
+        <section class="position-relative drawing">
+            <div class="position-absolute bgTop"></div>
+            <div class="position-absolute bgBottom"></div>
+            
+            <div class="position-relative container-drawing px-5 fs-4 fw-bold">
+                <div class="form position-relative my-5 shadow text-center">
+                    <div class="month white">
+                        2024年7月
+                    </div>
+                    <div class="title d-flex">
+                        <div class="w-50">中獎人</div>
+                        <div class="w-50">得獎品項</div>
+                    </div>
+                    <div class="result d-flex align-items-center">
+                        <div class="w-50">王OO</div>
+                        <div class="w-50">線香味道空氣罐X1</div>
+                    </div>
+                </div>
+
+                <img class="position-relative gift d-block mx-auto" src="images/formGiftTop.png" alt="月月抽好禮">
+                <img class="position-absolute blurBlueDot" src="images/bg_blurBlueDot.png">
+                <img class="position-absolute blurPinkDot" src="images/bg_blurPinkDot.png">
+            </div>
+        </section>
+    </div>
+    <!-- wapper結束 -->
+    <!-- HTML END -->
+    <div class="footer overflow-hidden">
+        <iframe src="../../headerFooter/footer.html" width="100%" height="65" scrolling="no" frameborder="0" allowtransparency="true"></iframe>
+    </div>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/aos.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
