@@ -1,0 +1,334 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap");
+.wrapper, *:before, *:after {
+  position: relative;
+  margin: 0;
+  font-family: "Noto Sans TC", sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  margin-top: 65px;
+  background-color: #ffeac7;
+}
+.wrapper a {
+  text-decoration: none;
+}
+.wrapper .colorBrown {
+  color: #643915;
+}
+.wrapper .colorOrange {
+  color: #ff891b;
+}
+.wrapper .colorGreen {
+  color: #00b1be;
+}
+.wrapper .colorPurple {
+  color: #a038d2;
+}
+.wrapper .colorBlue {
+  color: #088ef2;
+}
+.wrapper .serif {
+  font-family: "Noto Serif TC", sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 900;
+}
+.wrapper .kv {
+  height: 36.35vw;
+}
+.wrapper .kv .vw-100 {
+  width: 100vw;
+}
+.wrapper .kv .teacher {
+  width: 15vw;
+  left: 5vw;
+  top: 10vw;
+}
+.wrapper .kv .logo {
+  width: 50vw;
+  left: 46vw;
+  top: 5vw;
+}
+.wrapper .kv .logo.zoomInOut {
+  animation: zoomInOut 4s infinite;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv {
+    height: 100vw;
+  }
+  .wrapper .kv .teacher {
+    width: 30vw;
+    left: 13vw;
+    top: 52vw;
+  }
+  .wrapper .kv .logo {
+    width: 90vw;
+    left: 3vw;
+    top: 6vw;
+  }
+}
+.wrapper .envelope {
+  width: 100%;
+  max-width: 992px;
+}
+.wrapper .envelope .envelopeBody {
+  background-image: url(../images/envelopeBody.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.wrapper .envelope .envelopeBody .borderDashed {
+  border-bottom: #643915 1px dashed;
+}
+.wrapper .envelope .envelopeBody .w-65 {
+  width: 65%;
+}
+.wrapper .envelope .envelopeBody .pen {
+  max-width: 280px;
+  width: 30%;
+  right: -50px;
+  top: 50px;
+}
+.wrapper .envelope .envelopeBody .waveLeft {
+  width: 400px;
+  left: -400px;
+  top: 100px;
+}
+.wrapper .envelope .envelopeBody .giftLeft {
+  width: 250px;
+  left: -230px;
+  top: 230px;
+}
+.wrapper .envelope .envelopeBody .waveRight {
+  width: 400px;
+  right: -400px;
+  bottom: -600px;
+  transform: rotate(180deg);
+}
+.wrapper .envelope .envelopeBody .giftRight {
+  width: 250px;
+  right: -300px;
+  bottom: -700px;
+}
+.wrapper .envelope .envelopeBody .ribbon {
+  width: 300px;
+  left: -300px;
+  bottom: -700px;
+}
+.wrapper .envelope .w-95 {
+  width: 95%;
+}
+.wrapper .form {
+  background-color: #f0f0f0;
+}
+.wrapper .form .formAnchor {
+  position: relative;
+  top: -3rem;
+}
+.wrapper .form .w-49 {
+  width: 49%;
+}
+.wrapper .form input::-moz-placeholder {
+  color: #643915;
+  left: 50px;
+}
+.wrapper .form input::placeholder {
+  color: #643915;
+  left: 50px;
+}
+.wrapper .form .inputStyle {
+  font-weight: bold;
+  border-radius: 4px;
+  color: #643915;
+  border: 0px;
+  height: 40px;
+  padding-left: 0.5rem;
+}
+.wrapper .form .buttonStyle {
+  background: linear-gradient(to bottom, #fc9f8f, #f25352);
+  color: white;
+}
+.wrapper .form .text-shadow {
+  text-shadow: 0px 2px 6px #503b3b;
+}
+.wrapper .form .selectArrow {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: url("../images/arrowBlack.png") no-repeat right center transparent;
+  background-size: 30px;
+  background-color: #ffffff;
+}
+.wrapper .courses .container-course {
+  max-width: 1200px;
+}
+.wrapper .courses .container-course .upDown {
+  animation: up-down 4s ease infinite;
+}
+.wrapper .courses .container-course .fade-shock {
+  opacity: 0.25;
+  animation: fade-shock-opacity 1.2s ease infinite;
+}
+.wrapper .courses .container-course .mircroPhone {
+  width: 10%;
+  left: -15%;
+  top: 8%;
+}
+.wrapper .courses .container-course .headPhone {
+  width: 10%;
+  right: -15%;
+  top: 27%;
+}
+.wrapper .courses .container-course .speaker {
+  width: 10%;
+  left: -15%;
+  top: 48%;
+}
+.wrapper .courses .container-course .vinyl {
+  width: 10%;
+  right: -15%;
+  top: 67%;
+}
+.wrapper .courses .container-course .record {
+  width: 10%;
+  left: -15%;
+  top: 88%;
+}
+.wrapper .courses .container-course .soundWave {
+  width: 140%;
+  bottom: 0;
+  left: -20%;
+}
+.wrapper .courses .courseCon {
+  background-color: white;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+.wrapper .courses .courseCon:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px #21283333;
+}
+.wrapper .courses .courseCon.borderOrange {
+  border: #ff891b 2px solid;
+}
+.wrapper .courses .courseCon.borderGreen {
+  border: #00b1be 2px solid;
+}
+.wrapper .courses .courseCon.borderPurple {
+  border: #a038d2 2px solid;
+}
+.wrapper .courses .courseCon.borderBlue {
+  border: #088ef2 2px solid;
+}
+.wrapper .courses .courseCon .iconCOn {
+  background-image: url(../images/twill_48.svg);
+  background-size: 20%;
+}
+.wrapper .courses .courseCon .iconCOn.bgColorOrange {
+  background-color: #fff0eb;
+}
+.wrapper .courses .courseCon .iconCOn.bgColorGreen {
+  background-color: #cceff2;
+}
+.wrapper .courses .courseCon .iconCOn.bgColorPurple {
+  background-color: #f0ebff;
+}
+.wrapper .courses .courseCon .iconCOn.bgColorBlue {
+  background-color: #cde2fb;
+}
+.wrapper .courses .courseCon ul {
+  padding: 0 0 0 1rem;
+  margin-bottom: unset;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.wrapper .courses .gotoForm {
+  background-image: url(../images/twill_48.svg);
+  background-size: 40%;
+  color: white;
+  padding: 0.6rem 2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  animation: moveStripes 4s linear infinite;
+}
+.wrapper .courses .gotoForm.bgColorOrange {
+  border: #ff891b 2px solid;
+  background-color: #ff891b;
+}
+.wrapper .courses .gotoForm.bgColorOrange:hover {
+  color: #ff5414;
+  background-color: #fff0eb;
+}
+.wrapper .courses .gotoForm.bgColorGreen {
+  border: #00b1be 2px solid;
+  background-color: #00b1be;
+}
+.wrapper .courses .gotoForm.bgColorGreen:hover {
+  color: #0096a6;
+  background-color: #cceff2;
+}
+.wrapper .courses .gotoForm.bgColorPurple {
+  border: #a038d2 2px solid;
+  background-color: #a038d2;
+}
+.wrapper .courses .gotoForm.bgColorPurple:hover {
+  color: #8222bf;
+  background-color: #f0ebff;
+}
+.wrapper .courses .gotoForm.bgColorBlue {
+  border: #088ef2 2px solid;
+  background-color: #088ef2;
+}
+.wrapper .courses .gotoForm.bgColorBlue:hover {
+  color: #046eec;
+  background-color: #cde2fb;
+}
+
+@keyframes fade-shock-opacity {
+  0% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+  40% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}
+@keyframes up-down {
+  0% {
+    margin: 0.75em 0;
+  }
+  50% {
+    margin: 0 0 1.5em;
+  }
+  100% {
+    margin: 0.75em 0;
+  }
+}
+@keyframes moveStripes {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}/*# sourceMappingURL=style.css.map */

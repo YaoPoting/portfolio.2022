@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@200..900&display=swap');
+@import 'variable';
+
+.wrapper, *:before, *:after {
+    position: relative;
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    margin-top: 65px;
+    background-color: #ffeac7;
+
+    a {text-decoration: none;}
+    .colorBrown { color: #643915;}
+    .colorOrange {color: $color-orange;}
+    .colorGreen {color: $color-green;}
+    .colorPurple {color: $color-purple;}
+    .colorBlue {color: $color-blue;}
+
+    .serif {
+        font-family: 'Noto Serif TC', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 900;
+    }
+    
+    .kv {
+        height: 36.35vw;
+
+        .vw-100 {
+            width: 100vw;
+        }
+        .teacher {
+            width: 15vw;
+            left: 5vw;
+            top: 10vw;
+        }
+        .logo {
+            width: 50vw;
+            left: 46vw;
+            top: 5vw;
+
+            &.zoomInOut {
+                animation: zoomInOut 4s infinite;
+            }
+        }
+
+        @media screen and (max-width:992px) {
+            height: 100vw;
+
+            .teacher {
+                width: 30vw;
+                left: 13vw;
+                top: 52vw;
+            }
+            .logo {
+                width: 90vw;
+                left: 3vw;
+                top: 6vw;
+            }
+        }
+    }
+
+    .envelope {
+        width: 100%;
+        max-width: 992px;
+
+        .envelopeBody {
+            background-image: url(../images/envelopeBody.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            .borderDashed {border-bottom: #643915 1px dashed;}
+            .w-65 {width: 65%;}
+            .pen {
+                max-width: 280px;
+                width: 30%;
+                right: -50px;
+                top: 50px;
+            }
+            .waveLeft {
+                width: 400px;
+                left: -400px;
+                top: 100px;
+            }
+            .giftLeft {
+                width: 250px;
+                left: -230px;
+                top: 230px;
+            }
+            .waveRight {
+                width: 400px;
+                right: -400px;
+                bottom: -600px;
+                transform: rotate(180deg);
+            }
+            .giftRight {
+                width: 250px;
+                right: -300px;
+                bottom: -700px;
+            }
+            .ribbon {
+                width: 300px;
+                left: -300px;
+                bottom: -700px;
+            }
+        }
+        .w-95 {
+            width: 95%;
+        }
+    }
+
+    .form {
+        background-color: #f0f0f0;
+
+        .formAnchor {
+            position: relative;
+            top: -3rem;
+        }
+        .w-49 {
+            width: 49%;
+        }
+        input::placeholder {
+            color: #643915;
+            left: 50px;
+        }
+        .inputStyle {
+            font-weight: bold;
+            border-radius: 4px;
+            color: #643915;
+            border: 0px;
+            height: 40px;
+            padding-left: 0.5rem;
+        }
+        .buttonStyle {
+            background: linear-gradient(to bottom, #fc9f8f, #f25352);
+            color: white;
+        }
+        .text-shadow {
+            text-shadow: 0px 2px 6px #503b3b;
+        }
+        .selectArrow {
+            appearance:none;
+            background: url("../images/arrowBlack.png") no-repeat right center transparent;
+            background-size: 30px;
+            background-color: #ffffff;
+        }
+    }
+
+    .courses {
+
+        .container-course {
+            max-width: 1200px;
+
+            .upDown {
+                animation: up-down 4s ease infinite;
+            }
+            .fade-shock {
+                opacity: 0.25;
+                animation: fade-shock-opacity 1.2s ease infinite;
+            }
+            .mircroPhone {
+                width: 10%;
+                left: -15%;
+                top: 8%;
+            }
+            .headPhone {
+                width: 10%;
+                right: -15%;
+                top: 27%;
+            }
+            .speaker {
+                width: 10%;
+                left: -15%;
+                top: 48%;
+            }
+            .vinyl {
+                width: 10%;
+                right: -15%;
+                top: 67%;
+            }
+            .record {
+                width: 10%;
+                left: -15%;
+                top: 88%;
+            }
+            .soundWave {
+                width: 140%;
+                bottom: 0;
+                left: -20%;
+            }
+        }
+
+        .courseCon {
+            background-color: white;
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+
+            &:hover {
+                transform: translateY(-5px);
+                box-shadow: map-get($shadow, "bd");
+            }
+            
+            &.borderOrange {border: $color-orange 2px solid;}
+            &.borderGreen {border: $color-green 2px solid;}
+            &.borderPurple {border: $color-purple 2px solid;}
+            &.borderBlue {border: $color-blue 2px solid;}
+
+            .iconCOn {
+                background-image: url(../images/twill_48.svg);
+                background-size: 20%;
+                
+                &.bgColorOrange {background-color: $color-orange-thin;}
+                &.bgColorGreen {background-color: $color-green-thin;}
+                &.bgColorPurple {background-color: $color-purple-thin;}
+                &.bgColorBlue {background-color: $color-blue-thin;}
+            }
+
+            ul {
+                padding: 0 0 0 1rem;
+                margin-bottom: unset;
+                display: flex;
+                flex-flow: column;
+                align-items: center;
+            }
+        }
+
+        .gotoForm {
+            background-image: url(../images/twill_48.svg);
+            background-size: 40%;
+            color: white;
+            padding: 0.6rem 2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            animation: moveStripes 4s linear infinite;
+
+            &.bgColorOrange {
+                border: $color-orange 2px solid;
+                background-color: $color-orange;
+                &:hover {
+                    color: $color-orange-dark;
+                    background-color: $color-orange-thin;
+                }
+            }
+            &.bgColorGreen {
+                border: $color-green 2px solid;
+                background-color: $color-green;
+                &:hover {
+                    color: $color-green-dark;
+                    background-color: $color-green-thin;
+                }
+            }
+            &.bgColorPurple {
+                border: $color-purple 2px solid;
+                background-color: $color-purple;
+                &:hover {
+                    color: $color-purple-dark;
+                    background-color: $color-purple-thin;
+                }
+            }
+            &.bgColorBlue {
+                border: $color-blue 2px solid;
+                background-color: $color-blue;
+                &:hover {
+                    color: $color-blue-dark;
+                    background-color: $color-blue-thin;
+                }
+            }
+        }
+    }
+}
+
+// animation
+@keyframes fade-shock-opacity {
+    0% { opacity: 0.25; transform: scale(1); }
+    40% { opacity: 0; transform: scale(1.5); }
+    100% { opacity: 0; transform: scale(1.5); }
+}
+@keyframes up-down {
+    0% { margin: 0.75em 0; }
+    50% { margin: 0 0 1.5em; }
+    100% { margin: 0.75em 0; }
+}
+@keyframes moveStripes {
+    0% { background-position: 0% 0%; }
+    50% { background-position: 0% 100%; }
+    100% { background-position: 0% 0%; }
+}
+@keyframes zoomInOut {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}

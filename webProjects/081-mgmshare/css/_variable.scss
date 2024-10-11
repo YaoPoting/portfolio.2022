@@ -1,0 +1,111 @@
+// color
+
+    $color-red-dark: #ff2838;
+    $color-red: #ff4054;
+    $color-red-light: #ffb3bb;
+    $color-red-thin: #ffd4d7;
+
+    $color-purple-dark: #8222bf;
+    $color-purple: #a038d2;
+    $color-purple-light: #ecd7f6;
+    $color-purple-thin: #f0ebff;
+    $color-purple-sp: #d9afed;
+
+    $color-orange-dark: #ff5414;
+    $color-orange: #ff891b;
+    $color-orange-light: #ffc7a7;
+    $color-orange-thin: #fff0eb;
+    $color-orange-sp: #ffeac7;
+
+    $color-green-dark: #0096a6;
+    $color-green: #00b1be;
+    $color-green-light: #33c1cb;
+    $color-green-thin: #cceff2;
+    $color-green-sp: #7ec8c2;
+    
+    $color-blue-dark: #046eec;
+    $color-blue: #088ef2;
+    $color-blue-light: #39a5f5;
+    $color-blue-thin: #cde2fb;
+
+    // gray
+    $color-gray-dark: #101319;
+    $color-gray: #5F5E5E;
+    $color-gray-light: #9E9C9A;
+    $color-gray-thin: #F4F4F4;
+
+    // gray
+    $color-gray-700: #101319;
+    $color-gray-600: #212833;
+    $color-gray-500: #363F4B;
+    $color-gray-400: #4B5563;
+    $color-gray-300: #9CA3AF;
+    $color-gray-200: #E5E7EB;
+    $color-gray-100: #F3F4F6;
+    
+    // other
+    $color-white: #FFFFFF;
+    $color-black: #101319;
+
+    $gradient-yellow: linear-gradient(0deg, #ffe273 50%, #ffc152 100%);
+
+// text
+    // font weight
+    $fw-nm: 300;
+    $fw-md: 500;
+    $fw-bd: 700;
+    $fw-bk: 900;
+
+// other 
+$comm-top: 65px;
+
+// radius [ map-get($radius-size, '...') ]
+$radius-size: (
+    '3xl': 40px,
+    '2xl': 32px,
+    'xl': 24px,
+    'lg': 20px,
+    'md': 16px,
+    'sm': 12px,
+    'xs': 8px,
+    '2xs': 4px,
+);
+
+// box-shadow [ map-get($shadow, '...') ]
+$shadow: (
+    'nm': 0 1px 2px #{$color-gray-600}#{33},
+    'md': 0 2px 4px #{$color-gray-600}#{33},
+    'bd': 0 4px 8px #{$color-gray-600}#{33}
+);
+
+// icon [ @each $icon-name in $icon-set{...} ]
+$icon-set: ( 'arrow-left', 'arrow-right', 'arrow-down', 'x-mark');
+
+// display size (for width & RWD) [ map-get($ds-size, '...') ]
+$ds-size: (
+    '6xl': 1920px,
+    '5xl': 1600px,
+    '4xl': 1440px,
+    '3xl': 1360px,
+    '2xl': 1280px,
+    'xl': 1024px,
+    'lg': 960px,
+    'md': 800px,
+    'sm': 640px,
+    'xs': 480px,
+    '2xs': 360px,
+    '3xs': 320px
+);
+
+// RWD [ @include rwd(map-get($ds-size, '...') {...} ]
+@mixin rwd($size) {
+    @media screen and (max-width:$size) {
+        @content;
+    }
+}
+// bps  [ @include bps(map-get($ds-size, '...') {...} ]
+@mixin bps($size) {
+    @media screen and (min-width:calc($size + 1px)){
+        @content;
+    }
+}
