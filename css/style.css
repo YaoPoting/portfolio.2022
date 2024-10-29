@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
 .wrapper, *:before, *:after {
@@ -1204,6 +1205,7 @@ a:hover {
   margin-top: -3.5rem;
   margin-left: 0.5rem;
   font-style: italic;
+  text-shadow: -1px -1px 0 #FFB000, 1px -1px 0 #FFB000, -1px 1px 0 #FFB000, 1px 1px 0 #FFB000; /* 右下 */
 }
 .wrapper .websites .webSitesBg .cardsCon .websiteCover {
   width: 100%;

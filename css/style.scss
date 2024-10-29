@@ -411,6 +411,12 @@ a {
                     margin-top: -3.5rem;
                     margin-left: 0.5rem;
                     font-style: italic;
+                    // text-shadow: 0 2px 20px rgba(250, 176, 0, 0.5);
+                    text-shadow: 
+                    -1px -1px 0 $color-main, /* 左上 */
+                    1px -1px 0 $color-main,  /* 右上 */
+                    -1px 1px 0 $color-main,  /* 左下 */
+                    1px 1px 0 $color-main;   /* 右下 */
                 }
 
                 .websiteCover {
