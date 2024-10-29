@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 400 400">
+  <defs>
+    <radialGradient id="_未命名漸層_696" data-name="未命名漸層 696" cx="-184.27" cy="1191.62" fx="-184.27" fy="1191.62" r="374.67" gradientTransform="translate(298.36 -436.1) scale(.53)" gradientUnits="userSpaceOnUse">
+      <stop offset=".2" stop-color="#25365a"/>
+      <stop offset=".45" stop-color="#25365a" stop-opacity=".97"/>
+      <stop offset=".61" stop-color="#25365a" stop-opacity=".88"/>
+      <stop offset=".73" stop-color="#25365a" stop-opacity=".72"/>
+      <stop offset=".84" stop-color="#25365a" stop-opacity=".49"/>
+      <stop offset=".94" stop-color="#25365a" stop-opacity=".21"/>
+      <stop offset="1" stop-color="#25365a" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="clippath">
+      <rect x="480" width="480" height="220" transform="translate(1440 220) rotate(180)" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <mask id="mask" x="195.64" y="0" width="1048.72" height="318.21" maskUnits="userSpaceOnUse"/>
+    <linearGradient id="_未命名漸層_678" data-name="未命名漸層 678" x1="560" y1="-223.39" x2="560" y2="250.41" gradientTransform="translate(1280 81.2) rotate(-180)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".24" stop-color="#fcfcfc"/>
+      <stop offset=".38" stop-color="#f4f4f4"/>
+      <stop offset=".49" stop-color="#e6e6e6"/>
+      <stop offset=".59" stop-color="#d2d2d2"/>
+      <stop offset=".67" stop-color="#b9b9b9"/>
+      <stop offset=".75" stop-color="#999"/>
+      <stop offset=".83" stop-color="#747474"/>
+      <stop offset=".86" stop-color="#666"/>
+    </linearGradient>
+    <linearGradient id="_未命名漸層_678-2" data-name="未命名漸層 678" x1="560" y1="-223.39" x2="560" y2="250.41" xlink:href="#_未命名漸層_678"/>
+    <linearGradient id="_未命名漸層_678-3" data-name="未命名漸層 678" x1="560" y1="-223.39" x2="560" y2="250.41" xlink:href="#_未命名漸層_678"/>
+    <linearGradient id="_未命名漸層_678-4" data-name="未命名漸層 678" x1="560" y1="-223.39" x2="560" y2="250.41" xlink:href="#_未命名漸層_678"/>
+    <linearGradient id="_未命名漸層_678-5" data-name="未命名漸層 678" x1="863.6" y1="-223.38" x2="863.6" y2="250.41" xlink:href="#_未命名漸層_678"/>
+    <linearGradient id="_未命名漸層_678-6" data-name="未命名漸層 678" x1="820.23" y1="-223.38" x2="820.23" y2="250.41" xlink:href="#_未命名漸層_678"/>
+    <linearGradient id="_未命名漸層_678-7" data-name="未命名漸層 678" x1="776.86" y1="-223.39" x2="776.86" y2="250.41" xlink:href="#_未命名漸層_678"/>
+    <linearGradient id="_未命名漸層_686" data-name="未命名漸層 686" x1="560" y1="59.75" x2="560" y2="-237" gradientTransform="translate(1280 81.2) rotate(-180)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset=".03" stop-color="#181818" stop-opacity=".1"/>
+      <stop offset=".1" stop-color="#484848" stop-opacity=".28"/>
+      <stop offset=".17" stop-color="#737373" stop-opacity=".45"/>
+      <stop offset=".25" stop-color="#999" stop-opacity=".6"/>
+      <stop offset=".33" stop-color="#b9b9b9" stop-opacity=".73"/>
+      <stop offset=".41" stop-color="#d2d2d2" stop-opacity=".83"/>
+      <stop offset=".51" stop-color="#e6e6e6" stop-opacity=".9"/>
+      <stop offset=".62" stop-color="#f4f4f4" stop-opacity=".96"/>
+      <stop offset=".76" stop-color="#fcfcfc" stop-opacity=".99"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+  </defs>
+  <g style="isolation: isolate;">
+    <g id="_圖層_1" data-name="圖層 1">
+      <g style="opacity: .15;">
+        <g>
+          <polygon points="66.74 50.74 200 200 50.74 66.74 66.74 50.74" style="fill: url(#_未命名漸層_696); stroke-width: 0px;"/>
+          <polygon points="23.72 105.32 200 200 14.16 125.82 23.72 105.32" style="fill: url(#_未命名漸層_696); stroke-width: 0px;"/>
+          <polygon points="1.97 171.32 200 200 0 193.86 1.97 171.32" style="fill: url(#_未命名漸層_696); stroke-width: 0px;"/>
+          <polygon points="4.11 240.78 200 200 9.96 262.63 4.11 240.78" style="fill: url(#_未命名漸層_696); stroke-width: 0px;"/>
+          <polygon points="29.87 305.32 200 200 42.84 323.85 29.87 305.32" style="fill: url(#_未命名漸層_696); stroke-width: 0px;"/>
+          <polygon points="76.15 357.16 200 200 94.68 370.13 76.15 357.16" style="fill: url(#_未命名漸層_696); stroke-width: 0px;"/>
+          <polygon points="137.37 390.04 200 200 159.22 395.89 137.37 390.04" style="fill: url(#_未命名漸層_696); stroke-width: 0px;"/>
+          <polygon points="206.14 400 200 200 228.68 398.03 206.14 400" style="fill: url(#_未命名漸層_696); stroke-width: 0px;"/>
+          <polygon points="274.18 385.84 200 200 294.68 376.28 274.18 385.84" style="fill: url(#_未命名漸層_696); stroke-width: 0px;"/>
+          <polygon points="333.26 349.26 200 200 349.26 333.26 333.26 349.26" style="fill: url(#_未命名漸層_696); stroke-width: 0px;"/>
+          <polygon points="376.28 294.68 200 200 385.84 274.18 376.28 294.68" style="fill: url(#_未命名漸層_696); stroke-width: 0px;"/>
+          <polygon points="398.03 228.68 200 200 400 206.14 398.03 228.68" style="fill: url(#_未命名漸層_696); stroke-width: 0px;"/>
+          <polygon points="395.89 159.22 200 200 390.04 137.37 395.89 159.22" style="fill: url(#_未命名漸層_696); stroke-width: 0px;"/>
+          <polygon points="370.13 94.68 200 200 357.16 76.15 370.13 94.68" style="fill: url(#_未命名漸層_696); stroke-width: 0px;"/>
+          <polygon points="323.85 42.84 200 200 305.32 29.87 323.85 42.84" style="fill: url(#_未命名漸層_696); stroke-width: 0px;"/>
+          <polygon points="262.63 9.96 200 200 240.78 4.1 262.63 9.96" style="fill: url(#_未命名漸層_696); stroke-width: 0px;"/>
+          <polygon points="193.86 0 200 200 171.32 1.97 193.86 0" style="fill: url(#_未命名漸層_696); stroke-width: 0px;"/>
+          <polygon points="125.82 14.16 200 200 105.32 23.72 125.82 14.16" style="fill: url(#_未命名漸層_696); stroke-width: 0px;"/>
+        </g>
+      </g>
+      <g style="clip-path: url(#clippath);">
+        <g style="mask: url(#mask);">
+          <g style="mix-blend-mode: soft-light;">
+            <g>
+              <path d="m548.82,21.46h342.35l.09.08,353.1,296.67H195.64l1.29-1.09L548.82,21.46Zm342.15,1.16h-341.95L198.6,317.05h1042.8L890.97,22.62Z" style="fill: url(#_未命名漸層_678); stroke-width: 0px;"/>
+              <rect x="385" y="159.18" width="669.99" height="1.16" style="fill: url(#_未命名漸層_678-2); stroke-width: 0px;"/>
+              <rect x="339.42" y="197.48" width="761.16" height="1.16" style="fill: url(#_未命名漸層_678-3); stroke-width: 0px;"/>
+              <rect x="279.48" y="247.85" width="881.05" height="1.16" style="fill: url(#_未命名漸層_678-4); stroke-width: 0px;"/>
+              <polygon points="570.1 21.55 570.52 22.52 262.69 318.11 262.27 317.14 570.1 21.55" style="fill: url(#_未命名漸層_678-5); stroke-width: 0px;"/>
+              <polygon points="591.46 21.57 591.93 22.5 328.07 318.09 327.61 317.16 591.46 21.57" style="fill: url(#_未命名漸層_678-6); stroke-width: 0px;"/>
+              <polygon points="612.82 21.6 613.34 22.47 393.46 318.06 392.94 317.19 612.82 21.6" style="fill: url(#_未命名漸層_678-7); stroke-width: 0px;"/>
+            </g>
+            <g>
+              <path d="m548.82,21.46h342.35l.09.08,353.1,296.67H195.64l1.29-1.09L548.82,21.46Zm342.15,1.16h-341.95L198.6,317.05h1042.8L890.97,22.62Z" style="fill: url(#_未命名漸層_686); stroke-width: 0px;"/>
+              <rect x="385" y="159.18" width="669.99" height="1.16" style="fill: url(#_未命名漸層_686); stroke-width: 0px;"/>
+              <rect x="339.42" y="197.48" width="761.16" height="1.16" style="fill: url(#_未命名漸層_686); stroke-width: 0px;"/>
+              <rect x="279.48" y="247.85" width="881.05" height="1.16" style="fill: url(#_未命名漸層_686); stroke-width: 0px;"/>
+              <polygon points="570.1 21.55 570.52 22.52 262.69 318.11 262.27 317.14 570.1 21.55" style="fill: url(#_未命名漸層_686); stroke-width: 0px;"/>
+              <polygon points="591.46 21.57 591.93 22.5 328.07 318.09 327.61 317.16 591.46 21.57" style="fill: url(#_未命名漸層_686); stroke-width: 0px;"/>
+              <polygon points="612.82 21.6 613.34 22.47 393.46 318.06 392.94 317.19 612.82 21.6" style="fill: url(#_未命名漸層_686); stroke-width: 0px;"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

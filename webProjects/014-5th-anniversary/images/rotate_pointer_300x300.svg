@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300 300">
+  <defs>
+    <clipPath id="clippath">
+      <rect x="-400" y="-274" width="480" height="220" transform="translate(-320 -328) rotate(180)" style="fill: none; stroke-width: 0px;"/>
+    </clipPath>
+    <mask id="mask" x="-684.36" y="-274" width="1048.72" height="318.21" maskUnits="userSpaceOnUse"/>
+    <linearGradient id="_未命名漸層_678" data-name="未命名漸層 678" x1="-320" y1="-497.39" x2="-320" y2="-23.59" gradientTransform="translate(-480 -466.8) rotate(-180)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".24" stop-color="#fcfcfc"/>
+      <stop offset=".38" stop-color="#f4f4f4"/>
+      <stop offset=".49" stop-color="#e6e6e6"/>
+      <stop offset=".59" stop-color="#d2d2d2"/>
+      <stop offset=".67" stop-color="#b9b9b9"/>
+      <stop offset=".75" stop-color="#999"/>
+      <stop offset=".83" stop-color="#747474"/>
+      <stop offset=".86" stop-color="#666"/>
+    </linearGradient>
+    <linearGradient id="_未命名漸層_678-2" data-name="未命名漸層 678" x1="-450.12" y1="-497.39" x2="-450.12" y2="-23.6" xlink:href="#_未命名漸層_678"/>
+    <linearGradient id="_未命名漸層_678-3" data-name="未命名漸層 678" x1="-493.49" y1="-497.39" x2="-493.49" y2="-23.6" xlink:href="#_未命名漸層_678"/>
+    <linearGradient id="_未命名漸層_678-4" data-name="未命名漸層 678" x1="-536.86" y1="-497.39" x2="-536.86" y2="-23.59" xlink:href="#_未命名漸層_678"/>
+    <linearGradient id="_未命名漸層_678-5" data-name="未命名漸層 678" x1="-580.23" y1="-497.38" x2="-580.23" y2="-23.59" xlink:href="#_未命名漸層_678"/>
+    <linearGradient id="_未命名漸層_678-6" data-name="未命名漸層 678" x1="-623.6" y1="-497.38" x2="-623.6" y2="-23.59" xlink:href="#_未命名漸層_678"/>
+    <linearGradient id="_未命名漸層_686" data-name="未命名漸層 686" x1="-320" y1="-214.25" x2="-320" y2="-511" gradientTransform="translate(-480 -466.8) rotate(-180)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#000" stop-opacity="0"/>
+      <stop offset=".03" stop-color="#181818" stop-opacity=".1"/>
+      <stop offset=".1" stop-color="#484848" stop-opacity=".28"/>
+      <stop offset=".17" stop-color="#737373" stop-opacity=".45"/>
+      <stop offset=".25" stop-color="#999" stop-opacity=".6"/>
+      <stop offset=".33" stop-color="#b9b9b9" stop-opacity=".73"/>
+      <stop offset=".41" stop-color="#d2d2d2" stop-opacity=".83"/>
+      <stop offset=".51" stop-color="#e6e6e6" stop-opacity=".9"/>
+      <stop offset=".62" stop-color="#f4f4f4" stop-opacity=".96"/>
+      <stop offset=".76" stop-color="#fcfcfc" stop-opacity=".99"/>
+      <stop offset="1" stop-color="#fff"/>
+    </linearGradient>
+    <filter id="drop-shadow-1" filterUnits="userSpaceOnUse">
+      <feOffset dx="0" dy="0"/>
+      <feGaussianBlur result="blur" stdDeviation="4"/>
+      <feFlood flood-color="#000" flood-opacity=".5"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g style="isolation: isolate;">
+    <g id="_圖層_1" data-name="圖層 1">
+      <g style="clip-path: url(#clippath);">
+        <g style="mask: url(#mask);">
+          <g style="mix-blend-mode: soft-light;">
+            <g>
+              <path d="m-331.18-252.54H11.17l.09.08L364.36,44.21H-684.36l1.29-1.09L-331.18-252.54Zm342.15,1.16h-341.95L-681.4,43.05H361.4L10.97-251.38Z" style="fill: url(#_未命名漸層_678); stroke-width: 0px;"/>
+              <polygon points="-95.53 -252.29 36.4 43.3 35.76 43.95 -96.17 -251.64 -95.53 -252.29" style="fill: url(#_未命名漸層_678-2); stroke-width: 0px;"/>
+              <polygon points="-74.17 -252.35 101.73 43.24 101.15 44.01 -74.75 -251.58 -74.17 -252.35" style="fill: url(#_未命名漸層_678-3); stroke-width: 0px;"/>
+              <polygon points="-52.82 -252.4 167.06 43.19 166.54 44.06 -53.34 -251.53 -52.82 -252.4" style="fill: url(#_未命名漸層_678-4); stroke-width: 0px;"/>
+              <polygon points="-31.46 -252.43 232.39 43.16 231.93 44.09 -31.93 -251.5 -31.46 -252.43" style="fill: url(#_未命名漸層_678-5); stroke-width: 0px;"/>
+              <polygon points="-10.1 -252.45 297.73 43.14 297.31 44.11 -10.52 -251.48 -10.1 -252.45" style="fill: url(#_未命名漸層_678-6); stroke-width: 0px;"/>
+            </g>
+            <g>
+              <path d="m-331.18-252.54H11.17l.09.08L364.36,44.21H-684.36l1.29-1.09L-331.18-252.54Zm342.15,1.16h-341.95L-681.4,43.05H361.4L10.97-251.38Z" style="fill: url(#_未命名漸層_686); stroke-width: 0px;"/>
+              <polygon points="-95.53 -252.29 36.4 43.3 35.76 43.95 -96.17 -251.64 -95.53 -252.29" style="fill: url(#_未命名漸層_686); stroke-width: 0px;"/>
+              <polygon points="-74.17 -252.35 101.73 43.24 101.15 44.01 -74.75 -251.58 -74.17 -252.35" style="fill: url(#_未命名漸層_686); stroke-width: 0px;"/>
+              <polygon points="-52.82 -252.4 167.06 43.19 166.54 44.06 -53.34 -251.53 -52.82 -252.4" style="fill: url(#_未命名漸層_686); stroke-width: 0px;"/>
+              <polygon points="-31.46 -252.43 232.39 43.16 231.93 44.09 -31.93 -251.5 -31.46 -252.43" style="fill: url(#_未命名漸層_686); stroke-width: 0px;"/>
+              <polygon points="-10.1 -252.45 297.73 43.14 297.31 44.11 -10.52 -251.48 -10.1 -252.45" style="fill: url(#_未命名漸層_686); stroke-width: 0px;"/>
+            </g>
+          </g>
+        </g>
+      </g>
+      <path d="m172.15,73.13l-22.16-58.76-22.16,58.77c-33.39,9.62-57.83,40.38-57.83,76.86,0,44.18,35.82,80,80,80s80-35.82,80-80c0-36.5-24.45-67.26-57.85-76.87Z" style="fill: #fff; filter: url(#drop-shadow-1); stroke-width: 0px;"/>
+    </g>
+  </g>
+</svg>

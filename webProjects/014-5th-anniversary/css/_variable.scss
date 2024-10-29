@@ -1,0 +1,68 @@
+// color
+
+    $color-blue-heavy: #141926;
+    $color-blue-dark: #162748;
+    $color-blue: #002757;
+    $color-yellow: #FFC63F;
+    $color-yellow-light: #FFDD8C;
+
+    $color-gray-dark: #11141A;
+    $color-gray: #5F5E5E;
+    $color-gray-light: #9E9C9A;
+    $color-gray-thin: #C8C9CA;
+    $color-white: #FFFFFF;
+
+// text
+    // font weight
+    $fw-nm: 300;
+    $fw-md: 500;
+    $fw-bd: 700;
+    $fw-bk: 900;
+
+// radius [ map-get($radius-size, '...') ]
+$radius-size: (
+    'xl': 24px,
+    'lg': 20px,
+    'md': 16px,
+    'sm': 8px,
+    'xs': 4px
+);
+
+// box-shadow [ map-get($shadow, '...') ]
+$shadow: (
+    'nm': 0 1px 2px #{$color-gray-dark}#{33},
+    'md': 0 2px 4px #{$color-gray-dark}#{33},
+    'bd': 0 4px 8px #{$color-gray-dark}#{33}
+);
+
+// icon [ @each $icon-name in $icon-set{...} ]
+$icon-set: ( 'cross');
+
+// display size (for width & RWD) [ map-get($ds-size, '...') ]
+$ds-size: (
+    '6xl': 1920px,
+    '5xl': 1600px,
+    '4xl': 1440px,
+    '3xl': 1360px,
+    '2xl': 1280px,
+    'xl': 1024px,
+    'lg': 960px,
+    'md': 800px,
+    'sm': 640px,
+    'xs': 480px,
+    '2xs': 360px,
+    '3xs': 320px
+);
+
+// RWD [ @include rwd(map-get($ds-size, '...') {...} ]
+@mixin rwd($size) {
+    @media screen and (max-width:$size) {
+        @content;
+    }
+}
+// bps  [ @include bps(map-get($ds-size, '...') {...} ]
+@mixin bps($size) {
+    @media screen and (min-width:calc($size + 1px)){
+        @content;
+    }
+}

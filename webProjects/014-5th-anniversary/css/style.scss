@@ -1,0 +1,842 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;500;700;900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+@import 'reset';
+@import 'variable';
+
+
+// main start
+body {background-color: #FFB000;}
+
+.top {
+    height: 65px;
+}
+.gs-rotate {
+    // default start
+    position: relative; 
+    margin: 0;      
+    font-family: 'Noto Sans TC', '微軟正黑體', sans-serif, arial;
+    font-weight: $fw-nm;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background-image: url(../images/mainBg.jpg);
+    background-size: 100% 100%;
+
+
+    h1 { display: none;}
+
+    *, *:before, *:after {
+        position: relative; 
+        margin: 0;      
+        font-family: 'Noto Sans TC', '微軟正黑體', sans-serif, arial;
+        font-weight: $fw-nm;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+    box-sizing: border-box;
+    font-size: 16px;
+     // default rwd 1280px
+    @include rwd(map-get($ds-size, '2xl')) {
+        font-size: 15px;
+    }
+     // default rwd 360px
+    @include rwd(map-get($ds-size, '2xs')) {
+        font-size: 12px;
+    }
+    // default end
+
+    // config start
+    :is(img) {
+        width: 100%;
+    }
+    :is(a:not(.sz-text-link)) {        
+        text-decoration: none;
+    }
+    :is(ul, li) {
+        display: inline-block;
+    }
+    :is(input) {
+        appearance: none;
+        background-color: transparent;   
+        background-color: $color-white;     
+        width: 100%;
+        padding: 0.75em 0.75em 0.75em 6em;
+        color: $color-blue;
+        font-size: 16px;
+        font-weight: $fw-md;
+        border: 1px solid $color-white;
+        border-radius: map-get($radius-size, 'sm');
+        outline: none;
+        &:focus {
+            border-color: $color-yellow;
+        }
+    }
+    ::placeholder {
+        color: $color-gray-thin;
+        opacity: 1; // Firefox
+    }
+    :-ms-input-placeholder { // Internet Explorer 10-11
+        color: $color-gray-thin;
+    }
+    ::-ms-input-placeholder { // Microsoft Edge
+        color: $color-gray-thin;
+    }
+    // config end
+
+    // gs-rotate start
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-blue-heavy;
+    width: 100%;
+    overflow: hidden;
+    // gs-rotate end
+
+    // banner start
+    .banner {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1920/1000;
+        overflow: hidden;
+        .gs-logo {
+            position: absolute;
+            top: 1em;
+            left: 1em;
+            display: block;
+            width: 16%;
+            max-width: 6.25em;
+            aspect-ratio: 92/72;
+            z-index: 100;
+        }
+        .bg-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            .radiate {
+                top: calc(50% - 8vw);
+            }
+        }
+        .slogan-cont {
+            position: absolute;
+            top: calc(50% - 22vw);
+            left: 5%;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            width: 90%;
+
+            a {
+                img {width: 100%;}
+                display: block;
+                padding-top: 0%;
+                width: 40%;
+                max-width: 250px;
+                cursor: pointer;
+            }
+        }
+        .slogan {
+            animation: slogan-scale 1.6s ease infinite;
+            &.pc {display: block;}
+            &.sp {display: none;}
+        }
+
+
+        // banner rwd 800px
+        @include rwd(map-get($ds-size, 'md')) {
+            aspect-ratio: 1/0.9;
+            .bg-img {
+                .radiate {
+                    top: 50%;
+                }
+            }
+            .slogan-cont {
+                top: 7%;
+                width: 100%;
+                left: 0;
+            }
+            .slogan {
+                &.pc {display: none;}
+                &.sp {display: block;}
+            }
+        }
+    }
+    // banner end
+
+    // turntable-cont start
+    .turntable-cont {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 2em;
+
+        &.mt-lotteryPage {
+            margin-top: -5vw;
+            @include rwd(map-get($ds-size, 'md')) {
+                margin-top: -10vw;
+            }
+        }
+
+        // 大轉盤
+        .rotate-cont {
+            position: relative;
+            background:linear-gradient(to bottom, #E6F1D1, #DFCC91, #E6F1D1);
+            width: 100%;
+            max-width: 768px;
+            aspect-ratio: 1/1;
+            margin: -20% auto 0;
+            border-radius: 50%;
+            a {
+                position: absolute;
+                img {width: 100%;}
+
+                top: -12%;
+                width: 30%;
+                left: 35%;
+            }
+
+            img { 
+                position: absolute;
+
+                &.ribbonTop {
+                    width: 50%;
+                    left: -60%;
+                    top: -10%;
+                    animation: slogan-scale 1.6s ease infinite;
+                }
+                &.giftLeft {
+                    width: 27%;
+                    left: -45%;
+                    top: 50%;
+                    animation: slogan-scale 1.6s ease infinite;
+                }
+                &.giftRight {
+                    width: 22%;
+                    right: -40%;
+                    top: 20%;
+                    animation: slogan-scale 1.6s ease infinite;
+                }
+                &.giftRight {
+                    width: 22%;
+                    right: -40%;
+                    top: 20%;
+                    animation: slogan-scale 1.6s ease infinite;
+                }
+                &.starsLeft_1 {
+                    width: 35%;
+                    left: -25%;
+                    bottom: -10%;
+                    animation: slogan-scale 1.6s ease infinite;
+                }
+            }
+            &:before {
+                position: absolute;
+                display: block;
+                content: "";
+                background-color: $color-white;
+                width: 94%;
+                height: 94%;
+                margin: 3%;
+                border-radius: 50%;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+            }
+            .rotate-award {
+                width: 88%;
+                height: 88%;
+                margin: 6%;
+                aspect-ratio: 1/1;
+                border-radius: 50%;
+                transition: unset;
+                &.spin {
+                    animation: rotate-spin 24s ease infinite; 
+                }
+            }
+            .rotate-go {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 40%;
+                aspect-ratio: 1/1;
+                border-radius: 50%;
+                transform: translate(-50%, -50%);
+                .rotate-pointer {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    width: 100%;
+                    height: 100%;
+                    transform: translate(-50%, -50%);
+                }
+                .start-game {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    aspect-ratio: 1/1;
+                    width: 46%;
+                    height: 46%;
+                    transform: translate(-50%, -50%);
+                    img {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        aspect-ratio: 1/1;
+                        transform: translate(-50%, -50%);
+                    }
+                    .start-btn {
+                        width: 100%;
+                        height: 100%;
+                        cursor: pointer;
+                    }
+                    .word-go {
+                        width: 68%;
+                        aspect-ratio: 96/60;
+                        cursor: pointer;
+                    }
+                    &:hover {
+                        filter: brightness(1.2);
+                        .word-go {
+                            animation: scale-fade 0.8s ease infinite;
+                        }
+                    }
+                }
+                &.active {
+                    animation: scale-fade 0.6s ease infinite;
+                    .start-game {
+                        filter: brightness(1.2);
+                        .word-go {
+                            animation: scale-fade 0.6s ease infinite reverse;
+                        }
+                    }
+                }
+            }
+            &.disabled {
+                &:after {
+                    position :absolute;
+                    top: 0;
+                    left: 0;
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            // .rotate-cont rwd 1440px
+            @include rwd(map-get($ds-size, '4xl')) {
+                margin: -16vw auto 0;
+            }
+            // .rotate-cont rwd 1280px
+            @include rwd(map-get($ds-size, '2xl')) {
+                /* margin: -8vw auto 0; */
+            }
+        }
+        .awardTitle {
+            font-size: 1.75rem;
+            font-weight: bold;
+            background: linear-gradient(to bottom, #E6F1D1, #DFCC91, #E6F1D1);
+            padding: 0.4rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.6);
+            margin: 3rem auto 1rem auto;
+        }
+        .awardsCon {
+            position: relative;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 800px;
+            justify-content: space-between;
+
+            .starsLeft_2 {
+                position: absolute;
+                width: 10%;
+                left: -20%;
+                top: 40%;
+                animation: slogan-scale 1.6s ease infinite;
+            }
+            .ribbonBtm {
+                position: absolute;
+                width: 30%;
+                right: -40%;
+                top: -20%;
+                animation: slogan-scale 1.6s ease infinite;
+            }
+
+            .award {
+                &.award-50 {width: 50%;}
+                &.award-25 {width: 25%;}
+
+                @include rwd(map-get($ds-size, 'md')) {
+                    &.award-50 {width: 100%;}
+                    &.award-25 {width: 50%;}
+                }
+
+                .blueBg {
+                    border-radius: 15px;
+                    background: linear-gradient(to Bottom, #024CAA, #00005B);
+                    margin: 0.4rem;
+                    padding: 1.2rem;
+
+                    .whiteBg {
+                        border-radius: 10px;
+                        background: linear-gradient(to Bottom, #FFFFFF 80%, #CCCCCC 100%);
+                        
+                        &.flex-row {
+                            display: flex;
+                            flex-direction: row;
+                            @include rwd(map-get($ds-size, 'md')) {
+                                flex-direction: column;
+                            }
+                        }
+                        
+                        &.flex-column {
+                            display: flex;
+                            flex-direction: column;
+                        }
+
+                        .w-rwd {width: 50%;}
+                        .w-100 {width: 100%;}
+
+                        .text {
+                            display: flex;
+                            flex-direction: column;
+                            align-self: center;
+                            text-align: center;
+                            font-weight: bold;
+                            line-height: 1.2;
+                            word-break: break-all;
+                            &.fs-3 {font-size: 1.5rem;}
+                            &.fs-4 {font-size: 1.2rem;}
+                            &.pb-1 {padding-bottom: 0;}
+                            &.pb-2 {padding-bottom: 1rem;}
+                        }
+
+                        @include rwd(map-get($ds-size, 'md')) {
+                            flex-direction: column;
+                            .w-rwd {width: 75%; margin: 0 auto;}
+                            .text {
+                                &.fs-3 {font-size: 1.5rem;}
+                                &.fs-4 {font-size: 1rem;}
+                                &.pb-1 {padding-bottom: 1rem;}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        // 大轉盤說明
+        .rotate-method {
+            display: flex;
+            flex-flow: column;
+            gap: 0.5em;
+            justify-content: center;
+            align-items: center;
+            max-width: map-get($ds-size, 'md');
+            color: white;
+            padding-top: 2rem;
+
+            .title {
+                min-width: 8em;
+                padding: 0.25em;
+                font-size: 1.75rem;
+            }
+
+            hr {width: 100%; margin: 0.75rem 0;}
+        }
+    }
+    // turntable-cont end
+
+    // 放射光旋轉 start
+    .radiate {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 104vw;
+        height: 104vw;
+        aspect-ratio: 1/1;
+        transform: translate(-50%, -50%);
+        animation: radiate-rotate 24s linear infinite;
+    }
+    // 放射光旋轉 end
+
+    // show-box 開始
+    .box-cont {
+        position: fixed;
+        top: -120vh;
+        left: 0;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #{#2D0000}#{cc};
+        width: 100%;
+        height: 100vh;
+        padding: 0 1em;
+        opacity: 0;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+
+        &.active {
+            top: 0;
+            height: 100vh;
+            padding: 1em;
+            opacity: 1;
+            display: flex;
+        }
+        .show-box {
+            display: none;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: map-get($ds-size, 'sm');
+            border-radius: map-get($radius-size, 'lg');
+            overflow: hidden;
+            &.active {
+                display: flex;
+            }
+            .title-cont {
+                background-color: #B51010;
+                color: white;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                padding: 1em 2.5em;
+                .btn-close {
+                    position: absolute;
+                    top: 50%;
+                    right: 1em;
+                    transform: translateY(-50%);
+                }
+            }
+            .btn-done {
+                background-color: #B51010;
+                color: white;
+                font-size: 1.5rem;
+                font-weight: bold;
+                padding: 0.5rem 1.5rem;
+                border-radius: 50px;
+                margin-top: 0.5rem;
+            }
+            .cont {
+                position: relative;
+                display: flex;
+                flex-flow: column;
+                gap: 1.5em;
+                justify-content: center;
+                align-items: center;
+                background-color: #{$color-white}#{aa};
+                width: 100%;
+                padding: 2em;
+                .form-cont {
+                    width: 100%;
+                    max-width: 400px;
+                }
+                .protectingText {
+                    position: relative;
+                    display: flex;
+                    flex-direction: row;
+                    input {
+                        width: 15px!important;
+                        padding: unset!important;
+                        &:focus {
+                            border-color: white!important;
+                        }
+                    }
+                    input[type="checkbox"]:checked + label i {
+                        display: inline;
+                    }
+                    label {
+                        position: absolute;
+                        width: 15px;
+                        i {display: none;}
+                    }
+                }
+                .btn-submit {
+                    background-color: #B51010;
+                    color: white;
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    padding: 0.5rem 3rem;
+                    border-radius: 50px;
+                    input {
+                        padding: 0;
+                    }
+                }
+                &.gift-style {
+                    position: absolute;
+                    text-align: center;
+                    
+                    .title {
+                        flex-flow: column;
+                        gap: 0.25em;
+                    }
+                }
+            }
+            // 獎品確認
+            &.gift-box {
+                max-width: unset;
+                overflow: unset;
+
+                .ballons {
+                    position: absolute;
+                    width: 200vw;
+                    max-width: 800px;
+                }
+                .radiate {
+                    top: calc(50% - 2vw);
+                    width: 160vw;
+                    max-width: 800px;
+                    height: 160vw;
+                    filter: brightness(3);
+                }
+                &:before, &:after {
+                    position: absolute;
+                    top: 50%;
+                    content: '';
+                    display: block;
+                    transform: translateY(-50%);
+                    background-image: url(../images/gift_shine_150x240.svg);
+                    width: 9em;
+                    height: auto;
+                    aspect-ratio: 15/24;
+                }
+                &:before {
+                    left: calc(50% - 22.5em);
+                }
+                &:after {
+                    right: calc(50% - 22.5em);
+                    transform: translateY(-50%) scaleX(-1);
+                }
+            }
+        }
+    }
+    // show-box 結束
+    // button start
+    .button-cont {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn-close {
+        display: block;
+        width: 2em;
+        min-width: unset;
+        height: 2em;
+        min-height: unset;
+        margin: 0;
+        padding: 0.25em;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        cursor: pointer;
+        &:before {
+            background-color: $color-white;
+            aspect-ratio: 1/1;
+        }
+        &:hover {
+            &:before {
+                background-color: $color-white;
+                width: calc(100% + 4px);
+                height: calc(100% + 4px);
+            }
+        }
+        [class^='icon-'], [class*=' icon-'] {
+            width: 1.5em;
+            height: 1.5em;
+        }
+    }
+    // button end
+
+    // form-cont start
+    .form-cont {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1em;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        font-size: 16px;
+        .input-cont {
+            display: block;
+            width: 100%;
+            label {
+                position: absolute;
+                top: 50%;
+                left: 1em;
+                display: block;
+                font-weight: $fw-md;
+                transform: translateY(-50%);
+            }
+        }
+        select {
+            display: block;
+            width: 100%;
+            padding: 0.75em;
+            color: #002757;
+            font-size: 16px;
+            font-weight: 500;
+            border: 1px solid #FFFFFF;
+            border-radius: 8px;
+            outline: none;
+            appearance:none;
+            background: url("../images/arrowBlack.png") no-repeat right center transparent;
+            background-size: 30px;
+            background-color: #ffffff;
+        }
+    }
+    // form-cont end
+
+    // text start
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.75rem;
+        font-weight: $fw-bd;
+        padding: 0.5rem 0;
+        span {
+            font-weight: $fw-bd;
+        }
+    }
+    .subject {
+        display: flex;
+        flex-flow: row wrap;
+        gap: 0.25em 0;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5em;
+        font-weight: $fw-md;
+        span {
+            font-weight: $fw-md;
+        }
+    }
+    .text {
+        font-size: 1em;
+        font-weight: $fw-nm;
+    }
+    .list-ul {
+        display: flex;
+        flex-flow: column;
+
+        .list-li {
+            display: block;
+            padding: 0.25em 0.25em 0.25em 1em;
+            font-size: 1.25em;
+            font-weight: 500;
+            line-height: 1.25;
+            text-align: justify;
+            cursor: default;
+            &::before {
+                position: absolute;
+                top: 0.5em;
+                left: 0;
+                display: block;
+                content: "•";
+                min-width: 1em;
+                font-size: initial;
+                font-weight: 900;
+                text-align: center;
+            }
+        }
+        // list-ul rwd 480px
+        @include rwd(map-get($ds-size, 'xs')) {
+
+            .list-li {
+                font-size: 1em;
+            }
+        }
+    }
+    // text end
+
+    // icon start
+    [class^='icon-'], [class*=' icon-'] {
+        display: inline-block;
+        background-color: white;
+        width: 2em;
+        height: 2em;
+        aspect-ratio: 1/1;
+        mask-repeat: no-repeat;
+        -webkit-mask-repeat: no-repeat;
+        mask-size: cover;
+        -webkit-mask-size: cover;
+    }
+    // .icon-(詞諁請參考 $icon-set)
+    @each $icon-name in $icon-set {
+        .icon-#{$icon-name} {
+            mask-image: url(../images/icons/#{$icon-name}.svg);
+            -webkit-mask-image: url(../images/icons/#{$icon-name}.svg);
+        }
+    }
+    // icon end
+
+    // 錨點 start
+    .anchor {
+        position: absolute;
+        top: -5em;
+    }
+    // 錨點 end
+}
+// main end
+
+// footer start
+    .gs-footer {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        width: 100%;
+        padding: 1.5em;
+        box-sizing: border-box;
+        font-size: 16px;
+        font-family: 'Noto Sans TC', '微軟正黑體', sans-serif, arial;
+        // default rwd 1280px
+        @include rwd(map-get($ds-size, '2xl')) {
+            font-size: 15px;
+        }
+        // default rwd 360px
+        @include rwd(map-get($ds-size, '2xs')) {
+            font-size: 12px;
+        }
+        .copyright-text {
+            color: white;
+            text-align: center;
+        }
+    }
+    // footer end
+
+/* keyframes */
+
+@keyframes radiate-rotate {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+@keyframes slogan-scale {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+@keyframes scale-fade {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(-50%, -50%) scale(1.05); }
+    100% { transform: translate(-50%, -50%) scale(1); }
+}
+@keyframes rotate-spin {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
+    100% { transform: rotate(360deg); }
+}
