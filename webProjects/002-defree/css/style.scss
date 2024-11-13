@@ -1,0 +1,186 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+.wrapper, *:before, *:after {
+    position: relative;
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.colorBlue{color: #136abf;}
+.colorOrange {color: #ff9700;}
+.go_fillform {cursor: pointer;}
+.titledots {width: 80px;}
+
+.kv {
+    padding-top: 65px;
+    height: 100vh;
+    width: 100%;
+
+    .kvCircle {
+        padding-top: 65px;
+        width: 25vw;
+        max-width: 500px;
+        min-width: 300px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+    }
+    .half {
+        width: 50%;
+        height: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .quarter {
+        width: 100%;
+        height: 50%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.greenWall {
+    background-image: url(../images/greenWall.png);
+    background-size: cover;
+
+    .myContainer {
+        padding: 0 2vw;
+        max-width: 1320px;
+        margin: 0 auto;
+    }
+    .text {
+        font-size: clamp(20px, 1.8vw, 28px);
+        font-weight: 900;
+        text-wrap: nowrap;
+        bottom: 15%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        i {margin-left: 0.25rem;}
+
+        @media screen and (max-width:992px) {
+            font-size: 6vw;
+        }
+    }
+    .fillform {
+        padding-bottom: 0;
+        @media screen and (max-width:992px) {
+            padding-bottom: 3rem;
+        }
+    }
+    .inputStyle {
+        display: block;
+        width: 75%;
+        border: 0;
+        border-radius: 8px;
+        padding: 0.5rem 0.5rem;
+        margin: 1rem auto;
+    }
+    .buttonStyle {
+        background: #ff9700;
+        width: 75%;
+        height: 40px;
+        border-radius: 50px;
+        margin: 1rem auto 0 auto;
+    }
+}
+
+.whiteWall {
+    background-image: url(../images/city.png),url(../images/whiteWall.png);
+    background-size: 100% auto, cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    padding-bottom: 10rem;
+
+    .imgShadow {
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+    }
+    .buttonStyle {
+        display: block;
+        background: #ff9700;
+        width: 120px;
+        height: 40px;
+        border-radius: 50px;
+        margin: auto;
+    }
+}
+
+.features {
+    .myContainer {
+        padding: 0 2vw;
+        max-width: 1320px;
+        margin: 0 auto;
+    }
+    .subTitle {
+        font-size: clamp(20px, 2.2vw, 28px);
+        font-weight: 900;
+
+        &.posAthome {
+            top: 12%;
+            left: 26%;
+        }
+        &.posTeacher {
+            top: 15%;
+            left: 18%;
+            transform: rotate(-6deg);
+        }
+        &.posRecord {
+            top: 14%;
+            left: 32%;
+            transform: rotate(9deg);
+        }
+        @media screen and (max-width:992px) {
+            font-size: 6.5vw;
+            &.posAthome {top: 16.5vw;}
+            &.posTeacher {top: 20vw;}
+            &.posRecord {top: 20vw;}
+        }
+    }
+    .buttonStyle {
+        display: block;
+        background: #ff9700;
+        width: 120px;
+        height: 40px;
+        border-radius: 50px;
+        margin: 1rem auto 0 auto;
+    }
+}
+
+.flash {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    height: 40px;
+
+    &:before {
+        position: absolute;
+        left: -175%;
+        content: "";
+        background-image: linear-gradient(90deg, #{#FFFFFF}#{0}#{0} 0%, #{#FFFFFF}#{99} 80%);
+        width: 6em;
+        top: 0;
+        height: 200%;
+        transform: translateY(-50%) skewX(-15deg);
+        animation: fx-flash 3s linear infinite;
+    }
+    &:hover {
+        background-color: #FFEEDF;
+        color: #FF7C00;
+        border: #ff9700 solid 1px;
+        border-radius: 20px;
+    }
+}
+
+@keyframes fx-flash {
+    0% { left: -175%; }
+    70% { left: -175%; }
+    100% { left: 175%; }
+}

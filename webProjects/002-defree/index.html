@@ -1,0 +1,360 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>免費學德語，最新最有趣的線上德文課程！</title>
+    <meta name="Title" content="免費學德語，最新最有趣的線上德文課程！" />
+    <meta name="Description" content="最新最有趣最實用的情境德語課程線上免費學!線上免費德語程度檢測,再送德文學習祕笈,八大主題式情境德文教學輕鬆簡單學:交通工具,美食購物,留學遊學,慕尼黑啤酒節" />
+    <meta name="keywords" content="德文, 德 文 線上 課程,德語補習班,德語 學習,線上 學 德語" />
+    <meta property="og:title" content="免費學德語，最新最有趣的線上德文課程！" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="images/shareCard.jpg" />
+    <meta property="og:description" content="最新最有趣最實用的情境德語課程線上免費學!線上免費德語程度檢測,再送德文學習祕笈,八大主題式情境德文教學輕鬆簡單學:交通工具,美食購物,留學遊學,慕尼黑啤酒節" />
+    <link rel="canonical" href="" />
+    <!-- Page Info Insert END -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/comm-style.js"></script>
+    <!-- Include JS & CSS Start -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/comm-style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!--非填單按鈕使用class name="activity-page-click-count"-->
+    <!-- Include JS & CSS End -->
+    <script type="text/javascript">
+        //留單相關，看過後請把註解刪掉喔!  -----start
+        var dept = "KZ2";
+        var seq_no = "0";
+        var web_pno = "113071500009"; //電腦版pno
+        var NList_Type = "5";
+        var fromto = "";
+        var Gift = "";
+        var is_Mobile = "0";
+
+        /*手機板 pno 判斷相關 >> start */
+        $(function () {
+            if (isMobile()) {
+                web_pno = "113071500010";  //手機板pno
+                is_Mobile = "1";   
+            }
+        });
+
+        function isMobile() {
+            try { document.createEvent("TouchEvent"); return true; }
+            catch (e) { return false; }
+        }
+        /*手機板 pno 判斷相關 >> end*/
+
+        function but_send() {
+            $('#sBut').hide();
+
+            var JSonData = {
+                "name": $("#name").val(),
+                "mobile": $("#mobile").val(),
+                "email": $("#email").val(),
+                "seq_no": seq_no,
+                "dept_no": dept,
+                "memo": "體驗完送電子書" + Gift,
+                "web_pno": web_pno,
+                "fromto": QueryString("fromto") != null ? QueryString("fromto") : fromto,
+                "fromurl": document.location.href, 
+                "sourceid": QueryString("fc") != null ? QueryString("fc") : "",
+                "NList_Type": NList_Type,
+                "IsSend": "N",
+                "func": "njycooooqj"
+            }
+
+            if ($("input[name=per_chk]:checked").length == 0) {
+                alert('請勾選同意個資保護聲明。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.name == "" || JSonData.name == "姓 名") {
+                alert('請填寫入姓名。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile == "" || JSonData.mobile == "行動電話") {
+                alert('請填寫行動電話。');
+                $('#sBut').show();
+                return false;
+            }
+            if (isNaN(JSonData.mobile) == true) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile.length != 10) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.email == "" || JSonData.email == "E-Mail") { JSonData.email = "" } else {
+                if (JSonData.email.indexOf("@") <= -1) {
+                    alert('電子郵件格式錯誤。');
+                    $('#sBut').show();
+                    return false;
+                }
+            }
+            goSubmit(JSonData, s, f);
+        }
+
+        function s(data) {
+            if (data[0].result == "1") {
+                $("#name").val("");
+                $("#mobile").val("");
+                $("#sBut").show();
+                document.location.href = "/wGuest/loadover.htm";
+            } else {
+                alert('送出失敗！');
+                $("#sBut").show();
+            }
+        }
+        function f(data) {
+            alert(data);
+            $("#sBut").show();
+        }
+        //留單相關，看過後請把註解刪掉喔!  -----end
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQDCTEKFX1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-RQDCTEKFX1');
+    </script>
+</head>
+<body>
+    <div class="top">
+        <iframe src="../../headerFooter/header.html" width="100%" height="65px"  scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
+    </div>
+    <!-- HTML Start -->
+
+    <!-- wapper開始 -->
+    <div class="wrapper">
+        <section class="kv position-relative overflow-hidden">
+            <img class="kvCircle position-absolute" src="images/kvCircle.png">
+            <div class="d-flex h-100">
+                <div class="d-flex flex-wrap half">
+                    <div class="quarter">
+                        <div class="swiper swiper1 h-100">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img  src="images/kv1-1.png">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/kv1-2.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quarter">
+                        <div class="swiper swiper2 h-100">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="images/kv2-1.png">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/kv2-2.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-lg-block d-none half">
+                    <div class="swiper swiper3 h-100">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="images/kv3-1.png">
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="images/kv3-2.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-lg-none d-block d-flex flex-wrap half">
+                    <div class="quarter">
+                        <div class="swiper swiper3 h-100">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="images/kv3-1.png">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/kv3-2.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="quarter">
+                        <div class="swiper swiper4 h-100">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="images/kv4-1.png">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/kv4-2.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="greenWall pt-5">
+            <div class="text-center">
+                <div class="fs-1 fw-bold text-center lh-1 colorBlue">免費學大方送</div>
+                <img class="titledots" src="images/titledots.png">
+            </div>
+            <div class="d-flex flex-wrap myContainer">
+                <div class="col-lg-4 col-12 px-2 position-relative go_fillform activity-page-click-count" data-aos="fade-up">
+                    <div class="position-absolute text">免費德語體驗課<i class="bi bi-arrow-right-circle-fill"></i></div>
+                    <img class="w-100" src="images/freeClass.png">
+                </div>
+                <div class="col-lg-4 col-12 px-2 position-relative go_fillform activity-page-click-count" data-aos="fade-up">
+                    <div class="position-absolute text">免費能力檢測<i class="bi bi-arrow-right-circle-fill"></i></div>
+                    <img class="w-100" src="images/freeTesting.png">
+                </div>
+                <div class="col-lg-4 col-12 px-2 position-relative go_fillform activity-page-click-count" data-aos="fade-up">
+                    <div class="position-absolute text">德語學習手冊<i class="bi bi-arrow-right-circle-fill"></i></div>
+                    <img class="w-100" src="images/freeVoucher.png">
+                </div>
+            </div>
+            <div class="container">
+                <div class="d-flex flex-wrap text-center">
+                    <div class="col-lg-6 col-12">
+                        <img class="w-75" src="images/teacher.png">
+                    </div>
+                    <div class="col-lg-6 col-12 align-self-center" data-aos="fade-up">
+                        <!-- 表單開始，請注意使用表單區塊class name：fillform為預設，可新增不可修改/刪除！ -->
+                        <div class="fillform">
+                            <div class="fs-1 fw-bold colorBlue lh-1 pt-3">
+                                最新情境德語課程<br><span class="colorOrange">免費</span>學完送德文學習祕笈
+                            </div>
+                            <img class="titledots" src="images/titledots.png">
+                            <input class="inputStyle" name="ea" type="text" id="name" placeholder="姓 名" />
+                            <input class="inputStyle" name="mobile" type="text" id="mobile" placeholder="電 話" />
+                            <input class="inputStyle" name="email" type="text" id="email" placeholder="E-Mail" />
+                            <label>
+                                <input type="checkbox" name="per_chk" checked="checked">
+                                <span class="">我已閱讀並接受<a onclick="window.open('/activity/abconline/contract_02/','person',config='height=640,width=830');return false;" href="#">個資保護聲明</a></span>
+                            </label>
+                            <div class="buttonStyle fs-5 fw-bold shadow position-relative overflow-hidden" id="sBut" onClick="but_send();" style="cursor:pointer;">
+                                <div class="flash">免費領取</div>
+                            </div>
+                        </div>
+                        <!-- 表單結束 -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="whiteWall pt-5">
+            <div class="text-center">
+                <div class="fs-1 fw-bold text-center colorBlue">有趣的情境學德語</div>
+                <img class="titledots pb-5" src="images/titledots.png">
+            </div>
+            <div class="container">
+                <div class="d-flex flex-wrap">
+                    <div class="col-lg-3 col-12 text-center px-2 pb-5" data-aos="fade-up">
+                        <img class="w-100 imgShadow mb-4 go_fillform" src="images/scene_travel.png">
+                        <span class="buttonStyle fs-5 fw-bold shadow go_fillform position-relative overflow-hidden">
+                            <div class="flash">馬上學</div>
+                        </span>
+                    </div>
+                    <div class="col-lg-3 col-12 text-center px-2 pb-5" data-aos="fade-up">
+                        <img class="w-100 imgShadow mb-4 go_fillform" src="images/scene_fest.png">
+                        <span class="buttonStyle fs-5 fw-bold shadow go_fillform position-relative overflow-hidden">
+                            <div class="flash">馬上學</div>
+                        </span>
+                    </div>
+                    <div class="col-lg-3 col-12 text-center px-2 pb-5" data-aos="fade-up">
+                        <img class="w-100 imgShadow mb-4 go_fillform" src="images/scene_restaurant.png">
+                        <span class="buttonStyle fs-5 fw-bold shadow go_fillform position-relative overflow-hidden">
+                            <div class="flash">馬上學</div>
+                        </span>
+                    </div>
+                    <div class="col-lg-3 col-12 text-center px-2 pb-5" data-aos="fade-up">
+                        <img class="w-100 imgShadow mb-4 go_fillform" src="images/scene_traffic.png">
+                        <span class="buttonStyle fs-5 fw-bold shadow go_fillform position-relative overflow-hidden">
+                            <div class="flash">馬上學</div>
+                        </span>
+                    </div>
+                    <div class="col-lg-3 col-12 text-center px-2 pb-5" data-aos="fade-up">
+                        <img class="w-100 imgShadow mb-4 go_fillform" src="images/scene_studytour.png">
+                        <span class="buttonStyle fs-5 fw-bold shadow go_fillform position-relative overflow-hidden">
+                            <div class="flash">馬上學</div>
+                        </span>
+                    </div>
+                    <div class="col-lg-3 col-12 text-center px-2 pb-5" data-aos="fade-up">
+                        <img class="w-100 imgShadow mb-4 go_fillform" src="images/scene_chat.png">
+                        <span class="buttonStyle fs-5 fw-bold shadow go_fillform position-relative overflow-hidden">
+                            <div class="flash">馬上學</div>
+                        </span>
+                    </div>
+                    <div class="col-lg-3 col-12 text-center px-2 pb-5" data-aos="fade-up">
+                        <img class="w-100 imgShadow mb-4 go_fillform" src="images/scene_shopping.png">
+                        <span class="buttonStyle fs-5 fw-bold shadow go_fillform position-relative overflow-hidden">
+                            <div class="flash">馬上學</div>
+                        </span>
+                    </div>
+                    <div class="col-lg-3 col-12 text-center px-2 pb-5" data-aos="fade-up">
+                        <img class="w-100 imgShadow mb-4 go_fillform" src="images/scene_sick.png">
+                        <span class="buttonStyle fs-5 fw-bold shadow go_fillform position-relative overflow-hidden">
+                            <div class="flash">馬上學</div>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="features pt-5">
+            <div class="text-center">
+                <div class="fs-1 fw-bold text-center colorBlue">線上真人德語3大特色</div>
+                <img class="titledots" src="images/titledots.png">
+            </div>
+            <div class="d-flex flex-wrap myContainer">
+                <div class="col-lg-4 col-12 px-2 pb-4 position-relative" data-aos="fade-up">
+                    <div class="position-absolute colorBlue subTitle posAthome">有效率輕鬆學習</div>
+                    <img class="w-100" src="images/feature_atHome.png">
+                    <div class="fs-5 fw-bold px-5">
+                        用手機、平板、電腦就可和真人老師練德語，全世界都是你的德語教室。不用出門趕上課就能擁有德文家教！</div>
+                </div>
+                <div class="col-lg-4 col-12 px-2 pb-4 position-relative" data-aos="fade-up">
+                    <div class="position-absolute colorBlue subTitle posTeacher">師生即時互動教學</div>
+                    <img class="w-100" src="images/feature_teacher.png">
+                    <div class="fs-5 fw-bold px-5">
+                        專業老師和你進行互動教學，即時矯正發音、文法問題，讓你德國旅遊暢行無阻，成效更勝坊間德文補習班！
+                    </div>
+                </div>
+                <div class="col-lg-4 col-12 px-2 pb-4 position-relative" data-aos="fade-up">
+                    <div class="position-absolute colorBlue subTitle posRecord">我的錄影看到飽</div>
+                    <img class="w-100" src="images/feature_record.png">
+                    <div class="fs-5 fw-bold px-5">
+                        上課免露臉也不用做筆記，和老師的課程對話錄影免費下載複習！存在手機隨時複習德文課對話與老師的建議！
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <span class="buttonStyle fs-5 fw-bold shadow go_fillform position-relative overflow-hidden">
+                    <div class="flash">免費諮詢</div>
+                </span>
+            </div>
+            <img class="w-100" src="images/desk.png">
+        </section>
+    </div>
+    <!-- wapper結束 -->
+    <!-- HTML END -->
+
+    <div class="footer">
+        <iframe src="../../headerFooter/footer.html" width="100%" scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
+    </div>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/aos.js"></script>
+    <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
