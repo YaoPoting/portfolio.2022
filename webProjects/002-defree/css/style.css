@@ -83,13 +83,8 @@
     font-size: 6vw;
   }
 }
-.greenWall .fillform {
-  padding-bottom: 0;
-}
-@media screen and (max-width: 992px) {
-  .greenWall .fillform {
-    padding-bottom: 3rem;
-  }
+.greenWall .teacher {
+  width: 65%;
 }
 .greenWall .inputStyle {
   display: block;
@@ -113,6 +108,11 @@
   background-position: center bottom;
   background-repeat: no-repeat;
   padding-bottom: 10rem;
+}
+@media screen and (max-width: 992px) {
+  .whiteWall {
+    padding-bottom: 1rem;
+  }
 }
 .whiteWall .imgShadow {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
