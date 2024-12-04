@@ -411,12 +411,13 @@ a {
                     margin-top: -3.5rem;
                     margin-left: 0.5rem;
                     font-style: italic;
-                    text-shadow: 0 0 10px rgba(212, 127, 0, 0.8);
+                    &.textShadow {
+                        text-shadow: 0 0 10px rgba(212, 127, 0, 0.8);
+                    }
                 }
 
                 .websiteCover {
                     width: 100%;
-                    border-radius: 6px;
                     border: 1px solid white;
                 }
 

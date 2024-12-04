@@ -1204,11 +1204,12 @@ a:hover {
   margin-top: -3.5rem;
   margin-left: 0.5rem;
   font-style: italic;
+}
+.wrapper .websites .webSitesBg .cardsCon .numberTag.textShadow {
   text-shadow: 0 0 10px rgba(212, 127, 0, 0.8);
 }
 .wrapper .websites .webSitesBg .cardsCon .websiteCover {
   width: 100%;
-  border-radius: 6px;
   border: 1px solid white;
 }
 .wrapper .websites .webSitesBg .cardsCon .cardDes {
