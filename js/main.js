@@ -34,6 +34,19 @@ window.addEventListener('scroll', function() {
     }
 });
 
+// kv smoke
+window.addEventListener('load', function() {
+  document.body.style.backgroundColor = "#FFB000";
+});
+
+const smokeContainer = document.getElementById('smokeContainer');
+
+for (let i = 0; i < 60; i++) {
+    const smokeElement = document.createElement('div');
+    smokeElement.classList.add('smoke');
+    smokeContainer.appendChild(smokeElement);
+}
+
 //-------------------------------------//
 
 let grid = document.querySelector('.grid');
@@ -80,7 +93,3 @@ let infScroll = new InfiniteScroll( grid, {
 });
 
 //-------------------------------------//
-
-window.addEventListener('load', function() {
-  document.body.style.backgroundColor = "#FFB000";
-});

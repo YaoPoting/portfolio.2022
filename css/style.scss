@@ -70,40 +70,45 @@ a {
 
         .smokeFrame{
             position: relative;
+            width: 100%;
+            height: 450px;
             background-color: $color-main;
-            background-image: url("../images/overlay.png");
+            background-image: url("../images/overlay.png");          
 
-            width:100%;
-            height:450px;
-            
-            .smoke{
-                border:2px solid rgba(255,255,255,.1);
-                border-radius:400px;
-                position:absolute;
-                margin:auto;
-
-                @for $i from 1 through 60{
-                    &:nth-of-type(#{$i}){
-                        box-shadow: 3px 0px rgba(255,255,255, - ($i/40)),6px -5px rgba(10, 0, 0,  - ($i/40));
-                        width:($i * 6) + 0px;
-                        height:($i * 1) + 0px;
-                        right:($i * 10) + 0px;
-                        bottom:($i * 10) + 0px;
-                        //-webkit-filter:blur($i/3 + 8px);
-                        -webkit-filter: blur($i/3 + 8px);
-                        -moz-filter: blur($i/3 + 8px);
-                        -o-filter: blur($i/3 + 8px);
-                        -ms-filter: blur($i/3 + 8px);
-                        //filter: url(#blur);
-                        transform-origin: ($i * 4) + 0px ($i * 2) + 0px;
-                        animation: spin 3s ($i/10) + 0s linear infinite;
-                        background:rgba(180 + ($i*3),70 + ($i*1) ,50,1 - ($i/80));
-                    }
+            .smoke {
+                position: absolute;
+                border: 2px solid rgba(255,255,255,.1);
+                border-radius: 400px;
+                margin: auto;
+        
+                @keyframes spin {
+                    0% { transform: rotate(0deg); }
+                    100% { transform: rotate(360deg); }
                 }
-
-                @keyframes spin{
-                    0%{transform:rotate(0deg)}
-                    100%{transform:rotate(360deg)}
+        
+                @for $i from 1 through 60 {
+                    &:nth-child(#{$i}) {
+                        box-shadow: 
+                            3px 0px rgba(255,255,255, - ($i/40)),
+                            6px -5px rgba(10, 0, 0, - ($i/40));
+                        
+                        width: ($i * 6) + 0px;
+                        height: ($i * 1) + 0px;
+                        right: ($i * 10) + 0px;
+                        bottom: ($i * 10) + 0px;
+                        
+                        filter: blur(#{$i/3 + 8}px);
+                        
+                        transform-origin: ($i * 4) + 0px ($i * 2) + 0px;
+                        animation: spin 3s #{$i/10}s linear infinite;
+                        
+                        background: rgba(
+                            180 + ($i*3), 
+                            70 + ($i*1), 
+                            50, 
+                            1 - ($i/80)
+                        );
+                    }
                 }
             }
 
