@@ -1,0 +1,334 @@
+$color-main-background:#ffe6b3;
+
+.body {
+    background-color: #ffb000;
+}
+
+.wrapper, *:before, *:after {
+    position: relative;
+    margin: 0;
+    font-family: 'Noto Sans TC', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    padding-top: 65px;
+    background-color: #ffd592;
+    .aniZoomInOut {animation: zoomInOut 1.5s infinite;}
+
+    .kv {
+        height: 42vw;
+        background: linear-gradient(to bottom, #ffd592 10%, #f6efd9 100%);
+        @media screen and (max-width:992px) {
+            height: 120vw;
+        }
+
+        .treesClouds {
+            width: 100%;
+            top: 3%;
+            @media screen and (max-width:992px) {
+                top: 9%;
+            }
+        }
+        .dinosaurYellow {
+            width: 12%;
+            right: 8%;
+            top: 5%;
+            @media screen and (max-width:992px) {
+                width: 23%;
+                right: -7%;
+                top: 9%;
+            }
+        }
+        .ipad {
+            width: 15%;
+            top: 72%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @media screen and (max-width:992px) {
+                width: 27%;
+                top: 52%;
+            }
+        }
+        .title {
+            width: 45%;
+            top: 37%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            @media screen and (max-width:992px) {
+                width: 80%;
+                top: 30%;
+            }
+        }
+        .dinosaurGreen {
+            width: 44%;
+            left: -17%;
+            bottom: -2%;
+            @media screen and (max-width:992px) {
+                width: 87%;
+                left: -41%;
+                bottom: -6%;
+            }
+        }
+        .dinosaurRed {
+            width: 49%;
+            right: -11%;
+            bottom: -7%;
+            @media screen and (max-width:992px) {
+                width: 67%;
+                right: -27%;
+                bottom: -9%;
+            }
+        }
+        .kidsRight {
+            width: 26%;
+            bottom: 6%;
+            right: 16%;
+            @media screen and (max-width:992px) {
+                width: 50%;
+                bottom: 0;
+                right: 28%;
+            }
+        }
+        .kidsLeft {
+            width: 34%;
+            bottom: 0;
+            left: 8%;
+        }
+        .buttonPos {
+            width: 14%;
+            top: 48%;
+            left: 43%;
+            cursor: pointer;
+
+            @media screen and (max-width:992px) {
+                width: 26%;
+                top: 37%;
+                left: 37%;
+            }
+        }
+        .ground {bottom: -1px;}
+    }
+
+    .features {
+        background-color: $color-main-background;
+        .fs-feature {
+            font-size: 1.25rem;
+            @media screen and (max-width:992px) {
+                font-size: 1rem;
+            }
+        }
+        .freeBt {
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: bold;
+            background-color: #48307e;
+            color: #ffda00;
+            margin: 0 auto;
+            padding: 0.25rem 1.25rem;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+    }
+    
+    .fillform {
+        background-color: $color-main-background;
+
+        .bgGrey {
+            background-color: #f1f0e8;
+            border-radius: 30px;
+
+            .colorPurple {
+                color: #49307e;
+            }
+            .form-control {
+                width: 49%;
+                border: unset;
+                background-color: white;
+                padding: 0.5rem 0.5rem;
+                &.selectArrow {
+                    appearance:none;
+                    background: url("../images/arrowBlack.png") no-repeat right center transparent;
+                    background-size: 25px;
+                    background-color: #ffffff;
+                }
+            }
+            .buttonStyle {
+                background-color: black;
+                color: #ffda00;
+                width: 100%;
+                text-align: center;
+                border-radius: 20px;
+                padding: 0.25rem 0;
+            }
+        }
+    }
+
+    .courses {
+        background-color: $color-main-background;
+
+        .mainImg {
+            margin-top: -10%;
+            width: 50%;
+            @media screen and (max-width:992px) {
+                width: 90%;
+            }
+        }
+
+        .courseCon {
+            border-radius: 20px;
+            margin-top: 10%;
+
+            &.bgOrange {background-color: #ffc686;}
+            &.bgRed {background-color: #ffbe98;}
+            &.bgBlue {background-color: #cae6fd;}
+            &.bgPurple {background-color: #f0cdff;}
+
+            .courseTit {
+                &.titOrange {color: #eb5800;}
+                &.titRed {color: #e53434;}
+                &.titBlue {color: #495b89;}
+                &.titPurple {color: #8e3b84;}
+            }
+            .smallCon {
+                background-color: white;
+                border-radius: 20px;
+                width: 100%;
+                overflow: hidden;
+            }
+
+            .deepOrange {background-color: #eb5800; color: white;}
+            .deepRed {background-color: #e53434; color: white;}
+            .deepBlue {background-color: #495b89; color: white;}
+            .deepPurple {background-color: #8e3b84; color: white;}
+
+            .fs-course {
+                font-size: 1.25rem;
+                @media screen and (max-width:992px) {
+                    font-size: 1rem;
+                }
+            } 
+            .courseBt {
+                padding: 0.5rem 1.5rem;
+                font-size: 1.25rem;
+                border-radius: 20px;
+                cursor: pointer;
+            }
+
+        }
+    }
+
+    .works {
+        background-color: #fffaec;
+        .bgCave {
+            background-image: url(../images/cave.png);
+            background-size: 100%;
+            background-position: center top;
+            background-repeat: no-repeat;
+            border-radius: 20px;
+            background-color: #6d5872;
+            .work {
+                background-color: #e7e7e7;
+                border-radius: 20px;
+                padding: 1rem;
+                margin: 1rem;
+                .fs-work {
+                    font-size: 1.25rem;
+                    @media screen and (max-width:992px) {
+                        font-size: 1rem;
+                    }
+                }
+            }
+            .eggPurple{
+                width: 17%;
+                left: 4%;
+                bottom: 5%;
+            }
+            .eggRed{
+                width: 12%;
+                right: 4%;
+                bottom: 5%;
+            }
+            .workBt {
+                padding: 0.5rem 1.5rem;
+                font-size: 1.25rem;
+                border-radius: 20px;
+                font-weight: bold;
+                color: white;
+                cursor: pointer;
+                background-color: #8462dd;
+            }
+        }
+    }
+
+    .students {
+        background-color: #fffaec;
+
+        .textBg {
+            background-color: #ebeaff;
+            min-height: 90px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            @media screen and (max-width:1200px) {
+                min-height: 120px;
+            }
+        }
+        .fs-student {
+            font-size: 1.25rem;
+            @media screen and (max-width:992px) {
+                font-size: 1rem;
+            }
+        }
+        .studentsBt {
+            padding: 0.5rem 1.5rem;
+            font-size: 1.25rem;
+            border-radius: 20px;
+            font-weight: bold;
+            color: #ffda00;
+            cursor: pointer;
+            background-color: black;
+        }
+        .tree {
+            bottom: 5%;
+            @media screen and (max-width:992px) {
+                bottom: 3%;
+            }
+        }
+        .dinosaurYellow {
+            width: 15%;
+            bottom: 45%;
+            right: 0;
+            @media screen and (max-width:992px) {
+                width: 25%;
+                bottom: 37%;
+            }
+        }
+        .dinosaurPink {
+            width: 22%;
+            bottom: -15%;
+            left: -5%;
+            @media screen and (max-width:992px) {
+                width: 32%;
+                bottom: -4%;
+            }
+        }
+        .dinosaurOrange {
+            width: 25%;
+            bottom: -15%;
+            right: -10%;
+            @media screen and (max-width:992px) {
+                width: 37%;
+                bottom: -4%;
+            }
+        }
+    }
+}
+
+// animation
+@keyframes zoomInOut {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}

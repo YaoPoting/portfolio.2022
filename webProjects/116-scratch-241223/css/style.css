@@ -1,0 +1,389 @@
+.body {
+  background-color: #ffb000;
+}
+
+.wrapper, *:before, *:after {
+  position: relative;
+  margin: 0;
+  font-family: "Noto Sans TC", sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  padding-top: 65px;
+  background-color: #ffd592;
+}
+.wrapper .aniZoomInOut {
+  animation: zoomInOut 1.5s infinite;
+}
+.wrapper .kv {
+  height: 42vw;
+  background: linear-gradient(to bottom, #ffd592 10%, #f6efd9 100%);
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv {
+    height: 120vw;
+  }
+}
+.wrapper .kv .treesClouds {
+  width: 100%;
+  top: 3%;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv .treesClouds {
+    top: 9%;
+  }
+}
+.wrapper .kv .dinosaurYellow {
+  width: 12%;
+  right: 8%;
+  top: 5%;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv .dinosaurYellow {
+    width: 23%;
+    right: -7%;
+    top: 9%;
+  }
+}
+.wrapper .kv .ipad {
+  width: 15%;
+  top: 72%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv .ipad {
+    width: 27%;
+    top: 52%;
+  }
+}
+.wrapper .kv .title {
+  width: 45%;
+  top: 37%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv .title {
+    width: 80%;
+    top: 30%;
+  }
+}
+.wrapper .kv .dinosaurGreen {
+  width: 44%;
+  left: -17%;
+  bottom: -2%;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv .dinosaurGreen {
+    width: 87%;
+    left: -41%;
+    bottom: -6%;
+  }
+}
+.wrapper .kv .dinosaurRed {
+  width: 49%;
+  right: -11%;
+  bottom: -7%;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv .dinosaurRed {
+    width: 67%;
+    right: -27%;
+    bottom: -9%;
+  }
+}
+.wrapper .kv .kidsRight {
+  width: 26%;
+  bottom: 6%;
+  right: 16%;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv .kidsRight {
+    width: 50%;
+    bottom: 0;
+    right: 28%;
+  }
+}
+.wrapper .kv .kidsLeft {
+  width: 34%;
+  bottom: 0;
+  left: 8%;
+}
+.wrapper .kv .buttonPos {
+  width: 14%;
+  top: 48%;
+  left: 43%;
+  cursor: pointer;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .kv .buttonPos {
+    width: 26%;
+    top: 37%;
+    left: 37%;
+  }
+}
+.wrapper .kv .ground {
+  bottom: -1px;
+}
+.wrapper .features {
+  background-color: #ffe6b3;
+}
+.wrapper .features .fs-feature {
+  font-size: 1.25rem;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .features .fs-feature {
+    font-size: 1rem;
+  }
+}
+.wrapper .features .freeBt {
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  background-color: #48307e;
+  color: #ffda00;
+  margin: 0 auto;
+  padding: 0.25rem 1.25rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.wrapper .fillform {
+  background-color: #ffe6b3;
+}
+.wrapper .fillform .bgGrey {
+  background-color: #f1f0e8;
+  border-radius: 30px;
+}
+.wrapper .fillform .bgGrey .colorPurple {
+  color: #49307e;
+}
+.wrapper .fillform .bgGrey .form-control {
+  width: 49%;
+  border: unset;
+  background-color: white;
+  padding: 0.5rem 0.5rem;
+}
+.wrapper .fillform .bgGrey .form-control.selectArrow {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: url("../images/arrowBlack.png") no-repeat right center transparent;
+  background-size: 25px;
+  background-color: #ffffff;
+}
+.wrapper .fillform .bgGrey .buttonStyle {
+  background-color: black;
+  color: #ffda00;
+  width: 100%;
+  text-align: center;
+  border-radius: 20px;
+  padding: 0.25rem 0;
+}
+.wrapper .courses {
+  background-color: #ffe6b3;
+}
+.wrapper .courses .mainImg {
+  margin-top: -10%;
+  width: 50%;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .courses .mainImg {
+    width: 90%;
+  }
+}
+.wrapper .courses .courseCon {
+  border-radius: 20px;
+  margin-top: 10%;
+}
+.wrapper .courses .courseCon.bgOrange {
+  background-color: #ffc686;
+}
+.wrapper .courses .courseCon.bgRed {
+  background-color: #ffbe98;
+}
+.wrapper .courses .courseCon.bgBlue {
+  background-color: #cae6fd;
+}
+.wrapper .courses .courseCon.bgPurple {
+  background-color: #f0cdff;
+}
+.wrapper .courses .courseCon .courseTit.titOrange {
+  color: #eb5800;
+}
+.wrapper .courses .courseCon .courseTit.titRed {
+  color: #e53434;
+}
+.wrapper .courses .courseCon .courseTit.titBlue {
+  color: #495b89;
+}
+.wrapper .courses .courseCon .courseTit.titPurple {
+  color: #8e3b84;
+}
+.wrapper .courses .courseCon .smallCon {
+  background-color: white;
+  border-radius: 20px;
+  width: 100%;
+  overflow: hidden;
+}
+.wrapper .courses .courseCon .deepOrange {
+  background-color: #eb5800;
+  color: white;
+}
+.wrapper .courses .courseCon .deepRed {
+  background-color: #e53434;
+  color: white;
+}
+.wrapper .courses .courseCon .deepBlue {
+  background-color: #495b89;
+  color: white;
+}
+.wrapper .courses .courseCon .deepPurple {
+  background-color: #8e3b84;
+  color: white;
+}
+.wrapper .courses .courseCon .fs-course {
+  font-size: 1.25rem;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .courses .courseCon .fs-course {
+    font-size: 1rem;
+  }
+}
+.wrapper .courses .courseCon .courseBt {
+  padding: 0.5rem 1.5rem;
+  font-size: 1.25rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+.wrapper .works {
+  background-color: #fffaec;
+}
+.wrapper .works .bgCave {
+  background-image: url(../images/cave.png);
+  background-size: 100%;
+  background-position: center top;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  background-color: #6d5872;
+}
+.wrapper .works .bgCave .work {
+  background-color: #e7e7e7;
+  border-radius: 20px;
+  padding: 1rem;
+  margin: 1rem;
+}
+.wrapper .works .bgCave .work .fs-work {
+  font-size: 1.25rem;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .works .bgCave .work .fs-work {
+    font-size: 1rem;
+  }
+}
+.wrapper .works .bgCave .eggPurple {
+  width: 17%;
+  left: 4%;
+  bottom: 5%;
+}
+.wrapper .works .bgCave .eggRed {
+  width: 12%;
+  right: 4%;
+  bottom: 5%;
+}
+.wrapper .works .bgCave .workBt {
+  padding: 0.5rem 1.5rem;
+  font-size: 1.25rem;
+  border-radius: 20px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  background-color: #8462dd;
+}
+.wrapper .students {
+  background-color: #fffaec;
+}
+.wrapper .students .textBg {
+  background-color: #ebeaff;
+  min-height: 90px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+@media screen and (max-width: 1200px) {
+  .wrapper .students .textBg {
+    min-height: 120px;
+  }
+}
+.wrapper .students .fs-student {
+  font-size: 1.25rem;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .students .fs-student {
+    font-size: 1rem;
+  }
+}
+.wrapper .students .studentsBt {
+  padding: 0.5rem 1.5rem;
+  font-size: 1.25rem;
+  border-radius: 20px;
+  font-weight: bold;
+  color: #ffda00;
+  cursor: pointer;
+  background-color: black;
+}
+.wrapper .students .tree {
+  bottom: 5%;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .students .tree {
+    bottom: 3%;
+  }
+}
+.wrapper .students .dinosaurYellow {
+  width: 15%;
+  bottom: 45%;
+  right: 0;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .students .dinosaurYellow {
+    width: 25%;
+    bottom: 37%;
+  }
+}
+.wrapper .students .dinosaurPink {
+  width: 22%;
+  bottom: -15%;
+  left: -5%;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .students .dinosaurPink {
+    width: 32%;
+    bottom: -4%;
+  }
+}
+.wrapper .students .dinosaurOrange {
+  width: 25%;
+  bottom: -15%;
+  right: -10%;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .students .dinosaurOrange {
+    width: 37%;
+    bottom: -4%;
+  }
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}/*# sourceMappingURL=style.css.map */
