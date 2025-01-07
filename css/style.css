@@ -1172,12 +1172,40 @@ a:hover {
 }
 .wrapper .graphics .scroller-status {
   color: #faa307;
-  font-size: 1.25rem;
-  font-weight: 900;
   margin: 0 1.25rem;
 }
+.wrapper .graphics .scroller-status .memoji {
+  position: relative;
+  width: 10%;
+  min-width: 180px;
+  z-index: 10;
+}
+.wrapper .graphics .scroller-status .thanks {
+  font-size: 4rem;
+  margin-top: -2.5rem;
+}
+.wrapper .graphics .scroller-status .visiting {
+  font-size: 1.3rem;
+}
 .wrapper .graphics .scroller-status hr {
-  color: #DDD;
-  height: 1px;
+  color: #faa307;
+  height: 2px;
   opacity: 1;
+  width: 97%;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .graphics .scroller-status hr {
+    width: 90%;
+  }
+}
+.wrapper .graphics .scroller-status .end {
+  width: 3%;
+  text-align: right;
+  font-size: 1.5vw;
+}
+@media screen and (max-width: 992px) {
+  .wrapper .graphics .scroller-status .end {
+    width: 10%;
+    font-size: 4vw;
+  }
 }/*# sourceMappingURL=style.css.map */

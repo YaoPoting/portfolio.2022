@@ -579,13 +579,37 @@ a {
 
         .scroller-status {
             color: $color-main-deep;
-            font-size: 1.25rem;
-            font-weight: 900;
             margin: 0 1.25rem;
+            .memoji {
+                position: relative;
+                width: 10%;
+                min-width: 180px;
+                z-index: 10;
+            }
+            .thanks {
+                font-size: 4rem;
+                margin-top: -2.5rem;
+            }
+            .visiting {
+                font-size: 1.3rem;
+            }
             hr {
-                color: #DDD;
-                height: 1px;
+                color: $color-main-deep;
+                height: 2px;
                 opacity: 1;
+                width: 97%;
+                @media screen and (max-width:992px) {
+                    width: 90%;
+                }
+            }
+            .end {
+                width: 3%;
+                text-align: right;
+                font-size: 1.5vw;
+                @media screen and (max-width:992px) {
+                    width: 10%;
+                    font-size: 4vw;
+                }
             }
         }
     }
