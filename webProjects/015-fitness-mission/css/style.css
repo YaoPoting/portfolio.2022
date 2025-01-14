@@ -2,6 +2,10 @@ body {
   background-color: #FFB000;
 }
 
+.top {
+  height: 65px;
+}
+
 .wrapper, *:before, *:after {
   position: relative;
   margin: 0;
@@ -23,7 +27,7 @@ body {
 }
 .kv .blackScreen {
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 65px);
   background-color: black;
   animation: fade-in 3s forwards;
 }
