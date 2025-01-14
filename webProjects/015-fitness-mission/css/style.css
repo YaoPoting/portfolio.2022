@@ -1,0 +1,301 @@
+.wrapper, *:before, *:after {
+  position: relative;
+  margin: 0;
+  font-family: "Noto Sans TC", sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  box-sizing: border-box;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.kv {
+  background-color: black;
+  height: 100vh;
+  background-image: url(../images/gymPC.png);
+  background-position: center top;
+  background-size: cover;
+}
+.kv .blackScreen {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  animation: fade-in 3s forwards;
+}
+@keyframes fade-in {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.kv .title {
+  width: 70%;
+  animation: zoom-inOut 1.5s infinite;
+}
+@media screen and (max-width: 992px) {
+  .kv .title {
+    width: 100%;
+  }
+}
+@keyframes zoom-inOut {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 0.97;
+  }
+  100% {
+    scale: 1;
+  }
+}
+
+.flip {
+  background-color: black;
+  color: white;
+  text-align: center;
+}
+.flip .flipCard {
+  background-color: black;
+  aspect-ratio: 1/1;
+  align-content: center;
+  line-height: 1.2;
+}
+.flip .flipCard .arrow {
+  width: 24px;
+}
+.flip .flipCard.flipped {
+  color: black;
+}
+.flip .flipCard .flipCardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+.flip .flipCard .flipCardInner .flipCardFront, .flip .flipCard .flipCardInner .flipCardBack {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.flip .flipCard .flipCardInner .flipCardFront {
+  background-color: inherit;
+}
+.flip .flipCard .flipCardInner .flipCardBack {
+  background-color: #ffd800;
+  transform: rotateY(180deg);
+}
+.flip .flipCard.flipped .flipCardInner {
+  transform: rotateY(180deg);
+}
+
+.parallax {
+  position: relative;
+  height: 70vh;
+}
+.parallax .bg {
+  background-image: url("../images/goods.png");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.parallax .content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  height: 100%;
+  text-shadow: 0px 0px 10px #000000;
+}
+.parallax .content .burnFat {
+  width: 90%;
+}
+.parallax .content .transparentBg {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+.parallax .content .transparentBg .fitContent {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.woodenTable {
+  background-image: url(../images/paper.png);
+  background-size: 100% 100%;
+  font-weight: lighter;
+}
+.woodenTable .table {
+  max-width: 768px;
+  margin: 0 auto;
+  line-height: 1;
+  padding: 0 2.5rem;
+}
+.woodenTable .table :not(caption) > * > * {
+  padding: unset;
+}
+.woodenTable .table .blackBg {
+  background-color: black;
+  color: white;
+  margin: 0 0.5rem;
+}
+.woodenTable .table .yellowBg {
+  background-color: #ffd800;
+}
+.woodenTable .table .yellowBg .mx05 {
+  margin: 0 0.5rem;
+}
+.woodenTable .table .greyBg {
+  background-color: #c3c3c3;
+  margin: 0 0.5rem;
+  align-items: center;
+}
+.woodenTable .table .ltGreyBg {
+  background-color: #d4d4d4;
+  margin: 0 0.5rem;
+  align-items: center;
+}
+.woodenTable .fighting {
+  position: relative;
+  margin-bottom: -3.5%;
+  z-index: 1;
+  width: 75%;
+}
+@media screen and (max-width: 992px) {
+  .woodenTable .fighting {
+    width: 100%;
+  }
+}
+.woodenTable .woodenTable {
+  width: 100%;
+  max-height: 100px;
+}
+
+.form {
+  background-image: url(../images/wall.png);
+  background-size: cover;
+  padding-bottom: 105px;
+}
+.form .container-fillform {
+  width: 100%;
+  max-width: 992px;
+  margin: 0 auto;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+}
+.form .container-fillform .shapeBlue {
+  z-index: 30;
+  width: 8%;
+  right: -5%;
+  top: -10%;
+}
+@media screen and (max-width: 992px) {
+  .form .container-fillform .shapeBlue {
+    width: 13%;
+    right: -3%;
+    top: -2%;
+  }
+}
+.form .container-fillform .shapeGreen {
+  z-index: 10;
+  width: 15%;
+  left: -5%;
+  bottom: -10%;
+}
+@media screen and (max-width: 992px) {
+  .form .container-fillform .shapeGreen {
+    width: 30%;
+    left: -12%;
+    bottom: -7%;
+  }
+}
+.form .container-fillform .whiteBg-female {
+  z-index: 20;
+  background-color: white;
+}
+.form .container-fillform .whiteBg-female .female {
+  margin-top: -5%;
+}
+.form .container-fillform .whiteBg-form {
+  z-index: 20;
+  background-color: white;
+  min-height: unset;
+}
+@media screen and (max-width: 992px) {
+  .form .container-fillform .whiteBg-form {
+    min-height: 300px;
+  }
+}
+.form .container-fillform .whiteBg-form .blackBg {
+  z-index: 40;
+  width: 80%;
+  padding: 0 5%;
+  margin-top: 6%;
+  background-color: black;
+  height: 350px;
+  color: white;
+  align-content: center;
+}
+@media screen and (max-width: 992px) {
+  .form .container-fillform .whiteBg-form .blackBg {
+    margin-top: 0;
+  }
+}
+.form .container-fillform .whiteBg-form .blackBg .formStyle {
+  width: 100%;
+  height: 40px;
+  padding-left: 2%;
+  margin: 1% 0;
+  color: black;
+}
+.form .container-fillform .whiteBg-form .blackBg .formStyle::-moz-placeholder {
+  color: black;
+}
+.form .container-fillform .whiteBg-form .blackBg .formStyle::placeholder {
+  color: black;
+}
+.form .container-fillform .whiteBg-form .blackBg select {
+  display: block;
+  outline: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: url("../images/arrowBlack.png") no-repeat right center transparent;
+  background-size: 30px;
+  background-color: #ffffff;
+}
+.form .container-fillform .whiteBg-form .blackBg .button {
+  background-color: #ffd800;
+  color: black;
+  border-radius: 50px;
+  padding: 0.25rem;
+}
+.form .container-fillform .whiteBg-form .blackBg::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  top: 100%;
+  border-top: 50px solid black;
+  border-right: 50px solid transparent;
+  border-left: 0px solid transparent;
+}
+
+.details {
+  background-color: black;
+  color: white;
+}
+.details hr {
+  opacity: 1;
+}/*# sourceMappingURL=style.css.map */

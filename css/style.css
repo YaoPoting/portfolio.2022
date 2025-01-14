@@ -1174,12 +1174,6 @@ a:hover {
   color: #faa307;
   margin: 0 1.25rem;
 }
-.wrapper .graphics .scroller-status .memoji {
-  position: relative;
-  width: 10%;
-  min-width: 180px;
-  z-index: 10;
-}
 .wrapper .graphics .scroller-status .thanks {
   font-size: 4rem;
   margin-top: -2.5rem;
