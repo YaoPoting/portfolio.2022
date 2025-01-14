@@ -12,8 +12,9 @@ body {background-color: #FFB000;}
 .pointer {cursor: pointer;}
 
 .kv {
+    padding-top: 65px;
     background-color: black;
-    height: 100vh;
+    height: calc(100vh - 65px);
     background-image: url(../images/gymPC.png);
     background-position: center top;
     background-size: cover;
