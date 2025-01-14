@@ -19,7 +19,7 @@ body {
   padding-top: 65px;
   background-color: black;
   height: calc(100vh - 65px);
-  background-image: url(../images/gymPC.png);
+  background-image: url(../images/gym.png);
   background-position: center top;
   background-size: cover;
 }
