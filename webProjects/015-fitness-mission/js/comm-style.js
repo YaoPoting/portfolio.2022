@@ -1,5 +1,5 @@
 $(document).ready(function(){
     $(".go_fillform").click(function(){
-        $('html, body').stop().animate({scrollTop: $('.fillform').offset().top - 50 }, 0);
+        $('html, body').stop().animate({scrollTop: $('.fillform').offset().top - 10 }, 0);
     });
 });
