@@ -2,10 +2,6 @@ body {
   background-color: #FFB000;
 }
 
-.top {
-  height: 65px;
-}
-
 .wrapper, *:before, *:after {
   position: relative;
   margin: 0;
