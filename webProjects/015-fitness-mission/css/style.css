@@ -16,6 +16,7 @@ body {
 }
 
 .kv {
+  margin-top: 65px;
   height: calc(100vh - 65px);
   background-image: url(../images/gym.png);
   background-position: center top;
