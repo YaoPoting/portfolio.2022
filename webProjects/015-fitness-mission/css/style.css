@@ -16,8 +16,6 @@ body {
 }
 
 .kv {
-  padding-top: 65px;
-  background-color: black;
   height: calc(100vh - 65px);
   background-image: url(../images/gym.png);
   background-position: center top;
@@ -250,6 +248,9 @@ body {
   }
 }
 .form .container-fillform .whiteBg-form .blackBg .formStyle {
+  outline: none;
+  border-radius: 0px;
+  border: #d4d4d4 1px solid;
   width: 100%;
   height: 40px;
   padding-left: 2%;
@@ -264,13 +265,15 @@ body {
 }
 .form .container-fillform .whiteBg-form .blackBg select {
   display: block;
-  outline: none;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
   background: url("../images/arrowBlack.png") no-repeat right center transparent;
   background-size: 30px;
   background-color: #ffffff;
+  outline: none;
+  border-radius: 0px;
+  border: #d4d4d4 1px solid;
 }
 .form .container-fillform .whiteBg-form .blackBg .button {
   background-color: #ffd800;
