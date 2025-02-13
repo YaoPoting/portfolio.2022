@@ -3,16 +3,16 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>2024最新兒童程式課程,外語課程,國中文理課程</title>
-    <meta name="Title" content="2024最新兒童程式課程,外語課程,國中文理課程" />
+    <title>2025最新兒童程式課程,外語課程,國中文理課程</title>
+    <meta name="Title" content="2025最新兒童程式課程,外語課程,國中文理課程" />
     <meta name="Description" content="最新線上課程,兒童程式,兒童美語,兒童日語,國中會考,國中數學,國中理化,國中英文,索取課表" />
     <meta name="keywords" content="兒童程式, 兒童美語, 兒童日語,國中會考,108課綱,線上課程" />
-    <meta property="og:title" content="2024最新兒童程式課程,外語課程,國中文理課程" />
+    <meta property="og:title" content="2025最新兒童程式課程,外語課程,國中文理課程" />
     <meta property="og:url" content="" />
-    <meta property="og:image" content="images/shareCard.png" />
+    <meta property="og:image" content="images/shareCard.jpg" />
     <meta property="og:description" content="最新線上課程,兒童程式,兒童美語,兒童日語,國中會考,國中數學,國中理化,國中英文,索取課表" />
     <link rel="canonical" href="" />
-    <!-- Include JS & CSS Start -->
+    <!-- Page Info Insert END -->
     <link rel="stylesheet" href="css/comm-style.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/aos.css" />
@@ -47,7 +47,9 @@
                 "email": $("#email").val(),
                 "cityno": $("#ddl_city_no :selected").val(),
                 "citynoname": $("#ddl_city_no :selected").text(),
-                "yeargap": $("#ddl_year_gap :selected").val(),
+                /*"townno": $("#ddl_area_no :selected").val(),
+                "townnoname": $("#ddl_area_no :selected").text(),*/
+                "course": $("#ddl_course :selected").val(),
                 "seq_no": seq_no,
                 "dept_no": dept,
                 "memo": $("input[name=classOption]:checked").val(),
@@ -98,14 +100,14 @@
                 }
             }
 
-            if (JSonData.yeargap == "年齡區間") {
-                alert('請選擇年齡區間');
+            if (JSonData.course == "我想體驗的課程") {
+                alert('請選擇想體驗的課程');
                 $('#sBut').show();
                 return false;
             }
 
             JSonData.memo += JSonData.citynoname;
-            JSonData.memo += "，" + JSonData.yeargap;
+            JSonData.memo += "，" + JSonData.course;
             goSubmit(JSonData, s, f);
         }
 
@@ -127,7 +129,7 @@
         }
         //留單相關，看過後請把註解刪掉喔!  -----end
     </script>
-    
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQDCTEKFX1"></script>
     <script>
@@ -142,571 +144,600 @@
     <div class="top">
         <iframe src="../../headerFooter/header.html" width="100%" height="65"  scrolling="no" frameborder="0" allowtransparency="true"></iframe>
     </div>
+    
     <!-- HTML Start -->
-
     <!-- wapper開始 -->
     <div class="wrapper" >
         <section class="kv position-relative overflow-hidden">
-            <div class="kv_PC">
-                <img class="position-absolute w-100" src="images/kv_pc_students.png" data-aos="fade-up" data-aos-duration="1000">
-                <img class="position-absolute w-100 kvTitle" src="images/kv_pc_title.png" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-                <img class="position-absolute w-100" src="images/kv_pc_face.png" data-aos="fade-up" data-aos-duration="1000">
-            </div>
-            <div class="kv_SP">
-                <img class="position-absolute w-100" src="images/kv_sp_students.png" data-aos="fade-up" data-aos-duration="1000">
-                <img class="position-absolute w-100" src="images/kv_sp_title.png" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
-                <img class="position-absolute w-100" src="images/kv_sp_face.png" data-aos="fade-up" data-aos-duration="1000">
+            <img class="position-absolute girlOlder" src="images/girlOlder.png" data-aos="fade-left">
+            <img class="position-absolute girlYounger" src="images/girlYounger.png" data-aos="fade-right">
+            <img class="position-absolute d-lg-none d-block programSP" src="images/programSP.png" data-aos="zoom-in" data-aos-delay="400">
+            <img class="position-absolute d-lg-block d-none programming" src="images/programming.png" data-aos="zoom-in" data-aos-delay="400">
+            <img class="position-absolute d-lg-block d-none englishMath" src="images/englishMath.png" data-aos="zoom-in" data-aos-delay="400">
+            <img class="position-absolute titleBottom" src="images/titleBottom.png" data-aos="fade-up" data-aos-delay="300" data-aos-duration="600">
+            <img class="position-absolute titleTop" src="images/titleTop.png" data-aos="fade-up" data-aos-delay="200" data-aos-duration="600">
+            <img class="position-absolute buttonJr class_01 pointer" src="images/buttonJr.png" data-aos="flip-left" data-aos-delay="600" data-aos-duration="600">
+            <img class="position-absolute buttonElm class_03 pointer" src="images/buttonElm.png" data-aos="flip-left" data-aos-delay="600" data-aos-duration="600">
+            <img class="w-100 d-lg-block d-none" src="images/classroomPC.png">
+            <img class="w-100 d-lg-none d-block" src="images/classroomSP.png">
+        </section>
+        <section class="fillform">
+            <div class="container">
+                <div class="whiteBg d-flex flex-row flex-wrap mt">
+                    <div class="col-lg-6 col-12">
+                        <div class="formImg">
+                            <img class="w-100" src="images/desk.png" alt="兒童程式、兒童美語、國中會考">
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12 px-2 d-flex flex-column justify-content-center">
+                        <div class="formTable py-3">
+                            <div class="fs-3 lh-1 d-flex flex-wrap justify-content-center"><span>填表報名上課</span><span class="fw-bold">再送免費試讀</span></div>
+                            <div class="d-flex flex-column pt-3">
+
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <input name="ea" type="text" class="w-49 mb-2 py-2 px-2 rounded-3 border border-Secondary bg-light" id="name" placeholder="姓名" />
+                                    <input name="mobile" type="text" class="w-49 mb-2 py-2 px-2 rounded-3 border border-Secondary bg-light" id="mobile" placeholder="電話" />
+                                </div>
+                                <div class="d-flex flex-wrap justify-content-between">
+                                    <input name="email" type="text" class="w-49 mb-2 py-2 px-2 rounded-3 border border-Secondary bg-light" id="email" placeholder="E-Mail" />
+                                    <select id="ddl_course" class="w-49 mb-2 py-2 px-2 rounded-3 border border-Secondary bg-light">
+                                        <option value="select" selected>我想體驗的課程</option>
+                                        <option value="國中會考衝刺班">國中會考衝刺班</option>
+                                        <option value="國中學期進度班">國中學期進度班</option>
+                                        <option value="國小學期進度班">國小學期進度班</option>
+                                        <option value="線上寫作班">線上寫作班</option>
+                                        <option value="兒童程式班">兒童程式班</option>
+                                        <option value="兒童美語班">兒童美語班</option>
+                                    </select>
+                                </div>
+
+                                <div class="d-flex flex-wrap justify-content-between pt-2">
+                                    <div class="w-100 py-2 px-2">
+                                        <label class="align-self-center"><input class="form-check-input rounded-pill" type="checkbox" name="per_chk"></label>
+                                        <span class="colorWhite" style="font-size: 15px; margin: auto 0;">我已詳細閱讀並接受<a onclick="window.open('/activity/wincenter/contract_02/index.html','person',config='height=640,width=830');return false;" href="#">個資保護聲明</a></span>
+                                    </div>
+                                    <div class="w-100 px-2 btn btnColor rounded-pill fw-bold align-self-center" id="sBut" onClick="but_send();">
+                                        按我送出
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-        <section class="wallGradient">
+        <section class="form schedule py-5">
             <div class="container">
-                <div class="whitePaper px-2">
-                    <div class="position-relative tapetop w-25">
-                        <img class="w-100" src="images/tape.png">
-                    </div>
+                <div class="whiteBg px-2">
                     <!-- class list -->                
                     <div class="intro-table">
                         <!-- menu -->
                         <div class="menuCont">
                             <img class="w-100" src="images/menuHead.png">
-                            <div class="menu w-100">
-                                <div class="title">課程介紹</div>
+                            <div class="menu w-100 fw-bold">
                                 <ul class="list">
-                                    <li class="li-link"><a href="#class_01"> 國中會考衝刺班 </a></li>
-                                    <li class="li-link"><a href="#class_02"> 國中學期進度班 </a></li>
-                                    <li class="li-link"><a href="#class_03"> 閱讀素養班 </a></li>
-                                    <li class="li-link"><a href="#class_04"> 兒童程式班 </a></li>
-                                    <li class="li-link"><a href="#class_05"> 兒童美語班 </a></li>
+                                    <li class="li-link class_01">國中會考衝刺班</li>
+                                    <li class="li-link class_02">國中學期進度班</li>
+                                    <li class="li-link class_03">國小學期進度班</li>
+                                    <li class="li-link class_04">線上寫作班</li>
+                                    <li class="li-link class_05">兒童程式班</li>
+                                    <li class="li-link class_06">兒童美語班</li>
                                 </ul>
-                                <a class="top-btn" href="#myform"><i class="bi bi-arrow-down-circle"></i>&nbsp;點我登記</a>
+                                <span class="top-btn go_fillform activity-page-click-count">
+                                    <span class="lh-1 pointer">點我登記&nbsp;</span>
+                                    <i class="bi bi-triangle-fill pointer"></i>
+                                </span>
                             </div>
                             <img class="w-100" src="images/menuFooter.png">
                         </div>
 
                         <div class="table-list">
                             <!-- item -->
-                            <div class="item item-01" data-aos="fade-up">
+                            <div class="item item-01">
                                 <div class="anchor" id="class_01"></div>
                                 <div class="name"><span><h1>國中會考衝刺班</h1></span></div>
                                 <div class="row-list">
                                     <div class="tb-row py-3">
                                         <div class="tableflex">
-                                            <div class="title px-2"><span>數學衝刺</span></div>
+                                            <div class="title px-2"><span>數學衝刺班</span></div>
                                             <div class="desc px-2"><span>必考公式整理、精準分析題意</span></div>
-                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週二</span> 19:00-20:30</span></div>
+                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週三</span> 20:45-22:15</span></div>
                                         </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
                                         </div>
                                     </div>
                                     <div class="tb-row py-3">
                                         <div class="tableflex">
-                                            <div class="title px-2"><span>理化衝刺</span></div>
+                                            <div class="title px-2"><span>理化衝刺班</span></div>
                                             <div class="desc px-2"><span>必考實驗統整、掌握理化公式</span></div>
-                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週五</span> 20:45-22:10</span></div>
+                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週二</span> 20:00-21:30</span></div>
                                         </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
                                         </div>
                                     </div>
                                     <div class="tb-row py-3">
                                         <div class="tableflex">
-                                            <div class="title px-2"><span>生物衝刺</span></div>
+                                            <div class="title px-2"><span>地科生物班</span></div>
                                             <div class="desc px-2"><span>加強重點觀念、經典考題解析</span></div>
                                             <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週六</span> 19:00-20:30</span></div>
                                         </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
                                         </div>
                                     </div>
                                     <div class="tb-row py-3">
                                         <div class="tableflex">
-                                            <div class="title px-2"><span>地科衝刺</span></div>
-                                            <div class="desc px-2"><span>課本重點統整、熟悉解題關鍵</span></div>
+                                            <div class="title px-2"><span>自然素養班</span></div>
+                                            <div class="desc px-2"><span>自然素養解題、圖表轉換技巧</span></div>
                                             <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週六</span> 19:00-20:30</span></div>
                                         </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
                                         </div>
                                     </div>
                                     <div class="tb-row py-3">
                                         <div class="tableflex">
-                                            <div class="title px-2"><span>自然素養解密</span></div>
-                                            <div class="desc px-2"><span>跨科目解題技巧、圖表轉換技巧</span></div>
-                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週六</span> 19:00-20:30</span></div>
+                                            <div class="title px-2"><span>英文衝刺班</span></div>
+                                            <div class="desc px-2"><span>掌握文法閱讀、歷屆考題解析</span></div>
+                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週一</span> 20:45-22:15</span></div>
                                         </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
-                                        </div>
-                                    </div>
-                                    <div class="tb-row py-3">
-                                        <div class="tableflex">
-                                            <div class="title px-2"><span>地理衝刺</span></div>
-                                            <div class="desc px-2"><span>掌握地理圖表、熟記關鍵名詞</span></div>
-                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週日</span> 13:00-14:30</span></div>
-                                        </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
                                         </div>
                                     </div>
                                     <div class="tb-row py-3">
                                         <div class="tableflex">
-                                            <div class="title px-2"><span>歷史衝刺</span></div>
-                                            <div class="desc px-2"><span>掌握歷史事件背景、年代圖表</span></div>
-                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週日</span> 13:00-14:30</span></div>
-                                        </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
-                                        </div>
-                                    </div>
-                                    <div class="tb-row py-3">
-                                        <div class="tableflex">
-                                            <div class="title px-2"><span>公民衝刺</span></div>
-                                            <div class="desc px-2"><span>時事與考題解析、複習策略</span></div>
-                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週日</span> 13:00-14:30</span></div>
-                                        </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
-                                        </div>
-                                    </div>
-                                    <div class="tb-row py-3">
-                                        <div class="tableflex">
-                                            <div class="title px-2"><span>英文衝刺</span></div>
-                                            <div class="desc px-2"><span>精選必考文法、熟練1200單字</span></div>
-                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週五</span> 19:00-20:30</span></div>
-                                        </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
-                                        </div>
-                                    </div>
-                                    <div class="tb-row py-3">
-                                        <div class="tableflex">
-                                            <div class="title px-2"><span>國文衝刺</span></div>
-                                            <div class="desc px-2"><span>會考詩詞判別、易混字形巧辨識</span></div>
+                                            <div class="title px-2"><span>國文衝刺班</span></div>
+                                            <div class="desc px-2"><span>會考詩詞判別、閱讀答題技巧</span></div>
                                             <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週四</span> 19:00-20:30</span></div>
                                         </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
+                                        </div>
+                                    </div>
+                                    <div class="tb-row py-3">
+                                        <div class="tableflex">
+                                            <div class="title px-2"><span>社會衝刺班</span></div>
+                                            <div class="desc px-2"><span>公民地理歷史、複習全面掌握</span></div>
+                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週日</span> 13:30-15:00</span></div>
+                                        </div>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
                             <!-- item -->
-                            <div class="item item-02" data-aos="fade-up">
+                            <div class="item item-02">
                                 <div class="anchor" id="class_02"></div>
                                 <div class="name"><span>國中學期進度班</span></div>
                                 <div class="row-list">
                                     <div class="tb-row py-3">
                                         <div class="tableflex">
-                                            <div class="title px-2"><span>國一英文</span></div>
-                                            <div class="desc px-2"><span>WH疑問詞、祈使句用法</span></div>
-                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週一</span> 19:00-20:30</span></div>
-                                        </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
-                                        </div>
-                                    </div>
-                                    <div class="tb-row py-3">
-                                        <div class="tableflex">
-                                            <div class="title px-2"><span>國一數學</span></div>
-                                            <div class="desc px-2"><span>數與數線、科學記號應用</span></div>
-                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週三</span> 19:00-20:30</span></div>
-                                        </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
-                                        </div>
-                                    </div>
-                                    <div class="tb-row py-3">
-                                        <div class="tableflex">
-                                            <div class="title px-2"><span>國二英文</span></div>
-                                            <div class="desc px-2"><span>過去進行式、時間子句</span></div>
-                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週一</span> 20:45-22:15</span></div>
-                                        </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
-                                        </div>
-                                    </div>
-                                    <div class="tb-row py-3">
-                                        <div class="tableflex">
-                                            <div class="title px-2"><span>國二數學</span></div>
-                                            <div class="desc px-2"><span>一元二次方程式、多項式</span></div>
-                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週二</span> 20:45-22:15</span></div>
-                                        </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
-                                        </div>
-                                    </div>
-                                    <div class="tb-row py-3">
-                                        <div class="tableflex">
-                                            <div class="title px-2"><span>國二理化</span></div>
-                                            <div class="desc px-2"><span>光的反射與折射、元素與化合物</span></div>
+                                            <div class="title px-2"><span>國一英文班</span></div>
+                                            <div class="desc px-2"><span>基本文法句型、加強單字記憶</span></div>
                                             <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週五</span> 19:00-20:30</span></div>
                                         </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
+                                        </div>
+                                    </div>
+                                    <div class="tb-row py-3">
+                                        <div class="tableflex">
+                                            <div class="title px-2"><span>國一數學班</span></div>
+                                            <div class="desc px-2"><span>扎實數學基礎、累積各式題型</span></div>
+                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 二四</span> 19:00-19:50</span></div>
+                                        </div>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
+                                        </div>
+                                    </div>
+                                    <div class="tb-row py-3">
+                                        <div class="tableflex">
+                                            <div class="title px-2"><span>國一生物班</span></div>
+                                            <div class="desc px-2"><span>生物基本概念、自然實驗操作</span></div>
+                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 二五</span> 21:00-21:50</span></div>
+                                        </div>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
+                                        </div>
+                                    </div>
+                                    <div class="tb-row py-3">
+                                        <div class="tableflex">
+                                            <div class="title px-2"><span>國二英文班</span></div>
+                                            <div class="desc px-2"><span>強化閱讀技巧、文法單字累積</span></div>
+                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週一</span> 19:00-20:30</span></div>
+                                        </div>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
+                                        </div>
+                                    </div>
+                                    <div class="tb-row py-3">
+                                        <div class="tableflex">
+                                            <div class="title px-2"><span>國二數學班</span></div>
+                                            <div class="desc px-2"><span>代數幾何題型、獨立解決問題</span></div>
+                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 二四</span> 21:00-21:50</span></div>
+                                        </div>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
+                                        </div>
+                                    </div>
+                                    <div class="tb-row py-3">
+                                        <div class="tableflex">
+                                            <div class="title px-2"><span>國二理化班</span></div>
+                                            <div class="desc px-2"><span>理化公式破解、強化科學素養</span></div>
+                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 二五</span> 19:00-19:50</span></div>
+                                        </div>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
                             <!-- item -->
-                            <div class="item item-03" data-aos="fade-up">
+                            <div class="item item-03">
                                 <div class="anchor" id="class_03"></div>
-                                <div class="name"><span>閱讀素養班</span></div>
+                                <div class="name"><span>國小學期進度班</span></div>
                                 <div class="row-list">
                                     <div class="tb-row py-3">
                                         <div class="tableflex">
-                                            <div class="title px-2"><span>國小作文</span></div>
-                                            <div class="desc px-2"><span>每週短文寫作、養成基本寫作力</span></div>
-                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週日</span> 20:45-22:15</span></div>
+                                            <div class="title px-2"><span>小五數學班</span></div>
+                                            <div class="desc px-2"><span>南一版本為主、加強基礎概念</span></div>
+                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 一三</span> 20:00-20:50</span></div>
                                         </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
                                         </div>
                                     </div>
                                     <div class="tb-row py-3">
                                         <div class="tableflex">
-                                            <div class="title px-2"><span>閱讀素養</span></div>
-                                            <div class="desc px-2"><span>熟悉四大文體、長篇文章寫作</span></div>
-                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週日</span> 19:00-20:30</span></div>
+                                            <div class="title px-2"><span>小五數學班</span></div>
+                                            <div class="desc px-2"><span>康軒版本為主、加強基礎概念</span></div>
+                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 二四</span> 19:00-19:50</span></div>
                                         </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
+                                        </div>
+                                    </div>
+                                    <div class="tb-row py-3">
+                                        <div class="tableflex">
+                                            <div class="title px-2"><span>小五數學班</span></div>
+                                            <div class="desc px-2"><span>翰林版本為主、加強基礎概念</span></div>
+                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週六</span> 10:00-11:50</span></div>
+                                        </div>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
+                                        </div>
+                                    </div>
+                                    <div class="tb-row py-3">
+                                        <div class="tableflex">
+                                            <div class="title px-2"><span>小六數學班</span></div>
+                                            <div class="desc px-2"><span>南一版本為主、強化解題技巧</span></div>
+                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 一三</span> 19:00-19:50</span></div>
+                                        </div>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
+                                        </div>
+                                    </div>
+                                    <div class="tb-row py-3">
+                                        <div class="tableflex">
+                                            <div class="title px-2"><span>小六數學班</span></div>
+                                            <div class="desc px-2"><span>康軒版本為主、強化解題技巧</span></div>
+                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 二四</span> 20:00-20:50</span></div>
+                                        </div>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
+                                        </div>
+                                    </div>
+                                    <div class="tb-row py-3">
+                                        <div class="tableflex">
+                                            <div class="title px-2"><span>小六數學班</span></div>
+                                            <div class="desc px-2"><span>翰林版本為主、強化解題技巧</span></div>
+                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週日</span> 10:00-11:50</span></div>
+                                        </div>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
+                                        </div>
+                                    </div>
+                                    <div class="tb-row py-3">
+                                        <div class="tableflex">
+                                            <div class="title px-2"><span>國小自然班</span></div>
+                                            <div class="desc px-2"><span>精選各大主題、累積科學興趣</span></div>
+                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週日</span> 10:00-11:50</span></div>
+                                        </div>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
                             <!-- item -->
-                            <div class="item item-04" data-aos="fade-up">
+                            <div class="item item-04">
                                 <div class="anchor" id="class_04"></div>
-                                <div class="name"><span>兒童程式班</span><br><span class="fs-5">每堂1.5小時</span></div>
+                                <div class="name"><span>線上寫作班</span></div>
                                 <div class="row-list">
                                     <div class="tb-row py-3">
                                         <div class="tableflex">
-                                            <div class="title px-2"><span>Scratch入門</span></div>
-                                            <div class="desc px-2"><span>動畫設計、培養程式邏輯</span></div>
-                                            <div class="time px-2"><span class="timeColor"><i class="bi bi-clock"></i> 週五晚班、週日晚班</span></div>
+                                            <div class="title px-2"><span>國小作文班</span></div>
+                                            <div class="desc px-2"><span>每週短文寫作、養成寫作能力</span></div>
+                                            <div class="time px-2"><span class="timeColor"><i class="bi bi-clock"></i> 週日</span> 19:00-20:30</span></div>
                                         </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
-                                        </div>
-                                    </div>
-                                    <div class="tb-row py-3">
-                                        <div class="tableflex">
-                                            <div class="title px-2"><span>Scratch進階</span></div>
-                                            <div class="desc px-2"><span>互動式的遊戲設計</span></div>
-                                            <div class="time px-2"><span class="timeColor"><i class="bi bi-clock"></i> 週六早班、週六晚班</span></div>
-                                        </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
                                         </div>
                                     </div>
                                     <div class="tb-row py-3">
                                         <div class="tableflex">
-                                            <div class="title px-2"><span>Microbit青少年</span></div>
-                                            <div class="desc px-2"><span>整合應用、跨領域學習</span></div>
-                                            <div class="time px-2"><span class="timeColor"><i class="bi bi-clock"></i> 週三晚班、週日晚班</span></div>
+                                            <div class="title px-2"><span>閱讀素養班</span></div>
+                                            <div class="desc px-2"><span>熟悉四大文體、長篇文章寫作</span></div>
+                                            <div class="time px-2"><span class="timeColor"><i class="bi bi-clock"></i> 週日</span> 20:45-22:15</span></div>
                                         </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
-                                        </div>
-                                    </div>
-                                    <div class="tb-row py-3">
-                                        <div class="tableflex">
-                                            <div class="title px-2"><span>Python入門</span></div>
-                                            <div class="desc px-2"><span>學習Python文字化編成模式</span></div>
-                                            <div class="time px-2"><span class="timeColor"><i class="bi bi-clock"></i> 週五晚班、週日早班</span></div>
-                                        </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
-                                        </div>
-                                    </div>
-                                    <div class="tb-row py-3">
-                                        <div class="tableflex">
-                                            <div class="title px-2"><span>Python進階</span></div>
-                                            <div class="desc px-2"><span>製作簡易遊戲、GUI程式</span></div>
-                                            <div class="time px-2"><span class="timeColor"><i class="bi bi-clock"></i> 週二晚班、週六早班</span></div>
-                                        </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
                             <!-- item -->
-                            <div class="item item-05" data-aos="fade-up">
+                            <div class="item item-05">
                                 <div class="anchor" id="class_05"></div>
+                                <div class="name"><span>兒童程式班</span></div>
+                                <div class="row-list">
+                                    <div class="tb-row py-3">
+                                        <div class="tableflex">
+                                            <div class="title px-2"><span>Scratch基礎概念班</span></div>
+                                            <div class="desc px-2"><span>學習基礎概念、打造創意作品</span></div>
+                                            <div class="time px-2"><span class="timeColor"><i class="bi bi-clock"></i> 週日</span> 19:00-20:30</span></div>
+                                        </div>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
+                                        </div>
+                                    </div>
+                                    <div class="tb-row py-3">
+                                        <div class="tableflex">
+                                            <div class="title px-2"><span>Scratch動畫製作班</span></div>
+                                            <div class="desc px-2"><span>動手編輯動畫、發揮無限創意</span></div>
+                                            <div class="time px-2"><span class="timeColor"><i class="bi bi-clock"></i> 週一</span> 19:00-20:30</span></div>
+                                        </div>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
+                                        </div>
+                                    </div>
+                                    <div class="tb-row py-3">
+                                        <div class="tableflex">
+                                            <div class="title px-2"><span>Scratch遊戲設計班</span></div>
+                                            <div class="desc px-2"><span>設計遊戲場景、挑戰邏輯思維</span></div>
+                                            <div class="time px-2"><span class="timeColor"><i class="bi bi-clock"></i> 週五</span> 19:00-20:30</span></div>
+                                        </div>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
+                                        </div>
+                                    </div>
+                                    <div class="tb-row py-3">
+                                        <div class="tableflex">
+                                            <div class="title px-2"><span>Arcade遊戲開發班</span></div>
+                                            <div class="desc px-2"><span>像素遊戲開發、邊玩邊學編程</span></div>
+                                            <div class="time px-2"><span class="timeColor"><i class="bi bi-clock"></i> 週日</span> 19:00-20:30</span></div>
+                                        </div>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
+                                        </div>
+                                    </div>
+                                    <div class="tb-row py-3">
+                                        <div class="tableflex">
+                                            <div class="title px-2"><span>Micro:bit程式班</span></div>
+                                            <div class="desc px-2"><span>微型電腦應用、動手實作專案</span></div>
+                                            <div class="time px-2"><span class="timeColor"><i class="bi bi-clock"></i> 週五</span> 19:00-20:30</span></div>
+                                        </div>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
+                                        </div>
+                                    </div>
+                                    <div class="tb-row py-3">
+                                        <div class="tableflex">
+                                            <div class="title px-2"><span>Python入門班</span></div>
+                                            <div class="desc px-2"><span>基礎語法掌握、進階邏輯思維</span></div>
+                                            <div class="time px-2"><span class="timeColor"><i class="bi bi-clock"></i> 週六</span> 19:00-20:30</span></div>
+                                        </div>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
+                                        </div>
+                                    </div>
+                                    <div class="tb-row py-3">
+                                        <div class="tableflex">
+                                            <div class="title px-2"><span>Pygame遊戲開發</span></div>
+                                            <div class="desc px-2"><span>學習遊戲開發、創造專屬冒險</span></div>
+                                            <div class="time px-2"><span class="timeColor"><i class="bi bi-clock"></i> 週六</span> 19:00-20:30</span></div>
+                                        </div>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- item -->
+                            <div class="item item-06">
+                                <div class="anchor" id="class_06"></div>
                                 <div class="name"><span>兒童美語班</span></div>
                                 <div class="row-list">
                                     <div class="tb-row py-3">
                                         <div class="tableflex">
-                                            <div class="title px-2"><span>菁英課程</span></div>
-                                            <div class="desc px-2"><span>英文基礎發音訓練、規則培養</span></div>
-                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週六</span> 14:00-14:50</span></div>
+                                            <div class="title px-2"><span>兒美菁英課程</span></div>
+                                            <div class="desc px-2"><span>基礎發音訓練、規則輕鬆掌握</span></div>
+                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 二四</span> 19:00-19:50</span></div>
                                         </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
                                         </div>
                                     </div>
                                     <div class="tb-row py-3">
                                         <div class="tableflex">
-                                            <div class="title px-2"><span>主修第一級</span></div>
-                                            <div class="desc px-2"><span>英文基礎詞彙學習與應用</span></div>
+                                            <div class="title px-2"><span>兒美主修第一級</span></div>
+                                            <div class="desc px-2"><span>詞彙學習應用、增強語言基礎</span></div>
+                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 一三</span> 18:00-18:50</span></div>
+                                        </div>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
+                                        </div>
+                                    </div>
+                                    <div class="tb-row py-3">
+                                        <div class="tableflex">
+                                            <div class="title px-2"><span>兒美主修第二級</span></div>
+                                            <div class="desc px-2"><span>表達個人資料、分享背景故事</span></div>
                                             <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週六</span> 11:00-11:50</span></div>
                                         </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
                                         </div>
                                     </div>
                                     <div class="tb-row py-3">
                                         <div class="tableflex">
-                                            <div class="title px-2"><span>主修第二級</span></div>
-                                            <div class="desc px-2"><span>學習表達個人資料及背景故事</span></div>
-                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週一、週三</span> 19:00-19:50</span></div>
+                                            <div class="title px-2"><span>兒美主修第三級</span></div>
+                                            <div class="desc px-2"><span>簡單英文交流、提升溝通能力</span></div>
+                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 一三</span> 19:00-19:50</span></div>
                                         </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
-                                        </div>
-                                    </div>
-                                    <div class="tb-row py-3">
-                                        <div class="tableflex">
-                                            <div class="title px-2"><span>主修第三級</span></div>
-                                            <div class="desc px-2"><span>學習使用英文簡單的溝通與交流</span></div>
-                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週日</span> 20:00-20:50</span></div>
-                                        </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
                                         </div>
                                     </div>
                                     <div class="tb-row py-3">
                                         <div class="tableflex">
-                                            <div class="title px-2"><span>主修第四級</span></div>
-                                            <div class="desc px-2"><span>運用英文進行例行性任務溝通</span></div>
-                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週日</span> 14:00-14:50</span></div>
+                                            <div class="title px-2"><span>兒美主修第四級</span></div>
+                                            <div class="desc px-2"><span>例行任務溝通、流暢表達自如</span></div>
+                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 二四</span> 19:00-19:50</span></div>
                                         </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
-                                        </div>
-                                    </div>
-                                    <div class="tb-row py-3">
-                                        <div class="tableflex">
-                                            <div class="title px-2"><span>主修第五級</span></div>
-                                            <div class="desc px-2"><span>使用英文描述與安排複雜的流程</span></div>
-                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週二、週四</span> 20:00-20:50</span></div>
-                                        </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
                                         </div>
                                     </div>
                                     <div class="tb-row py-3">
                                         <div class="tableflex">
-                                            <div class="title px-2"><span>主題式課程</span></div>
-                                            <div class="desc px-2"><span>日常生活、特定場所實用語彙</span></div>
-                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週四</span> 19:00-19:50</span></div>
+                                            <div class="title px-2"><span>兒美主修第五級</span></div>
+                                            <div class="desc px-2"><span>描述流程安排、語言能力進階</span></div>
+                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週六</span> 19:00-19:50</span></div>
                                         </div>
-                                        <div class="courseBt">
-                                            <a href="#myform">登記課程</a>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
+                                        </div>
+                                    </div>
+                                    <div class="tb-row py-3">
+                                        <div class="tableflex">
+                                            <div class="title px-2"><span>兒美主題式課程</span></div>
+                                            <div class="desc px-2"><span>生活實用語彙、情境靈活應用</span></div>
+                                            <div class="time px-2"><span><span class="timeColor"><i class="bi bi-clock"></i> 週五</span> 19:00-19:50</span></div>
+                                        </div>
+                                        <div class="courseBt go_fillform activity-page-click-count">
+                                            報名
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="position-relative tapebottom w-25">
-                        <img class="w-100" src="images/tape.png">
-                    </div>
-                </div>
 
+                </div>
             </div>
         </section>
-        <div class="wall">
-            <section class="students">
-                <div class="container">
-                    <div class="noteHeadBg"></div>
-                    <div class="noteBg">
-                        <div class="text-center">
-                            <img class="studentTitle py-3" src="images/studentsTitle.png">
+        <section class="students">
+            <div class="container">
+                <div class="fs-2 fw-bold d-flex justify-content-center">
+                    <span>學</span>
+                    <span>員</span>
+                    <span class="dot blue">好</span>
+                    <span class="dot yellow">評</span>
+                    <span class="dot green">不</span>
+                    <span class="dot orange">斷</span>
+                </div>
+                <div class="swiper pt-3">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide go_fillform activity-page-click-count">
+                            <div class="studentFrameBody">
+                                <img class="w-100" src="images/student01.jpg">
+                                <div class="pt-3 pb-2 fs-5">
+                                    <span class="score">5A8+</span><span class="fw-4">&nbsp;張芯瑜</span>
+                                </div>
+                                <div class="orange">錄取台中女中<hr></div>
+                                <div>升上國中後改變很多，課業壓力變重，打好基礎才能往上爬，狀元奇機讓我課業更加分。</div>
+                            </div>
                         </div>
-                        <div class="swiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <a href="https://www.wincenter.com.tw/student-story/chang-hsin-yu" target="_blank">
-                                        <img class="w-100" src="images/studentFrameHead.png">
-                                        <div class="studentFrameBody">
-                                            <img class="w-100" src="images/student01.jpg">
-                                            <div class="py-3">
-                                                <span class="score">5A8+ </span>張芯瑜
-                                            </div>
-                                            <div>錄取台中女中</div><hr>
-                                            <div>升上國中後改變很多，課業壓力變重，打好基礎才能往上爬，狀元奇機讓我課業更加分。</div>
-                                        </div>
-                                        <img class="w-100" src="images/studentFrameFoot.png">
-                                    </a>
+                        <div class="swiper-slide go_fillform activity-page-click-count">
+                            <div class="studentFrameBody">
+                                <img class="w-100" src="images/student02.jpg">
+                                <div class="pt-3 pb-2 fs-5">
+                                    <span class="score">5A8+</span><span class="fw-4">&nbsp;莊雁鈞</span>
                                 </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.wincenter.com.tw/student-story/chuang-yen-jyun" target="_blank">
-                                        <img class="w-100" src="images/studentFrameHead.png">
-                                        <div class="studentFrameBody">
-                                            <img class="w-100" src="images/student02.jpg">
-                                            <div class="py-3">
-                                                <span class="score">5A8+ </span>莊雁鈞
-                                            </div>
-                                            <div>錄取員林高中</div><hr>
-                                            <div>多寫題目找出不熟觀念，如果遇到不懂的問題，可透過狀元奇機的提問功能，讓不敢問的人也可以得到解答！</div>
-                                        </div>
-                                        <img class="w-100" src="images/studentFrameFoot.png">
-                                    </a>
+                                <div class="orange">錄取員林高中<hr></div>
+                                <div>多寫題目找出不熟觀念，如果遇到不懂的問題，可透過狀元奇機的提問功能，讓不敢問的人也可以得到解答！</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide go_fillform activity-page-click-count">
+                            <div class="studentFrameBody">
+                                <img class="w-100" src="images/student03.jpg">
+                                <div class="pt-3 pb-2 fs-5">
+                                    <span class="score">5A8+</span><span class="fw-4">&nbsp;王品鈞</span>
                                 </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.wincenter.com.tw/student-story/wang-pin-jyun" target="_blank">
-                                        <img class="w-100" src="images/studentFrameHead.png">
-                                        <div class="studentFrameBody">
-                                            <img class="w-100" src="images/student03.jpg">
-                                            <div class="py-3">
-                                                <span class="score">5A8+ </span>王品鈞
-                                            </div>
-                                            <div>錄取新竹高中</div><hr>
-                                            <div>在國中三年期間，渡過了一段倦怠期，重新拾回狀元奇機，多看課程和多做題庫，讓我考出漂亮成績。</div>
-                                        </div>
-                                        <img class="w-100" src="images/studentFrameFoot.png">
-                                    </a>
+                                <div class="orange">錄取新竹高中<hr></div>
+                                <div>在國中三年期間，渡過了一段倦怠期，重新拾回狀元奇機，多看課程和多做題庫，讓我考出漂亮成績。</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide go_fillform activity-page-click-count">
+                            <div class="studentFrameBody">
+                                <img class="w-100" src="images/student04.jpg">
+                                <div class="pt-3 pb-2 fs-5">
+                                    <span class="score">5A7+</span><span class="fw-4">&nbsp;孫敏哲</span>
                                 </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.wincenter.com.tw/student-story/sun-min-jhe" target="_blank">
-                                        <img class="w-100" src="images/studentFrameHead.png">
-                                        <div class="studentFrameBody">
-                                            <img class="w-100" src="images/student04.jpg">
-                                            <div class="py-3">
-                                                <span class="score">5A7+ </span>孫敏哲
-                                            </div>
-                                            <div>錄取高雄女中</div><hr>
-                                            <div>準備會考的秘訣就在於-大量刷題！狀元奇機的題庫是很棒的功能，會自動配送題目，且可配合自己步調讀書。</div>
-                                        </div>
-                                        <img class="w-100" src="images/studentFrameFoot.png">
-                                    </a>
+                                <div class="orange">錄取高雄女中<hr></div>
+                                <div>準備會考的秘訣就在於-大量刷題！狀元奇機的題庫是很棒的功能，會自動配送題目，且可配合自己步調讀書。</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide go_fillform activity-page-click-count">
+                            <div class="studentFrameBody">
+                                <img class="w-100" src="images/student05.jpg">
+                                <div class="pt-3 pb-2 fs-5">
+                                    <span class="score">5A6+</span><span class="fw-4">&nbsp;蕭君亦</span>
                                 </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.wincenter.com.tw/student-story/hsiao-chun-i" target="_blank">
-                                        <img class="w-100" src="images/studentFrameHead.png">
-                                        <div class="studentFrameBody">
-                                            <img class="w-100" src="images/student05.jpg">
-                                            <div class="py-3">
-                                                <span class="score">5A6+ </span>蕭君亦
-                                            </div>
-                                            <div>錄取新竹高中</div><hr>
-                                            <div>從國一開始就要準備會考，不是等到考前才準備，使用狀元奇機讓我在家準備，不受到時間牽制，更加彈性。</div>
-                                        </div>
-                                        <img class="w-100" src="images/studentFrameFoot.png">
-                                    </a>
+                                <div class="orange">錄取新竹高中<hr></div>
+                                <div>從國一開始就要準備會考，不是等到考前才準備，使用狀元奇機讓我在家準備，不受到時間牽制，更加彈性。</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide go_fillform activity-page-click-count">
+                            <div class="studentFrameBody">
+                                <img class="w-100" src="images/student06.jpg">
+                                <div class="pt-3 pb-2 fs-5">
+                                    <span class="score">5A4+</span><span class="fw-4">&nbsp;何桓霖</span>
                                 </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.wincenter.com.tw/student-story/he-huan-lin" target="_blank">
-                                        <img class="w-100" src="images/studentFrameHead.png">
-                                        <div class="studentFrameBody">
-                                            <img class="w-100" src="images/student06.jpg">
-                                            <div class="py-3">
-                                                <span class="score">5A4+ </span>何桓霖
-                                            </div>
-                                            <div>錄取松山高中</div><hr>
-                                            <div>不太會去規劃學習，就是上課認真聽，並搭配狀元奇機的講解與分析，來加強觀念和刷題。</div>
-                                        </div>
-                                        <img class="w-100" src="images/studentFrameFoot.png">
-                                    </a>
+                                <div class="orange">錄取松山高中<hr></div>
+                                <div>不太會去規劃學習，就是上課認真聽，並搭配狀元奇機的講解與分析，來加強觀念和刷題。</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide go_fillform activity-page-click-count">
+                            <div class="studentFrameBody">
+                                <img class="w-100" src="images/student07.jpg">
+                                <div class="pt-3 pb-2 fs-5">
+                                    <span class="score">5A7+</span><span class="fw-4">&nbsp;陳沂里</span>
                                 </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.wincenter.com.tw/student-story/chen-yi-li" target="_blank">
-                                        <img class="w-100" src="images/studentFrameHead.png">
-                                        <div class="studentFrameBody">
-                                            <img class="w-100" src="images/student07.jpg">
-                                            <div class="py-3">
-                                                <span class="score">5A7+ </span>陳沂里
-                                            </div>
-                                            <div>錄取高雄中學</div><hr>
-                                            <div>我讀書的方法便是規劃好時間，認真過好每個時間，而狀元奇機能自由調配時間和進度，幫我找到自己學習的節奏。</div>
-                                        </div>
-                                        <img class="w-100" src="images/studentFrameFoot.png">
-                                    </a>
+                                <div class="orange">錄取高雄中學<hr></div>
+                                <div>我讀書的方法便是規劃好時間，認真過好每個時間，而狀元奇機能自由調配時間和進度，幫我找到自己學習的節奏。</div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide go_fillform activity-page-click-count">
+                            <div class="studentFrameBody">
+                                <img class="w-100" src="images/student08.jpg">
+                                <div class="pt-3 pb-2 fs-5">
+                                    <span class="score">5A6+</span><span class="fw-4">&nbsp;林侑新</span>
                                 </div>
-                                <div class="swiper-slide">
-                                    <a href="https://www.wincenter.com.tw/student-story/lin-you-hsin" target="_blank">
-                                        <img class="w-100" src="images/studentFrameHead.png">
-                                        <div class="studentFrameBody">
-                                            <img class="w-100" src="images/student08.jpg">
-                                            <div class="py-3">
-                                                <span class="score">5A6+ </span>林侑新
-                                            </div>
-                                            <div>錄取成功高中</div><hr>
-                                            <div>面對會考的準備，被得喘不過氣，但適時的休息讓我讀書更有效率！同時使用狀元奇機，讓學習不受限！</div>
-                                        </div>
-                                        <img class="w-100" src="images/studentFrameFoot.png">
-                                    </a>
-                                </div>
+                                <div class="orange">錄取成功高中<hr></div>
+                                <div>面對會考的準備，被得喘不過氣，但適時的休息讓我讀書更有效率！同時使用狀元奇機，讓學習不受限！</div>
                             </div>
                         </div>
                     </div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
                 </div>
-            </section>
-            
-            <!-- 表單開始 -->
-            <section class="form">
-                <div id="myform"></div>
-                <div class="container">
-                    <div class="bgWhite">
-                        <img class="w-100" src="images/formHead.png">
-                        <div class="d-flex flex-row flex-wrap">
-                            <div class="col-lg-6 col-12">
-                                <div class="formImg">
-                                    <img class="w-100" src="images/formImg.png" alt="兒童程式、兒童美語、國中會考" data-aos="fade-up">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-12 px-2 d-flex flex-column justify-content-center" data-aos="fade-up">
-                                <div class="formTable">
-                                    <div class="fs-3 fw-bold pt-2 pb-2 text-center">登記索取課表 再送體驗課1堂</div>
-                                    <div class="d-flex flex-column">
-                                        <div class="d-flex justify-content-between mb-2">
-                                            <input name="ea" type="text" class="w-49 py-2 px-2 rounded-3 border border-Secondary bg-light" id="name" placeholder="姓名" />
-                                            <input name="mobile" type="text" class="w-49 py-2 px-2 rounded-3 border border-Secondary bg-light" id="mobile" placeholder="電話" />
-                                        </div>
-                                        <div class="d-flex justify-content-between mb-2">
-                                            <input name="email" type="text" class="w-49 py-2 px-2 rounded-3 border border-Secondary bg-light" id="email" placeholder="E-Mail" />
-                                            <select id="ddl_year_gap" class="w-49 py-2 px-2 rounded-3 border border-Secondary bg-light">
-                                                <option value="select" selected>年齡區間</option>
-                                                <option value="10歲以下">10歲以下</option>
-                                                <option value="11-15歲">11-15歲</option>
-                                                <option value="16-20歲">16-20歲</option>
-                                                <option value="21-25歲">21-25歲</option>
-                                                <option value="26-30歲">26-30歲</option>
-                                                <option value="31-35歲">31-35歲</option>
-                                                <option value="36-40歲">36-40歲</option>
-                                                <option value="41-45歲">41-45歲</option>
-                                                <option value="46-50歲">46-50歲</option>
-                                                <option value="51-55歲">51-55歲</option>
-                                                <option value="56歲以上">56歲以上</option>
-                                            </select>
-                                        </div>
-                                        <div class="d-flex justify-content-between mb-2 pt-2">
-                                            <div class="w-49 py-2 px-2">
-                                                <label class="align-self-center"><input class="form-check-input rounded-pill" type="checkbox" name="per_chk" checked="checked"></label>
-                                                <span class="colorWhite" style="font-size: 15px; margin: auto 0;">我已詳細閱讀並接受<a onclick="window.open('/activity/wincenter/contract_02/index.html','person',config='height=640,width=830');return false;" href="#">個資保護聲明</a></span>
-                                            </div>
-                                            <div class="w-49 px-2 btn btnColor rounded-pill fw-bold align-self-center" id="sBut" onClick="but_send();">
-                                                按我送出
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <img class="w-100 pb-3" src="images/formBottom.png">
-                </div>
-            </section>
-            <!-- 表單結束 -->
-
-        </div>
+            </div>
+        </section>
     </div>
         <!-- wapper結束 -->
     <!-- HTML END -->
@@ -717,6 +748,7 @@
     <script type="text/javascript" src="js/aos.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
-    <script type="text/javascript" src="js/default.js"></script>
+    <script type="text/javascript" src="js/comm-style.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
