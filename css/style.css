@@ -971,44 +971,6 @@ a:hover {
   padding-top: 100px;
   padding-bottom: 100px;
 }
-.wrapper .websites .webSitesBg .watermark {
-  position: absolute;
-  z-index: 10;
-  color: #faa307;
-  left: 0px;
-  display: flex;
-  animation: slideLeft 50s linear infinite;
-}
-.wrapper .websites .webSitesBg .watermark.posTop {
-  top: 10px;
-}
-.wrapper .websites .webSitesBg .watermark.posBtm {
-  bottom: 10px;
-}
-@keyframes slideLeft {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-.wrapper .websites .webSitesBg .watermark .marquee-text {
-  white-space: nowrap;
-  padding-right: 3.57vw;
-  font-size: 24vw;
-  font-optical-sizing: auto;
-  font-variation-settings: "slnt" 0;
-  font-weight: 900;
-  font-style: italic;
-  letter-spacing: -0.97vw;
-  line-height: 1;
-}
-@media screen and (max-width: 992px) {
-  .wrapper .websites .webSitesBg .watermark .marquee-text {
-    font-size: 70vw;
-  }
-}
 .wrapper .websites .webSitesBg .cardsCon {
   position: relative;
   z-index: 20;
@@ -1175,7 +1137,7 @@ a:hover {
   margin: 0 1.25rem;
 }
 .wrapper .graphics .scroller-status .thanks {
-  font-size: 4rem;
+  font-size: 2rem;
   margin-top: -2.5rem;
 }
 .wrapper .graphics .scroller-status .visiting {

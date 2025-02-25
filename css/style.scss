@@ -363,43 +363,6 @@ a {
             padding-top: 100px;
             padding-bottom: 100px;
 
-            .watermark {
-                position: absolute;
-                z-index: 10;
-                color: $color-main-deep;
-                left: 0px;
-                display: flex;
-                animation: slideLeft 50s linear infinite;
-                
-                &.posTop {
-                    top: 10px;
-                }
-                &.posBtm {
-                    bottom: 10px;
-                }
-
-                @keyframes slideLeft {
-                    0% {transform: translateX(0%);}
-                    100% {transform: translateX(-50%);}
-                }
-
-                .marquee-text {
-                    white-space: nowrap;
-                    padding-right: 3.57vw;
-                    font-size: 24vw;
-                    font-optical-sizing: auto;
-                    font-variation-settings: "slnt" 0;
-                    font-weight: 900;
-                    font-style: italic;
-                    letter-spacing: -0.97vw;
-                    line-height: 1;
-
-                    @media screen and (max-width:992px) {
-                        font-size: 70vw;
-                    }
-                }
-            }
-
             .cardsCon {
                 position: relative;
                 z-index: 20;
@@ -581,7 +544,7 @@ a {
             color: $color-main-deep;
             margin: 0 1.25rem;
             .thanks {
-                font-size: 4rem;
+                font-size: 2rem;
                 margin-top: -2.5rem;
             }
             .visiting {

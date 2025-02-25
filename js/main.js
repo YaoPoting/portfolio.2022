@@ -70,26 +70,13 @@ imagesLoaded( grid, function() {
   msnry.appended( items );
 });
 
-// hack CodePen to load pens as pages
-var nextPenSlugs = [
-  '202252c2f5f192688dada252913ccf13',
-  'a308f05af22690139e9a2bc655bfe3ee',
-  '6c9ff23039157ee37b3ab982245eef28',
-];
-
-function getPenPath() {
-  let slug = nextPenSlugs[ this.loadCount ];
-  if ( slug ) {
-    return `/desandro/debug/${slug}`;
-  }
-}
-
 // init Infinte Scroll
 let infScroll = new InfiniteScroll( grid, {
   path: getPenPath,
   append: '.grid__item',
   outlayer: msnry,
   status: '.page-load-status',
+  history: false
 });
 
 //-------------------------------------//
