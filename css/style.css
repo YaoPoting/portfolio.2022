@@ -1059,7 +1059,7 @@ a:hover {
 .wrapper .graphics .image-grid__gutter-sizer {
   width: 2%;
 }
-.wrapper .graphics .image-grid.are-images-unloaded .image-image-grid__item {
+.wrapper .graphics .image-grid.are-images-unloaded .image-grid__item {
   opacity: 0;
 }
 .wrapper .graphics .image-grid__item {
