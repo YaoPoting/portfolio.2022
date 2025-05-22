@@ -37,6 +37,26 @@ window.addEventListener('load', () => {
     }
 });
 
+// 頁面滾動到膠帶重置動畫
+const highlight = document.querySelector('.highlight');
+
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            // 移除 & 重新加 class，觸發動畫
+            highlight.classList.remove('animate');
+            void highlight.offsetWidth; // 強制 reflow
+            highlight.classList.add('animate');
+        }});
+    },
+    {
+        threshold: 0.7 //進入畫面70%即觸發動畫
+    }
+);
+
+if (highlight) {observer.observe(highlight);}
+
 // Infinite Scroll 和 Masonry 初始化
 const grid = document.querySelector('.image-grid');
 if (grid) {
