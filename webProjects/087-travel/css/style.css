@@ -19,6 +19,9 @@ body {
   width: 100%;
   max-width: 142px;
 }
+.wrapper .kv {
+  background-color: #1e3d7c;
+}
 .wrapper .kv .dock {
   width: 66%;
   top: 82%;
@@ -144,7 +147,7 @@ body {
 }
 .wrapper .kv .fadeIn {
   opacity: 0;
-  animation: fadeIn 1s ease-in forwards;
+  animation: fadeIn 1.5s ease-in forwards;
 }
 @media screen and (max-width: 991px) {
   .wrapper .kv .title {
