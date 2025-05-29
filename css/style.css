@@ -990,16 +990,18 @@ a:hover {
   padding: 0 0.5rem 3.5rem 0.5rem;
 }
 .wrapper .websites .webSitesBg .cardsCon .numberTag {
-  font-size: 4.5rem;
+  background-color: black;
+  font-size: 170%;
   font-weight: 900;
+  line-height: 1;
   color: white;
+  border: 1px solid white;
+  border-radius: 50%;
   position: absolute;
-  margin-top: -3.5rem;
-  margin-left: 0.5rem;
+  padding: 2.5%;
+  margin-top: -4%;
+  margin-left: -1%;
   font-style: italic;
-}
-.wrapper .websites .webSitesBg .cardsCon .numberTag.textShadow {
-  text-shadow: 0 0 10px rgba(212, 127, 0, 0.8);
 }
 .wrapper .websites .webSitesBg .cardsCon .websiteCover {
   width: 100%;
