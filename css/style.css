@@ -982,71 +982,48 @@ a:hover {
   padding-top: 100px;
   padding-bottom: 100px;
 }
-.wrapper .websites .webSitesBg .cardsCon {
-  position: relative;
-  z-index: 20;
-}
-.wrapper .websites .webSitesBg .cardsCon .cardPadding {
-  padding: 0 0.5rem 3.5rem 0.5rem;
-}
-.wrapper .websites .webSitesBg .cardsCon .numberTag {
+.wrapper .websites .webSitesBg .cardStyle {
   background-color: black;
+}
+.wrapper .websites .webSitesBg .cardStyle img {
+  border: 1px solid white;
+}
+.wrapper .websites .webSitesBg .cardStyle .numberTag, .wrapper .websites .webSitesBg .cardStyle .arrow {
+  position: absolute;
+  z-index: 20;
   font-size: 170%;
   font-weight: 900;
   line-height: 1;
+  background-color: black;
   color: white;
   border: 1px solid white;
   border-radius: 50%;
-  position: absolute;
-  padding: 2.5%;
-  margin-top: -4%;
-  margin-left: -1%;
+  padding: 2%;
   font-style: italic;
 }
-.wrapper .websites .webSitesBg .cardsCon .websiteCover {
-  width: 100%;
-  border: 1px solid white;
+.wrapper .websites .webSitesBg .cardStyle .numberTag:hover, .wrapper .websites .webSitesBg .cardStyle .arrow:hover {
+  background-color: white;
+  color: black;
 }
-.wrapper .websites .webSitesBg .cardsCon .cardDes {
+.wrapper .websites .webSitesBg .cardStyle .posNum {
+  right: 19%;
+  align-self: center;
+}
+.wrapper .websites .webSitesBg .cardStyle .posArrow {
+  right: 4%;
+  align-self: center;
+}
+.wrapper .websites .webSitesBg .cardStyle .posArrow.bi {
+  transform: rotate(45deg);
+}
+.wrapper .websites .webSitesBg .cardDes {
   display: inline-block;
-  margin-top: 0.5rem;
   padding: 0.25rem 0.5rem;
   font-size: 1.25rem;
   font-weight: bold;
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: white;
   line-height: 1;
-}
-.wrapper .websites .webSitesBg .cardsCon .ellipse {
-  position: relative;
-  border: 3px solid white;
-  color: white;
-  display: inline;
-  border-radius: 50%;
-  margin: auto auto auto -30px;
-  padding: 0.5rem 1.5rem;
-  font-size: 1.25rem;
-  font-weight: bold;
-  text-wrap: nowrap;
-}
-.wrapper .websites .webSitesBg .cardsCon .ellipse::after {
-  content: "";
-  position: absolute;
-  width: 71px;
-  height: 40px;
-  background-image: url(../images/curledArrow.svg);
-  background-size: 70%;
-  background-repeat: no-repeat;
-  right: -38px;
-  bottom: -23px;
-}
-@media screen and (max-width: 992px) {
-  .wrapper .websites .webSitesBg .cardsCon .ellipse {
-    padding: 0.5rem 0.7rem;
-  }
-  .wrapper .websites .webSitesBg .cardsCon .ellipse::after {
-    background-size: 64%;
-  }
 }
 .wrapper .graphics .graphicsAnchor {
   position: relative;

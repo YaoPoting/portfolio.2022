@@ -370,78 +370,48 @@ a {
             background-color: $color-main;
             padding-top: 100px;
             padding-bottom: 100px;
+     
+            .cardStyle {
+                background-color: black;
 
-            .cardsCon {
-                position: relative;
-                z-index: 20;
-
-                .cardPadding {
-                    padding: 0 0.5rem 3.5rem 0.5rem;
-                }
-                
-                .numberTag {
-                    background-color: black;
+                img {border: 1px solid white;}
+                .numberTag, .arrow {
+                    position: absolute;
+                    z-index: 20;
                     font-size: 170%;
                     font-weight: 900;
                     line-height: 1;
-                    color: white;
-                    border: 1px solid white;
-                    border-radius: 50%;
-                    position: absolute;
-                    padding: 2.5%;
-                    margin-top: -4%;
-                    margin-left: -1%;
-                    font-style: italic;
-                }
-
-                .websiteCover {
-                    width: 100%;
-                    border: 1px solid white;
-                }
-
-                .cardDes {
-                    display: inline-block;
-                    margin-top: 0.5rem;
-                    padding: 0.25rem 0.5rem;
-                    font-size: 1.25rem;
-                    font-weight: bold;
-                    color: white;
                     background-color: black;
-                    line-height: 1;
-                }
-
-                .ellipse {
-                    position: relative;
-                    border: 3px solid white;
                     color: white;
-                    display: inline;
+                    border: 1px solid white;
                     border-radius: 50%;
-                    margin: auto auto auto -30px;
-                    padding: 0.5rem 1.5rem;
-                    font-size: 1.25rem;
-                    font-weight: bold;
-                    text-wrap: nowrap;
+                    padding: 2%;
+                    font-style: italic;
 
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        width: 71px;
-                        height: 40px;
-                        background-image: url(../images/curledArrow.svg);
-                        background-size: 70%;
-                        background-repeat: no-repeat;
-                        right: -38px;
-                        bottom: -23px;
-                    }
-
-                    @media screen and (max-width:992px) {
-                        padding: 0.5rem 0.7rem;
-                        &::after {
-                            background-size: 64%;
-
-                        }
+                    &:hover {
+                        background-color: white;
+                        color: black;
                     }
                 }
+                .posNum {
+                    right: 19%;
+                    align-self: center;
+                }
+                .posArrow {
+                    right: 4%;
+                    align-self: center;
+                    &.bi {transform: rotate(45deg);}
+                }
+            }
+
+            .cardDes {
+                display: inline-block;
+                padding: 0.25rem 0.5rem;
+                font-size: 1.25rem;
+                font-weight: bold;
+                color: black;
+                background-color: white;
+                line-height: 1;
             }
         }
     }
