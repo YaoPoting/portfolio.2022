@@ -523,12 +523,8 @@ a {
         .scroller-status {
             color: $color-main-deep;
             margin: 0 1.25rem;
-            .thanks {
-                font-size: 2rem;
-                margin-top: -2.5rem;
-            }
             .visiting {
-                font-size: 1.3rem;
+                font-size: 1rem;
             }
             hr {
                 color: $color-main-deep;
@@ -537,15 +533,6 @@ a {
                 width: 97%;
                 @media screen and (max-width:992px) {
                     width: 90%;
-                }
-            }
-            .end {
-                width: 3%;
-                text-align: right;
-                font-size: 1.5vw;
-                @media screen and (max-width:992px) {
-                    width: 10%;
-                    font-size: 4vw;
                 }
             }
         }
