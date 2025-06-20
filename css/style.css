@@ -815,12 +815,13 @@ a:hover {
   z-index: 100;
 }
 .wrapper .modal-content {
+  width: 80%;
+  margin: 0 auto;
   background-color: #FFB000;
 }
 .wrapper .modal-content .modal-body {
   position: relative;
   height: 730px;
-  padding-bottom: 2rem;
 }
 .wrapper .modal-content .modal-body .btn-close {
   position: absolute;

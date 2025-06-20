@@ -192,13 +192,14 @@ a {
         }
     }
 
-
     .modal-content {
+        width: 80%;
+        margin: 0 auto;
         background-color: $color-main;
         .modal-body {
             position: relative;
             height: 730px;
-            padding-bottom: 2rem;
+
             .btn-close {
                 position: absolute;
                 right: 5px;
