@@ -178,7 +178,6 @@ a {
         .pointer {
             cursor: pointer;
         }
-        
         &.sticky {
             position: fixed;
             top: 0;
@@ -186,6 +185,28 @@ a {
             color: white;
             width: 100%;
             z-index: 100;
+        }
+    }
+    .contact{
+        transition: 0.3s;
+        height: 100%;
+        background-color: black;
+        color: white;
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.5rem;
+    }
+
+    .modal-content {
+        background-color: $color-main;
+        .modal-body {
+            position: relative;
+            height: 730px;
+            padding-bottom: 2rem;
+            .btn-close {
+                position: absolute;
+                right: 5px;
+                top: 5px;
+            }
         }
     }
 

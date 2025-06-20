@@ -811,6 +811,27 @@ a:hover {
   width: 100%;
   z-index: 100;
 }
+.wrapper .contact {
+  transition: 0.3s;
+  height: 100%;
+  background-color: black;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+}
+.wrapper .modal-content {
+  background-color: #FFB000;
+}
+.wrapper .modal-content .modal-body {
+  position: relative;
+  height: 730px;
+  padding-bottom: 2rem;
+}
+.wrapper .modal-content .modal-body .btn-close {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
 .wrapper .about {
   font-weight: 900;
   line-height: 0.8;
