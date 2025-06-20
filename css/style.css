@@ -786,6 +786,9 @@ a:hover {
 .wrapper .kv .signature {
   width: 12%;
   min-width: 150px;
+  cursor: pointer;
+  position: relative;
+  z-index: 100;
 }
 .wrapper .hrWidth {
   width: 25%;
@@ -802,14 +805,6 @@ a:hover {
 }
 .wrapper .myNav .pointer {
   cursor: pointer;
-}
-.wrapper .myNav .contact {
-  transition: 0.3s;
-  height: 100%;
-  background-color: black;
-  color: white;
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
 }
 .wrapper .myNav.sticky {
   position: fixed;
