@@ -178,6 +178,14 @@ a {
         .pointer {
             cursor: pointer;
         }
+        .contact{
+            transition: 0.3s;
+            height: 100%;
+            background-color: black;
+            color: white;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+        }
         &.sticky {
             position: fixed;
             top: 0;
@@ -187,14 +195,7 @@ a {
             z-index: 100;
         }
     }
-    .contact{
-        transition: 0.3s;
-        height: 100%;
-        background-color: black;
-        color: white;
-        padding: 0.5rem 0.75rem;
-        border-radius: 0.5rem;
-    }
+
 
     .modal-content {
         background-color: $color-main;

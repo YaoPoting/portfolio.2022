@@ -803,6 +803,14 @@ a:hover {
 .wrapper .myNav .pointer {
   cursor: pointer;
 }
+.wrapper .myNav .contact {
+  transition: 0.3s;
+  height: 100%;
+  background-color: black;
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+}
 .wrapper .myNav.sticky {
   position: fixed;
   top: 0;
@@ -810,14 +818,6 @@ a:hover {
   color: white;
   width: 100%;
   z-index: 100;
-}
-.wrapper .contact {
-  transition: 0.3s;
-  height: 100%;
-  background-color: black;
-  color: white;
-  padding: 0.5rem 0.75rem;
-  border-radius: 0.5rem;
 }
 .wrapper .modal-content {
   background-color: #FFB000;
