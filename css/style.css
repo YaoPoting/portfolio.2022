@@ -828,7 +828,7 @@ a:hover {
 .wrapper .modal-content .modal-body .btn-close {
   position: absolute;
   right: 5px;
-  top: 5px;
+  top: 60px;
 }
 .wrapper .modal-content .modal-body iframe {
   overflow: hidden;
