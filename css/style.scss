@@ -193,17 +193,25 @@ a {
     }
 
     .modal-content {
+        overflow: hidden;
+        height: 650px;
         width: 90%;
         margin: 0 auto;
         background-color: $color-main;
         .modal-body {
             position: relative;
-            height: 730px;
+            margin-top: -50px;
 
             .btn-close {
                 position: absolute;
                 right: 5px;
                 top: 5px;
+            }
+            iframe {
+                overflow: hidden;
+                border: none;
+                overflow: hidden;
+                scrollbar-width: none;
             }
         }
     }

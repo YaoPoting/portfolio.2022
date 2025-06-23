@@ -81,18 +81,17 @@
             </div>
             <div class="bottomSpace"></div>
             <div class="text-center">
-                <img class="signature" src="images/signature.svg" data-bs-toggle="modal" data-bs-target="#contactModal">
+                <img class="signature" src="images/signature.svg">
             </div>
         </section>
 
         <div class="hrWidth mx-auto"><hr></div>
         <div class="myNav p-3 lh-1 d-flex justify-content-center">
-            <div class="align-self-center fs-4 fw-bold mx-3 pointer" data-scroll=".websiteAnchor">
-                網頁<i class="bi bi-arrow-right-short"></i>
-            </div>
-            <div class="align-self-center fs-4 fw-bold mx-3 pointer" data-scroll=".graphicsAnchor">
-                圖像<i class="bi bi-arrow-right-short"></i>
-            </div>
+            <div class="align-self-center fs-4 fw-bold mx-3 pointer" data-scroll=".websites">網頁</div>
+            <div class="align-self-center">/</div>
+            <div class="align-self-center fs-4 fw-bold mx-3 pointer" data-scroll=".graphics">圖像</div>
+            <div class="align-self-center">/</div>
+            <div class="align-self-center fs-4 fw-bold mx-3 pointer" data-bs-toggle="modal" data-bs-target="#contactModal">聯絡</div>
         </div>
         <!-- Modal -->
         <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
@@ -106,7 +105,8 @@
                             height="100%" 
                             frameborder="0" 
                             marginheight="0" 
-                            marginwidth="0" 
+                            marginwidth="0"
+                            scrolling="no"
                             title="聯絡我"
                             allow="geolocation; microphone; camera">
                         </iframe>
@@ -228,7 +228,6 @@
 
         <section class="works">
             <div class="websites">
-                <div id="websiteAnchor" class="websiteAnchor"></div>
                 <div class="webSitesBg overflow-hidden">
                     <div class="container">
                         <div class="d-flex flex-wrap">
@@ -492,7 +491,6 @@
                 </div>
             </div>
             <div class="graphics">
-                <div id="graphicsAnchor" class="graphicsAnchor"></div>
                 <div class="image-grid are-images-unloaded" data-js="image-grid">
                     <div class="image-grid__col-sizer"></div>
                     <div class="image-grid__gutter-sizer"></div>
