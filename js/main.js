@@ -1,17 +1,5 @@
-// 初始化 AOS 和 WOW
-AOS.init({ easing: 'ease-in-out-sine' });
-new WOW().init();
-
-// 標題動畫循環
-setInterval(() => {
-    const titleElements = document.querySelectorAll('.titleCon .col-4');
-    titleElements.forEach(el => {
-        el.classList.remove('wow', 'bounceIn');
-        void el.offsetWidth;
-        el.classList.add('wow', 'bounceIn');
-    });
-    new WOW().init();
-}, 3200);
+// 初始化 AOS
+AOS.init({ easing: 'ease-in-out-sine', once: true });
 
 // 滾動到指定區塊的通用函數
 const scrollToSection = selector => document.querySelector(selector)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -21,6 +9,34 @@ document.querySelectorAll('.pointer[data-scroll]').forEach(btn => {
     btn.addEventListener('click', () => scrollToSection(btn.dataset.scroll));
 });
 
+//KV
+window.addEventListener('load', () => {
+    // 1. 立即生成煙霧效果
+    const smokeContainer = document.getElementById('smokeContainer');
+    if (smokeContainer) {
+        for (let i = 0; i < 60; i++) {
+            smokeContainer.appendChild(Object.assign(document.createElement('div'), { className: 'smoke' }));
+        }
+    }
+    // 2. 執行 GSAP 文字動畫
+    const isDesktop = window.innerWidth >= 992;
+    const targets = isDesktop ? ".letter" : ".letterSP";
+
+    const kvTimeline = gsap.timeline({
+        repeat: -1,
+        repeatDelay: 0.5
+    });
+
+    kvTimeline.from(targets, {
+        duration: 1,
+        y: 100,
+        scale: 1.3,
+        opacity: 0,
+        ease: "elastic.out(1, 1)",
+        stagger: 0.2
+    }, "+=0.7"); // 第一次播放時，延遲 0.7 秒開始
+});
+
 // 導航事件
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.myNav');
@@ -28,16 +44,7 @@ window.addEventListener('scroll', () => {
     navbar.classList.toggle('sticky', window.scrollY > kvHeight);
 });
 
-// 頁面載入時設置背景並生成煙霧效果
-window.addEventListener('load', () => {
-    document.body.style.backgroundColor = '#FFB000';
-    const smokeContainer = document.getElementById('smokeContainer');
-    for (let i = 0; i < 60; i++) {
-        smokeContainer.appendChild(Object.assign(document.createElement('div'), { className: 'smoke' }));
-    }
-});
-
-// 頁面滾動到膠帶重置動畫
+// 膠帶動畫
 const highlight = document.querySelector('.highlight');
 
 const observer = new IntersectionObserver(

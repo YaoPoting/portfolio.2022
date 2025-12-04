@@ -255,7 +255,7 @@ body {
   background-color: #0070d6;
 }
 .wrapper .wallGradient .whitePaper .intro-table .table-list .item:nth-child(5n+1) .courseBt a:hover {
-  background-color: #3da3ff;
+  background-color: rgb(61, 162.5327102804, 255);
 }
 .wrapper .wallGradient .whitePaper .intro-table .table-list .item:nth-child(5n+2) .name {
   color: #9d53bc;
@@ -274,7 +274,7 @@ body {
   background-color: #9d53bc;
 }
 .wrapper .wallGradient .whitePaper .intro-table .table-list .item:nth-child(5n+2) .courseBt a:hover {
-  background-color: #c79cd9;
+  background-color: rgb(198.8242677824, 156.4058577406, 216.5941422594);
 }
 .wrapper .wallGradient .whitePaper .intro-table .table-list .item:nth-child(5n+3) .name {
   color: #b31f30;
@@ -293,7 +293,7 @@ body {
   background-color: #b31f30;
 }
 .wrapper .wallGradient .whitePaper .intro-table .table-list .item:nth-child(5n+3) .courseBt a:hover {
-  background-color: #e25666;
+  background-color: rgb(225.7714285714, 86.2285714286, 102.2571428571);
 }
 .wrapper .wallGradient .whitePaper .intro-table .table-list .item:nth-child(5n+4) .name {
   color: #4e8c33;
@@ -312,7 +312,7 @@ body {
   background-color: #4e8c33;
 }
 .wrapper .wallGradient .whitePaper .intro-table .table-list .item:nth-child(5n+4) .courseBt a:hover {
-  background-color: #7fc560;
+  background-color: rgb(126.6178010471, 197.057591623, 95.942408377);
 }
 .wrapper .wallGradient .whitePaper .intro-table .table-list .item:nth-child(5n+5) .name {
   color: #d66500;
@@ -331,7 +331,7 @@ body {
   background-color: #d66500;
 }
 .wrapper .wallGradient .whitePaper .intro-table .table-list .item:nth-child(5n+5) .courseBt a:hover {
-  background-color: #ff993d;
+  background-color: rgb(255, 152.5607476636, 61);
 }
 .wrapper .wall {
   background: linear-gradient(to bottom, #afc3d4, #cfd4dc);
