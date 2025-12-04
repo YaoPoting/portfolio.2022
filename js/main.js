@@ -40,8 +40,13 @@ window.addEventListener('load', () => {
 // nav
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.myNav');
-    const kvHeight = document.querySelector('.kv')?.offsetHeight || 0;
-    navbar.classList.toggle('sticky', window.scrollY > kvHeight);
+    const navBounding = navbar.getBoundingClientRect();
+
+    if (navBounding.top <= 0) {
+        navbar.classList.add('sticky');
+    } else {
+        navbar.classList.remove('sticky');
+    }
 });
 
 // 膠帶動畫
@@ -64,9 +69,6 @@ const observer = new IntersectionObserver(
 
 if (highlight) {observer.observe(highlight);}
 
-
-
-
 //about-works視差
 document.addEventListener('DOMContentLoaded', () => {
     // 註冊插件
@@ -81,16 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         pinSpacing: false, // ★ 關鍵：不保留佔位空間，讓下方的 works 自然往上流動覆蓋
         scrub: true
     });
-    
-    // 如果你希望能看到 works 有視差效果（例如慢一點移動），可以單獨加動畫，
-    // 但最簡單的「蓋過去」效果，只需要上面的 pin: true 搭配 pinSpacing: false 即可。
 });
-
-
-
-
-
-
 
 // Infinite Scroll 和 Masonry 初始化
 const grid = document.querySelector('.image-grid');
