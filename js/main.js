@@ -37,7 +37,7 @@ window.addEventListener('load', () => {
     }, "+=0.7"); // 第一次播放時，延遲 0.7 秒開始
 });
 
-// 導航事件
+// nav
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.myNav');
     const kvHeight = document.querySelector('.kv')?.offsetHeight || 0;
@@ -58,11 +58,39 @@ const observer = new IntersectionObserver(
         }});
     },
     {
-        threshold: 0.7 //進入畫面70%即觸發動畫
+        threshold: 0.5 //進入畫面50%即觸發動畫
     }
 );
 
 if (highlight) {observer.observe(highlight);}
+
+
+
+
+//about-works視差
+document.addEventListener('DOMContentLoaded', () => {
+    // 註冊插件
+    gsap.registerPlugin(ScrollTrigger);
+    
+    // 讓 GSAP 處理這段動畫
+    ScrollTrigger.create({
+        trigger: ".about",
+        start: "top top", 
+        end: "bottom top", // 當 about 底部碰到視窗頂部時結束
+        pin: true, // 固定 about
+        pinSpacing: false, // ★ 關鍵：不保留佔位空間，讓下方的 works 自然往上流動覆蓋
+        scrub: true
+    });
+    
+    // 如果你希望能看到 works 有視差效果（例如慢一點移動），可以單獨加動畫，
+    // 但最簡單的「蓋過去」效果，只需要上面的 pin: true 搭配 pinSpacing: false 即可。
+});
+
+
+
+
+
+
 
 // Infinite Scroll 和 Masonry 初始化
 const grid = document.querySelector('.image-grid');
@@ -78,6 +106,8 @@ if (grid) {
         imagesLoaded(grid, () => {
             grid.classList.remove('are-images-unloaded');
             items ? msnry.appended(items) : msnry.layout();
+            
+            ScrollTrigger.refresh(); 
         });
     };
 

@@ -174,21 +174,20 @@ a {
     }
 
     .myNav {
-        background-color: white;
+        position: sticky;
+        top: 0; // 黏貼的臨界點（必需）
+        background-color: white; 
         transition: 0.3s;
         border-bottom: 1px solid white;
+        z-index: 100; // 確保它浮在其他內容之上（必需）
 
         .pointer {
             cursor: pointer;
         }
 
         &.sticky {
-            position: fixed;
-            top: 0;
             background-color: $color-main;
             color: white;
-            width: 100%;
-            z-index: 100;
         }
     }
 

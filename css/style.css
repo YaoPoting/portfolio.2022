@@ -799,20 +799,19 @@ a:hover {
   }
 }
 .wrapper .myNav {
+  position: sticky;
+  top: 0;
   background-color: white;
   transition: 0.3s;
   border-bottom: 1px solid white;
+  z-index: 100;
 }
 .wrapper .myNav .pointer {
   cursor: pointer;
 }
 .wrapper .myNav.sticky {
-  position: fixed;
-  top: 0;
   background-color: #FFB000;
   color: white;
-  width: 100%;
-  z-index: 100;
 }
 .wrapper .modal-content {
   overflow: hidden;
