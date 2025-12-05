@@ -1,6 +1,3 @@
-// 初始化 AOS
-AOS.init({ easing: 'ease-in-out-sine', once: true });
-
 // 滾動到指定區塊的通用函數
 const scrollToSection = selector => document.querySelector(selector)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
@@ -29,10 +26,10 @@ window.addEventListener('load', () => {
 
     kvTimeline.from(targets, {
         duration: 1,
-        y: 100,
+        y: 10,
         scale: 1.3,
         opacity: 0,
-        ease: "elastic.out(1, 1)",
+        ease: "elastic.out(1, 0.5)",
         stagger: 0.2
     }, "+=0.7"); // 第一次播放時，延遲 0.7 秒開始
 });
@@ -106,7 +103,7 @@ if (grid) {
 
     updateLayout();
 
-    new InfiniteScroll(grid, {
+    const infScroll = new InfiniteScroll(grid, {
         path: function() {
             return `./page${this.pageIndex + 1}.html`;
         },
@@ -116,6 +113,7 @@ if (grid) {
         status: '.scroller-status',
         scrollThreshold: 400
     });
+
 }
 
 // 阻止 pagination__next 默認行為
