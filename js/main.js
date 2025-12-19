@@ -66,17 +66,16 @@ const observer = new IntersectionObserver(
 
 if (highlight) {observer.observe(highlight);}
 
-//about-works視差
+//GSAP for about
 document.addEventListener('DOMContentLoaded', () => {
-    // 註冊插件
+
     gsap.registerPlugin(ScrollTrigger);
     
-    // 讓 GSAP 處理這段動畫
     ScrollTrigger.create({
         trigger: ".about",
         start: "top top", 
-        end: "bottom top", // 當 about 底部碰到視窗頂部時結束
-        pin: true, // 固定 about
+        end: "bottom top",
+        pin: true,
         pinSpacing: false, // ★ 關鍵：不保留佔位空間，讓下方的 works 自然往上流動覆蓋
         scrub: true
     });
