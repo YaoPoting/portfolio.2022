@@ -23,13 +23,6 @@ a:hover {
   color: white;
   font-size: 1.25rem;
 }
-.header #headerMenu a, .footer #headerMenu a {
-  color: #333;
-  transition: background-color 0.2s;
-}
-.header #headerMenu a:hover, .footer #headerMenu a:hover {
-  background-color: #f8f9fa;
-}
 @media screen and (max-width: 992px) {
   .header, .footer {
     font-size: 1rem;
