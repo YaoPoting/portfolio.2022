@@ -925,6 +925,18 @@ a:hover {
     padding-left: unset;
   }
 }
+.wrapper .about .aboutContent .line-wrapper {
+  overflow: hidden;
+  text-align: justify;
+  -moz-text-align-last: justify;
+       text-align-last: justify;
+  text-justify: inter-character;
+  word-break: break-all;
+}
+.wrapper .about .aboutContent .line-wrapper.no-justify {
+  -moz-text-align-last: left;
+       text-align-last: left;
+}
 .wrapper .about .aboutContent .black {
   background-color: black;
   color: white;

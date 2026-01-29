@@ -313,7 +313,14 @@ a {
                 line-height: 1.75rem;
                 padding-left: unset;
             }
-            
+            .line-wrapper {
+                overflow: hidden;
+                text-align: justify;
+                text-align-last: justify;
+                text-justify: inter-character; 
+                word-break: break-all;
+                &.no-justify {text-align-last: left;}
+            }
             .black {
                 background-color: black;
                 color: white;

@@ -68,18 +68,46 @@ if (highlight) {observer.observe(highlight);}
 
 //GSAP for about
 document.addEventListener('DOMContentLoaded', () => {
-
     gsap.registerPlugin(ScrollTrigger);
-    
+
+    // 1. 先把區塊固定住
     ScrollTrigger.create({
         trigger: ".about",
-        start: "top top", 
+        start: "top top",
         end: "bottom top",
         pin: true,
-        pinSpacing: false, // ★ 關鍵：不保留佔位空間，讓下方的 works 自然往上流動覆蓋
+        pinSpacing: false,
         scrub: true
     });
+
+    gsap.from(".line-wrapper", {
+        scrollTrigger: {
+            trigger: ".aboutContent",
+            start: "top 90%",
+            end: "top 30%",
+            scrub: 1,
+        },
+        y: 50,
+        opacity: 0,
+        stagger: 0.4,
+        duration: 2,
+        ease: "power2.out"
+    });
+
+    gsap.from(".aboutFs, .zackFs, .portfolioTape", {
+        scrollTrigger: {
+            trigger: ".about",
+            start: "top 90%",
+            end: "top 20%",
+            scrub: 2,
+        },
+        x: -100,
+        opacity: 0,
+        stagger: 0.1
+    });
 });
+
+
 
 // Infinite Scroll 和 Masonry 初始化
 const grid = document.querySelector('.image-grid');
