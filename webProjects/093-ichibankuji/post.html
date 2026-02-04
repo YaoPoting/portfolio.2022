@@ -1,0 +1,701 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>【一番賞】推薦親友學外語，介紹越多，中獎機會越高！</title>
+    <meta name="Title" content="【一番賞】推薦親友學外語，介紹越多，中獎機會越高！" />
+    <meta name="Description" content="一番賞共1,200抽,抽完為止,等你試手氣!推薦越多,中講機會越高!新生填表再送免費外語課,每人限領一次,英語,日語,韓語,西班牙語,法語,德語,兒童課程都能自由選擇!" />
+    <meta name="keywords" content="一番賞,抽獎,補習班,線上課程,學外語" />
+    <meta property="og:title" content="【一番賞】推薦親友學外語，介紹越多，中獎機會越高！" />
+    <meta property="og:image" content="images/shareCard.jpg" />
+    <meta property="og:description" content="一番賞共1,200抽,抽完為止,等你試手氣!推薦越多,中講機會越高!新生填表再送免費外語課,每人限領一次,英語,日語,韓語,西班牙語,法語,德語,兒童課程都能自由選擇!" />
+    <!-- Page Info Insert END -->
+    <script type="text/javascript" src="js/gsap.min.js"></script>
+    <script type="text/javascript" src="js/ScrollTrigger.min.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/comm-style.js"></script>
+    <!-- Include JS & CSS Start -->
+    <link rel="stylesheet" href="css/comm-style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <!--非填單按鈕使用class name="activity-page-click-count"-->
+    <!-- Include JS & CSS End -->
+    <script type="text/javascript">
+        //留單相關，看過後請把註解刪掉喔!  -----start
+        var dept = "KZ2";
+        var seq_no = "0";
+        var web_pno = ""; //電腦版pno
+        var NList_Type = "5";
+        var fromto = "";
+        var Gift = "";
+        var is_Mobile = "0";
+
+        /*手機板 pno 判斷相關 >> start */
+        $(function () {
+            if (isMobile()) {
+                web_pno = "110035500002";  //手機板pno
+                is_Mobile = "1";   
+            }
+        });
+
+        function isMobile() {
+            try { document.createEvent("TouchEvent"); return true; }
+            catch (e) { return false; }
+        }
+        /*手機板 pno 判斷相關 >> end*/
+        
+
+
+        function but_send() {
+            $('#sBut').hide();
+            //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----start
+            GetPno();
+            if (Gift == "") {
+                alert('請選擇索取最新課表。');
+                $('#sBut').show();
+                return false;
+            }
+            //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----end
+            var JSonData = {
+                "name": $("#name").val(),
+                "mobile": $("#mobile").val(),
+                "email": $("#email").val(),
+                "seq_no": seq_no,
+                "dept_no": dept,
+                "memo": "體驗課1堂," + Gift + " 介紹人:" + $("#introducer").val(),
+                "web_pno": web_pno,
+                "fromto": QueryString("fromto") != null ? QueryString("fromto") : fromto,
+                "fromurl": document.location.href, 
+                "sourceid": QueryString("fc") != null ? QueryString("fc") : "",
+                "NList_Type": NList_Type,
+                "IsSend": "N",
+                "func": "njycooooqj"
+            }
+
+            if ($("input[name=per_chk]:checked").length == 0) {
+                alert('請勾選同意個資保護聲明。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.name == "" || JSonData.name == "姓名") {
+                alert('請填寫入姓名。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile == "" || JSonData.mobile == "行動電話") {
+                alert('請填寫行動電話。');
+                $('#sBut').show();
+                return false;
+            }
+            if (isNaN(JSonData.mobile) == true) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile.length != 10) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.email == "" || JSonData.email == "E-Mail") { JSonData.email = "" } else {
+                if (JSonData.email.indexOf("@") <= -1) {
+                    alert('電子郵件格式錯誤。');
+                    $('#sBut').show();
+                    return false;
+                }
+            }
+            goSubmit(JSonData, s, f);
+        }
+
+        function s(data) {
+            if (data[0].result == "1") {
+                $("#name").val("");
+                $("#mobile").val("");
+                $("#sBut").show();
+                document.location.href = "/wGuest/loadover.htm";
+            } else {
+                alert('送出失敗！');
+                $("#sBut").show();
+            }
+        }
+        function f(data) {
+            alert(data);
+            $("#sBut").show();
+        }
+        //留單相關，看過後請把註解刪掉喔!  -----end
+
+        //下拉選單有不同語系課程時使用，如果沒有要用就刪掉(左SP右PC)  -----start
+        function GetPno() {
+            var select_val = $("#dpGift :selected").val();
+            switch (select_val) {
+                case "english":
+                    web_pno = is_Mobile == "1" ? "114121500020" : "114121500019";
+                    Gift = "我想索取美語課";
+                    break;
+                case "japanese":
+                    web_pno = is_Mobile == "1" ? "114121500022" : "114121500021";
+                    Gift = "我想索取日語課";
+                    break;
+                case "korean":
+                    web_pno = is_Mobile == "1" ? "114121500024" : "114121500023";
+                    Gift = "我想索取韓語課";
+                    break;
+                case "spanish":
+                    web_pno = is_Mobile == "1" ? "114121500026" : "114121500025";
+                    Gift = "我想索取西語課";
+                    break;
+                case "french":
+                    web_pno = is_Mobile == "1" ? "114121500028" : "114121500027";
+                    Gift = "我想索取法語課";
+                    break;
+                case "german":
+                    web_pno = is_Mobile == "1" ? "114121500030" : "114121500029";
+                    Gift = "我想索取德語課";
+                    break;
+                case "kidsLanguage":
+                    web_pno = is_Mobile == "1" ? "10906B300011" : "10906B300010";
+                    Gift = "我想索取兒童外語";
+                    break;
+                case "kidsCoding":
+                    web_pno = is_Mobile == "1" ? "10906B300011" : "10906B300010";
+                    Gift = "我想索取兒童程式";
+                    break;
+                case "middleClass":
+                    web_pno = is_Mobile == "1" ? "10906B300011" : "10906B300010";
+                    Gift = "我想索取國中文理";
+                    break;                
+            }
+        }
+        //下拉選單有不同語系課程時使用，如果沒有要用就刪掉  -----end
+
+    </script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WSWZFBP"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="top">
+        <iframe src="../../headerFooter/header.html" width="100%" height="65px"  scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
+    </div>
+    <!-- HTML Start -->
+
+    <!-- wapper開始 -->
+        <h1 class="d-none">登記介紹人加碼送1堂體驗課</h1>
+    <div class="wrapper">
+        <section class="kv position-relative overflow-hidden">
+            <img class="position-absolute mountain-kv" src="images/mountain.png">
+            <img class="position-absolute land" src="images/land.png">
+            <img class="position-absolute temple" src="images/temple.png">
+            <img class="position-absolute fishflag" src="images/fishflag.png">
+            <img class="position-absolute grass-left" src="images/grass-left.png">
+            <img class="position-absolute grass-right" src="images/grass-right.png">
+            <img class="position-absolute sub-title" src="images/sub-title.png">
+            <img class="position-absolute title" src="images/title.png">
+            <span class="position-absolute button pointer go_greeting activity-page-click-count">推薦親友註冊成功，好禮雙重送！</span>
+            <div class="position-absolute swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img class="w-100" src="images/gift-mac.png"></div>
+                    <div class="swiper-slide"><img class="w-100" src="images/gift-flightticket.png"></div>
+                    <div class="swiper-slide"><img class="w-100" src="images/gift-switch.png"></div>
+                    <div class="swiper-slide"><img class="w-100" src="images/gift-dryer.png"></div>
+                    <div class="swiper-slide"><img class="w-100" src="images/gift-airfryer.png"></div>
+                    <div class="swiper-slide"><img class="w-100" src="images/gift-airpods.png"></div>
+                </div>
+            </div>
+        </section>
+        <section class="greeting text-center position-relative">
+            <div class="pt-5 fs-2 fw-bold">
+                <div class="position-relative text mx-auto p-3 d-flex flex-wrap justify-content-center">
+                    <span>XXX學員你好，</span>
+                    <span>目前持有抽獎券數：</span>
+                    <span>0張</span>
+                    <div class="position-absolute corner-border"></div>
+                </div>
+                <div class="position-relative text mx-auto p-3 mt-4 d-flex flex-wrap justify-content-center">
+                    <span class="align-self-center">目前已使用券數：</span>
+                    <span>XX張</span>
+                    <span class="getting-prize pointer fs-5 align-self-center mx-2">我要領獎</span>
+                    <div class="position-absolute corner-border"></div>
+                </div>
+            </div>
+            <img class="people bounce-up" src="images/5persons.png">
+            <img class="land position-absolute w-100" src="images/land-greeting.png">
+        </section>
+        <section class="prizes overflow-hidden position-relative pb-5">
+            <div class="container pb-5 position-relative">
+                <div class="fs-1 fw-bold pt-5">介紹友你賞</div>
+                <div class="d-flex flex-wrap lh-1">
+                    <div class="col-lg-6 col-12 p-3">
+                        <div class="white position-relative d-flex flex-wrap p-2 fw-bold anmt">
+                            <div class="yellow position-absolute bounce-up">A賞</div>
+                            <div class="col-lg-6 col-5 p-2">
+                                <div class="gray d-flex align-items-center w-100 h-100 overflow-hidden">
+                                    <img class="w-100" src="images/prize-gb-mac.png" alt="Macbook Air 13吋(M4)">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-7 p-2 d-flex flex-column justify-content-between">
+                                <div class="text-bigger lh-sm">Macbook Air 13吋(M4)</div>
+                                <div class="d-flex justify-content-between pt-4">
+                                    <div class="d-flex">
+                                        <span class="text-smaller d-flex align-items-end">價值$</span>
+                                        <span class="text-bigger d-flex align-items-end">32,900</span>
+                                    </div>
+                                    <div class="text-smaller align-self-end">0/1賞</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12 p-3">
+                        <div class="white position-relative d-flex flex-wrap p-2 fw-bold anmt">
+                            <div class="yellow position-absolute">B賞</div>
+                            <div class="col-lg-6 col-5 p-2">
+                                <div class="gray d-flex align-items-center w-100 h-100 overflow-hidden">
+                                    <img class="w-100" src="images/prize-gb-flightticket.png" alt="日本雙人來回機票">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-7 p-2 d-flex flex-column justify-content-between">
+                                <div class="text-bigger lh-sm">日本雙人來回機票</div>
+                                <div class="d-flex justify-content-between pt-4">
+                                    <div class="d-flex">
+                                        <span class="text-smaller d-flex align-items-end">價值$</span>
+                                        <span class="text-bigger d-flex align-items-end">23,000</span>
+                                    </div>
+                                    <div class="text-smaller align-self-end">0/1賞</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12 p-3">
+                        <div class="white position-relative d-flex flex-wrap p-2 fw-bold anmt">
+                            <div class="yellow position-absolute">C賞</div>
+                            <div class="col-lg-6 col-5 p-2">
+                                <div class="gray d-flex align-items-center w-100 h-100 overflow-hidden">
+                                    <img class="w-100" src="images/prize-gb-switch.png" alt="Nintendo Switch 2">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-7 p-2 d-flex flex-column justify-content-between">
+                                <div class="text-bigger lh-sm">Nintendo Switch 2</div>
+                                <div class="d-flex justify-content-between pt-4">
+                                    <div class="d-flex">
+                                        <span class="text-smaller d-flex align-items-end">價值$</span>
+                                        <span class="text-bigger d-flex align-items-end">14,380</span>
+                                    </div>
+                                    <div class="text-smaller align-self-end">0/1賞</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12 p-3">
+                        <div class="white position-relative d-flex flex-wrap p-2 fw-bold anmt">
+                            <div class="yellow position-absolute">D賞</div>
+                            <div class="col-lg-6 col-5 p-2">
+                                <div class="gray d-flex align-items-center w-100 h-100 overflow-hidden">
+                                    <img class="w-100" src="images/prize-gb-dryer.png">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-7 p-2 d-flex flex-column justify-content-between">
+                                <div class="text-bigger lh-sm">Panasonic 極潤奈米水離子吹風機</div>
+                                <div class="d-flex justify-content-between pt-4">
+                                    <div class="d-flex">
+                                        <span class="text-smaller d-flex align-items-end">價值$</span>
+                                        <span class="text-bigger d-flex align-items-end">8,900</span>
+                                    </div>
+                                    <div class="text-smaller align-self-end">0/2賞</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12 p-3">
+                        <div class="white position-relative d-flex flex-wrap p-2 fw-bold anmt">
+                            <div class="yellow position-absolute">E賞</div>
+                            <div class="col-lg-6 col-5 p-2">
+                                <div class="gray d-flex align-items-center w-100 h-100 overflow-hidden">
+                                    <img class="w-100" src="images/prize-gb-airfryer.png">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-7 p-2 d-flex flex-column justify-content-between">
+                                <div class="text-bigger lh-sm">飛利浦 頂級氣炸鍋</div>
+                                <div class="d-flex justify-content-between pt-4">
+                                    <div class="d-flex">
+                                        <span class="text-smaller d-flex align-items-end">價值$</span>
+                                        <span class="text-bigger d-flex align-items-end">7,990</span>
+                                    </div>
+                                    <div class="text-smaller align-self-end">0/2賞</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12 p-3">
+                        <div class="white position-relative d-flex flex-wrap p-2 fw-bold anmt">
+                            <div class="yellow position-absolute">F賞</div>
+                            <div class="col-lg-6 col-5 p-2">
+                                <div class="gray d-flex align-items-center w-100 h-100 overflow-hidden">
+                                    <img class="w-100" src="images/prize-gb-airpods.png">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-7 p-2 d-flex flex-column justify-content-between">
+                                <div class="text-bigger lh-sm">AirPods 4 (主動降噪款)</div>
+                                <div class="d-flex justify-content-between pt-4">
+                                    <div class="d-flex">
+                                        <span class="text-smaller d-flex align-items-end">價值$</span>
+                                        <span class="text-bigger d-flex align-items-end">5,990</span>
+                                    </div>
+                                    <div class="text-smaller align-self-end">0/2賞</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12 p-3">
+                        <div class="white position-relative d-flex flex-wrap p-2 fw-bold anmt">
+                            <div class="yellow position-absolute">G賞</div>
+                            <div class="col-lg-6 col-5 p-2">
+                                <div class="gray d-flex align-items-center w-100 h-100 overflow-hidden">
+                                    <img class="w-100" src="images/prize-gb-3c.png">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-7 p-2 d-flex flex-column justify-content-between">
+                                <div class="text-bigger lh-sm">3C家電禮券</div>
+                                <div class="d-flex justify-content-between pt-4">
+                                    <div class="d-flex">
+                                        <span class="text-smaller d-flex align-items-end">價值$</span>
+                                        <span class="text-bigger d-flex align-items-end">3,000</span>
+                                    </div>
+                                    <div class="text-smaller align-self-end">0/5賞</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12 p-3">
+                        <div class="white position-relative d-flex flex-wrap p-2 fw-bold anmt">
+                            <div class="yellow position-absolute">H賞</div>
+                            <div class="col-lg-6 col-5 p-2">
+                                <div class="gray d-flex align-items-center w-100 h-100 overflow-hidden">
+                                    <img class="w-100" src="images/prize-gb-food.png">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-7 p-2 d-flex flex-column justify-content-between">
+                                <div class="text-bigger lh-sm">美食饗宴禮券</div>
+                                <div class="d-flex justify-content-between pt-4">
+                                    <div class="d-flex">
+                                        <span class="text-smaller d-flex align-items-end">價值$</span>
+                                        <span class="text-bigger d-flex align-items-end">2,000</span>
+                                    </div>
+                                    <div class="text-smaller align-self-end">0/5賞</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12 p-3">
+                        <div class="white position-relative d-flex flex-wrap p-2 fw-bold anmt">
+                            <div class="yellow position-absolute">I賞</div>
+                            <div class="col-lg-6 col-5 p-2">
+                                <div class="gray d-flex align-items-center w-100 h-100 overflow-hidden">
+                                    <img class="w-100" src="images/prize-gb-makeup.png">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-7 p-2 d-flex flex-column justify-content-between">
+                                <div class="text-bigger lh-sm">量販美妝禮券</div>
+                                <div class="d-flex justify-content-between pt-4">
+                                    <div class="d-flex">
+                                        <span class="text-smaller d-flex align-items-end">價值$</span>
+                                        <span class="text-bigger d-flex align-items-end">1,000</span>
+                                    </div>
+                                    <div class="text-smaller align-self-end">0/10賞</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12 p-3">
+                        <div class="white position-relative d-flex flex-wrap p-2 fw-bold anmt">
+                            <div class="yellow position-absolute">J賞</div>
+                            <div class="col-lg-6 col-5 p-2">
+                                <div class="gray d-flex align-items-center w-100 h-100 overflow-hidden">
+                                    <img class="w-100" src="images/prize-gb-500coupon.png">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-7 p-2 d-flex flex-column justify-content-between">
+                                <div class="text-bigger lh-sm">統一集團禮券</div>
+                                <div class="d-flex justify-content-between pt-4">
+                                    <div class="d-flex">
+                                        <span class="text-smaller d-flex align-items-end">價值$</span>
+                                        <span class="text-bigger d-flex align-items-end">500</span>
+                                    </div>
+                                    <div class="text-smaller align-self-end">0/50賞</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-12 p-3">
+                        <div class="white position-relative d-flex flex-wrap p-2 fw-bold anmt">
+                            <div class="yellow position-absolute">K賞</div>
+                            <div class="col-lg-6 col-5 p-2">
+                                <div class="gray d-flex align-items-center w-100 h-100 overflow-hidden">
+                                    <img class="w-100" src="images/prize-gb-100lp.png">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-7 p-2 d-flex flex-column justify-content-between">
+                                <div class="text-bigger lh-sm">LINE POINTS點數</div>
+                                <div class="d-flex justify-content-between pt-4">
+                                    <div class="d-flex">
+                                        <span class="text-smaller d-flex align-items-end">價值$</span>
+                                        <span class="text-bigger d-flex align-items-end">100</span>
+                                    </div>
+                                    <div class="text-smaller align-self-end">0/1121賞</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img class="clouds-left position-absolute" src="images/clouds-left.png">
+                <img class="clouds-right position-absolute" src="images/clouds-right.png">
+            </div>
+            <img class="position-absolute mountain-prize" src="images/mountain-prize.png">
+        </section>
+        <section class="lots">
+            <div class="container pt-5">
+                <div class="fs-1 fw-bold text-center">介紹友你中獎區</div>
+                <div class="swiper badgeSwiper">
+                    <div class="swiper-wrapper position-relative">
+                        <div class="swiper-slide">
+                            <div class="medal position-relative fw-bold">
+                                <div class="heading position-absolute">A賞 976</div>
+                                <div class="subheading position-absolute">12抽</div>
+                                <img class="w-100" src="images/badge-gold.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="medal position-relative fw-bold">
+                                <div class="heading position-absolute">B賞 976</div>
+                                <div class="subheading position-absolute">12抽</div>
+                                <img class="w-100" src="images/badge-silver.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="medal position-relative fw-bold">
+                                <div class="heading position-absolute">C賞 976</div>
+                                <div class="subheading position-absolute">12抽</div>
+                                <img class="w-100" src="images/badge-copper.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="medal position-relative fw-bold">
+                                <div class="heading position-absolute">D賞 976</div>
+                                <div class="subheading position-absolute">12抽</div>
+                                <img class="w-100" src="images/badge-blue.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="medal position-relative fw-bold">
+                                <div class="heading position-absolute">E賞 976</div>
+                                <div class="subheading position-absolute">12抽</div>
+                                <img class="w-100" src="images/badge-blue.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="medal position-relative fw-bold">
+                                <div class="heading position-absolute">F賞 976</div>
+                                <div class="subheading position-absolute">12抽</div>
+                                <img class="w-100" src="images/badge-blue.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="medal position-relative fw-bold">
+                                <div class="heading position-absolute">G賞 976</div>
+                                <div class="subheading position-absolute">12抽</div>
+                                <img class="w-100" src="images/badge-blue.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="medal position-relative fw-bold">
+                                <div class="heading position-absolute">H賞 976</div>
+                                <div class="subheading position-absolute">12抽</div>
+                                <img class="w-100" src="images/badge-blue.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="medal position-relative fw-bold">
+                                <div class="heading position-absolute">I賞 976</div>
+                                <div class="subheading position-absolute">12抽</div>
+                                <img class="w-100" src="images/badge-blue.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="medal position-relative fw-bold">
+                                <div class="heading position-absolute">J賞 976</div>
+                                <div class="subheading position-absolute">12抽</div>
+                                <img class="w-100" src="images/badge-blue.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="medal position-relative fw-bold">
+                                <div class="heading position-absolute">K賞 976</div>
+                                <div class="subheading position-absolute">12抽</div>
+                                <img class="w-100" src="images/badge-blue.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="medal position-relative fw-bold">
+                                <div class="heading position-absolute">L賞 976</div>
+                                <div class="subheading position-absolute">12抽</div>
+                                <img class="w-100" src="images/badge-blue.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="medal position-relative fw-bold">
+                                <div class="heading position-absolute">M賞 976</div>
+                                <div class="subheading position-absolute">12抽</div>
+                                <img class="w-100" src="images/badge-blue.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="medal position-relative fw-bold">
+                                <div class="heading position-absolute">N賞 976</div>
+                                <div class="subheading position-absolute">12抽</div>
+                                <img class="w-100" src="images/badge-blue.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="medal position-relative fw-bold">
+                                <div class="heading position-absolute">O賞 976</div>
+                                <div class="subheading position-absolute">12抽</div>
+                                <img class="w-100" src="images/badge-blue.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="medal position-relative fw-bold">
+                                <div class="heading position-absolute">P賞 976</div>
+                                <div class="subheading position-absolute">12抽</div>
+                                <img class="w-100" src="images/badge-blue.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="medal position-relative fw-bold">
+                                <div class="heading position-absolute">Q賞 976</div>
+                                <div class="subheading position-absolute">12抽</div>
+                                <img class="w-100" src="images/badge-blue.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="medal position-relative fw-bold">
+                                <div class="heading position-absolute">R賞 976</div>
+                                <div class="subheading position-absolute">12抽</div>
+                                <img class="w-100" src="images/badge-blue.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="medal position-relative fw-bold">
+                                <div class="heading position-absolute">S賞 976</div>
+                                <div class="subheading position-absolute">12抽</div>
+                                <img class="w-100" src="images/badge-blue.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="medal position-relative fw-bold">
+                                <div class="heading position-absolute">T賞 976</div>
+                                <div class="subheading position-absolute">12抽</div>
+                                <img class="w-100" src="images/badge-blue.png">
+                            </div>
+                        </div>
+                        <div class="swiper-slide"></div>
+                        <div class="swiper-slide"></div>
+                        <div class="swiper-slide"></div>
+                        <div class="swiper-slide"></div>
+                    </div>
+                    <div class="swiper-button-prev">
+                        <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+                    </div>
+                    <div class="swiper-button-next">
+                        <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal modal-drawing fade" id="drawing" tabindex="-1" aria-labelledby="drawingLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-lg"> 
+                    <div class="modal-content overflow-hidden">
+                        <div class="modal-body">
+                            <button type="button" class="btn-close position-absolute" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <div class="text-center fw-bold">
+                                <div class="modal-title fs-2" id="drawingLabel">立即開獎</div>
+                                <div class="fs-5 d-flex flex-wrap justify-content-center">請向<span class="d-lg-block d-none">右</span><span class="d-lg-none d-block">上</span>滑動，即可打開抽獎券</div>
+                            </div>
+                            <div class="position-relative">
+                                <div class="game-container" onclick="toggleFlip()">
+                                    <div class="static-page">
+                                        <img src="images/lot-game-logo.png">
+                                    </div>
+                                    <div class="flipping-page" id="cover">
+                                        <div class="face front">
+                                            <div class="position-absolute cover-number" id="modalNumber">1</div>
+                                            <img class="d-lg-block d-none" src="images/lot-game-number.png">
+                                            <img class="d-lg-none d-block" src="images/lot-game-number-sp.png">
+                                        </div>
+                                        <div class="face back">
+                                            <div class="prize-text">
+                                                <div class="bigger-text">
+                                                    <div>F賞!!</div>
+                                                    <div class="slash"><img class="w-100" src="images/slash.png"></div>
+                                                </div>
+                                                <div class="smaller-text">
+                                                    <div>價值5,000元豪禮</div>
+                                                    <div>AirPods 4 (主動降噪款)</div>
+                                                </div>
+                                            </div>
+                                            <img src="images/lot-game-prize.png">
+                                        </div>
+                                    </div>
+                                    <img class="game-white" src="images/lot-game-whitebg.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container pt-5 game">
+                <div class="fs-1 fw-bold text-center">介紹友你賞抽獎區</div>
+                <div class="d-flex flex-wrap justify-content-between pt-2" id="lotContainer">
+
+                </div>
+            </div>
+            <div class="container pt-5">
+                <div class="fs-1 fw-bold text-center">活動注意事項</div>
+                <hr>
+                <ul>
+                    <li>活動期間：2026/1/1~2026/12/31。</li>
+                    <li>本次活動限巨匠集團學員參加，集團員工不得參加。</li>
+                    <li>領獎者不得要求兌換現金、或更改獎項、或任何調整事項。</li>
+                    <li>領獎者需依規定填寫相關個人資料，若領獎者不願意提供相關資料，視同放棄領獎資格，不另行通知。</li>
+                    <li>領獎者若未滿20歲，須獲得法定監護人同意及代為領取。依中華民國所得稅法規定，獎項價值將列入個人年度綜合所得稅申報(稅額以獎品市價計算)中獎價值超過稅法規定金額，須繳納10%稅金(稅額以獎品市價計算)巨匠依法代收中獎稅金，若中獎人未能如期依法繳納應繳稅額，即視為放棄得獎資格。</li>
+                    <li>若有未盡事宜，巨匠集團保留最終解釋、變更及終止活動內容之權利，且不另行通知。</li>
+                </ul>
+            </div>
+            <div class="fakeHeight"></div>
+        </section>
+        <div class="fixed-drawingBt">
+            <div class="buttons fw-bold go_game activity-page-click-count">
+                <a>開始抽獎</a>
+            </div>
+        </div>
+    </div>
+    <!-- wapper結束 -->
+    <!-- HTML END -->
+    <div class="footer">
+        <iframe src="../../headerFooter/footer.html" width="100%" scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
+    </div>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/swiper-bundle.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/post.js"></script>
+</body>
+</html>

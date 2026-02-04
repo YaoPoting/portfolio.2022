@@ -66,48 +66,70 @@ const observer = new IntersectionObserver(
 
 if (highlight) {observer.observe(highlight);}
 
-//GSAP for about
+// GSAP 統一初始化
 document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // 1. 先把區塊固定住
+    // ===== ABOUT =====
+    // 1. 固定區塊
     ScrollTrigger.create({
         trigger: ".about",
         start: "top top",
         end: "bottom top",
         pin: true,
         pinSpacing: false,
-        scrub: true
+        invalidateOnRefresh: true
     });
 
+    // 2. 文字行動畫
     gsap.from(".line-wrapper", {
         scrollTrigger: {
             trigger: ".aboutContent",
             start: "top 90%",
             end: "top 30%",
-            scrub: 1,
+            scrub: 1
         },
         y: 50,
         opacity: 0,
         stagger: 0.4,
-        duration: 2,
-        ease: "power2.out"
+        ease: "none"
     });
 
+    // 3. 標題和裝飾元素動畫
     gsap.from(".aboutFs, .zackFs, .portfolioTape", {
         scrollTrigger: {
             trigger: ".about",
             start: "top 90%",
             end: "top 20%",
-            scrub: 2,
+            scrub: 2
         },
         x: -100,
         opacity: 0,
-        stagger: 0.1
+        stagger: 0.1,
+        ease: "none"
+    });
+
+    // ===== WEB CARDS =====
+    gsap.utils.toArray(".cardStyle").forEach((card) => {
+        gsap.fromTo(card,
+            {
+                y: 100,
+                opacity: 0
+            },
+            {
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top 90%",
+                    end: "top 40%",
+                    scrub: 1
+                },
+                y: 0,
+                opacity: 1,
+                ease: "none"
+            }
+        );
     });
 });
-
-
 
 // Infinite Scroll 和 Masonry 初始化
 const grid = document.querySelector('.image-grid');
