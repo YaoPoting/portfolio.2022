@@ -136,9 +136,6 @@
     animation-delay: 0.7s;
   }
 }
-.wrapper .form {
-  /* Bounce To Right*/
-}
 .wrapper .form #myform {
   position: relative;
   top: -1.2rem;
@@ -170,6 +167,9 @@
 }
 .wrapper .form .w-49 {
   width: 49%;
+}
+.wrapper .form {
+  /* Bounce To Right*/
 }
 .wrapper .form .hvr-bounce-to-right {
   display: inline-block;
@@ -258,7 +258,6 @@
   flex-direction: column;
   justify-content: center;
   color: white;
-  border-right: 3px #fff dashed;
 }
 .wrapper .cpts .cptCont .cpt-heading .title {
   text-shadow: 1px 2px 2px rgb(0, 0, 0);
@@ -266,6 +265,9 @@
 .wrapper .cpts .cptCont .cpt-heading hr {
   color: white;
   opacity: 1;
+}
+.wrapper .cpts .cptCont .cpt-heading {
+  border-right: 3px #fff dashed;
 }
 .wrapper .cpts .cptCont .cpt-content {
   text-align: unset;
@@ -299,14 +301,6 @@
 .wrapper .students .heading {
   color: #374857;
 }
-.wrapper .students .swiper .studentFrameBody {
-  border-radius: 10px;
-  overflow: hidden;
-  background-color: #f8f8f8;
-  margin: 0 0.5rem;
-  color: #333;
-  font-size: 1.1rem;
-}
 .wrapper .students .swiper .studentFrameBody .tagColor-1 {
   background-color: #4da6df;
 }
@@ -318,6 +312,14 @@
 }
 .wrapper .students .swiper .studentFrameBody .tagColor-4 {
   background-color: #ffae00;
+}
+.wrapper .students .swiper .studentFrameBody {
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #f8f8f8;
+  margin: 0 0.5rem;
+  color: #333;
+  font-size: 1.1rem;
 }
 .wrapper .students .swiper .studentFrameBody .languageTag {
   color: white;

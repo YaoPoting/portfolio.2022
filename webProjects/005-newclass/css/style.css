@@ -234,7 +234,6 @@ body {
 .wrapper .schedule .whiteBg .intro-table .table-list .item {
   padding: 2.5em;
   font-size: 20px;
-  /* class theme color */
 }
 @media screen and (max-width: 992px) {
   .wrapper .schedule .whiteBg .intro-table .table-list .item {
@@ -270,10 +269,12 @@ body {
 .wrapper .schedule .whiteBg .intro-table .table-list .item .row-list .tableflex .title {
   font-weight: bold;
   text-align: start;
-  width: 30%;
 }
 .wrapper .schedule .whiteBg .intro-table .table-list .item .row-list .tableflex .title span {
   display: inline-block;
+}
+.wrapper .schedule .whiteBg .intro-table .table-list .item .row-list .tableflex .title {
+  width: 30%;
 }
 @media screen and (max-width: 992px) {
   .wrapper .schedule .whiteBg .intro-table .table-list .item .row-list .tableflex .title {
@@ -329,6 +330,9 @@ body {
   .wrapper .schedule .whiteBg .intro-table .table-list .item .row-list .courseBt {
     width: 30%;
   }
+}
+.wrapper .schedule .whiteBg .intro-table .table-list .item {
+  /* class theme color */
 }
 .wrapper .schedule .whiteBg .intro-table .table-list .item:nth-child(5n+1) .name {
   color: #0070d6;

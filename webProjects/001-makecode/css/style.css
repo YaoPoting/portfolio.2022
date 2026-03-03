@@ -35,18 +35,16 @@
 .wrapper .courses {
   background-color: #e2f3ff;
   background-image: url(../images/bgDeco01.png);
-  background-size: 20%;
-  background-repeat: no-repeat;
-  background-position: left bottom;
 }
 @media screen and (max-width: 1700px) {
   .wrapper .courses {
     background-image: unset;
   }
 }
-.wrapper .courses .heading {
-  margin: 0 1rem 0 1rem;
-  padding-bottom: 1rem;
+.wrapper .courses {
+  background-size: 20%;
+  background-repeat: no-repeat;
+  background-position: left bottom;
 }
 .wrapper .courses .heading.bgYellow {
   background-color: #ffcb1d;
@@ -56,6 +54,10 @@
 }
 .wrapper .courses .heading.textWhite {
   color: white;
+}
+.wrapper .courses .heading {
+  margin: 0 1rem 0 1rem;
+  padding-bottom: 1rem;
 }
 .wrapper .courses .heading .robot {
   margin-top: -12px;
@@ -334,14 +336,6 @@
 .wrapper .fullCourse .fullCourseBg .tableStyle.yellowGradient {
   background: linear-gradient(to bottom, #fffeed, #f3ee9d);
 }
-.wrapper .fullCourse .fullCourseBg .tableStyle .title {
-  font-size: 2rem;
-  font-weight: bold;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  justify-items: center;
-}
 .wrapper .fullCourse .fullCourseBg .tableStyle .title.red {
   color: #dd2c2c;
 }
@@ -350,6 +344,23 @@
 }
 .wrapper .fullCourse .fullCourseBg .tableStyle .title.yellow {
   color: #d6af38;
+}
+.wrapper .fullCourse .fullCourseBg .tableStyle .title {
+  font-size: 2rem;
+  font-weight: bold;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-items: center;
+}
+.wrapper .fullCourse .fullCourseBg .tableStyle .pill.red {
+  border: #dd2c2c solid 3px;
+}
+.wrapper .fullCourse .fullCourseBg .tableStyle .pill.blue {
+  border: #1d8cd3 solid 3px;
+}
+.wrapper .fullCourse .fullCourseBg .tableStyle .pill.yellow {
+  border: #d6af38 solid 3px;
 }
 .wrapper .fullCourse .fullCourseBg .tableStyle .pill {
   font-size: 1.25rem;
@@ -363,21 +374,6 @@
   justify-content: center;
   height: 30px;
 }
-.wrapper .fullCourse .fullCourseBg .tableStyle .pill.red {
-  border: #dd2c2c solid 3px;
-}
-.wrapper .fullCourse .fullCourseBg .tableStyle .pill.blue {
-  border: #1d8cd3 solid 3px;
-}
-.wrapper .fullCourse .fullCourseBg .tableStyle .pill.yellow {
-  border: #d6af38 solid 3px;
-}
-.wrapper .fullCourse .fullCourseBg .tableStyle .pillBg {
-  font-size: 1.25rem;
-  padding: 0.5rem 0.5rem;
-  font-weight: bold;
-  color: white;
-}
 .wrapper .fullCourse .fullCourseBg .tableStyle .pillBg.red {
   background-color: #dd2c2c;
 }
@@ -386,6 +382,12 @@
 }
 .wrapper .fullCourse .fullCourseBg .tableStyle .pillBg.yellow {
   background-color: #d6af38;
+}
+.wrapper .fullCourse .fullCourseBg .tableStyle .pillBg {
+  font-size: 1.25rem;
+  padding: 0.5rem 0.5rem;
+  font-weight: bold;
+  color: white;
 }
 .wrapper .fullCourse .fullCourseBg .fullCoursePC {
   display: block;

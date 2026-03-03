@@ -769,11 +769,6 @@ a:hover {
   width: 100%;
   max-width: unset;
 }
-@media screen and (max-width: 992px) {
-  .wrapper .kv .smokeFrame .titlePos .titleCon {
-    max-width: 540px;
-  }
-}
 .wrapper .kv .smokeFrame .titlePos .titleCon .col-20 {
   width: 20%;
 }
