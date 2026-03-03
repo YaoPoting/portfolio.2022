@@ -76,9 +76,16 @@ document.addEventListener('DOMContentLoaded', () => {
         trigger: ".about",
         start: "top top",
         end: "bottom top",
-        pin: true,
         pinSpacing: false,
         invalidateOnRefresh: true
+    });
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            ScrollTrigger.refresh(true);
+        }, 200);
     });
 
     // 2. 文字行動畫
