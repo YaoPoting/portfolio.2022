@@ -908,31 +908,23 @@ a:hover {
   }
 }
 .wrapper .about .aboutContent {
-  font-size: 1.75vw;
-  line-height: 2.7vw;
-  color: #faa307;
+  overflow: hidden;
   text-align: justify;
+  -moz-text-align-last: left;
+       text-align-last: left;
   text-justify: inter-character;
+  word-break: break-all;
+  color: #faa307;
+  font-size: 1.75vw;
+  line-height: 2.5vw;
   padding-left: 1vw;
 }
 @media screen and (max-width: 992px) {
   .wrapper .about .aboutContent {
     font-size: 1.25rem;
-    line-height: 1.75rem;
+    line-height: 2rem;
     padding-left: unset;
   }
-}
-.wrapper .about .aboutContent .line-wrapper {
-  overflow: hidden;
-  text-align: justify;
-  -moz-text-align-last: justify;
-       text-align-last: justify;
-  text-justify: inter-character;
-  word-break: break-all;
-}
-.wrapper .about .aboutContent .line-wrapper.no-justify {
-  -moz-text-align-last: left;
-       text-align-last: left;
 }
 .wrapper .about .aboutContent .black {
   background-color: black;

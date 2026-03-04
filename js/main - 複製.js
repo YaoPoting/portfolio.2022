@@ -49,40 +49,22 @@ window.addEventListener('scroll', () => {
 // 膠帶動畫
 const highlight = document.querySelector('.highlight');
 
-if (highlight) {
-    let isAnimating = false;
+const observer = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            // 移除 & 重新加 class，觸發動畫
+            highlight.classList.remove('animate');
+            void highlight.offsetWidth; // 強制 reflow
+            highlight.classList.add('animate');
+        }});
+    },
+    {
+        threshold: 0.5 //進入畫面50%即觸發動畫
+    }
+);
 
-    const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
-                // 防止動畫進行中重複觸發
-                if (entry.isIntersecting && !isAnimating) {
-                    isAnimating = true;
-
-                    highlight.classList.remove('animate');
-
-                    // 用 requestAnimationFrame 取代強制 reflow，避免滾動中的版面抖動
-                    requestAnimationFrame(() => {
-                        requestAnimationFrame(() => {
-                            highlight.classList.add('animate');
-
-                            // 動畫結束後才解鎖，避免動畫中途被打斷重啟
-                            highlight.addEventListener('animationend', () => {
-                                isAnimating = false;
-                            }, { once: true });
-                        });
-                    });
-                }
-            });
-        },
-        {
-            threshold: 0.3,              // 降低閾值，讓動畫在進入畫面更早觸發，遠離邊界臨界點
-            rootMargin: '0px 0px -80px 0px' // 元素底部距畫面底部 80px 時才算進入，避免邊界來回抖動
-        }
-    );
-
-    observer.observe(highlight);
-}
+if (highlight) {observer.observe(highlight);}
 
 // GSAP 統一初始化
 document.addEventListener('DOMContentLoaded', () => {
@@ -194,11 +176,3 @@ if (grid) {
 document.querySelector('.pagination__next')?.addEventListener('click', e => {
     e.preventDefault();
 });
-
-// Tally iframe 懶載入：等 Modal 打開才載入，避免首屏浪費資源
-document.getElementById('contactModal')?.addEventListener('show.bs.modal', function () {
-    const iframe = this.querySelector('iframe[data-src]');
-    if (iframe && !iframe.src.includes('tally.so')) {
-        iframe.src = iframe.dataset.src;
-    }
-}, { once: false });

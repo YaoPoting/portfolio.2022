@@ -90,12 +90,12 @@
     text-align: center;
   }
 }
+.wrapper .form {
+  background-color: #0e4b8a;
+}
 .wrapper .form #myform {
   position: relative;
   top: -5rem;
-}
-.wrapper .form {
-  background-color: #0e4b8a;
 }
 .wrapper .form .formTitBr {
   display: none;

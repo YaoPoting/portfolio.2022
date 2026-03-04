@@ -320,14 +320,12 @@ a {
 }
 .wrapper .test .questionCon .US .nav .nav-link {
   width: 16%;
+  border-bottom: 1px solid #81caf3;
 }
 @media screen and (max-width: 992px) {
   .wrapper .test .questionCon .US .nav .nav-link {
     width: 49%;
   }
-}
-.wrapper .test .questionCon .US .nav .nav-link {
-  border-bottom: 1px solid #81caf3;
 }
 .wrapper .test .questionCon .US .nav .nav-link.active {
   background-color: #81caf3;
@@ -340,14 +338,12 @@ a {
 }
 .wrapper .test .questionCon .JP .nav .nav-link {
   width: 19.5%;
+  border-bottom: 1px solid #f38181;
 }
 @media screen and (max-width: 992px) {
   .wrapper .test .questionCon .JP .nav .nav-link {
     width: 49%;
   }
-}
-.wrapper .test .questionCon .JP .nav .nav-link {
-  border-bottom: 1px solid #f38181;
 }
 .wrapper .test .questionCon .JP .nav .nav-link.active {
   background-color: #f38181;
@@ -360,14 +356,12 @@ a {
 }
 .wrapper .test .questionCon .ES .nav .nav-link {
   width: 19.5%;
+  border-bottom: 1px solid #f3e781;
 }
 @media screen and (max-width: 992px) {
   .wrapper .test .questionCon .ES .nav .nav-link {
     width: 49%;
   }
-}
-.wrapper .test .questionCon .ES .nav .nav-link {
-  border-bottom: 1px solid #f3e781;
 }
 .wrapper .test .questionCon .ES .nav .nav-link.active {
   background-color: #f3e781;
@@ -380,14 +374,12 @@ a {
 }
 .wrapper .test .questionCon .KR .nav .nav-link {
   width: 24.5%;
+  border-bottom: 1px solid #f4ccac;
 }
 @media screen and (max-width: 992px) {
   .wrapper .test .questionCon .KR .nav .nav-link {
     width: 49%;
   }
-}
-.wrapper .test .questionCon .KR .nav .nav-link {
-  border-bottom: 1px solid #f4ccac;
 }
 .wrapper .test .questionCon .KR .nav .nav-link.active {
   background-color: #f4ccac;
@@ -400,14 +392,12 @@ a {
 }
 .wrapper .test .questionCon .FR .nav .nav-link {
   width: 49.5%;
+  border-bottom: 1px solid #d2c2f8;
 }
 @media screen and (max-width: 992px) {
   .wrapper .test .questionCon .FR .nav .nav-link {
     width: 49%;
   }
-}
-.wrapper .test .questionCon .FR .nav .nav-link {
-  border-bottom: 1px solid #d2c2f8;
 }
 .wrapper .test .questionCon .FR .nav .nav-link.active {
   background-color: #d2c2f8;
@@ -420,14 +410,12 @@ a {
 }
 .wrapper .test .questionCon .DE .nav .nav-link {
   width: 49.5%;
+  border-bottom: 1px solid #cbe5c2;
 }
 @media screen and (max-width: 992px) {
   .wrapper .test .questionCon .DE .nav .nav-link {
     width: 49%;
   }
-}
-.wrapper .test .questionCon .DE .nav .nav-link {
-  border-bottom: 1px solid #cbe5c2;
 }
 .wrapper .test .questionCon .DE .nav .nav-link.active {
   background-color: #cbe5c2;

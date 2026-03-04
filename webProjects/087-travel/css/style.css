@@ -448,14 +448,12 @@ body {
   color: black;
   border-radius: 10px;
   overflow: hidden;
-}
-.wrapper .students .swiper-slide .slideStyle hr {
-  margin: unset;
-}
-.wrapper .students .swiper-slide .slideStyle {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   transition: transform 0.3s ease;
+}
+.wrapper .students .swiper-slide .slideStyle hr {
+  margin: unset;
 }
 .wrapper .students .swiper-slide .slideStyle:hover {
   transform: translateY(-5px);

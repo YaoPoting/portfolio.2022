@@ -60,6 +60,7 @@ body {
 }
 .wrapper .wallGradient .whitePaper {
   background-color: #f4f4f4;
+  /* intro-table */
 }
 .wrapper .wallGradient .whitePaper .tapetop {
   left: 75%;
@@ -70,9 +71,6 @@ body {
   left: 2%;
   margin-bottom: -4%;
   max-width: 187px;
-}
-.wrapper .wallGradient .whitePaper {
-  /* intro-table */
 }
 .wrapper .wallGradient .whitePaper .intro-table {
   display: flex;
@@ -153,6 +151,7 @@ body {
 .wrapper .wallGradient .whitePaper .intro-table .table-list .item {
   padding: 2.5em;
   font-size: 20px;
+  /* class theme color */
 }
 @media screen and (max-width: 992px) {
   .wrapper .wallGradient .whitePaper .intro-table .table-list .item {
@@ -187,12 +186,10 @@ body {
 .wrapper .wallGradient .whitePaper .intro-table .table-list .item .row-list .tableflex .title {
   font-weight: bold;
   text-align: start;
+  width: 70%;
 }
 .wrapper .wallGradient .whitePaper .intro-table .table-list .item .row-list .tableflex .title span {
   display: inline-block;
-}
-.wrapper .wallGradient .whitePaper .intro-table .table-list .item .row-list .tableflex .title {
-  width: 70%;
 }
 @media screen and (max-width: 992px) {
   .wrapper .wallGradient .whitePaper .intro-table .table-list .item .row-list .tableflex .title {
@@ -240,9 +237,6 @@ body {
   .wrapper .wallGradient .whitePaper .intro-table .table-list .item .row-list .courseBt {
     width: 30%;
   }
-}
-.wrapper .wallGradient .whitePaper .intro-table .table-list .item {
-  /* class theme color */
 }
 .wrapper .wallGradient .whitePaper .intro-table .table-list .item:nth-child(5n+1) .name {
   color: #0070d6;

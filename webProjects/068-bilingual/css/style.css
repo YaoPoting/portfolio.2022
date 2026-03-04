@@ -369,18 +369,16 @@
 .wrapper .cardSection .cardsFlex .cardsCont {
   width: 23%;
   padding-bottom: 23%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 1s ease;
+  cursor: pointer;
 }
 @media screen and (max-width: 992px) {
   .wrapper .cardSection .cardsFlex .cardsCont {
     width: 47%;
     padding-bottom: 47%;
   }
-}
-.wrapper .cardSection .cardsFlex .cardsCont {
-  position: relative;
-  transform-style: preserve-3d;
-  transition: 1s ease;
-  cursor: pointer;
 }
 .wrapper .cardSection .cardsFlex .cardsCont .cardStyle {
   width: 100%;

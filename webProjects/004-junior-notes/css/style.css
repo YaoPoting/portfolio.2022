@@ -16,12 +16,10 @@
 }
 .wrapper .kv .kv_PC {
   height: 39vw;
+  display: block;
 }
 .wrapper .kv .kv_PC .kv_notepaper, .wrapper .kv .kv_PC .kv_whitepaper, .wrapper .kv .kv_PC .kv_handRight, .wrapper .kv .kv_PC .kv_handLeft, .wrapper .kv .kv_PC .kv_title {
   position: absolute;
-}
-.wrapper .kv .kv_PC {
-  display: block;
 }
 @media screen and (max-width: 992px) {
   .wrapper .kv .kv_PC {
@@ -30,12 +28,10 @@
 }
 .wrapper .kv .kv_SP {
   height: 100vw;
+  display: none;
 }
 .wrapper .kv .kv_SP .kv_notepaper_SP, .wrapper .kv .kv_SP .kv_whitepaper_SP, .wrapper .kv .kv_SP .kv_handRight_SP, .wrapper .kv .kv_SP .kv_handLeft_SP, .wrapper .kv .kv_SP .kv_title_SP {
   position: absolute;
-}
-.wrapper .kv .kv_SP {
-  display: none;
 }
 @media screen and (max-width: 992px) {
   .wrapper .kv .kv_SP {

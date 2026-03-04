@@ -252,6 +252,10 @@
 .wrapper .learning .fontContent.py-content {
   padding: 0.5vw 0 1vw 0;
 }
+.wrapper .learning .learning {
+  background-size: cover;
+  padding: 5vw 0;
+}
 .wrapper .learning .learning.japanese {
   background-image: url(../images/learningJapanese.png);
 }
@@ -260,10 +264,6 @@
 }
 .wrapper .learning .learning.korean {
   background-image: url(../images/learningKorean.png);
-}
-.wrapper .learning .learning {
-  background-size: cover;
-  padding: 5vw 0;
 }
 .wrapper .learning .learning .fontButton {
   font-size: 1.5vw;

@@ -301,26 +301,22 @@ a {
         }
 
         .aboutContent {
-            font-size: 1.75vw;
-            line-height: 2.7vw;
-            color: $color-main-deep;
+            overflow: hidden;
             text-align: justify;
-            text-justify: inter-character;
+            text-align-last: left;
+            text-justify: inter-character; 
+            word-break: break-all;
+            color: $color-main-deep;
+            font-size: 1.75vw;
+            line-height: 2.5vw;
             padding-left: 1vw;
 
             @media screen and (max-width:992px) {
                 font-size: 1.25rem;
-                line-height: 1.75rem;
+                line-height: 2rem;
                 padding-left: unset;
             }
-            .line-wrapper {
-                overflow: hidden;
-                text-align: justify;
-                text-align-last: justify;
-                text-justify: inter-character; 
-                word-break: break-all;
-                &.no-justify {text-align-last: left;}
-            }
+
             .black {
                 background-color: black;
                 color: white;
