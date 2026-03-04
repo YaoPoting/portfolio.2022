@@ -389,15 +389,10 @@ a {
 
     .works {
         position: relative;
-        z-index: 100;
+        z-index: 50;
         background-color: white;
 
         .websites {
-            .websiteAnchor {
-                position: relative;
-                top: -2.5rem;
-            }
-
             .webSitesBg {
                 overflow-x: clip;
                 position: relative;
@@ -451,11 +446,8 @@ a {
         }
 
         .graphics {
-            .graphicsAnchor {
-                position: relative;
-                top: -3.5rem;
-            }
-                
+            padding-top: 100px;
+            
             .image-grid {
                 max-width: 100%;
                 margin: 1.25rem;

@@ -998,12 +998,8 @@ a:hover {
 }
 .wrapper .works {
   position: relative;
-  z-index: 100;
+  z-index: 50;
   background-color: white;
-}
-.wrapper .works .websites .websiteAnchor {
-  position: relative;
-  top: -2.5rem;
 }
 .wrapper .works .websites .webSitesBg {
   overflow-x: clip;
@@ -1055,9 +1051,8 @@ a:hover {
   background-color: white;
   line-height: 1;
 }
-.wrapper .works .graphics .graphicsAnchor {
-  position: relative;
-  top: -3.5rem;
+.wrapper .works .graphics {
+  padding-top: 100px;
 }
 .wrapper .works .graphics .image-grid {
   max-width: 100%;
