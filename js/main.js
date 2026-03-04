@@ -58,15 +58,11 @@ if (highlight) {
                 // 防止動畫進行中重複觸發
                 if (entry.isIntersecting && !isAnimating) {
                     isAnimating = true;
-
                     highlight.classList.remove('animate');
 
-                    // 用 requestAnimationFrame 取代強制 reflow，避免滾動中的版面抖動
                     requestAnimationFrame(() => {
                         requestAnimationFrame(() => {
                             highlight.classList.add('animate');
-
-                            // 動畫結束後才解鎖，避免動畫中途被打斷重啟
                             highlight.addEventListener('animationend', () => {
                                 isAnimating = false;
                             }, { once: true });
@@ -76,8 +72,8 @@ if (highlight) {
             });
         },
         {
-            threshold: 0.3,              // 降低閾值，讓動畫在進入畫面更早觸發，遠離邊界臨界點
-            rootMargin: '0px 0px -80px 0px' // 元素底部距畫面底部 80px 時才算進入，避免邊界來回抖動
+            threshold: 0.3,
+            rootMargin: '0px 0px -80px 0px'
         }
     );
 
