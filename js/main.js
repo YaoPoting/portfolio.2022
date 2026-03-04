@@ -102,20 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 200);
     });
 
-    // 2. 文字行動畫
-    gsap.from(".line-wrapper", {
-        scrollTrigger: {
-            trigger: ".aboutContent",
-            start: "top 90%",
-            end: "top 30%",
-            scrub: 1
-        },
-        y: 50,
-        opacity: 0,
-        stagger: 0.4,
-        ease: "none"
-    });
-
     // 3. 標題和裝飾元素動畫
     gsap.from(".aboutFs, .zackFs, .portfolioTape", {
         scrollTrigger: {
