@@ -3,6 +3,10 @@ body.modal-open .fixed-drawingBt {
   padding-right: 15px;
 }
 
+body {
+  background-color: #cdc0a6;
+}
+
 .wrapper {
   padding-top: 65px;
 }
@@ -604,11 +608,13 @@ body.modal-open .fixed-drawingBt {
 }
 .wrapper .modal-menberSignIn .modal-content .modal-footer {
   padding: unset;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
 }
 .wrapper .modal-menberSignIn .modal-content .modal-footer.modal-footer > * {
   margin: unset;
+}
+.wrapper .modal-menberSignIn .modal-content .modal-footer {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 .wrapper .modal-drawing .modal-content {
   background-color: #f9e8cd;

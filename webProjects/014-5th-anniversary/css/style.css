@@ -73,15 +73,6 @@ body {
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   background-image: url(../images/mainBg.jpg);
   background-size: 100% 100%;
-  box-sizing: border-box;
-  font-size: 16px;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #141926;
-  width: 100%;
-  overflow: hidden;
 }
 .gs-rotate h1 {
   display: none;
@@ -94,6 +85,10 @@ body {
   box-sizing: border-box;
   scroll-behavior: smooth;
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.gs-rotate {
+  box-sizing: border-box;
+  font-size: 16px;
 }
 @media screen and (max-width: 1280px) {
   .gs-rotate {
@@ -146,6 +141,15 @@ body {
 .gs-rotate ::-ms-input-placeholder {
   color: #C8C9CA;
 }
+.gs-rotate {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #141926;
+  width: 100%;
+  overflow: hidden;
+}
 .gs-rotate .banner {
   width: 100%;
   height: auto;
@@ -183,15 +187,15 @@ body {
   align-items: center;
   width: 90%;
 }
+.gs-rotate .banner .slogan-cont a img {
+  width: 100%;
+}
 .gs-rotate .banner .slogan-cont a {
   display: block;
   padding-top: 0%;
   width: 40%;
   max-width: 250px;
   cursor: pointer;
-}
-.gs-rotate .banner .slogan-cont a img {
-  width: 100%;
 }
 .gs-rotate .banner .slogan {
   animation: slogan-scale 1.6s ease infinite;
@@ -248,12 +252,14 @@ body {
 }
 .gs-rotate .turntable-cont .rotate-cont a {
   position: absolute;
-  top: -12%;
-  width: 30%;
-  left: 35%;
 }
 .gs-rotate .turntable-cont .rotate-cont a img {
   width: 100%;
+}
+.gs-rotate .turntable-cont .rotate-cont a {
+  top: -12%;
+  width: 30%;
+  left: 35%;
 }
 .gs-rotate .turntable-cont .rotate-cont img {
   position: absolute;

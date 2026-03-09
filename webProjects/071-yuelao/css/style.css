@@ -13,7 +13,6 @@
 }
 .wrapper .kv .kvPC {
   height: 52vw;
-  display: block;
 }
 .wrapper .kv .kvPC .kvPC_doorR {
   right: 0px;
@@ -59,6 +58,9 @@
   left: 25%;
   width: 44%;
   animation: zoomInOut 1s infinite;
+}
+.wrapper .kv .kvPC {
+  display: block;
 }
 @media screen and (max-width: 992px) {
   .wrapper .kv .kvPC {
