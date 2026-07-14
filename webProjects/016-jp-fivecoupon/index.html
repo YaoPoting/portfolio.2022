@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>115年國民日語學習計劃 | 學日語五大好康一次給</title>
+    <meta name="Title" content="115年國民日語學習計劃 | 學日語五大好康一次給" />
+    <meta name="Description" content="國民日語學習計畫,提升全民日語能力,全方位日語學習計劃:日文會話課,旅遊日文,商務日文,日文檢定課程!填表洽詢日文課程,再送日語學習小手冊!" />
+    <meta name="keywords" content="線上日文課程,線上學日語,國民日語學習計劃,學費補助, 日語課程" />
+    <meta property="og:title" content="115年國民日語學習計劃 | 學日語五大好康一次給" />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="images/share_card.jpg" />
+    <meta property="og:description" content="國民日語學習計畫,提升全民日語能力,全方位日語學習計劃:日文會話課,旅遊日文,商務日文,日文檢定課程!填表洽詢日文課程,再送日語學習小手冊!" />
+    <link rel="canonical" href="" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/comm-style.js"></script>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/swiper-bundle.min.css" rel="stylesheet" />
+    <link href="css/comm-style.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RQDCTEKFX1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-RQDCTEKFX1');
+    </script>
+
+    <script type="text/javascript">
+        //留單相關，看過後請把註解刪掉喔!  -----start
+        var dept = "KZ2";
+        var seq_no = "0";
+        var web_pno = "115061500001"; //電腦版pno
+        var NList_Type = "5";
+        var fromto = "";
+        var Gift = "";
+        var is_Mobile = "0";
+
+        /*手機板 pno 判斷相關 >> start */
+        $(function () {
+            if (isMobile()) {
+                web_pno = "115061500002";  //手機板pno
+                is_Mobile = "1";   
+            }
+        });
+
+        function isMobile() {
+            try { document.createEvent("TouchEvent"); return true; }
+            catch (e) { return false; }
+        }
+        /*手機板 pno 判斷相關 >> end*/
+
+        function but_send() {
+            $('#sBut').hide();
+
+            var JSonData = {
+                "name": $("#name").val(),
+                "mobile": $("#mobile").val(),
+                "email": $("#email").val(),
+                "seq_no": seq_no,
+                "dept_no": dept,
+                "memo": "免費洽詢優惠，再送日語學習手冊" + Gift,
+                "web_pno": web_pno,
+                "fromto": QueryString("fromto") != null ? QueryString("fromto") : fromto,
+                "fromurl": document.location.href, 
+                "sourceid": QueryString("fc") != null ? QueryString("fc") : "",
+                "NList_Type": NList_Type,
+                "IsSend": "N",
+                "func": "njycooooqj"
+            }
+
+            if ($("input[name=per_chk]:checked").length == 0) {
+                alert('請勾選同意個資保護聲明。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.name == "" || JSonData.name == "姓 名") {
+                alert('請填寫入姓名。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile == "" || JSonData.mobile == "行動電話") {
+                alert('請填寫行動電話。');
+                $('#sBut').show();
+                return false;
+            }
+            if (isNaN(JSonData.mobile) == true) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.mobile.length != 10) {
+                alert('行動電話格式錯誤。');
+                $('#sBut').show();
+                return false;
+            }
+            if (JSonData.email == "" || JSonData.email == "E-Mail") { JSonData.email = "" } else {
+                if (JSonData.email.indexOf("@") <= -1) {
+                    alert('電子郵件格式錯誤。');
+                    $('#sBut').show();
+                    return false;
+                }
+            }
+            goSubmit(JSonData, s, f);
+        }
+
+        function s(data) {
+            if (data[0].result == "1") {
+                $("#name").val("");
+                $("#mobile").val("");
+                $("#sBut").show();
+                document.location.href = "/wGuest/loadover.htm";
+            } else {
+                alert('送出失敗！');
+                $("#sBut").show();
+            }
+        }
+        function f(data) {
+            alert(data);
+            $("#sBut").show();
+        }
+        //留單相關，看過後請把註解刪掉喔!  -----end
+    </script>
+
+</head>
+
+<body>
+    <form id="form1" runat="server">
+        <div class="top">
+            <iframe src="../../headerFooter/header.html" width="100%" height="65px"  scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
+        </div>
+        <div class="wrapper position-relative">
+            <h1 class="d-none">登記免費享線上真人日語課程</h1>
+            <section class="hero position-relative">
+                <img class="w-100 d-none d-lg-block" src="images/kvbg.png">
+                <img class="w-100 d-block d-lg-none" src="images/kvbg-sp.png">
+                <img class="hero-title d-none d-lg-block position-absolute" src="images/kv-title.png">
+                <img class="hero-title d-block d-lg-none position-absolute" src="images/kv-title-sp.png">
+                <div class="highlight level color-primary position-absolute go_fillform activity-page-click-count"><div>日語程度</div><div class="color-secondary">與能力檢測</div></div>
+                <div class="highlight learning color-primary position-absolute go_fillform activity-page-click-count"><div>日語學習</div><div class="color-secondary">規劃與諮詢</div></div>
+                <div class="highlight human color-primary position-absolute go_fillform activity-page-click-count"><div>線上真人</div><div class="color-secondary">日語課程</div></div>
+                <div class="highlight digital color-primary position-absolute go_fillform activity-page-click-count"><div>日語數位課</div><div class="color-secondary fw-bold">800堂</div></div>
+                <div class="highlight discount color-primary position-absolute go_fillform activity-page-click-count"><div>折抵學費</div><div class="color-secondary fw-bold">20,000元</div></div>
+                <div class="qualification-con position-absolute">
+                    <div class="text-con">
+                        <div class="title">計畫源起：</div>
+                        <div class="detail">隨著臺灣與日本在觀光、文化、產業等交流與日俱增，國人赴日旅遊、學習、工作等需求亦不斷提升。為此<span class="color-secondary fw-bold">【巨匠線上真人家教】</span>特別推出<span class="color-secondary fw-bold">【國民日語學習計劃】</span>，為國人量身打造，協助全民提升日語能力。</div>
+                    </div>
+                    <div class="qualification d-flex flex-wrap">
+                        <div class="col-lg-6 col-12">
+                            <div class="points-flex points-age w-100">
+                                <span class="d-flex align-items-center justify-content-center points-w">
+                                    <i class="bi bi-person-fill"></i>
+                                    <span class="d-inline-block">報名資格：</span>
+                                </span>
+                                <span>凡年滿18歲之中華民國國民即可報名。</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="points-flex points-deadline w-100">
+                                <span class="d-flex align-items-center justify-content-center points-w">
+                                    <i class="bi bi-calendar-check-fill"></i>
+                                    <span class="d-inline-block">名額限制：</span>
+                                </span>
+                                <span>優惠專案至本月底止，或額滿為止。</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form fillform">
+                <div class="form-container py-5">
+                    <div class="fs-1 fw-bold color-secondary d-flex flex-wrap justify-content-center"><span>填表免費洽詢</span><span>五大好康</span></div>
+                    <div class="fs-3 fw-bold text-center">再送日語學習小手冊</div>
+                    <div class="d-flex flex-wrap pt-3">
+                        <div class="form-pop col-lg-6 col-12 p-2 align-self-center justify-content-center text-center">
+                            <img class="w-100 d-none d-lg-block" src="images/form-img.png" alt="card">
+                            <img class="w-100 d-block d-lg-none mx-auto" src="images/form-img-sp.png" alt="card">
+                        </div>
+                        <div class="form-pop col-lg-6 col-12">
+                            <div class="d-flex flex-column justify-content-center form-pd h-100">
+                                <input name="ea" type="text" class="input-style" id="name" placeholder="姓 名" />
+                                <input name="mobile" type="text" class="input-style" id="mobile" placeholder="電 話" />
+                                <input name="email" type="text" class="input-style" id="email" placeholder="E-Mail" />
+                                <div class="d-flex align-items-center mb-3">
+                                    <label class="d-flex align-items-center"><input type="checkbox" class="checkbox" name="per_chk"></label>
+                                    <span class="statement">我已閱讀並接受<a
+                                        onclick="window.open('/activity/abconline/contract_02/','person',config='height=640,width=830');return false;"
+                                        href="#">個資保護聲明</a>
+                                    </span>
+                                </div>
+                                <div id="sBut" class="pointer text-center" onClick="but_send();">
+                                    <div class="bt">按我送出</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="blue-checked">
+                <div class="container">
+                    <div class="reasons position-relative overflow-hidden">
+                        <img class="position-absolute city gsap-up gsap-fade" src="images/city.png">
+                        <img class="position-absolute pic-style pic1 gsap-up gsap-fade d-lg-block d-none" src="images/reason-pic1.png">
+                        <img class="position-absolute pic-style pic2 gsap-up gsap-fade d-lg-block d-none" src="images/reason-pic2.png">
+                        <img class="position-absolute pic-style pic3 gsap-up gsap-fade d-lg-block d-none" src="images/reason-pic3.png">
+
+                        <img class="position-absolute pic-style pic1 gsap-up gsap-fade d-lg-none d-block" src="images/reason-pic1-sp.png">
+                        <img class="position-absolute pic-style pic2 gsap-up gsap-fade d-lg-none d-block" src="images/reason-pic2-sp.png">
+                        <img class="position-absolute pic-style pic3 gsap-up gsap-fade d-lg-none d-block" src="images/reason-pic3-sp.png">
+
+                        <img class="position-absolute roadsign gsap-up" src="images/roadsign.png">
+                    </div>
+                    <div class="ways d-flex flex-wrap">
+                        <div class="col-lg-6 col-12 ways-sticky">
+                            <div class="star-line">
+                                <img class="star-line-img" src="images/way-star.png" alt="">
+                                <svg class="star-rotate-text" viewBox="0 0 100 100" aria-hidden="true">
+                                    <defs>
+                                        <path id="starTextCircle" d="M 50 50 m -34 0 a 34 34 0 1 1 68 0 a 34 34 0 1 1 -68 0"></path>
+                                    </defs>
+                                    <text>
+                                        <textPath href="#starTextCircle" startOffset="6%">BETTER WAYS</textPath>
+                                    </text>
+                                </svg>
+                            </div>
+                            <div class="title">你該用<br>更好的方法<br>學好日語</div>
+                        </div>
+                        <div class="col-lg-6 col-12 px-3">
+                            <div class="white-bg px-5 py-3 shadow gsap-up gsap-fade">
+                                <div class="py-3">
+                                    <div class="fs-4 fw-bold color-secondary">精選50分鐘課程</div>
+                                    <div class="fs-5">學生與老師充分互動學習，還能擁有業界最長練習日文口說的機會，學習效果必定加倍！</div>
+                                    <img class="w-100 py-2" src="images/ways-selected.png">
+                                </div>
+                                <div class="py-3">
+                                    <div class="fs-4 fw-bold color-secondary">即時互動-真人教學</div>
+                                    <div class="fs-5">電腦、筆電、平板、手機皆可上課，隨時隨地與老師面對面，任何地點都可以是你的日文教室。</div>
+                                    <img class="w-100 py-2" src="images/ways-online.png">
+                                </div>
+                                <div class="py-3">
+                                    <div class="fs-4 fw-bold color-secondary">專業師資-品質保證</div>
+                                    <div class="fs-5">嚴選教學經驗豐富、擁有專業認證之雙語及日籍教師，讓您學習最道地的日語！</div>
+                                    <img class="w-100 py-2" src="images/ways-teacher.png">
+                                </div>
+                                <div class="py-3">
+                                    <div class="fs-4 fw-bold color-secondary">權威教材-效果加倍</div>
+                                    <div class="fs-5">選用日語學習權威《豪風出版社》合作教材，搭配獨家點讀筆系統，紮實累積日文能力。</div>
+                                    <img class="w-100 py-2" src="images/ways-materials.png">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="plans">
+                    <div class="plans-bg"></div>
+                    <img class="running-track" src="images/running-track.png">
+                    <div class="title-style gsap-up gsap-fade">
+                        <div class="title">全方位日語</div>
+                        <div class="sub-title">
+                            <span>學</span>
+                            <span>習</span>
+                            <span>計</span>
+                            <span>劃</span>
+                            <i class="bi bi-arrow-down-circle"></i>
+                        </div>
+                    </div>
+                    <div class="plans-swiper-con gsap-up gsap-fade">
+                        <div class="swiper coverSwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="images/plans-communication.png" alt="會話課程">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/plans-topic.png" alt="主題課程">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="images/plans-certification.png" alt="檢定認證">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="plans-swiper-con__caption">
+                            <p class="plans-swiper-con__btn" id="caption-btn"></p>
+                            <p class="plans-swiper-con__desc" id="caption-desc"></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="topics">
+                <img class="bicycle" src="images/bicycle.png">
+                <div class="container">
+                    <div class="fs-1 color-secondary d-flex flex-wrap justify-content-center pb-3"><div>上千堂情境日語課</div><div>任你學</div></div>
+                    <div class="d-flex flex-wrap justify-content-center">
+                        <div class="col-lg-4 col-12 p-3 gsap-up gsap-fade">
+                            <article class="topic-card h-100">
+                                <div class="topic-card__head">
+                                    <i class="bi bi-camera-fill"></i>
+                                    <div>旅遊日語課</div>
+                                </div>
+                                <div class="topic-card__item"><div><p>機場交通</p><p>空港送迎</p></div></div>
+                                <div class="topic-card__item"><div><p>飯店住宿</p><p>ホテル宿泊</p></div></div>
+                                <div class="topic-card__item"><div><p>消費購物</p><p>消費者ショッピング</p></div></div>
+                                <div class="topic-card__item"><div><p>美食餐飲</p><p>グルメダイニング</p></div></div>
+                                <div class="topic-card__item"><div><p>打工渡假</p><p>ワーキングホリデー</p></div></div>
+                                <div class="topic-card__item"><div><p>觀光景點</p><p>観光スポット</p></div></div>
+                                <a class="topic-card__button go_fillform activity-page-click-count">學更多</a>
+                            </article>
+                        </div>
+                        <div class="col-lg-4 col-12 p-3 gsap-up gsap-fade">
+                            <article class="topic-card h-100">
+                                <div class="topic-card__head">
+                                    <i class="bi bi-briefcase-fill"></i>
+                                    <div>商用日語課</div>
+                                </div>
+                                <div class="topic-card__item"><div><p>電話聯絡</p><p>電話聯絡</p></div></div>
+                                <div class="topic-card__item"><div><p>書信郵件</p><p>通信メール</p></div></div>
+                                <div class="topic-card__item"><div><p>會議</p><p>ミーティング</p></div></div>
+                                <div class="topic-card__item"><div><p>職場禮儀</p><p>職場のエチケット</p></div></div>
+                                <div class="topic-card__item"><div><p>索賠的處理</p><p>クレームに対応する</p></div></div>
+                                <div class="topic-card__item"><div><p>迎接客人</p><p>お客様を迎える</p></div></div>
+                                <a class="topic-card__button go_fillform activity-page-click-count">學更多</a>
+                            </article>
+                        </div>
+                        <div class="col-lg-4 col-12 p-3 gsap-up gsap-fade">
+                            <article class="topic-card h-100">
+                                <div class="topic-card__head">
+                                    <i class="bi bi-house-door-fill"></i>
+                                    <div>生活日語課</div>
+                                </div>
+                                <div class="topic-card__item"><div><p>鄰居交際</p><p>近所づきあい</p></div></div>
+                                <div class="topic-card__item"><div><p>三點的點心</p><p>三時のおやつ</p></div></div>
+                                <div class="topic-card__item"><div><p>網購APP</p><p>フリマアプリ</p></div></div>
+                                <div class="topic-card__item"><div><p>流行性感冒</p><p>インフルエンザ</p></div></div>
+                                <div class="topic-card__item"><div><p>貓咪檢定</p><p>ねこ検定</p></div></div>
+                                <div class="topic-card__item"><div><p>日本的紙鈔</p><p>日本の紙幣</p></div></div>
+                                <a class="topic-card__button go_fillform activity-page-click-count">學更多</a>
+                            </article>
+                        </div>
+                        <div class="col-lg-4 col-12 p-3 gsap-up gsap-fade">
+                            <article class="topic-card h-100">
+                                <div class="topic-card__head">
+                                    <i class="bi bi-newspaper"></i>
+                                    <div>時事日語課</div>
+                                </div>
+                                <div class="topic-card__item"><div><p>黃金週假期</p><p>ゴールデンウィーク</p></div></div>
+                                <div class="topic-card__item"><div><p>職場霸凌</p><p>パワハラ</p></div></div>
+                                <div class="topic-card__item"><div><p>睡眠商機</p><p>睡眠ビジネス</p></div></div>
+                                <div class="topic-card__item"><div><p>阻止地球暖化</p><p>温暖化阻止</p></div></div>
+                                <div class="topic-card__item"><div><p>地區捐贈納稅法</p><p>ふるさと納税</p></div></div>
+                                <div class="topic-card__item"><div><p>早發性阿茲海默症</p><p>若年性認知症</p></div></div>
+                                <a class="topic-card__button go_fillform activity-page-click-count">學更多</a>
+                            </article>
+                        </div>
+                        <div class="col-lg-4 col-12 p-3 gsap-up gsap-fade">
+                            <article class="topic-card h-100">
+                                <div class="topic-card__head">
+                                    <i class="bi bi-flower1"></i>
+                                    <div>日本文化課</div>
+                                </div>
+                                <div class="topic-card__item"><div><p>日本動漫</p><p>日本アニメ</p></div></div>
+                                <div class="topic-card__item"><div><p>和服文化</p><p>きもの文化</p></div></div>
+                                <div class="topic-card__item"><div><p>沐浴文化</p><p>お風呂文化</p></div></div>
+                                <div class="topic-card__item"><div><p>貓寺廟與貓神社</p><p>猫寺と猫神社</p></div></div>
+                                <div class="topic-card__item"><div><p>日本的鬼怪</p><p>日本の鬼</p></div></div>
+                                <div class="topic-card__item"><div><p>血型與性格</p><p>血液型と性格</p></div></div>
+                                <a class="topic-card__button go_fillform activity-page-click-count">學更多</a>
+                            </article>
+                        </div>
+                        <div class="col-lg-4 col-12 p-3 gsap-up gsap-fade">
+                            <article class="topic-card h-100">
+                                <div class="topic-card__head">
+                                    <i class="bi bi-award-fill"></i>
+                                    <div>日語檢定課</div>
+                                </div>
+                                <div class="topic-card__item"><div><p>基礎文法大團班</p></div></div>
+                                <div class="topic-card__item"><div><p>N5日檢必學文法</p></div></div>
+                                <div class="topic-card__item"><div><p>N4日檢必學文法</p></div></div>
+                                <div class="topic-card__item"><div><p>N3日檢實力養成</p></div></div>
+                                <div class="topic-card__item"><div><p>N2日語實力養成</p></div></div>
+                                <div class="topic-card__item"><div><p>日語萬事屋</p></div></div>
+                                <a class="topic-card__button go_fillform activity-page-click-count">學更多</a>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="footer">
+            <iframe src="../../headerFooter/footer.html" width="100%" scrolling="No" frameborder="0" allowtransparency="allowTransparency"></iframe>
+        </div>
+    </form>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/ScrollToPlugin.min.js"></script>
+    <script src="js/default.js"></script>
+</body>
+</html>
