@@ -1007,6 +1007,18 @@ a:hover {
   background-color: #FFB000;
   padding-top: 100px;
   padding-bottom: 100px;
+  counter-reset: projectNumber;
+}
+.wrapper .works .websites .webSitesBg .numberTag {
+  counter-increment: projectNumber;
+}
+.wrapper .works .websites .webSitesBg .numberTag::before {
+  content: counter(projectNumber, decimal-leading-zero);
+  display: block;
+  color: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
 }
 .wrapper .works .websites .webSitesBg .cardStyle {
   background-color: black;

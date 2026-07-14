@@ -399,7 +399,20 @@ a {
                 background-color: $color-main;
                 padding-top: 100px;
                 padding-bottom: 100px;
-        
+                counter-reset: projectNumber;
+                
+                .numberTag {
+                    counter-increment: projectNumber;
+
+                    &::before {
+                        content: counter(projectNumber, decimal-leading-zero);
+                        display: block;
+                        color: inherit;
+                        font-size: inherit;
+                        font-weight: inherit;
+                        line-height: inherit;
+                    }
+                }
                 .cardStyle {
                     background-color: black;
 
