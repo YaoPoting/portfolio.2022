@@ -41,6 +41,7 @@ a:hover {
 }
 
 .footer {
+  position: relative;
   line-height: 0px;
   width: 100%;
   height: 65px;
