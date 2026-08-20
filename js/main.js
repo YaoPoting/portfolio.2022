@@ -6,32 +6,67 @@ document.querySelectorAll('.pointer[data-scroll]').forEach(btn => {
     btn.addEventListener('click', () => scrollToSection(btn.dataset.scroll));
 });
 
-//KV
-window.addEventListener('load', () => {
-    // 1. 立即生成煙霧效果
-    const smokeContainer = document.getElementById('smokeContainer');
+// KV
+window.addEventListener("load", () => {
+    // 1. 生成煙霧效果
+    const smokeContainer = document.getElementById("smokeContainer");
+
     if (smokeContainer) {
         for (let i = 0; i < 60; i++) {
-            smokeContainer.appendChild(Object.assign(document.createElement('div'), { className: 'smoke' }));
+            const smoke = document.createElement("div");
+            smoke.className = "smoke";
+            smokeContainer.appendChild(smoke);
         }
     }
-    // 2. 執行 GSAP 文字動畫
-    const isDesktop = window.innerWidth >= 992;
-    const targets = isDesktop ? ".letter" : ".letterSP";
 
-    const kvTimeline = gsap.timeline({
+    // 2. 取得目前裝置要動畫的文字
+    const isDesktop = window.innerWidth >= 992;
+    const targetSelector = isDesktop ? ".letter" : ".letterSP";
+    const targets = gsap.utils.toArray(targetSelector);
+
+    // 沒找到元素時停止，避免後續動畫無法執行
+    if (targets.length === 0) {
+        console.warn(`找不到動畫元素：${targetSelector}`);
+        return;
+    }
+
+    // 3. 第二階段：進場完成後，持續播放縮放動畫
+    const loopTimeline = gsap.timeline({
+        paused: true,
         repeat: -1,
         repeatDelay: 0.5
     });
 
-    kvTimeline.from(targets, {
+    loopTimeline.to(targets, {
+        duration: 0.35,
+        scale: 0.65,
+        ease: "power2.out",
+        stagger: 0.15
+    });
+
+    loopTimeline.to(targets, {
+        duration: 0.7,
+        scale: 1,
+        ease: "elastic.out(1, 0.3)",
+        stagger: 0.15
+    }, "<+=0.15");
+
+    // 4. 第一階段：只播放一次原本的進場動畫
+    const introTimeline = gsap.timeline({
+        delay: 0.7,
+        onComplete: () => {
+            loopTimeline.play();
+        }
+    });
+
+    introTimeline.from(targets, {
         duration: 1,
         y: 10,
         scale: 1.3,
         opacity: 0,
         ease: "elastic.out(1, 0.5)",
         stagger: 0.2
-    }, "+=0.7"); // 第一次播放時，延遲 0.7 秒開始
+    });
 });
 
 // nav
@@ -184,24 +219,3 @@ document.getElementById('contactModal')?.addEventListener('show.bs.modal', funct
         iframe.src = iframe.dataset.src;
     }
 }, { once: false });
-
-//time
-function updateTaipeiTime() {
-  const timeElement = document.querySelector("#taipei-time");
-
-  const taipeiTime = new Intl.DateTimeFormat("en", {
-    hour: "2-digit",
-    minute: "2-digit",
-    second: "2-digit",
-    hour12: false,
-    timeZone: "Asia/Taipei",
-  }).format(new Date());
-
-  timeElement.textContent = `${taipeiTime} TPE`;
-}
-
-// 網頁載入時先立即執行一次
-updateTaipeiTime();
-
-// 之後每秒更新一次
-setInterval(updateTaipeiTime, 1000);
