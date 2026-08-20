@@ -184,3 +184,24 @@ document.getElementById('contactModal')?.addEventListener('show.bs.modal', funct
         iframe.src = iframe.dataset.src;
     }
 }, { once: false });
+
+//time
+function updateTaipeiTime() {
+  const timeElement = document.querySelector("#taipei-time");
+
+  const taipeiTime = new Intl.DateTimeFormat("en", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: false,
+    timeZone: "Asia/Taipei",
+  }).format(new Date());
+
+  timeElement.textContent = `${taipeiTime} TPE`;
+}
+
+// 網頁載入時先立即執行一次
+updateTaipeiTime();
+
+// 之後每秒更新一次
+setInterval(updateTaipeiTime, 1000);

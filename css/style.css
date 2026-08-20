@@ -1038,6 +1038,7 @@ a:hover {
   border-radius: 50%;
   padding: 2%;
   font-style: italic;
+  transition: 0.3s;
 }
 .wrapper .works .websites .webSitesBg .cardStyle .numberTag:hover, .wrapper .works .websites .webSitesBg .cardStyle .arrow:hover {
   background-color: white;
@@ -1054,6 +1055,9 @@ a:hover {
 .wrapper .works .websites .webSitesBg .cardStyle .posArrow.bi {
   transform: rotate(45deg);
 }
+.wrapper .works .websites .webSitesBg .cardStyle .posArrow.bi:hover {
+  transform: rotate(0deg);
+}
 .wrapper .works .websites .webSitesBg .cardDes {
   display: inline-block;
   padding: 0.25rem 0.5rem;
@@ -1069,6 +1073,7 @@ a:hover {
 .wrapper .works .graphics .image-grid {
   max-width: 100%;
   margin: 1.25rem;
+  box-shadow: 0 0 0 1.25rem white;
 }
 .wrapper .works .graphics .image-grid.are-images-unloaded {
   opacity: 0;
@@ -1163,17 +1168,107 @@ a:hover {
   color: #faa307;
   margin: 0 1.25rem;
 }
-.wrapper .works .graphics .scroller-status .visiting {
-  font-size: 1rem;
+.wrapper .contact {
+  position: relative;
 }
-.wrapper .works .graphics .scroller-status hr {
-  color: #faa307;
-  height: 2px;
+.wrapper .contact .ticker {
+  overflow: hidden;
+  background: black;
+  padding: 17px 0;
+  color: #ffc300;
+  font-weight: 900;
+  font-size: 22px;
+  white-space: nowrap;
+}
+.wrapper .contact .ticker div {
+  width: -moz-max-content;
+  width: max-content;
+  animation: marquee 18s linear infinite;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.wrapper .contact .title hr {
   opacity: 1;
-  width: 97%;
+}
+.wrapper .contact .title {
+  padding: 2vw;
+  background-color: #FFB000;
+}
+.wrapper .contact .title .big-letters {
+  color: white;
+  font-size: 15vw;
+  font-weight: 900;
+  line-height: 5.5vw;
+}
+.wrapper .contact .title .big-letters.custom-padding {
+  padding: 20vw 0 0 0;
+}
+.wrapper .contact .title .big-letters .serif {
+  color: #de5350;
+  font-size: 9vw;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
 }
 @media screen and (max-width: 992px) {
-  .wrapper .works .graphics .scroller-status hr {
-    width: 90%;
+  .wrapper .contact .title .big-letters {
+    font-size: 35vw;
+    line-height: 26vw;
+  }
+  .wrapper .contact .title .big-letters.custom-padding {
+    padding: 8vw 0 0 0;
+  }
+  .wrapper .contact .title .big-letters .serif {
+    font-size: 18vw;
+    line-height: 14vw;
+  }
+}
+.wrapper .contact .title .circle {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+  will-change: transform;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+.wrapper .contact .title .circle .seal {
+  width: 25vw;
+  height: 25vw;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  font-size: 9vw;
+  line-height: 1;
+  animation: spin 16s linear infinite;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 992px) {
+  .wrapper .contact .title .circle .seal {
+    width: 60vw;
+    height: 60vw;
+    font-size: 18vw;
+  }
+}
+.wrapper .contact .title .circle i {
+  position: absolute;
+  width: 80%;
+  aspect-ratio: 1;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  animation: drift 6s ease-in-out infinite;
+}
+@keyframes drift {
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-2vw, 2vh) scale(1.08);
   }
 }/*# sourceMappingURL=style.css.map */

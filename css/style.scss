@@ -429,6 +429,7 @@ a {
                         border-radius: 50%;
                         padding: 2%;
                         font-style: italic;
+                        transition: 0.3s;
 
                         &:hover {
                             background-color: white;
@@ -442,7 +443,10 @@ a {
                     .posArrow {
                         right: 4%;
                         align-self: center;
-                        &.bi {transform: rotate(45deg);}
+                        &.bi {
+                            transform: rotate(45deg);
+                            &:hover {transform: rotate(0deg);}
+                        }
                     }
                 }
 
@@ -460,10 +464,11 @@ a {
 
         .graphics {
             padding-top: 100px;
-            
+
             .image-grid {
                 max-width: 100%;
                 margin: 1.25rem;
+                box-shadow: 0 0 0 1.25rem white;
             }
             
             .image-grid.are-images-unloaded {
@@ -561,19 +566,110 @@ a {
             .scroller-status {
                 color: $color-main-deep;
                 margin: 0 1.25rem;
-                .visiting {
-                    font-size: 1rem;
+            }
+        }
+    }
+
+    .contact {
+        position: relative;
+        
+        .ticker {
+            overflow: hidden;
+            background: black;
+            padding: 17px 0;
+            color: $color-main-light;
+            font-weight: 900;
+            font-size: 22px;
+            white-space: nowrap;
+            div {
+                width: max-content;
+                animation: marquee 18s linear infinite;
+            }
+        }
+        @keyframes marquee {
+            to {transform: translateX(-50%);}
+        }
+
+        .title {
+            hr {opacity: 1;}
+            padding: 2vw;
+            background-color: $color-main;
+
+            .big-letters {
+                color: white;
+                font-size: 15vw;
+                font-weight: 900;
+                line-height: 5.5vw;
+                &.custom-padding { 
+                    padding: 20vw 0 0 0;
                 }
-                hr {
-                    color: $color-main-deep;
-                    height: 2px;
-                    opacity: 1;
-                    width: 97%;
-                    @media screen and (max-width:992px) {
-                        width: 90%;
+                .serif {
+                    color: $color-sub;
+                    font-size: 9vw;
+                    font-family: Georgia, 'Times New Roman', Times, serif;
+                    font-style: italic;
+                }
+
+                @media screen and (max-width:992px) {
+                    font-size: 35vw;
+                    line-height: 26vw;
+                    &.custom-padding { 
+                        padding: 8vw 0 0 0;
+                    }
+                    .serif {
+                        font-size: 18vw;
+                        line-height: 14vw;
                     }
                 }
+
             }
+
+            .circle {
+                position: absolute;
+                display: grid;
+                place-items: center;
+                transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+                will-change: transform;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                cursor: pointer;
+
+                .seal {
+                    width: 25vw;
+                    height: 25vw;
+                    // border: 1px solid;
+                    // border-radius: 50%;
+                    display: grid;
+                    place-items: center;
+                    text-align: center;
+                    font-size: 9vw;
+                    line-height: 1;
+                    animation: spin 16s linear infinite;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    @media screen and (max-width:992px) {
+                        width: 60vw;
+                        height: 60vw;
+                        font-size: 18vw;
+                    }
+                }
+                i {
+                    position: absolute;
+                    width: 80%;
+                    aspect-ratio: 1;
+                    border: 1px solid currentColor;
+                    border-radius: 50%;
+                    animation: drift 6s ease-in-out infinite;
+                }
+            }
+
+            @keyframes drift {
+                100% {transform: translate(0, 0) scale(1);}
+                50% {transform: translate(-2vw, 2vh) scale(1.08);}
+            }
+
         }
     }
 }
