@@ -72,12 +72,9 @@ window.addEventListener("load", () => {
 // nav
 window.addEventListener('scroll', () => {
     const navbar = document.querySelector('.myNav');
-    const navBounding = navbar.getBoundingClientRect();
 
-    if (navBounding.top <= 0) {
-        navbar.classList.add('sticky');
-    } else {
-        navbar.classList.remove('sticky');
+    if (navbar) {
+        navbar.classList.toggle('sticky', navbar.getBoundingClientRect().top <= 0);
     }
 });
 

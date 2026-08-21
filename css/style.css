@@ -1127,6 +1127,7 @@ a:hover {
 .wrapper .works .graphics .loader-ellips {
   font-size: 20px; /* change size here */
   position: relative;
+  z-index: 1;
   width: 4em;
   height: 1em;
   margin: 10px auto;
@@ -1181,12 +1182,23 @@ a:hover {
   z-index: 2;
   color: #faa307;
   margin: 0;
-  padding: 0 1.25rem;
+  padding: 10px 1.25rem;
   background-color: white;
+}
+.wrapper .works .graphics .scroller-status::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 10rem);
+  background-color: white;
+  pointer-events: none;
 }
 .wrapper .contact {
   position: relative;
-  z-index: 50;
+  z-index: 60;
   isolation: isolate;
   background-color: #FFB000;
 }

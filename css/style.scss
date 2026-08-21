@@ -526,6 +526,7 @@ a {
             .loader-ellips {
                 font-size: 20px; /* change size here */
                 position: relative;
+                z-index: 1;
                 width: 4em;
                 height: 1em;
                 margin: 10px auto;
@@ -578,15 +579,29 @@ a {
                 z-index: 2;
                 color: $color-main-deep;
                 margin: 0;
-                padding: 0 1.25rem;
+                padding: 10px 1.25rem;
                 background-color: white;
+
+                // Extend an opaque cover below the loader. The following
+                // contact section sits above it in its own stacking context.
+                &::after {
+                    content: '';
+                    position: absolute;
+                    z-index: 0;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: calc(100% + 10rem);
+                    background-color: white;
+                    pointer-events: none;
+                }
             }
         }
     }
 
     .contact {
         position: relative;
-        z-index: 50;
+        z-index: 60;
         isolation: isolate;
         background-color: $color-main;
         
