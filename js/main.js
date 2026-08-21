@@ -212,6 +212,26 @@ document.querySelector('.pagination__next')?.addEventListener('click', e => {
     e.preventDefault();
 });
 
+// Taipei clock
+const taipeiTime = document.getElementById('taipei-time');
+
+if (taipeiTime) {
+    const taipeiTimeFormatter = new Intl.DateTimeFormat('en-GB', {
+        timeZone: 'Asia/Taipei',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hourCycle: 'h23'
+    });
+
+    const updateTaipeiTime = () => {
+        taipeiTime.textContent = `${taipeiTimeFormatter.format(new Date())} TPE`;
+    };
+
+    updateTaipeiTime();
+    window.setInterval(updateTaipeiTime, 1000);
+}
+
 // Tally iframe 懶載入：等 Modal 打開才載入，避免首屏浪費資源
 document.getElementById('contactModal')?.addEventListener('show.bs.modal', function () {
     const iframe = this.querySelector('iframe[data-src]');

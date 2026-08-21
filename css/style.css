@@ -1177,11 +1177,18 @@ a:hover {
   animation-direction: reverse;
 }
 .wrapper .works .graphics .scroller-status {
+  position: relative;
+  z-index: 2;
   color: #faa307;
-  margin: 0 1.25rem;
+  margin: 0;
+  padding: 0 1.25rem;
+  background-color: white;
 }
 .wrapper .contact {
   position: relative;
+  z-index: 50;
+  isolation: isolate;
+  background-color: #FFB000;
 }
 .wrapper .contact .ticker {
   overflow: hidden;
