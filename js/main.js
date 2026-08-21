@@ -117,6 +117,61 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.registerPlugin(ScrollTrigger);
 
     // ===== ABOUT =====
+    // Split the heading into accessible, individually animated letters.
+    const aboutPopTexts = gsap.utils.toArray('[data-pop-text]');
+    const aboutPopLetters = [];
+
+    aboutPopTexts.forEach((element) => {
+        const text = Array.from(element.childNodes)
+            .filter((node) => node.nodeType === Node.TEXT_NODE)
+            .map((node) => node.textContent)
+            .join('')
+            .trim();
+
+        element.setAttribute('aria-label', text);
+
+        Array.from(element.childNodes).forEach((node) => {
+            if (node.nodeType !== Node.TEXT_NODE) return;
+
+            const fragment = document.createDocumentFragment();
+            Array.from(node.textContent).forEach((character) => {
+                const letter = document.createElement('span');
+                letter.className = 'about-pop-letter';
+                letter.setAttribute('aria-hidden', 'true');
+                letter.textContent = character === ' ' ? '\u00a0' : character;
+                fragment.appendChild(letter);
+                aboutPopLetters.push(letter);
+            });
+            node.replaceWith(fragment);
+        });
+    });
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        gsap.fromTo(aboutPopLetters,
+            {
+                yPercent: 115,
+                scale: 0.15,
+                rotation: () => gsap.utils.random(-24, 24),
+                opacity: 0
+            },
+            {
+                scrollTrigger: {
+                    trigger: '.about',
+                    start: 'top 72%',
+                    once: true
+                },
+                yPercent: 0,
+                scale: 1,
+                rotation: 0,
+                opacity: 1,
+                duration: 1.15,
+                stagger: { each: 0.075, from: 'start' },
+                ease: 'elastic.out(1, 0.48)',
+                clearProps: 'transform,opacity'
+            }
+        );
+    }
+
     // 1. 固定區塊
     ScrollTrigger.create({
         trigger: ".about",
@@ -133,21 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
             ScrollTrigger.refresh(true);
         }, 200);
     });
-
-    // 3. 標題和裝飾元素動畫
-    gsap.from(".aboutFs, .zackFs, .portfolioTape", {
-        scrollTrigger: {
-            trigger: ".about",
-            start: "top 90%",
-            end: "top 20%",
-            scrub: 2
-        },
-        x: -100,
-        opacity: 0,
-        stagger: 0.1,
-        ease: "none"
-    });
-
+    
     // ===== WEB CARDS =====
     gsap.utils.toArray(".cardStyle").forEach((card) => {
         gsap.fromTo(card,
@@ -177,31 +218,54 @@ if (grid) {
         itemSelector: '.image-grid__item',
         columnWidth: '.image-grid__col-sizer',
         gutter: '.image-grid__gutter-sizer',
-        percentPosition: true
+        percentPosition: true,
+        initLayout: false
     });
 
-    const updateLayout = items => {
-        imagesLoaded(grid, () => {
-            grid.classList.remove('are-images-unloaded');
-            items ? msnry.appended(items) : msnry.layout();
-            
-            ScrollTrigger.refresh(); 
+    let layoutFrame;
+    const refreshLayout = () => {
+        window.cancelAnimationFrame(layoutFrame);
+        layoutFrame = window.requestAnimationFrame(() => {
+            msnry.layout();
+            window.ScrollTrigger?.refresh();
         });
     };
 
-    updateLayout();
+    // 先取得首批圖片的正確高度，再開始監聽無限捲動，避免兩套排版同時執行。
+    imagesLoaded(grid).on('always', () => {
+        msnry.layout();
+        grid.classList.remove('are-images-unloaded');
+        window.ScrollTrigger?.refresh();
 
-    const infScroll = new InfiniteScroll(grid, {
-        path: function() {
-            return `./page${this.pageIndex + 1}.html`;
-        },
-        append: '.image-grid__item',
-        outlayer: msnry,
-        history: false,
-        status: '.scroller-status',
-        scrollThreshold: 400
+        const infScroll = new InfiniteScroll(grid, {
+            path: function() {
+                return `./page${this.pageIndex + 1}.html`;
+            },
+            append: '.image-grid__item',
+            outlayer: msnry,
+            history: false,
+            status: '.scroller-status',
+            scrollThreshold: 400
+        });
+
+        // Infinite Scroll 會等新圖片載入後交給 Masonry；完成追加後再同步頁面高度。
+        infScroll.on('append', refreshLayout);
     });
 
+    // 瀏覽器縮放、字體或容器寬度改變時，確保欄位不會保留舊座標。
+    if ('ResizeObserver' in window) {
+        let observedGridWidth = Math.round(grid.getBoundingClientRect().width);
+        const gridResizeObserver = new ResizeObserver(([entry]) => {
+            const nextWidth = Math.round(entry.contentRect.width);
+            if (nextWidth === observedGridWidth) return;
+
+            observedGridWidth = nextWidth;
+            refreshLayout();
+        });
+        gridResizeObserver.observe(grid);
+    } else {
+        window.addEventListener('resize', refreshLayout);
+    }
 }
 
 // 阻止 pagination__next 默認行為
