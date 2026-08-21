@@ -839,6 +839,7 @@ a:hover {
 .wrapper .about {
   position: sticky;
   top: 0;
+  z-index: 0;
   font-weight: 900;
   line-height: 0.8;
   color: #FFB000;
@@ -1005,6 +1006,7 @@ a:hover {
 .wrapper .works {
   position: relative;
   z-index: 50;
+  isolation: isolate;
   background-color: white;
 }
 .wrapper .works .websites .webSitesBg {
@@ -1075,8 +1077,12 @@ a:hover {
 }
 .wrapper .works .graphics {
   padding-top: 100px;
+  min-height: 100vh;
+  background-color: white;
 }
 .wrapper .works .graphics .image-grid {
+  position: relative;
+  z-index: 1;
   max-width: 100%;
   margin: 1.25rem;
   box-shadow: 0 0 0 1.25rem white;
