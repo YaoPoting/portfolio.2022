@@ -22,7 +22,8 @@ window.addEventListener("load", () => {
     // 2. 取得目前裝置要動畫的文字
     const isDesktop = window.innerWidth >= 992;
     const targetSelector = isDesktop ? ".letter" : ".letterSP";
-    const targets = gsap.utils.toArray(targetSelector);
+    const letterSlots = gsap.utils.toArray(targetSelector);
+    const targets = letterSlots.map(slot => slot.querySelector('.kv-letter-glyph'));
 
     // 沒找到元素時停止，避免後續動畫無法執行
     if (targets.length === 0) {
@@ -30,43 +31,136 @@ window.addEventListener("load", () => {
         return;
     }
 
-    // 3. 第二階段：進場完成後，持續播放縮放動畫
-    const loopTimeline = gsap.timeline({
-        paused: true,
-        repeat: -1,
-        repeatDelay: 0.5
+    // 3. GSAP 首頁式進場：每個字母都有獨立的滑入、翻轉與回彈動作
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reduceMotion) {
+        gsap.set(targets, { clearProps: 'all' });
+        return;
+    }
+
+    gsap.set(targets, {
+        autoAlpha: 1,
+        transformPerspective: 750,
+        transformStyle: 'preserve-3d',
+        willChange: 'transform, opacity'
     });
 
-    loopTimeline.to(targets, {
-        duration: 0.35,
-        scale: 0.65,
-        ease: "power2.out",
-        stagger: 0.15
-    });
+    const startIdleMotion = () => {
+        const spinTarget = targets[isDesktop ? 1 : 2];
+        const bounceTarget = targets[isDesktop ? 4 : 3];
 
-    loopTimeline.to(targets, {
-        duration: 0.7,
-        scale: 1,
-        ease: "elastic.out(1, 0.3)",
-        stagger: 0.15
-    }, "<+=0.15");
+        gsap.set(targets[7], {
+            backfaceVisibility: 'visible',
+            transformOrigin: '50% 50%',
+            transformStyle: 'preserve-3d'
+        });
 
-    // 4. 第一階段：只播放一次原本的進場動畫
+        const idleTimeline = gsap.timeline({ repeat: -1 });
+
+        idleTimeline
+            .to(spinTarget, {
+                rotationZ: 360,
+                duration: 1.2,
+                ease: 'power3.inOut',
+                transformOrigin: '50% 52%'
+            })
+            .to(bounceTarget, {
+                yPercent: -9,
+                rotationZ: -4,
+                scale: 1.04,
+                duration: 0.28,
+                ease: 'power2.out'
+            })
+            .to(bounceTarget, {
+                yPercent: 0,
+                rotationZ: 0,
+                scale: 1,
+                duration: 0.58,
+                ease: 'elastic.out(1, 0.45)'
+            })
+            .to(targets[7], {
+                rotationX: 540,
+                duration: 1.5,
+                ease: 'power2.out'
+            })
+            .to(targets[7], {
+                rotationX: 0,
+                duration: 1.5,
+                ease: 'power2.out'
+            })
+            .set(spinTarget, { rotationZ: 0 });
+    };
+
     const introTimeline = gsap.timeline({
-        delay: 0.7,
+        delay: 0.35,
+        defaults: { ease: 'power3.out' },
         onComplete: () => {
-            loopTimeline.play();
+            gsap.set(targets, { clearProps: 'transform,transformStyle,opacity,visibility,willChange' });
+            startIdleMotion();
         }
     });
 
-    introTimeline.from(targets, {
-        duration: 1,
-        y: 10,
-        scale: 1.3,
-        opacity: 0,
-        ease: "elastic.out(1, 0.5)",
-        stagger: 0.2
-    });
+    introTimeline
+        .from(targets[0], {
+            yPercent: 115,
+            rotationX: -180,
+            transformOrigin: '50% 100%',
+            duration: 1,
+            ease: 'back.out(1.7)'
+        }, 0)
+        .from(targets[1], {
+            xPercent: -160,
+            rotationZ: -300,
+            scale: 0,
+            autoAlpha: 0,
+            duration: 1.05,
+            ease: 'back.out(1.7)'
+        }, 0.18)
+        .from(targets[2], {
+            yPercent: -120,
+            rotationX: 160,
+            duration: 0.9,
+            ease: 'back.out(1.45)'
+        }, 0.52)
+        .from(targets[3], {
+            yPercent: 115,
+            rotationX: -70,
+            transformOrigin: '50% 100%',
+            duration: 0.88,
+            ease: 'back.out(1.45)'
+        }, 0.78)
+        .from(targets[4], {
+            yPercent: 140,
+            rotationZ: 45,
+            scale: 0,
+            duration: 1.05,
+            ease: 'elastic.out(1, 0.45)'
+        }, 0.62)
+        .from(targets[5], {
+            yPercent: -130,
+            rotationY: -180,
+            duration: 0.95,
+            ease: 'back.out(1.4)'
+        }, 1.02)
+        .from(targets[6], {
+            yPercent: 120,
+            rotationX: -120,
+            duration: 0.88
+        }, 1.16)
+        .from(targets[7], {
+            rotationY: -270,
+            scale: 0,
+            duration: 1.12,
+            ease: 'back.out(1.8)'
+        }, 1.32)
+        .from(targets[8], {
+            xPercent: 150,
+            rotationZ: 120,
+            scale: 0.2,
+            duration: 1.25,
+            ease: 'elastic.out(1, 0.42)'
+        }, 1.2);
 });
 
 // nav

@@ -143,7 +143,31 @@ a {
                     width: 100%;
                     max-width: unset;
 
+                    .letter,
+                    .letterSP {
+                        perspective: 750px;
+                    }
 
+                    .kv-letter-glyph {
+                        display: inline-block;
+                        backface-visibility: hidden;
+                        transform-origin: 50% 50%;
+                    }
+
+                    .kv-letter-glyph--flip {
+                        display: grid;
+                        backface-visibility: visible;
+                        transform-style: preserve-3d;
+                    }
+
+                    .kv-letter-face {
+                        grid-area: 1 / 1;
+                        backface-visibility: hidden;
+                    }
+
+                    .kv-letter-face--back {
+                        transform: rotateX(180deg);
+                    }
 
                     .col-20{
                         width: 20%;
